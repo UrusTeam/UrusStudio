@@ -7,7 +7,6 @@ release
 *.layout
 *.depend
 *.patch
-lib
 *.a
 *.exe
 cb_console_runner
