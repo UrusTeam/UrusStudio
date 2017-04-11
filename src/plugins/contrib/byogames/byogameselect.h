@@ -34,17 +34,17 @@ class byoGameSelect: public wxScrollingDialog
 		//*)
 
 		//(*Declarations(byoGameSelect)
-		wxPanel* Panel1;
-		wxBoxSizer* BoxSizer3;
-		wxButton* Button1;
-		wxButton* Button2;
-		wxBoxSizer* BoxSizer2;
-		wxStaticText* StaticText1;
-		wxStaticLine* StaticLine1;
-		wxListBox* m_GamesList;
 		wxBoxSizer* BoxSizer4;
+		wxListBox* m_GamesList;
+		wxButton* Button1;
+		wxPanel* Panel1;
+		wxStaticText* StaticText1;
+		wxBoxSizer* BoxSizer2;
+		wxButton* Button2;
+		wxStaticLine* StaticLine1;
 		wxBoxSizer* BoxSizer1;
 		wxStaticBoxSizer* StaticBoxSizer1;
+		wxBoxSizer* BoxSizer3;
 		//*)
 
 	private:

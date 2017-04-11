@@ -15,9 +15,9 @@
 
 //(*InternalHeaders(byoGameSelect)
 #include <wx/settings.h>
-#include <wx/string.h>
-#include <wx/intl.h>
 #include <wx/font.h>
+#include <wx/intl.h>
+#include <wx/string.h>
 //*)
 
 //(*IdInit(byoGameSelect)

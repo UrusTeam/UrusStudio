@@ -456,7 +456,7 @@ void CodeBlocksApp::InitDebugConsole()
 void CodeBlocksApp::InitExceptionHandler()
 {
 #ifdef __WXMSW__
-    ExcHndlInit();
+    extern void ExcHndlInit(void);
 #endif
 }
 

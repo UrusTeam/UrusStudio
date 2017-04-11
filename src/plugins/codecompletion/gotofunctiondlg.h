@@ -9,11 +9,11 @@
 #ifndef CB_PRECOMP
     //(*HeadersPCH(GotoFunctionDlg)
     #include <wx/dialog.h>
-    class wxBoxSizer;
     class wxCheckBox;
-    class wxListCtrl;
-    class wxStaticText;
     class wxTextCtrl;
+    class wxStaticText;
+    class wxListCtrl;
+    class wxBoxSizer;
     //*)
 #endif
 //(*Headers(GotoFunctionDlg)
@@ -77,9 +77,9 @@ class GotoFunctionDlg : public wxDialog
     private:
 
         //(*Declarations(GotoFunctionDlg)
-        IncrementalListCtrl* m_list;
-        wxCheckBox* m_mode;
         wxTextCtrl* m_text;
+        wxCheckBox* m_mode;
+        IncrementalListCtrl* m_list;
         //*)
 
         //(*Identifiers(GotoFunctionDlg)

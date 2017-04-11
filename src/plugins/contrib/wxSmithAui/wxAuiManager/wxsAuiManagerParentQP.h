@@ -20,15 +20,15 @@
 #define WXSAUIMANAGERPARENTQP_H
 
 //(*Headers(wxsAuiManagerParentQP)
-#include <wx/spinctrl.h>
-#include <wx/checkbox.h>
 #include <wx/sizer.h>
-#include <wx/panel.h>
-#include <wx/statline.h>
 #include <wx/stattext.h>
-#include <wx/textctrl.h>
-#include <wx/choice.h>
 #include <wx/radiobox.h>
+#include <wx/textctrl.h>
+#include <wx/checkbox.h>
+#include <wx/spinctrl.h>
+#include <wx/statline.h>
+#include <wx/panel.h>
+#include <wx/choice.h>
 //*)
 
 #include "wxsAuiManager.h"
@@ -42,42 +42,42 @@ class wxsAuiManagerParentQP: public wxsAdvQPPChild
         virtual ~wxsAuiManagerParentQP();
 
         //(*Declarations(wxsAuiManagerParentQP)
-        wxFlexGridSizer* FlexGridSizer1;
-        wxCheckBox* BottomDockable;
-        wxSpinCtrl* Row;
-        wxStaticLine* StaticLine2;
-        wxSpinCtrl* Layer;
-        wxCheckBox* DestroyOnClose;
-        wxCheckBox* MaximizeButton;
-        wxCheckBox* DockTop;
-        wxCheckBox* LeftDockable;
-        wxCheckBox* PaneBorder;
-        wxRadioBox* Gripper;
-        wxCheckBox* DockCenter;
-        wxStaticText* StaticText1;
-        wxCheckBox* CaptionVisible;
-        wxCheckBox* TopDockable;
-        wxTextCtrl* Caption;
-        wxStaticText* StaticText3;
-        wxCheckBox* Movable;
-        wxStaticLine* StaticLine1;
-        wxCheckBox* CloseButton;
-        wxCheckBox* Visible;
-        wxCheckBox* MinimizeButton;
-        wxSpinCtrl* Position;
-        wxCheckBox* RightDockable;
-        wxCheckBox* DockRight;
-        wxStaticText* StaticText4;
-        wxCheckBox* PinButton;
-        wxCheckBox* Floatable;
-        wxStaticText* StaticText2;
-        wxCheckBox* DockFixed;
-        wxTextCtrl* Name;
         wxCheckBox* DockBottom;
-        wxChoice* StandardPane;
+        wxRadioBox* Gripper;
+        wxSpinCtrl* Layer;
+        wxStaticText* StaticText2;
+        wxCheckBox* PinButton;
+        wxCheckBox* CaptionVisible;
+        wxCheckBox* Movable;
+        wxTextCtrl* Name;
+        wxCheckBox* PaneBorder;
+        wxCheckBox* DockRight;
+        wxCheckBox* DockTop;
+        wxCheckBox* TopDockable;
+        wxSpinCtrl* Position;
         wxCheckBox* Docked;
+        wxStaticText* StaticText1;
+        wxStaticText* StaticText3;
+        wxTextCtrl* Caption;
+        wxCheckBox* LeftDockable;
+        wxCheckBox* Floatable;
+        wxCheckBox* MaximizeButton;
+        wxStaticLine* StaticLine2;
+        wxChoice* StandardPane;
+        wxCheckBox* Visible;
         wxCheckBox* DockLeft;
+        wxCheckBox* MinimizeButton;
+        wxCheckBox* BottomDockable;
         wxCheckBox* Resizable;
+        wxSpinCtrl* Row;
+        wxStaticLine* StaticLine1;
+        wxCheckBox* RightDockable;
+        wxCheckBox* CloseButton;
+        wxCheckBox* DestroyOnClose;
+        wxFlexGridSizer* FlexGridSizer1;
+        wxCheckBox* DockFixed;
+        wxStaticText* StaticText4;
+        wxCheckBox* DockCenter;
         //*)
 
     protected:

@@ -7,17 +7,22 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="tinyXML">
-				<Option output="base/tinyxml/txml" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="" />
+				<Option output="devel30/base/tinyxml/txml" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
-				<Option type="2" />
+				<Option type="3" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add directory="include/tinyxml" />
 				</Compiler>
+				<ExtraCommands>
+					<Add after="xcopy /y devel30\base\tinyxml\txml.dll build_tools\autorevision\" />
+					<Mode after="always" />
+				</ExtraCommands>
 			</Target>
 			<Target title="AutoRevision">
 				<Option output="build_tools/autorevision/autorevision" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -28,8 +33,7 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add library="txml" />
-					<Add directory="base/tinyxml" />
+					<Add directory="devel30/base/tinyxml" />
 				</Linker>
 			</Target>
 			<Target title="ConsoleRunner">
@@ -44,10 +48,10 @@
 				</Compiler>
 			</Target>
 			<Target title="Squirrel">
-				<Option output="sdk/scripting/lib/squirrel" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="" />
+				<Option output="devel30/sdk/scripting/lib/squirrel" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
-				<Option type="2" />
+				<Option type="3" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-fno-inline" />
@@ -56,36 +60,43 @@
 				</Compiler>
 			</Target>
 			<Target title="Squirrel std lib">
-				<Option output="sdk/scripting/lib/sqstdlib" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="" />
+				<Option output="devel30/sdk/scripting/lib/sqstdlib" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
-				<Option external_deps="sdk/scripting/lib/libsquirrel.a;" />
-				<Option type="2" />
+				<Option external_deps="devel30/sdk/scripting/lib/squirrel.dll;" />
+				<Option type="3" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-fno-inline" />
 					<Add directory="include/scripting/include" />
 					<Add directory="include/scripting/sqstdlib" />
 				</Compiler>
+				<Linker>
+					<Add library="devel30/sdk/scripting/lib/squirrel.dll" />
+				</Linker>
 			</Target>
 			<Target title="SqPlus">
-				<Option output="sdk/scripting/lib/sqplus" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="" />
+				<Option output="devel30/sdk/scripting/lib/sqplus" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
-				<Option external_deps="sdk/scripting/lib/libsquirrel.a;sdk/scripting/lib/libsqstdlib.a;" />
-				<Option type="2" />
+				<Option external_deps="devel30/sdk/scripting/lib/squirrel.dll;devel30/sdk/scripting/lib/sqstdlib.dll;" />
+				<Option type="3" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-fno-inline" />
 					<Add directory="include/scripting/include" />
 					<Add directory="include/scripting/sqplus" />
 				</Compiler>
+				<Linker>
+					<Add library="devel30/sdk/scripting/lib/squirrel.dll" />
+					<Add library="devel30/sdk/scripting/lib/sqstdlib.dll" />
+				</Linker>
 			</Target>
 			<Target title="scintilla">
 				<Option output="devel30/wxscintilla_cb" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="" />
+				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
-				<Option type="2" />
+				<Option type="3" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-D__WX__" />
@@ -112,11 +123,10 @@
 				<Option output="devel30/codeblocks" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
-				<Option external_deps="base/tinyxml/libtxml.a;sdk/scripting/lib/libsquirrel.a;sdk/scripting/lib/libsqstdlib.a;sdk/scripting/lib/libsqplus.a;devel30/libwxscintilla_cb.a;" />
+				<Option external_deps="devel30/base/tinyxml/txml.dll;devel30/sdk/scripting/lib/squirrel.dll;devel30/sdk/scripting/lib/sqstdlib.dll;devel30/sdk/scripting/lib/sqplus.dll;devel30/wxscintilla_cb.dll;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --verbose -p debug" />
-				<Option createStaticLib="1" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-Woverloaded-virtual" />
@@ -142,14 +152,15 @@
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add library="shfolder" />
-					<Add library="txml" />
-					<Add library="wxscintilla_cb" />
-					<Add library="sqplus" />
-					<Add library="sqstdlib" />
-					<Add library="squirrel" />
+					<Add library="devel30/base/tinyxml/txml.dll" />
+					<Add library="devel30/wxscintilla_cb.dll" />
+					<Add library="devel30/sdk/scripting/lib/sqplus.dll" />
+					<Add library="devel30/sdk/scripting/lib/sqstdlib.dll" />
+					<Add library="devel30/sdk/scripting/lib/squirrel.dll" />
 					<Add library="gdi32" />
 					<Add directory="devel30" />
 					<Add directory="sdk/scripting/lib" />
+					<Add directory="devel30/base/tinyxml" />
 				</Linker>
 				<ExtraCommands>
 					<Add before="build_tools/autorevision/autorevision +wx +int +t .. include/autorevision.h" />
@@ -163,7 +174,7 @@
 				<Option output="devel30/codeblocks" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
-				<Option external_deps="devel30/libcodeblocks.a;" />
+				<Option external_deps="devel30/codeblocks.dll;" />
 				<Option type="0" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
@@ -184,8 +195,8 @@
 				<Linker>
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
-					<Add library="codeblocks" />
-					<Add library="exchndl" />
+					<Add library="devel30/codeblocks.dll" />
+					<Add library="exchndl/win32/bin/exchndl.dll" />
 					<Add library="shfolder" />
 					<Add library="kernel32" />
 					<Add library="user32" />
@@ -201,6 +212,10 @@
 					<Add library="rpcrt4" />
 					<Add library="advapi32" />
 					<Add library="wsock32" />
+					<Add library="devel30/wxscintilla_cb.dll" />
+					<Add library="devel30/sdk/scripting/lib/sqplus.dll" />
+					<Add library="devel30/sdk/scripting/lib/sqstdlib.dll" />
+					<Add library="devel30/sdk/scripting/lib/squirrel.dll" />
 					<Add directory="devel30" />
 					<Add directory="exchndl/win32/lib" />
 				</Linker>
@@ -219,7 +234,7 @@
 				<Option output="devel30/share/CodeBlocks/plugins/abbreviations" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
-				<Option external_deps="devel30/libcodeblocks.a;" />
+				<Option external_deps="devel30/codeblocks.dll;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
@@ -239,8 +254,12 @@
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
-					<Add library="codeblocks" />
+					<Add library="devel30/codeblocks.dll" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="devel30/sdk/scripting/lib/sqplus.dll" />
+					<Add library="devel30/sdk/scripting/lib/sqstdlib.dll" />
+					<Add library="devel30/sdk/scripting/lib/squirrel.dll" />
+					<Add library="devel30/wxscintilla_cb.dll" />
 					<Add directory="devel30" />
 				</Linker>
 				<ExtraCommands>
@@ -253,7 +272,7 @@
 				<Option output="devel30/share/CodeBlocks/plugins/Astyle" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
-				<Option external_deps="devel30/libcodeblocks.a;" />
+				<Option external_deps="devel30/codeblocks.dll;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
@@ -272,8 +291,9 @@
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
-					<Add library="codeblocks" />
+					<Add library="devel30/codeblocks.dll" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="devel30/wxscintilla_cb.dll" />
 					<Add directory="devel30" />
 				</Linker>
 				<ExtraCommands>
@@ -286,7 +306,7 @@
 				<Option output="devel30/share/CodeBlocks/plugins/autosave" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
-				<Option external_deps="devel30/libcodeblocks.a;" />
+				<Option external_deps="devel30/codeblocks.dll;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
@@ -303,8 +323,9 @@
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
-					<Add library="codeblocks" />
+					<Add library="devel30/codeblocks.dll" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="devel30/wxscintilla_cb.dll" />
 					<Add directory="devel30" />
 				</Linker>
 				<ExtraCommands>
@@ -314,16 +335,15 @@
 				</ExtraCommands>
 			</Target>
 			<Target title="Compiler depslib">
-				<Option output="plugins/compilergcc/depslib/depslib" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="" />
+				<Option output="devel30/plugins/compilergcc/depslib/depslib" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
-				<Option type="2" />
+				<Option type="3" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-DDEPSLIB_WINDOWS" />
 				</Compiler>
 				<Linker>
-					<Add option="-r" />
 					<Add option="-mthreads" />
 				</Linker>
 			</Target>
@@ -331,7 +351,7 @@
 				<Option output="devel30/share/CodeBlocks/plugins/compiler" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
-				<Option external_deps="devel30/libcodeblocks.a;plugins/compilergcc/depslib/libdepslib.a;" />
+				<Option external_deps="devel30/codeblocks.dll;devel30/plugins/compilergcc/depslib/depslib.dll;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
@@ -351,9 +371,13 @@
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
-					<Add library="codeblocks" />
+					<Add library="devel30/codeblocks.dll" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-					<Add library="depslib" />
+					<Add library="devel30/plugins/compilergcc/depslib/depslib.dll" />
+					<Add library="devel30/wxscintilla_cb.dll" />
+					<Add library="devel30/sdk/scripting/lib/sqplus.dll" />
+					<Add library="devel30/sdk/scripting/lib/sqstdlib.dll" />
+					<Add library="devel30/sdk/scripting/lib/squirrel.dll" />
 					<Add directory="devel30" />
 					<Add directory="plugins/compilergcc/depslib" />
 				</Linker>
@@ -370,7 +394,7 @@
 				<Option output="devel30/share/CodeBlocks/plugins/debugger" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
-				<Option external_deps="devel30/libcodeblocks.a;" />
+				<Option external_deps="devel30/codeblocks.dll;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
@@ -387,8 +411,13 @@
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
-					<Add library="codeblocks" />
+					<Add library="devel30/codeblocks.dll" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="devel30/wxscintilla_cb.dll" />
+					<Add library="devel30/base/tinyxml/txml.dll" />
+					<Add library="devel30/sdk/scripting/lib/sqplus.dll" />
+					<Add library="devel30/sdk/scripting/lib/sqstdlib.dll" />
+					<Add library="devel30/sdk/scripting/lib/squirrel.dll" />
 					<Add directory="devel30" />
 				</Linker>
 				<ExtraCommands>
@@ -401,7 +430,7 @@
 				<Option output="devel30/share/CodeBlocks/plugins/codecompletion" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
-				<Option external_deps="devel30/libcodeblocks.a;" />
+				<Option external_deps="devel30/codeblocks.dll;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
@@ -425,8 +454,10 @@
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
-					<Add library="codeblocks" />
+					<Add library="devel30/codeblocks.dll" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="devel30/wxscintilla_cb.dll" />
+					<Add library="devel30/base/tinyxml/txml.dll" />
 					<Add directory="devel30" />
 				</Linker>
 				<ExtraCommands>
@@ -439,7 +470,7 @@
 				<Option output="devel30/share/CodeBlocks/plugins/classwizard" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
-				<Option external_deps="devel30/libcodeblocks.a;" />
+				<Option external_deps="devel30/codeblocks.dll;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
@@ -456,8 +487,9 @@
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
-					<Add library="codeblocks" />
+					<Add library="devel30/codeblocks.dll" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="devel30/wxscintilla_cb.dll" />
 					<Add directory="devel30" />
 				</Linker>
 				<ExtraCommands>
@@ -470,7 +502,7 @@
 				<Option output="devel30/share/CodeBlocks/plugins/defaultmimehandler" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
-				<Option external_deps="devel30/libcodeblocks.a;" />
+				<Option external_deps="devel30/codeblocks.dll;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
@@ -487,8 +519,9 @@
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
-					<Add library="codeblocks" />
+					<Add library="devel30/codeblocks.dll" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="devel30/wxscintilla_cb.dll" />
 					<Add directory="devel30" />
 				</Linker>
 				<ExtraCommands>
@@ -501,7 +534,7 @@
 				<Option output="devel30/share/CodeBlocks/plugins/OccurrencesHighlighting" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
-				<Option external_deps="devel30/libcodeblocks.a;" />
+				<Option external_deps="devel30/codeblocks.dll;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
@@ -518,8 +551,9 @@
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
-					<Add library="codeblocks" />
+					<Add library="devel30/codeblocks.dll" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="devel30/wxscintilla_cb.dll" />
 					<Add directory="devel30" />
 				</Linker>
 				<ExtraCommands>
@@ -532,7 +566,7 @@
 				<Option output="devel30/share/CodeBlocks/plugins/openfileslist" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
-				<Option external_deps="devel30/libcodeblocks.a;" />
+				<Option external_deps="devel30/codeblocks.dll;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
@@ -549,8 +583,9 @@
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
-					<Add library="codeblocks" />
+					<Add library="devel30/codeblocks.dll" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="devel30/wxscintilla_cb.dll" />
 					<Add directory="devel30" />
 				</Linker>
 				<ExtraCommands>
@@ -563,7 +598,7 @@
 				<Option output="devel30/share/CodeBlocks/plugins/projectsimporter" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
-				<Option external_deps="devel30/libcodeblocks.a;" />
+				<Option external_deps="devel30/codeblocks.dll;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
@@ -586,8 +621,10 @@
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
-					<Add library="codeblocks" />
+					<Add library="devel30/codeblocks.dll" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="devel30/wxscintilla_cb.dll" />
+					<Add library="devel30/base/tinyxml/txml.dll" />
 					<Add directory="devel30" />
 				</Linker>
 				<ExtraCommands>
@@ -600,7 +637,7 @@
 				<Option output="devel30/share/CodeBlocks/plugins/scriptedwizard" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
-				<Option external_deps="devel30/libcodeblocks.a;" />
+				<Option external_deps="devel30/codeblocks.dll;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
@@ -619,8 +656,12 @@
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
-					<Add library="codeblocks" />
+					<Add library="devel30/codeblocks.dll" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="devel30/wxscintilla_cb.dll" />
+					<Add library="devel30/sdk/scripting/lib/squirrel.dll" />
+					<Add library="devel30/sdk/scripting/lib/sqplus.dll" />
+					<Add library="devel30/sdk/scripting/lib/sqstdlib.dll" />
 					<Add directory="devel30" />
 				</Linker>
 				<ExtraCommands>
@@ -633,7 +674,7 @@
 				<Option output="devel30/share/CodeBlocks/plugins/todo" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
-				<Option external_deps="devel30/libcodeblocks.a;" />
+				<Option external_deps="devel30/codeblocks.dll;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
@@ -656,8 +697,9 @@
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
-					<Add library="codeblocks" />
+					<Add library="devel30/codeblocks.dll" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="devel30/wxscintilla_cb.dll" />
 					<Add directory="devel30" />
 				</Linker>
 				<ExtraCommands>
@@ -670,7 +712,7 @@
 				<Option output="devel30/share/CodeBlocks/plugins/xpmanifest" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
-				<Option external_deps="devel30/libcodeblocks.a;" />
+				<Option external_deps="devel30/codeblocks.dll;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
@@ -687,8 +729,9 @@
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
-					<Add library="codeblocks" />
+					<Add library="devel30/codeblocks.dll" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="devel30/wxscintilla_cb.dll" />
 					<Add directory="devel30" />
 				</Linker>
 				<ExtraCommands>
@@ -698,9 +741,10 @@
 				</ExtraCommands>
 			</Target>
 			<Environment>
-				<Variable name="WX_CFG" value="" />
+				<Variable name="WX_CFG" value="URUS" />
 				<Variable name="WX_SUFFIX" value="u" />
-				<Variable name="WX_VERSION" value="30" />
+				<Variable name="WX_VERSION" value="31" />
+				<Variable name="WX_VERSION_DLL" value="310" />
 			</Environment>
 		</Build>
 		<VirtualTargets>
@@ -723,18 +767,19 @@
 			<Add option="-DNOPCH" />
 			<Add option="-DwxUSE_UNICODE" />
 			<Add directory="$(#WX30.include)" />
-			<Add directory="$(#WX30.lib)/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
+			<Add directory="$(#WX30.lib)/$(WX_CFG)_dll/msw$(WX_SUFFIX)" />
 			<Add directory="sdk/wxscintilla/include" />
 			<Add directory="include/tinyxml" />
 		</Compiler>
 		<ResourceCompiler>
 			<Add directory="$(#WX30.include)" />
-			<Add directory="$(#WX30)/lib/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
+			<Add directory="$(#WX30)/lib/$(WX_CFG)_dll/msw$(WX_SUFFIX)" />
 		</ResourceCompiler>
 		<Linker>
 			<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-			<Add directory="base/tinyxml" />
-			<Add directory="$(#WX30.lib)/gcc_dll$(WX_CFG)" />
+			<Add directory="devel30/base/tinyxml" />
+			<Add directory="$(#WX30.lib)/$(WX_CFG)_dll" />
+			<Add directory="devel30" />
 		</Linker>
 		<Unit filename="base/tinyxml/tinystr.cpp">
 			<Option target="tinyXML" />

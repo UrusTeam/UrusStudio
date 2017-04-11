@@ -3,8 +3,8 @@
 
 #ifndef CB_PRECOMP
 	//(*InternalHeadersPCH(DebuggerSettingsDlg)
-	#include <wx/string.h>
 	#include <wx/intl.h>
+	#include <wx/string.h>
 	//*)
 
     #include <wx/choicdlg.h>
@@ -13,8 +13,8 @@
     #include "cbplugin.h"
 #endif
 //(*InternalHeaders(DebuggerSettingsDlg)
-#include <wx/button.h>
 #include <wx/font.h>
+#include <wx/button.h>
 //*)
 
 #include "debuggermanager.h"
@@ -36,9 +36,9 @@ DebuggerSettingsDlg::DebuggerSettingsDlg(wxWindow* parent)
 {
 	//(*Initialize(DebuggerSettingsDlg)
 	wxStaticLine* staticLine;
+	wxStdDialogButtonSizer* stdDialogButtons;
 	wxBoxSizer* headerSizer;
 	wxBoxSizer* mainSizer;
-	wxStdDialogButtonSizer* stdDialogButtons;
 	wxPanel* header;
 
 	Create(parent, wxID_ANY, _("Debugger settings"), wxDefaultPosition, wxDefaultSize, wxCAPTION|wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER|wxCLOSE_BOX|wxMAXIMIZE_BOX|wxMINIMIZE_BOX, _T("wxID_ANY"));
