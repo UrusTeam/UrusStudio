@@ -1,9 +1,9 @@
 #include "avVersionEditorDlg.h"
 
 //(*InternalHeaders(avVersionEditorDlg)
-#include <wx/string.h>
-#include <wx/intl.h>
 #include <wx/font.h>
+#include <wx/intl.h>
+#include <wx/string.h>
 //*)
 
 #include <globals.h>
@@ -98,11 +98,11 @@ avVersionEditorDlg::avVersionEditorDlg(wxWindow* parent,wxWindowID /*id*/)
 {
     //(*Initialize(avVersionEditorDlg)
     wxBoxSizer* BoxSizer15;
-    wxBoxSizer* codeSizer;
     wxBoxSizer* BoxSizer10;
-    wxBoxSizer* BoxSizer11;
     wxBoxSizer* BoxSizer13;
+    wxBoxSizer* BoxSizer11;
     wxBoxSizer* BoxSizer14;
+    wxBoxSizer* codeSizer;
 
     Create(parent, wxID_ANY, _("Auto Versioning Editor"), wxDefaultPosition, wxDefaultSize, wxCAPTION|wxRESIZE_BORDER, _T("wxID_ANY"));
     SetClientSize(wxSize(469,364));

@@ -1,8 +1,8 @@
 #include "bindto.h"
 
 //(*InternalHeaders(Bindto)
-#include <wx/string.h>
 #include <wx/intl.h>
+#include <wx/string.h>
 //*)
 
 #include <editormanager.h>
@@ -72,42 +72,42 @@ wxString CIMPORT_FN_KEY = _T("%%%##@@@@cimport file name%%%@@@");
 Bindto::Bindto(wxWindow* parent, ParserF* pParser)
 {
 	//(*Initialize(Bindto)
-	wxBoxSizer* BoxSizer15;
-	wxFlexGridSizer* FlexGridSizer1;
-	wxFlexGridSizer* FlexGridSizer2;
-	wxStaticText* StaticText13;
-	wxStaticText* StaticText14;
-	wxStaticText* StaticText15;
-	wxBoxSizer* BoxSizer3;
-	wxBoxSizer* BoxSizer16;
-	wxBoxSizer* BoxSizer10;
-	wxNotebook* nb_settings;
-	wxBoxSizer* BoxSizer7;
-	wxBoxSizer* BoxSizer11;
-	wxBoxSizer* BoxSizer13;
-	wxBoxSizer* BoxSizer2;
-	wxStaticText* StaticText1;
 	wxStaticText* StaticText10;
-	wxBoxSizer* BoxSizer17;
-	wxBoxSizer* BoxSizer9;
-	wxBoxSizer* BoxSizer18;
-	wxStaticText* StaticText3;
-	wxBoxSizer* BoxSizer19;
-	wxStaticText* StaticText12;
 	wxBoxSizer* BoxSizer4;
-	wxPanel* Panel3;
-	wxBoxSizer* BoxSizer8;
-	wxBoxSizer* BoxSizer20;
-	wxStaticText* StaticText4;
-	wxBoxSizer* BoxSizer1;
-	wxStaticText* StaticText5;
-	wxStaticText* StaticText2;
-	wxBoxSizer* BoxSizer12;
-	wxBoxSizer* BoxSizer14;
 	wxStaticText* StaticText9;
 	wxBoxSizer* BoxSizer6;
-	wxStdDialogButtonSizer* StdDialogButtonSizer1;
+	wxBoxSizer* BoxSizer19;
+	wxBoxSizer* BoxSizer15;
+	wxBoxSizer* BoxSizer20;
 	wxBoxSizer* BoxSizer5;
+	wxBoxSizer* BoxSizer10;
+	wxBoxSizer* BoxSizer7;
+	wxBoxSizer* BoxSizer8;
+	wxStaticText* StaticText13;
+	wxStaticText* StaticText2;
+	wxStaticText* StaticText14;
+	wxBoxSizer* BoxSizer13;
+	wxNotebook* nb_settings;
+	wxFlexGridSizer* FlexGridSizer2;
+	wxStaticText* StaticText1;
+	wxBoxSizer* BoxSizer2;
+	wxStaticText* StaticText3;
+	wxBoxSizer* BoxSizer11;
+	wxBoxSizer* BoxSizer16;
+	wxBoxSizer* BoxSizer18;
+	wxBoxSizer* BoxSizer12;
+	wxPanel* Panel3;
+	wxBoxSizer* BoxSizer14;
+	wxStaticText* StaticText5;
+	wxBoxSizer* BoxSizer17;
+	wxBoxSizer* BoxSizer1;
+	wxStaticText* StaticText15;
+	wxStaticText* StaticText12;
+	wxBoxSizer* BoxSizer9;
+	wxFlexGridSizer* FlexGridSizer1;
+	wxBoxSizer* BoxSizer3;
+	wxStaticText* StaticText4;
+	wxStdDialogButtonSizer* StdDialogButtonSizer1;
 
 	Create(parent, wxID_ANY, _("Bind To"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER, _T("wxID_ANY"));
 	BoxSizer1 = new wxBoxSizer(wxVERTICAL);

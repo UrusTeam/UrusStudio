@@ -9,9 +9,9 @@
 		<Build>
 			<Target title="hunspell">
 				<Option output="../../../devel30/hunspell" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="" />
+				<Option working_dir="../../../devel30" />
 				<Option object_output="../../../.objs30/plugins/contrib/SpellChecker/hunspell" />
-				<Option type="2" />
+				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
 				<Compiler>
@@ -22,21 +22,21 @@
 					<Add option="-fexceptions" />
 					<Add option="-DHUNSPELL_STATIC" />
 					<Add directory="wxspellchecker/include" />
-					<Add directory="$(#WX30.include)" />
-					<Add directory="$(#WX30.lib)/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
+					<Add directory="../../../$(#WX30.include)" />
+					<Add directory="../../../$(#WX30.lib)/$(WX_CFG)_dll/msw$(WX_SUFFIX)" />
 					<Add directory="hunspell/src/hunspell" />
 					<Add directory="hunspell/" />
 				</Compiler>
 				<Linker>
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-					<Add directory="$(#WX30.lib)/gcc_dll$(WX_CFG)" />
+					<Add directory="../../../$(#WX30.lib)/$(WX_CFG)_dll" />
 				</Linker>
 			</Target>
 			<Target title="wxSpellChecker">
 				<Option output="../../../devel30/wxSpellChecker" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="" />
+				<Option working_dir="../../../devel30" />
 				<Option object_output="../../../.objs30/plugins/contrib/SpellChecker/wxSpellChecker" />
-				<Option type="2" />
+				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
 				<Compiler>
@@ -48,18 +48,19 @@
 					<Add option="-DHUNSPELL_STATIC" />
 					<Add directory="hunspell/src" />
 					<Add directory="wxspellchecker/include" />
-					<Add directory="$(#WX30.include)" />
-					<Add directory="$(#WX30.lib)/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
+					<Add directory="../../../$(#WX30.include)" />
+					<Add directory="../../../$(#WX30.lib)/$(WX_CFG)_dll/msw$(WX_SUFFIX)" />
 				</Compiler>
 				<Linker>
 					<Add library="hunspell" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 					<Add directory="../../../devel30" />
-					<Add directory="$(#WX30.lib)/gcc_dll$(WX_CFG)" />
+					<Add directory="../../../$(#WX30.lib)/$(WX_CFG)_dll" />
 				</Linker>
 			</Target>
 			<Target title="plugin">
 				<Option output="../../../devel30/share/CodeBlocks/plugins/SpellChecker" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../../../devel30" />
 				<Option object_output="../../../.objs30/plugins/contrib/SpellChecker" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -80,8 +81,8 @@
 					<Add directory="../../../include" />
 					<Add directory="../../../include/tinyxml" />
 					<Add directory="../../../sdk/wxscintilla/include" />
-					<Add directory="$(#WX30.include)" />
-					<Add directory="$(#WX30.lib)/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
+					<Add directory="../../../$(#WX30.include)" />
+					<Add directory="../../../$(#WX30.lib)/$(WX_CFG)_dll/msw$(WX_SUFFIX)" />
 				</Compiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-import" />
@@ -90,7 +91,7 @@
 					<Add library="codeblocks" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 					<Add directory="../../../devel30" />
-					<Add directory="$(#WX30.lib)/gcc_dll$(WX_CFG)" />
+					<Add directory="../../../$(#WX30.lib)/$(WX_CFG)_dll" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="cmd /c if not exist ..\..\..\devel30\share\CodeBlocks\SpellChecker mkdir ..\..\..\devel30\share\CodeBlocks\SpellChecker" />
@@ -108,9 +109,9 @@
 					<Mode after="always" />
 				</ExtraCommands>
 				<Environment>
-					<Variable name="WX_CFG" value="" />
+					<Variable name="WX_CFG" value="URUS" />
 					<Variable name="WX_SUFFIX" value="u" />
-					<Variable name="WX_VERSION" value="30" />
+					<Variable name="WX_VERSION" value="31" />
 				</Environment>
 			</Target>
 		</Build>
@@ -118,12 +119,16 @@
 			<Add alias="All" targets="hunspell;wxSpellChecker;plugin;" />
 		</VirtualTargets>
 		<Compiler>
+			<Add option="-std=gnu++11" />
 			<Add option="-DHAVE_W32API_H" />
 			<Add option="-D__WXMSW__" />
 			<Add option="-DWXUSINGDLL" />
 			<Add option="-DwxUSE_UNICODE" />
-			<Add option="-std=gnu++11" />
 		</Compiler>
+		<Linker>
+			<Add library="../../../devel30/wxscintilla_cb.dll" />
+			<Add library="../../../devel30/base/tinyxml/txml.dll" />
+		</Linker>
 		<Unit filename="DictionariesNeededDialog.cpp">
 			<Option target="plugin" />
 		</Unit>
@@ -292,6 +297,8 @@
 		<Unit filename="hunspell/src/parsers/odfparser.hxx">
 			<Option target="hunspell" />
 		</Unit>
+		<Unit filename="hunspell/src/parsers/textparser.cxx" />
+		<Unit filename="hunspell/src/parsers/textparser.hxx" />
 		<Unit filename="hunspell/src/parsers/xmlparser.cxx">
 			<Option target="hunspell" />
 		</Unit>

@@ -16,8 +16,8 @@ class EditorTweaksConfDlg: public cbConfigurationPanel
 		virtual ~EditorTweaksConfDlg();
 
 		//(*Declarations(EditorTweaksConfDlg)
-		wxChoice* Choice1;
 		wxSpinCtrl* SpinCtrl1;
+		wxChoice* Choice1;
 		//*)
 
 	protected:

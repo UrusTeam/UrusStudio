@@ -1,8 +1,8 @@
 #include "avChangesDlg.h"
 
 //(*InternalHeaders(avChangesDlg)
-#include <wx/string.h>
 #include <wx/intl.h>
+#include <wx/string.h>
 //*)
 
 #include <wx/arrstr.h>
@@ -39,8 +39,8 @@ END_EVENT_TABLE()
 avChangesDlg::avChangesDlg(wxWindow* parent,wxWindowID /*id*/)
 {
     //(*Initialize(avChangesDlg)
-    wxBoxSizer* sizerConfirmation;
     wxBoxSizer* sizerButtons;
+    wxBoxSizer* sizerConfirmation;
 
     Create(parent, wxID_ANY, _("AutoVersioning :: Changes Log"), wxDefaultPosition, wxDefaultSize, wxCAPTION|wxRESIZE_BORDER, _T("wxID_ANY"));
     SetClientSize(wxSize(700,300));

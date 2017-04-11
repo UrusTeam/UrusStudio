@@ -51,29 +51,29 @@ class byoConf: public cbConfigurationPanel
 		void ColChangeClick(wxCommandEvent& event);
 		//*)
 		//(*Declarations(byoConf)
-		wxButton* m_Col1;
 		wxStaticBoxSizer* StaticBoxSizer2;
-		wxFlexGridSizer* FlexGridSizer1;
-		wxButton* m_Col5;
-		wxFlexGridSizer* FlexGridSizer2;
-		wxSpinCtrl* m_MinWorkSpn;
-		wxButton* m_Col2;
-		wxButton* m_Col4;
-		wxStaticText* StaticText1;
-		wxStaticText* StaticText3;
-		wxCheckBox* m_MaxPlaytimeChk;
+		wxButton* m_Col1;
+		wxStaticText* StaticText2;
 		wxFlexGridSizer* FlexGridSizer3;
 		wxCheckBox* m_OverworkChk;
-		wxStaticText* StaticText4;
-		wxStaticText* StaticText5;
-		wxStaticText* StaticText2;
-		wxButton* m_Col3;
 		wxStaticText* StaticText6;
+		wxCheckBox* m_MaxPlaytimeChk;
 		wxButton* m_Col6;
-		wxSpinCtrl* m_OverworkSpn;
-		wxStaticBoxSizer* StaticBoxSizer1;
-		wxSpinCtrl* m_MaxPlaytimeSpn;
+		wxFlexGridSizer* FlexGridSizer2;
+		wxStaticText* StaticText1;
+		wxButton* m_Col2;
+		wxStaticText* StaticText3;
+		wxStaticText* StaticText5;
 		wxCheckBox* m_MinWorkChk;
+		wxSpinCtrl* m_MinWorkSpn;
+		wxButton* m_Col3;
+		wxButton* m_Col4;
+		wxStaticBoxSizer* StaticBoxSizer1;
+		wxFlexGridSizer* FlexGridSizer1;
+		wxSpinCtrl* m_OverworkSpn;
+		wxButton* m_Col5;
+		wxStaticText* StaticText4;
+		wxSpinCtrl* m_MaxPlaytimeSpn;
 		//*)
 
 	private:

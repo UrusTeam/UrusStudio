@@ -2,16 +2,16 @@
 #define BINDTO_H
 
 //(*Headers(Bindto)
-#include <wx/checkbox.h>
-#include <wx/dialog.h>
-#include <wx/sizer.h>
 #include <wx/listctrl.h>
 #include <wx/notebook.h>
-#include <wx/button.h>
-#include <wx/radiobut.h>
-#include <wx/panel.h>
+#include <wx/sizer.h>
 #include <wx/stattext.h>
 #include <wx/textctrl.h>
+#include <wx/checkbox.h>
+#include <wx/radiobut.h>
+#include <wx/panel.h>
+#include <wx/button.h>
+#include <wx/dialog.h>
 //*)
 
 #include "parserf.h"
@@ -37,40 +37,40 @@ class Bindto: public wxDialog
 		virtual ~Bindto();
 
 		//(*Declarations(Bindto)
+		wxTextCtrl* tc_globalFilename;
+		wxRadioButton* rb_CurrentFile;
+		wxButton* bt_OutputDir;
+		wxPanel* Panel5;
+		wxPanel* pn_pyOpts;
+		wxPanel* Panel4;
+		wxTextCtrl* tc_pyFunName;
+		wxStaticText* st_globalFilename;
+		wxCheckBox* cb_ctorEnd;
+		wxButton* bt_Add;
 		wxButton* bt_Defaults;
-		wxCheckBox* cb_genCython;
+		wxPanel* Panel1;
+		wxListView* lv_Types;
+		wxTextCtrl* tc_bindCName;
+		wxCheckBox* cb_dtorStart;
+		wxStaticText* StaticText7;
+		wxCheckBox* cb_incompleteWrapperProc;
+		wxTextCtrl* tc_ctorEnd;
+		wxCheckBox* cb_pyFirstSelf;
 		wxButton* bt_Edit;
 		wxRadioButton* rb_ActiveProject;
-		wxPanel* Panel1;
-		wxButton* bt_OutputDir;
-		wxCheckBox* cb_dtorStart;
-		wxTextCtrl* tc_dtorStart;
-		wxPanel* pn_pyOpts;
 		wxCheckBox* cb_pyGenClass;
-		wxCheckBox* cb_ctorEnd;
-		wxCheckBox* cb_incompleteWrapperProc;
-		wxButton* bt_Add;
-		wxStaticText* st_globalFilename;
-		wxTextCtrl* tc_OutputDir;
-		wxCheckBox* cb_pyFirstSelf;
-		wxStaticText* StaticText16;
-		wxPanel* Panel2;
-		wxPanel* Panel4;
-		wxListView* lv_Types;
-		wxCheckBox* cb_ctorStart;
-		wxPanel* Panel5;
+		wxCheckBox* cb_genCython;
 		wxTextCtrl* tc_ctorStart;
-		wxStaticText* StaticText7;
-		wxButton* bt_Remove;
-		wxTextCtrl* tc_dtorEnd;
-		wxCheckBox* cb_dtorEnd;
-		wxTextCtrl* tc_globalFilename;
-		wxTextCtrl* tc_bindCName;
-		wxTextCtrl* tc_ctorEnd;
-		wxTextCtrl* tc_pyFunName;
+		wxTextCtrl* tc_dtorStart;
 		wxButton* bt_copy;
+		wxCheckBox* cb_dtorEnd;
+		wxPanel* Panel2;
 		wxCheckBox* cb_globalToOne;
-		wxRadioButton* rb_CurrentFile;
+		wxButton* bt_Remove;
+		wxTextCtrl* tc_OutputDir;
+		wxCheckBox* cb_ctorStart;
+		wxStaticText* StaticText16;
+		wxTextCtrl* tc_dtorEnd;
 		//*)
 
 	protected:

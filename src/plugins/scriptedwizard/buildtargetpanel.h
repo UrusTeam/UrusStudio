@@ -8,12 +8,12 @@
 
 
 //(*HeadersPCH(BuildTargetPanel)
-#include <wx/combobox.h>
-#include <wx/checkbox.h>
 #include <wx/sizer.h>
-#include <wx/panel.h>
 #include <wx/stattext.h>
 #include <wx/textctrl.h>
+#include <wx/checkbox.h>
+#include <wx/panel.h>
+#include <wx/combobox.h>
 //*)
 
 #include <wx/string.h>
@@ -66,14 +66,14 @@ class BuildTargetPanel: public wxPanel
         //*)
 
         //(*Declarations(BuildTargetPanel)
-        wxComboBox* cmbCompiler;
-        wxTextCtrl* txtName;
-        wxStaticText* lblCompiler;
-        wxTextCtrl* txtOut;
-        wxStaticText* StaticText3;
         wxCheckBox* chkEnableDebug;
-        wxBoxSizer* BoxSizer1;
+        wxTextCtrl* txtOut;
         wxTextCtrl* txtObjOut;
+        wxStaticText* StaticText3;
+        wxComboBox* cmbCompiler;
+        wxStaticText* lblCompiler;
+        wxBoxSizer* BoxSizer1;
+        wxTextCtrl* txtName;
         //*)
 
         DECLARE_EVENT_TABLE()

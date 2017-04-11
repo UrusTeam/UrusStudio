@@ -2,9 +2,9 @@
 #include "globals.h"
 
 //(*InternalHeaders(BindtoNewType)
+#include <wx/intl.h>
 #include <wx/button.h>
 #include <wx/string.h>
-#include <wx/intl.h>
 //*)
 
 //(*IdInit(BindtoNewType)
@@ -22,11 +22,11 @@ END_EVENT_TABLE()
 BindtoNewType::BindtoNewType(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSize& size)
 {
 	//(*Initialize(BindtoNewType)
-	wxFlexGridSizer* FlexGridSizer1;
+	wxStaticText* StaticText2;
 	wxStaticText* StaticText1;
 	wxStaticText* StaticText3;
 	wxBoxSizer* BoxSizer1;
-	wxStaticText* StaticText2;
+	wxFlexGridSizer* FlexGridSizer1;
 	wxStdDialogButtonSizer* StdDialogButtonSizer1;
 
 	Create(parent, wxID_ANY, _("Add New Type"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER, _T("wxID_ANY"));

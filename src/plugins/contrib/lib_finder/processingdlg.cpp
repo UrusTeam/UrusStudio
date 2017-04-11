@@ -31,12 +31,12 @@
 #include <prep.h>
 
 //(*InternalHeaders(ProcessingDlg)
-#include <wx/gauge.h>
 #include <wx/sizer.h>
+#include <wx/stattext.h>
+#include <wx/intl.h>
 #include <wx/button.h>
 #include <wx/string.h>
-#include <wx/intl.h>
-#include <wx/stattext.h>
+#include <wx/gauge.h>
 //*)
 
 #include "librarydetectionmanager.h"

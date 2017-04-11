@@ -32,10 +32,10 @@
 //(*Headers(DirListDlg)
 #include "scrollingdialog.h"
 class wxTextCtrl;
-class wxStaticBoxSizer;
 class wxFlexGridSizer;
-class wxButton;
 class wxBoxSizer;
+class wxButton;
+class wxStaticBoxSizer;
 //*)
 
 
@@ -53,12 +53,12 @@ class DirListDlg: public wxScrollingDialog
 	private:
 
         //(*Declarations(DirListDlg)
-        wxFlexGridSizer* FlexGridSizer1;
         wxButton* Button4;
+        wxBoxSizer* BoxSizer2;
         wxButton* Button3;
         wxTextCtrl* DirList;
-        wxBoxSizer* BoxSizer2;
         wxBoxSizer* BoxSizer1;
+        wxFlexGridSizer* FlexGridSizer1;
         //*)
 
 		//(*Handlers(DirListDlg)
