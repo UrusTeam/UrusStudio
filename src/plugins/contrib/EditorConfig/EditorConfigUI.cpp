@@ -1,13 +1,13 @@
 #include "EditorConfigUI.h"
 
 //(*InternalHeaders(EditorConfigUI)
-#include <wx/spinctrl.h>
-#include <wx/checkbox.h>
 #include <wx/sizer.h>
-#include <wx/string.h>
-#include <wx/intl.h>
 #include <wx/stattext.h>
+#include <wx/checkbox.h>
+#include <wx/spinctrl.h>
 #include <wx/choice.h>
+#include <wx/intl.h>
+#include <wx/string.h>
 //*)
 
 #include <cbproject.h>
@@ -35,11 +35,11 @@ EditorConfigUI::EditorConfigUI(wxWindow* parent, wxEvtHandler* eh, cbProject* pr
     m_Project(prj)
 {
     //(*Initialize(EditorConfigUI)
-    wxFlexGridSizer* flsMain;
-    wxStaticText* lblEOLMode;
     wxStaticText* lblTab;
-    wxStaticText* lblIndent;
+    wxFlexGridSizer* flsMain;
     wxStaticText* lblTabWidth;
+    wxStaticText* lblIndent;
+    wxStaticText* lblEOLMode;
     wxBoxSizer* bszTab;
 
     Create(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("wxID_ANY"));

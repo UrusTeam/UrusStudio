@@ -11,8 +11,8 @@
 #ifndef CB_PRECOMP
     #include <wx/filename.h>
     //(*InternalHeadersPCH(ProjectPathPanel)
-    #include <wx/string.h>
     #include <wx/intl.h>
+    #include <wx/string.h>
     //*)
 #endif // CB_PRECOMP
 #include <filefilters.h>
@@ -42,11 +42,11 @@ ProjectPathPanel::ProjectPathPanel(wxWindow* parent,wxWindowID id) :
     m_LockUpdates(false)
 {
     //(*Initialize(ProjectPathPanel)
+    wxStaticText* StaticText2;
     wxStaticText* StaticText1;
     wxStaticText* StaticText3;
-    wxStaticText* StaticText4;
     wxStaticText* StaticText5;
-    wxStaticText* StaticText2;
+    wxStaticText* StaticText4;
 
     Create(parent, id, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("id"));
     BoxSizer1 = new wxBoxSizer(wxVERTICAL);

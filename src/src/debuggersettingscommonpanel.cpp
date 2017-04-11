@@ -3,8 +3,8 @@
 
 #ifndef CB_PRECOMP
     //(*InternalHeadersPCH(DebuggerSettingsCommonPanel)
-    #include <wx/string.h>
     #include <wx/intl.h>
+    #include <wx/string.h>
     //*)
 
     #include <wx/fontutil.h>
@@ -36,12 +36,12 @@ END_EVENT_TABLE()
 DebuggerSettingsCommonPanel::DebuggerSettingsCommonPanel(wxWindow* parent)
 {
 	//(*Initialize(DebuggerSettingsCommonPanel)
-	wxFlexGridSizer* flexSizer;
-	wxBoxSizer* mainSizer;
 	wxButton* chooseFont;
-	wxStaticBoxSizer* valueTooltipSizer;
-	wxBoxSizer* BoxSizer1;
 	wxStaticText* labelPerspective;
+	wxBoxSizer* BoxSizer1;
+	wxFlexGridSizer* flexSizer;
+	wxStaticBoxSizer* valueTooltipSizer;
+	wxBoxSizer* mainSizer;
 
 	Create(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("wxID_ANY"));
 	mainSizer = new wxBoxSizer(wxVERTICAL);

@@ -35,11 +35,11 @@
 
 //(*Headers(ProcessingDlg)
 #include "scrollingdialog.h"
-class wxStaticBoxSizer;
-class wxFlexGridSizer;
 class wxGauge;
-class wxButton;
 class wxStaticText;
+class wxFlexGridSizer;
+class wxButton;
+class wxStaticBoxSizer;
 //*)
 
 #include "librarydetectionconfig.h"
@@ -78,11 +78,11 @@ class ProcessingDlg: public wxScrollingDialog
 		//*)
 
 		//(*Declarations(ProcessingDlg)
-		wxFlexGridSizer* FlexGridSizer1;
 		wxStaticText* Status;
 		wxButton* StopBtn;
 		wxGauge* Gauge1;
 		wxStaticBoxSizer* StaticBoxSizer1;
+		wxFlexGridSizer* FlexGridSizer1;
 		//*)
 
 	private:

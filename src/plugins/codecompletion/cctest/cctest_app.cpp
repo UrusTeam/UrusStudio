@@ -105,7 +105,7 @@
 #endif
 
 //(*AppHeaders
-#include <wx/image.h>
+//#include <wx/image.h>
 //*)
 
 #include <wx/app.h>

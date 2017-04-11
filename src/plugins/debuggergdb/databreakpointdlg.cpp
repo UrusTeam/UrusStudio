@@ -11,9 +11,9 @@
 #include "debugger_defs.h"
 
 //(*InternalHeaders(DataBreakpointDlg)
+#include <wx/intl.h>
 #include <wx/button.h>
 #include <wx/string.h>
-#include <wx/intl.h>
 //*)
 
 //(*IdInit(DataBreakpointDlg)

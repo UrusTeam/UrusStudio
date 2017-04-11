@@ -21,8 +21,8 @@
 #include <prep.h>
 
 //(*InternalHeaders(wxsAuiManagerParentQP)
-#include <wx/string.h>
 #include <wx/intl.h>
+#include <wx/string.h>
 //*)
 
 //(*IdInit(wxsAuiManagerParentQP)
@@ -73,26 +73,26 @@ wxsAuiManagerParentQP::wxsAuiManagerParentQP(wxsAdvQPP* parent, wxsAuiPaneInfoEx
     m_Extra(Extra)
 {
     //(*Initialize(wxsAuiManagerParentQP)
-    wxStaticBoxSizer* StaticBoxSizer2;
-    wxGridSizer* GridSizer1;
-    wxFlexGridSizer* FlexGridSizer2;
-    wxBoxSizer* BoxSizer3;
-    wxStaticBoxSizer* StaticBoxSizer7;
-    wxStaticBoxSizer* StaticBoxSizer5;
-    wxGridSizer* GridSizer3;
-    wxFlexGridSizer* FlexGridSizer7;
-    wxBoxSizer* BoxSizer2;
-    wxFlexGridSizer* FlexGridSizer4;
-    wxStaticBoxSizer* StaticBoxSizer3;
-    wxFlexGridSizer* FlexGridSizer6;
-    wxFlexGridSizer* FlexGridSizer3;
     wxBoxSizer* BoxSizer4;
-    wxStaticBoxSizer* StaticBoxSizer4;
-    wxStaticBoxSizer* StaticBoxSizer6;
-    wxBoxSizer* BoxSizer1;
-    wxFlexGridSizer* FlexGridSizer5;
+    wxStaticBoxSizer* StaticBoxSizer2;
+    wxFlexGridSizer* FlexGridSizer4;
     wxBoxSizer* BoxSizer5;
+    wxStaticBoxSizer* StaticBoxSizer4;
+    wxFlexGridSizer* FlexGridSizer3;
+    wxFlexGridSizer* FlexGridSizer5;
+    wxFlexGridSizer* FlexGridSizer2;
+    wxBoxSizer* BoxSizer2;
+    wxFlexGridSizer* FlexGridSizer7;
+    wxStaticBoxSizer* StaticBoxSizer7;
+    wxStaticBoxSizer* StaticBoxSizer3;
+    wxGridSizer* GridSizer1;
+    wxStaticBoxSizer* StaticBoxSizer6;
+    wxGridSizer* GridSizer3;
+    wxBoxSizer* BoxSizer1;
+    wxFlexGridSizer* FlexGridSizer6;
     wxStaticBoxSizer* StaticBoxSizer1;
+    wxBoxSizer* BoxSizer3;
+    wxStaticBoxSizer* StaticBoxSizer5;
 
     Create(parent, wxID_ANY, wxPoint(-1,-1), wxDefaultSize, wxTAB_TRAVERSAL, _T("wxID_ANY"));
     FlexGridSizer1 = new wxFlexGridSizer(0, 1, 0, 0);
