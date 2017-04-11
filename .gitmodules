@@ -1,3 +1,6 @@
 [submodule "modules/wxWidgets"]
 	path = modules/wxWidgets
 	url = https://github.com/UrusTeam/wxWidgets.git
+[submodule "modules/boost"]
+	path = modules/boost
+	url = https://github.com/UrusTeam/boost.git
