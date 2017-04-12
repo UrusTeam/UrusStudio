@@ -33,6 +33,7 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add library="devel30/base/tinyxml/txml.dll" />
 					<Add directory="devel30/base/tinyxml" />
 				</Linker>
 			</Target>
