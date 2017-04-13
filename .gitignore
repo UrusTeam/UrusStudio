@@ -7,12 +7,14 @@ release
 *.layout
 *.depend
 *.patch
+*.pdf
 *.a
 *.exe
+*.def
+src/include/autorevision.h
 cb_console_runner
 cb_console_runner29
 *.bmarks
-Makefile.in
 /build*
 /configure
 /aclocal.m4
