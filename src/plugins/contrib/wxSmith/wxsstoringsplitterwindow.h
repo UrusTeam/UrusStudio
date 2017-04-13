@@ -15,9 +15,9 @@
 * You should have received a copy of the GNU General Public License
 * along with wxSmith. If not, see <http://www.gnu.org/licenses/>.
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 8573 $
+* $Id: wxsstoringsplitterwindow.h 8573 2012-11-18 14:44:53Z mortenmacfly $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxsstoringsplitterwindow.h $
 */
 
 #ifndef WXSSTORINGSPLITTERWINDOW_H

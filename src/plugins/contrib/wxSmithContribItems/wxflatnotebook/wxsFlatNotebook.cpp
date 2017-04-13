@@ -16,9 +16,9 @@
 * along with wxSmith; if not, write to the Free Software
 * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 10665 $
+* $Id: wxsFlatNotebook.cpp 10665 2016-01-17 13:58:48Z fuscated $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmithContribItems/wxflatnotebook/wxsFlatNotebook.cpp $
 */
 
 #include "wxsFlatNotebook.h"

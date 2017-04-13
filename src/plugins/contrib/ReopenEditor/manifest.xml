@@ -5,9 +5,9 @@
  *
  * Copyright: 2010, 2011 Jens Lody
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 7600 $
+ * $Id: manifest.xml 7600 2011-11-20 10:44:50Z mortenmacfly $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/ReopenEditor/manifest.xml $
  -->
 <CodeBlocks_plugin_manifest_file>
   <SdkVersion major="1"

@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10324 $
+ * $Id: compilerMINGWgenerator.cpp 10324 2015-06-09 22:50:17Z jenslody $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/compilergcc/compilerMINGWgenerator.cpp $
  */
 
 #include <sdk.h>

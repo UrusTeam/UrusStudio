@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 11002 $
+ * $Id: environmentsettingsdlg.cpp 11002 2017-02-06 19:12:33Z fuscated $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/environmentsettingsdlg.cpp $
  */
 
 #include <sdk.h>

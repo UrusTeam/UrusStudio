@@ -15,9 +15,9 @@
 * You should have received a copy of the GNU General Public License
 * along with HexEditor plugin. If not, see <http://www.gnu.org/licenses/>.
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 8350 $
+* $Id: TestCasesHelper.h 8350 2012-09-04 08:05:13Z jenslody $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/HexEditor/TestCasesHelper.h $
 */
 
 #ifndef TESTCASESHELPER_H

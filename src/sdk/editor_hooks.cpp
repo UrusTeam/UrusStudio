@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 9753 $
+ * $Id: editor_hooks.cpp 9753 2014-04-15 05:12:55Z ollydbg $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/editor_hooks.cpp $
  */
 
 #include "sdk_precomp.h"

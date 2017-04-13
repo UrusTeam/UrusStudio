@@ -2,16 +2,16 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10270 $
+ * $Id: genericselectpath.cpp 10270 2015-05-15 10:57:08Z jenslody $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/scriptedwizard/genericselectpath.cpp $
  */
 
 #include <sdk.h>
 #ifndef CB_PRECOMP
     //(*InternalHeadersPCH(GenericSelectPath)
-    #include <wx/intl.h>
     #include <wx/string.h>
+    #include <wx/intl.h>
     //*)
 #endif
 #include "genericselectpath.h"

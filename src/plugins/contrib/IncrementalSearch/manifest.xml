@@ -5,9 +5,9 @@
  *
  * Copyright: 2008 Jens Lody
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 8708 $
+ * $Id: manifest.xml 8708 2012-12-24 15:52:51Z jenslody $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/IncrementalSearch/manifest.xml $
  -->
 <CodeBlocks_plugin_manifest_file>
   <SdkVersion major="1"

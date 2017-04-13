@@ -8,7 +8,6 @@
 		<Build>
 			<Target title="default">
 				<Option output="../../../devel30/share/codeblocks/plugins/BrowseTracker.dll" prefix_auto="0" extension_auto="0" />
-				<Option working_dir="../../../devel30" />
 				<Option object_output="../../../.objs30/plugins/contrib/BrowseTracker" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -32,8 +31,8 @@
 					<Add directory="../../../include" />
 					<Add directory="../../../include/tinyxml" />
 					<Add directory="../../../sdk/wxscintilla/include" />
-					<Add directory="../../../$(#WX30.include)" />
-					<Add directory="../../../$(#WX30.lib)/$(WX_CFG)_dll/msw$(WX_SUFFIX)" />
+					<Add directory="$(#WX30.include)" />
+					<Add directory="$(#WX30.lib)/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -41,10 +40,8 @@
 					<Add option="-mthreads" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 					<Add library="codeblocks" />
-					<Add library="../../../devel30/wxscintilla_cb.dll" />
-					<Add library="../../../devel30/base/tinyxml/txml.dll" />
 					<Add directory="../../../devel30" />
-					<Add directory="../../../$(#WX30.lib)/$(WX_CFG)_dll" />
+					<Add directory="$(#WX30.lib)/gcc_dll$(WX_CFG)" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="zip -j9 ..\..\..\devel30\share\codeblocks\BrowseTracker.zip manifest.xml" />
@@ -53,9 +50,9 @@
 				</ExtraCommands>
 			</Target>
 			<Environment>
-				<Variable name="WX_CFG" value="URUS" />
+				<Variable name="WX_CFG" value="" />
 				<Variable name="WX_SUFFIX" value="u" />
-				<Variable name="WX_VERSION" value="31" />
+				<Variable name="WX_VERSION" value="30" />
 			</Environment>
 		</Build>
 		<VirtualTargets>

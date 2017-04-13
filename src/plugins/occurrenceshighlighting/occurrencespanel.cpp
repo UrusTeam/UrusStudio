@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10269 $
+ * $Id: occurrencespanel.cpp 10269 2015-05-15 10:56:59Z jenslody $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/occurrenceshighlighting/occurrencespanel.cpp $
  */
 
 #include "occurrencespanel.h"

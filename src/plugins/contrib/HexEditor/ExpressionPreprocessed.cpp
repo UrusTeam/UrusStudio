@@ -15,9 +15,9 @@
 * You should have received a copy of the GNU General Public License
 * along with wxSmith. If not, see <http://www.gnu.org/licenses/>.
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 8566 $
+* $Id: ExpressionPreprocessed.cpp 8566 2012-11-14 23:39:16Z thomasdenk $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/HexEditor/ExpressionPreprocessed.cpp $
 */
 
 #include "ExpressionPreprocessed.h"

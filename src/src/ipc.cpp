@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 8245 $
+ * $Id: ipc.cpp 8245 2012-08-22 06:51:14Z mortenmacfly $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/ipc.cpp $
  */
 
 #include "ipc.h"

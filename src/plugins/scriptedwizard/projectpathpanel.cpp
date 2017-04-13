@@ -2,17 +2,17 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10270 $
+ * $Id: projectpathpanel.cpp 10270 2015-05-15 10:57:08Z jenslody $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/scriptedwizard/projectpathpanel.cpp $
  */
 
 #include <sdk.h>
 #ifndef CB_PRECOMP
     #include <wx/filename.h>
     //(*InternalHeadersPCH(ProjectPathPanel)
-    #include <wx/intl.h>
     #include <wx/string.h>
+    #include <wx/intl.h>
     //*)
 #endif // CB_PRECOMP
 #include <filefilters.h>
@@ -42,11 +42,11 @@ ProjectPathPanel::ProjectPathPanel(wxWindow* parent,wxWindowID id) :
     m_LockUpdates(false)
 {
     //(*Initialize(ProjectPathPanel)
-    wxStaticText* StaticText2;
     wxStaticText* StaticText1;
     wxStaticText* StaticText3;
-    wxStaticText* StaticText5;
     wxStaticText* StaticText4;
+    wxStaticText* StaticText5;
+    wxStaticText* StaticText2;
 
     Create(parent, id, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("id"));
     BoxSizer1 = new wxBoxSizer(wxVERTICAL);

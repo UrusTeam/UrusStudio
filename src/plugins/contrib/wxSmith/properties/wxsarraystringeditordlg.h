@@ -15,9 +15,9 @@
 * You should have received a copy of the GNU General Public License
 * along with wxSmith. If not, see <http://www.gnu.org/licenses/>.
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 10972 $
+* $Id: wxsarraystringeditordlg.h 10972 2017-01-21 10:41:43Z fuscated $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/properties/wxsarraystringeditordlg.h $
 */
 
 #ifndef WXSARRAYSTRINGEDITORDLG_H

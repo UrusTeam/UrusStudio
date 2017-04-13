@@ -14,7 +14,7 @@
 				<Option compiler="gcc" />
 			</Target>
 			<Environment>
-				<Variable name="WX_CFG" value="" />
+				<Variable name="WX_CFG" value="URUS" />
 				<Variable name="WX_SUFFIX" value="u" />
 				<Variable name="WX_VERSION" value="31" />
 			</Environment>
@@ -27,15 +27,15 @@
 			<Add option="-mthreads" />
 			<Add option="-fmessage-length=0" />
 			<Add option="-fexceptions" />
+			<Add option="-std=gnu++11" />
 			<Add option="-DUSE_PCH" />
 			<Add option="-D__GNUWIN32__" />
 			<Add option="-D__WXMSW__" />
 			<Add option="-DHAVE_W32API_H" />
 			<Add option="-DwxUSE_UNICODE" />
 			<Add option="-DWXUSINGDLL" />
-			<Add option="-std=gnu++11" />
 			<Add directory="$(#WX31.include)" />
-			<Add directory="$(#WX31.lib)/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
+			<Add directory="$(#WX31.lib)/$(WX_CFG)_dll/msw$(WX_SUFFIX)" />
 			<Add directory="../../include" />
 			<Add directory="../../include/tinyxml" />
 		</Compiler>
@@ -46,7 +46,7 @@
 			<Add option="-mthreads" />
 			<Add library="txml" />
 			<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-			<Add directory="$(#WX31.lib)/gcc_dll$(WX_CFG)" />
+			<Add directory="$(#WX31.lib)/$(WX_CFG)_dll" />
 			<Add directory="../../base/tinyxml" />
 		</Linker>
 		<Unit filename="app.cpp" />

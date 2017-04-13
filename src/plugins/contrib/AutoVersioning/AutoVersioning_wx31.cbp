@@ -31,7 +31,7 @@
 					<Add directory="../../../include/tinyxml" />
 					<Add directory="../../../sdk/wxscintilla/include" />
 					<Add directory="$(#WX31.include)" />
-					<Add directory="$(#WX31.lib)/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
+					<Add directory="$(#WX31.lib)/$(WX_CFG)_dll/msw$(WX_SUFFIX)" />
 				</Compiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-import" />
@@ -39,7 +39,7 @@
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 					<Add library="codeblocks" />
 					<Add directory="../../../devel31" />
-					<Add directory="$(#WX31.lib)/gcc_dll$(WX_CFG)" />
+					<Add directory="$(#WX31.lib)/$(WX_CFG)_dll" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="zip -j9 ..\..\..\devel31\share\codeblocks\AutoVersioning.zip manifest.xml" />
@@ -47,7 +47,7 @@
 				</ExtraCommands>
 			</Target>
 			<Environment>
-				<Variable name="WX_CFG" value="" />
+				<Variable name="WX_CFG" value="URUS" />
 				<Variable name="WX_SUFFIX" value="u" />
 				<Variable name="WX_VERSION" value="31" />
 			</Environment>
@@ -60,6 +60,9 @@
 			<Add option="$(#CB_RELEASE_TYPE)" />
 			<Add option="-std=gnu++11" />
 		</Compiler>
+		<Linker>
+			<Add library="txml" />
+		</Linker>
 		<Unit filename="AutoVersioning.cpp" />
 		<Unit filename="AutoVersioning.h" />
 		<Unit filename="avChangesDlg.cpp" />

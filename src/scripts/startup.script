@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 7649 $
+ * $Id: startup.script 7649 2011-12-29 20:02:04Z tpetrov $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/scripts/startup.script $
  */
 
 Log(_T("Running startup script"));

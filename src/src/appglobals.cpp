@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 9484 $
+ * $Id: appglobals.cpp 9484 2013-12-03 20:34:13Z mortenmacfly $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/appglobals.cpp $
  */
 
 #include <sdk.h>

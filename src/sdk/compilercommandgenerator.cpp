@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10589 $
+ * $Id: compilercommandgenerator.cpp 10589 2015-11-15 19:21:12Z mortenmacfly $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/compilercommandgenerator.cpp $
  */
 
 #include "sdk_precomp.h"

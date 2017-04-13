@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10801 $
+ * $Id: newfromtemplatedlg.cpp 10801 2016-03-08 23:27:33Z fuscated $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/newfromtemplatedlg.cpp $
  */
 
 #include "sdk_precomp.h"

@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 8202 $
+ * $Id: seditorcolourset.cpp 8202 2012-08-07 07:18:10Z ollydbg $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/codesnippets/editor/seditorcolourset.cpp $
  */
 
 // Stop following warning:

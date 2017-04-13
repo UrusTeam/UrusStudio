@@ -31,15 +31,15 @@
 using namespace wxsFlags;
 
 //(*Headers(wxsAuiNotebookParentQP)
-#include <wx/sizer.h>
-#include <wx/textctrl.h>
 #include <wx/checkbox.h>
+#include <wx/sizer.h>
 #include <wx/panel.h>
+#include <wx/textctrl.h>
 //*)
 
 //(*InternalHeaders(wxsAuiNotebookParentQP)
-#include <wx/intl.h>
 #include <wx/string.h>
+#include <wx/intl.h>
 //*)
 
 namespace
@@ -161,10 +161,10 @@ namespace
 
             //(*Declarations(wxsAuiNotebookParentQP)
             wxStaticBoxSizer* StaticBoxSizer2;
-            wxCheckBox* Selected;
             wxTextCtrl* Label;
-            wxStaticBoxSizer* StaticBoxSizer1;
             wxFlexGridSizer* FlexGridSizer1;
+            wxCheckBox* Selected;
+            wxStaticBoxSizer* StaticBoxSizer1;
             //*)
 
             wxsAuiNotebookExtra* m_Extra;

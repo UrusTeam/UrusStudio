@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10923 $
+ * $Id: addtododlg.cpp 10923 2016-11-26 07:39:14Z ollydbg $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/todo/addtododlg.cpp $
  */
 
 #include "sdk.h"

@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 8948 $
+ * $Id: blockallocated.cpp 8948 2013-04-06 17:15:49Z alpha0010 $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/blockallocated.cpp $
  */
 
 #include "sdk_precomp.h"

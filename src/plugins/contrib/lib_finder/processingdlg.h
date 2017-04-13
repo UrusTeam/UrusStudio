@@ -16,9 +16,9 @@
 * along with wxSmith; if not, write to the Free Software
 * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 10299 $
+* $Id: processingdlg.h 10299 2015-05-15 12:41:59Z jenslody $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/lib_finder/processingdlg.h $
 */
 
 #ifndef PROCESSINGDLG_H
@@ -35,11 +35,11 @@
 
 //(*Headers(ProcessingDlg)
 #include "scrollingdialog.h"
-class wxGauge;
-class wxStaticText;
-class wxFlexGridSizer;
-class wxButton;
 class wxStaticBoxSizer;
+class wxFlexGridSizer;
+class wxGauge;
+class wxButton;
+class wxStaticText;
 //*)
 
 #include "librarydetectionconfig.h"
@@ -78,11 +78,11 @@ class ProcessingDlg: public wxScrollingDialog
 		//*)
 
 		//(*Declarations(ProcessingDlg)
+		wxFlexGridSizer* FlexGridSizer1;
 		wxStaticText* Status;
 		wxButton* StopBtn;
 		wxGauge* Gauge1;
 		wxStaticBoxSizer* StaticBoxSizer1;
-		wxFlexGridSizer* FlexGridSizer1;
 		//*)
 
 	private:

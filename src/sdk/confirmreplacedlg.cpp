@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 7294 $
+ * $Id: confirmreplacedlg.cpp 7294 2011-07-26 12:52:57Z tpetrov $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/confirmreplacedlg.cpp $
  */
 
 #include "sdk_precomp.h"

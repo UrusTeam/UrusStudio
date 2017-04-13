@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10777 $
+ * $Id: findreplacedlg.cpp 10777 2016-02-07 11:15:55Z jenslody $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/findreplacedlg.cpp $
  */
 
 #include "sdk_precomp.h"

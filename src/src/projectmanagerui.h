@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10807 $
+ * $Id: projectmanagerui.h 10807 2016-03-11 09:12:14Z fuscated $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/projectmanagerui.h $
  */
 
 #include "projectmanager.h"

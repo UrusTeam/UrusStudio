@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10898 $
+ * $Id: macrosmanager.cpp 10898 2016-09-05 17:41:21Z pecanh $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/macrosmanager.cpp $
  */
 
 #include "sdk_precomp.h"

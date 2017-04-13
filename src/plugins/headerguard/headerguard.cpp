@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10086 $
+ * $Id: headerguard.cpp 10086 2015-01-26 16:21:56Z thomas-denk $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/headerguard/headerguard.cpp $
  */
 
 #include "sdk.h"

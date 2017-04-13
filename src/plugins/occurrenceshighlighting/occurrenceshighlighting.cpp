@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 9597 $
+ * $Id: occurrenceshighlighting.cpp 9597 2014-01-22 22:11:10Z fuscated $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/occurrenceshighlighting/occurrenceshighlighting.cpp $
  */
 
 #include <sdk.h> // Code::Blocks SDK

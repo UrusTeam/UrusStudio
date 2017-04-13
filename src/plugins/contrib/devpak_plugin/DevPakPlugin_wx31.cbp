@@ -8,10 +8,10 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="libbz2">
-				<Option output="bzip2/libbz2.a" prefix_auto="0" extension_auto="0" />
-				<Option working_dir="" />
+				<Option output="bzip2/bz2.dll" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="bzip2" />
 				<Option object_output="../../../.objs31/plugins/contrib/devpak_plugin" />
-				<Option type="2" />
+				<Option type="3" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-mthreads" />
@@ -55,7 +55,7 @@
 				</ExtraCommands>
 			</Target>
 			<Environment>
-				<Variable name="WX_CFG" value="" />
+				<Variable name="WX_CFG" value="URUS" />
 				<Variable name="WX_SUFFIX" value="u" />
 				<Variable name="WX_VERSION" value="31" />
 			</Environment>
@@ -65,19 +65,21 @@
 		</VirtualTargets>
 		<Compiler>
 			<Add option="-std=gnu++11" />
-			<Add directory="bzip2" />
 			<Add directory="$(#WX31.include)" />
-			<Add directory="$(#WX31.lib)/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
+			<Add directory="$(#WX31.lib)/$(WX_CFG)_dll/msw$(WX_SUFFIX)" />
+			<Add directory="bzip2" />
+			<Add directory="../../../devel31" />
 		</Compiler>
 		<ResourceCompiler>
 			<Add directory="$(#WX31.include)" />
 		</ResourceCompiler>
 		<Linker>
 			<Add option="-Wl,--enable-auto-import" />
-			<Add library="codeblocks" />
 			<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+			<Add library="codeblocks" />
+			<Add directory="$(#WX31.lib)/$(WX_CFG)_dll" />
 			<Add directory="bzip2" />
-			<Add directory="$(#WX31.lib)/gcc_dll$(WX_CFG)" />
+			<Add directory="../../../devel31" />
 		</Linker>
 		<Unit filename="bzip2/blocksort.c">
 			<Option compilerVar="CC" />

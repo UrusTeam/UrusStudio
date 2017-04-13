@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 7746 $
+ * $Id: help_common.cpp 7746 2012-01-31 12:09:18Z jenslody $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/help_plugin/help_common.cpp $
  */
 
 #include <algorithm>

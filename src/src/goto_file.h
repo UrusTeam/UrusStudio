@@ -4,10 +4,10 @@
 #ifndef WX_PRECOMP
     //(*HeadersPCH(GotoFile)
     #include <wx/dialog.h>
-    class wxTextCtrl;
-    class wxStaticText;
-    class wxListCtrl;
     class wxBoxSizer;
+    class wxListCtrl;
+    class wxStaticText;
+    class wxTextCtrl;
     //*)
 #endif
 //(*Headers(GotoFile)
@@ -33,9 +33,9 @@ class GotoFile: public wxDialog
     private:
 
         //(*Declarations(GotoFile)
+        IncrementalListCtrl* m_ResultList;
         wxBoxSizer* m_sizer;
         wxTextCtrl* m_Text;
-        IncrementalListCtrl* m_ResultList;
         //*)
 
         //(*Identifiers(GotoFile)

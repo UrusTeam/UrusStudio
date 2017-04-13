@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10952 $
+ * $Id: projectoptionsdlg.cpp 10952 2016-12-29 06:34:04Z mortenmacfly $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/projectoptionsdlg.cpp $
  */
 
 #include "sdk.h"

@@ -28,13 +28,13 @@
 					<Add option="-DNOPCH" />
 					<Add option="-DwxUSE_UNICODE" />
 					<Add directory="$(#WX31.include)" />
-					<Add directory="$(#WX31.lib)/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
+					<Add directory="$(#WX31.lib)/$(WX_CFG)_dll/msw$(WX_SUFFIX)" />
 					<Add directory="../../../include" />
 					<Add directory="../../../include/tinyxml" />
 					<Add directory="../../../sdk/wxscintilla/include" />
 				</Compiler>
 				<Linker>
-					<Add directory="$(#WX31.lib)/gcc_dll$(WX_CFG)" />
+					<Add directory="$(#WX31.lib)/$(WX_CFG)_dll" />
 					<Add directory="../../../devel31" />
 				</Linker>
 				<ExtraCommands>
@@ -43,7 +43,7 @@
 				</ExtraCommands>
 			</Target>
 			<Environment>
-				<Variable name="WX_CFG" value="" />
+				<Variable name="WX_CFG" value="URUS" />
 				<Variable name="WX_SUFFIX" value="u" />
 				<Variable name="WX_VERSION" value="31" />
 			</Environment>
@@ -59,6 +59,7 @@
 			<Add option="-mthreads" />
 			<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 			<Add library="codeblocks" />
+			<Add library="wxscintilla_cb" />
 		</Linker>
 		<Unit filename="bindings.cpp" />
 		<Unit filename="bindings.h" />

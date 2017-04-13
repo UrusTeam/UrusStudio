@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 9818 $
+ * $Id: startherepage.cpp 9818 2014-06-20 05:26:04Z mortenmacfly $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/startherepage.cpp $
  */
 
 #include <sdk.h>

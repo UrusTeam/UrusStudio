@@ -15,9 +15,9 @@
 * You should have received a copy of the GNU General Public License
 * along with HexEditor. If not, see <http://www.gnu.org/licenses/>.
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 7109 $
+* $Id: HexEditViewBase.h 7109 2011-04-15 11:53:16Z mortenmacfly $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/HexEditor/HexEditViewBase.h $
 */
 
 #ifndef HEXEDITVIEWBASE_H

@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10104 $
+ * $Id: personalitymanager.cpp 10104 2015-02-08 00:49:58Z jenslody $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/personalitymanager.cpp $
  */
 
 #include "sdk_precomp.h"

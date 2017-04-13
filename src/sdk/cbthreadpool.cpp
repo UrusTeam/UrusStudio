@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10605 $
+ * $Id: cbthreadpool.cpp 10605 2015-12-05 15:07:00Z ollydbg $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/cbthreadpool.cpp $
  */
 
 #include "sdk_precomp.h"

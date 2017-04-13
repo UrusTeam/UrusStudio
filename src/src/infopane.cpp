@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 9426 $
+ * $Id: infopane.cpp 9426 2013-11-02 19:42:20Z alpha0010 $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/infopane.cpp $
  */
 
 #include <sdk.h>

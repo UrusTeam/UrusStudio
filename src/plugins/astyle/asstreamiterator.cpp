@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 9995 $
+ * $Id: asstreamiterator.cpp 9995 2014-10-16 09:01:46Z mortenmacfly $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/astyle/asstreamiterator.cpp $
  */
 
 #include "asstreamiterator.h"

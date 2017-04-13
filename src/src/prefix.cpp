@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 5613 $
+ * $Id: prefix.cpp 5613 2009-05-30 16:45:25Z killerbot $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/prefix.cpp $
  */
 
 /*

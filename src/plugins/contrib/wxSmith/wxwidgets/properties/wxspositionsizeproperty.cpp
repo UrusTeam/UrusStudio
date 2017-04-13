@@ -15,9 +15,9 @@
 * You should have received a copy of the GNU General Public License
 * along with wxSmith. If not, see <http://www.gnu.org/licenses/>.
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 10682 $
+* $Id: wxspositionsizeproperty.cpp 10682 2016-01-22 10:46:00Z mortenmacfly $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/properties/wxspositionsizeproperty.cpp $
 */
 
 #include "wxspositionsizeproperty.h"

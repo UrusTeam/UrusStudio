@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10871 $
+ * $Id: compiler.cpp 10871 2016-06-29 22:24:47Z fuscated $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/compiler.cpp $
  */
 
 #include "sdk_precomp.h"

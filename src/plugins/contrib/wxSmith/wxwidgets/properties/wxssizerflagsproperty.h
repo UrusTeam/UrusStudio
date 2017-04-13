@@ -15,9 +15,9 @@
 * You should have received a copy of the GNU General Public License
 * along with wxSmith. If not, see <http://www.gnu.org/licenses/>.
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 10431 $
+* $Id: wxssizerflagsproperty.h 10431 2015-08-29 08:47:48Z jenslody $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/properties/wxssizerflagsproperty.h $
 */
 
 #ifndef WXSSIZERFLAGSPROPERTY_H

@@ -16,9 +16,9 @@
 * along with wxSmith; if not, write to the Free Software
 * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 10832 $
+* $Id: processingdlg.cpp 10832 2016-04-17 21:31:19Z jenslody $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/lib_finder/processingdlg.cpp $
 */
 
 #include "processingdlg.h"
@@ -31,12 +31,12 @@
 #include <prep.h>
 
 //(*InternalHeaders(ProcessingDlg)
+#include <wx/gauge.h>
 #include <wx/sizer.h>
-#include <wx/stattext.h>
-#include <wx/intl.h>
 #include <wx/button.h>
 #include <wx/string.h>
-#include <wx/gauge.h>
+#include <wx/intl.h>
+#include <wx/stattext.h>
 //*)
 
 #include "librarydetectionmanager.h"
