@@ -18,7 +18,7 @@
 *
 * $Revision: 10290 $
 * $Id: libselectdlg.cpp 10290 2015-05-15 10:58:40Z jenslody $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/lib_finder/libselectdlg.cpp $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/lib_finder/libselectdlg.cpp $
 */
 
 #include "libselectdlg.h"

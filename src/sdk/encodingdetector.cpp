@@ -4,7 +4,7 @@
  *
  * $Revision: 10735 $
  * $Id: encodingdetector.cpp 10735 2016-01-28 15:53:57Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/encodingdetector.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/encodingdetector.cpp $
  */
 
 #include "sdk_precomp.h"

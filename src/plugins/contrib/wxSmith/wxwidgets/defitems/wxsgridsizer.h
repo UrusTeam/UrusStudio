@@ -17,7 +17,7 @@
 *
 * $Revision: 7109 $
 * $Id: wxsgridsizer.h 7109 2011-04-15 11:53:16Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxsgridsizer.h $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxsgridsizer.h $
 */
 
 #ifndef WXSGRIDSIZER_H

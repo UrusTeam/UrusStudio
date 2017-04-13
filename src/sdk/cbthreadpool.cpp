@@ -4,7 +4,7 @@
  *
  * $Revision: 10605 $
  * $Id: cbthreadpool.cpp 10605 2015-12-05 15:07:00Z ollydbg $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/cbthreadpool.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/cbthreadpool.cpp $
  */
 
 #include "sdk_precomp.h"

@@ -17,7 +17,7 @@
 *
 * $Revision: 10681 $
 * $Id: wxsbitmapiconeditordlg.h 10681 2016-01-22 10:45:30Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/properties/wxsbitmapiconeditordlg.h $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/properties/wxsbitmapiconeditordlg.h $
 */
 
 #ifndef WXSBITMAPICONEDITORDLG_H

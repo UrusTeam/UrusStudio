@@ -4,7 +4,7 @@
  *
  * $Revision: 10898 $
  * $Id: macrosmanager.cpp 10898 2016-09-05 17:41:21Z pecanh $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/macrosmanager.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/macrosmanager.cpp $
  */
 
 #include "sdk_precomp.h"

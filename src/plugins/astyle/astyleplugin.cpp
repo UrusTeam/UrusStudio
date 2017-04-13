@@ -4,7 +4,7 @@
  *
  * $Revision: 10889 $
  * $Id: astyleplugin.cpp 10889 2016-07-21 11:26:13Z jenslody $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/astyle/astyleplugin.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/astyle/astyleplugin.cpp $
  */
 
 #include <sdk.h>

@@ -4,7 +4,7 @@
  *
  * $Revision: 10589 $
  * $Id: compilercommandgenerator.cpp 10589 2015-11-15 19:21:12Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/compilercommandgenerator.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/compilercommandgenerator.cpp $
  */
 
 #include "sdk_precomp.h"

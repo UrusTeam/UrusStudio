@@ -4,7 +4,7 @@
  *
  * $Revision: 8541 $
  * $Id: ccoptionsprjdlg.cpp 8541 2012-11-10 18:37:28Z thomasdenk $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/codecompletion/ccoptionsprjdlg.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/codecompletion/ccoptionsprjdlg.cpp $
  */
 
 #include <sdk.h>

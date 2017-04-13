@@ -4,7 +4,7 @@
  *
  * $Revision: 10922 $
  * $Id: autorevision.cpp 10922 2016-11-17 11:48:57Z thomas-denk $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/build_tools/autorevision/autorevision.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/build_tools/autorevision/autorevision.cpp $
  */
 
 #include <stdio.h>

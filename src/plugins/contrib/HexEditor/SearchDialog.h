@@ -17,7 +17,7 @@
 *
 * $Revision: 10288 $
 * $Id: SearchDialog.h 10288 2015-05-15 10:58:29Z jenslody $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/HexEditor/SearchDialog.h $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/HexEditor/SearchDialog.h $
 */
 
 #ifndef SEARCHDIALOG_H

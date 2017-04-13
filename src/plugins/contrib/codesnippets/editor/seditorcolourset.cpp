@@ -4,7 +4,7 @@
  *
  * $Revision: 8202 $
  * $Id: seditorcolourset.cpp 8202 2012-08-07 07:18:10Z ollydbg $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/codesnippets/editor/seditorcolourset.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/codesnippets/editor/seditorcolourset.cpp $
  */
 
 // Stop following warning:

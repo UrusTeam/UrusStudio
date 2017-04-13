@@ -17,7 +17,7 @@
 *
 * $Revision: 10839 $
 * $Id: HexEditPanel.cpp 10839 2016-05-04 23:00:36Z fuscated $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/HexEditor/HexEditPanel.cpp $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/HexEditor/HexEditPanel.cpp $
 */
 #include <sdk.h>
 

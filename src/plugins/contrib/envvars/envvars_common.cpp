@@ -4,7 +4,7 @@
  *
  * $Revision: 10771 $
  * $Id: envvars_common.cpp 10771 2016-02-06 14:29:31Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/envvars/envvars_common.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/envvars/envvars_common.cpp $
  */
 
 // ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----

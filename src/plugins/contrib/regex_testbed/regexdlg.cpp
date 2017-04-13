@@ -4,7 +4,7 @@
  *
  * $Revision: 10293 $
  * $Id: regexdlg.cpp 10293 2015-05-15 10:58:52Z jenslody $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/regex_testbed/regexdlg.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/regex_testbed/regexdlg.cpp $
  */
 
 #include <sdk.h>

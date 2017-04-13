@@ -4,7 +4,7 @@
  *
  * $Revision: 10900 $
  * $Id: parserthread.cpp 10900 2016-09-09 21:18:40Z ollydbg $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/codecompletion/parser/parserthread.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/codecompletion/parser/parserthread.cpp $
  */
 
 #include <sdk.h>

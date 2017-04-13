@@ -4,7 +4,7 @@
  *
  * $Revision: 10999 $
  * $Id: cclogger.cpp 10999 2017-02-06 19:12:25Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/codecompletion/parser/cclogger.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/codecompletion/parser/cclogger.cpp $
  */
 
 #include "cclogger.h"

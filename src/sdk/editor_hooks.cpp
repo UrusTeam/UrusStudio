@@ -4,7 +4,7 @@
  *
  * $Revision: 9753 $
  * $Id: editor_hooks.cpp 9753 2014-04-15 05:12:55Z ollydbg $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/editor_hooks.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/editor_hooks.cpp $
  */
 
 #include "sdk_precomp.h"

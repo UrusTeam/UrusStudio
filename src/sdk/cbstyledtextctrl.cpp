@@ -4,7 +4,7 @@
  *
  * $Revision: 10638 $
  * $Id: cbstyledtextctrl.cpp 10638 2016-01-03 04:15:55Z alpha0010 $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/cbstyledtextctrl.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/cbstyledtextctrl.cpp $
  */
 
 #include "sdk_precomp.h"

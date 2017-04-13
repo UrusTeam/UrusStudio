@@ -17,7 +17,7 @@
 *
 * $Revision: 10610 $
 * $Id: wxsAxis.h 10610 2015-12-07 05:32:34Z jenslody $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmithContribItems/wxSmithPlot/wxsAxis.h $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmithContribItems/wxSmithPlot/wxsAxis.h $
 */
 
 #ifndef WXSSTATICTEXT1_H

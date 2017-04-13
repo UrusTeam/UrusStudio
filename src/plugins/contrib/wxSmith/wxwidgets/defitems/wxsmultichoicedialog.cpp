@@ -18,7 +18,7 @@
 *
 * $Revision: 8704 $
 * $Id: wxsmultichoicedialog.cpp 8704 2012-12-23 20:32:03Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxsmultichoicedialog.cpp $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxsmultichoicedialog.cpp $
 */
 
 #include "wxsmultichoicedialog.h"

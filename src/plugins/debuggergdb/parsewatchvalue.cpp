@@ -4,7 +4,7 @@
  *
  * $Revision: 10745 $
  * $Id: parsewatchvalue.cpp 10745 2016-01-28 22:40:39Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/debuggergdb/parsewatchvalue.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/debuggergdb/parsewatchvalue.cpp $
  */
 
 #include <sdk.h>

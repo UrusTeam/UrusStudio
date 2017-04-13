@@ -4,7 +4,7 @@
  *
  * $Revision: 8705 $
  * $Id: fileanalysis.cpp 8705 2012-12-23 20:42:29Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/headerfixup/fileanalysis.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/headerfixup/fileanalysis.cpp $
  */
 
 #include <sdk.h>

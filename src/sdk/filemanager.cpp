@@ -4,7 +4,7 @@
  *
  * $Revision: 11013 $
  * $Id: filemanager.cpp 11013 2017-02-21 17:41:17Z alpha0010 $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/filemanager.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/filemanager.cpp $
  */
 
 #include "sdk_precomp.h"

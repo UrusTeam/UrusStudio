@@ -4,7 +4,7 @@
  *
  * $Revision: 10920 $
  * $Id: cdb_driver.cpp 10920 2016-11-09 18:32:43Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/debuggergdb/cdb_driver.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/debuggergdb/cdb_driver.cpp $
  */
 
 #include <sdk.h>

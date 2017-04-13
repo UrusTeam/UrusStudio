@@ -4,7 +4,7 @@
  *
  * $Revision: 9263 $
  * $Id: compilerKeilC51.cpp 9263 2013-08-17 09:20:28Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/compilergcc/compilerKeilC51.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/compilergcc/compilerKeilC51.cpp $
  */
 
 #include <sdk.h>

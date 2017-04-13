@@ -4,7 +4,7 @@
  *
  * $Revision: 9543 $
  * $Id: classwizard.cpp 9543 2014-01-07 08:12:54Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/classwizard/classwizard.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/classwizard/classwizard.cpp $
  */
 
 #include "sdk.h"

@@ -4,7 +4,7 @@
  *
  * $Revision: 10050 $
  * $Id: loggers.cpp 10050 2014-12-06 17:42:06Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/loggers.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/loggers.cpp $
  */
 
 #include "sdk_precomp.h"

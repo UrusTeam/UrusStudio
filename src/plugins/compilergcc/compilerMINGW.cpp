@@ -4,7 +4,7 @@
  *
  * $Revision: 10770 $
  * $Id: compilerMINGW.cpp 10770 2016-02-06 14:27:56Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/compilergcc/compilerMINGW.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/compilergcc/compilerMINGW.cpp $
  */
 
 #include <sdk.h>

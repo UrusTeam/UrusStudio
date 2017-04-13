@@ -4,7 +4,7 @@
  *
  * $Revision: 11017 $
  * $Id: compilergcc.cpp 11017 2017-02-21 23:52:12Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/compilergcc/compilergcc.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/compilergcc/compilergcc.cpp $
  */
 
 #include <sdk.h>

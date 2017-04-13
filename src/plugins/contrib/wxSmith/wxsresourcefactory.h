@@ -17,7 +17,7 @@
 *
 * $Revision: 8574 $
 * $Id: wxsresourcefactory.h 8574 2012-11-18 15:59:14Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxsresourcefactory.h $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxsresourcefactory.h $
 */
 
 #ifndef WXSRESOURCEFACTORY_H

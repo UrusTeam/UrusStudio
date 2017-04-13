@@ -4,7 +4,7 @@
  *
  * $Revision: 11027 $
  * $Id: codecompletion.cpp 11027 2017-03-12 18:11:09Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/codecompletion/codecompletion.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/codecompletion/codecompletion.cpp $
  */
 
 #include <sdk.h>

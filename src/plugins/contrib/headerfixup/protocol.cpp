@@ -4,7 +4,7 @@
  *
  * $Revision: 10286 $
  * $Id: protocol.cpp 10286 2015-05-15 10:58:20Z jenslody $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/headerfixup/protocol.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/headerfixup/protocol.cpp $
  */
 
 #include "protocol.h"

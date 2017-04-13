@@ -4,7 +4,7 @@
  *
  * $Revision: 10636 $
  * $Id: infowindow.cpp 10636 2015-12-29 16:30:40Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/infowindow.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/infowindow.cpp $
  */
 
 #include "sdk_precomp.h"

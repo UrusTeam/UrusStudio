@@ -4,7 +4,7 @@
  *
  * $Revision: 10086 $
  * $Id: headerguard.cpp 10086 2015-01-26 16:21:56Z thomas-denk $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/headerguard/headerguard.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/headerguard/headerguard.cpp $
  */
 
 #include "sdk.h"

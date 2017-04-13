@@ -7,7 +7,6 @@
 		<Build>
 			<Target title="default">
 				<Option output="../../../devel30/share/CodeBlocks/plugins/ThreadSearch.dll" prefix_auto="0" extension_auto="0" />
-				<Option working_dir="../../../devel30" />
 				<Option object_output="../../../.objs30/plugins/contrib/ThreadSearch" />
 				<Option external_deps="../../../devel30/wxcustombutton.dll;" />
 				<Option type="3" />
@@ -19,18 +18,17 @@
 					<Add option="$(#CB_RELEASE_TYPE)" />
 				</Compiler>
 				<Linker>
-					<Add library="../../../devel30/codeblocks.dll" />
+					<Add library="codeblocks" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-					<Add library="../../../devel30/wxcustombutton.dll" />
-					<Add library="../../../devel30/wxscintilla_cb.dll" />
+					<Add library="wxcustombutton" />
 					<Add directory="../../../devel30" />
-					<Add directory="../../../$(#WX30.lib)/$(WX_CFG)_dll" />
+					<Add directory="$(#WX30.lib)/gcc_dll$(WX_CFG)" />
 				</Linker>
 			</Target>
 			<Environment>
-				<Variable name="WX_CFG" value="URUS" />
+				<Variable name="WX_CFG" value="" />
 				<Variable name="WX_SUFFIX" value="u" />
-				<Variable name="WX_VERSION" value="31" />
+				<Variable name="WX_VERSION" value="30" />
 			</Environment>
 		</Build>
 		<VirtualTargets>
@@ -42,7 +40,6 @@
 			<Add option="-mthreads" />
 			<Add option="-fmessage-length=0" />
 			<Add option="-fexceptions" />
-			<Add option="-std=gnu++11" />
 			<Add option="-DWXUSINGDLL" />
 			<Add option="-DHAVE_W32API_H" />
 			<Add option="-D__WXMSW__" />
@@ -51,6 +48,7 @@
 			<Add option="-DwxUSE_UNICODE" />
 			<Add option="-DBUILDING_PLUGIN" />
 			<Add option="-DNO_LOGGING" />
+			<Add option="-std=gnu++11" />
 			<Add directory="../../../include" />
 			<Add directory="../../../include/tinyxml" />
 			<Add directory="../../../sdk/wxscintilla/include" />
@@ -60,8 +58,8 @@
 			<Add directory="../../../include/mozilla_chardet/xpcom" />
 			<Add directory="../../../include/mozilla_chardet/xpcom/base" />
 			<Add directory="../../../include/mozilla_chardet/xpcom/glue" />
-			<Add directory="../../../$(#WX30.include)" />
-			<Add directory="../../../$(#WX30.lib)/$(WX_CFG)_dll/msw$(WX_SUFFIX)" />
+			<Add directory="$(#WX30.include)" />
+			<Add directory="$(#WX30.lib)/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
 			<Add directory="../wxContribItems/wxthings/include" />
 		</Compiler>
 		<Linker>

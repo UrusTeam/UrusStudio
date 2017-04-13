@@ -4,7 +4,7 @@
  *
  * $Revision: 10854 $
  * $Id: editormanager.cpp 10854 2016-05-18 22:20:45Z d_anselmi $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/editormanager.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/editormanager.cpp $
  */
 
 #include "sdk_precomp.h"

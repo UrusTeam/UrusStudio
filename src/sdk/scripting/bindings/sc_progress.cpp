@@ -4,7 +4,7 @@
  *
  * $Revision: 9426 $
  * $Id: sc_progress.cpp 9426 2013-11-02 19:42:20Z alpha0010 $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/scripting/bindings/sc_progress.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/scripting/bindings/sc_progress.cpp $
  */
 
 #include <sdk_precomp.h>

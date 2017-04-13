@@ -17,7 +17,7 @@
 *
 * $Revision: 10688 $
 * $Id: wxsdialogres.cpp 10688 2016-01-22 12:24:56Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/wxsdialogres.cpp $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/wxsdialogres.cpp $
 */
 
 #include "wxsdialogres.h"

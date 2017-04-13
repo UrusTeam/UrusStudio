@@ -4,7 +4,7 @@
  *
  * $Revision: 10145 $
  * $Id: doxygen_parser.cpp 10145 2015-03-10 02:54:16Z ollydbg $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/codecompletion/doxygen_parser.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/codecompletion/doxygen_parser.cpp $
  */
 
 #include <sdk.h>

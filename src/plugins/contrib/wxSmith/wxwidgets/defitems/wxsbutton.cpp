@@ -17,7 +17,7 @@
 *
 * $Revision: 8704 $
 * $Id: wxsbutton.cpp 8704 2012-12-23 20:32:03Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxsbutton.cpp $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxsbutton.cpp $
 */
 
 #include "wxsbutton.h"

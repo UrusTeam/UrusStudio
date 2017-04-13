@@ -4,7 +4,7 @@
  *
  * $Revision: 10268 $
  * $Id: EmbeddedHtmlPanel.cpp 10268 2015-05-15 10:56:55Z jenslody $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/defaultmimehandler/EmbeddedHtmlPanel.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/defaultmimehandler/EmbeddedHtmlPanel.cpp $
  */
 
 #include "sdk.h"
@@ -12,18 +12,18 @@
 
 #ifndef CB_PRECOMP
     //(*InternalHeadersPCH(EmbeddedHtmlPanel)
-    #include <wx/sizer.h>
-    #include <wx/stattext.h>
     #include <wx/bmpbuttn.h>
-    #include <wx/intl.h>
+    #include <wx/sizer.h>
     #include <wx/string.h>
+    #include <wx/intl.h>
+    #include <wx/stattext.h>
     //*)
 #endif
 //(*InternalHeaders(EmbeddedHtmlPanel)
-#include <wx/artprov.h>
 #include <wx/bitmap.h>
 #include <wx/image.h>
 #include <wx/html/htmlwin.h>
+#include <wx/artprov.h>
 //*)
 
 //(*IdInit(EmbeddedHtmlPanel)

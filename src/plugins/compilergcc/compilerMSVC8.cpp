@@ -4,7 +4,7 @@
  *
  * $Revision: 8649 $
  * $Id: compilerMSVC8.cpp 8649 2012-12-12 19:18:18Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/compilergcc/compilerMSVC8.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/compilergcc/compilerMSVC8.cpp $
  */
 
 #include <sdk.h>

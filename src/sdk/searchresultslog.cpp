@@ -4,7 +4,7 @@
  *
  * $Revision: 9203 $
  * $Id: searchresultslog.cpp 9203 2013-07-08 23:07:22Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/searchresultslog.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/searchresultslog.cpp $
  */
 
 #include "sdk_precomp.h"

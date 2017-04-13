@@ -4,7 +4,7 @@
  *
  * $Revision: 9818 $
  * $Id: startherepage.cpp 9818 2014-06-20 05:26:04Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/src/startherepage.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/startherepage.cpp $
  */
 
 #include <sdk.h>

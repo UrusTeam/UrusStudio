@@ -17,7 +17,7 @@
 *
 * $Revision: 10874 $
 * $Id: wxsevents.h 10874 2016-07-16 20:00:28Z jenslody $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/wxsevents.h $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/wxsevents.h $
 */
 
 #ifndef WXSEVENTS_H

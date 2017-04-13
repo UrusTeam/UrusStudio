@@ -17,7 +17,7 @@
 *
 * $Revision: 10682 $
 * $Id: wxsbitmapiconproperty.cpp 10682 2016-01-22 10:46:00Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/properties/wxsbitmapiconproperty.cpp $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/properties/wxsbitmapiconproperty.cpp $
 */
 
 #include "wxsbitmapiconproperty.h"

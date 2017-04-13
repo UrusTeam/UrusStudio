@@ -4,7 +4,7 @@
  *
  * $Revision: 10539 $
  * $Id: backtracedlg.cpp 10539 2015-10-19 21:59:44Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/src/backtracedlg.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/backtracedlg.cpp $
  */
 #include "sdk.h"
 

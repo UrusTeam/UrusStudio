@@ -17,7 +17,7 @@
 *
 * $Revision: 10686 $
 * $Id: wxscodinglang.h 10686 2016-01-22 10:53:43Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxscodinglang.h $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxscodinglang.h $
 */
 
 #ifndef WXSCODINGLANG_H

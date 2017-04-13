@@ -17,7 +17,7 @@
 *
 * $Revision: 9041 $
 * $Id: wxsbitmapbutton.cpp 9041 2013-05-04 04:20:43Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxsbitmapbutton.cpp $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxsbitmapbutton.cpp $
 */
 
 #include <wx/bmpbuttn.h>

@@ -4,15 +4,15 @@
  *
  * $Revision: 10548 $
  * $Id: compilerpanel.cpp 10548 2015-10-25 11:37:05Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/scriptedwizard/compilerpanel.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/scriptedwizard/compilerpanel.cpp $
  */
 
 #include "sdk.h"
 #ifndef CB_PRECOMP
 #include <wx/event.h>
 //(*InternalHeadersPCH(CompilerPanel)
-#include <wx/intl.h>
 #include <wx/string.h>
+#include <wx/intl.h>
 //*)
 #include "globals.h"
 #endif
@@ -45,16 +45,16 @@ CompilerPanel::CompilerPanel(wxWindow* parent, wxWindow* parentDialog) :
     m_parentDialog(parentDialog)
 {
 	//(*Initialize(CompilerPanel)
-	wxStaticText* StaticText2;
-	wxStaticText* StaticText8;
+	wxFlexGridSizer* FlexGridSizer1;
 	wxFlexGridSizer* FlexGridSizer2;
+	wxBoxSizer* BoxSizer3;
 	wxBoxSizer* BoxSizer2;
 	wxStaticText* StaticText3;
+	wxStaticText* StaticText8;
 	wxStaticText* StaticText7;
-	wxBoxSizer* BoxSizer1;
-	wxFlexGridSizer* FlexGridSizer1;
-	wxBoxSizer* BoxSizer3;
 	wxStaticText* StaticText4;
+	wxBoxSizer* BoxSizer1;
+	wxStaticText* StaticText2;
 
 	Create(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("wxID_ANY"));
 	BoxSizer1 = new wxBoxSizer(wxVERTICAL);

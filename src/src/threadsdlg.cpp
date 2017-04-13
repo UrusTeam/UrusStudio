@@ -4,7 +4,7 @@
  *
  * $Revision: 10024 $
  * $Id: threadsdlg.cpp 10024 2014-11-06 09:23:26Z jenslody $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/src/threadsdlg.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/threadsdlg.cpp $
  */
 
 #include "sdk.h"

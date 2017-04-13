@@ -4,7 +4,7 @@
  *
  * $Revision: 10677 $
  * $Id: breakpointsdlg.cpp 10677 2016-01-22 05:38:20Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/src/breakpointsdlg.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/breakpointsdlg.cpp $
  */
 
 #include "sdk.h"

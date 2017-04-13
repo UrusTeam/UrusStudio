@@ -17,7 +17,7 @@
 *
 * $Revision: 10392 $
 * $Id: wxssizer.h 10392 2015-08-15 08:49:17Z jenslody $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/wxssizer.h $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/wxssizer.h $
 */
 
 #ifndef WXSSIZER_H

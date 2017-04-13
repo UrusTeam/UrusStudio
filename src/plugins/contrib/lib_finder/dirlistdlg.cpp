@@ -18,7 +18,7 @@
 *
 * $Revision: 10290 $
 * $Id: dirlistdlg.cpp 10290 2015-05-15 10:58:40Z jenslody $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/lib_finder/dirlistdlg.cpp $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/lib_finder/dirlistdlg.cpp $
 */
 
 #include "dirlistdlg.h"
@@ -32,10 +32,10 @@
 
 //(*InternalHeaders(DirListDlg)
 #include <wx/sizer.h>
-#include <wx/textctrl.h>
-#include <wx/intl.h>
 #include <wx/button.h>
 #include <wx/string.h>
+#include <wx/intl.h>
+#include <wx/textctrl.h>
 //*)
 
 //(*IdInit(DirListDlg)

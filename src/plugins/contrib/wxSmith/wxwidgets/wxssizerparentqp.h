@@ -17,7 +17,7 @@
 *
 * $Revision: 10684 $
 * $Id: wxssizerparentqp.h 10684 2016-01-22 10:49:37Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/wxssizerparentqp.h $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/wxssizerparentqp.h $
 */
 
 #ifndef WXSSIZERPARENTQP_H

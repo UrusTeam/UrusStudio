@@ -4,7 +4,7 @@
  *
  * $Revision: 11004 $
  * $Id: dlgabout.cpp 11004 2017-02-07 23:35:46Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/src/dlgabout.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/dlgabout.cpp $
  */
 
 #include "sdk.h"

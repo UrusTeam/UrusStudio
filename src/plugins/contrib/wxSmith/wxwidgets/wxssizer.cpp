@@ -17,7 +17,7 @@
 *
 * $Revision: 10868 $
 * $Id: wxssizer.cpp 10868 2016-06-14 05:41:59Z jenslody $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/wxssizer.cpp $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/wxssizer.cpp $
 */
 
 #include "wxssizer.h"

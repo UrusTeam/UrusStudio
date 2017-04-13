@@ -4,15 +4,15 @@
  *
  * $Revision: 10270 $
  * $Id: filepathpanel.cpp 10270 2015-05-15 10:57:08Z jenslody $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/scriptedwizard/filepathpanel.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/scriptedwizard/filepathpanel.cpp $
  */
 
 #include <sdk.h>
 #ifndef CB_PRECOMP
     #include <wx/filedlg.h>
     //(*InternalHeadersPCH(FilePathPanel)
-    #include <wx/intl.h>
     #include <wx/string.h>
+    #include <wx/intl.h>
     //*)
     #include <cbproject.h>
     #include <projectbuildtarget.h>
@@ -45,10 +45,10 @@ FilePathPanel::FilePathPanel(wxWindow* parent,wxWindowID id) :
     m_Selection(-1)
 {
 	//(*Initialize(FilePathPanel)
-	wxStaticText* StaticText2;
 	wxStaticText* StaticText1;
-	wxBoxSizer* BoxSizer1;
 	wxStaticText* StaticText4;
+	wxBoxSizer* BoxSizer1;
+	wxStaticText* StaticText2;
 
 	Create(parent, id, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("id"));
 	BoxSizer1 = new wxBoxSizer(wxVERTICAL);

@@ -17,7 +17,7 @@
 *
 * $Revision: 10688 $
 * $Id: wxstimer.cpp 10688 2016-01-22 12:24:56Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxstimer.cpp $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxstimer.cpp $
 */
 
 #include "wxstimer.h"

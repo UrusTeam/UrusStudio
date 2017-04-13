@@ -4,7 +4,7 @@
  *
  * $Revision: 10907 $
  * $Id: app.cpp 10907 2016-09-25 16:09:48Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/src/app.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/app.cpp $
  */
 
 #include <sdk.h>
@@ -456,7 +456,7 @@ void CodeBlocksApp::InitDebugConsole()
 void CodeBlocksApp::InitExceptionHandler()
 {
 #ifdef __WXMSW__
-    extern void ExcHndlInit(void);
+    ExcHndlInit();
 #endif
 }
 

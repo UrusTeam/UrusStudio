@@ -4,7 +4,7 @@
  *
  * $Revision: 10635 $
  * $Id: cbtreectrl.cpp 10635 2015-12-29 16:30:36Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/cbtreectrl.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/cbtreectrl.cpp $
  */
 
 #include "sdk_precomp.h"

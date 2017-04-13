@@ -4,7 +4,7 @@
  *
  * $Revision: 8543 $
  * $Id: debuggerstate.cpp 8543 2012-11-10 22:36:18Z thomasdenk $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/debuggergdb/debuggerstate.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/debuggergdb/debuggerstate.cpp $
  */
 
 #include <sdk.h>

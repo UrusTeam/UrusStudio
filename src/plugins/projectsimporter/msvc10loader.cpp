@@ -4,7 +4,7 @@
  *
  * $Revision: 10874 $
  * $Id: msvc10loader.cpp 10874 2016-07-16 20:00:28Z jenslody $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/projectsimporter/msvc10loader.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/projectsimporter/msvc10loader.cpp $
  */
 
 #include "sdk.h"

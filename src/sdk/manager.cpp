@@ -4,7 +4,7 @@
  *
  * $Revision: 10600 $
  * $Id: manager.cpp 10600 2015-11-23 10:20:14Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/manager.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/manager.cpp $
  */
 
 #include "sdk_precomp.h"

@@ -18,7 +18,7 @@
 *
 * $Revision: 10290 $
 * $Id: dirlistdlg.h 10290 2015-05-15 10:58:40Z jenslody $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/lib_finder/dirlistdlg.h $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/lib_finder/dirlistdlg.h $
 */
 
 #ifndef DIRLISTDLG_H
@@ -32,10 +32,10 @@
 //(*Headers(DirListDlg)
 #include "scrollingdialog.h"
 class wxTextCtrl;
-class wxFlexGridSizer;
-class wxBoxSizer;
-class wxButton;
 class wxStaticBoxSizer;
+class wxFlexGridSizer;
+class wxButton;
+class wxBoxSizer;
 //*)
 
 
@@ -53,12 +53,12 @@ class DirListDlg: public wxScrollingDialog
 	private:
 
         //(*Declarations(DirListDlg)
+        wxFlexGridSizer* FlexGridSizer1;
         wxButton* Button4;
-        wxBoxSizer* BoxSizer2;
         wxButton* Button3;
         wxTextCtrl* DirList;
+        wxBoxSizer* BoxSizer2;
         wxBoxSizer* BoxSizer1;
-        wxFlexGridSizer* FlexGridSizer1;
         //*)
 
 		//(*Handlers(DirListDlg)

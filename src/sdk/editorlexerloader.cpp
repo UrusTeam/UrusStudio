@@ -4,7 +4,7 @@
  *
  * $Revision: 10769 $
  * $Id: editorlexerloader.cpp 10769 2016-02-06 14:26:58Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/editorlexerloader.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/editorlexerloader.cpp $
  */
 
 #include "sdk_precomp.h"

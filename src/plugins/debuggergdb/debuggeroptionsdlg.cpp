@@ -4,7 +4,7 @@
  *
  * $Revision: 10030 $
  * $Id: debuggeroptionsdlg.cpp 10030 2014-11-09 13:15:51Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/debuggergdb/debuggeroptionsdlg.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/debuggergdb/debuggeroptionsdlg.cpp $
  */
 
 #include <sdk.h>

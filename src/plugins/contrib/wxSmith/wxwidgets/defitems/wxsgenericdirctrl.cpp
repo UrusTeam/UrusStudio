@@ -18,7 +18,7 @@
 *
 * $Revision: 11000 $
 * $Id: wxsgenericdirctrl.cpp 11000 2017-02-06 19:12:28Z fuscated $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxsgenericdirctrl.cpp $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxsgenericdirctrl.cpp $
 */
 
 #include "wxsgenericdirctrl.h"

@@ -4,7 +4,7 @@
  *
  * $Revision: 10540 $
  * $Id: disassemblydlg.cpp 10540 2015-10-19 21:59:48Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/src/disassemblydlg.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/disassemblydlg.cpp $
  */
 
 #include "sdk.h"

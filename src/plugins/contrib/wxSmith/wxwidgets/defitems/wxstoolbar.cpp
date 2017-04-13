@@ -17,7 +17,7 @@
 *
 * $Revision: 11019 $
 * $Id: wxstoolbar.cpp 11019 2017-02-21 23:52:17Z fuscated $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxstoolbar.cpp $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxstoolbar.cpp $
 */
 
 #include "wxstoolbar.h"

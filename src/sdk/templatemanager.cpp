@@ -4,7 +4,7 @@
  *
  * $Revision: 10769 $
  * $Id: templatemanager.cpp 10769 2016-02-06 14:26:58Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/templatemanager.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/templatemanager.cpp $
  */
 
 #include "sdk_precomp.h"

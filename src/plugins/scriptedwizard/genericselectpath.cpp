@@ -4,14 +4,14 @@
  *
  * $Revision: 10270 $
  * $Id: genericselectpath.cpp 10270 2015-05-15 10:57:08Z jenslody $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/scriptedwizard/genericselectpath.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/scriptedwizard/genericselectpath.cpp $
  */
 
 #include <sdk.h>
 #ifndef CB_PRECOMP
     //(*InternalHeadersPCH(GenericSelectPath)
-    #include <wx/intl.h>
     #include <wx/string.h>
+    #include <wx/intl.h>
     //*)
 #endif
 #include "genericselectpath.h"

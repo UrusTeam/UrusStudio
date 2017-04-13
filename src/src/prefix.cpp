@@ -4,7 +4,7 @@
  *
  * $Revision: 5613 $
  * $Id: prefix.cpp 5613 2009-05-30 16:45:25Z killerbot $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/src/prefix.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/prefix.cpp $
  */
 
 /*

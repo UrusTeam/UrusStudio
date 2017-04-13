@@ -17,7 +17,7 @@
 *
 * $Revision: 10976 $
 * $Id: wxsitemresdata.cpp 10976 2017-01-21 10:41:53Z fuscated $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/wxsitemresdata.cpp $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/wxsitemresdata.cpp $
 */
 
 #include "wxsitemresdata.h"

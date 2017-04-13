@@ -4,7 +4,7 @@
  *
  * $Revision: 10923 $
  * $Id: addtododlg.cpp 10923 2016-11-26 07:39:14Z ollydbg $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/todo/addtododlg.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/todo/addtododlg.cpp $
  */
 
 #include "sdk.h"

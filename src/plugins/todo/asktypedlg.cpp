@@ -4,7 +4,7 @@
  *
  * $Revision: 7897 $
  * $Id: asktypedlg.cpp 7897 2012-03-13 21:39:52Z danselmi $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/todo/asktypedlg.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/todo/asktypedlg.cpp $
  */
 
 #include "sdk.h"

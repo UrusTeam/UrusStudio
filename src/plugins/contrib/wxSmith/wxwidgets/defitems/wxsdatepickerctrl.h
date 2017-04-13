@@ -18,7 +18,7 @@
 *
 * $Revision: 7109 $
 * $Id: wxsdatepickerctrl.h 7109 2011-04-15 11:53:16Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxsdatepickerctrl.h $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxsdatepickerctrl.h $
 */
 
 #ifndef WXSDATEPICKERCTRL_H

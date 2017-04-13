@@ -4,7 +4,7 @@
  *
  * $Revision: 10963 $
  * $Id: editpathdlg.cpp 10963 2017-01-14 22:41:04Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/editpathdlg.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/editpathdlg.cpp $
  */
 
 #include "sdk_precomp.h"

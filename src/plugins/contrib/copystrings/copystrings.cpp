@@ -4,7 +4,7 @@
  *
  * $Revision: 8525 $
  * $Id: copystrings.cpp 8525 2012-11-07 23:02:50Z killerbot $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/copystrings/copystrings.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/copystrings/copystrings.cpp $
  */
 
 #include "sdk.h"

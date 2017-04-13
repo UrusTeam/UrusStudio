@@ -4,7 +4,7 @@
  *
  * $Revision: 10674 $
  * $Id: projectmanager.cpp 10674 2016-01-22 05:38:10Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/projectmanager.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/projectmanager.cpp $
  */
 
 #include "sdk_precomp.h"

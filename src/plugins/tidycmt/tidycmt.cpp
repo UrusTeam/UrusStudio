@@ -4,7 +4,7 @@
  *
  * $Revision: 9264 $
  * $Id: tidycmt.cpp 9264 2013-08-17 09:35:46Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/tidycmt/tidycmt.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/tidycmt/tidycmt.cpp $
  */
 
 #include "sdk.h"

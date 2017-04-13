@@ -4,7 +4,7 @@
  *
  * $Revision: 7649 $
  * $Id: startup.script 7649 2011-12-29 20:02:04Z tpetrov $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/scripts/startup.script $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/scripts/startup.script $
  */
 
 Log(_T("Running startup script"));

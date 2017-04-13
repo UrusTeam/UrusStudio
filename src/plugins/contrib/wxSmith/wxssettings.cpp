@@ -17,7 +17,7 @@
 *
 * $Revision: 10686 $
 * $Id: wxssettings.cpp 10686 2016-01-22 10:53:43Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxssettings.cpp $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxssettings.cpp $
 */
 
 #include <wx/colordlg.h>

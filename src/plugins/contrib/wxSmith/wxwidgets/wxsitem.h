@@ -17,7 +17,7 @@
 *
 * $Revision: 8704 $
 * $Id: wxsitem.h 8704 2012-12-23 20:32:03Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/wxsitem.h $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/wxsitem.h $
 */
 
 #ifndef WXSITEM_H

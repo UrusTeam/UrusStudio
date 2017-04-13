@@ -4,7 +4,7 @@
  *
  * $Revision: 10854 $
  * $Id: parser.cpp 10854 2016-05-18 22:20:45Z d_anselmi $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/codecompletion/parser/parser.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/codecompletion/parser/parser.cpp $
  */
 
 #include <sdk.h>

@@ -4,7 +4,7 @@
  *
  * $Revision: 7787 $
  * $Id: envvars_prjoptdlg.cpp 7787 2012-02-10 11:48:47Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/envvars/envvars_prjoptdlg.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/envvars/envvars_prjoptdlg.cpp $
  */
 
 // ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----

@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision: 10864 $
- * $Id: ProjectOptionsManipulator.cpp 10864 2016-06-09 16:04:27Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/ProjectOptionsManipulator/ProjectOptionsManipulator.cpp $
+ * $Revision: 11045 $
+ * $Id: ProjectOptionsManipulator.cpp 11045 2017-04-05 19:19:55Z mortenmacfly $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/ProjectOptionsManipulator/ProjectOptionsManipulator.cpp $
  */
 
 #include "ProjectOptionsManipulator.h"
@@ -125,7 +125,7 @@ int ProjectOptionsManipulator::Execute()
     {
       if ( wxID_YES == cbMessageBox(_("Do you want to save all (modified) projects now?"),
                                     _("Confirmation"), wxICON_QUESTION | wxYES_NO | wxNO_DEFAULT,
-                                    Manager::Get()->GetAppWindow()) )
+                                      Manager::Get()->GetAppWindow()) )
       {
         if ( !Manager::Get()->GetProjectManager()->SaveAllProjects() )
         {

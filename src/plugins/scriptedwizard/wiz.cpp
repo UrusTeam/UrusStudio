@@ -4,7 +4,7 @@
  *
  * $Revision: 10860 $
  * $Id: wiz.cpp 10860 2016-06-06 21:44:54Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/scriptedwizard/wiz.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/scriptedwizard/wiz.cpp $
  */
 
 #include <sdk.h>

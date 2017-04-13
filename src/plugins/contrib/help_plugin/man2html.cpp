@@ -4,7 +4,7 @@
  *
  * $Revision: 8190 $
  * $Id: man2html.cpp 8190 2012-08-05 09:40:35Z killerbot $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/help_plugin/man2html.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/help_plugin/man2html.cpp $
  */
 
 /*

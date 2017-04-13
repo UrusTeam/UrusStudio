@@ -4,7 +4,7 @@
  *
  * $Revision: 10907 $
  * $Id: sc_wxtypes.cpp 10907 2016-09-25 16:09:48Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/scripting/bindings/sc_wxtypes.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/scripting/bindings/sc_wxtypes.cpp $
  */
 
 #include "sdk_precomp.h"

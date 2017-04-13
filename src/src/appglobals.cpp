@@ -4,7 +4,7 @@
  *
  * $Revision: 9484 $
  * $Id: appglobals.cpp 9484 2013-12-03 20:34:13Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/src/appglobals.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/appglobals.cpp $
  */
 
 #include <sdk.h>

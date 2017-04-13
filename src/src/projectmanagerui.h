@@ -4,7 +4,7 @@
  *
  * $Revision: 10807 $
  * $Id: projectmanagerui.h 10807 2016-03-11 09:12:14Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/src/projectmanagerui.h $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/projectmanagerui.h $
  */
 
 #include "projectmanager.h"

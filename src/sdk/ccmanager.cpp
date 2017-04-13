@@ -4,7 +4,7 @@
  *
  * $Revision: 10971 $
  * $Id: ccmanager.cpp 10971 2017-01-19 19:15:00Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/ccmanager.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/ccmanager.cpp $
  */
 
 #include "sdk_precomp.h"

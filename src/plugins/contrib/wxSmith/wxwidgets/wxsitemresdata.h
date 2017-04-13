@@ -17,7 +17,7 @@
 *
 * $Revision: 8574 $
 * $Id: wxsitemresdata.h 8574 2012-11-18 15:59:14Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/wxsitemresdata.h $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/wxsitemresdata.h $
 */
 
 #ifndef WXSITEMRESDATA_H

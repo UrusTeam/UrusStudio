@@ -4,7 +4,7 @@
  *
  * $Revision: 10804 $
  * $Id: debuggermanager.cpp 10804 2016-03-09 00:07:33Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/debuggermanager.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/debuggermanager.cpp $
  */
 
 #include "sdk_precomp.h"

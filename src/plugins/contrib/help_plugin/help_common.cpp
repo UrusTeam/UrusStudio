@@ -4,7 +4,7 @@
  *
  * $Revision: 7746 $
  * $Id: help_common.cpp 7746 2012-01-31 12:09:18Z jenslody $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/help_plugin/help_common.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/help_plugin/help_common.cpp $
  */
 
 #include <algorithm>

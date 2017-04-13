@@ -4,7 +4,7 @@
  *
  * $Revision: 10097 $
  * $Id: sc_dialog.cpp 10097 2015-02-06 22:13:36Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/scripting/bindings/sc_dialog.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/scripting/bindings/sc_dialog.cpp $
  */
 
 #include <sdk_precomp.h>

@@ -4,7 +4,7 @@
  *
  * $Revision: 7294 $
  * $Id: confirmreplacedlg.cpp 7294 2011-07-26 12:52:57Z tpetrov $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/confirmreplacedlg.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/confirmreplacedlg.cpp $
  */
 
 #include "sdk_precomp.h"

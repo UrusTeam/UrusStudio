@@ -4,7 +4,7 @@
  *
  * $Revision: 10539 $
  * $Id: gdb_driver.cpp 10539 2015-10-19 21:59:44Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/debuggergdb/gdb_driver.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/debuggergdb/gdb_driver.cpp $
  */
 
 #include <sdk.h>

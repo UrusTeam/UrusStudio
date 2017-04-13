@@ -4,7 +4,7 @@
  *
  * $Revision: 10801 $
  * $Id: newfromtemplatedlg.cpp 10801 2016-03-08 23:27:33Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/newfromtemplatedlg.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/newfromtemplatedlg.cpp $
  */
 
 #include "sdk_precomp.h"

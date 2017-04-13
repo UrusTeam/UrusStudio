@@ -4,7 +4,7 @@
  *
  * $Revision: 10319 $
  * $Id: openfileslistplugin.cpp 10319 2015-06-03 23:03:31Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/openfileslist/openfileslistplugin.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/openfileslist/openfileslistplugin.cpp $
  */
 
 #include "sdk.h"

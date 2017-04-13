@@ -17,7 +17,7 @@
 *
 * $Revision: 8251 $
 * $Id: wxsresource.h 8251 2012-08-28 02:31:00Z ollydbg $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxsresource.h $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxsresource.h $
 */
 
 #ifndef WXSRESOURCE_H

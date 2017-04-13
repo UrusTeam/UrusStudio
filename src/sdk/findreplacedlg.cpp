@@ -4,7 +4,7 @@
  *
  * $Revision: 10777 $
  * $Id: findreplacedlg.cpp 10777 2016-02-07 11:15:55Z jenslody $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/findreplacedlg.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/findreplacedlg.cpp $
  */
 
 #include "sdk_precomp.h"

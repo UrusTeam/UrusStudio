@@ -17,7 +17,7 @@
 *
 * $Revision: 10234 $
 * $Id: wxsgauge.h 10234 2015-04-26 09:59:49Z jenslody $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxsgauge.h $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxsgauge.h $
 */
 
 #ifndef WXSGAUGE_H

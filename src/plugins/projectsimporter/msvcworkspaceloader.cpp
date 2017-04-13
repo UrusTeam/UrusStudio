@@ -4,7 +4,7 @@
  *
  * $Revision: 8680 $
  * $Id: msvcworkspaceloader.cpp 8680 2012-12-16 14:58:35Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/projectsimporter/msvcworkspaceloader.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/projectsimporter/msvcworkspaceloader.cpp $
  */
 
 #include "sdk.h"

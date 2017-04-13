@@ -4,16 +4,16 @@
  *
  * $Revision: 10655 $
  * $Id: databreakpointdlg.cpp 10655 2016-01-17 13:58:05Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/debuggergdb/databreakpointdlg.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/debuggergdb/databreakpointdlg.cpp $
  */
 
 #include "databreakpointdlg.h"
 #include "debugger_defs.h"
 
 //(*InternalHeaders(DataBreakpointDlg)
-#include <wx/intl.h>
 #include <wx/button.h>
 #include <wx/string.h>
+#include <wx/intl.h>
 //*)
 
 //(*IdInit(DataBreakpointDlg)

@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision: 11011 $
- * $Id: compileroptionsdlg.cpp 11011 2017-02-18 10:08:14Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/compilergcc/compileroptionsdlg.cpp $
+ * $Revision: 11045 $
+ * $Id: compileroptionsdlg.cpp 11045 2017-04-05 19:19:55Z mortenmacfly $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/compilergcc/compileroptionsdlg.cpp $
  */
 
 #include <sdk.h>
@@ -567,9 +567,7 @@ void CompilerOptionsDlg::DoFillOthers()
 
     wxSpinCtrl* spn = XRCCTRL(*this, "spnParallelProcesses", wxSpinCtrl);
     if (spn)
-    {
         spn->SetValue(Manager::Get()->GetConfigManager(_T("compiler"))->ReadInt(_T("/parallel_processes"), 0));
-    }
 
     spn = XRCCTRL(*this, "spnMaxErrors", wxSpinCtrl);
     if (spn)

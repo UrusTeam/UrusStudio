@@ -4,7 +4,7 @@
  *
  * $Revision: 9181 $
  * $Id: projectsimporter.cpp 9181 2013-07-08 23:05:27Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/projectsimporter/projectsimporter.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/projectsimporter/projectsimporter.cpp $
  */
 
 #include "sdk.h"

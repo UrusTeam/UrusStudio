@@ -4,7 +4,7 @@
  *
  * $Revision: 11035 $
  * $Id: editorbase.cpp 11035 2017-03-26 17:51:50Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/editorbase.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/editorbase.cpp $
  */
 
 #include "sdk_precomp.h"

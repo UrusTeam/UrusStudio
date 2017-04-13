@@ -18,7 +18,7 @@
 *
 * $Revision: 10665 $
 * $Id: wxsFlatNotebook.cpp 10665 2016-01-17 13:58:48Z fuscated $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmithContribItems/wxflatnotebook/wxsFlatNotebook.cpp $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmithContribItems/wxflatnotebook/wxsFlatNotebook.cpp $
 */
 
 #include "wxsFlatNotebook.h"

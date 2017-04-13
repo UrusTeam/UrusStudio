@@ -3,7 +3,7 @@
  * http://www.gnu.org/licenses/gpl-3.0.html
  * $Revision: 10770 $
  * $Id: cctest_frame.cpp 10770 2016-02-06 14:27:56Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/codecompletion/cctest/cctest_frame.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/codecompletion/cctest/cctest_frame.cpp $
  */
 
 #ifdef __BORLANDC__

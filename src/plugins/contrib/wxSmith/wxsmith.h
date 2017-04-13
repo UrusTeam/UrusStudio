@@ -17,7 +17,7 @@
 *
 * $Revision: 10874 $
 * $Id: wxsmith.h 10874 2016-07-16 20:00:28Z jenslody $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxsmith.h $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxsmith.h $
 */
 
 #ifndef WXSMITH_H

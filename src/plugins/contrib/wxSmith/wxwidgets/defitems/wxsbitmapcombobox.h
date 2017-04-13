@@ -17,7 +17,7 @@
 *
 * $Revision: 7835 $
 * $Id: wxsbitmapcombobox.h 7835 2012-02-22 14:40:26Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxsbitmapcombobox.h $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxsbitmapcombobox.h $
 */
 
 #ifndef WXSBITMAPCOMBOBOX_H

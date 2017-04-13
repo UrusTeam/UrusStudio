@@ -17,7 +17,7 @@
 *
 * $Revision: 10680 $
 * $Id: wxstoolbareditor.cpp 10680 2016-01-22 10:43:35Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxstoolbareditor.cpp $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxstoolbareditor.cpp $
 */
 
 #include "wxstoolbareditor.h"

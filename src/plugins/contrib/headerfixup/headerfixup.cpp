@@ -4,7 +4,7 @@
  *
  * $Revision: 10034 $
  * $Id: headerfixup.cpp 10034 2014-11-16 14:42:45Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/headerfixup/headerfixup.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/headerfixup/headerfixup.cpp $
  */
 
 #include <wx/window.h>

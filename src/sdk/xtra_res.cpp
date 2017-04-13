@@ -4,7 +4,7 @@
  *
  * $Revision: 11019 $
  * $Id: xtra_res.cpp 11019 2017-02-21 23:52:17Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/xtra_res.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/xtra_res.cpp $
  */
 
 #include "sdk_precomp.h"

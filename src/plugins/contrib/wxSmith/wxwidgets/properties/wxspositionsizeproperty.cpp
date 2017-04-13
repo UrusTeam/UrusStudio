@@ -17,7 +17,7 @@
 *
 * $Revision: 10682 $
 * $Id: wxspositionsizeproperty.cpp 10682 2016-01-22 10:46:00Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/properties/wxspositionsizeproperty.cpp $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/properties/wxspositionsizeproperty.cpp $
 */
 
 #include "wxspositionsizeproperty.h"

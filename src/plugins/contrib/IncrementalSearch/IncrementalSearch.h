@@ -6,7 +6,7 @@
  *
  * $Revision: 8710 $
  * $Id: IncrementalSearch.h 8710 2012-12-24 23:19:43Z jenslody $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/IncrementalSearch/IncrementalSearch.h $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/IncrementalSearch/IncrementalSearch.h $
  */
 
 #ifndef INCREMENTAL_SEARCH_H_INCLUDED

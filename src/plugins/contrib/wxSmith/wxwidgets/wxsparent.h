@@ -17,7 +17,7 @@
 *
 * $Revision: 8704 $
 * $Id: wxsparent.h 8704 2012-12-23 20:32:03Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/wxsparent.h $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/wxsparent.h $
 */
 
 #ifndef WXSPARENT_H

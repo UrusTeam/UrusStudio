@@ -17,7 +17,7 @@
 *
 * $Revision: 10874 $
 * $Id: wxsversionconverter.cpp 10874 2016-07-16 20:00:28Z jenslody $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxsversionconverter.cpp $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxsversionconverter.cpp $
 */
 
 #include "wxsversionconverter.h"

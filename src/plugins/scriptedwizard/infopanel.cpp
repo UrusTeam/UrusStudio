@@ -4,14 +4,14 @@
  *
  * $Revision: 10270 $
  * $Id: infopanel.cpp 10270 2015-05-15 10:57:08Z jenslody $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/scriptedwizard/infopanel.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/scriptedwizard/infopanel.cpp $
  */
 
 #include <sdk.h>
 #ifndef CB_PRECOMP
     //(*InternalHeadersPCH(InfoPanel)
-    #include <wx/intl.h>
     #include <wx/string.h>
+    #include <wx/intl.h>
     //*)
 #endif // CB_PRECOMP
 

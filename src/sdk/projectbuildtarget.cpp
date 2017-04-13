@@ -4,7 +4,7 @@
  *
  * $Revision: 8113 $
  * $Id: projectbuildtarget.cpp 8113 2012-07-14 07:53:51Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/projectbuildtarget.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/projectbuildtarget.cpp $
  */
 
 #include "sdk_precomp.h"

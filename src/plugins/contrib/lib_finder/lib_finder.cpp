@@ -18,7 +18,7 @@
 *
 * $Revision: 8208 $
 * $Id: lib_finder.cpp 8208 2012-08-07 22:08:06Z killerbot $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/lib_finder/lib_finder.cpp $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/lib_finder/lib_finder.cpp $
 */
 
 

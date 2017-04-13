@@ -4,7 +4,7 @@
  *
  * $Revision: 10024 $
  * $Id: symtabexec.cpp 10024 2014-11-06 09:23:26Z jenslody $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/symtab/symtabexec.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/symtab/symtabexec.cpp $
  */
 
 #include "sdk.h"

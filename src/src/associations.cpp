@@ -4,7 +4,7 @@
  *
  * $Revision: 10854 $
  * $Id: associations.cpp 10854 2016-05-18 22:20:45Z d_anselmi $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/src/associations.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/associations.cpp $
  */
 
 #include <sdk.h>

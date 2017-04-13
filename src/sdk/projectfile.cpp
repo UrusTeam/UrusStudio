@@ -4,7 +4,7 @@
  *
  * $Revision: 10383 $
  * $Id: projectfile.cpp 10383 2015-08-08 08:37:54Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/projectfile.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/projectfile.cpp $
  */
 
 #include "sdk_precomp.h"

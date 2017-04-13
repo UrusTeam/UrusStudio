@@ -4,7 +4,7 @@
  *
  * $Revision: 11027 $
  * $Id: nativeparser.cpp 11027 2017-03-12 18:11:09Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/codecompletion/nativeparser.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/codecompletion/nativeparser.cpp $
  */
 
 #include <sdk.h>

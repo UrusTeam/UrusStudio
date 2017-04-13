@@ -4,7 +4,7 @@
  *
  * $Revision: 10931 $
  * $Id: compilersettingsdlg.cpp 10931 2016-12-04 16:30:27Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/src/compilersettingsdlg.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/compilersettingsdlg.cpp $
  */
 
 #include <sdk.h>

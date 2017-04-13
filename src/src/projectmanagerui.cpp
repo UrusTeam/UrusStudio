@@ -4,7 +4,7 @@
  *
  * $Revision: 11012 $
  * $Id: projectmanagerui.cpp 11012 2017-02-18 13:09:23Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/src/projectmanagerui.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/projectmanagerui.cpp $
  */
 
 #include "sdk.h"

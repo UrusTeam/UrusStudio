@@ -4,7 +4,7 @@
  *
  * $Revision: 10793 $
  * $Id: debuggergdb.cpp 10793 2016-02-22 23:13:20Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/debuggergdb/debuggergdb.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/debuggergdb/debuggergdb.cpp $
  */
 
 #include <sdk.h>

@@ -4,7 +4,7 @@
  *
  * $Revision: 7920 $
  * $Id: debuggerdriver.cpp 7920 2012-04-07 09:15:28Z tpetrov $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/debuggergdb/debuggerdriver.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/debuggergdb/debuggerdriver.cpp $
  */
 
 #include <sdk.h>

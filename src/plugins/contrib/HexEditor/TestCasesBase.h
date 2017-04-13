@@ -17,7 +17,7 @@
 *
 * $Revision: 7443 $
 * $Id: TestCasesBase.h 7443 2011-09-01 16:29:16Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/HexEditor/TestCasesBase.h $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/HexEditor/TestCasesBase.h $
 */
 
 

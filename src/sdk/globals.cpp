@@ -4,7 +4,7 @@
  *
  * $Revision: 10913 $
  * $Id: globals.cpp 10913 2016-10-15 15:04:22Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/globals.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/globals.cpp $
  */
 
 #include "sdk_precomp.h"

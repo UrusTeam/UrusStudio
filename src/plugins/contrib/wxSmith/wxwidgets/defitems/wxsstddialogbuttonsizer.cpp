@@ -17,7 +17,7 @@
 *
 * $Revision: 10909 $
 * $Id: wxsstddialogbuttonsizer.cpp 10909 2016-09-25 16:09:59Z fuscated $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxsstddialogbuttonsizer.cpp $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxsstddialogbuttonsizer.cpp $
 */
 
 #include "wxsstddialogbuttonsizer.h"

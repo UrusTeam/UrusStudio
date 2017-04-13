@@ -4,7 +4,7 @@
  *
  * $Revision: 10912 $
  * $Id: printdlg.cpp 10912 2016-09-25 16:10:13Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/src/printdlg.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/printdlg.cpp $
  */
 
 #include "sdk.h"

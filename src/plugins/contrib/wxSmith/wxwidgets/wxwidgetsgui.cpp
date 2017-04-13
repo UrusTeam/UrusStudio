@@ -17,7 +17,7 @@
 *
 * $Revision: 10685 $
 * $Id: wxwidgetsgui.cpp 10685 2016-01-22 10:51:51Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/wxwidgetsgui.cpp $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/wxwidgetsgui.cpp $
 */
 
 #include "wxwidgetsgui.h"

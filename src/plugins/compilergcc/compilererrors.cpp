@@ -4,7 +4,7 @@
  *
  * $Revision: 7588 $
  * $Id: compilererrors.cpp 7588 2011-11-13 16:10:58Z jenslody $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/compilergcc/compilererrors.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/compilergcc/compilererrors.cpp $
  */
 
 #include "sdk.h"

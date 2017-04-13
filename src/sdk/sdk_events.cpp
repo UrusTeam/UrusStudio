@@ -4,7 +4,7 @@
  *
  * $Revision: 10502 $
  * $Id: sdk_events.cpp 10502 2015-09-26 09:17:37Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/sdk_events.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/sdk_events.cpp $
  */
 
 #include "sdk_precomp.h"

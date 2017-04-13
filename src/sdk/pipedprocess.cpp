@@ -4,7 +4,7 @@
  *
  * $Revision: 10817 $
  * $Id: pipedprocess.cpp 10817 2016-03-26 17:14:11Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/pipedprocess.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/pipedprocess.cpp $
  */
 
 #include "sdk_precomp.h"

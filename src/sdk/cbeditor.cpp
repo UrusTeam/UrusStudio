@@ -4,7 +4,7 @@
  *
  * $Revision: 11021 $
  * $Id: cbeditor.cpp 11021 2017-02-25 20:05:15Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/cbeditor.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/cbeditor.cpp $
  */
 
 #include "sdk_precomp.h"

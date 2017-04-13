@@ -4,7 +4,7 @@
  *
  * $Revision: 10245 $
  * $Id: cb_koders.cpp 10245 2015-05-02 14:45:07Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/cb_koders/cb_koders.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/cb_koders/cb_koders.cpp $
  */
 
 #include "sdk.h" // Code::Blocks SDK

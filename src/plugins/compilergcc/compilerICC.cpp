@@ -4,7 +4,7 @@
  *
  * $Revision: 10530 $
  * $Id: compilerICC.cpp 10530 2015-10-18 07:02:33Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/compilergcc/compilerICC.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/compilergcc/compilerICC.cpp $
  */
 
 #include <sdk.h>

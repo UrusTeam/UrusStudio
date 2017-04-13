@@ -4,7 +4,7 @@
  *
  * $Revision: 10901 $
  * $Id: tokenizer.cpp 10901 2016-09-09 22:05:13Z ollydbg $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/codecompletion/parser/tokenizer.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/codecompletion/parser/tokenizer.cpp $
  */
 
 #include <sdk.h>

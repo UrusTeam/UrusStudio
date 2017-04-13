@@ -17,7 +17,7 @@
 *
 * $Revision: 8251 $
 * $Id: wxsbaseproperties.h 8251 2012-08-28 02:31:00Z ollydbg $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/wxsbaseproperties.h $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/wxsbaseproperties.h $
 */
 
 #ifndef WXSBASEPROPERTIES_H

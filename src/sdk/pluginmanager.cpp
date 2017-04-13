@@ -4,7 +4,7 @@
  *
  * $Revision: 10931 $
  * $Id: pluginmanager.cpp 10931 2016-12-04 16:30:27Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/pluginmanager.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/pluginmanager.cpp $
  */
 
 #include "sdk_precomp.h"

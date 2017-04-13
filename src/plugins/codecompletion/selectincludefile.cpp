@@ -4,7 +4,7 @@
  *
  * $Revision: 8543 $
  * $Id: selectincludefile.cpp 8543 2012-11-10 22:36:18Z thomasdenk $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/codecompletion/selectincludefile.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/codecompletion/selectincludefile.cpp $
  */
 
 #include "prep.h"

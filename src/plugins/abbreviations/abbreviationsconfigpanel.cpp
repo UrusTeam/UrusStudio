@@ -4,7 +4,7 @@
  *
  * $Revision: 10711 $
  * $Id: abbreviationsconfigpanel.cpp 10711 2016-01-28 14:15:45Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/abbreviations/abbreviationsconfigpanel.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/abbreviations/abbreviationsconfigpanel.cpp $
  */
 
 #include <sdk.h>

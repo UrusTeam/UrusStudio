@@ -17,7 +17,7 @@
 *
 * $Revision: 10679 $
 * $Id: wxstoolbaritem.h 10679 2016-01-22 10:42:53Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxstoolbaritem.h $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxstoolbaritem.h $
 */
 
 #ifndef WXSTOOLBARITEM_H

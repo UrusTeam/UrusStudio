@@ -4,7 +4,7 @@
  *
  * $Revision: 10324 $
  * $Id: compilerMINGWgenerator.cpp 10324 2015-06-09 22:50:17Z jenslody $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/compilergcc/compilerMINGWgenerator.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/compilergcc/compilerMINGWgenerator.cpp $
  */
 
 #include <sdk.h>

@@ -4,7 +4,7 @@
  *
  * $Revision: 9597 $
  * $Id: occurrenceshighlighting.cpp 9597 2014-01-22 22:11:10Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/occurrenceshighlighting/occurrenceshighlighting.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/occurrenceshighlighting/occurrenceshighlighting.cpp $
  */
 
 #include <sdk.h> // Code::Blocks SDK

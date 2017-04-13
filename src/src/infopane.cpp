@@ -4,7 +4,7 @@
  *
  * $Revision: 9426 $
  * $Id: infopane.cpp 9426 2013-11-02 19:42:20Z alpha0010 $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/src/infopane.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/infopane.cpp $
  */
 
 #include <sdk.h>

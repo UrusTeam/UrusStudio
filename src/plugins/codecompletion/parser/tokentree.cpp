@@ -4,7 +4,7 @@
  *
  * $Revision: 10503 $
  * $Id: tokentree.cpp 10503 2015-09-26 13:33:16Z ollydbg $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/codecompletion/parser/tokentree.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/codecompletion/parser/tokentree.cpp $
  */
 
 #include "tokentree.h"

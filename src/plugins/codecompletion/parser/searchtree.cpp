@@ -4,7 +4,7 @@
  *
  * $Revision: 10635 $
  * $Id: searchtree.cpp 10635 2015-12-29 16:30:36Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/codecompletion/parser/searchtree.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/codecompletion/parser/searchtree.cpp $
  */
 
 #include <sdk.h>

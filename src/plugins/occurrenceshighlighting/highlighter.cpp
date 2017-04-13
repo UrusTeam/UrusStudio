@@ -4,7 +4,7 @@
  *
  * $Revision: 9855 $
  * $Id: highlighter.cpp 9855 2014-08-06 15:33:43Z d_anselmi $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/occurrenceshighlighting/highlighter.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/occurrenceshighlighting/highlighter.cpp $
  */
 
 #include "highlighter.h"

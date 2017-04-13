@@ -4,7 +4,7 @@
  *
  * $Revision: 9263 $
  * $Id: cbcolourmanager.cpp 9263 2013-08-17 09:20:28Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/cbcolourmanager.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/cbcolourmanager.cpp $
  */
 
 #include "sdk_precomp.h"

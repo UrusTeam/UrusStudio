@@ -4,7 +4,7 @@
  *
  * $Revision: 10874 $
  * $Id: projectlayoutloader.cpp 10874 2016-07-16 20:00:28Z jenslody $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/projectlayoutloader.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/projectlayoutloader.cpp $
  */
 
 #include "sdk_precomp.h"

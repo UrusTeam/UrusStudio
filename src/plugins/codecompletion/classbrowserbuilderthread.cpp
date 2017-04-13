@@ -4,7 +4,7 @@
  *
  * $Revision: 10340 $
  * $Id: classbrowserbuilderthread.cpp 10340 2015-06-19 06:25:09Z ollydbg $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/codecompletion/classbrowserbuilderthread.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/codecompletion/classbrowserbuilderthread.cpp $
  */
 
 #include <sdk.h>

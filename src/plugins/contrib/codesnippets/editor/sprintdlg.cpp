@@ -4,7 +4,7 @@
  *
  * $Revision: 7443 $
  * $Id: sprintdlg.cpp 7443 2011-09-01 16:29:16Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/codesnippets/editor/sprintdlg.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/codesnippets/editor/sprintdlg.cpp $
  */
 
 #if defined(CB_PRECOMP)

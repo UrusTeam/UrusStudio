@@ -17,7 +17,7 @@
 *
 * $Revision: 10688 $
 * $Id: wxsradiobutton.cpp 10688 2016-01-22 12:24:56Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxsradiobutton.cpp $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxsradiobutton.cpp $
 */
 
 #include <wx/radiobut.h>

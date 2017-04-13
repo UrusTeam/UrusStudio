@@ -17,7 +17,7 @@
 *
 * $Revision: 9300 $
 * $Id: wxsenumproperty.h 9300 2013-09-10 21:52:39Z jenslody $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/properties/wxsenumproperty.h $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/properties/wxsenumproperty.h $
 */
 
 #ifndef WXSENUMPROPERTY_H

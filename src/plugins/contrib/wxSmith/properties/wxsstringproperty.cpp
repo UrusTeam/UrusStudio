@@ -17,7 +17,7 @@
 *
 * $Revision: 8704 $
 * $Id: wxsstringproperty.cpp 8704 2012-12-23 20:32:03Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/properties/wxsstringproperty.cpp $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/properties/wxsstringproperty.cpp $
 */
 
 #include "wxsstringproperty.h"

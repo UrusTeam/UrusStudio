@@ -4,7 +4,7 @@
  *
  * $Revision: 10665 $
  * $Id: envvars_cfgdlg.cpp 10665 2016-01-17 13:58:48Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/envvars/envvars_cfgdlg.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/envvars/envvars_cfgdlg.cpp $
  */
 
 // ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----

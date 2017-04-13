@@ -4,7 +4,7 @@
  *
  * $Revision: 6950 $
  * $Id: config-testsuite.cpp 6950 2011-02-01 07:13:54Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/config-testsuite.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/config-testsuite.cpp $
  */
 
 // too lazy to deal with event handlers, we will abuse the "About" box to start a test suite

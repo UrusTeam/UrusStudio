@@ -4,7 +4,7 @@
  *
  * $Revision: 10871 $
  * $Id: compiler.cpp 10871 2016-06-29 22:24:47Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/compiler.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/compiler.cpp $
  */
 
 #include "sdk_precomp.h"

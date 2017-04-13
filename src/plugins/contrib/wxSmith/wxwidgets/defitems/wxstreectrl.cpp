@@ -21,7 +21,7 @@
 *
 * $Revision: 10771 $
 * $Id: wxstreectrl.cpp 10771 2016-02-06 14:29:31Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxstreectrl.cpp $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxstreectrl.cpp $
 */
 
 #include "wxstreectrl.h"

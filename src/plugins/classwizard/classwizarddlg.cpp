@@ -4,7 +4,7 @@
  *
  * $Revision: 10912 $
  * $Id: classwizarddlg.cpp 10912 2016-09-25 16:10:13Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/classwizard/classwizarddlg.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/classwizard/classwizarddlg.cpp $
  */
 
 #include <sdk.h>

@@ -4,7 +4,7 @@
  *
  * $Revision: 10770 $
  * $Id: nativeparser_base.cpp 10770 2016-02-06 14:27:56Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/codecompletion/nativeparser_base.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/codecompletion/nativeparser_base.cpp $
  */
 
 #include <sdk.h>

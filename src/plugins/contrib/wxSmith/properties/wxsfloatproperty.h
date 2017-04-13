@@ -17,7 +17,7 @@
 *
 * $Revision: 8148 $
 * $Id: wxsfloatproperty.h 8148 2012-07-19 19:50:28Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/properties/wxsfloatproperty.h $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/properties/wxsfloatproperty.h $
 */
 
 #ifndef WXSFLOATPROPERTY_H

@@ -4,17 +4,12 @@
  *
  * $Revision: 10665 $
  * $Id: configuration.cpp 10665 2016-01-17 13:58:48Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/headerfixup/configuration.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/headerfixup/configuration.cpp $
  */
 
 //(*InternalHeaders(Configuration)
-#include <wx/sizer.h>
-#include <wx/stattext.h>
-#include <wx/textctrl.h>
-#include <wx/listbox.h>
-#include <wx/intl.h>
-#include <wx/button.h>
 #include <wx/string.h>
+#include <wx/intl.h>
 //*)
 
 #include <wx/arrstr.h>
@@ -56,14 +51,14 @@ Configuration::Configuration(wxWindow* parent)
   //(*Initialize(Configuration)
   wxBoxSizer* sizMain;
   wxBoxSizer* sizHeaders;
-  wxBoxSizer* sizAddDeleteChange;
-  wxStaticBoxSizer* sizGroups;
-  wxStaticText* lblHeaders;
   wxBoxSizer* sizIdentifiers;
-  wxBoxSizer* sizAddDeleteRename;
+  wxStaticText* lblIdentifiers;
+  wxStaticBoxSizer* sizGroups;
   wxStaticBoxSizer* sizBindings;
   wxBoxSizer* sizIdentifiersMain;
-  wxStaticText* lblIdentifiers;
+  wxBoxSizer* sizAddDeleteRename;
+  wxBoxSizer* sizAddDeleteChange;
+  wxStaticText* lblHeaders;
 
   Create(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("wxID_ANY"));
   sizMain = new wxBoxSizer(wxHORIZONTAL);

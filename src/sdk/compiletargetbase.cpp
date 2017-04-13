@@ -4,7 +4,7 @@
  *
  * $Revision: 10833 $
  * $Id: compiletargetbase.cpp 10833 2016-04-17 21:31:25Z jenslody $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/sdk/compiletargetbase.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/compiletargetbase.cpp $
  */
 
 #include "sdk_precomp.h"

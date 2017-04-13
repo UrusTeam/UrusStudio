@@ -17,7 +17,7 @@
 *
 * $Revision: 8573 $
 * $Id: wxsstoringsplitterwindow.h 8573 2012-11-18 14:44:53Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxsstoringsplitterwindow.h $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxsstoringsplitterwindow.h $
 */
 
 #ifndef WXSSTORINGSPLITTERWINDOW_H

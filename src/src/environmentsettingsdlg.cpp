@@ -4,7 +4,7 @@
  *
  * $Revision: 11002 $
  * $Id: environmentsettingsdlg.cpp 11002 2017-02-06 19:12:33Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/src/environmentsettingsdlg.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/environmentsettingsdlg.cpp $
  */
 
 #include <sdk.h>

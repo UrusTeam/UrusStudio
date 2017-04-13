@@ -17,7 +17,7 @@
 *
 * $Revision: 11030 $
 * $Id: wxscolourproperty.cpp 11030 2017-03-24 07:45:00Z fuscated $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/properties/wxscolourproperty.cpp $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/properties/wxscolourproperty.cpp $
 */
 
 #include "wxscolourproperty.h"

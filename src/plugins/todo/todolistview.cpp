@@ -4,7 +4,7 @@
  *
  * $Revision: 10948 $
  * $Id: todolistview.cpp 10948 2016-12-28 00:06:17Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/todo/todolistview.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/todo/todolistview.cpp $
  */
 
 #include "sdk.h"

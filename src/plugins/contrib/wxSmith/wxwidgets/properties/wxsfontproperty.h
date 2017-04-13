@@ -17,7 +17,7 @@
 *
 * $Revision: 10025 $
 * $Id: wxsfontproperty.h 10025 2014-11-06 09:23:37Z jenslody $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/properties/wxsfontproperty.h $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/properties/wxsfontproperty.h $
 */
 
 #ifndef WXSFONTPROPERTY_H

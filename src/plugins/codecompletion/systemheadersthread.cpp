@@ -4,7 +4,7 @@
  *
  * $Revision: 10845 $
  * $Id: systemheadersthread.cpp 10845 2016-05-05 14:29:16Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/codecompletion/systemheadersthread.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/codecompletion/systemheadersthread.cpp $
  */
 
 #include <sdk.h>

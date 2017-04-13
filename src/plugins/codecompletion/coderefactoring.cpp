@@ -4,7 +4,7 @@
  *
  * $Revision: 10665 $
  * $Id: coderefactoring.cpp 10665 2016-01-17 13:58:48Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/codecompletion/coderefactoring.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/codecompletion/coderefactoring.cpp $
  */
 
 #include <sdk.h>

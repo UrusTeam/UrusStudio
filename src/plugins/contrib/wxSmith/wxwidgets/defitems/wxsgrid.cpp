@@ -19,7 +19,7 @@
 *
 * $Revision: 11000 $
 * $Id: wxsgrid.cpp 11000 2017-02-06 19:12:28Z fuscated $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxsgrid.cpp $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxsgrid.cpp $
 */
 
 #include "wxsgrid.h"

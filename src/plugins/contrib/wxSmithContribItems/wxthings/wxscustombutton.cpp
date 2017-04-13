@@ -18,7 +18,7 @@
 *
 * $Revision: 10749 $
 * $Id: wxscustombutton.cpp 10749 2016-01-31 09:07:41Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmithContribItems/wxthings/wxscustombutton.cpp $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmithContribItems/wxthings/wxscustombutton.cpp $
 */
 
 #include "wxscustombutton.h"

@@ -4,7 +4,7 @@
  *
  * $Revision: 10952 $
  * $Id: projectoptionsdlg.cpp 10952 2016-12-29 06:34:04Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/src/projectoptionsdlg.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/projectoptionsdlg.cpp $
  */
 
 #include "sdk.h"

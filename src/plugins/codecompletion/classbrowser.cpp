@@ -4,7 +4,7 @@
  *
  * $Revision: 10664 $
  * $Id: classbrowser.cpp 10664 2016-01-17 13:58:33Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/codecompletion/classbrowser.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/codecompletion/classbrowser.cpp $
  */
 
 #include <sdk.h>

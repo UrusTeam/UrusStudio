@@ -4,7 +4,7 @@
  *
  * $Revision: 10950 $
  * $Id: formattersettings.cpp 10950 2016-12-29 06:16:39Z mortenmacfly $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/astyle/formattersettings.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/astyle/formattersettings.cpp $
  */
 
 #include <sdk.h>

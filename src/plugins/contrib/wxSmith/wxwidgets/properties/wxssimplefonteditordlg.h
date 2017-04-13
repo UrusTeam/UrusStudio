@@ -17,7 +17,7 @@
 *
 * $Revision: 10681 $
 * $Id: wxssimplefonteditordlg.h 10681 2016-01-22 10:45:30Z mortenmacfly $
-* $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/properties/wxssimplefonteditordlg.h $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/properties/wxssimplefonteditordlg.h $
 */
 
 #ifndef WXSSIMPLEFONTEDITORDLG_H

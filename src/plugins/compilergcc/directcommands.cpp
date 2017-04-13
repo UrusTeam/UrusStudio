@@ -4,7 +4,7 @@
  *
  * $Revision: 10521 $
  * $Id: directcommands.cpp 10521 2015-10-04 01:23:05Z fuscated $
- * $HeadURL: svn://svn.code.sf.net/p/codeblocks/code/trunk/src/plugins/compilergcc/directcommands.cpp $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/compilergcc/directcommands.cpp $
  */
 
 #include <sdk.h>
