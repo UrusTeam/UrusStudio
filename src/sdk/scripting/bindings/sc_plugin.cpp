@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 9419 $
+ * $Id: sc_plugin.cpp 9419 2013-10-24 15:54:57Z alpha0010 $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/scripting/bindings/sc_plugin.cpp $
  */
 
 #include <sdk_precomp.h>

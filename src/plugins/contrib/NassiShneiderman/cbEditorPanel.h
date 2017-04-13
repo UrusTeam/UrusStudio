@@ -15,9 +15,9 @@
 * You should have received a copy of the GNU General Public License
 * along with wxSmith. If not, see <http://www.gnu.org/licenses/>.
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 7443 $
+* $Id: cbEditorPanel.h 7443 2011-09-01 16:29:16Z mortenmacfly $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/NassiShneiderman/cbEditorPanel.h $
 */
 
 #ifndef __CB_EDITOR_PANEL_H__

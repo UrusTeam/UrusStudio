@@ -15,9 +15,9 @@
 * You should have received a copy of the GNU General Public License
 * along with wxSmith. If not, see <http://www.gnu.org/licenses/>.
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 8373 $
+* $Id: wxspropertycontainer.cpp 8373 2012-09-07 22:20:34Z jenslody $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/properties/wxspropertycontainer.cpp $
 */
 
 #include "wxspropertycontainer.h"

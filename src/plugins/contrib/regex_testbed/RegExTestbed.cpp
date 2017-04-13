@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 7593 $
+ * $Id: RegExTestbed.cpp 7593 2011-11-13 19:04:12Z mortenmacfly $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/regex_testbed/RegExTestbed.cpp $
  */
 
 #include <sdk.h> // Code::Blocks SDK

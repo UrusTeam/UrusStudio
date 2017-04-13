@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 9263 $
+ * $Id: cbcolourmanager.cpp 9263 2013-08-17 09:20:28Z mortenmacfly $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/cbcolourmanager.cpp $
  */
 
 #include "sdk_precomp.h"

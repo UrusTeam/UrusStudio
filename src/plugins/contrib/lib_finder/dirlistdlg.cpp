@@ -16,9 +16,9 @@
 * along with wxSmith; if not, write to the Free Software
 * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 10290 $
+* $Id: dirlistdlg.cpp 10290 2015-05-15 10:58:40Z jenslody $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/lib_finder/dirlistdlg.cpp $
 */
 
 #include "dirlistdlg.h"
@@ -32,10 +32,10 @@
 
 //(*InternalHeaders(DirListDlg)
 #include <wx/sizer.h>
-#include <wx/textctrl.h>
-#include <wx/intl.h>
 #include <wx/button.h>
 #include <wx/string.h>
+#include <wx/intl.h>
+#include <wx/textctrl.h>
 //*)
 
 //(*IdInit(DirListDlg)

@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 11019 $
+ * $Id: xtra_res.cpp 11019 2017-02-21 23:52:17Z fuscated $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/xtra_res.cpp $
  */
 
 #include "sdk_precomp.h"

@@ -15,9 +15,9 @@
 * You should have received a copy of the GNU General Public License
 * along with wxSmith. If not, see <http://www.gnu.org/licenses/>.
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 9300 $
+* $Id: wxsenumproperty.h 9300 2013-09-10 21:52:39Z jenslody $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/properties/wxsenumproperty.h $
 */
 
 #ifndef WXSENUMPROPERTY_H

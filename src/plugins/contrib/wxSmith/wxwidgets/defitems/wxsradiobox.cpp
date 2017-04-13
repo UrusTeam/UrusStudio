@@ -15,9 +15,9 @@
 * You should have received a copy of the GNU General Public License
 * along with wxSmith. If not, see <http://www.gnu.org/licenses/>.
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 10688 $
+* $Id: wxsradiobox.cpp 10688 2016-01-22 12:24:56Z mortenmacfly $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxsradiobox.cpp $
 */
 
 #include <wx/defs.h> // to have wxUSE_RADIOBOX defined in the radiobox.h header

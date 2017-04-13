@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10260 $
+ * $Id: scriptconsole.cpp 10260 2015-05-15 10:56:23Z jenslody $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/scriptconsole.cpp $
  */
 
 #include <sdk.h>
@@ -22,13 +22,13 @@
 #include <wx/filedlg.h>
 
 //(*InternalHeaders(ScriptConsole)
-#include <wx/artprov.h>
-#include <wx/bitmap.h>
 #include <wx/settings.h>
-#include <wx/font.h>
-#include <wx/intl.h>
-#include <wx/image.h>
 #include <wx/string.h>
+#include <wx/intl.h>
+#include <wx/font.h>
+#include <wx/bitmap.h>
+#include <wx/image.h>
+#include <wx/artprov.h>
 //*)
 
 //(*IdInit(ScriptConsole)

@@ -15,9 +15,9 @@
 * You should have received a copy of the GNU General Public License
 * along with wxSmith. If not, see <http://www.gnu.org/licenses/>.
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 10681 $
+* $Id: wxsfonteditordlg.h 10681 2016-01-22 10:45:30Z mortenmacfly $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/properties/wxsfonteditordlg.h $
 */
 
 #ifndef WXSFONTEDITORDLG_H

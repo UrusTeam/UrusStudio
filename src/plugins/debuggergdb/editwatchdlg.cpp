@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10912 $
+ * $Id: editwatchdlg.cpp 10912 2016-09-25 16:10:13Z fuscated $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/debuggergdb/editwatchdlg.cpp $
  */
 
 #include <sdk.h>

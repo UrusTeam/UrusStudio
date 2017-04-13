@@ -15,9 +15,9 @@
 * You should have received a copy of the GNU General Public License
 * along with wxSmith. If not, see <http://www.gnu.org/licenses/>.
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 10684 $
+* $Id: wxwidgetsguiappadoptingdlg.h 10684 2016-01-22 10:49:37Z mortenmacfly $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/wxwidgetsguiappadoptingdlg.h $
 */
 
 #ifndef WXWIDGETSGUIAPPADOPTINGDLG_H

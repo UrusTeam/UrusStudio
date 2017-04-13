@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10861 $
+ * $Id: ProjectOptionsManipulatorResultDlg.cpp 10861 2016-06-08 19:24:21Z mortenmacfly $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/ProjectOptionsManipulator/ProjectOptionsManipulatorResultDlg.cpp $
  */
 
 #include "ProjectOptionsManipulatorResultDlg.h"

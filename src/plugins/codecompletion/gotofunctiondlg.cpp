@@ -8,13 +8,13 @@
 
 #ifndef CB_PRECOMP
     //(*InternalHeadersPCH(GotoFunctionDlg)
-    #include <wx/listctrl.h>
+    #include <wx/checkbox.h>
     #include <wx/sizer.h>
+    #include <wx/listctrl.h>
+    #include <wx/string.h>
+    #include <wx/intl.h>
     #include <wx/stattext.h>
     #include <wx/textctrl.h>
-    #include <wx/checkbox.h>
-    #include <wx/intl.h>
-    #include <wx/string.h>
     //*)
 
     #include "configmanager.h"
@@ -130,9 +130,9 @@ GotoFunctionDlg::GotoFunctionDlg(wxWindow* parent, Iterator* iterator) :
 void GotoFunctionDlg::BuildContent(wxWindow* parent, Iterator* iterator)
 {
     //(*Initialize(GotoFunctionDlg)
-    wxStaticText* StaticText1;
-    wxBoxSizer* BoxSizer2;
     wxBoxSizer* BoxSizer1;
+    wxBoxSizer* BoxSizer2;
+    wxStaticText* StaticText1;
 
     Create(parent, wxID_ANY, _("Select function..."), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER|wxCLOSE_BOX|wxMAXIMIZE_BOX, _T("wxID_ANY"));
     BoxSizer1 = new wxBoxSizer(wxVERTICAL);

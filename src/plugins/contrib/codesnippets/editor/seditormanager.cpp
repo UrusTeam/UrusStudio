@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10034 $
+ * $Id: seditormanager.cpp 10034 2014-11-16 14:42:45Z fuscated $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/codesnippets/editor/seditormanager.cpp $
  */
 
 //warning: ...trunk/src/include/sdk_precomp.h.gch: not used because `EXPORT_LIB' not defined|

@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 8113 $
+ * $Id: projectbuildtarget.cpp 8113 2012-07-14 07:53:51Z mortenmacfly $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/projectbuildtarget.cpp $
  */
 
 #include "sdk_precomp.h"

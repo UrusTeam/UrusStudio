@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10982 $
+ * $Id: virtualbuildtargetsdlg.cpp 10982 2017-01-28 16:02:00Z fuscated $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/virtualbuildtargetsdlg.cpp $
  */
 
 #include "sdk.h"

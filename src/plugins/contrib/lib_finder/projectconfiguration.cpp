@@ -16,9 +16,9 @@
 * along with wxSmith; if not, write to the Free Software
 * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 8561 $
+* $Id: projectconfiguration.cpp 8561 2012-11-14 22:25:50Z killerbot $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/lib_finder/projectconfiguration.cpp $
 */
 
 #include "projectconfiguration.h"

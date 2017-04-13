@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10971 $
+ * $Id: ccmanager.cpp 10971 2017-01-19 19:15:00Z fuscated $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/ccmanager.cpp $
  */
 
 #include "sdk_precomp.h"

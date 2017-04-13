@@ -25,9 +25,9 @@
 * This program is distributed under the terms of the GNU General Public License as published by
 * the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 10874 $
+* $Id: BrowseTrackerLayout.cpp 10874 2016-07-16 20:00:28Z jenslody $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/BrowseTracker/BrowseTrackerLayout.cpp $
 */
 
 #include "sdk_precomp.h"

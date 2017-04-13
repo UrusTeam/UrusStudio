@@ -16,9 +16,9 @@
 * along with wxSmith; if not, write to the Free Software
 * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 10749 $
+* $Id: wxSmithContribItems.h 10749 2016-01-31 09:07:41Z mortenmacfly $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmithContribItems/wxSmithContribItems.h $
 */
 
 #ifndef WXSMITHCONTRIBITEMS_H_INCLUDED

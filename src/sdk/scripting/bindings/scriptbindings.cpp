@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10677 $
+ * $Id: scriptbindings.cpp 10677 2016-01-22 05:38:20Z fuscated $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/scripting/bindings/scriptbindings.cpp $
  */
 
 #include <sdk_precomp.h>

@@ -15,9 +15,9 @@
 * You should have received a copy of the GNU General Public License
 * along with wxSmith. If not, see <http://www.gnu.org/licenses/>.
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 10749 $
+* $Id: wxsAxis.cpp 10749 2016-01-31 09:07:41Z mortenmacfly $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmithContribItems/wxSmithPlot/wxsAxis.cpp $
 */
 
 #include "wxsAxis.h"

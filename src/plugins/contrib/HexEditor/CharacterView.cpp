@@ -15,9 +15,9 @@
 * You should have received a copy of the GNU General Public License
 * along with HexEditor. If not, see <http://www.gnu.org/licenses/>.
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 8208 $
+* $Id: CharacterView.cpp 8208 2012-08-07 22:08:06Z killerbot $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/HexEditor/CharacterView.cpp $
 */
 
 #include "CharacterView.h"

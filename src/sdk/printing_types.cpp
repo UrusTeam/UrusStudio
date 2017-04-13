@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10769 $
+ * $Id: printing_types.cpp 10769 2016-02-06 14:26:58Z mortenmacfly $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/printing_types.cpp $
  */
 
 #include "sdk_precomp.h"

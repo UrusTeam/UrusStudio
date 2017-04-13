@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10907 $
+ * $Id: configmanager-revision.cpp 10907 2016-09-25 16:09:48Z fuscated $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/configmanager-revision.cpp $
  */
 
 /* ------------------------------------------------------------------------------------------------------------------

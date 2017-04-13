@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 8525 $
+ * $Id: copystrings.cpp 8525 2012-11-07 23:02:50Z killerbot $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/copystrings/copystrings.cpp $
  */
 
 #include "sdk.h"

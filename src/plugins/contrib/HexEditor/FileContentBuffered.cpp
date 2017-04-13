@@ -15,9 +15,9 @@
 * You should have received a copy of the GNU General Public License
 * along with HexEditor. If not, see <http://www.gnu.org/licenses/>.
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 8565 $
+* $Id: FileContentBuffered.cpp 8565 2012-11-14 22:49:50Z killerbot $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/HexEditor/FileContentBuffered.cpp $
 */
 
 #include "FileContentBuffered.h"

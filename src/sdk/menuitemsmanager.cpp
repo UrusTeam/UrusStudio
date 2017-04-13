@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10322 $
+ * $Id: menuitemsmanager.cpp 10322 2015-06-05 07:57:16Z fuscated $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/menuitemsmanager.cpp $
  */
 
 #ifndef CB_PRECOMP

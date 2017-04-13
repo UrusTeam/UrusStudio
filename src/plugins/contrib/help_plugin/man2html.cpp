@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 8190 $
+ * $Id: man2html.cpp 8190 2012-08-05 09:40:35Z killerbot $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/help_plugin/man2html.cpp $
  */
 
 /*

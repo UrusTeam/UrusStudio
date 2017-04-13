@@ -15,9 +15,9 @@
 * You should have received a copy of the GNU General Public License
 * along with HexEditor. If not, see <http://www.gnu.org/licenses/>.
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 10851 $
+* $Id: FileContentDisk.cpp 10851 2016-05-12 00:11:55Z fuscated $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/HexEditor/FileContentDisk.cpp $
 */
 
 #include "FileContentDisk.h"

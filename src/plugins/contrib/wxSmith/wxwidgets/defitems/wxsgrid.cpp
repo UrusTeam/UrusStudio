@@ -17,9 +17,9 @@
 * You should have received a copy of the GNU General Public License
 * along with wxSmith. If not, see <http://www.gnu.org/licenses/>.
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 11000 $
+* $Id: wxsgrid.cpp 11000 2017-02-06 19:12:28Z fuscated $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxwidgets/defitems/wxsgrid.cpp $
 */
 
 #include "wxsgrid.h"

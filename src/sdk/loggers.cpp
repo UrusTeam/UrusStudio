@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10050 $
+ * $Id: loggers.cpp 10050 2014-12-06 17:42:06Z fuscated $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/loggers.cpp $
  */
 
 #include "sdk_precomp.h"

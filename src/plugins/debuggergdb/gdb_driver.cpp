@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10539 $
+ * $Id: gdb_driver.cpp 10539 2015-10-19 21:59:44Z fuscated $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/debuggergdb/gdb_driver.cpp $
  */
 
 #include <sdk.h>

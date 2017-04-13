@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 9043 $
+ * $Id: cctreectrl.cpp 9043 2013-05-04 04:39:36Z mortenmacfly $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/codecompletion/cctreectrl.cpp $
  */
 
 #include <sdk.h>

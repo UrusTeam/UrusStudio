@@ -15,9 +15,9 @@
 * You should have received a copy of the GNU General Public License
 * along with wxSmith. If not, see <http://www.gnu.org/licenses/>.
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 10874 $
+* $Id: wxsversionconverter.cpp 10874 2016-07-16 20:00:28Z jenslody $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxsversionconverter.cpp $
 */
 
 #include "wxsversionconverter.h"

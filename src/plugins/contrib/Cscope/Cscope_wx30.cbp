@@ -7,7 +7,6 @@
 		<Build>
 			<Target title="default">
 				<Option output="../../../devel30/share/CodeBlocks/plugins/Cscope" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="../../../devel30" />
 				<Option object_output="../../../.objs30/plugins/contrib/Cscope" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -16,9 +15,9 @@
 				<Option run_host_application_in_terminal="0" />
 			</Target>
 			<Environment>
-				<Variable name="WX_CFG" value="URUS" />
+				<Variable name="WX_CFG" value="" />
 				<Variable name="WX_SUFFIX" value="u" />
-				<Variable name="WX_VERSION" value="31" />
+				<Variable name="WX_VERSION" value="30" />
 			</Environment>
 		</Build>
 		<VirtualTargets>
@@ -31,7 +30,6 @@
 			<Add option="-mthreads" />
 			<Add option="-fmessage-length=0" />
 			<Add option="-fexceptions" />
-			<Add option="-std=gnu++11" />
 			<Add option="-DBUILDING_PLUGIN" />
 			<Add option="-DNOPCH" />
 			<Add option="-DHAVE_W32API_H" />
@@ -39,22 +37,21 @@
 			<Add option="-DWXUSINGDLL" />
 			<Add option="-DcbDEBUG" />
 			<Add option="-DwxUSE_UNICODE" />
-			<Add directory="../../../$(#WX30.include)" />
-			<Add directory="../../../$(#WX30.lib)/$(WX_CFG)_dll/msw$(WX_SUFFIX)" />
+			<Add option="-std=gnu++11" />
+			<Add directory="$(#WX30.include)" />
+			<Add directory="$(#WX30.lib)/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
 			<Add directory="../../../include" />
 			<Add directory="../../../include/tinyxml" />
 			<Add directory="../../../sdk/wxscintilla/include" />
 		</Compiler>
 		<ResourceCompiler>
-			<Add directory="../../../$(#WX30.include)" />
+			<Add directory="$(#WX30.include)" />
 		</ResourceCompiler>
 		<Linker>
 			<Add option="-mthreads" />
 			<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-			<Add library="../../../devel30/codeblocks.dll" />
-			<Add library="../../../devel30/wxscintilla_cb.dll" />
-			<Add library="../../../devel30/base/tinyxml/txml.dll" />
-			<Add directory="../../../$(#WX30.lib)/$(WX_CFG)_dll" />
+			<Add library="codeblocks" />
+			<Add directory="$(#WX30.lib)/gcc_dll$(WX_CFG)" />
 			<Add directory="../../../devel30" />
 		</Linker>
 		<ExtraCommands>

@@ -1,9 +1,9 @@
 /*
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10770 $
+ * $Id: cctest_frame.cpp 10770 2016-02-06 14:27:56Z mortenmacfly $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/codecompletion/cctest/cctest_frame.cpp $
  */
 
 #ifdef __BORLANDC__

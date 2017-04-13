@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 7964 $
+ * $Id: configurationpanel.cpp 7964 2012-05-11 07:36:28Z mortenmacfly $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/configurationpanel.cpp $
  */
 
 #include "configurationpanel.h"

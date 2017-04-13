@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 9376 $
+ * $Id: cbprofiler.cpp 9376 2013-10-01 20:30:42Z fuscated $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/profiler/cbprofiler.cpp $
  */
 
 #include "sdk.h"

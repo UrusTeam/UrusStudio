@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10889 $
+ * $Id: astyleplugin.cpp 10889 2016-07-21 11:26:13Z jenslody $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/astyle/astyleplugin.cpp $
  */
 
 #include <sdk.h>

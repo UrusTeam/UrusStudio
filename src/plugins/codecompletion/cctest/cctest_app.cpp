@@ -1,9 +1,9 @@
 /*
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10336 $
+ * $Id: cctest_app.cpp 10336 2015-06-19 01:49:41Z ollydbg $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/codecompletion/cctest/cctest_app.cpp $
  */
 
 /**
@@ -105,7 +105,7 @@
 #endif
 
 //(*AppHeaders
-//#include <wx/image.h>
+#include <wx/image.h>
 //*)
 
 #include <wx/app.h>

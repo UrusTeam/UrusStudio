@@ -15,9 +15,9 @@
 * You should have received a copy of the GNU General Public License
 * along with wxSmith. If not, see <http://www.gnu.org/licenses/>.
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 8335 $
+* $Id: wxseditor.cpp 8335 2012-09-03 07:43:04Z ollydbg $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmith/wxseditor.cpp $
 */
 
 #include "wxseditor.h"

@@ -15,9 +15,9 @@
 * You should have received a copy of the GNU General Public License
 * along with wxSmith. If not, see <http://www.gnu.org/licenses/>.
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 10610 $
+* $Id: wxsAxis.h 10610 2015-12-07 05:32:34Z jenslody $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/wxSmithContribItems/wxSmithPlot/wxsAxis.h $
 */
 
 #ifndef WXSSTATICTEXT1_H

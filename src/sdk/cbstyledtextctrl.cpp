@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10638 $
+ * $Id: cbstyledtextctrl.cpp 10638 2016-01-03 04:15:55Z alpha0010 $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/cbstyledtextctrl.cpp $
  */
 
 #include "sdk_precomp.h"

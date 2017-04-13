@@ -15,9 +15,9 @@
 * You should have received a copy of the GNU General Public License
 * along with HexEditor. If not, see <http://www.gnu.org/licenses/>.
 *
-* $Revision$
-* $Id$
-* $HeadURL$
+* $Revision: 10839 $
+* $Id: HexEditPanel.h 10839 2016-05-04 23:00:36Z fuscated $
+* $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/HexEditor/HexEditPanel.h $
 */
 
 #ifndef HEXEDITPANEL_H

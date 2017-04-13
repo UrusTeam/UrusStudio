@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 7608 $
+ * $Id: projecttemplateloader.cpp 7608 2011-11-25 20:50:28Z mortenmacfly $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/projecttemplateloader.cpp $
  */
 
 #include "sdk_precomp.h"

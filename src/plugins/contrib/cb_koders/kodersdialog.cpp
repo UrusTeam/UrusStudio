@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10245 $
+ * $Id: kodersdialog.cpp 10245 2015-05-02 14:45:07Z mortenmacfly $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/cb_koders/kodersdialog.cpp $
  */
 
 #include <wx/string.h>

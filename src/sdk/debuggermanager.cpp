@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10804 $
+ * $Id: debuggermanager.cpp 10804 2016-03-09 00:07:33Z fuscated $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/sdk/debuggermanager.cpp $
  */
 
 #include "sdk_precomp.h"

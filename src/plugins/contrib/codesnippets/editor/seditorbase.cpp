@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU Lesser General Public License, version 3
  * http://www.gnu.org/licenses/lgpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10771 $
+ * $Id: seditorbase.cpp 10771 2016-02-06 14:29:31Z mortenmacfly $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/contrib/codesnippets/editor/seditorbase.cpp $
  */
 
 // Get rid of some precompile warnings when using sdk

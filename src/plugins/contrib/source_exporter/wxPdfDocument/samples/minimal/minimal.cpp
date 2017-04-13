@@ -68,7 +68,7 @@ void templates2();
 void layers();
 
 void kerning();
-void attachment();
+//void attachment();
 
 #if defined(__WXMSW__)
 #if wxUSE_UNICODE
@@ -244,7 +244,7 @@ PdfDocTutorial::ShowGroup(int group)
 #else
         case '3': cout << endl << "'indicfonts' is available in Unicode build only!" << endl; break;
 #endif
-        case '4': cout << endl << "Running 'attachment' ..." << endl; attachment(); break;
+        //case '4': cout << endl << "Running 'attachment' ..." << endl; attachment(); break;
 
 #if 0
         case 'z': cout << endl << "Running 'w' ..." << endl; w(); break;

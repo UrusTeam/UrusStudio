@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10030 $
+ * $Id: debuggeroptionsdlg.cpp 10030 2014-11-09 13:15:51Z fuscated $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/debuggergdb/debuggeroptionsdlg.cpp $
  */
 
 #include <sdk.h>

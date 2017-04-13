@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10739 $
+ * $Id: defaultmimehandler.cpp 10739 2016-01-28 18:01:46Z mortenmacfly $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/defaultmimehandler/defaultmimehandler.cpp $
  */
 
 #include "sdk.h"

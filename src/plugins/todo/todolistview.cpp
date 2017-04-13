@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10948 $
+ * $Id: todolistview.cpp 10948 2016-12-28 00:06:17Z fuscated $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/plugins/todo/todolistview.cpp $
  */
 
 #include "sdk.h"

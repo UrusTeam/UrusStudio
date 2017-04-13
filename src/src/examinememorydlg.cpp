@@ -2,9 +2,9 @@
  * This file is part of the Code::Blocks IDE and licensed under the GNU General Public License, version 3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
- * $Revision$
- * $Id$
- * $HeadURL$
+ * $Revision: 10024 $
+ * $Id: examinememorydlg.cpp 10024 2014-11-06 09:23:26Z jenslody $
+ * $HeadURL: file:///svn/p/codeblocks/code/trunk/src/src/examinememorydlg.cpp $
  */
 
 #include "sdk.h"
