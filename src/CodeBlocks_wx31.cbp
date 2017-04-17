@@ -16,7 +16,9 @@
 					<Add directory="include/tinyxml" />
 				</Compiler>
 				<ExtraCommands>
-					<Add after="xcopy /y base\tinyxml\txml.dll build_tools\autorevision\" />
+					<Add after="cp -f base/tinyxml/txml.dll build_tools/autorevision/" />
+					<Add after="cp -f base/tinyxml/txml.dll devel31/" />
+					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="AutoRevision">
@@ -804,6 +806,12 @@
 			<Add directory="$(#WX31.lib)/$(WX_CFG)_dll" />
 			<Add directory="sdk/scripting/lib" />
 		</Linker>
+		<ExtraCommands>
+			<Add after="cp -f sdk/scripting/lib/*.dll devel31/" />
+			<Add after="cp -f $(#WX31.lib)\$(WX_CFG)_dll/*.dll devel31/" />
+			<Add after="cp -f plugins/compilergcc/depslib/*.dll devel31/" />
+			<Mode after="always" />
+		</ExtraCommands>
 		<Unit filename="base/tinyxml/tinystr.cpp">
 			<Option target="tinyXML" />
 		</Unit>
