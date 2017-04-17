@@ -20,6 +20,10 @@
 				<Linker>
 					<Add option="-mthreads" />
 				</Linker>
+				<ExtraCommands>
+					<Add after="cp -f bzip2/bzip2.dll ../../../devel31" />
+					<Mode after="always" />
+				</ExtraCommands>
 			</Target>
 			<Target title="zlib">
 				<Option output="../../../devel31/libz.a" prefix_auto="0" extension_auto="0" />
@@ -34,6 +38,10 @@
 				<Linker>
 					<Add option="-mthreads" />
 				</Linker>
+				<ExtraCommands>
+					<Add after="cp -f zlib/z.dll ../../../devel31" />
+					<Mode after="always" />
+				</ExtraCommands>
 			</Target>
 			<Target title="help_plugin">
 				<Option output="../../../devel31/share/CodeBlocks/plugins/help_plugin.dll" prefix_auto="0" extension_auto="0" />
