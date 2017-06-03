@@ -12,18 +12,18 @@
 
 #ifndef CB_PRECOMP
     //(*InternalHeadersPCH(EmbeddedHtmlPanel)
-    #include <wx/bmpbuttn.h>
     #include <wx/sizer.h>
-    #include <wx/string.h>
-    #include <wx/intl.h>
     #include <wx/stattext.h>
+    #include <wx/bmpbuttn.h>
+    #include <wx/intl.h>
+    #include <wx/string.h>
     //*)
 #endif
 //(*InternalHeaders(EmbeddedHtmlPanel)
-#include <wx/bitmap.h>
-#include <wx/image.h>
-#include <wx/html/htmlwin.h>
 #include <wx/artprov.h>
+#include <wx/bitmap.h>
+#include <wx/html/htmlwin.h>
+#include <wx/image.h>
 //*)
 
 //(*IdInit(EmbeddedHtmlPanel)
@@ -73,8 +73,8 @@ END_EVENT_TABLE()
 EmbeddedHtmlPanel::EmbeddedHtmlPanel(wxWindow* parent)
 {
     //(*Initialize(EmbeddedHtmlPanel)
-    wxBoxSizer* BoxSizer2;
     wxBoxSizer* BoxSizer1;
+    wxBoxSizer* BoxSizer2;
 
     Create(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("wxID_ANY"));
     BoxSizer1 = new wxBoxSizer(wxVERTICAL);

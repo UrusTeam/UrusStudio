@@ -9,10 +9,10 @@
 #include <wx/string.h>
 
 //(*HeadersPCH(CompilerPanel)
-#include <wx/combobox.h>
 #include <wx/checkbox.h>
-#include <wx/sizer.h>
+#include <wx/combobox.h>
 #include <wx/panel.h>
+#include <wx/sizer.h>
 #include <wx/stattext.h>
 #include <wx/textctrl.h>
 //*)
@@ -71,20 +71,20 @@ class CompilerPanel: public wxPanel
 		//*)
 
 		//(*Declarations(CompilerPanel)
-		wxStaticBoxSizer* StaticBoxSizer2;
-		wxTextCtrl* txtDbgObjOut;
-		wxComboBox* cmbCompiler;
-		wxTextCtrl* txtRelName;
-		wxStaticText* StaticText1;
 		wxBoxSizer* BoxSizer4;
+		wxBoxSizer* BoxSizer5;
+		wxCheckBox* chkConfDebug;
 		wxCheckBox* chkConfRelease;
+		wxComboBox* cmbCompiler;
+		wxStaticBoxSizer* StaticBoxSizer1;
+		wxStaticBoxSizer* StaticBoxSizer2;
+		wxStaticText* StaticText1;
 		wxTextCtrl* txtDbgName;
+		wxTextCtrl* txtDbgObjOut;
+		wxTextCtrl* txtDbgOut;
+		wxTextCtrl* txtRelName;
 		wxTextCtrl* txtRelObjOut;
 		wxTextCtrl* txtRelOut;
-		wxTextCtrl* txtDbgOut;
-		wxBoxSizer* BoxSizer5;
-		wxStaticBoxSizer* StaticBoxSizer1;
-		wxCheckBox* chkConfDebug;
 		//*)
 
         wxWindow* m_parentDialog;

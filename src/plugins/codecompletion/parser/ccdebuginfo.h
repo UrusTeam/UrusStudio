@@ -13,16 +13,16 @@
 #endif
 
 //(*Headers(CCDebugInfo)
-#include <wx/combobox.h>
-#include <wx/sizer.h>
-#include <wx/notebook.h>
-#include <wx/button.h>
-#include <wx/panel.h>
 #include "scrollingdialog.h"
+#include <wx/button.h>
+#include <wx/combobox.h>
+#include <wx/listbox.h>
+#include <wx/notebook.h>
+#include <wx/panel.h>
+#include <wx/sizer.h>
 #include <wx/statline.h>
 #include <wx/stattext.h>
 #include <wx/textctrl.h>
-#include <wx/listbox.h>
 //*)
 
 class ParserBase;
@@ -100,38 +100,38 @@ protected:
     //*)
 
     //(*Declarations(CCDebugInfo)
-    wxComboBox* cmbChildren;
-    wxStaticText* txtFullType;
-    wxComboBox* cmbAncestors;
-    wxTextCtrl* txtFilter;
-    wxStaticText* txtArgsStripped;
-    wxListBox* lstMacros;
-    wxStaticText* txtID;
-    wxStaticText* txtParent;
-    wxStaticText* txtArgs;
-    wxStaticText* txtNamespace;
-    wxStaticText* txtBaseType;
-    wxStaticText* txtIsOp;
     wxBoxSizer* BoxSizer11;
-    wxStaticText* txtScope;
-    wxPanel* Panel4;
-    wxStaticText* txtKind;
-    wxStaticText* txtDeclFile;
-    wxListBox* lstFiles;
-    wxListBox* lstDirs;
-    wxStaticText* txtTemplateArg;
-    wxStaticText* txtIsNoExcept;
-    wxStaticText* txtInfo;
-    wxStaticText* txtName;
-    wxStaticText* txtIsLocal;
-    wxStaticText* txtUserData;
-    wxStaticText* txtIsTemp;
     wxBoxSizer* BoxSizer12;
-    wxStaticText* txtImplFile;
-    wxComboBox* cmbDescendants;
-    wxButton* btnSave;
     wxBoxSizer* BoxSizer5;
+    wxButton* btnSave;
+    wxComboBox* cmbAncestors;
+    wxComboBox* cmbChildren;
+    wxComboBox* cmbDescendants;
+    wxListBox* lstDirs;
+    wxListBox* lstFiles;
+    wxListBox* lstMacros;
+    wxPanel* Panel4;
+    wxStaticText* txtArgs;
+    wxStaticText* txtArgsStripped;
+    wxStaticText* txtBaseType;
+    wxStaticText* txtDeclFile;
+    wxStaticText* txtFullType;
+    wxStaticText* txtID;
+    wxStaticText* txtImplFile;
+    wxStaticText* txtInfo;
     wxStaticText* txtIsConst;
+    wxStaticText* txtIsLocal;
+    wxStaticText* txtIsNoExcept;
+    wxStaticText* txtIsOp;
+    wxStaticText* txtIsTemp;
+    wxStaticText* txtKind;
+    wxStaticText* txtName;
+    wxStaticText* txtNamespace;
+    wxStaticText* txtParent;
+    wxStaticText* txtScope;
+    wxStaticText* txtTemplateArg;
+    wxStaticText* txtUserData;
+    wxTextCtrl* txtFilter;
     //*)
 
 private:

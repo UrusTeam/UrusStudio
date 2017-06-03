@@ -3,14 +3,14 @@
 
 //(*Headers(ConfigPanel)
 #include <wx/panel.h>
-class wxHyperlinkCtrl;
-class wxTextCtrl;
-class wxStaticLine;
-class wxStaticText;
-class wxFlexGridSizer;
 class wxBoxSizer;
 class wxButton;
 class wxChoice;
+class wxFlexGridSizer;
+class wxHyperlinkCtrl;
+class wxStaticLine;
+class wxStaticText;
+class wxTextCtrl;
 //*)
 
 #include <wx/string.h>
@@ -27,13 +27,13 @@ public:
     virtual ~ConfigPanel();
 
     //(*Declarations(ConfigPanel)
+    wxChoice* choOperation;
+    wxStaticLine* StaticLine1;
+    wxStaticLine* StaticLine2;
     wxTextCtrl* txtCppCheckApp;
     wxTextCtrl* txtCppCheckArgs;
-    wxChoice* choOperation;
-    wxStaticLine* StaticLine2;
-    wxStaticLine* StaticLine1;
-    wxTextCtrl* txtVeraArgs;
     wxTextCtrl* txtVeraApp;
+    wxTextCtrl* txtVeraArgs;
     //*)
 
     /// @return the panel's title.

@@ -1,15 +1,15 @@
 desktopdir = $(datadir)/applications
-desktop_DATA = $(srcdir)/codeblocks.desktop
+desktop_DATA = $(srcdir)/urusstudio.desktop
 
 xdgmimedir = $(datadir)/mime/packages
-xdgmime_DATA = codeblocks.xml
+xdgmime_DATA = urusstudio.xml
 
 mimeicondir = $(datadir)/icons/hicolor/48x48/mimetypes
-mimeicon_DATA = $(srcdir)/application-x-codeblocks.png \
-                            $(srcdir)/application-x-codeblocks-workspace.png
+mimeicon_DATA = $(srcdir)/application-x-urusstudio.png \
+                            $(srcdir)/application-x-urusstudio-workspace.png
 
 pixmapdir = $(datadir)/pixmaps
-pixmap_DATA = $(srcdir)/codeblocks.png
+pixmap_DATA = $(srcdir)/urusstudio.png
 
 EXTRA_DIST = \
 	$(desktop_DATA) \

@@ -12,12 +12,12 @@
 
 #ifndef WX_PRECOMP
     //(*InternalHeadersPCH(GotoFile)
-    #include <wx/sizer.h>
     #include <wx/listctrl.h>
-    #include <wx/string.h>
-    #include <wx/intl.h>
+    #include <wx/sizer.h>
     #include <wx/stattext.h>
     #include <wx/textctrl.h>
+    #include <wx/intl.h>
+    #include <wx/string.h>
     //*)
 #endif
 //(*InternalHeaders(GotoFile)

@@ -8,13 +8,13 @@
 
 
 //(*Headers(MainFrame)
+#include <wx/button.h>
+#include <wx/checklst.h>
+#include <wx/frame.h>
+#include <wx/listbox.h>
 #include <wx/sizer.h>
 #include <wx/stattext.h>
 #include <wx/textctrl.h>
-#include <wx/checklst.h>
-#include <wx/listbox.h>
-#include <wx/button.h>
-#include <wx/frame.h>
 //*)
 
 #include <wx/arrstr.h>
@@ -67,24 +67,24 @@ class MainFrame: public wxFrame
 
 
 		//(*Declarations(MainFrame)
-		wxBoxSizer* bszSteps;
-		wxGridSizer* grsAction;
-		wxTextCtrl* txtFileDst;
-		wxStaticBoxSizer* sbsSteps;
 		wxBoxSizer* bszMain;
-		wxStaticText* lblFileSrc;
-		wxCheckListBox* clbCfgSrc;
+		wxBoxSizer* bszSteps;
+		wxButton* btnFileDst;
 		wxButton* btnFileSrc;
+		wxCheckListBox* clbCfgSrc;
 		wxFlexGridSizer* flsFileDst;
 		wxFlexGridSizer* flsFileSrc;
-		wxTextCtrl* txtFileSrc;
-		wxGridSizer* grsFile;
+		wxGridSizer* grsAction;
 		wxGridSizer* grsCfg;
-		wxButton* btnFileDst;
-		wxListBox* lstCfgDst;
-		wxStaticText* lblFileDst;
+		wxGridSizer* grsFile;
 		wxGridSizer* grsFileLabel;
+		wxListBox* lstCfgDst;
+		wxStaticBoxSizer* sbsSteps;
+		wxStaticText* lblFileDst;
+		wxStaticText* lblFileSrc;
 		wxStaticText* lblSteps;
+		wxTextCtrl* txtFileDst;
+		wxTextCtrl* txtFileSrc;
 		//*)
 
 //***********************************************************************

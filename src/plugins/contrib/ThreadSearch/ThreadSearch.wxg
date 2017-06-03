@@ -564,7 +564,7 @@
                 <object class="wxBitmapButton" name="m_pBtnSearchProjectFiles" base="EditBitmapButton">
                     <tooltip>Search in project files</tooltip>
                     <id>idBtnSearchProjectFiles</id>
-                    <bitmap>resources\images\16x16\project.png</bitmap>
+                    <bitmap>resources\images\16x16\urusproject.png</bitmap>
                     <events>
                         <handler event="EVT_BUTTON">OnBtnSearchProjectFilesClick</handler>
                     </events>

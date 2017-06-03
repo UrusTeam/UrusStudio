@@ -3,9 +3,9 @@
 
 #ifndef CB_PRECOMP
 	//(*HeadersPCH(DebuggerSettingsDlg)
-	#include <wx/sizer.h>
-	#include <wx/panel.h>
 	#include "scrollingdialog.h"
+	#include <wx/panel.h>
+	#include <wx/sizer.h>
 	#include <wx/stattext.h>
 	//*)
 
@@ -40,8 +40,8 @@ class DebuggerSettingsDlg: public wxScrollingDialog
 
 	private:
 		//(*Declarations(DebuggerSettingsDlg)
-		wxTreebook* m_treebook;
 		wxStaticText* m_activeInfo;
+		wxTreebook* m_treebook;
 		//*)
 
 		//(*Identifiers(DebuggerSettingsDlg)

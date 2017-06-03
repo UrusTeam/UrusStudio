@@ -11,8 +11,8 @@
 #ifndef CB_PRECOMP
 #include <wx/event.h>
 //(*InternalHeadersPCH(CompilerPanel)
-#include <wx/string.h>
 #include <wx/intl.h>
+#include <wx/string.h>
 //*)
 #include "globals.h"
 #endif
@@ -45,16 +45,16 @@ CompilerPanel::CompilerPanel(wxWindow* parent, wxWindow* parentDialog) :
     m_parentDialog(parentDialog)
 {
 	//(*Initialize(CompilerPanel)
+	wxBoxSizer* BoxSizer1;
+	wxBoxSizer* BoxSizer2;
+	wxBoxSizer* BoxSizer3;
 	wxFlexGridSizer* FlexGridSizer1;
 	wxFlexGridSizer* FlexGridSizer2;
-	wxBoxSizer* BoxSizer3;
-	wxBoxSizer* BoxSizer2;
-	wxStaticText* StaticText3;
-	wxStaticText* StaticText8;
-	wxStaticText* StaticText7;
-	wxStaticText* StaticText4;
-	wxBoxSizer* BoxSizer1;
 	wxStaticText* StaticText2;
+	wxStaticText* StaticText3;
+	wxStaticText* StaticText4;
+	wxStaticText* StaticText7;
+	wxStaticText* StaticText8;
 
 	Create(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("wxID_ANY"));
 	BoxSizer1 = new wxBoxSizer(wxVERTICAL);
