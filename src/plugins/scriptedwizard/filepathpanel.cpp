@@ -11,8 +11,8 @@
 #ifndef CB_PRECOMP
     #include <wx/filedlg.h>
     //(*InternalHeadersPCH(FilePathPanel)
-    #include <wx/string.h>
     #include <wx/intl.h>
+    #include <wx/string.h>
     //*)
     #include <cbproject.h>
     #include <projectbuildtarget.h>
@@ -45,10 +45,10 @@ FilePathPanel::FilePathPanel(wxWindow* parent,wxWindowID id) :
     m_Selection(-1)
 {
 	//(*Initialize(FilePathPanel)
-	wxStaticText* StaticText1;
-	wxStaticText* StaticText4;
 	wxBoxSizer* BoxSizer1;
+	wxStaticText* StaticText1;
 	wxStaticText* StaticText2;
+	wxStaticText* StaticText4;
 
 	Create(parent, id, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("id"));
 	BoxSizer1 = new wxBoxSizer(wxVERTICAL);

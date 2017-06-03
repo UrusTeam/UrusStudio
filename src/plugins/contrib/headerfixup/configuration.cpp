@@ -8,8 +8,13 @@
  */
 
 //(*InternalHeaders(Configuration)
-#include <wx/string.h>
+#include <wx/button.h>
 #include <wx/intl.h>
+#include <wx/listbox.h>
+#include <wx/sizer.h>
+#include <wx/stattext.h>
+#include <wx/string.h>
+#include <wx/textctrl.h>
 //*)
 
 #include <wx/arrstr.h>
@@ -49,16 +54,16 @@ END_EVENT_TABLE()
 Configuration::Configuration(wxWindow* parent)
 {
   //(*Initialize(Configuration)
-  wxBoxSizer* sizMain;
+  wxBoxSizer* sizAddDeleteChange;
+  wxBoxSizer* sizAddDeleteRename;
   wxBoxSizer* sizHeaders;
   wxBoxSizer* sizIdentifiers;
-  wxStaticText* lblIdentifiers;
-  wxStaticBoxSizer* sizGroups;
-  wxStaticBoxSizer* sizBindings;
   wxBoxSizer* sizIdentifiersMain;
-  wxBoxSizer* sizAddDeleteRename;
-  wxBoxSizer* sizAddDeleteChange;
+  wxBoxSizer* sizMain;
+  wxStaticBoxSizer* sizBindings;
+  wxStaticBoxSizer* sizGroups;
   wxStaticText* lblHeaders;
+  wxStaticText* lblIdentifiers;
 
   Create(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("wxID_ANY"));
   sizMain = new wxBoxSizer(wxHORIZONTAL);

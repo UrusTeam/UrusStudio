@@ -10,8 +10,8 @@
 #include <sdk.h>
 #ifndef CB_PRECOMP
     //(*InternalHeadersPCH(GenericSelectPath)
-    #include <wx/string.h>
     #include <wx/intl.h>
+    #include <wx/string.h>
     //*)
 #endif
 #include "genericselectpath.h"

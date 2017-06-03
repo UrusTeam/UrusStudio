@@ -8,8 +8,14 @@
  */
 
 //(*InternalHeaders(Execution)
-#include <wx/string.h>
+#include <wx/button.h>
+#include <wx/checkbox.h>
+#include <wx/checklst.h>
+#include <wx/gauge.h>
 #include <wx/intl.h>
+#include <wx/radiobox.h>
+#include <wx/sizer.h>
+#include <wx/string.h>
 //*)
 
 #include <wx/filename.h>
@@ -61,12 +67,12 @@ END_EVENT_TABLE()
 Execution::Execution(wxWindow* parent,wxWindowID id)
 {
   //(*Initialize(Execution)
-  wxBoxSizer* sizMain;
-  wxBoxSizer* sizLeft;
   wxBoxSizer* sizAllNoneInvert;
+  wxBoxSizer* sizLeft;
+  wxBoxSizer* sizMain;
   wxBoxSizer* sizRight;
-  wxStaticBoxSizer* sizHeaderSets;
   wxStaticBoxSizer* sizAdvancedOptions;
+  wxStaticBoxSizer* sizHeaderSets;
 
   Create(parent, id, _("Header Fixup"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE, _T("id"));
   sizMain = new wxBoxSizer(wxHORIZONTAL);

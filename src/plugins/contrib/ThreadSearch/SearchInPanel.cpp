@@ -65,7 +65,7 @@ SearchInPanel::SearchInPanel(wxWindow* parent, int id, const wxPoint& pos, const
                                                                   wxBITMAP_TYPE_PNG, scaleFactor));
     m_pBtnSearchTargetFiles->SetMinSize(dummySize);
     m_pBtnSearchProjectFiles = new wxCustomButton(this, controlIDs.Get(ControlIDs::idBtnSearchProjectFiles),
-                                                  cbLoadBitmapScaled(prefix + wxT("project.png"),
+                                                  cbLoadBitmapScaled(prefix + wxT("urusproject.png"),
                                                                      wxBITMAP_TYPE_PNG,
                                                                      scaleFactor),
                                                   wxDefaultPosition, dummySize);

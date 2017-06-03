@@ -181,7 +181,7 @@
 				</ExtraCommands>
 			</Target>
 			<Target title="src">
-				<Option output="devel31/codeblocks" prefix_auto="1" extension_auto="1" />
+				<Option output="devel31/urusstudio" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel31" />
 				<Option object_output=".objs31" />
 				<Option type="0" />
@@ -4286,52 +4286,52 @@
 		<Unit filename="tools/ConsoleRunner/main.cpp">
 			<Option target="ConsoleRunner" />
 		</Unit>
-		<Unit filename="wxsmith/BuildTargetPanel.wxs">
+		<Unit filename="wxSmith/BuildTargetPanel.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxsmith/CCDebugInfo.wxs">
+		<Unit filename="wxSmith/CCDebugInfo.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxsmith/CompilerPanel.wxs">
+		<Unit filename="wxSmith/CompilerPanel.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxsmith/EmbeddedHtmlPanel.wxs">
+		<Unit filename="wxSmith/EmbeddedHtmlPanel.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxsmith/FilePathPanel.wxs">
+		<Unit filename="wxSmith/FilePathPanel.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxsmith/GenericSelectPath.wxs">
+		<Unit filename="wxSmith/GenericSelectPath.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxsmith/GenericSingleChoiceList.wxs">
+		<Unit filename="wxSmith/GenericSingleChoiceList.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxsmith/InfoPanel.wxs">
+		<Unit filename="wxSmith/InfoPanel.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxsmith/ProjectPathPanel.wxs">
+		<Unit filename="wxSmith/ProjectPathPanel.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxsmith/ScriptConsole.wxs">
+		<Unit filename="wxSmith/ScriptConsole.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxsmith/VirtualBuildTargetsDlg.wxs">
+		<Unit filename="wxSmith/VirtualBuildTargetsDlg.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxsmith/databreakpointdlg.wxs">
+		<Unit filename="wxSmith/databreakpointdlg.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxsmith/debuggersettingscommonpanel.wxs">
+		<Unit filename="wxSmith/debuggersettingscommonpanel.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxsmith/debuggersettingsdlg.wxs">
+		<Unit filename="wxSmith/debuggersettingsdlg.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxsmith/debuggersettingspanel.wxs">
+		<Unit filename="wxSmith/debuggersettingspanel.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxsmith/goto_file.wxs">
+		<Unit filename="wxSmith/goto_file.wxs">
 			<Option target="src" />
 		</Unit>
 		<Extensions>

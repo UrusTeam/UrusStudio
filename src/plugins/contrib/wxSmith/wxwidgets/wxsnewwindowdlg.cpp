@@ -118,22 +118,22 @@ wxsNewWindowDlg::wxsNewWindowDlg(wxWindow* parent,const wxString& ResType,wxsPro
     m_Project(Project)
 {
     //(*Initialize(wxsNewWindowDlg)
-    wxStaticText* StaticText10;
-    wxStaticText* StaticText9;
-    wxFlexGridSizer* FlexGridSizer4;
-    wxStaticText* StaticText2;
-    wxFlexGridSizer* FlexGridSizer3;
-    wxStaticText* StaticText6;
-    wxStaticText* StaticText8;
-    wxStaticText* StaticText11;
-    wxFlexGridSizer* FlexGridSizer2;
-    wxStaticText* StaticText1;
-    wxStaticText* StaticText3;
-    wxStaticBoxSizer* StaticBoxSizer3;
-    wxStaticText* StaticText5;
-    wxStaticText* StaticText7;
     wxFlexGridSizer* FlexGridSizer1;
+    wxFlexGridSizer* FlexGridSizer2;
+    wxFlexGridSizer* FlexGridSizer3;
+    wxFlexGridSizer* FlexGridSizer4;
+    wxStaticBoxSizer* StaticBoxSizer3;
+    wxStaticText* StaticText10;
+    wxStaticText* StaticText11;
+    wxStaticText* StaticText1;
+    wxStaticText* StaticText2;
+    wxStaticText* StaticText3;
     wxStaticText* StaticText4;
+    wxStaticText* StaticText5;
+    wxStaticText* StaticText6;
+    wxStaticText* StaticText7;
+    wxStaticText* StaticText8;
+    wxStaticText* StaticText9;
     wxStdDialogButtonSizer* StdDialogButtonSizer1;
 
     Create(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE, _T("wxID_ANY"));
@@ -268,25 +268,25 @@ wxsNewWindowDlg::wxsNewWindowDlg(wxWindow* parent,const wxString& ResType,wxsPro
     m_RootSizer->SetSizeHints(this);
     Center();
 
-    Connect(ID_TEXTCTRL1,wxEVT_COMMAND_TEXT_UPDATED,wxCommandEventHandler(wxsNewWindowDlg::OnClassChanged));
-    Connect(ID_TEXTCTRL2,wxEVT_COMMAND_TEXT_UPDATED,wxCommandEventHandler(wxsNewWindowDlg::OnHeaderChanged));
-    Connect(ID_TEXTCTRL3,wxEVT_COMMAND_TEXT_UPDATED,wxCommandEventHandler(wxsNewWindowDlg::OnSourceChanged));
-    Connect(ID_CHECKBOX1,wxEVT_COMMAND_CHECKBOX_CLICKED,wxCommandEventHandler(wxsNewWindowDlg::OnUseXrcChange));
-    Connect(ID_TEXTCTRL4,wxEVT_COMMAND_TEXT_UPDATED,wxCommandEventHandler(wxsNewWindowDlg::OnXrcChanged));
-    Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,wxCommandEventHandler(wxsNewWindowDlg::OnAdvOpsClick));
-    Connect(ID_CHECKBOX2,wxEVT_COMMAND_CHECKBOX_CLICKED,wxCommandEventHandler(wxsNewWindowDlg::OnUsePCHClick));
-    Connect(ID_CHECKBOX4,wxEVT_COMMAND_CHECKBOX_CLICKED,wxCommandEventHandler(wxsNewWindowDlg::OnUseInitFuncClick));
-    Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,wxCommandEventHandler(wxsNewWindowDlg::OnScopeIdsClick));
-    Connect(ID_BUTTON3,wxEVT_COMMAND_BUTTON_CLICKED,wxCommandEventHandler(wxsNewWindowDlg::OnScopeMembersClick));
-    Connect(ID_BUTTON4,wxEVT_COMMAND_BUTTON_CLICKED,wxCommandEventHandler(wxsNewWindowDlg::OnScopeHandlersClick));
-    Connect(ID_CHECKBOX5,wxEVT_COMMAND_CHECKBOX_CLICKED,wxCommandEventHandler(wxsNewWindowDlg::OnCtorParentClick));
-    Connect(ID_CHECKBOX9,wxEVT_COMMAND_CHECKBOX_CLICKED,wxCommandEventHandler(wxsNewWindowDlg::OnCtorParentDefClick));
-    Connect(ID_CHECKBOX6,wxEVT_COMMAND_CHECKBOX_CLICKED,wxCommandEventHandler(wxsNewWindowDlg::OnCtorIdClick));
-    Connect(ID_CHECKBOX10,wxEVT_COMMAND_CHECKBOX_CLICKED,wxCommandEventHandler(wxsNewWindowDlg::OnCtorIdDefClick));
-    Connect(ID_CHECKBOX7,wxEVT_COMMAND_CHECKBOX_CLICKED,wxCommandEventHandler(wxsNewWindowDlg::OnCtorPosClick));
-    Connect(ID_CHECKBOX11,wxEVT_COMMAND_CHECKBOX_CLICKED,wxCommandEventHandler(wxsNewWindowDlg::OnCtorPosDefClick));
-    Connect(ID_CHECKBOX8,wxEVT_COMMAND_CHECKBOX_CLICKED,wxCommandEventHandler(wxsNewWindowDlg::OnCtorSizeClick));
-    Connect(ID_CHECKBOX12,wxEVT_COMMAND_CHECKBOX_CLICKED,wxCommandEventHandler(wxsNewWindowDlg::OnCtorSizeDefClick));
+    Connect(ID_TEXTCTRL1,wxEVT_COMMAND_TEXT_UPDATED,(wxObjectEventFunction)&wxsNewWindowDlg::OnClassChanged);
+    Connect(ID_TEXTCTRL2,wxEVT_COMMAND_TEXT_UPDATED,(wxObjectEventFunction)&wxsNewWindowDlg::OnHeaderChanged);
+    Connect(ID_TEXTCTRL3,wxEVT_COMMAND_TEXT_UPDATED,(wxObjectEventFunction)&wxsNewWindowDlg::OnSourceChanged);
+    Connect(ID_CHECKBOX1,wxEVT_COMMAND_CHECKBOX_CLICKED,(wxObjectEventFunction)&wxsNewWindowDlg::OnUseXrcChange);
+    Connect(ID_TEXTCTRL4,wxEVT_COMMAND_TEXT_UPDATED,(wxObjectEventFunction)&wxsNewWindowDlg::OnXrcChanged);
+    Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&wxsNewWindowDlg::OnAdvOpsClick);
+    Connect(ID_CHECKBOX2,wxEVT_COMMAND_CHECKBOX_CLICKED,(wxObjectEventFunction)&wxsNewWindowDlg::OnUsePCHClick);
+    Connect(ID_CHECKBOX4,wxEVT_COMMAND_CHECKBOX_CLICKED,(wxObjectEventFunction)&wxsNewWindowDlg::OnUseInitFuncClick);
+    Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&wxsNewWindowDlg::OnScopeIdsClick);
+    Connect(ID_BUTTON3,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&wxsNewWindowDlg::OnScopeMembersClick);
+    Connect(ID_BUTTON4,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&wxsNewWindowDlg::OnScopeHandlersClick);
+    Connect(ID_CHECKBOX5,wxEVT_COMMAND_CHECKBOX_CLICKED,(wxObjectEventFunction)&wxsNewWindowDlg::OnCtorParentClick);
+    Connect(ID_CHECKBOX9,wxEVT_COMMAND_CHECKBOX_CLICKED,(wxObjectEventFunction)&wxsNewWindowDlg::OnCtorParentDefClick);
+    Connect(ID_CHECKBOX6,wxEVT_COMMAND_CHECKBOX_CLICKED,(wxObjectEventFunction)&wxsNewWindowDlg::OnCtorIdClick);
+    Connect(ID_CHECKBOX10,wxEVT_COMMAND_CHECKBOX_CLICKED,(wxObjectEventFunction)&wxsNewWindowDlg::OnCtorIdDefClick);
+    Connect(ID_CHECKBOX7,wxEVT_COMMAND_CHECKBOX_CLICKED,(wxObjectEventFunction)&wxsNewWindowDlg::OnCtorPosClick);
+    Connect(ID_CHECKBOX11,wxEVT_COMMAND_CHECKBOX_CLICKED,(wxObjectEventFunction)&wxsNewWindowDlg::OnCtorPosDefClick);
+    Connect(ID_CHECKBOX8,wxEVT_COMMAND_CHECKBOX_CLICKED,(wxObjectEventFunction)&wxsNewWindowDlg::OnCtorSizeClick);
+    Connect(ID_CHECKBOX12,wxEVT_COMMAND_CHECKBOX_CLICKED,(wxObjectEventFunction)&wxsNewWindowDlg::OnCtorSizeDefClick);
     //*)
 
     ConfigManager* Cfg = Manager::Get()->GetConfigManager(_T("wxsmith"));

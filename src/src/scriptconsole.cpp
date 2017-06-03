@@ -22,13 +22,13 @@
 #include <wx/filedlg.h>
 
 //(*InternalHeaders(ScriptConsole)
+#include <wx/artprov.h>
+#include <wx/bitmap.h>
+#include <wx/font.h>
+#include <wx/image.h>
+#include <wx/intl.h>
 #include <wx/settings.h>
 #include <wx/string.h>
-#include <wx/intl.h>
-#include <wx/font.h>
-#include <wx/bitmap.h>
-#include <wx/image.h>
-#include <wx/artprov.h>
 //*)
 
 //(*IdInit(ScriptConsole)
@@ -66,8 +66,8 @@ END_EVENT_TABLE()
 ScriptConsole::ScriptConsole(wxWindow* parent,wxWindowID id)
 {
     //(*Initialize(ScriptConsole)
-    wxBoxSizer* BoxSizer2;
     wxBoxSizer* BoxSizer1;
+    wxBoxSizer* BoxSizer2;
 
     Create(parent, id, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("id"));
     BoxSizer1 = new wxBoxSizer(wxVERTICAL);
