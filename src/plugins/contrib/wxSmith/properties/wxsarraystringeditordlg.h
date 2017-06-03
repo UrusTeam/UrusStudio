@@ -24,8 +24,8 @@
 #define WXSARRAYSTRINGEDITORDLG_H
 
 //(*Headers(wxsArrayStringEditorDlg)
-#include <wx/sizer.h>
 #include "scrollingdialog.h"
+#include <wx/sizer.h>
 #include <wx/textctrl.h>
 //*)
 

@@ -17,8 +17,8 @@
     #include <wx/utils.h>    // wxWindowDisabler
 
     //(*InternalHeaders(CCDebugInfo)
-    #include <wx/string.h>
     #include <wx/intl.h>
+    #include <wx/string.h>
     //*)
 
     #include <cbeditor.h>
@@ -142,54 +142,54 @@ CCDebugInfo::CCDebugInfo(wxWindow* parent, ParserBase* parser, Token* token) :
     m_Token(token)
 {
     //(*Initialize(CCDebugInfo)
-    wxStaticText* lblParent;
-    wxFlexGridSizer* FlexGridSizer1;
-    wxStaticText* lblArgs;
-    wxPanel* Panel1;
-    wxBoxSizer* BoxSizer3;
-    wxStaticLine* StaticLine2;
-    wxButton* btnGoParent;
-    wxStaticText* lblID;
     wxBoxSizer* BoxSizer10;
-    wxStaticText* lblIsOp;
-    wxStaticText* lblName;
-    wxBoxSizer* BoxSizer7;
-    wxStaticText* lblKind;
-    wxStaticText* lblAncestors;
     wxBoxSizer* BoxSizer13;
-    wxStaticText* lblDescendants;
-    wxBoxSizer* BoxSizer2;
-    wxPanel* Panel2;
-    wxButton* btnFind;
-    wxStaticText* lblIsConst;
-    wxBoxSizer* BoxSizer9;
-    wxStaticText* lblIsLocal;
-    wxButton* btnGoAsc;
-    wxStaticLine* StaticLine1;
-    wxBoxSizer* BoxSizer4;
-    wxStaticText* lblChildren;
-    wxPanel* Panel3;
-    wxStaticText* lblImplfile;
-    wxBoxSizer* BoxSizer8;
-    wxButton* btnGoDesc;
     wxBoxSizer* BoxSizer1;
-    wxStaticText* lblIsTemp;
-    wxStaticText* lblScope;
-    wxNotebook* Notebook1;
-    wxStaticText* lblArgsStripped;
-    wxStaticText* lblFullType;
-    wxStaticText* lblDeclFile;
-    wxButton* btnGoDecl;
-    wxStaticText* lblNameSpace;
-    wxStaticText* lblUserData;
-    wxButton* btnGoImpl;
-    wxStaticText* StaticText29;
-    wxStaticText* lblTemplateArg;
+    wxBoxSizer* BoxSizer2;
+    wxBoxSizer* BoxSizer3;
+    wxBoxSizer* BoxSizer4;
     wxBoxSizer* BoxSizer6;
-    wxStdDialogButtonSizer* StdDialogButtonSizer1;
+    wxBoxSizer* BoxSizer7;
+    wxBoxSizer* BoxSizer8;
+    wxBoxSizer* BoxSizer9;
+    wxButton* btnFind;
+    wxButton* btnGoAsc;
     wxButton* btnGoChildren;
+    wxButton* btnGoDecl;
+    wxButton* btnGoDesc;
+    wxButton* btnGoImpl;
+    wxButton* btnGoParent;
+    wxFlexGridSizer* FlexGridSizer1;
+    wxNotebook* Notebook1;
+    wxPanel* Panel1;
+    wxPanel* Panel2;
+    wxPanel* Panel3;
+    wxStaticLine* StaticLine1;
+    wxStaticLine* StaticLine2;
+    wxStaticText* StaticText29;
+    wxStaticText* lblAncestors;
+    wxStaticText* lblArgs;
+    wxStaticText* lblArgsStripped;
     wxStaticText* lblBaseType;
+    wxStaticText* lblChildren;
+    wxStaticText* lblDeclFile;
+    wxStaticText* lblDescendants;
+    wxStaticText* lblFullType;
+    wxStaticText* lblID;
+    wxStaticText* lblImplfile;
+    wxStaticText* lblIsConst;
+    wxStaticText* lblIsLocal;
     wxStaticText* lblIsNoExcept;
+    wxStaticText* lblIsOp;
+    wxStaticText* lblIsTemp;
+    wxStaticText* lblKind;
+    wxStaticText* lblName;
+    wxStaticText* lblNameSpace;
+    wxStaticText* lblParent;
+    wxStaticText* lblScope;
+    wxStaticText* lblTemplateArg;
+    wxStaticText* lblUserData;
+    wxStdDialogButtonSizer* StdDialogButtonSizer1;
 
     Create(parent, wxID_ANY, _("Code-completion debug tool"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER|wxTAB_TRAVERSAL, _T("wxID_ANY"));
     BoxSizer1 = new wxBoxSizer(wxVERTICAL);

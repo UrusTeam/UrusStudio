@@ -288,7 +288,7 @@ class Splash
         {
             if (show)
             {
-                wxBitmap bmp = cbLoadBitmap(ConfigManager::ReadDataPath() + _T("/images/splash_1312.png"));
+                wxBitmap bmp = cbLoadBitmap(ConfigManager::ReadDataPath() + _T("/images/urus_splash.png"));
                 wxMemoryDC dc;
                 dc.SelectObject(bmp);
                 cbSplashScreen::DrawReleaseInfo(dc);

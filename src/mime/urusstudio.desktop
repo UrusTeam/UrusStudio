@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Urus Studio
+GenericName=IDE
+Comment=Multiplatform IDE and toolchain for embbeded systems.
+Exec=urusstudio %F
+Icon=urusstudio
+Terminal=false
+X-MultipleArgs=false
+Categories=Development;IDE;GTK;
+StartupNotify=true
+MimeType=application/x-urusstudio;application/x-urusstudio-workspace;

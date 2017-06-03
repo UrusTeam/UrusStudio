@@ -8,13 +8,13 @@
 
 #ifndef CB_PRECOMP
     //(*InternalHeadersPCH(GotoFunctionDlg)
-    #include <wx/checkbox.h>
-    #include <wx/sizer.h>
     #include <wx/listctrl.h>
-    #include <wx/string.h>
-    #include <wx/intl.h>
+    #include <wx/sizer.h>
     #include <wx/stattext.h>
     #include <wx/textctrl.h>
+    #include <wx/checkbox.h>
+    #include <wx/intl.h>
+    #include <wx/string.h>
     //*)
 
     #include "configmanager.h"

@@ -37,8 +37,8 @@
 //***********************************************************************
 
 //(*InternalHeaders(MainFrame)
-#include <wx/settings.h>
 #include <wx/intl.h>
+#include <wx/settings.h>
 #include <wx/string.h>
 //*)
 
@@ -72,12 +72,12 @@ MainFrame::MainFrame(wxWindow* parent,wxWindowID id) :
   mFileDst(wxT("")), mCfgDst(0), mCfgDstValid(false), mNodesDst()
 {
 	//(*Initialize(MainFrame)
-	wxButton* btnSave;
 	wxButton* btnClose;
 	wxButton* btnExport;
 	wxButton* btnExportAll;
-	wxButton* btnUncheck;
+	wxButton* btnSave;
 	wxButton* btnTransfer;
+	wxButton* btnUncheck;
 
 	Create(parent, id, _("Welcome to Code::Blocks Share Config"), wxDefaultPosition, wxDefaultSize, wxCAPTION|wxDEFAULT_DIALOG_STYLE|wxSYSTEM_MENU|wxRESIZE_BORDER|wxCLOSE_BOX|wxMINIMIZE_BOX, _T("id"));
 	SetMinSize(wxSize(640,480));
@@ -135,7 +135,7 @@ MainFrame::MainFrame(wxWindow* parent,wxWindowID id) :
 	btnSave->SetToolTip(_("Save the selection on the right into the C::B destination config file."));
 	grsAction->Add(btnSave, 0, wxLEFT|wxALIGN_LEFT|wxALIGN_TOP, 5);
 	grsAction->Add(-1,-1,1, wxEXPAND, 0);
-	grsAction->Add(0,0,0, wxEXPAND, 0);
+	grsAction->Add(-1,-1,0, wxEXPAND, 0);
 	btnClose = new wxButton(this, ID_BTN_CLOSE, _("Close"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BTN_CLOSE"));
 	btnClose->SetToolTip(_("Close the application."));
 	grsAction->Add(btnClose, 0, wxALIGN_RIGHT|wxALIGN_TOP, 0);
@@ -145,14 +145,14 @@ MainFrame::MainFrame(wxWindow* parent,wxWindowID id) :
 	bszMain->SetSizeHints(this);
 	Center();
 
-	Connect(ID_BTN_FILE_SRC,wxEVT_COMMAND_BUTTON_CLICKED,wxCommandEventHandler(MainFrame::OnBtnFileSrcClick));
-	Connect(ID_BTN_FILE_DST,wxEVT_COMMAND_BUTTON_CLICKED,wxCommandEventHandler(MainFrame::OnBtnFileDstClick));
-	Connect(ID_BTN_TRANSFER,wxEVT_COMMAND_BUTTON_CLICKED,wxCommandEventHandler(MainFrame::OnBtnTransferClick));
-	Connect(ID_BTN_UNCHECK,wxEVT_COMMAND_BUTTON_CLICKED,wxCommandEventHandler(MainFrame::OnBtnUncheckClick));
-	Connect(ID_BTN_EXPORT_ALL,wxEVT_COMMAND_BUTTON_CLICKED,wxCommandEventHandler(MainFrame::OnBtnExportAllClick));
-	Connect(ID_BTN_EXPORT,wxEVT_COMMAND_BUTTON_CLICKED,wxCommandEventHandler(MainFrame::OnBtnExportClick));
-	Connect(ID_BTN_SAVE,wxEVT_COMMAND_BUTTON_CLICKED,wxCommandEventHandler(MainFrame::OnBtnSaveClick));
-	Connect(ID_BTN_CLOSE,wxEVT_COMMAND_BUTTON_CLICKED,wxCommandEventHandler(MainFrame::OnBtnCloseClick));
+	Connect(ID_BTN_FILE_SRC,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&MainFrame::OnBtnFileSrcClick);
+	Connect(ID_BTN_FILE_DST,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&MainFrame::OnBtnFileDstClick);
+	Connect(ID_BTN_TRANSFER,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&MainFrame::OnBtnTransferClick);
+	Connect(ID_BTN_UNCHECK,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&MainFrame::OnBtnUncheckClick);
+	Connect(ID_BTN_EXPORT_ALL,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&MainFrame::OnBtnExportAllClick);
+	Connect(ID_BTN_EXPORT,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&MainFrame::OnBtnExportClick);
+	Connect(ID_BTN_SAVE,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&MainFrame::OnBtnSaveClick);
+	Connect(ID_BTN_CLOSE,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&MainFrame::OnBtnCloseClick);
 	//*)
 }// MainFrame
 

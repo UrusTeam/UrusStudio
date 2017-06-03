@@ -12,12 +12,12 @@
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
   <asmv1:assemblyIdentity type="win32"
-                          name="codeblocks.exe"
+                          name="urusstudio.exe"
                           version="1.0.0.1"
                           processorArchitecture="x86"
                           publicKeyToken="0000000000000000" />
 
-  <description xmlns="urn:schemas-microsoft-com:asm.v1">Code::Blocks application</description>
+  <description xmlns="urn:schemas-microsoft-com:asm.v1">urusstudio application</description>
 
   <dependency>
     <dependentAssembly>

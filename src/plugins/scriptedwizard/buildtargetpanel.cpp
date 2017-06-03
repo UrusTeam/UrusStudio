@@ -10,8 +10,8 @@
 #include <sdk.h>
 #ifndef CB_PRECOMP
     //(*InternalHeadersPCH(BuildTargetPanel)
-    #include <wx/string.h>
     #include <wx/intl.h>
+    #include <wx/string.h>
     //*)
 #endif // CB_PRECOMP
 
@@ -40,10 +40,10 @@ BuildTargetPanel::BuildTargetPanel(wxWindow* parent,wxWindowID id)
 {
     //(*Initialize(BuildTargetPanel)
     wxFlexGridSizer* FlexGridSizer1;
+    wxStaticBoxSizer* StaticBoxSizer1;
     wxStaticText* StaticText1;
     wxStaticText* StaticText4;
     wxStaticText* StaticText5;
-    wxStaticBoxSizer* StaticBoxSizer1;
 
     Create(parent, id, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("id"));
     BoxSizer1 = new wxBoxSizer(wxVERTICAL);

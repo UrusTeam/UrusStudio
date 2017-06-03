@@ -84,11 +84,11 @@ private:
     MainFrame* m_frame;
 };
 
-const static wxString gDefaultLayout = _T("Code::Blocks default");
+const static wxString gDefaultLayout = _T("UrusStudio default");
 static wxString gDefaultLayoutData; // this will keep the "hardcoded" default layout
 static wxString gDefaultMessagePaneLayoutData; // this will keep default layout
 
-const static wxString gMinimalLayout = _T("Code::Blocks minimal");
+const static wxString gMinimalLayout = _T("UrusStudio minimal");
 static wxString gMinimalLayoutData; // this will keep the "hardcoded" default layout
 static wxString gMinimalMessagePaneLayoutData; // this will keep default layout
 

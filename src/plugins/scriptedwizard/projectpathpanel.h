@@ -8,9 +8,9 @@
 
 
 //(*HeadersPCH(ProjectPathPanel)
-#include <wx/sizer.h>
 #include <wx/button.h>
 #include <wx/panel.h>
+#include <wx/sizer.h>
 #include <wx/stattext.h>
 #include <wx/textctrl.h>
 //*)
@@ -65,13 +65,13 @@ class ProjectPathPanel: public wxPanel
         //*)
 
         //(*Declarations(ProjectPathPanel)
-        wxTextCtrl* txtPrjTitle;
-        wxTextCtrl* txtPrjPath;
-        wxBoxSizer* BoxSizer2;
         wxBoxSizer* BoxSizer1;
-        wxTextCtrl* txtPrjName;
+        wxBoxSizer* BoxSizer2;
         wxButton* btnPrjPathBrowse;
         wxTextCtrl* txtFinalDir;
+        wxTextCtrl* txtPrjName;
+        wxTextCtrl* txtPrjPath;
+        wxTextCtrl* txtPrjTitle;
         //*)
 
         DECLARE_EVENT_TABLE()
