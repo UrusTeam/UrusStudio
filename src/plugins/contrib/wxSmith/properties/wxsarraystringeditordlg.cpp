@@ -26,8 +26,8 @@
 
 //(*InternalHeaders(wxsArrayStringEditorDlg)
 #include <wx/button.h>
-#include <wx/string.h>
 #include <wx/intl.h>
+#include <wx/string.h>
 //*)
 
 //(*IdInit(wxsArrayStringEditorDlg)
@@ -46,8 +46,8 @@ wxsArrayStringEditorDlg::wxsArrayStringEditorDlg(wxWindow* parent,wxArrayString&
 {
     //(*Initialize(wxsArrayStringEditorDlg)
     wxBoxSizer* BoxSizer1;
-    wxStdDialogButtonSizer* StdDialogButtonSizer1;
     wxStaticBoxSizer* StaticBoxSizer1;
+    wxStdDialogButtonSizer* StdDialogButtonSizer1;
 
     Create(parent, id, _("Edit items"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE, _T("id"));
     BoxSizer1 = new wxBoxSizer(wxVERTICAL);

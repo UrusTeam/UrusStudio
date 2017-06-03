@@ -8,9 +8,9 @@
 
 
 //(*HeadersPCH(GenericSelectPath)
-#include <wx/sizer.h>
 #include <wx/button.h>
 #include <wx/panel.h>
+#include <wx/sizer.h>
 #include <wx/stattext.h>
 #include <wx/textctrl.h>
 //*)
@@ -44,12 +44,12 @@ class GenericSelectPath: public wxPanel
 		//*)
 
 		//(*Declarations(GenericSelectPath)
+		wxBoxSizer* BoxSizer1;
 		wxBoxSizer* BoxSizer2;
 		wxButton* btnBrowse;
-		wxTextCtrl* txtFolder;
-		wxStaticText* lblLabel;
-		wxBoxSizer* BoxSizer1;
 		wxStaticText* lblDescr;
+		wxStaticText* lblLabel;
+		wxTextCtrl* txtFolder;
 		//*)
 
 	private:

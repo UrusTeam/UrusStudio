@@ -61,8 +61,8 @@ wxWidgetsGUIAppAdoptingDlg::wxWidgetsGUIAppAdoptingDlg(wxWindow* parent,wxWidget
 {
     //(*Initialize(wxWidgetsGUIAppAdoptingDlg)
     wxBoxSizer* BoxSizer1;
-    wxStaticBoxSizer* StaticBoxSizer1;
     wxBoxSizer* BoxSizer3;
+    wxStaticBoxSizer* StaticBoxSizer1;
 
     Create(parent, id, _("Integrating application class with wxSmith"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER, _T("id"));
     BoxSizer1 = new wxBoxSizer(wxHORIZONTAL);
@@ -101,11 +101,11 @@ wxWidgetsGUIAppAdoptingDlg::wxWidgetsGUIAppAdoptingDlg(wxWindow* parent,wxWidget
     BoxSizer1->SetSizeHints(this);
     Center();
 
-    Connect(ID_BUTTON5,wxEVT_COMMAND_BUTTON_CLICKED,wxCommandEventHandler(wxWidgetsGUIAppAdoptingDlg::OnUseFileBtnClick));
-    Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,wxCommandEventHandler(wxWidgetsGUIAppAdoptingDlg::OnSelectBtnClick));
-    Connect(ID_BUTTON3,wxEVT_COMMAND_BUTTON_CLICKED,wxCommandEventHandler(wxWidgetsGUIAppAdoptingDlg::OnCreateBtnClick));
-    Connect(ID_BUTTON4,wxEVT_COMMAND_BUTTON_CLICKED,wxCommandEventHandler(wxWidgetsGUIAppAdoptingDlg::OnButton4Click));
-    Connect(ID_BUTTON6,wxEVT_COMMAND_BUTTON_CLICKED,wxCommandEventHandler(wxWidgetsGUIAppAdoptingDlg::OnButton6Click));
+    Connect(ID_BUTTON5,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&wxWidgetsGUIAppAdoptingDlg::OnUseFileBtnClick);
+    Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&wxWidgetsGUIAppAdoptingDlg::OnSelectBtnClick);
+    Connect(ID_BUTTON3,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&wxWidgetsGUIAppAdoptingDlg::OnCreateBtnClick);
+    Connect(ID_BUTTON4,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&wxWidgetsGUIAppAdoptingDlg::OnButton4Click);
+    Connect(ID_BUTTON6,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&wxWidgetsGUIAppAdoptingDlg::OnButton6Click);
     //*)
 
     m_Timer.Start(100,true);

@@ -6,15 +6,15 @@
 #include <configmanager.h>
 
 //(*InternalHeaders(ConfigPanel)
-#include <wx/sizer.h>
-#include <wx/stattext.h>
-#include <wx/textctrl.h>
-#include <wx/statline.h>
-#include <wx/hyperlink.h>
-#include <wx/choice.h>
-#include <wx/intl.h>
 #include <wx/button.h>
+#include <wx/choice.h>
+#include <wx/hyperlink.h>
+#include <wx/intl.h>
+#include <wx/sizer.h>
+#include <wx/statline.h>
+#include <wx/stattext.h>
 #include <wx/string.h>
+#include <wx/textctrl.h>
 //*)
 
 //(*IdInit(ConfigPanel)
@@ -39,25 +39,25 @@ END_EVENT_TABLE()
 ConfigPanel::ConfigPanel(wxWindow* parent)
 {
     //(*Initialize(ConfigPanel)
-    wxBoxSizer* bszMain;
-    wxStaticText* lblOperation;
-    wxButton* btnVeraApp;
-    wxStaticText* lblCppCheckWWW;
-    wxHyperlinkCtrl* hycVeraWWW;
-    wxStaticText* lblCppCheckArgsComment;
-    wxHyperlinkCtrl* hycCppCheckWWW;
-    wxBoxSizer* bszVeraApp;
-    wxStaticLine* slSeparatorRight;
-    wxFlexGridSizer* flsMain;
-    wxStaticLine* slSeparatorLeft;
-    wxStaticText* lblVeraArgsComment;
-    wxButton* btnCppCheckApp;
     wxBoxSizer* bszCppCheckApp;
-    wxStaticText* lblVeraArgs;
+    wxBoxSizer* bszMain;
+    wxBoxSizer* bszVeraApp;
+    wxButton* btnCppCheckApp;
+    wxButton* btnVeraApp;
+    wxFlexGridSizer* flsMain;
+    wxHyperlinkCtrl* hycCppCheckWWW;
+    wxHyperlinkCtrl* hycVeraWWW;
+    wxStaticLine* slSeparatorLeft;
+    wxStaticLine* slSeparatorRight;
     wxStaticText* lblCppCheckApp;
-    wxStaticText* lblVeraWWW;
-    wxStaticText* lblVeraApp;
     wxStaticText* lblCppCheckArgs;
+    wxStaticText* lblCppCheckArgsComment;
+    wxStaticText* lblCppCheckWWW;
+    wxStaticText* lblOperation;
+    wxStaticText* lblVeraApp;
+    wxStaticText* lblVeraArgs;
+    wxStaticText* lblVeraArgsComment;
+    wxStaticText* lblVeraWWW;
 
     Create(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("wxID_ANY"));
     bszMain = new wxBoxSizer(wxHORIZONTAL);
@@ -124,8 +124,8 @@ ConfigPanel::ConfigPanel(wxWindow* parent)
     bszMain->Fit(this);
     bszMain->SetSizeHints(this);
 
-    Connect(ID_BTN_CPPCHECK_APP,wxEVT_COMMAND_BUTTON_CLICKED,wxCommandEventHandler(ConfigPanel::OnCppCheckApp));
-    Connect(ID_BTN_VERA,wxEVT_COMMAND_BUTTON_CLICKED,wxCommandEventHandler(ConfigPanel::OnVeraApp));
+    Connect(ID_BTN_CPPCHECK_APP,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ConfigPanel::OnCppCheckApp);
+    Connect(ID_BTN_VERA,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ConfigPanel::OnVeraApp);
     //*)
 
     ConfigManager* cfg = Manager::Get()->GetConfigManager(_T("cppcheck"));

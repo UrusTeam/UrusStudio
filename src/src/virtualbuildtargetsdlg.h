@@ -13,9 +13,9 @@
 #endif
 
 //(*Headers(VirtualBuildTargetsDlg)
-#include <wx/checklst.h>
-#include <wx/button.h>
 #include "scrollingdialog.h"
+#include <wx/button.h>
+#include <wx/checklst.h>
 #include <wx/listbox.h>
 //*)
 
@@ -44,10 +44,10 @@ class VirtualBuildTargetsDlg: public wxScrollingDialog
         void OnUpdateUI(wxUpdateUIEvent& event);
 
         //(*Declarations(VirtualBuildTargetsDlg)
-        wxCheckListBox* lstTargets;
+        wxButton* btnAdd;
         wxButton* btnEdit;
         wxButton* btnRemove;
-        wxButton* btnAdd;
+        wxCheckListBox* lstTargets;
         wxListBox* lstAliases;
         //*)
 
