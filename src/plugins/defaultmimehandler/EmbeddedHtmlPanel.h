@@ -30,11 +30,11 @@ class EmbeddedHtmlPanel: public wxPanel
         void Open(const wxString& url);
 
         //(*Declarations(EmbeddedHtmlPanel)
-        wxPanel* Panel1;
-        wxBitmapButton* btnForward;
         wxBitmapButton* btnBack;
-        wxStaticText* lblStatus;
+        wxBitmapButton* btnForward;
         wxHtmlWindow* winHtml;
+        wxPanel* Panel1;
+        wxStaticText* lblStatus;
         //*)
 
     protected:

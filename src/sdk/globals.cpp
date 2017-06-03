@@ -1498,7 +1498,7 @@ wxImageList* cbProjectTreeImages::MakeImageList()
         // The following are related to C::B workspace/project/folder/virtual
         _T("workspace.png"),             // fvsWorkspace,         WorkspaceIconIndex()
         _T("workspace-readonly.png"),    // fvsWorkspaceReadOnly, WorkspaceIconIndex(true)
-        _T("project.png"),               // fvsProject,           ProjectIconIndex()
+        _T("urusproject.png"),               // fvsProject,           ProjectIconIndex()
         _T("project-readonly.png"),      // fvsProjectReadOnly,   ProjectIconIndex(true)
         _T("folder_open.png"),           // fvsFolder,            FolderIconIndex()
         _T("vfolder_open.png"),          // fvsVirtualFolder,     VirtualFolderIconIndex()

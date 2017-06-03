@@ -601,7 +601,7 @@ void cbDebuggerPlugin::SwitchToPreviousLayout()
 {
     CodeBlocksLayoutEvent switchEvent(cbEVT_SWITCH_VIEW_LAYOUT, m_PreviousLayout);
 
-    wxString const &name = !switchEvent.layout.IsEmpty() ? switchEvent.layout : wxString(_("Code::Blocks default"));
+    wxString const &name = !switchEvent.layout.IsEmpty() ? switchEvent.layout : wxString(_("UrusStudio default"));
 
     Manager::Get()->GetLogManager()->DebugLog(F(_("Switching layout to \"%s\""), name.wx_str()));
 
