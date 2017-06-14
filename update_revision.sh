@@ -38,6 +38,7 @@ elif git log --max-count=1 >/dev/null 2>&1; then
 	echo "Using 'git log --graph' to get the revision"
 	REV=`git log --graph | grep 'git-svn-id' | head -n 1 | grep -o -e "@\([0-9]*\)" | tr -d '@ '`
 	LCD=`git log --date=iso --max-count=1 | grep -o -e "Date: \(.*\)" | cut -d ' ' -f 2- | sed 's/^ *//' | cut -f -2 -d ' '`
+    REV=0
 else
 	REV=0
 	LCD=""
