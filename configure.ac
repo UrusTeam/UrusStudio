@@ -623,9 +623,10 @@ AC_CONFIG_FILES([Makefile
 	src/templates/unix/Makefile
 	src/templates/win32/Makefile
 	src/wxsmith/Makefile
-	codeblocks.pc
-	codeblocks.spec.fedora
-	codeblocks.spec
+	urusstudio.pc
+	urusstudio.spec.fedora
+	urusstudio.spec
+	urusstudio.plist
 ])
 
 AC_OUTPUT

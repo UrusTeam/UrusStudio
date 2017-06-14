@@ -2,7 +2,6 @@
 %define req_wxgtk           2.8.0
 %define _redhat             %(if [ -f /etc/redhat-release ]; then echo 1; else echo 0; fi)
 %define _mandrake           %(if [ -f /etc/mandrake-release ]; then echo 1; else echo 0; fi)
-%define _version            17.12.svn.%{_svnrev}
 %define _version            16.01.svn.%{_svnrev}
 %define _rel                1
 %define _release            %{_rel}
@@ -176,7 +175,6 @@ plugins. These are:
  * NassiShneiderman
  * Regular expression testbed
  * Reopen last closed editor(s) via menu or hotkey
- * Rndgen
  * Smartindent plugin (cpp, HDL, Fortran, Lua, Pascal, Python, XML)
  * Spellchecker plugin
  * Symbol table plugin
@@ -373,7 +371,6 @@ wxSmith-plugins and to use the wxContribItems in own programs.
 %{plugindir}/libValgrind.so
 %{plugindir}/libMouseSap.so
 %{plugindir}/libReopenEditor.so
-%{plugindir}/librndgen.so
 %{plugindir}/libwxsmith.so
 %{plugindir}/libwxsmithcontribitems.so
 %{plugindir}/libwxSmithAui.so
@@ -412,7 +409,6 @@ wxSmith-plugins and to use the wxContribItems in own programs.
 %{pkgdatadir}/Profiler.zip
 %{pkgdatadir}/ProjectOptionsManipulator.zip
 %{pkgdatadir}/RegExTestbed.zip
-%{pkgdatadir}/rndgen.zip
 %{pkgdatadir}/ReopenEditor.zip
 %{pkgdatadir}/SymTab.zip
 %{pkgdatadir}/ThreadSearch.zip
