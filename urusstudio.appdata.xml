@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>urusstudio.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <summary>Urus Studio IDE</summary>
+  <description>
+    <p>
+     Urus Studio IDE is powered and based on Code::Blocks IDE and Plugins to make the best and simple way to develop powerful native RAD for embedded and bare-metal systems.
+    </p>
+    <p>
+    The code editor in Urus Studio features: syntax highlighting, code folding, a tabbed interface, code completion, a class browser and smart indenting.
+    </p>
+  </description>
+  <url type="homepage">https://urusteam.github.io/docs/</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://urusteam.github.io/docs/</image>
+    </screenshot>
+  </screenshots>
+  <update_contact>htakey_at_gmail.com</update_contact>
+
+  <project_license>GPL-3.0+</project_license>
+
+  <developer_name>Urus Studio IDE</developer_name>
+
+  <url type="bugtracker">https://github.com/UrusTeam</url>
+
+  <url type="help">https://github.com/UrusTeam/docs</url>
+</component>
