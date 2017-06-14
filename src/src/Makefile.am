@@ -18,9 +18,9 @@ bin_PROGRAMS = codeblocks
 
 # wxMac resource fork/unbundled app
 install-exec-hook:
-	$(POSTLINK_COMMAND) $(DESTDIR)$(bindir)/codeblocks$(EXEEXT) \
+	$(POSTLINK_COMMAND) $(DESTDIR)$(bindir)/urusstudio$(EXEEXT) \
 	                    $(srcdir)/resources/icons/app.r
-	$(MACSETFILE) -a C $(DESTDIR)$(bindir)/codeblocks$(EXEEXT)
+	$(MACSETFILE) -a C $(DESTDIR)$(bindir)/urusstudio$(EXEEXT)
 
 # wxAUI uses GTK+ libraries on wxGTK
 # codeblocks_LDFLAGS = $(WX_GTK_LIBS)

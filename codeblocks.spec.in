@@ -426,7 +426,7 @@ wxSmith-plugins and to use the wxContribItems in own programs.
 %endif
 %{_mandir}/man1/*snippets*
 %doc README COPYING AUTHORS BUGS COMPILERS TODO NEWS ChangeLog
-%{_datadir}/metainfo/codeblocks-contrib.metainfo.xml
+%{_datadir}/appdata/urusstudio-contrib.metainfo.xml
 
 %files contrib-libs
 %defattr(-,root,root)
