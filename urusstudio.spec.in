@@ -274,7 +274,7 @@ wxSmith-plugins and to use the wxContribItems in own programs.
 %defattr(-,root,root)
 %doc README COPYING AUTHORS BUGS COMPILERS TODO NEWS ChangeLog
 
-%{_bindir}/codeblocks
+%{_bindir}/urusstudio
 %{_bindir}/cb_console_runner
 %{_bindir}/cb_share_config
 %{plugindir}/libabbreviations.so
@@ -290,12 +290,12 @@ wxSmith-plugins and to use the wxContribItems in own programs.
 %{plugindir}/libprojectsimporter.so
 %{plugindir}/libscriptedwizard.so
 %{plugindir}/libtodo.so
-%{_datadir}/appdata/codeblocks.appdata.xml
-%{_datadir}/applications/codeblocks.desktop
+%{_datadir}/appdata/urusstudio.appdata.xml
+%{_datadir}/applications/urusstudio.desktop
 %{_datadir}/icons/hicolor/48x48/mimetypes/*
-%{_datadir}/mime/packages/codeblocks.xml
-%{_datadir}/pixmaps/codeblocks.png
-%{_mandir}/man1/codeblocks.*
+%{_datadir}/mime/packages/urusstudio.xml
+%{_datadir}/pixmaps/urusstudio.png
+%{_mandir}/man1/urusstudio.*
 %{_mandir}/man1/cb_console_runner.*
 %{_mandir}/man1/cb_share_config.*
 %{pkgdatadir}/compilers/*
@@ -427,7 +427,7 @@ wxSmith-plugins and to use the wxContribItems in own programs.
 %endif
 %{_mandir}/man1/*snippets*
 %doc README COPYING AUTHORS BUGS COMPILERS TODO NEWS ChangeLog
-%{_datadir}/appdata/codeblocks-contrib.metainfo.xml
+%{_datadir}/appdata/urusstudio-contrib.metainfo.xml
 
 %files contrib-libs
 %defattr(-,root,root)
