@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="addon">
   <id>codeblocks-contrib</id>
-  <extends>codeblocks.desktop</extends>
+  <extends>urusstudio.desktop</extends>
   <name>Code::Blocks Plugins</name>
   <summary>Additional plugins for the Code::Blocks IDE</summary>
   <description>

@@ -412,7 +412,7 @@ bool CodeBlocksApp::LoadConfig()
             data = env;
     }
 
-    data.append(_T("/share/codeblocks"));
+    data.append(_T("/share/urusstudio"));
 
     // Make sure the path to our resources is always an absolute path, because resource loading
     // would fail with a relative path if some part of the code changes the current working
@@ -702,7 +702,7 @@ bool CodeBlocksApp::OnInit()
         if (   Manager::Get()->GetConfigManager(_T("app"))->ReadBool(_T("/environment/single_instance"), true)
             && !parser.Found(_T("multiple-instance")) )
         {
-            const wxString name = wxString::Format(_T("Code::Blocks-%s"), wxGetUserId().wx_str());
+            const wxString name = wxString::Format(_T("UrusStudio-%s"), wxGetUserId().wx_str());
 
             m_pSingleInstance = new wxSingleInstanceChecker(name, ConfigManager::GetTempFolder());
             if (m_pSingleInstance->IsAnotherRunning())
@@ -710,7 +710,7 @@ bool CodeBlocksApp::OnInit()
                 /* NOTE: Due to a recent change in logging code, this visual warning got disabled.
                    So the wxLogError() has been changed to a cbMessageBox(). */
                 cbMessageBox(_("Another program instance is already running.\nCode::Blocks is currently configured to only allow one running instance.\n\nYou can access this Setting under the menu item 'Environment'."),
-                            _T("Code::Blocks"), wxOK | wxICON_ERROR);
+                            _T("UrusStudio"), wxOK | wxICON_ERROR);
                 return false;
             }
         }

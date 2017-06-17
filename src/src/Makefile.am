@@ -23,13 +23,13 @@ install-exec-hook:
 	$(MACSETFILE) -a C $(DESTDIR)$(bindir)/urusstudio$(EXEEXT)
 
 # wxAUI uses GTK+ libraries on wxGTK
-# codeblocks_LDFLAGS = $(WX_GTK_LIBS)
+urusstudio_LDFLAGS = $(WX_GTK_LIBS)
 
-codeblocks_LDADD =  ../sdk/libcodeblocks.la \
+urusstudio_LDADD =  ../sdk/libcodeblocks.la \
 			$(WX_LIBS) \
 			$(WX_GTK_LIBS)
 
-codeblocks_SOURCES = app.cpp \
+urusstudio_SOURCES = app.cpp \
 			appglobals.cpp \
 			backtracedlg.cpp \
 			breakpointsdlg.cpp \
@@ -108,7 +108,7 @@ noinst_HEADERS = app.h \
 			virtualbuildtargetsdlg.h \
 			watchesdlg.h
 
-man_MANS = codeblocks.1
+man_MANS = urusstudio.1
 
 EXTRA_DIST = associations.cpp \
 			associations.h \

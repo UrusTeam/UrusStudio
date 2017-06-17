@@ -2,7 +2,7 @@ AC_PREREQ(2.50)
 
 m4_include([revision.m4])
 
-AC_INIT([codeblocks], SVN_REVISION)
+AC_INIT([urusstudio], SVN_REVISION)
 
 AC_CANONICAL_TARGET
 
