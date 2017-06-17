@@ -1,6 +1,6 @@
-usr/include/codeblocks/scripting
-usr/include/codeblocks/tinyxml
-usr/include/codeblocks/wxpropgrid
-usr/include/codeblocks/wxscintilla
-usr/include/codeblocks/*.h
+usr/include/urusstudio/scripting
+usr/include/urusstudio/tinyxml
+usr/include/urusstudio/wxpropgrid
+usr/include/urusstudio/wxscintilla
+usr/include/urusstudio/*.h
 

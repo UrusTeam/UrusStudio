@@ -1,19 +1,19 @@
-usr/bin/codeblocks
+usr/bin/urusstudio
 usr/bin/cb_console_runner
 usr/bin/cb_share_config
 
-usr/lib/codeblocks/plugins/libabbreviations.so
-usr/lib/codeblocks/plugins/libAstyle.so
-usr/lib/codeblocks/plugins/libautosave.so
-usr/lib/codeblocks/plugins/libclasswizard.so
-usr/lib/codeblocks/plugins/libcodecompletion.so
-usr/lib/codeblocks/plugins/libcompiler.so
-usr/lib/codeblocks/plugins/libdebugger.so
-usr/lib/codeblocks/plugins/libdefaultmimehandler.so
-usr/lib/codeblocks/plugins/liboccurrenceshighlighting.so
-usr/lib/codeblocks/plugins/libopenfileslist.so
-usr/lib/codeblocks/plugins/libprojectsimporter.so
-usr/lib/codeblocks/plugins/libscriptedwizard.so
-usr/lib/codeblocks/plugins/libtodo.so
+usr/lib/urusstudio/plugins/libabbreviations.so
+usr/lib/urusstudio/plugins/libAstyle.so
+usr/lib/urusstudio/plugins/libautosave.so
+usr/lib/urusstudio/plugins/libclasswizard.so
+usr/lib/urusstudio/plugins/libcodecompletion.so
+usr/lib/urusstudio/plugins/libcompiler.so
+usr/lib/urusstudio/plugins/libdebugger.so
+usr/lib/urusstudio/plugins/libdefaultmimehandler.so
+usr/lib/urusstudio/plugins/liboccurrenceshighlighting.so
+usr/lib/urusstudio/plugins/libopenfileslist.so
+usr/lib/urusstudio/plugins/libprojectsimporter.so
+usr/lib/urusstudio/plugins/libscriptedwizard.so
+usr/lib/urusstudio/plugins/libtodo.so
 ../lintian/codeblocks  usr/share/lintian/overrides
 
