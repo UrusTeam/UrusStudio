@@ -2,7 +2,7 @@
 set -e
 
 #remove possible artifacts of older installs
-rm -f /usr/{lib,lib32,lib64}/codeblocks/plugins/*.do_not_load
+rm -f /usr/{lib,lib32,lib64}/urusstudio/plugins/*.do_not_load
 
 #DEBHELPER#
 
