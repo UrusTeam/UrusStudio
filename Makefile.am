@@ -41,7 +41,7 @@ clean-zipfiles:
 
 clean-bin:
 	find . -name "*.la" | xargs rm -f
-	rm -f src/src/codeblocks
+	rm -f src/src/urusstudio
 
 all-local:
 if HAVE_WX29
