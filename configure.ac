@@ -155,7 +155,7 @@ AM_PATH_WXCONFIG(2.8.12, wxWin=1)
 		if test "$WX_VERSION" = "2.8.3"; then
 			AC_MSG_ERROR([
 		wxWidgets version 2.8.3 is known to behave badly with
-		Code::Blocks. Please upgrade to a newer (or downgrade to an
+		Urus Studio. Please upgrade to a newer (or downgrade to an
 		earlier) wxWidgets version...
 			])
 		fi
@@ -400,7 +400,7 @@ dnl AM_PATH_GTK(1.2.7, ,
 dnl             AC_MSG_ERROR(Cannot find GTK: Is gtk-config in path?),
 dnl             gthread)
 
-AC_MSG_NOTICE([Configuring Code::Blocks...])
+AC_MSG_NOTICE([Configuring UrusStudio...])
 AC_MSG_NOTICE(SVN revision SVN_REVISION (SVN_DATE))
 AC_SUBST(REVISION, SVN_REV)
 AC_SUBST(DATE, "SVN_DATE")
@@ -634,10 +634,10 @@ AC_OUTPUT
 echo
 echo
 echo "*************************************************"
-echo "* Code::Blocks source tree has been configured. *"
+echo "* Urus Studio source tree has been configured. *"
 echo "*************************************************"
 echo
-echo "You can now build Code::Blocks by issuing 'make'".
+echo "You can now build Urus Studio by issuing 'make'".
 echo "When the build is complete, become root and install"
 echo "it by issuing 'make install'".
 echo

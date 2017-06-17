@@ -577,7 +577,7 @@ bool CodeBlocksApp::OnInit()
 
     wxLog::EnableLogging(true);
 
-    SetAppName(_T("codeblocks"));
+    SetAppName(_T("urusstudio"));
 
     s_Loading              = true;
     m_pBatchBuildDialog    = nullptr;

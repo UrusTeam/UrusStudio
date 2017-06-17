@@ -95,7 +95,7 @@ void cbWorkspace::Load()
     // load workspace layout file
     LoadLayout();
 
-    m_Filename.SetExt(FileFilters::WORKSPACE_EXT);
+    m_Filename.SetExt(FileFilters::URUSWRKSPACE_EXT);
     SetModified(false);
 }
 
@@ -126,7 +126,7 @@ bool cbWorkspace::SaveAs(cb_unused const wxString& filename)
                      _("Save workspace"),
                      m_Filename.GetPath(),
                      m_Filename.GetFullName(),
-                     FileFilters::GetFilterString(_T('.') + FileFilters::WORKSPACE_EXT),
+                     FileFilters::GetFilterString(_T('.') + FileFilters::URUSWRKSPACE_EXT),
                      wxFD_SAVE | wxFD_OVERWRITE_PROMPT);
     PlaceWindow(&dlg);
     if (dlg.ShowModal() != wxID_OK)

@@ -64,6 +64,9 @@ const Associations::Assoc knownTypes[] =
     { FileFilters::MSVC6_EXT,           _T("MS Visual C++ project file"),   22 },
     { FileFilters::MSVC6_WORKSPACE_EXT, _T("MS Visual C++ workspace file"), 23 }
     //{ _T("proj"),                       _T("XCODE Project file"),           24 }
+
+    { FileFilters::URUSSTUDIO_EXT,      _T("Urus Studio project file"),                  0 },
+    { FileFilters::URUSWRKSPACE_EXT,    _T("Urus Studio workspace file"),                1 },
 };
 
 inline void DoSetAssociation(const wxString& executable, int index)
@@ -149,12 +152,12 @@ void Associations::DoSetAssociation(const wxString& ext, const wxString& descr, 
     if (platform::WindowsVersion() == platform::winver_Windows9598ME)
         BaseKeyName = _T("HKEY_CLASSES_ROOT\\");
 
-    wxString node(_T("CodeBlocks.") + ext);
+    wxString node(_T("UrusStudio.") + ext);
 
     wxRegKey key; // defaults to HKCR
     key.SetName(BaseKeyName + _T(".") + ext);
     key.Create();
-    key = _T("CodeBlocks.") + ext;
+    key = _T("UrusStudio.") + ext;
 
     key.SetName(BaseKeyName + node);
     key.Create();
@@ -184,7 +187,7 @@ void Associations::DoSetAssociation(const wxString& ext, const wxString& descr, 
     key.Create();
     key = DDE_TOPIC;
 
-    if (ext.IsSameAs(FileFilters::CODEBLOCKS_EXT) || ext.IsSameAs(FileFilters::WORKSPACE_EXT))
+    if (ext.IsSameAs(FileFilters::URUSSTUDIO_EXT) || ext.IsSameAs(FileFilters::URUSWRKSPACE_EXT))
     {
         wxString batchbuildargs = Manager::Get()->GetConfigManager(_T("app"))->Read(_T("/batch_build_args"), appglobals::DefaultBatchBuildArgs);
         key.SetName(BaseKeyName + node + _T("\\shell\\Build\\command"));
@@ -209,14 +212,14 @@ void Associations::DoClearAssociation(const wxString& ext)
     {
         wxString s;
         #if wxCHECK_VERSION(3, 0, 0)
-        if (key.QueryValue(wxEmptyString, s) && s.StartsWith(_T("CodeBlocks")))
+        if (key.QueryValue(wxEmptyString, s) && s.StartsWith(_T("UrusStudio")))
         #else
-        if (key.QueryValue(NULL, s) && s.StartsWith(_T("CodeBlocks")))
+        if (key.QueryValue(NULL, s) && s.StartsWith(_T("UrusStudio")))
         #endif
             key.DeleteSelf();
     }
 
-    key.SetName(BaseKeyName + _T("CodeBlocks.") + ext);
+    key.SetName(BaseKeyName + _T("UrusStudio.") + ext);
     if (key.Exists())
         key.DeleteSelf();
 }
@@ -233,11 +236,11 @@ bool Associations::DoCheckAssociation(const wxString& ext, cb_unused const wxStr
     if (!key.Exists())
         return false;
 
-    key.SetName(BaseKeyName + _T("CodeBlocks.") + ext);
+    key.SetName(BaseKeyName + _T("UrusStudio.") + ext);
     if (!key.Exists())
         return false;
 
-    key.SetName(BaseKeyName + _T("CodeBlocks.") + ext + _T("\\DefaultIcon"));
+    key.SetName(BaseKeyName + _T("UrusStudio.") + ext + _T("\\DefaultIcon"));
     if (!key.Exists())
         return false;
     wxString strVal;
@@ -246,7 +249,7 @@ bool Associations::DoCheckAssociation(const wxString& ext, cb_unused const wxStr
     if (strVal != wxString::Format(_T("%s,%d"), exe.c_str(), icoNum))
         return false;
 
-    key.SetName(BaseKeyName + _T("CodeBlocks.") + ext + _T("\\shell\\open\\command"));
+    key.SetName(BaseKeyName + _T("UrusStudio.") + ext + _T("\\shell\\open\\command"));
     if (!key.Open())
         return false;
     if (!key.QueryValue(wxEmptyString, strVal))
@@ -254,7 +257,7 @@ bool Associations::DoCheckAssociation(const wxString& ext, cb_unused const wxStr
     if (strVal != wxString::Format(_T("\"%s\" \"%%1\""), exe.c_str()))
         return false;
 
-    key.SetName(BaseKeyName + _T("CodeBlocks.") + ext + _T("\\shell\\open\\ddeexec"));
+    key.SetName(BaseKeyName + _T("UrusStudio.") + ext + _T("\\shell\\open\\ddeexec"));
     if (!key.Open())
         return false;
     if (!key.QueryValue(wxEmptyString, strVal))
@@ -262,7 +265,7 @@ bool Associations::DoCheckAssociation(const wxString& ext, cb_unused const wxStr
     if (strVal != _T("[Open(\"%1\")]"))
         return false;
 
-    key.SetName(BaseKeyName + _T("CodeBlocks.") + ext + _T("\\shell\\open\\ddeexec\\application"));
+    key.SetName(BaseKeyName + _T("UrusStudio.") + ext + _T("\\shell\\open\\ddeexec\\application"));
     if (!key.Open())
         return false;
     if (!key.QueryValue(wxEmptyString, strVal))
@@ -270,7 +273,7 @@ bool Associations::DoCheckAssociation(const wxString& ext, cb_unused const wxStr
     if (strVal != DDE_SERVICE)
         return false;
 
-    key.SetName(BaseKeyName + _T("CodeBlocks.") + ext + _T("\\shell\\open\\ddeexec\\ifexec"));
+    key.SetName(BaseKeyName + _T("UrusStudio.") + ext + _T("\\shell\\open\\ddeexec\\ifexec"));
     if (!key.Open())
         return false;
     if (!key.QueryValue(wxEmptyString, strVal))
@@ -278,7 +281,7 @@ bool Associations::DoCheckAssociation(const wxString& ext, cb_unused const wxStr
     if (strVal != _T("[IfExec_Open(\"%1\")]"))
         return false;
 
-    key.SetName(BaseKeyName + _T("CodeBlocks.") + ext + _T("\\shell\\open\\ddeexec\\topic"));
+    key.SetName(BaseKeyName + _T("UrusStudio.") + ext + _T("\\shell\\open\\ddeexec\\topic"));
     if (!key.Open())
         return false;
     if (!key.QueryValue(wxEmptyString, strVal))
@@ -286,10 +289,10 @@ bool Associations::DoCheckAssociation(const wxString& ext, cb_unused const wxStr
     if (strVal != DDE_TOPIC)
         return false;
 
-    if (ext.IsSameAs(FileFilters::CODEBLOCKS_EXT) || ext.IsSameAs(FileFilters::WORKSPACE_EXT))
+    if (ext.IsSameAs(FileFilters::URUSSTUDIO_EXT) || ext.IsSameAs(FileFilters::URUSWRKSPACE_EXT))
     {
         wxString batchbuildargs = Manager::Get()->GetConfigManager(_T("app"))->Read(_T("/batch_build_args"), appglobals::DefaultBatchBuildArgs);
-        key.SetName(BaseKeyName + _T("CodeBlocks.") + ext + _T("\\shell\\Build\\command"));
+        key.SetName(BaseKeyName + _T("UrusStudio.") + ext + _T("\\shell\\Build\\command"));
         if (!key.Open())
             return false;
         if (!key.QueryValue(wxEmptyString, strVal))
@@ -297,7 +300,7 @@ bool Associations::DoCheckAssociation(const wxString& ext, cb_unused const wxStr
         if (strVal != _T("\"") + exe + _T("\" ") + batchbuildargs + _T(" --build \"%1\""))
             return false;
 
-        key.SetName(BaseKeyName + _T("CodeBlocks.") + ext + _T("\\shell\\Rebuild (clean)\\command"));
+        key.SetName(BaseKeyName + _T("UrusStudio.") + ext + _T("\\shell\\Rebuild (clean)\\command"));
         if (!key.Open())
             return false;
         if (!key.QueryValue(wxEmptyString, strVal))

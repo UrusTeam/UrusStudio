@@ -230,7 +230,7 @@ wxString cbProject::CreateUniqueFilename()
             break;
         ++iter;
     }
-    return tmp << _T(".") << FileFilters::CODEBLOCKS_EXT;
+    return tmp << _T(".") << FileFilters::URUSSTUDIO_EXT;
 }
 
 void cbProject::ClearAllProperties()
@@ -438,7 +438,7 @@ bool cbProject::SaveAs()
                      _("Save file"),
                      fname.GetPath(),
                      fname.GetFullName(),
-                     FileFilters::GetFilterString(_T('.') + FileFilters::CODEBLOCKS_EXT),
+                     FileFilters::GetFilterString(_T('.') + FileFilters::URUSSTUDIO_EXT),
                      wxFD_SAVE | wxFD_OVERWRITE_PROMPT);
 
     PlaceWindow(&dlg);
@@ -458,8 +458,8 @@ bool cbProject::SaveAs()
     // in the filename, the part after it would be interpreted as extension
     // (and it might not be)
     // so we just append the correct extension
-    if (!fname.GetExt().Matches(FileFilters::CODEBLOCKS_EXT))
-        fname.Assign(m_Filename + _T('.') + FileFilters::CODEBLOCKS_EXT);
+    if (!fname.GetExt().Matches(FileFilters::URUSSTUDIO_EXT))
+        fname.Assign(m_Filename + _T('.') + FileFilters::URUSSTUDIO_EXT);
 
 //    Manager::Get()->GetProjectManager()->GetTree()->SetItemText(m_ProjectNode, fname.GetFullName());
     if (!m_Loaded)
