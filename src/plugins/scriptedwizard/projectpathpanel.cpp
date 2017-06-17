@@ -138,6 +138,11 @@ void ProjectPathPanel::OntxtPrjTitleText(cb_unused wxCommandEvent& event)
     if (!prjtitle.IsEmpty() &&
         !prjtitle.Right(4).IsSameAs(FileFilters::CODEBLOCKS_DOT_EXT))
         prjtitle = prjtitle + FileFilters::CODEBLOCKS_DOT_EXT;
+
+    if (!prjtitle.IsEmpty() &&
+        !prjtitle.Right(4).IsSameAs(FileFilters::URUSSTUDIO_DOT_EXT))
+        prjtitle = prjtitle + FileFilters::URUSSTUDIO_DOT_EXT;
+
     txtPrjName->SetValue(prjtitle);
 
 // FIXME (Biplab#1#): In Linux, text update event is not thrown

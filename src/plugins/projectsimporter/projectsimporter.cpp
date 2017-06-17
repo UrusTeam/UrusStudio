@@ -126,7 +126,7 @@ int ProjectsImporter::LoadProject(const wxString& filename)
     wxFileName the_file(filename);
     if (!the_file.FileExists())
         return -1;
-    the_file.SetExt(FileFilters::CODEBLOCKS_EXT);
+    the_file.SetExt(FileFilters::URUSSTUDIO_EXT);
 
     cbProject* prj = Manager::Get()->GetProjectManager()->NewProject(the_file.GetFullPath());
     if (!prj)

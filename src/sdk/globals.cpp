@@ -384,6 +384,12 @@ FileType FileTypeOf(const wxString& filename)
     else if (ext.IsSameAs(FileFilters::SCRIPT_EXT))
         return ftScript;
 
+    else if (ext.IsSameAs(FileFilters::URUSSTUDIO_EXT))
+        return ftCodeBlocksProject;
+
+    else if (ext.IsSameAs(FileFilters::URUSWRKSPACE_EXT))
+        return ftCodeBlocksWorkspace;
+
     // DrewBoo: Before giving up, see if the ProjectManager
     // considers this extension a source or header
     // TODO (Morten#5#): Do what DrewBoo said: Try removing the above code

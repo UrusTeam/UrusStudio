@@ -216,7 +216,7 @@ bool MSVC7WorkspaceLoader::Open(const wxString& filename, wxString& Title)
                 // try to find the opened project
                 wxFileName sCodeBlockProject(fname);
                 sCodeBlockProject = fname.GetFullPath();
-                sCodeBlockProject.SetExt(FileFilters::CODEBLOCKS_EXT);
+                sCodeBlockProject.SetExt(FileFilters::URUSSTUDIO_EXT);
 
                 project = Manager::Get()->GetProjectManager()->IsOpen(sCodeBlockProject.GetFullPath());
             }
