@@ -2,7 +2,7 @@ AM_CPPFLAGS = $(WX_CXXFLAGS) \
 		-I$(srcdir)/include \
 		-I$(srcdir)/images
 
-wxcontribitemsdir = $(libdir)/codeblocks/wxContribItems
+wxcontribitemsdir = $(libdir)/urusstudio/wxContribItems
 
 wxcontribitems_LTLIBRARIES = libwxdatetimepicker.la
 
@@ -13,7 +13,7 @@ libwxdatetimepicker_la_LIBADD = $(WX_LIBS)
 libwxdatetimepicker_la_SOURCES = ./src/DateTimeCtrl.cpp \
 ./src/TimeCtrl.cpp
 
-sdkdir = $(includedir)/codeblocks/wxContribItems/wxDateTimePicker/include
+sdkdir = $(includedir)/urusstudio/wxContribItems/wxDateTimePicker/include
 
 sdk_HEADERS = ./include/DateTimeCtrl.h \
 ./include/TimeCtrl.h

@@ -6,7 +6,7 @@ AM_CPPFLAGS = -I$(srcdir)/gizmosled/include \
 -I$(srcdir)/lcdWindow/include \
 -I$(srcdir)/led/include
 
-wxcontribitemsdir=$(libdir)/codeblocks/wxContribItems
+wxcontribitemsdir=$(libdir)/urusstudio/wxContribItems
 
 wxcontribitems_LTLIBRARIES = libwxled.la
 

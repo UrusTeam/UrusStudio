@@ -365,14 +365,14 @@ void CodeSnippetsAppFrame::InitCodeSnippetsAppFrame(wxFrame *frame, const wxStri
         //if launched from CB & CodeBlocks has codesnippets.ini, use it
         iniFilenameStr = m_ConfigFolder + wxFILE_SEP_PATH + GetConfig()->AppName + _T(".ini");
         iniFilenameStr = iniFilenameStr.Lower();
-        //-iniFilenameStr.Replace(wxT("codesnippets"), wxT("codeblocks"),false);
+        //-iniFilenameStr.Replace(wxT("codesnippets"), wxT("urusstudio"),false);
         iniFilenameStr.Replace(wxT("codesnippets"), GetConfig()->GetAppParent(),false);
         if ( GetConfig()->GetKeepAlivePid() )
             if (::wxFileExists(iniFilenameStr) )
                 break;
 
         // if launched from CB & Linux has codesnippets.ini, use it
-        //-iniFilenameStr.Replace(wxT("codeblocks"),wxT(".codeblocks"));
+        //-iniFilenameStr.Replace(wxT("urusstudio"),wxT(".urusstudio"));
         iniFilenameStr.Replace(GetConfig()->GetAppParent(), _T(".")+GetConfig()->GetAppParent());
         if ( GetConfig()->GetKeepAlivePid() )
             if (::wxFileExists(iniFilenameStr))
@@ -1195,7 +1195,7 @@ bool CodeSnippetsAppFrame::InitializeSDK()
     // the resources to be found.
     Manager::Get( this );  // this sets the AppWindow/Frame pointer
 
-    // Kill message that "<appdata>/<exeName>/share/codeblocks/lexers
+    // Kill message that "<appdata>/<exeName>/share/urusstudio/lexers
     // can not be enumerated."
     if ( not wxDirExists( dataFolderUser+_T("/lexers")) )
         wxMkdir(dataFolderUser+_T("/lexers"));
@@ -1253,7 +1253,7 @@ bool CodeSnippetsAppFrame::LoadConfig()
             data = env;
     }
 
-    data.append(_T("/share/codeblocks"));
+    data.append(_T("/share/urusstudio"));
 
     cfg->Write(_T("data_path"), data);
 
@@ -1412,7 +1412,7 @@ void CodeSnippetsAppFrame::ImportCBResources()
     // location of CodeBlocks config folder
     wxString cbConfigFolder = Normalize(wxStandardPaths::Get().GetUserDataDir());
     wxString appParent = GetConfig()->GetAppParent();
-    if ( appParent.empty()) appParent =_T("codeblocks");
+    if ( appParent.empty()) appParent =_T("urusstudio");
     wxString prefixPath;
     #if defined(__WXMSW__)
         if (cbConfigFolder.EndsWith(_T("codesnippets"), &prefixPath))
@@ -1442,13 +1442,13 @@ void CodeSnippetsAppFrame::ImportCBResources()
         }
     }
     // Copy missing resources from CB exe folder to app config folder
-    if (not wxDirExists(appExeFolder + _T("/share/codeblocks/")))
+    if (not wxDirExists(appExeFolder + _T("/share/urusstudio/")))
     {
-        FileImport( cbExeFolder + _T("/share/codeblocks/images/"), appExeFolder + _T("/share/codeblocks/images/"));
-        FileImport( cbExeFolder + _T("/share/codeblocks/lexers/"), appExeFolder + _T("/share/codeblocks/lexers/"));
-        FileImport( cbExeFolder + _T("/share/codeblocks/manager_resources.zip"), appExeFolder + _T("/share/codeblocks/"));
-        FileImport( cbExeFolder + _T("/share/codeblocks/resources.zip"), appExeFolder + _T("/share/codeblocks/"));
-        FileImport( cbExeFolder + _T("/share/codeblocks/xpmanifest.zip"), appExeFolder + _T("/share/codeblocks/"));
+        FileImport( cbExeFolder + _T("/share/urusstudio/images/"), appExeFolder + _T("/share/urusstudio/images/"));
+        FileImport( cbExeFolder + _T("/share/urusstudio/lexers/"), appExeFolder + _T("/share/urusstudio/lexers/"));
+        FileImport( cbExeFolder + _T("/share/urusstudio/manager_resources.zip"), appExeFolder + _T("/share/urusstudio/"));
+        FileImport( cbExeFolder + _T("/share/urusstudio/resources.zip"), appExeFolder + _T("/share/urusstudio/"));
+        FileImport( cbExeFolder + _T("/share/urusstudio/xpmanifest.zip"), appExeFolder + _T("/share/urusstudio/"));
     }
 
 }//ImportCBResources
@@ -1459,7 +1459,7 @@ wxString CodeSnippetsAppFrame::GetCBExeFolder() //Get CodeBlocks executable fold
     wxString cbExeFolder = GetAppPath(); //for linux
 
     // Assume that codeblocks.dll is in the resource path base.
-    // Then look for <dllPath>/share/codeblocks/resources.zip
+    // Then look for <dllPath>/share/urusstudio/resources.zip
     // to verify.
     #if defined(__WXMSW__)
     if( m_Prefix.IsEmpty() )
@@ -1473,7 +1473,7 @@ wxString CodeSnippetsAppFrame::GetCBExeFolder() //Get CodeBlocks executable fold
         #if defined(LOGGING)
           LOGIT( _T("CodeBlocks.dll Path[%s]"), cbExeFolder.c_str());
         #endif
-        //cbExeFolder.append(_T("/share/codeblocks"));
+        //cbExeFolder.append(_T("/share/urusstudio"));
         //if (not ::wxFileExists(cbExeFolder + _T("/resources.zip")) ) break;
     }while(false);
     #endif

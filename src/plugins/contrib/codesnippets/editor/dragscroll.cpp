@@ -156,7 +156,7 @@ void cbDragScroll::OnAttach()
     if (::wxFileExists(m_ExecuteFolder + wxFILE_SEP_PATH + _T("default.conf")))
         m_ConfigFolder = m_ExecuteFolder;
 
-    //GTK GetConfigFolder is returning double "//?, eg, "/home/pecan//.codeblocks"
+    //GTK GetConfigFolder is returning double "//?, eg, "/home/pecan//.urusstudio"
     // remove the double //s from filename //+v0.4.11
     m_ConfigFolder.Replace(_T("//"),_T("/"));
     m_ExecuteFolder.Replace(_T("//"),_T("/"));
@@ -176,12 +176,12 @@ void cbDragScroll::OnAttach()
         //if codeblocks has codesnippets.ini, use it
         cfgFilenameStr = m_ConfigFolder+wxFILE_SEP_PATH + GetConfig()->AppName + _T(".ini");
         cfgFilenameStr = cfgFilenameStr.Lower();
-        cfgFilenameStr.Replace(wxT("codesnippets"), wxT("codeblocks"),false);
+        cfgFilenameStr.Replace(wxT("codesnippets"), wxT("urusstudio"),false);
          LOGIT( _T("MSWCfgName 3[%s]"),cfgFilenameStr.c_str() );
         if (::wxFileExists(cfgFilenameStr) ) break;
 
         // if Linux has codesnippets.ini, use it
-        cfgFilenameStr.Replace(wxT("codeblocks"),wxT(".codeblocks"));
+        cfgFilenameStr.Replace(wxT("urusstudio"),wxT(".urusstudio"));
         LOGIT( _T("UNXCfgName[%s]"),cfgFilenameStr.c_str() );
         if (::wxFileExists(cfgFilenameStr)) break;
 

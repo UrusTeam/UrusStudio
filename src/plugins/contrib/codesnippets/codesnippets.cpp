@@ -116,7 +116,7 @@ void CodeSnippets::OnAttach()
     // Do not allow a secondary plugin enable
     //if (g_pConfig){
     if (GetConfig()){
-        wxMessageBox(wxT("CodeSnippets will enable on CodeBlocks restart."));
+        wxMessageBox(wxT("CodeSnippets will enable on Urus Studio restart."));
         return;
     }
 

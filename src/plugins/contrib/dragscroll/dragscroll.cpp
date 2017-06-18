@@ -164,7 +164,7 @@ void cbDragScroll::OnAttach()
     m_DataFolder = ConfigManager::GetDataFolder();
     m_ExecuteFolder = FindAppPath(wxTheApp->argv[0], ::wxGetCwd(), wxEmptyString);
 
-    //GTK GetConfigFolder is returning double "//?, eg, "/home/pecan//.codeblocks"
+    //GTK GetConfigFolder is returning double "//?, eg, "/home/pecan//.urusstudio"
     // remove the double //s from filename //+v0.4.11
     m_ConfigFolder.Replace(_T("//"),_T("/"));
     m_ExecuteFolder.Replace(_T("//"),_T("/"));
