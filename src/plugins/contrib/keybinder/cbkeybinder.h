@@ -342,7 +342,7 @@ class cbKeyBinder : public cbPlugin
 // ----------------------------------------------------------------------------
 //	closed  1/17/2006 9:04 PM open	]1/17/2006 11:07 AM
 //		    GTK Update() menuitems crashing on disappearing & numeric menuitems
-//          GetConfigFolder() returning double "//"s like "/home/pecan//.codeblocks" ?
+//          GetConfigFolder() returning double "//"s like "/home/pecan//.urusstudio" ?
 //  closed  1/17/2006 9:05 PM open    1/17/2006 5:50 PM
 //          GTK - keybinder file is not being saved.
 //  mod     1/17/2006 5:51 PM

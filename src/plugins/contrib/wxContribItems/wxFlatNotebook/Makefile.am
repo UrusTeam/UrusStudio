@@ -1,7 +1,7 @@
 AM_CPPFLAGS = $(WX_CXXFLAGS) \
 		-I$(srcdir)/include
 
-wxcontribitemsdir=$(libdir)/codeblocks/wxContribItems
+wxcontribitemsdir=$(libdir)/urusstudio/wxContribItems
 
 wxcontribitems_LTLIBRARIES = libwxflatnotebook.la
 
@@ -17,7 +17,7 @@ libwxflatnotebook_la_SOURCES = \
 ./src/wxFlatNotebook/wxFlatNotebook.cpp \
 ./src/wxFlatNotebook/xh_fnb.cpp
 
-sdkdir=$(includedir)/codeblocks/wxContribItems/wxFlatNotebook/include/wx/wxFlatNotebook
+sdkdir=$(includedir)/urusstudio/wxContribItems/wxFlatNotebook/include/wx/wxFlatNotebook
 
 sdk_HEADERS = \
 ./include/wx/wxFlatNotebook/wxFlatNotebook.h \

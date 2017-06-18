@@ -217,7 +217,7 @@ noinst_HEADERS = src/PlatWX.h \
 			src/scintilla/src/ViewStyle.h \
 			src/scintilla/src/XPM.h
 
-sdkdir=$(includedir)/codeblocks/wxscintilla/include/wx
+sdkdir=$(includedir)/urusstudio/wxscintilla/include/wx
 
 sdk_HEADERS = include/wx/wxscintilla.h
 

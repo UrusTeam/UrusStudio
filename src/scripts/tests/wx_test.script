@@ -255,11 +255,11 @@ class wxTest extends script_test_base
         local path;
         if(::PLATFORM == ::PLATFORM_MSW )
         {
-            path = _T("\\share\\codeblocks\\");
+            path = _T("\\share\\urusstudio\\");
         }
         else if(::PLATFORM == ::PLATFORM_GTK)
         {
-            path = _T("share/codeblocks/");
+            path = _T("share/urusstudio/");
         }
         else
         {

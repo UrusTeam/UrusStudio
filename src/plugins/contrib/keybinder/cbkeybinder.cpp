@@ -217,6 +217,24 @@ void cbKeyBinder::BuildMenu(wxMenuBar* menuBar)
     // memorize incomming menubar
     m_pMenuBar = menuBar;
 
+    // Create filename like cbKeyBinder{pluginversion}.ini
+
+    //memorize the key file name as {%HOME%}\cbKeyBinder+{ver}.ini
+    //m_sKeyFilename = ConfigManager::GetConfigFolder();
+    m_sConfigFolder = ConfigManager::GetConfigFolder();
+    m_sExecuteFolder = FindAppPath(wxTheApp->argv[0], ::wxGetCwd(), wxEmptyString);
+    m_sDataFolder = ConfigManager::GetDataFolder();
+
+    #if defined(LOGGING)
+    //*bug* GTK GetConfigFolder is returning double "//?, eg, "/home/pecan//.urusstudio"
+    LOGIT(_T("GetConfigFolder() is returning [%s]"), m_sConfigFolder.GetData());
+    LOGIT(_T("GetExecutableFolder() is returning [%s]"), m_sExecuteFolder.GetData());
+    //LOGIT(_T("GetDataFolder() is returning [%s]"), m_sDataFolder.GetData());
+    #endif
+
+    // remove the double //s from filename //+v0.4.11
+    m_sConfigFolder.Replace(_T("//"),_T("/"));
+    m_sExecuteFolder.Replace(_T("//"),_T("/"));
     // get version number from keybinder plugin
     const PluginInfo* info = Manager::Get()->GetPluginManager()->GetPluginInfo(this);
     wxString pluginVersion = info->version.BeforeLast('.');

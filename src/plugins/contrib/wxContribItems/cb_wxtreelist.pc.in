@@ -5,9 +5,9 @@ includedir=@includedir@/urusstudio/wxContribItems
 datarootdir = @datarootdir@
 sharedir=@datadir@
 
-Name: wxCustomButton
-Description: wxCustomButton also used for the wxSmith Contrib Items
+Name: wxTreeListCtrl
+Description: TreeListCtrl also used for the wxSmith Contrib Items
 Version: @VERSION@
-Libs: -L${libdir} -lwxcustombutton
-Cflags: -I${includedir}/wxthings/include
+Libs: -L${libdir} -lwxtreelist
+Cflags: -I${includedir}/wxTreeList/include
 

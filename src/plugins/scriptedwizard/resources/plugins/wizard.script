@@ -313,7 +313,7 @@ function SetupTarget(target, isSystemWide, targetWxVersion)
 
     if (PLATFORM == PLATFORM_MSW)
     {
-        target.SetHostApplication(GetBaseDevelPath(targetWxVersion) + _T("\\codeblocks") + DOT_EXT_EXECUTABLE);
+        target.SetHostApplication(GetBaseDevelPath(targetWxVersion) + _T("\\urusstudio") + DOT_EXT_EXECUTABLE);
 
         if (targetWxVersion == 0)
         {
@@ -347,13 +347,13 @@ function SetupTarget(target, isSystemWide, targetWxVersion)
     {
         if (isSystemWide)
         {
-            target.AddCompilerOption(_T("`pkg-config --cflags codeblocks`"));
-            target.AddLinkerOption(_T("`pkg-config --libs codeblocks`"));
+            target.AddCompilerOption(_T("`pkg-config --cflags urusstudio`"));
+            target.AddLinkerOption(_T("`pkg-config --libs urusstudio`"));
         }
         else
         {
             local develPath = GetBaseDevelPath(targetWxVersion);
-            target.SetHostApplication(develPath + _T("/codeblocks") + DOT_EXT_EXECUTABLE);
+            target.SetHostApplication(develPath + _T("/urusstudio") + DOT_EXT_EXECUTABLE);
             target.AddLibDir(develPath);
             target.SetWorkingDir(develPath);
 
@@ -382,7 +382,7 @@ function SetupTarget(target, isSystemWide, targetWxVersion)
     else
     {
         // "to_codeblocks" has to copy multiple files to the $(#cb)\devel folder. This is a platform specific process
-        local basePath = GetBaseDevelPath(targetWxVersion) + _T("/share/codeblocks/");
+        local basePath = GetBaseDevelPath(targetWxVersion) + _T("/share/urusstudio/");
         zipFilePath = basePath + PluginSettings.Name + _T(".zip");
 
         target.SetOutputFilename(basePath + _T("plugins/") + PluginSettings.Name);

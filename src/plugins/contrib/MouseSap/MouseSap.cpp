@@ -106,6 +106,60 @@ void MouseSap::OnAttach()
         wxLogMessage(_T("Logging MouseSap version %s"),wxString(wxT(VERSION)).c_str());
 	#endif
 
+    // names of windows we're allowed to attach
+    m_UsableWindows.Add(_T("sciwindow"));
+
+    m_bMouseSapEnabled    = true;
+
+    // Create filename like MouseSap.ini
+    //memorize the key file name as {%HOME%}\MouseSap.ini
+    m_ConfigFolder = ConfigManager::GetConfigFolder();
+    m_DataFolder = ConfigManager::GetDataFolder();
+    m_ExecuteFolder = FindAppPath(wxTheApp->argv[0], ::wxGetCwd(), wxEmptyString);
+
+    //GTK GetConfigFolder is returning double "//?, eg, "/home/pecan//.urusstudio"
+    // remove the double //s from filename //+v0.4.11
+    m_ConfigFolder.Replace(_T("//"),_T("/"));
+    m_ExecuteFolder.Replace(_T("//"),_T("/"));
+
+    // get the CodeBlocks "personality" argument
+    wxString m_Personality = Manager::Get()->GetPersonalityManager()->GetPersonality();
+	if (m_Personality == wxT("default")) m_Personality = wxEmptyString;
+     LOGIT( _T("Personality is[%s]"), m_Personality.GetData() );
+
+    // if MouseSap.ini is in the executable folder, use it
+    // else use the default config folder
+    m_CfgFilenameStr = m_ExecuteFolder + wxFILE_SEP_PATH;
+    if (not m_Personality.IsEmpty()) m_CfgFilenameStr << m_Personality + wxT(".") ;
+    m_CfgFilenameStr << _T("MouseSap.ini");
+
+    if (::wxFileExists(m_CfgFilenameStr)) {;/*OK Use exe path*/}
+    else //use the default.conf folder
+    {   m_CfgFilenameStr = m_ConfigFolder + wxFILE_SEP_PATH;
+        if (not m_Personality.IsEmpty()) m_CfgFilenameStr << m_Personality + wxT(".") ;
+        m_CfgFilenameStr << _T("MouseSap.ini");
+    }
+    //LOGIT(_T("MouseSap Config Filename:[%s]"), m_CfgFilenameStr.GetData());
+    // read configuaton file
+    //wxFileConfig cfgFile(wxEmptyString,     // appname
+    //                    wxEmptyString,      // vendor
+    //                    m_CfgFilenameStr,   // local filename
+    //                    wxEmptyString,      // global file
+    //                    wxCONFIG_USE_LOCAL_FILE);
+    //
+    //cfgFile.Read(_T("MouseSapEnabled"),  &MouseSapEnabled ) ;
+
+    // Pointer to "Search Results" Window (first listCtrl window)
+
+    // Catch creation of windows
+    Connect( wxEVT_CREATE,
+        (wxObjectEventFunction) (wxEventFunction)
+        (wxCommandEventFunction) &MouseSap::OnWindowOpen);
+
+    // Catch Destroyed windows
+    Connect( wxEVT_DESTROY,
+        (wxObjectEventFunction) (wxEventFunction)
+        (wxCommandEventFunction) &MouseSap::OnWindowClose);
     // Set current plugin version
 	PluginInfo* pInfo = (PluginInfo*)(Manager::Get()->GetPluginManager()->GetPluginInfo(this));
 	pInfo->version = wxT(VERSION);

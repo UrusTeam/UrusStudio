@@ -23,7 +23,7 @@ AM_CPPFLAGS = $(WX_CXXFLAGS) \
 CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) \
         $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
 
-sdkdir=$(includedir)/codeblocks
+sdkdir=$(includedir)/urusstudio
 
 ALLHEADERS = annoyingdialog.h \
 				autodetectcompilers.h \

@@ -3,7 +3,7 @@ SUBDIRS = include/wx/KWIC include/wx/xrc
 AM_CPPFLAGS = $(WX_CXXFLAGS) \
 		-I$(srcdir)/include
 
-wxcontribitemsdir=$(libdir)/codeblocks/wxContribItems
+wxcontribitemsdir=$(libdir)/urusstudio/wxContribItems
 
 wxcontribitems_LTLIBRARIES = libwxkwic.la
 

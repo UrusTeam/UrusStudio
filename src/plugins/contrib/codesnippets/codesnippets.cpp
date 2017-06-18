@@ -48,6 +48,7 @@
 #include "codesnippets.h"
 #include "codesnippetswindow.h"
 #include "snippetsconfig.h"
+#include "GenericMessageBox.h"
 #include "cbauibook.h"
 
 // ----------------------------------------------------------------------------
@@ -115,12 +116,13 @@ void CodeSnippets::OnAttach()
     // Do not allow a secondary plugin enable
     //if (g_pConfig){
     if (GetConfig()){
-        wxMessageBox(wxT("CodeSnippets will enable on CodeBlocks restart."));
+        wxMessageBox(wxT("CodeSnippets will enable on Urus Studio restart."));
         return;
     }
 
     // Initialize one and only Global class
     // Must be done first to allocate config file
+    //-g_pConfig = new CodeSnippetsConfig;
     SetConfig( new CodeSnippetsConfig);
 
     GetConfig()->m_bIsPlugin = true;
@@ -212,6 +214,19 @@ void CodeSnippets::OnAttach()
     // memorize manager of Open files tree
     m_pProjectMgr = Manager::Get()->GetProjectManager();
 
+    // set a drop target for the project managers wxAuiNotebook/cbAuiNotebook
+    /* cherry-picked check
+    m_pProjectMgr->GetUI().GetNotebook()->SetDropTarget(new DropTargets(this));
+    //-m_pProjectMgr->GetNotebook()->SetDropTarget(new DropTargets(this));
+
+    //NB: On Linux, we don't enable dragging out of the file windows because of the drag/drop freeze bug
+    #if defined(__WXMSW__)
+        wxTreeCtrl* pPrjTree = m_pProjectMgr->GetUI().GetTree();
+        //-wxTreeCtrl* pPrjTree = m_pProjectMgr->GetTree();
+        m_oldCursor = pPrjTree->GetCursor();
+        SetTreeCtrlHandler( pPrjTree, wxEVT_COMMAND_TREE_BEGIN_DRAG );
+    #endif
+    */
 
     GetConfig()->SetOpenFilesList( FindOpenFilesListWindow() );
     if (GetConfig()->GetOpenFilesList() )
@@ -234,6 +249,10 @@ void CodeSnippets::OnAttach()
     // load tree icons/images
     // ---------------------------------------
     GetConfig()->pSnipImages = new SnipImages();
+
+    //- If Codesnippets is running as an external application
+    //- wait on user to open an external window with the view/snippets menu
+    //-if ( GetConfig()->IsExternalWindow() ) {return;}
 
     // ---------------------------------------
     // setup snippets tree docking window
@@ -316,6 +335,7 @@ void CodeSnippets::BuildMenu(wxMenuBar* menuBar)
 		if (not isSet)
             viewMenu->AppendCheckItem(idViewSnippets, _("Code snippets"), _("Toggle displaying the code snippets."));
 	}
+
 	#if defined(LOGGING)
 	LOGIT(wxT("Menubar[%p]idViewSnippets[%d]"),menuBar, idViewSnippets);
 	#endif
@@ -345,6 +365,8 @@ void CodeSnippets::OnDisable(bool appShutDown)
     CodeBlocksDockEvent evt(cbEVT_HIDE_DOCK_WINDOW);
     evt.pWindow = GetSnippetsWindow();
     Manager::Get()->ProcessEvent(evt);
+
+    return;
 }
 // ----------------------------------------------------------------------------
 void CodeSnippets::OnAppStartupDone(CodeBlocksEvent& event)
