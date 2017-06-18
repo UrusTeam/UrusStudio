@@ -299,7 +299,7 @@ void Bindings::SetDefaultsCodeBlocks()
     for(std::size_t i = 0; i < arCodeBlocks.GetCount(); ++i)
     {
         const wxArrayString arTmp = GetArrayFromString(arCodeBlocks.Item(i), _T(";"));
-        AddBinding(_T("CodeBlocks"), arTmp.Item(0), arTmp.Item(1) );
+        AddBinding(_T("UrusStudio"), arTmp.Item(0), arTmp.Item(1) );
     }
 }// SetDefaultsCodeBlocks
 

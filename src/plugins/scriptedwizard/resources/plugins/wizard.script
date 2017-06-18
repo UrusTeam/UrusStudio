@@ -320,6 +320,10 @@ function SetupTarget(target, isSystemWide, targetWxVersion)
             target.AddIncludeDir(_T("$(#wx.include)"));
             target.AddIncludeDir(_T("$(#wx.lib)\\gcc_dll\\mswu"));
 
+        target.AddLinkLib(_T("urusstudio"));
+        if (WxVersion == 0)
+            target.AddLinkLib(_T("wxmsw26u"));
+        else
             target.AddLinkLib(_T("wxmsw28u"));
             target.AddLibDir(_T("$(#wx.lib)\\gcc_dll"));
         }
@@ -336,44 +340,19 @@ function SetupTarget(target, isSystemWide, targetWxVersion)
             target.AddIncludeDir(_T("$(#wx31.include)"));
             target.AddIncludeDir(_T("$(#wx31.lib)\\gcc_dll\\mswu"));
 
-            target.AddLinkLib(_T("wxmsw31u"));
-            target.AddLibDir(_T("$(#wx31.lib)\\gcc_dll"));
-        }
-
-        target.AddLibDir(GetBaseDevelPath(targetWxVersion));
-        target.AddLinkLib(_T("codeblocks"));
+        target.SetHostApplication(_T("$(#cb)\\devel\\urusstudio") + DOT_EXT_EXECUTABLE);
     }
     else
     {
-        if (isSystemWide)
-        {
-            target.AddCompilerOption(_T("`pkg-config --cflags codeblocks`"));
-            target.AddLinkerOption(_T("`pkg-config --libs codeblocks`"));
-        }
-        else
-        {
-            local develPath = GetBaseDevelPath(targetWxVersion);
-            target.SetHostApplication(develPath + _T("/codeblocks") + DOT_EXT_EXECUTABLE);
-            target.AddLibDir(develPath);
-            target.SetWorkingDir(develPath);
+        target.AddCompilerOption(_T("`pkg-config --cflags urusstudio`"));
+        target.AddCompilerOption(_T("`wx-config --cflags`"));
+        target.AddCompilerOption(_T("-ansi"));
+        target.AddCompilerOption(_T("-fPIC"));
 
-            target.AddLinkLib(_T("codeblocks"));
-            target.AddIncludeDir(_T("$(#cb)/include"));
-            target.AddIncludeDir(_T("$(#cb)/sdk/wxscintilla/include"));
-            target.AddIncludeDir(_T("$(#cb)/include/tinyxml"));
-        }
+        target.AddLinkerOption(_T("`pkg-config --libs urusstudio`"));
+        target.AddLinkerOption(_T("`wx-config --libs`"));
 
-        local WxVersionFlag;
-        if (targetWxVersion == 0)
-            WxVersionFlag = _T(" --version=2.8");
-        else if (targetWxVersion == 1)
-            WxVersionFlag = _T(" --version=3.0");
-        else if (targetWxVersion == 2)
-            WxVersionFlag = _T(" --version=3.1");
-        else if (targetWxVersion == 3)
-            WxVersionFlag = _T("");
-        target.AddCompilerOption(_T("`wx-config --cflags ") + WxVersionFlag + _T("`"));
-        target.AddLinkerOption(_T("`wx-config --libs ") + WxVersionFlag + _T("`"));
+        target.SetHostApplication(_T("urusstudio") + DOT_EXT_EXECUTABLE);
     }
 
     local zipFilePath;
