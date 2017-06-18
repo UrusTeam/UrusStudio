@@ -1288,7 +1288,7 @@ void ProjectManagerUI::OnAddFilesToProjectRecursively(wxCommandEvent& event)
             array[i].Contains(_T("/.svn/")) ||
             array[i].Contains(_T("\\CVS\\")) ||
             array[i].Contains(_T("/CVS/")) ||
-            array[i].Lower().Matches(_T("*.cbp")))
+            array[i].Lower().Matches(_T("*.usp")))
         {
             array.RemoveAt(i);
         }
