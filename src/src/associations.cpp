@@ -62,11 +62,11 @@ const Associations::Assoc knownTypes[] =
 
     { FileFilters::DEVCPP_EXT,          _T("Dev-CPP project file"),         21 },
     { FileFilters::MSVC6_EXT,           _T("MS Visual C++ project file"),   22 },
-    { FileFilters::MSVC6_WORKSPACE_EXT, _T("MS Visual C++ workspace file"), 23 }
+    { FileFilters::MSVC6_WORKSPACE_EXT, _T("MS Visual C++ workspace file"), 23 },
     //{ _T("proj"),                       _T("XCODE Project file"),           24 }
 
     { FileFilters::URUSSTUDIO_EXT,      _T("Urus Studio project file"),                  0 },
-    { FileFilters::URUSWRKSPACE_EXT,    _T("Urus Studio workspace file"),                1 },
+    { FileFilters::URUSWRKSPACE_EXT,    _T("Urus Studio workspace file"),                1 }
 };
 
 inline void DoSetAssociation(const wxString& executable, int index)
