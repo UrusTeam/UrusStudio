@@ -2,7 +2,7 @@ AM_CPPFLAGS = $(WX_CXXFLAGS) \
 		-I$(srcdir)/include
 
 
-wxcontribitemsdir=$(libdir)/codeblocks/wxContribItems
+wxcontribitemsdir=$(libdir)/urusstudio/wxContribItems
 
 wxcontribitems_LTLIBRARIES = libwxchartctrl.la
 
@@ -31,7 +31,7 @@ libwxchartctrl_la_SOURCES = \
 ./src/yaxis.cpp
 
 
-sdkdir=$(includedir)/codeblocks/wxContribItems/wxchart/include/wx
+sdkdir=$(includedir)/urusstudio/wxContribItems/wxchart/include/wx
 
 sdk_HEADERS = \
 ./include/wx/axis.h \

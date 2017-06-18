@@ -17,7 +17,7 @@ libwxpropgrid_la_SOURCES = ./src/advprops.cpp \
 EXTRA_DIST = ./readme.txt \
 			./changes.txt
 
-sdkdir=$(includedir)/codeblocks/wxpropgrid/include/wx/propgrid/
+sdkdir=$(includedir)/urusstudio/wxpropgrid/include/wx/propgrid/
 
 sdk_HEADERS = ./include/wx/propgrid/advprops.h \
 			./include/wx/propgrid/editors.h \

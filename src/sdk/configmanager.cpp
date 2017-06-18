@@ -603,12 +603,12 @@ inline wxString ConfigManager::GetUserDataFolder()
 #ifdef __WINDOWS__
     TCHAR buffer[MAX_PATH];
     if (!ConfigManager::has_alternate_user_data_path && ::GetEnvironmentVariable(_T("APPDATA"), buffer, MAX_PATH))
-        return wxString::Format(_T("%s\\CodeBlocks"), buffer);
+        return wxString::Format(_T("%s\\urusstudio"), buffer);
     else
         return wxStandardPathsBase::Get().GetUserDataDir();
 #else
 #ifdef __linux__
-    return wxString::FromUTF8(g_build_filename (g_get_user_config_dir(), "codeblocks", NULL));
+    return wxString::FromUTF8(g_build_filename (g_get_user_config_dir(), "urusstudio", NULL));
 #else
     return wxStandardPathsBase::Get().GetUserDataDir();
 #endif // __linux__
@@ -1545,9 +1545,9 @@ void ConfigManager::InitPaths()
     if (data_path_global.IsEmpty())
     {
         if (platform::windows)
-            ConfigManager::data_path_global = app_path + _T("\\share\\codeblocks");
+            ConfigManager::data_path_global = app_path + _T("\\share\\urusstudio");
         else if (platform::macosx)
-            ConfigManager::data_path_global = res_path + _T("/share/codeblocks");
+            ConfigManager::data_path_global = res_path + _T("/share/urusstudio");
         else
             ConfigManager::data_path_global = wxStandardPathsBase::Get().GetDataDir();
     }
@@ -1567,12 +1567,12 @@ void ConfigManager::InitPaths()
             // It seems we can not longer rely on wxStandardPathsBase::Get().GetPluginsDir(),
             // because its behaviour has changed on some systems (at least Fedora 14 64-bit).
             // So we create the pathname manually
-            ConfigManager::plugin_path_global = ((const wxStandardPaths&)wxStandardPaths::Get()).GetInstallPrefix() + _T("/lib/codeblocks/plugins");
+            ConfigManager::plugin_path_global = ((const wxStandardPaths&)wxStandardPaths::Get()).GetInstallPrefix() + _T("/lib/urusstudio/plugins");
             // first assume, we use standard-paths
             if (!wxDirExists(ConfigManager::plugin_path_global) && wxIsPlatform64Bit())
             {
                 // if standard-path does not exist and we are on 64-bit system, use lib64 instead
-                ConfigManager::plugin_path_global = ((const wxStandardPaths&)wxStandardPaths::Get()).GetInstallPrefix() + _T("/lib64/codeblocks/plugins");
+                ConfigManager::plugin_path_global = ((const wxStandardPaths&)wxStandardPaths::Get()).GetInstallPrefix() + _T("/lib64/urusstudio/plugins");
             }
 #endif // __WXGTK__
         }
@@ -1585,7 +1585,7 @@ void ConfigManager::InitPaths()
       dataPathUser = wxString::FromUTF8(g_build_filename (g_get_user_data_dir(), NULL));
 #endif // __linux__
 
-    ConfigManager::data_path_user = dataPathUser + wxFILE_SEP_PATH + _T("codeblocks");
+    ConfigManager::data_path_user = dataPathUser + wxFILE_SEP_PATH + _T("urusstudio");
 
     // if user- and global-datapath are the same (can happen in portable mode) we run in conflicts
     // so we extend the user-datapath with the users name
@@ -1608,14 +1608,14 @@ void ConfigManager::MigrateFolders()
 
     // ConfigManager::config_folder might be the portable-path but we want to migrate the standard-conform folder,
     // but only if it not already exists
-    wxString newConfigFolder = wxString::FromUTF8(g_build_filename (g_get_user_config_dir(), "codeblocks", NULL));
+    wxString newConfigFolder = wxString::FromUTF8(g_build_filename (g_get_user_config_dir(), "urusstudio", NULL));
     // if the new config folder already exist, we step out immediately
     if (wxDirExists(newConfigFolder))
         return;
 
     wxString oldConfigFolder = wxStandardPaths::Get().GetUserDataDir();
-    wxString oldDataFolder = oldConfigFolder + wxFILE_SEP_PATH + _T("share") + wxFILE_SEP_PATH + _T("codeblocks");
-    wxString newDataFolder = wxString::FromUTF8(g_build_filename (g_get_user_data_dir(), NULL)) + wxFILE_SEP_PATH + _T("codeblocks");
+    wxString oldDataFolder = oldConfigFolder + wxFILE_SEP_PATH + _T("share") + wxFILE_SEP_PATH + _T("urusstudio");
+    wxString newDataFolder = wxString::FromUTF8(g_build_filename (g_get_user_data_dir(), NULL)) + wxFILE_SEP_PATH + _T("urusstudio");
     wxString msg;
     msg = F(_("The places where the configuration files and user-data files are stored\n"
               "have been changed to be more standard-conform.\n"

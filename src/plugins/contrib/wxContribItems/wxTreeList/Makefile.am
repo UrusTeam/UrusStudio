@@ -1,7 +1,7 @@
 AM_CPPFLAGS = $(WX_CXXFLAGS) \
 		-I$(srcdir)/include
 
-wxcontribitemsdir=$(libdir)/codeblocks/wxContribItems
+wxcontribitemsdir=$(libdir)/urusstudio/wxContribItems
 
 wxcontribitems_LTLIBRARIES = libwxtreelist.la
 
@@ -12,7 +12,7 @@ libwxtreelist_la_LIBADD = $(WX_LIBS)
 libwxtreelist_la_SOURCES = \
 ./src/treelistctrl.cpp
 
-sdkdir=$(includedir)/codeblocks/wxContribItems/wxTreeList/include/wx
+sdkdir=$(includedir)/urusstudio/wxContribItems/wxTreeList/include/wx
 
 sdk_HEADERS = \
 ./include/wx/treelistctrl.h

@@ -150,7 +150,7 @@ CmdConfigDialog::CmdConfigDialog( wxWindow* parent, ToolsPlus* plugin) : wxDialo
                           "text which is subsituted into the command line\n\nRight clicking on a file, directory or multiple "
                           "paths in the Project Tree, File Explorer or Editor Pane will only populate if this command handles "
                           "that type of object.\nTo use relative path names make sure you set the working directory "
-                          "appropriately (typically use $parentdir)\nYou can also use global, project and codeblocks special variables"));
+                          "appropriately (typically use $parentdir)\nYou can also use global, project and urusstudio special variables"));
 	command_sizer->Add(m_command,1,wxEXPAND);
 	prop_sizer->Add( command_sizer, 0, wxALL|wxEXPAND, 1 );
 
@@ -173,7 +173,7 @@ CmdConfigDialog::CmdConfigDialog( wxWindow* parent, ToolsPlus* plugin) : wxDialo
                           "available:\n1. If you have specified $dir in the command line then you can use $dir here "
                           "also.\n2. $parentdir is available for $relfile, $file, $reldir, $dir, $relpath, $path, "
                           "$fname, $fext and is the absolute path of the directory containing the item.\nYou can also "
-                          "use codeblocks variables, project variables and global variables"));
+                          "use urusstudio variables, project variables and global variables"));
 	wdir_sizer->Add( m_workdir, 1, wxEXPAND, 1 );
 	prop_sizer->Add( wdir_sizer, 0, wxEXPAND, 5 );
 

@@ -1,7 +1,7 @@
 prefix=@prefix@
 exec_prefix=@exec_prefix@
-libdir=@libdir@/codeblocks/wxContribItems
-includedir=@includedir@/codeblocks/wxContribItems/wxled
+libdir=@libdir@/urusstudio/wxContribItems
+includedir=@includedir@/urusstudio/wxContribItems/wxled
 datarootdir = @datarootdir@
 sharedir=@datadir@
 
