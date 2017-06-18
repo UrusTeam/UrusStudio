@@ -135,9 +135,6 @@ void ProjectPathPanel::OntxtPrjTitleText(cb_unused wxCommandEvent& event)
 {
     wxString prjtitle = txtPrjTitle->GetValue();
     // Make a check if the project title has any extension or not
-    if (!prjtitle.IsEmpty() &&
-        !prjtitle.Right(4).IsSameAs(FileFilters::CODEBLOCKS_DOT_EXT))
-        prjtitle = prjtitle + FileFilters::CODEBLOCKS_DOT_EXT;
 
     if (!prjtitle.IsEmpty() &&
         !prjtitle.Right(4).IsSameAs(FileFilters::URUSSTUDIO_DOT_EXT))
