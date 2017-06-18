@@ -268,7 +268,7 @@ void cbKeyBinder::BuildMenu(wxMenuBar* menuBar)
     m_sDataFolder = ConfigManager::GetDataFolder();
 
     #if defined(LOGGING)
-    //*bug* GTK GetConfigFolder is returning double "//?, eg, "/home/pecan//.codeblocks"
+    //*bug* GTK GetConfigFolder is returning double "//?, eg, "/home/pecan//.urusstudio"
     LOGIT(_T("GetConfigFolder() is returning [%s]"), m_sConfigFolder.GetData());
     LOGIT(_T("GetExecutableFolder() is returning [%s]"), m_sExecuteFolder.GetData());
     //LOGIT(_T("GetDataFolder() is returning [%s]"), m_sDataFolder.GetData());

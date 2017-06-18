@@ -1,4 +1,4 @@
-sdkdir=$(includedir)/codeblocks/scripting/bindings
+sdkdir=$(includedir)/urusstudio/scripting/bindings
 
 noinst_HEADERS = scriptbindings.h
 

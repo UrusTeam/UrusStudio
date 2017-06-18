@@ -230,7 +230,7 @@ function SetupTarget(target,is_debug)
         target.AddIncludeDir(_T("$(#wx.include)"));
         target.AddIncludeDir(_T("$(#wx.lib)\\gcc_dll\\mswu"));
 
-        target.AddLinkLib(_T("codeblocks"));
+        target.AddLinkLib(_T("urusstudio"));
         if (WxVersion == 0)
             target.AddLinkLib(_T("wxmsw26u"));
         else
@@ -239,19 +239,19 @@ function SetupTarget(target,is_debug)
         target.AddLibDir(_T("$(#cb)\\devel"));
         target.AddLibDir(_T("$(#wx.lib)\\gcc_dll"));
 
-        target.SetHostApplication(_T("$(#cb)\\devel\\codeblocks") + DOT_EXT_EXECUTABLE);
+        target.SetHostApplication(_T("$(#cb)\\devel\\urusstudio") + DOT_EXT_EXECUTABLE);
     }
     else
     {
-        target.AddCompilerOption(_T("`pkg-config --cflags codeblocks`"));
+        target.AddCompilerOption(_T("`pkg-config --cflags urusstudio`"));
         target.AddCompilerOption(_T("`wx-config --cflags`"));
         target.AddCompilerOption(_T("-ansi"));
         target.AddCompilerOption(_T("-fPIC"));
 
-        target.AddLinkerOption(_T("`pkg-config --libs codeblocks`"));
+        target.AddLinkerOption(_T("`pkg-config --libs urusstudio`"));
         target.AddLinkerOption(_T("`wx-config --libs`"));
 
-        target.SetHostApplication(_T("codeblocks") + DOT_EXT_EXECUTABLE);
+        target.SetHostApplication(_T("urusstudio") + DOT_EXT_EXECUTABLE);
     }
 
     // create plugin resources
