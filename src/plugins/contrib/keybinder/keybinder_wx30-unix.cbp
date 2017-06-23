@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="KeyBinder plugin">
-				<Option output="../../../devel30/share/codeblocks/plugins/keybinder" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel30/share\urusstudio/plugins/keybinder" prefix_auto="1" extension_auto="1" />
 				<Option object_output="../../../.objs30/plugins/contrib/keybinder" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -49,7 +49,7 @@
 			<Add option="-Wl,--no-undefined" />
 		</Linker>
 		<ExtraCommands>
-			<Add after="zip -j9 ../../../devel30/share/codeblocks/keybinder.zip manifest.xml" />
+			<Add after="zip -j9 ../../../devel30/share\urusstudio/keybinder.zip manifest.xml" />
 			<Mode after="always" />
 		</ExtraCommands>
 		<Unit filename="DebugLogging.h" />

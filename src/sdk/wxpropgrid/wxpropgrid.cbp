@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="wxpropgrid" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="default">
+				<Option output="../../devel31/wxpropgrid" prefix_auto="1" extension_auto="1" />
+				<Option object_output="../../.objs31/sdk/wxpropgrid" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createStaticLib="1" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Environment>
+				<Variable name="WX_CFG" value="" />
+				<Variable name="WX_SUFFIX" value="u" />
+			</Environment>
+		</Build>
+		<VirtualTargets>
+			<Add alias="All" targets="default;" />
+		</VirtualTargets>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-pipe" />
+			<Add option="-mthreads" />
+			<Add option="-I/d/codeblocks-src2/install2/lib/wx/include/msw-unicode-3.1-urus -I/d/codeblocks-src2/install2/include/wx-3.1-urus -D_FILE_OFFSET_BITS=64 -DWXUSINGDLL -D__WXMSW__ -mthreads" />
+			<Add option='[[if (PLATFORM == PLATFORM_MSW &amp;&amp; (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.0.0&quot;))) print(_T(&quot;-Wno-attributes&quot;));]]' />
+			<Add option="-D__GNUWIN32__" />
+			<Add option="-D__WXMSW__" />
+			<Add option="-DWXUSINGDLL" />
+			<Add option="-DWIN32" />
+			<Add option="-DwxUSE_UNICODE" />
+			<Add directory="$(#wxsetup.include)" />
+			<Add directory="$(#wx31.include)" />
+			<Add directory="$(#wx31.lib)" />
+			<Add directory="include" />
+		</Compiler>
+		<Linker>
+			<Add directory="$(#WX31.lib)" />
+		</Linker>
+		<Unit filename="include/wx/propgrid/advprops.h" />
+		<Unit filename="include/wx/propgrid/editors.h" />
+		<Unit filename="include/wx/propgrid/extras.h" />
+		<Unit filename="include/wx/propgrid/manager.h" />
+		<Unit filename="include/wx/propgrid/odcombo.h" />
+		<Unit filename="include/wx/propgrid/pg_dox_mainpage.h" />
+		<Unit filename="include/wx/propgrid/propdev.h" />
+		<Unit filename="include/wx/propgrid/propgrid.h" />
+		<Unit filename="include/wx/propgrid/props.h" />
+		<Unit filename="include/wx/propgrid/xh_propgrid.h" />
+		<Unit filename="src/advprops.cpp" />
+		<Unit filename="src/editors.cpp" />
+		<Unit filename="src/extras.cpp" />
+		<Unit filename="src/manager.cpp" />
+		<Unit filename="src/odcombo.cpp" />
+		<Unit filename="src/propgrid.cpp" />
+		<Unit filename="src/props.cpp" />
+		<Unit filename="src/xh_propgrid.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

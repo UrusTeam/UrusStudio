@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="tinyXML">
-				<Option output="devel31_64/txml" prefix_auto="1" extension_auto="1" />
+				<Option output="base/tinyxml/txml31_64" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
 				<Option object_output=".objs31_64" />
 				<Option type="2" />
@@ -17,7 +17,7 @@
 				</Compiler>
 			</Target>
 			<Target title="AutoRevision">
-				<Option output="$(TARGET_OBJECT_DIR)/autorevision" prefix_auto="1" extension_auto="1" />
+				<Option output="build_tools/autorevision/autorevision31_64" prefix_auto="1" extension_auto="1" />
 				<Option object_output=".objs31_64" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -28,11 +28,12 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add library="txml" />
+					<Add library="txml31_64" />
+					<Add directory="base/tinyxml" />
 				</Linker>
 			</Target>
 			<Target title="ConsoleRunner">
-				<Option output="devel31_64/cb_console_runner" prefix_auto="1" extension_auto="1" />
+				<Option output="tools/ConsoleRunner/cb_console_runner31_64" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="tools/ConsoleRunner" />
 				<Option object_output=".objs31_64" />
 				<Option type="1" />
@@ -43,7 +44,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Squirrel">
-				<Option output="devel31_64/squirrel" prefix_auto="1" extension_auto="1" />
+				<Option output="sdk/scripting/lib/squirrel31_64" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
 				<Option object_output=".objs31_64" />
 				<Option type="2" />
@@ -55,10 +56,10 @@
 				</Compiler>
 			</Target>
 			<Target title="Squirrel std lib">
-				<Option output="devel31_64/sqstdlib" prefix_auto="1" extension_auto="1" />
+				<Option output="sdk/scripting/lib/sqstdlib31_64" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
 				<Option object_output=".objs31_64" />
-				<Option external_deps="devel31_64/libsquirrel.a;" />
+				<Option external_deps="sdk/scripting/lib/libsquirrel31_64.a;" />
 				<Option type="2" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -68,10 +69,10 @@
 				</Compiler>
 			</Target>
 			<Target title="SqPlus">
-				<Option output="devel31_64/sqplus" prefix_auto="1" extension_auto="1" />
+				<Option output="sdk/scripting/lib/sqplus31_64" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
 				<Option object_output=".objs31_64" />
-				<Option external_deps="devel31_64/libsquirrel.a;devel31_64/libsqstdlib.a;" />
+				<Option external_deps="sdk/scripting/lib/libsquirrel31_64.a;sdk/scripting/lib/libsqstdlib31_64.a;" />
 				<Option type="2" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -111,7 +112,7 @@
 				<Option output="devel31_64/codeblocks" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel31_64" />
 				<Option object_output=".objs31_64" />
-				<Option external_deps="devel31_64/libtxml.a;devel31_64/libsquirrel.a;devel31_64/libsqstdlib.a;devel31_64/libsqplus.a;devel31_64/libwxscintilla_cb.a;" />
+				<Option external_deps="base/tinyxml/libtxml31_64.a;sdk/scripting/lib/libsquirrel31_64.a;sdk/scripting/lib/libsqstdlib31_64.a;sdk/scripting/lib/libsqplus31_64.a;devel31_64/libwxscintilla_cb.a;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --verbose -p debug" />
@@ -127,12 +128,12 @@
 					<Add directory="include/scripting/bindings" />
 					<Add directory="include/scripting/include" />
 					<Add directory="include/scripting/sqplus" />
-					<Add directory="sdk/mozilla_chardet/include" />
-					<Add directory="sdk/mozilla_chardet/include/mfbt" />
-					<Add directory="sdk/mozilla_chardet/include/nsprpub/pr/include" />
-					<Add directory="sdk/mozilla_chardet/include/xpcom" />
-					<Add directory="sdk/mozilla_chardet/include/xpcom/base" />
-					<Add directory="sdk/mozilla_chardet/include/xpcom/glue" />
+					<Add directory="include/mozilla_chardet" />
+					<Add directory="include/mozilla_chardet/mfbt" />
+					<Add directory="include/mozilla_chardet/nsprpub/pr/include" />
+					<Add directory="include/mozilla_chardet/xpcom" />
+					<Add directory="include/mozilla_chardet/xpcom/base" />
+					<Add directory="include/mozilla_chardet/xpcom/glue" />
 				</Compiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-image-base" />
@@ -141,18 +142,20 @@
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add library="shfolder" />
-					<Add library="txml" />
+					<Add library="txml31_64" />
 					<Add library="wxscintilla_cb" />
-					<Add library="sqplus" />
-					<Add library="sqstdlib" />
-					<Add library="squirrel" />
+					<Add library="sqplus31_64" />
+					<Add library="sqstdlib31_64" />
+					<Add library="squirrel31_64" />
 					<Add library="gdi32" />
+					<Add directory="devel31_64" />
+					<Add directory="sdk/scripting/lib" />
 				</Linker>
 				<ExtraCommands>
-					<Add before="$(TARGET_OBJECT_DIR)\autorevision +wx +int +t .. include/autorevision.h" />
-					<Add after="cmd /c if not exist devel31_64\share\CodeBlocks mkdir devel31_64\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31_64\share\CodeBlocks\manager_resources.zip sdk\resources\*.xrc" />
-					<Add after='cmd /c &quot;cd sdk\resources &amp; zip -0 -q ..\..\devel31_64\share\CodeBlocks\manager_resources.zip images\*.png images\8x8\*.png images\10x10\*.png images\12x12\*.png images\16x16\*.png images\20x20\*.png images\24x24\*.png images\28x28\*.png images\32x32\*.png images\40x40\*.png images\48x48\*.png images\56x56\*.png images\64x64\*.png&quot;' />
+					<Add before="build_tools\autorevision\autorevision31_64 +wx +int +t M:\Private\CB\CodeBlocks\CodeBlocks include/autorevision.h" />
+					<Add after="cmd /c if not exist devel31_64\share\urusstudio mkdir devel31_64\share\urusstudio" />
+					<Add after="zip -jq9 devel31_64\share\urusstudio\manager_resources.zip sdk\resources\*.xrc" />
+					<Add after='cmd /c &quot;cd sdk\resources &amp; zip -0 -q ..\..\devel31_64\share\urusstudio\manager_resources.zip images\*.png images\12x12\*.png images\16x16\*.png&quot;' />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
@@ -170,11 +173,14 @@
 					<Add directory="include" />
 					<Add directory="include/scripting/include" />
 					<Add directory="include/scripting/sqplus" />
+					<Add directory="include/mozilla_chardet" />
+					<Add directory="include/mozilla_chardet/mfbt" />
+					<Add directory="include/mozilla_chardet/nsprpub/pr/include" />
+					<Add directory="include/mozilla_chardet/xpcom" />
+					<Add directory="include/mozilla_chardet/xpcom/base" />
+					<Add directory="include/mozilla_chardet/xpcom/glue" />
 					<Add directory="exchndl/win64/include" />
 				</Compiler>
-				<ResourceCompiler>
-					<Add option="-DcbDPI_AWARE_ON" />
-				</ResourceCompiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
@@ -195,28 +201,29 @@
 					<Add library="rpcrt4" />
 					<Add library="advapi32" />
 					<Add library="wsock32" />
+					<Add directory="devel31_64" />
 					<Add directory="exchndl/win64/lib" />
 				</Linker>
 				<ExtraCommands>
 					<Add before="cmd /c if exist devel31_64\exchndl.dll del devel31_64\exchndl.dll" />
-					<Add after="cmd /c if not exist devel31_64\share\CodeBlocks mkdir devel31_64\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31_64\share\CodeBlocks\resources.zip src\resources\*.xrc" />
-					<Add after="zip -jq9 devel31_64\share\CodeBlocks\start_here.zip src\resources\start_here\*.html src\resources\start_here\*.png" />
-					<Add after='cmd /c &quot;cd src\resources &amp; zip -0 -q ..\..\devel31_64\share\CodeBlocks\resources.zip images\*.png images\16x16\*.png&quot;' />
+					<Add after="cmd /c if not exist devel31_64\share\urusstudio mkdir devel31_64\share\urusstudio" />
+					<Add after="zip -jq9 devel31_64\share\urusstudio\resources.zip src\resources\*.xrc" />
+					<Add after="zip -jq9 devel31_64\share\urusstudio\start_here.zip src\resources\start_here\*.html src\resources\start_here\*.png" />
+					<Add after='cmd /c &quot;cd src\resources &amp; zip -0 -q ..\..\devel31_64\share\urusstudio\resources.zip images\*.png images\16x16\*.png&quot;' />
 					<Add after="cmd /c if not exist devel31_64\exchndl.dll if exist exchndl\win64\bin\*.dll xcopy /Y exchndl\win64\bin\*.dll devel31_64\" />
 					<Add after="cmd /c if not exist devel31_64\symsrv.yes if exist exchndl\win64\bin\symsrv.yes xcopy /Y exchndl\win64\bin\symsrv.yes devel31_64\" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Abbreviations">
-				<Option output="devel31_64/share/CodeBlocks/plugins/abbreviations" prefix_auto="1" extension_auto="1" />
+				<Option output="devel31_64/share\urusstudio/plugins/abbreviations" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel31_64" />
 				<Option object_output=".objs31_64" />
 				<Option external_deps="devel31_64/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -233,23 +240,24 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add directory="devel31_64" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\CodeBlocks mkdir devel31_64\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31_64\share\CodeBlocks\abbreviations.zip plugins\abbreviations\resources\manifest.xml plugins\abbreviations\resources\*.xrc" />
+					<Add after="cmd /c if not exist devel31_64\share\urusstudio mkdir devel31_64\share\urusstudio" />
+					<Add after="zip -jq9 devel31_64\share\urusstudio\abbreviations.zip plugins\abbreviations\resources\manifest.xml plugins\abbreviations\resources\*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="AStyle">
-				<Option output="devel31_64/share/CodeBlocks/plugins/astyle" prefix_auto="1" extension_auto="1" />
+				<Option output="devel31_64/share\urusstudio/plugins/astyle" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel31_64" />
 				<Option object_output=".objs31_64" />
 				<Option external_deps="devel31_64/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -265,23 +273,24 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add directory="devel31_64" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\CodeBlocks mkdir devel31_64\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31_64\share\CodeBlocks\astyle.zip plugins\astyle\resources\manifest.xml plugins\astyle\resources\*.xrc" />
+					<Add after="cmd /c if not exist devel31_64\share\urusstudio mkdir devel31_64\share\urusstudio" />
+					<Add after="zip -jq9 devel31_64\share\urusstudio\astyle.zip plugins\astyle\resources\manifest.xml plugins\astyle\resources\*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Autosave">
-				<Option output="devel31_64/share/CodeBlocks/plugins/autosave" prefix_auto="1" extension_auto="1" />
+				<Option output="devel31_64/share\urusstudio/plugins/autosave" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel31_64" />
 				<Option object_output=".objs31_64" />
 				<Option external_deps="devel31_64/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -295,16 +304,17 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add directory="devel31_64" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\CodeBlocks mkdir devel31_64\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31_64\share\CodeBlocks\autosave.zip plugins\autosave\manifest.xml plugins\autosave\*.xrc" />
+					<Add after="cmd /c if not exist devel31_64\share\urusstudio mkdir devel31_64\share\urusstudio" />
+					<Add after="zip -jq9 devel31_64\share\urusstudio\autosave.zip plugins\autosave\manifest.xml plugins\autosave\*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Compiler depslib">
-				<Option output="devel31_64/depslib" prefix_auto="1" extension_auto="1" />
+				<Option output="plugins/compilergcc/depslib/depslib31_64" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
 				<Option object_output=".objs31_64" />
 				<Option type="2" />
@@ -318,14 +328,14 @@
 				</Linker>
 			</Target>
 			<Target title="Compiler">
-				<Option output="devel31_64/share/CodeBlocks/plugins/compiler" prefix_auto="1" extension_auto="1" />
+				<Option output="devel31_64/share\urusstudio/plugins/compiler" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel31_64" />
 				<Option object_output=".objs31_64" />
-				<Option external_deps="devel31_64/libcodeblocks.a;devel31_64/libdepslib.a;" />
+				<Option external_deps="devel31_64/libcodeblocks.a;plugins/compilergcc/depslib/libdepslib31_64.a;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -342,238 +352,29 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-					<Add library="depslib" />
+					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add library="depslib31_64" />
+					<Add directory="devel31_64" />
+					<Add directory="plugins/compilergcc/depslib" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\CodeBlocks mkdir devel31_64\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31_64\share\CodeBlocks\compiler.zip plugins\compilergcc\resources\manifest.xml plugins\compilergcc\resources\*.xrc" />
-					<Add after='cmd /c &quot;cd plugins\compilergcc\resources &amp; zip -0 -q ..\..\..\devel31_64\share\CodeBlocks\compiler.zip images\*.png images\16x16\*.png&quot;' />
-					<Add after="cmd /c if not exist devel31_64\share\CodeBlocks\compilers mkdir devel31_64\share\CodeBlocks\compilers" />
-					<Add after="cmd /c xcopy /D /Y plugins\compilergcc\resources\compilers\*.* devel31_64\share\CodeBlocks\compilers" />
+					<Add after="cmd /c if not exist devel31_64\share\urusstudio mkdir devel31_64\share\urusstudio" />
+					<Add after="zip -jq9 devel31_64\share\urusstudio\compiler.zip plugins\compilergcc\resources\manifest.xml plugins\compilergcc\resources\*.xrc" />
+					<Add after='cmd /c &quot;cd plugins\compilergcc\resources &amp; zip -0 -q ..\..\..\devel31_64\share\urusstudio\compiler.zip images\*.png images\16x16\*.png&quot;' />
+					<Add after="cmd /c if not exist devel31_64\share\urusstudio\compilers mkdir devel31_64\share\urusstudio\compilers" />
+					<Add after="cmd /c xcopy /D /Y plugins\compilergcc\resources\compilers\*.* devel31_64\share\urusstudio\compilers" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Debugger">
-				<Option output="devel31_64/share/CodeBlocks/plugins/debugger" prefix_auto="1" extension_auto="1" />
+				<Option output="devel31_64/share\urusstudio/plugins/debugger" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel31_64" />
 				<Option object_output=".objs31_64" />
 				<Option external_deps="devel31_64/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
-				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
-				<Compiler>
-					<Add option="-DBUILDING_PLUGIN" />
-					<Add directory="include" />
-				</Compiler>
-				<Linker>
-					<Add option="-Wl,--enable-auto-image-base" />
-					<Add option="-Wl,--add-stdcall-alias" />
-					<Add option="-Wl,--enable-auto-import" />
-					<Add option="-Wl,--no-undefined" />
-					<Add option="-mthreads" />
-					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-				</Linker>
-				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\CodeBlocks mkdir devel31_64\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31_64\share\CodeBlocks\debugger.zip plugins\debuggergdb\resources\manifest.xml plugins\debuggergdb\resources\*.xrc" />
-					<Mode after="always" />
-				</ExtraCommands>
-			</Target>
-			<Target title="Code-completion">
-				<Option output="devel31_64/share/CodeBlocks/plugins/codecompletion" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="devel31_64" />
-				<Option object_output=".objs31_64" />
-				<Option external_deps="devel31_64/libcodeblocks.a;" />
-				<Option type="3" />
-				<Option compiler="gcc" />
-				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
-				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
-				<Compiler>
-					<Add option="-DBUILDING_PLUGIN" />
-					<Add option="-DCC_NO_COLLAPSE_ITEM" />
-					<Add directory="include" />
-				</Compiler>
-				<Linker>
-					<Add option="-Wl,--enable-auto-image-base" />
-					<Add option="-Wl,--add-stdcall-alias" />
-					<Add option="-Wl,--enable-auto-import" />
-					<Add option="-Wl,--no-undefined" />
-					<Add option="-mthreads" />
-					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-				</Linker>
-				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\CodeBlocks mkdir devel31_64\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31_64\share\CodeBlocks\codecompletion.zip plugins\codecompletion\resources\manifest.xml plugins\codecompletion\resources\*.xrc" />
-					<Mode after="always" />
-				</ExtraCommands>
-			</Target>
-			<Target title="Class wizard">
-				<Option output="devel31_64/share/CodeBlocks/plugins/classwizard" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="devel31_64" />
-				<Option object_output=".objs31_64" />
-				<Option external_deps="devel31_64/libcodeblocks.a;" />
-				<Option type="3" />
-				<Option compiler="gcc" />
-				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
-				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
-				<Compiler>
-					<Add option="-DBUILDING_PLUGIN" />
-					<Add directory="include" />
-				</Compiler>
-				<Linker>
-					<Add option="-Wl,--enable-auto-image-base" />
-					<Add option="-Wl,--add-stdcall-alias" />
-					<Add option="-Wl,--enable-auto-import" />
-					<Add option="-Wl,--no-undefined" />
-					<Add option="-mthreads" />
-					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-				</Linker>
-				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\CodeBlocks mkdir devel31_64\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31_64\share\CodeBlocks\classwizard.zip plugins\classwizard\resources\manifest.xml plugins\classwizard\resources\*.xrc" />
-					<Mode after="always" />
-				</ExtraCommands>
-			</Target>
-			<Target title="Default MIME handler">
-				<Option output="devel31_64/share/CodeBlocks/plugins/defaultmimehandler" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="devel31_64" />
-				<Option object_output=".objs31_64" />
-				<Option external_deps="devel31_64/libcodeblocks.a;" />
-				<Option type="3" />
-				<Option compiler="gcc" />
-				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
-				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
-				<Compiler>
-					<Add option="-DBUILDING_PLUGIN" />
-					<Add directory="include" />
-				</Compiler>
-				<Linker>
-					<Add option="-Wl,--enable-auto-image-base" />
-					<Add option="-Wl,--add-stdcall-alias" />
-					<Add option="-Wl,--enable-auto-import" />
-					<Add option="-Wl,--no-undefined" />
-					<Add option="-mthreads" />
-					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-				</Linker>
-				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\CodeBlocks mkdir devel31_64\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31_64\share\CodeBlocks\defaultmimehandler.zip plugins\defaultmimehandler\resources\manifest.xml plugins\defaultmimehandler\resources\*.xrc" />
-					<Mode after="always" />
-				</ExtraCommands>
-			</Target>
-			<Target title="Occurrences Highlighting">
-				<Option output="devel31_64/share/CodeBlocks/plugins/OccurrencesHighlighting" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="devel31_64" />
-				<Option object_output=".objs31_64" />
-				<Option external_deps="devel31_64/libcodeblocks.a;" />
-				<Option type="3" />
-				<Option compiler="gcc" />
-				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
-				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
-				<Compiler>
-					<Add option="-DBUILDING_PLUGIN" />
-					<Add directory="include" />
-				</Compiler>
-				<Linker>
-					<Add option="-Wl,--enable-auto-image-base" />
-					<Add option="-Wl,--add-stdcall-alias" />
-					<Add option="-Wl,--enable-auto-import" />
-					<Add option="-Wl,--no-undefined" />
-					<Add option="-mthreads" />
-					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-				</Linker>
-				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\CodeBlocks mkdir devel31_64\share\CodeBlocks" />
-					<Add after="zip -j9 devel31_64\share\CodeBlocks\OccurrencesHighlighting.zip plugins\occurrenceshighlighting\resources\manifest.xml plugins\occurrenceshighlighting\resources\*.xrc" />
-					<Mode after="always" />
-				</ExtraCommands>
-			</Target>
-			<Target title="Open files list">
-				<Option output="devel31_64/share/CodeBlocks/plugins/openfileslist" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="devel31_64" />
-				<Option object_output=".objs31_64" />
-				<Option external_deps="devel31_64/libcodeblocks.a;" />
-				<Option type="3" />
-				<Option compiler="gcc" />
-				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
-				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
-				<Compiler>
-					<Add option="-DBUILDING_PLUGIN" />
-					<Add directory="include" />
-				</Compiler>
-				<Linker>
-					<Add option="-Wl,--enable-auto-image-base" />
-					<Add option="-Wl,--add-stdcall-alias" />
-					<Add option="-Wl,--enable-auto-import" />
-					<Add option="-Wl,--no-undefined" />
-					<Add option="-mthreads" />
-					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-				</Linker>
-				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\CodeBlocks mkdir devel31_64\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31_64\share\CodeBlocks\openfileslist.zip plugins\openfileslist\manifest.xml" />
-					<Mode after="always" />
-				</ExtraCommands>
-			</Target>
-			<Target title="Projects-workspaces importer">
-				<Option output="devel31_64/share/CodeBlocks/plugins/projectsimporter" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="devel31_64" />
-				<Option object_output=".objs31_64" />
-				<Option external_deps="devel31_64/libcodeblocks.a;" />
-				<Option type="3" />
-				<Option compiler="gcc" />
-				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
-				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
-				<Compiler>
-					<Add option="-DBUILDING_PLUGIN" />
-					<Add directory="include" />
-				</Compiler>
-				<Linker>
-					<Add option="-Wl,--enable-auto-image-base" />
-					<Add option="-Wl,--add-stdcall-alias" />
-					<Add option="-Wl,--enable-auto-import" />
-					<Add option="-Wl,--no-undefined" />
-					<Add option="-mthreads" />
-					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-				</Linker>
-				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\CodeBlocks mkdir devel31_64\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31_64\share\CodeBlocks\projectsimporter.zip plugins\projectsimporter\resources\manifest.xml plugins\projectsimporter\resources\*.xrc" />
-					<Mode after="always" />
-				</ExtraCommands>
-			</Target>
-			<Target title="Scripted wizard">
-				<Option output="devel31_64/share/CodeBlocks/plugins/scriptedwizard" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="devel31_64" />
-				<Option object_output=".objs31_64" />
-				<Option external_deps="devel31_64/libcodeblocks.a;" />
-				<Option type="3" />
-				<Option compiler="gcc" />
-				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -589,28 +390,267 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add directory="devel31_64" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\CodeBlocks mkdir devel31_64\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31_64\share\CodeBlocks\scriptedwizard.zip plugins\scriptedwizard\resources\manifest.xml" />
+					<Add after="cmd /c if not exist devel31_64\share\urusstudio mkdir devel31_64\share\urusstudio" />
+					<Add after="zip -jq9 devel31_64\share\urusstudio\debugger.zip plugins\debuggergdb\resources\manifest.xml plugins\debuggergdb\resources\*.xrc" />
+					<Mode after="always" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Code-completion">
+				<Option output="devel31_64/share\urusstudio/plugins/codecompletion" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="devel31_64" />
+				<Option object_output=".objs31_64" />
+				<Option external_deps="devel31_64/libcodeblocks.a;" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
+				<Option host_application="./urusstudio.exe" />
+				<Option run_host_application_in_terminal="0" />
+				<Option projectLinkerOptionsRelation="1" />
+				<Compiler>
+					<Add option="-DBUILDING_PLUGIN" />
+					<Add option="-DCC_NO_COLLAPSE_ITEM" />
+					<Add directory="include" />
+					<Add directory="include/mozilla_chardet" />
+					<Add directory="include/mozilla_chardet/mfbt" />
+					<Add directory="include/mozilla_chardet/nsprpub/pr/include" />
+					<Add directory="include/mozilla_chardet/xpcom" />
+					<Add directory="include/mozilla_chardet/xpcom/base" />
+					<Add directory="include/mozilla_chardet/xpcom/glue" />
+				</Compiler>
+				<Linker>
+					<Add option="-Wl,--enable-auto-image-base" />
+					<Add option="-Wl,--add-stdcall-alias" />
+					<Add option="-Wl,--enable-auto-import" />
+					<Add option="-Wl,--no-undefined" />
+					<Add option="-mthreads" />
+					<Add library="codeblocks" />
+					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add directory="devel31_64" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="cmd /c if not exist devel31_64\share\urusstudio mkdir devel31_64\share\urusstudio" />
+					<Add after="zip -jq9 devel31_64\share\urusstudio\codecompletion.zip plugins\codecompletion\resources\manifest.xml plugins\codecompletion\resources\*.xrc" />
+					<Mode after="always" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Class wizard">
+				<Option output="devel31_64/share\urusstudio/plugins/classwizard" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="devel31_64" />
+				<Option object_output=".objs31_64" />
+				<Option external_deps="devel31_64/libcodeblocks.a;" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
+				<Option host_application="./urusstudio.exe" />
+				<Option run_host_application_in_terminal="0" />
+				<Option projectLinkerOptionsRelation="1" />
+				<Compiler>
+					<Add option="-DBUILDING_PLUGIN" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-Wl,--enable-auto-image-base" />
+					<Add option="-Wl,--add-stdcall-alias" />
+					<Add option="-Wl,--enable-auto-import" />
+					<Add option="-Wl,--no-undefined" />
+					<Add option="-mthreads" />
+					<Add library="codeblocks" />
+					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add directory="devel31_64" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="cmd /c if not exist devel31_64\share\urusstudio mkdir devel31_64\share\urusstudio" />
+					<Add after="zip -jq9 devel31_64\share\urusstudio\classwizard.zip plugins\classwizard\resources\manifest.xml plugins\classwizard\resources\*.xrc" />
+					<Mode after="always" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Default MIME handler">
+				<Option output="devel31_64/share\urusstudio/plugins/defaultmimehandler" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="devel31_64" />
+				<Option object_output=".objs31_64" />
+				<Option external_deps="devel31_64/libcodeblocks.a;" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
+				<Option host_application="./urusstudio.exe" />
+				<Option run_host_application_in_terminal="0" />
+				<Option projectLinkerOptionsRelation="1" />
+				<Compiler>
+					<Add option="-DBUILDING_PLUGIN" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-Wl,--enable-auto-image-base" />
+					<Add option="-Wl,--add-stdcall-alias" />
+					<Add option="-Wl,--enable-auto-import" />
+					<Add option="-Wl,--no-undefined" />
+					<Add option="-mthreads" />
+					<Add library="codeblocks" />
+					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add directory="devel31_64" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="cmd /c if not exist devel31_64\share\urusstudio mkdir devel31_64\share\urusstudio" />
+					<Add after="zip -jq9 devel31_64\share\urusstudio\defaultmimehandler.zip plugins\defaultmimehandler\resources\manifest.xml plugins\defaultmimehandler\resources\*.xrc" />
+					<Mode after="always" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Occurrences Highlighting">
+				<Option output="devel31_64/share\urusstudio/plugins/OccurrencesHighlighting" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="devel31_64" />
+				<Option object_output=".objs31_64" />
+				<Option external_deps="devel31_64/libcodeblocks.a;" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
+				<Option host_application="./urusstudio.exe" />
+				<Option run_host_application_in_terminal="0" />
+				<Option projectLinkerOptionsRelation="1" />
+				<Compiler>
+					<Add option="-DBUILDING_PLUGIN" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-Wl,--enable-auto-image-base" />
+					<Add option="-Wl,--add-stdcall-alias" />
+					<Add option="-Wl,--enable-auto-import" />
+					<Add option="-Wl,--no-undefined" />
+					<Add option="-mthreads" />
+					<Add library="codeblocks" />
+					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add directory="devel31_64" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="cmd /c if not exist devel31_64\share\urusstudio mkdir devel31_64\share\urusstudio" />
+					<Add after="zip -j9 devel31_64\share\urusstudio\OccurrencesHighlighting.zip plugins\occurrenceshighlighting\resources\manifest.xml plugins\occurrenceshighlighting\resources\*.xrc" />
+					<Mode after="always" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Open files list">
+				<Option output="devel31_64/share\urusstudio/plugins/openfileslist" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="devel31_64" />
+				<Option object_output=".objs31_64" />
+				<Option external_deps="devel31_64/libcodeblocks.a;" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
+				<Option host_application="./urusstudio.exe" />
+				<Option run_host_application_in_terminal="0" />
+				<Option projectLinkerOptionsRelation="1" />
+				<Compiler>
+					<Add option="-DBUILDING_PLUGIN" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-Wl,--enable-auto-image-base" />
+					<Add option="-Wl,--add-stdcall-alias" />
+					<Add option="-Wl,--enable-auto-import" />
+					<Add option="-Wl,--no-undefined" />
+					<Add option="-mthreads" />
+					<Add library="codeblocks" />
+					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add directory="devel31_64" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="cmd /c if not exist devel31_64\share\urusstudio mkdir devel31_64\share\urusstudio" />
+					<Add after="zip -jq9 devel31_64\share\urusstudio\openfileslist.zip plugins\openfileslist\manifest.xml" />
+					<Mode after="always" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Projects-workspaces importer">
+				<Option output="devel31_64/share\urusstudio/plugins/projectsimporter" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="devel31_64" />
+				<Option object_output=".objs31_64" />
+				<Option external_deps="devel31_64/libcodeblocks.a;" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
+				<Option host_application="./urusstudio.exe" />
+				<Option run_host_application_in_terminal="0" />
+				<Option projectLinkerOptionsRelation="1" />
+				<Compiler>
+					<Add option="-DBUILDING_PLUGIN" />
+					<Add directory="include" />
+					<Add directory="include/mozilla_chardet" />
+					<Add directory="include/mozilla_chardet/mfbt" />
+					<Add directory="include/mozilla_chardet/nsprpub/pr/include" />
+					<Add directory="include/mozilla_chardet/xpcom" />
+					<Add directory="include/mozilla_chardet/xpcom/base" />
+					<Add directory="include/mozilla_chardet/xpcom/glue" />
+				</Compiler>
+				<Linker>
+					<Add option="-Wl,--enable-auto-image-base" />
+					<Add option="-Wl,--add-stdcall-alias" />
+					<Add option="-Wl,--enable-auto-import" />
+					<Add option="-Wl,--no-undefined" />
+					<Add option="-mthreads" />
+					<Add library="codeblocks" />
+					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add directory="devel31_64" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="cmd /c if not exist devel31_64\share\urusstudio mkdir devel31_64\share\urusstudio" />
+					<Add after="zip -jq9 devel31_64\share\urusstudio\projectsimporter.zip plugins\projectsimporter\resources\manifest.xml plugins\projectsimporter\resources\*.xrc" />
+					<Mode after="always" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Scripted wizard">
+				<Option output="devel31_64/share\urusstudio/plugins/scriptedwizard" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="devel31_64" />
+				<Option object_output=".objs31_64" />
+				<Option external_deps="devel31_64/libcodeblocks.a;" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
+				<Option host_application="./urusstudio.exe" />
+				<Option run_host_application_in_terminal="0" />
+				<Option projectLinkerOptionsRelation="1" />
+				<Compiler>
+					<Add option="-DBUILDING_PLUGIN" />
+					<Add directory="include" />
+					<Add directory="include/scripting/include" />
+					<Add directory="include/scripting/sqplus" />
+				</Compiler>
+				<Linker>
+					<Add option="-Wl,--enable-auto-image-base" />
+					<Add option="-Wl,--add-stdcall-alias" />
+					<Add option="-Wl,--enable-auto-import" />
+					<Add option="-Wl,--no-undefined" />
+					<Add option="-mthreads" />
+					<Add library="codeblocks" />
+					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add directory="devel31_64" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="cmd /c if not exist devel31_64\share\urusstudio mkdir devel31_64\share\urusstudio" />
+					<Add after="zip -jq9 devel31_64\share\urusstudio\scriptedwizard.zip plugins\scriptedwizard\resources\manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="To-do">
-				<Option output="devel31_64/share/CodeBlocks/plugins/todo" prefix_auto="1" extension_auto="1" />
+				<Option output="devel31_64/share\urusstudio/plugins/todo" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel31_64" />
 				<Option object_output=".objs31_64" />
 				<Option external_deps="devel31_64/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
+					<Add directory="include/mozilla_chardet" />
+					<Add directory="include/mozilla_chardet/mfbt" />
+					<Add directory="include/mozilla_chardet/nsprpub/pr/include" />
+					<Add directory="include/mozilla_chardet/xpcom" />
+					<Add directory="include/mozilla_chardet/xpcom/base" />
+					<Add directory="include/mozilla_chardet/xpcom/glue" />
 				</Compiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-image-base" />
@@ -619,23 +659,24 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add directory="devel31_64" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\CodeBlocks mkdir devel31_64\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31_64\share\CodeBlocks\todo.zip plugins\todo\resources\manifest.xml plugins\todo\resources\*.xrc" />
+					<Add after="cmd /c if not exist devel31_64\share\urusstudio mkdir devel31_64\share\urusstudio" />
+					<Add after="zip -jq9 devel31_64\share\urusstudio\todo.zip plugins\todo\resources\manifest.xml plugins\todo\resources\*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="XP look &amp; feel">
-				<Option output="devel31_64/share/CodeBlocks/plugins/xpmanifest" prefix_auto="1" extension_auto="1" />
+				<Option output="devel31_64/share\urusstudio/plugins/xpmanifest" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel31_64" />
 				<Option object_output=".objs31_64" />
 				<Option external_deps="devel31_64/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -649,11 +690,12 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add directory="devel31_64" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\CodeBlocks mkdir devel31_64\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31_64\share\CodeBlocks\xpmanifest.zip plugins\xpmanifest\manifest.xml" />
+					<Add after="cmd /c if not exist devel31_64\share\urusstudio mkdir devel31_64\share\urusstudio" />
+					<Add after="zip -jq9 devel31_64\share\urusstudio\xpmanifest.zip plugins\xpmanifest\manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
@@ -694,12 +736,15 @@
 			<Add directory="$(#WX31_64)/lib/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
 		</ResourceCompiler>
 		<Linker>
-			<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+			<Add library="wxmsw28u_urus_gcc_urus" />
+			<Add directory="base/tinyxml" />
 			<Add directory="$(#WX31_64.lib)/gcc_dll$(WX_CFG)" />
-			<Add directory="devel31_64" />
 		</Linker>
 		<Unit filename="base/tinyxml/tinystr.cpp">
 			<Option target="tinyXML" />
+		</Unit>
+		<Unit filename="sdk/tinywxuni.cpp">
+			<Option target="sdk" />
 		</Unit>
 		<Unit filename="base/tinyxml/tinyxml.cpp">
 			<Option target="tinyXML" />
@@ -726,9 +771,6 @@
 			<Option target="sdk" />
 		</Unit>
 		<Unit filename="include/blockallocated.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="include/cbart_provider.h">
 			<Option target="sdk" />
 		</Unit>
 		<Unit filename="include/cbauibook.h">
@@ -830,9 +872,6 @@
 		<Unit filename="include/editor_hooks.h">
 			<Option target="sdk" />
 		</Unit>
-		<Unit filename="include/editor_utils.h">
-			<Option target="sdk" />
-		</Unit>
 		<Unit filename="include/editorbase.h">
 			<Option target="sdk" />
 		</Unit>
@@ -921,6 +960,129 @@
 			<Option target="sdk" />
 		</Unit>
 		<Unit filename="include/misctreeitemdata.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/CharDistribution.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/JpCntx.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/mfbt/mozilla/Alignment.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/mfbt/mozilla/Assertions.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/mfbt/mozilla/Attributes.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/mfbt/mozilla/Compiler.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/mfbt/mozilla/Likely.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/mfbt/mozilla/NullPtr.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/mfbt/mozilla/TypedEnum.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/mfbt/mozilla/Types.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/mfbt/mozilla/Util.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/nsBig5Prober.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/nsCharSetProber.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/nsCodingStateMachine.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/nsEUCJPProber.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/nsEUCKRProber.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/nsEUCTWProber.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/nsEscCharsetProber.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/nsGB2312Prober.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/nsHebrewProber.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/nsLatin1Prober.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/nsMBCSGroupProber.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/nsPkgInt.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/nsSBCSGroupProber.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/nsSBCharSetProber.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/nsSJISProber.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/nsUTF8Prober.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/nsUniversalDetector.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/nsprpub/pr/include/prcpucfg.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/nsprpub/pr/include/prcpucfg_darwin.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/nsprpub/pr/include/prcpucfg_linux.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/nsprpub/pr/include/prcpucfg_openbsd.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/nsprpub/pr/include/prcpucfg_win95.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/nsprpub/pr/include/prcpucfg_winnt.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/nsprpub/pr/include/prmem.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/nsprpub/pr/include/prtypes.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/xpcom/base/ErrorList.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/xpcom/base/nsError.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/xpcom/base/nscore.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/xpcom/glue/nsDebug.h">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/mozilla_chardet/xpcom/glue/nsMemory.h">
 			<Option target="sdk" />
 		</Unit>
 		<Unit filename="include/multiselectdlg.h">
@@ -1126,11 +1288,11 @@
 		<Unit filename="include/templatemanager.h">
 			<Option target="sdk" />
 		</Unit>
-		<Unit filename="include/tinywxuni.h">
-			<Option target="sdk" />
-		</Unit>
 		<Unit filename="include/tinyxml/tinystr.h">
 			<Option target="tinyXML" />
+		</Unit>
+		<Unit filename="include/tinywxuni.h">
+			<Option target="sdk" />
 		</Unit>
 		<Unit filename="include/tinyxml/tinyxml.h">
 			<Option target="tinyXML" />
@@ -1695,6 +1857,9 @@
 			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/resources/compiler_toolbar.xrc">
+			<Option target="Compiler" />
+		</Unit>
+		<Unit filename="plugins/compilergcc/resources/compiler_toolbar_16x16.xrc">
 			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/resources/compilers/compiler_avr-gcc.xml">
@@ -2312,6 +2477,9 @@
 		<Unit filename="plugins/xpmanifest/windowsxplooknfeel.h">
 			<Option target="XP look &amp; feel" />
 		</Unit>
+		<Unit filename="scripts/gdb_types.script">
+			<Option target="Debugger" />
+		</Unit>
 		<Unit filename="scripts/make_dist.script">
 			<Option target="src" />
 		</Unit>
@@ -2352,9 +2520,6 @@
 			<Option target="sdk" />
 		</Unit>
 		<Unit filename="sdk/blockallocated.cpp">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/cbart_provider.cpp">
 			<Option target="sdk" />
 		</Unit>
 		<Unit filename="sdk/cbauibook.cpp">
@@ -2451,9 +2616,6 @@
 		<Unit filename="sdk/editor_hooks.cpp">
 			<Option target="sdk" />
 		</Unit>
-		<Unit filename="sdk/editor_utils.cpp">
-			<Option target="sdk" />
-		</Unit>
 		<Unit filename="sdk/editorbase.cpp">
 			<Option target="sdk" />
 		</Unit>
@@ -2521,129 +2683,6 @@
 			<Option target="sdk" />
 		</Unit>
 		<Unit filename="sdk/menuitemsmanager.cpp">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/CharDistribution.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/JpCntx.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/mfbt/mozilla/Alignment.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/mfbt/mozilla/Assertions.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/mfbt/mozilla/Attributes.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/mfbt/mozilla/Compiler.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/mfbt/mozilla/Likely.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/mfbt/mozilla/NullPtr.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/mfbt/mozilla/TypedEnum.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/mfbt/mozilla/Types.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/mfbt/mozilla/Util.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/nsBig5Prober.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/nsCharSetProber.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/nsCodingStateMachine.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/nsEUCJPProber.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/nsEUCKRProber.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/nsEUCTWProber.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/nsEscCharsetProber.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/nsGB2312Prober.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/nsHebrewProber.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/nsLatin1Prober.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/nsMBCSGroupProber.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/nsPkgInt.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/nsSBCSGroupProber.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/nsSBCharSetProber.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/nsSJISProber.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/nsUTF8Prober.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/nsUniversalDetector.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/nsprpub/pr/include/prcpucfg.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/nsprpub/pr/include/prcpucfg_darwin.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/nsprpub/pr/include/prcpucfg_linux.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/nsprpub/pr/include/prcpucfg_openbsd.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/nsprpub/pr/include/prcpucfg_win95.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/nsprpub/pr/include/prcpucfg_winnt.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/nsprpub/pr/include/prmem.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/nsprpub/pr/include/prtypes.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/xpcom/base/ErrorList.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/xpcom/base/nsError.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/xpcom/base/nscore.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/xpcom/glue/nsDebug.h">
-			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/mozilla_chardet/include/xpcom/glue/nsMemory.h">
 			<Option target="sdk" />
 		</Unit>
 		<Unit filename="sdk/mozilla_chardet/src/Big5Freq.tab">
@@ -2814,6 +2853,9 @@
 		<Unit filename="sdk/resources/edit_tool.xrc">
 			<Option target="sdk" />
 		</Unit>
+		<Unit filename="sdk/resources/editor_manager.xrc">
+			<Option target="sdk" />
+		</Unit>
 		<Unit filename="sdk/resources/external_deps.xrc">
 			<Option target="sdk" />
 		</Unit>
@@ -2831,12 +2873,6 @@
 		</Unit>
 		<Unit filename="sdk/resources/global_uservars.xrc">
 			<Option target="sdk" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_A68k.sample">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_A68k.xml">
-			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_OgreCompositor.sample">
 			<Option target="scintilla" />
@@ -2862,12 +2898,6 @@
 		<Unit filename="sdk/resources/lexers/lexer_angelscript.xml">
 			<Option target="scintilla" />
 		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_autotools.sample">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_autotools.xml">
-			<Option target="scintilla" />
-		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_bash.sample">
 			<Option target="scintilla" />
 		</Unit>
@@ -2878,9 +2908,6 @@
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_batch.xml">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_bibtex.sample">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_bibtex.xml">
@@ -2920,12 +2947,6 @@
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_css.xml">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_cu.sample">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_cu.xml">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_d.sample">
@@ -2982,18 +3003,6 @@
 		<Unit filename="sdk/resources/lexers/lexer_html.xml">
 			<Option target="scintilla" />
 		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_ihex.sample">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_ihex.xml">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_inno.sample">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_inno.xml">
-			<Option target="scintilla" />
-		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_java.sample">
 			<Option target="scintilla" />
 		</Unit>
@@ -3028,12 +3037,6 @@
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_make.xml">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_markdown.sample">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_markdown.xml">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_masm.sample">
@@ -3072,19 +3075,10 @@
 		<Unit filename="sdk/resources/lexers/lexer_perl.xml">
 			<Option target="scintilla" />
 		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_plain.xml">
-			<Option target="scintilla" />
-		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_postscript.sample">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_postscript.xml">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_powershell.sample">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_powershell.xml">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_prg.sample">
@@ -3099,9 +3093,6 @@
 		<Unit filename="sdk/resources/lexers/lexer_properties.xml">
 			<Option target="scintilla" />
 		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_proto.xml">
-			<Option target="scintilla" />
-		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_python.sample">
 			<Option target="scintilla" />
 		</Unit>
@@ -3112,12 +3103,6 @@
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_rc.xml">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_registry.sample">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_registry.xml">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_ruby.sample">
@@ -3144,18 +3129,6 @@
 		<Unit filename="sdk/resources/lexers/lexer_squirrel.xml">
 			<Option target="scintilla" />
 		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_srec.sample">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_srec.xml">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_tehex.sample">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_tehex.xml">
-			<Option target="scintilla" />
-		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_vbscript.sample">
 			<Option target="scintilla" />
 		</Unit>
@@ -3178,12 +3151,6 @@
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_xml.xml">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_yaml.sample">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_yaml.xml">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/resources/new_from_template.xrc">
@@ -3327,9 +3294,6 @@
 		<Unit filename="sdk/templatemanager.cpp">
 			<Option target="sdk" />
 		</Unit>
-		<Unit filename="sdk/tinywxuni.cpp">
-			<Option target="sdk" />
-		</Unit>
 		<Unit filename="sdk/toolsmanager.cpp">
 			<Option target="sdk" />
 		</Unit>
@@ -3364,9 +3328,6 @@
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/include/SciLexer.h">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/wxscintilla/src/scintilla/include/Sci_Position.h">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/include/Scintilla.h">
@@ -3414,9 +3375,6 @@
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexBasic.cxx">
 			<Option target="scintilla" />
 		</Unit>
-		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexBatch.cxx">
-			<Option target="scintilla" />
-		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexBibTeX.cxx">
 			<Option target="scintilla" />
 		</Unit>
@@ -3462,13 +3420,7 @@
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexDMIS.cxx">
 			<Option target="scintilla" />
 		</Unit>
-		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexDiff.cxx">
-			<Option target="scintilla" />
-		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexECL.cxx">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexEDIFACT.cxx">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexEScript.cxx">
@@ -3478,9 +3430,6 @@
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexErlang.cxx">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexErrorList.cxx">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexFlagship.cxx">
@@ -3507,13 +3456,7 @@
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexHex.cxx">
 			<Option target="scintilla" />
 		</Unit>
-		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexIndent.cxx">
-			<Option target="scintilla" />
-		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexInno.cxx">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexJSON.cxx">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexKVIrc.cxx">
@@ -3546,9 +3489,6 @@
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexMagik.cxx">
 			<Option target="scintilla" />
 		</Unit>
-		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexMake.cxx">
-			<Option target="scintilla" />
-		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexMarkdown.cxx">
 			<Option target="scintilla" />
 		</Unit>
@@ -3570,13 +3510,13 @@
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexNsis.cxx">
 			<Option target="scintilla" />
 		</Unit>
-		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexNull.cxx">
-			<Option target="scintilla" />
-		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexOScript.cxx">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexOpal.cxx">
+			<Option target="scintilla" />
+		</Unit>
+		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexOthers.cxx">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexPB.cxx">
@@ -3607,9 +3547,6 @@
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexProgress.cxx">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexProps.cxx">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexPython.cxx">
@@ -3885,9 +3822,6 @@
 		<Unit filename="sdk/wxscintilla/src/scintilla/src/PerLine.h">
 			<Option target="scintilla" />
 		</Unit>
-		<Unit filename="sdk/wxscintilla/src/scintilla/src/Position.h">
-			<Option target="scintilla" />
-		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/src/PositionCache.cxx">
 			<Option target="scintilla" />
 		</Unit>
@@ -3918,9 +3852,6 @@
 		<Unit filename="sdk/wxscintilla/src/scintilla/src/Selection.h">
 			<Option target="scintilla" />
 		</Unit>
-		<Unit filename="sdk/wxscintilla/src/scintilla/src/SparseVector.h">
-			<Option target="scintilla" />
-		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/src/SplitVector.h">
 			<Option target="scintilla" />
 		</Unit>
@@ -3937,9 +3868,6 @@
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/src/UnicodeFromUTF8.h">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/wxscintilla/src/scintilla/src/UniqueString.h">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/src/ViewStyle.cxx">
@@ -4151,12 +4079,6 @@
 		<Unit filename="src/recentitemslist.h">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="src/resources/amd64.manifest">
-			<Option target="src" />
-		</Unit>
-		<Unit filename="src/resources/amd64_dpi_aware_on.manifest">
-			<Option target="src" />
-		</Unit>
 		<Unit filename="src/resources/app_compiler_settings.xrc">
 			<Option target="src" />
 		</Unit>
@@ -4167,6 +4089,9 @@
 			<Option target="src" />
 		</Unit>
 		<Unit filename="src/resources/debugger_toolbar.xrc">
+			<Option target="src" />
+		</Unit>
+		<Unit filename="src/resources/debugger_toolbar_16x16.xrc">
 			<Option target="src" />
 		</Unit>
 		<Unit filename="src/resources/disassembly.xrc">
@@ -4187,13 +4112,13 @@
 		<Unit filename="src/resources/env_settings.xrc">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="src/resources/ia64.manifest">
-			<Option target="src" />
-		</Unit>
 		<Unit filename="src/resources/main_menu.xrc">
 			<Option target="src" />
 		</Unit>
 		<Unit filename="src/resources/main_toolbar.xrc">
+			<Option target="src" />
+		</Unit>
+		<Unit filename="src/resources/main_toolbar_16x16.xrc">
 			<Option target="src" />
 		</Unit>
 		<Unit filename="src/resources/manage_assocs.xrc">
@@ -4222,9 +4147,6 @@
 			<Option target="src" />
 		</Unit>
 		<Unit filename="src/resources/virtualbuildtargetsdlg.xrc">
-			<Option target="src" />
-		</Unit>
-		<Unit filename="src/resources/x86.manifest">
 			<Option target="src" />
 		</Unit>
 		<Unit filename="src/scriptconsole.cpp">

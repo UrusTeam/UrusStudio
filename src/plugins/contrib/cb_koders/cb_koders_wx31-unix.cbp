@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="../../../devel31/share/codeblocks/plugins/cb_koders" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel31/share\urusstudio/plugins/cb_koders" prefix_auto="1" extension_auto="1" />
 				<Option object_output="../../../.objs31/plugins/contrib/cb_koders" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -47,7 +47,7 @@
 			<Add directory="../../../devel31" />
 		</Linker>
 		<ExtraCommands>
-			<Add after="zip -j9 ../../../devel31/share/codeblocks/cb_koders.zip manifest.xml" />
+			<Add after="zip -j9 ../../../devel31/share\urusstudio/cb_koders.zip manifest.xml" />
 		</ExtraCommands>
 		<Unit filename="cb_koders.cpp" />
 		<Unit filename="cb_koders.h" />

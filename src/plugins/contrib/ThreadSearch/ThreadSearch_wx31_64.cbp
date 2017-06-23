@@ -6,20 +6,20 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="../../../devel31_64/share/CodeBlocks/plugins/ThreadSearch.dll" prefix_auto="0" extension_auto="0" />
+				<Option output="../../../devel31_64/share\urusstudio/plugins/ThreadSearch.dll" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../../.objs31_64/plugins/contrib/ThreadSearch" />
 				<Option external_deps="../../../devel31_64/wxcustombutton.dll;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --multiple-instance -na -ns -nd -p debug" />
-				<Option host_application="../../../devel31_64/codeblocks.exe" />
+				<Option host_application="../../../devel31_64/urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Compiler>
 					<Add option="$(#CB_RELEASE_TYPE)" />
 				</Compiler>
 				<Linker>
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="wxmsw28u_urus_gcc_urus" />
 					<Add library="wxcustombutton" />
 					<Add directory="../../../devel31_64" />
 					<Add directory="$(#WX31_64.lib)/gcc_dll$(WX_CFG)" />
@@ -54,6 +54,12 @@
 			<Add directory="../../../include" />
 			<Add directory="../../../include/tinyxml" />
 			<Add directory="../../../sdk/wxscintilla/include" />
+			<Add directory="../../../include/mozilla_chardet" />
+			<Add directory="../../../include/mozilla_chardet/mfbt" />
+			<Add directory="../../../include/mozilla_chardet/nsprpub/pr/include" />
+			<Add directory="../../../include/mozilla_chardet/xpcom" />
+			<Add directory="../../../include/mozilla_chardet/xpcom/base" />
+			<Add directory="../../../include/mozilla_chardet/xpcom/glue" />
 			<Add directory="$(#WX31_64.include)" />
 			<Add directory="$(#WX31_64.lib)/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
 			<Add directory="../wxContribItems/wxthings/include" />
@@ -62,6 +68,7 @@
 			<Add option="-mthreads" />
 		</Linker>
 		<ExtraCommands>
+			<Add after="zip -j9 ..\..\..\devel31_64\share\urusstudio\ThreadSearch.zip manifest.xml" />
 			<Add after="update31_64.bat" />
 			<Mode after="always" />
 		</ExtraCommands>
@@ -79,7 +86,6 @@
 		<Unit filename="TextFileSearcherText.h" />
 		<Unit filename="ThreadSearch.cpp" />
 		<Unit filename="ThreadSearch.h" />
-		<Unit filename="ThreadSearchCommon.h" />
 		<Unit filename="ThreadSearchConfPanel.cpp" />
 		<Unit filename="ThreadSearchConfPanel.h" />
 		<Unit filename="ThreadSearchControlIds.cpp" />
@@ -92,8 +98,6 @@
 		<Unit filename="ThreadSearchLoggerBase.h" />
 		<Unit filename="ThreadSearchLoggerList.cpp" />
 		<Unit filename="ThreadSearchLoggerList.h" />
-		<Unit filename="ThreadSearchLoggerSTC.cpp" />
-		<Unit filename="ThreadSearchLoggerSTC.h" />
 		<Unit filename="ThreadSearchLoggerTree.cpp" />
 		<Unit filename="ThreadSearchLoggerTree.h" />
 		<Unit filename="ThreadSearchThread.cpp" />

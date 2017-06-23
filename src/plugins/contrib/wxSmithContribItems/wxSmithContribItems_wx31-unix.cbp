@@ -10,7 +10,7 @@
 		<Build>
 			<Target title="wxSmithContribItems">
 				<Option platforms="Unix;Mac;" />
-				<Option output="../../../devel31/share/codeblocks/plugins/libwxSmithContribItems" prefix_auto="0" extension_auto="1" />
+				<Option output="../../../devel31/share\urusstudio/plugins/libwxSmithContribItems" prefix_auto="0" extension_auto="1" />
 				<Option object_output="../../../.objs31/plugins/contrib/wxSmithContribItems" />
 				<Option external_deps="../../../devel31/libwxsmithlib.so;../../../devel31/libwxchartctrl.so;../../../devel31/libwxcustombutton.so;../../../devel31/libwxflatnotebook.so;../../../devel31/libwxdatetimepicker.so;../../../devel31/libwximagepanel.so;../../../devel31/libwxspeedbutton.so;../../../devel31/libwxkwic.so;" />
 				<Option type="3" />
@@ -52,7 +52,7 @@
 					<Add directory="../../../devel31" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="zip -j9 ../../../devel31/share/codeblocks/wxSmithContribItems.zip manifest.xml" />
+					<Add after="zip -j9 ../../../devel31/share\urusstudio/wxSmithContribItems.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>

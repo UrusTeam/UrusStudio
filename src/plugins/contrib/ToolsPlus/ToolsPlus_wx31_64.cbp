@@ -6,7 +6,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="../../../devel31_64/share/codeblocks/plugins/ToolsPlus" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel31_64/share\urusstudio/plugins/ToolsPlus" prefix_auto="1" extension_auto="1" />
 				<Option object_output="../../../.objs31_64/plugins/contrib/ToolsPlus" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -18,7 +18,7 @@
 				</Compiler>
 				<Linker>
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="wxmsw28u_urus_gcc_urus" />
 					<Add library="gdi32" />
 					<Add directory="../../../devel31_64" />
 					<Add directory="$(#WX31_64.lib)/gcc_dll$(WX_CFG)" />
@@ -58,7 +58,7 @@
 			<Add option="-mthreads" />
 		</Linker>
 		<ExtraCommands>
-			<Add after="zip -j9 ..\..\..\devel31_64\share\codeblocks\ToolsPlus.zip manifest.xml" />
+			<Add after="zip -j9 ..\..\..\devel31_64\share\urusstudio\ToolsPlus.zip manifest.xml" />
 			<Add after="update31_64.bat" />
 			<Mode after="always" />
 		</ExtraCommands>

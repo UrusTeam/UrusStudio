@@ -8,7 +8,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="bzip2">
-				<Option output="../../../devel31_64/libbz2_help.a" prefix_auto="0" extension_auto="0" />
+				<Option output="bzip2/libbzip2_64.a" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="" />
 				<Option object_output="../../../.objs31_64/plugins/contrib/help_plugin/bzip2" />
 				<Option type="2" />
@@ -22,7 +22,7 @@
 				</Linker>
 			</Target>
 			<Target title="zlib">
-				<Option output="../../../devel31_64/libz.a" prefix_auto="0" extension_auto="0" />
+				<Option output="zlib/libz_64.a" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="" />
 				<Option object_output="../../../.objs31_64/plugins/contrib/help_plugin/zlib" />
 				<Option type="2" />
@@ -36,12 +36,12 @@
 				</Linker>
 			</Target>
 			<Target title="help_plugin">
-				<Option output="../../../devel31_64/share/CodeBlocks/plugins/help_plugin.dll" prefix_auto="0" extension_auto="0" />
+				<Option output="../../../devel31_64/share\urusstudio/plugins/help_plugin.dll" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../../.objs31_64/plugins/contrib/help_plugin" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --multiple-instance -na -ns -nd -p debug" />
-				<Option host_application="../../../devel31_64/codeblocks.exe" />
+				<Option host_application="../../../devel31_64/urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Compiler>
 					<Add option="-Wall" />
@@ -63,18 +63,15 @@
 				</Compiler>
 				<Linker>
 					<Add option="-mthreads" />
-					<Add library="bz2_help" />
-					<Add library="z" />
+					<Add library="bzip2/libbzip2_64.a" />
+					<Add library="zlib/libz_64.a" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="zip -j9 ..\..\..\devel31_64\share\CodeBlocks\help_plugin.zip manifest.xml *.xrc" />
-					<Add after="zip -Rq9 ..\..\..\devel31_64\share\CodeBlocks\help_plugin.zip images\16x16\*.png images\20x20\*.png images\24x24\*.png" />
-					<Add after="zip -Rq9 ..\..\..\devel31_64\share\CodeBlocks\help_plugin.zip images\28x28\*.png images\32x32\*.png images\40x40\*.png" />
-					<Add after="zip -Rq9 ..\..\..\devel31_64\share\CodeBlocks\help_plugin.zip images\48x48\*.png images\56x56\*.png images\64x64\*.png" />
-					<Add after="cmd /c if not exist ..\..\..\devel31_64\share\CodeBlocks\docs mkdir ..\..\..\devel31_64\share\CodeBlocks\docs" />
-					<Add after="xcopy /Y index.ini ..\..\..\devel31_64\share\CodeBlocks\docs" />
-					<Add after="cmd /c if not exist ..\..\..\output31_64\share\CodeBlocks\docs mkdir ..\..\..\output31_64\share\CodeBlocks\docs" />
-					<Add after="xcopy /Y index.ini ..\..\..\output31_64\share\CodeBlocks\docs" />
+					<Add after="zip -j9 ..\..\..\devel31_64\share\urusstudio\help_plugin.zip manifest.xml *.xrc *.png" />
+					<Add after="cmd /c if not exist ..\..\..\devel31_64\share\urusstudio\docs mkdir ..\..\..\devel31_64\share\urusstudio\docs" />
+					<Add after="xcopy /Y index.ini ..\..\..\devel31_64\share\urusstudio\docs" />
+					<Add after="cmd /c if not exist ..\..\..\output31_64\share\urusstudio\docs mkdir ..\..\..\output31_64\share\urusstudio\docs" />
+					<Add after="xcopy /Y index.ini ..\..\..\output31_64\share\urusstudio\docs" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
@@ -105,7 +102,7 @@
 			<Add option="-Wl,--enable-auto-image-base" />
 			<Add option="-Wl,--add-stdcall-alias" />
 			<Add option="-Wl,--enable-auto-import" />
-			<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+			<Add library="wxmsw28u_urus_gcc_urus" />
 			<Add library="codeblocks" />
 			<Add directory="../../../devel31_64" />
 			<Add directory="$(#WX31_64.lib)/gcc_dll$(WX_CFG)" />

@@ -24,7 +24,7 @@
 			</Target>
 			<Target title="wxSmith">
 				<Option platforms="Unix;Mac;" />
-				<Option output="../../../devel31/share/codeblocks/plugins/wxsmith" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel31/share\urusstudio/plugins/wxsmith" prefix_auto="1" extension_auto="1" />
 				<Option object_output="../../../.objs31/plugins/contrib/wxSmith" />
 				<Option type="3" />
 				<Option compiler="gcc" />

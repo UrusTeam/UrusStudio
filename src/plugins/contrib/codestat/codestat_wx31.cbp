@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="../../../devel31/share/CodeBlocks/plugins/codestat.dll" prefix_auto="0" extension_auto="0" />
+				<Option output="../../../devel31/share/urusstudio/plugins/codestat.dll" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../../.objs31/plugins/contrib/codestat" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -17,7 +17,7 @@
 				<Option projectCompilerOptionsRelation="0" />
 			</Target>
 			<Environment>
-				<Variable name="WX_CFG" value="" />
+				<Variable name="WX_CFG" value="URUS" />
 				<Variable name="WX_SUFFIX" value="u" />
 				<Variable name="WX_VERSION" value="31" />
 			</Environment>
@@ -30,19 +30,18 @@
 			<Add option="$(#CB_RELEASE_TYPE)" />
 			<Add option="-mthreads" />
 			<Add option="-fexceptions" />
+			<Add option="-std=gnu++11" />
 			<Add option="-DBUILDING_PLUGIN" />
 			<Add option="-DNOPCH" />
 			<Add option="-DHAVE_W32API_H" />
 			<Add option="-D__WXMSW__" />
 			<Add option="-DWXUSINGDLL" />
-			<Add option="-DcbDEBUG" />
 			<Add option="-DwxUSE_UNICODE" />
-			<Add option="-std=gnu++11" />
 			<Add directory="../../../include" />
 			<Add directory="../../../include/tinyxml" />
 			<Add directory="../../../sdk/wxscintilla/include" />
 			<Add directory="$(#WX31.INCLUDE)" />
-			<Add directory="$(#WX31.lib)/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
+			<Add directory="$(#WXSETUP.include)" />
 		</Compiler>
 		<ResourceCompiler>
 			<Add directory="$(#WX31.include)" />
@@ -50,13 +49,15 @@
 		<Linker>
 			<Add option="-Wl,--enable-auto-import" />
 			<Add option="-mthreads" />
-			<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 			<Add library="codeblocks" />
+			<Add library="../../../devel31/wxbase310u_urus_gcc_urus.dll" />
+			<Add library="../../../devel31/wxmsw310u_urus_core_gcc_urus.dll" />
+			<Add library="../../../devel31/wxmsw310u_urus_xrc_gcc_urus.dll" />
 			<Add directory="../../../devel31" />
-			<Add directory="$(#WX31.lib)/gcc_dll$(WX_CFG)" />
+			<Add directory="$(#WX31.lib)" />
 		</Linker>
 		<ExtraCommands>
-			<Add after="zip -j9 ..\..\..\devel31\share\codeblocks\codestat.zip resources\manifest.xml resources\*.xrc" />
+			<Add after="zip -j9 ../../../devel31/share/urusstudio/codestat.zip resources/manifest.xml resources/*.xrc" />
 			<Mode after="always" />
 		</ExtraCommands>
 		<Unit filename="codestat.cpp" />

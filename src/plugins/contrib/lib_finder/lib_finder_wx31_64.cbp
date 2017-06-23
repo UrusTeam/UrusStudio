@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="../../../devel31_64/share/CodeBlocks/plugins/lib_finder.dll" prefix_auto="0" extension_auto="0" />
+				<Option output="../../../devel31_64/share\urusstudio/plugins/lib_finder.dll" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../../.objs31_64/plugins/contrib/lib_finder" />
 				<Option external_deps="../../../devel31_64/wxflatnotebook.dll;" />
 				<Option type="3" />
@@ -61,7 +61,7 @@
 			<Add option="-Wl,--enable-auto-import" />
 			<Add option="-mthreads" />
 			<Add library="wxflatnotebook" />
-			<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+			<Add library="wxmsw28u_urus_gcc_urus" />
 			<Add library="codeblocks" />
 			<Add directory="$(#WX31_64.lib)/gcc_dll$(WX_CFG)" />
 			<Add directory="../../../devel31_64" />
