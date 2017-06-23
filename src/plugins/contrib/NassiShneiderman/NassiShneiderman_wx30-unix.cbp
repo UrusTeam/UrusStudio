@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="../../../devel30/share/codeblocks/plugins/NassiShneiderman" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel30/share\urusstudio/plugins/NassiShneiderman" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="../../../devel30" />
 				<Option object_output="../../../.objs30/plugins/contrib/NassiShneiderman" />
 				<Option type="3" />
@@ -39,7 +39,7 @@
 					<Add directory="../../../devel30" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="zip -j9 ../../../devel30/share/codeblocks/NassiShneiderman.zip manifest.xml" />
+					<Add after="zip -j9 ../../../devel30/share\urusstudio/NassiShneiderman.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>

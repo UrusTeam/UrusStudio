@@ -42,7 +42,7 @@
 					<Add after="zip -j9 CodeChecker.zip manifest.xml" />
 					<Add after="zip -j9 CodeChecker.cbplugin CodeChecker.dll CodeChecker.zip" />
 					<Add after="cmd /c copy CodeChecker.zip $(#cb)\devel\share\Codeblocks" />
-					<Add after="cmd /c copy CodeChecker.dll $(#cb)\devel\share\Codeblocks\plugins" />
+					<Add after="cmd /c copy CodeChecker.dll $(#cb)\devel\share\urusstudio\plugins" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>

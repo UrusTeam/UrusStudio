@@ -24,7 +24,7 @@
 				</ExtraCommands>
 			</Target>
 			<Target title="default">
-				<Option output="../../../devel31/share/CodeBlocks/plugins/devpakupdater.dll" prefix_auto="0" extension_auto="0" />
+				<Option output="../../../devel31/share/urusstudio/plugins/devpakupdater.dll" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../../.objs31/plugins/contrib/devpak_plugin" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -42,7 +42,6 @@
 					<Add option="-DHAVE_W32API_H" />
 					<Add option="-D__WXMSW__" />
 					<Add option="-DWXUSINGDLL" />
-					<Add option="-DcbDEBUG" />
 					<Add option="-DwxUSE_UNICODE" />
 					<Add directory="../../../include" />
 					<Add directory="../../../include/tinyxml" />
@@ -53,7 +52,7 @@
 					<Add directory="../../../devel31" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="zip ..\..\..\devel31\share\CodeBlocks\devpakupdater.zip manifest.xml *.xrc" />
+					<Add after="zip ../../../devel31/share/urusstudio/devpakupdater.zip manifest.xml *.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
@@ -69,7 +68,7 @@
 		<Compiler>
 			<Add option="-std=gnu++11" />
 			<Add directory="$(#WX31.include)" />
-			<Add directory="$(#WX31.lib)/$(WX_CFG)_dll/msw$(WX_SUFFIX)" />
+			<Add directory="$(#WXSETUP.include)" />
 			<Add directory="bzip2" />
 			<Add directory="../../../devel31" />
 		</Compiler>
@@ -78,9 +77,13 @@
 		</ResourceCompiler>
 		<Linker>
 			<Add option="-Wl,--enable-auto-import" />
-			<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 			<Add library="codeblocks" />
-			<Add directory="$(#WX31.lib)/$(WX_CFG)_dll" />
+			<Add library="../../../devel31/wxbase310u_urus_gcc_urus.dll" />
+			<Add library="../../../devel31/wxmsw310u_urus_core_gcc_urus.dll" />
+			<Add library="../../../devel31/wxmsw310u_urus_adv_gcc_urus.dll" />
+			<Add library="../../../devel31/wxbase310u_urus_net_gcc_urus.dll" />
+			<Add library="../../../devel31/wxmsw310u_urus_xrc_gcc_urus.dll" />
+			<Add directory="$(#WX31.lib)" />
 			<Add directory="bzip2" />
 			<Add directory="../../../devel31" />
 		</Linker>

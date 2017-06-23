@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="SmartIndentCpp">
-				<Option output="../../../devel31_64/share/CodeBlocks/plugins/SmartIndentCpp" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel31_64/share\urusstudio/plugins/SmartIndentCpp" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="../../../devel31_64" />
 				<Option object_output="../../../.objs31_64/plugins/contrib/SmartIndent" />
 				<Option type="3" />
@@ -23,12 +23,12 @@
 				</Compiler>
 				<ExtraCommands>
 					<Add after="cmd.exe /c copy /Y manifest_cpp.xml manifest.xml" />
-					<Add after="zip -j9 ..\..\..\devel31_64\share\CodeBlocks\SmartIndentCpp.zip manifest.xml" />
+					<Add after="zip -j9 ..\..\..\devel31_64\share\urusstudio\SmartIndentCpp.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="SmartIndentHDL">
-				<Option output="../../../devel31_64/share/CodeBlocks/plugins/SmartIndentHDL" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel31_64/share\urusstudio/plugins/SmartIndentHDL" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="../../../devel31_64" />
 				<Option object_output="../../../.objs31_64/plugins/contrib/SmartIndent" />
 				<Option type="3" />
@@ -44,12 +44,12 @@
 				</Compiler>
 				<ExtraCommands>
 					<Add after="cmd.exe /c copy /Y manifest_hdl.xml manifest.xml" />
-					<Add after="zip -j9 ..\..\..\devel31_64\share\CodeBlocks\SmartIndentHDL.zip manifest.xml" />
+					<Add after="zip -j9 ..\..\..\devel31_64\share\urusstudio\SmartIndentHDL.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="SmartIndentPascal">
-				<Option output="../../../devel31_64/share/CodeBlocks/plugins/SmartIndentPascal" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel31_64/share\urusstudio/plugins/SmartIndentPascal" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="../../../devel31_64" />
 				<Option object_output="../../../.objs31_64/plugins/contrib/SmartIndent" />
 				<Option type="3" />
@@ -65,12 +65,12 @@
 				</Compiler>
 				<ExtraCommands>
 					<Add after="cmd.exe /c copy /Y manifest_pascal.xml manifest.xml" />
-					<Add after="zip -j9 ..\..\..\devel31_64\share\CodeBlocks\SmartIndentPascal.zip manifest.xml" />
+					<Add after="zip -j9 ..\..\..\devel31_64\share\urusstudio\SmartIndentPascal.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="SmartIndentPython">
-				<Option output="../../../devel31_64/share/CodeBlocks/plugins/SmartIndentPython" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel31_64/share\urusstudio/plugins/SmartIndentPython" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="../../../devel31_64" />
 				<Option object_output="../../../.objs31_64/plugins/contrib/SmartIndent" />
 				<Option type="3" />
@@ -86,12 +86,12 @@
 				</Compiler>
 				<ExtraCommands>
 					<Add after="cmd.exe /c copy /Y manifest_python.xml manifest.xml" />
-					<Add after="zip -j9 ..\..\..\devel31_64\share\CodeBlocks\SmartIndentPython.zip manifest.xml" />
+					<Add after="zip -j9 ..\..\..\devel31_64\share\urusstudio\SmartIndentPython.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="SmartIndentLua">
-				<Option output="../../../devel31_64/share/CodeBlocks/plugins/SmartIndentLua" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel31_64/share\urusstudio/plugins/SmartIndentLua" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="../../../devel31_64" />
 				<Option object_output="../../../.objs31_64/plugins/contrib/SmartIndent" />
 				<Option type="3" />
@@ -107,12 +107,12 @@
 				</Compiler>
 				<ExtraCommands>
 					<Add after="cmd.exe /c copy /Y manifest_lua.xml manifest.xml" />
-					<Add after="zip -j9 ..\..\..\devel31_64\share\CodeBlocks\SmartIndentLua.zip manifest.xml" />
+					<Add after="zip -j9 ..\..\..\devel31_64\share\urusstudio\SmartIndentLua.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="SmartIndentFortran">
-				<Option output="../../../devel31_64/share/CodeBlocks/plugins/SmartIndentFortran" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel31_64/share\urusstudio/plugins/SmartIndentFortran" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="../../../devel31_64" />
 				<Option object_output="../../../.objs31_64/plugins/contrib/SmartIndent" />
 				<Option type="3" />
@@ -128,12 +128,12 @@
 				</Compiler>
 				<ExtraCommands>
 					<Add after="cmd.exe /c copy /Y manifest_fortran.xml manifest.xml" />
-					<Add after="zip -j9 ..\..\..\devel31_64\share\CodeBlocks\SmartIndentFortran.zip manifest.xml" />
+					<Add after="zip -j9 ..\..\..\devel31_64\share\urusstudio\SmartIndentFortran.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="SmartIndentXML">
-				<Option output="../../../devel31_64/share/CodeBlocks/plugins/SmartIndentXML" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel31_64/share\urusstudio/plugins/SmartIndentXML" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="../../../devel31_64" />
 				<Option object_output="../../../.objs31_64/plugins/contrib/SmartIndent" />
 				<Option type="3" />
@@ -149,7 +149,7 @@
 				</Compiler>
 				<ExtraCommands>
 					<Add after="cmd.exe /c copy /Y manifest_xml.xml manifest.xml" />
-					<Add after="zip -j9 ..\..\..\devel31_64\share\CodeBlocks\SmartIndentXML.zip manifest.xml" />
+					<Add after="zip -j9 ..\..\..\devel31_64\share\urusstudio\SmartIndentXML.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
@@ -184,7 +184,7 @@
 		</Compiler>
 		<Linker>
 			<Add library="codeblocks" />
-			<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+			<Add library="wxmsw28u_urus_gcc_urus" />
 			<Add directory="../../../devel31_64" />
 			<Add directory="$(#WX31_64.lib)/gcc_dll$(WX_CFG)" />
 		</Linker>

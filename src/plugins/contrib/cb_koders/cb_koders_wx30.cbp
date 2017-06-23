@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="../../../devel30/share/CodeBlocks/plugins/cb_koders.dll" prefix_auto="0" extension_auto="0" />
+				<Option output="../../../devel30/share\urusstudio/plugins/cb_koders.dll" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../../.objs30/plugins/contrib/cb_koders" />
 				<Option external_deps="../../../devel30/libcodeblocks.a;" />
 				<Option type="3" />
@@ -53,13 +53,13 @@
 		<Linker>
 			<Add option="-Wl,--enable-auto-import" />
 			<Add option="-mthreads" />
-			<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+			<Add library="wxmsw28u_urus_gcc_urus" />
 			<Add library="codeblocks" />
 			<Add directory="$(#WX30.lib)/gcc_dll$(WX_CFG)" />
 			<Add directory="../../../devel30" />
 		</Linker>
 		<ExtraCommands>
-			<Add after="zip -j9 ..\..\..\devel30\share\CodeBlocks\cb_koders.zip manifest.xml" />
+			<Add after="zip -j9 ..\..\..\devel30\share\urusstudio\cb_koders.zip manifest.xml" />
 			<Mode after="always" />
 		</ExtraCommands>
 		<Unit filename="cb_koders.cpp" />

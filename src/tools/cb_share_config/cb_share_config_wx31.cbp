@@ -35,7 +35,7 @@
 			<Add option="-DwxUSE_UNICODE" />
 			<Add option="-DWXUSINGDLL" />
 			<Add directory="$(#WX31.include)" />
-			<Add directory="$(#WX31.lib)/$(WX_CFG)_dll/msw$(WX_SUFFIX)" />
+			<Add directory="$(#WXSETUP.include)" />
 			<Add directory="../../include" />
 			<Add directory="../../include/tinyxml" />
 		</Compiler>
@@ -45,8 +45,9 @@
 		<Linker>
 			<Add option="-mthreads" />
 			<Add library="txml" />
-			<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-			<Add directory="$(#WX31.lib)/$(WX_CFG)_dll" />
+			<Add library="wxmsw310u_urus_core_gcc_urus" />
+			<Add library="wxbase310u_urus_gcc_urus" />
+			<Add directory="$(#WX31.lib)" />
 			<Add directory="../../base/tinyxml" />
 		</Linker>
 		<Unit filename="app.cpp" />

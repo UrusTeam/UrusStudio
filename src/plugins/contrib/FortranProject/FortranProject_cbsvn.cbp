@@ -7,7 +7,7 @@
 		<Build>
 			<Target title="default">
 				<Option platforms="Windows;" />
-				<Option output="../../../devel/share/CodeBlocks/plugins/FortranProject" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel/share\urusstudio/plugins/FortranProject" prefix_auto="1" extension_auto="1" />
 				<Option object_output="../../../.objs/plugins/contrib/FortranProject" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -52,9 +52,9 @@
 			<Add alias="All" targets="default;" />
 		</VirtualTargets>
 		<ExtraCommands>
-			<Add after="zip -j9 ..\..\..\devel\share\codeblocks\FortranProject.zip manifest.xml resources\workspacebrowserf.xrc resources\settings.xrc resources\fortranprojecttoolbar.xrc" />
-			<Add after="zip -j9 ..\..\..\devel\share\codeblocks\FortranProject.zip resources\changecase.xrc resources\tab2space.xrc" />
-			<Add after="zip -r9 ..\..\..\devel\share\codeblocks\FortranProject.zip images" />
+			<Add after="zip -j9 ..\..\..\devel\share\urusstudio\FortranProject.zip manifest.xml resources\workspacebrowserf.xrc resources\settings.xrc resources\fortranprojecttoolbar.xrc" />
+			<Add after="zip -j9 ..\..\..\devel\share\urusstudio\FortranProject.zip resources\changecase.xrc resources\tab2space.xrc" />
+			<Add after="zip -r9 ..\..\..\devel\share\urusstudio\FortranProject.zip images" />
 			<Add after=".\update.bat" />
 		</ExtraCommands>
 		<Unit filename="autoinsert.cpp" />

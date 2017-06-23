@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="$(#cb)/devel/share/codeblocks/plugins/PythonCodeCompletion" prefix_auto="1" extension_auto="1" />
+				<Option output="$(#cb)/devel/share\urusstudio/plugins/PythonCodeCompletion" prefix_auto="1" extension_auto="1" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p Debug" />
@@ -41,8 +41,8 @@
 				</Linker>
 				<ExtraCommands>
 					<Add after="zip -j9 PythonCodeCompletion.zip manifest.xml" />
-					<Add after="cmd /c xcopy /y PythonCodeCompletion.zip $(#cb)\devel\share\codeblocks\" />
-					<Add after="cmd /c xcopy /y python\python_completion_server.py $(#cb)\devel\share\codeblocks\python\" />
+					<Add after="cmd /c xcopy /y PythonCodeCompletion.zip $(#cb)\devel\share\urusstudio\" />
+					<Add after="cmd /c xcopy /y python\python_completion_server.py $(#cb)\devel\share\urusstudio\python\" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>

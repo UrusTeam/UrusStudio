@@ -35,8 +35,8 @@
 				<ExtraCommands>
 					<Add after="zip -j9 codechecker.zip manifest.xml" />
 					<Add after="zip -j9 codechecker.cbplugin libcodechecker.so codechecker.zip" />
-					<Add after="/bin/cp codechecker.zip $(#cb)/devel/share/codeblocks" />
-					<Add after="/bin/cp libcodechecker.so $(#cb)/devel/share/codeblocks/plugins" />
+					<Add after="/bin/cp codechecker.zip $(#cb)/devel/share\urusstudio" />
+					<Add after="/bin/cp libcodechecker.so $(#cb)/devel/share\urusstudio/plugins" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>

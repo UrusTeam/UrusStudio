@@ -182,8 +182,8 @@
 				</Linker>
 			</Target>
 			<Target title="Abbreviations">
-				<Option output="devel/share/codeblocks/plugins/libabbreviations" prefix_auto="0" extension_auto="1" />
-				<Option working_dir="devel/share/codeblocks/plugins" />
+				<Option output="devel/share\urusstudio/plugins/libabbreviations" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="devel/share\urusstudio/plugins" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --multiple-instance -ns -ni -v -p debug" />
@@ -204,8 +204,8 @@
 				</Linker>
 			</Target>
 			<Target title="AStyle">
-				<Option output="devel/share/codeblocks/plugins/libAstyle" prefix_auto="0" extension_auto="1" />
-				<Option working_dir="devel/share/codeblocks/plugins" />
+				<Option output="devel/share\urusstudio/plugins/libAstyle" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="devel/share\urusstudio/plugins" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --multiple-instance -ns -ni -v -p debug" />
@@ -224,8 +224,8 @@
 				</Linker>
 			</Target>
 			<Target title="Autosave">
-				<Option output="devel/share/codeblocks/plugins/libautosave" prefix_auto="0" extension_auto="1" />
-				<Option working_dir="devel/share/codeblocks/plugins" />
+				<Option output="devel/share\urusstudio/plugins/libautosave" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="devel/share\urusstudio/plugins" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --multiple-instance -ns -ni -v -p debug" />
@@ -253,7 +253,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Compiler">
-				<Option output="devel/share/codeblocks/plugins/libcompiler" prefix_auto="0" extension_auto="1" />
+				<Option output="devel/share\urusstudio/plugins/libcompiler" prefix_auto="0" extension_auto="1" />
 				<Option working_dir="devel" />
 				<Option external_deps="plugins/compilergcc/depslib/libdepslib.a;" />
 				<Option type="3" />
@@ -279,7 +279,7 @@
 				</Linker>
 			</Target>
 			<Target title="Debugger">
-				<Option output="devel/share/codeblocks/plugins/libdebugger" prefix_auto="0" extension_auto="1" />
+				<Option output="devel/share\urusstudio/plugins/libdebugger" prefix_auto="0" extension_auto="1" />
 				<Option working_dir="devel" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -300,8 +300,8 @@
 				</Linker>
 			</Target>
 			<Target title="Code-completion">
-				<Option output="devel/share/codeblocks/plugins/libcodecompletion" prefix_auto="0" extension_auto="1" />
-				<Option working_dir="devel/share/codeblocks/plugins" />
+				<Option output="devel/share\urusstudio/plugins/libcodecompletion" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="devel/share\urusstudio/plugins" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option projectLinkerOptionsRelation="1" />
@@ -322,8 +322,8 @@
 				</Linker>
 			</Target>
 			<Target title="Class wizard">
-				<Option output="devel/share/codeblocks/plugins/libclasswizard" prefix_auto="0" extension_auto="1" />
-				<Option working_dir="devel/share/codeblocks/plugins" />
+				<Option output="devel/share\urusstudio/plugins/libclasswizard" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="devel/share\urusstudio/plugins" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option projectLinkerOptionsRelation="1" />
@@ -338,8 +338,8 @@
 				</Linker>
 			</Target>
 			<Target title="Default MIME handler">
-				<Option output="devel/share/codeblocks/plugins/libdefaultmimehandler" prefix_auto="0" extension_auto="1" />
-				<Option working_dir="devel/share/codeblocks/plugins" />
+				<Option output="devel/share\urusstudio/plugins/libdefaultmimehandler" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="devel/share\urusstudio/plugins" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option projectLinkerOptionsRelation="1" />
@@ -354,8 +354,8 @@
 				</Linker>
 			</Target>
 			<Target title="Occurrences Highlighting">
-				<Option output="devel/share/codeblocks/plugins/liboccurrenceshighlighting" prefix_auto="0" extension_auto="1" />
-				<Option working_dir="devel/share/codeblocks/plugins" />
+				<Option output="devel/share\urusstudio/plugins/liboccurrenceshighlighting" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="devel/share\urusstudio/plugins" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option projectLinkerOptionsRelation="1" />
@@ -370,8 +370,8 @@
 				</Linker>
 			</Target>
 			<Target title="Open files list">
-				<Option output="devel/share/codeblocks/plugins/libopenfileslist" prefix_auto="0" extension_auto="1" />
-				<Option working_dir="devel/share/codeblocks/plugins" />
+				<Option output="devel/share\urusstudio/plugins/libopenfileslist" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="devel/share\urusstudio/plugins" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option projectLinkerOptionsRelation="1" />
@@ -386,8 +386,8 @@
 				</Linker>
 			</Target>
 			<Target title="Projects-workspaces importer">
-				<Option output="devel/share/codeblocks/plugins/libprojectsimporter" prefix_auto="0" extension_auto="1" />
-				<Option working_dir="devel/share/codeblocks/plugins" />
+				<Option output="devel/share\urusstudio/plugins/libprojectsimporter" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="devel/share\urusstudio/plugins" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option projectLinkerOptionsRelation="1" />
@@ -408,8 +408,8 @@
 				</Linker>
 			</Target>
 			<Target title="Scripted wizard">
-				<Option output="devel/share/codeblocks/plugins/libscriptedwizard" prefix_auto="0" extension_auto="1" />
-				<Option working_dir="devel/share/codeblocks/plugins" />
+				<Option output="devel/share\urusstudio/plugins/libscriptedwizard" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="devel/share\urusstudio/plugins" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option projectLinkerOptionsRelation="1" />
@@ -426,8 +426,8 @@
 				</Linker>
 			</Target>
 			<Target title="To-do">
-				<Option output="devel/share/codeblocks/plugins/libtodo" prefix_auto="0" extension_auto="1" />
-				<Option working_dir="devel/share/codeblocks/plugins" />
+				<Option output="devel/share\urusstudio/plugins/libtodo" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="devel/share\urusstudio/plugins" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option projectLinkerOptionsRelation="1" />
@@ -449,8 +449,8 @@
 			</Target>
 			<Target title="XP look &amp; feel">
 				<Option platforms="Windows;" />
-				<Option output="devel/share/CodeBlocks/plugins/xpmanifest" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="devel/share/CodeBlocks/plugins" />
+				<Option output="devel/share\urusstudio/plugins/xpmanifest" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="devel/share\urusstudio/plugins" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option projectLinkerOptionsRelation="1" />
@@ -470,7 +470,7 @@
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="wxmsw28u_urus_gcc_urus" />
 					<Add directory="devel" />
 				</Linker>
 			</Target>
