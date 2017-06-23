@@ -39,16 +39,17 @@
 			<Add option="-DWXUSINGDLL" />
 			<Add option="-DwxUSE_UNICODE" />
 			<Add directory="$(#WX31.include)" />
-			<Add directory="$(#WX31.lib)/$(WX_CFG)_dll/msw$(WX_SUFFIX)" />
+			<Add directory="$(#WXSETUP.include)" />
 		</Compiler>
 		<ResourceCompiler>
 			<Add directory="$(#WX31.include)" />
-			<Add directory="$(#WX31.lib)/$(WX_CFG)_dll/msw$(WX_SUFFIX)" />
+			<Add directory="$(#WX31.lib)" />
 		</ResourceCompiler>
 		<Linker>
 			<Add option="-mthreads" />
-			<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-			<Add directory="$(#WX31.lib)/$(WX_CFG)_dll" />
+			<Add library="wxbase310u_urus_gcc_urus" />
+			<Add library="wxmsw310u_urus_core_gcc_urus" />
+			<Add directory="$(#WX31.lib)" />
 		</Linker>
 		<Unit filename="Addr2LineUIApp.cpp" />
 		<Unit filename="Addr2LineUIApp.h" />

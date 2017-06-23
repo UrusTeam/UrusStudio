@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="../../../devel30/share/codeblocks/plugins/ThreadSearch" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel30/share\urusstudio/plugins/ThreadSearch" prefix_auto="1" extension_auto="1" />
 				<Option object_output="../../../.objs30/plugins/contrib/ThreadSearch" />
 				<Option external_deps="../../../devel30/libwxcustombutton.so;" />
 				<Option type="3" />
@@ -54,7 +54,7 @@
 			<Add directory="../../../devel30" />
 		</Linker>
 		<ExtraCommands>
-			<Add after="zip -j9 ../../../devel30/share/codeblocks/ThreadSearch.zip manifest.xml" />
+			<Add after="zip -j9 ../../../devel30/share\urusstudio/ThreadSearch.zip manifest.xml" />
 			<Add after="./update30" />
 			<Mode after="always" />
 		</ExtraCommands>

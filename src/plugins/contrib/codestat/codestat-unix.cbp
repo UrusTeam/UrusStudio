@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="../../../devel/share/codeblocks/plugins/libcodestat" prefix_auto="0" extension_auto="1" />
+				<Option output="../../../devel/share\urusstudio/plugins/libcodestat" prefix_auto="0" extension_auto="1" />
 				<Option object_output="../../../.objs/plugins/contrib/codestat" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -48,7 +48,7 @@
 			<Add directory="../../../devel" />
 		</Linker>
 		<ExtraCommands>
-			<Add after="zip -j9 ../../../devel/share/codeblocks/codestat.zip resources/manifest.xml resources/*.xrc" />
+			<Add after="zip -j9 ../../../devel/share\urusstudio/codestat.zip resources/manifest.xml resources/*.xrc" />
 			<Mode after="always" />
 		</ExtraCommands>
 		<Unit filename="codestat.cpp" />

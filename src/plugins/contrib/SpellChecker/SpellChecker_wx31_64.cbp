@@ -20,7 +20,7 @@
 					<Add directory="hunspell/" />
 				</Compiler>
 				<Linker>
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="wxmsw28u_urus_gcc_urus" />
 				</Linker>
 			</Target>
 			<Target title="wxSpellChecker">
@@ -39,13 +39,13 @@
 				</Compiler>
 				<Linker>
 					<Add library="hunspell" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="wxmsw28u_urus_gcc_urus" />
 					<Add directory="../../../devel31_64" />
 					<Add directory="$(#WX31_64.lib)/gcc_dll$(WX_CFG)" />
 				</Linker>
 			</Target>
 			<Target title="plugin">
-				<Option output="../../../devel31_64/share/CodeBlocks/plugins/SpellChecker" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel31_64/share\urusstudio/plugins/SpellChecker" prefix_auto="1" extension_auto="1" />
 				<Option object_output="../../../.objs31_64/plugins/contrib/SpellChecker" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -69,23 +69,23 @@
 					<Add library="wxSpellChecker" />
 					<Add library="hunspell" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="wxmsw28u_urus_gcc_urus" />
 					<Add directory="../../../devel31_64" />
 					<Add directory="$(#WX31_64.lib)/gcc_dll$(WX_CFG)" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist ..\..\..\devel31_64\share\CodeBlocks\SpellChecker mkdir ..\..\..\devel31_64\share\CodeBlocks\SpellChecker" />
-					<Add after="cmd /c if not exist ..\..\..\devel31_64\share\CodeBlocks\images\settings mkdir ..\..\..\devel31_64\share\CodeBlocks\images\settings" />
-					<Add after="zip -j9 ..\..\..\devel31_64\share\CodeBlocks\SpellChecker.zip manifest.xml SpellCheckSettingsPanel.xrc" />
-					<Add after='xcopy /Y *.png &quot;..\..\..\devel31_64\share\Codeblocks\images\settings\*&quot;' />
-					<Add after='xcopy /Y *.png &quot;..\..\..\output31_64\share\Codeblocks\images\settings\*&quot;' />
-					<Add after='xcopy /Y OnlineSpellChecking.xml  &quot;..\..\..\devel31_64\share\CodeBlocks\SpellChecker\&quot;' />
-					<Add after='xcopy /Y dictionaries\*.aff &quot;..\..\..\devel31_64\share\CodeBlocks\SpellChecker\&quot;' />
-					<Add after='xcopy /Y dictionaries\*.dic &quot;..\..\..\devel31_64\share\CodeBlocks\SpellChecker\&quot;' />
-					<Add after='xcopy /Y dictionaries\th_*.dat &quot;..\..\..\devel31_64\share\CodeBlocks\SpellChecker\&quot;' />
-					<Add after='xcopy /Y dictionaries\th_*.idx &quot;..\..\..\devel31_64\share\CodeBlocks\SpellChecker\&quot;' />
-					<Add after='xcopy /Y rc\*.png &quot;..\..\..\devel31_64\share\CodeBlocks\SpellChecker\&quot;' />
-					<Add after='xcopy /Y &quot;..\..\..\devel31_64\share\CodeBlocks\SpellChecker\*&quot; &quot;..\..\..\output31_64\share\CodeBlocks\SpellChecker\*&quot;' />
+					<Add after="cmd /c if not exist ..\..\..\devel31_64\share\urusstudio\SpellChecker mkdir ..\..\..\devel31_64\share\urusstudio\SpellChecker" />
+					<Add after="cmd /c if not exist ..\..\..\devel31_64\share\urusstudio\images\settings mkdir ..\..\..\devel31_64\share\urusstudio\images\settings" />
+					<Add after="zip -j9 ..\..\..\devel31_64\share\urusstudio\SpellChecker.zip manifest.xml SpellCheckSettingsPanel.xrc" />
+					<Add after='xcopy /Y *.png &quot;..\..\..\devel31_64\share\urusstudio\images\settings\*&quot;' />
+					<Add after='xcopy /Y *.png &quot;..\..\..\output31_64\share\urusstudio\images\settings\*&quot;' />
+					<Add after='xcopy /Y OnlineSpellChecking.xml  &quot;..\..\..\devel31_64\share\urusstudio\SpellChecker\&quot;' />
+					<Add after='xcopy /Y dictionaries\*.aff &quot;..\..\..\devel31_64\share\urusstudio\SpellChecker\&quot;' />
+					<Add after='xcopy /Y dictionaries\*.dic &quot;..\..\..\devel31_64\share\urusstudio\SpellChecker\&quot;' />
+					<Add after='xcopy /Y dictionaries\th_*.dat &quot;..\..\..\devel31_64\share\urusstudio\SpellChecker\&quot;' />
+					<Add after='xcopy /Y dictionaries\th_*.idx &quot;..\..\..\devel31_64\share\urusstudio\SpellChecker\&quot;' />
+					<Add after='xcopy /Y rc\*.png &quot;..\..\..\devel31_64\share\urusstudio\SpellChecker\&quot;' />
+					<Add after='xcopy /Y &quot;..\..\..\devel31_64\share\urusstudio\SpellChecker\*&quot; &quot;..\..\..\output31_64\share\urusstudio\SpellChecker\*&quot;' />
 					<Mode after="always" />
 				</ExtraCommands>
 				<Environment>

@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="../../../devel30/share/codeblocks/plugins/Cccc" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel30/share\urusstudio/plugins/Cccc" prefix_auto="1" extension_auto="1" />
 				<Option object_output="../../../.objs30/plugins/contrib/Cccc" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -45,7 +45,7 @@
 			<Add directory="../../../devel30" />
 		</Linker>
 		<ExtraCommands>
-			<Add after="zip -j9 ../../../devel30/share/codeblocks/Cccc.zip resources/manifest.xml" />
+			<Add after="zip -j9 ../../../devel30/share\urusstudio/Cccc.zip resources/manifest.xml" />
 			<Mode after="always" />
 		</ExtraCommands>
 		<Unit filename="Cccc.cpp" />

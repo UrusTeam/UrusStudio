@@ -174,7 +174,7 @@
 				</Linker>
 			</Target>
 			<Target title="Abbreviations">
-				<Option output="devel30/share/codeblocks/plugins/abbreviations" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/abbreviations" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option type="3" />
@@ -197,7 +197,7 @@
 				</Linker>
 			</Target>
 			<Target title="AStyle">
-				<Option output="devel30/share/codeblocks/plugins/Astyle" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/Astyle" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option type="3" />
@@ -218,7 +218,7 @@
 				</Linker>
 			</Target>
 			<Target title="Autosave">
-				<Option output="devel30/share/codeblocks/plugins/autosave" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/autosave" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option type="3" />
@@ -249,7 +249,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Compiler">
-				<Option output="devel30/share/codeblocks/plugins/compiler" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/compiler" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option external_deps="plugins/compilergcc/depslib/libdepslib.a;" />
@@ -275,7 +275,7 @@
 				</Linker>
 			</Target>
 			<Target title="Debugger">
-				<Option output="devel30/share/codeblocks/plugins/debugger" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/debugger" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option type="3" />
@@ -295,7 +295,7 @@
 				</Linker>
 			</Target>
 			<Target title="Code-completion">
-				<Option output="devel30/share/codeblocks/plugins/codecompletion" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/codecompletion" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option type="3" />
@@ -322,7 +322,7 @@
 				</Linker>
 			</Target>
 			<Target title="Class wizard">
-				<Option output="devel30/share/codeblocks/plugins/classwizard" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/classwizard" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option type="3" />
@@ -342,7 +342,7 @@
 				</Linker>
 			</Target>
 			<Target title="Default MIME handler">
-				<Option output="devel30/share/codeblocks/plugins/defaultmimehandler" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/defaultmimehandler" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option type="3" />
@@ -362,7 +362,7 @@
 				</Linker>
 			</Target>
 			<Target title="Occurrences Highlighting">
-				<Option output="devel30/share/codeblocks/plugins/occurrenceshighlighting" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/occurrenceshighlighting" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option type="3" />
@@ -382,7 +382,7 @@
 				</Linker>
 			</Target>
 			<Target title="Open files list">
-				<Option output="devel30/share/codeblocks/plugins/openfileslist" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/openfileslist" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option type="3" />
@@ -402,7 +402,7 @@
 				</Linker>
 			</Target>
 			<Target title="Projects-workspaces importer">
-				<Option output="devel30/share/codeblocks/plugins/projectsimporter" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/projectsimporter" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option type="3" />
@@ -428,7 +428,7 @@
 				</Linker>
 			</Target>
 			<Target title="Scripted wizard">
-				<Option output="devel30/share/codeblocks/plugins/scriptedwizard" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/scriptedwizard" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option type="3" />
@@ -450,7 +450,7 @@
 				</Linker>
 			</Target>
 			<Target title="To-do">
-				<Option output="devel30/share/codeblocks/plugins/todo" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/todo" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option type="3" />
@@ -477,7 +477,7 @@
 			</Target>
 			<Target title="XP look &amp; feel">
 				<Option platforms="Windows;" />
-				<Option output="devel30/share/CodeBlocks/plugins/xpmanifest" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/xpmanifest" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option type="3" />
@@ -499,7 +499,7 @@
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="wxmsw28u_urus_gcc_urus" />
 					<Add directory="devel30" />
 				</Linker>
 			</Target>

@@ -9,7 +9,7 @@
 		<Build>
 			<Target title="default">
 				<Option platforms="Windows;" />
-				<Option output="../../../devel31_64/share/CodeBlocks/plugins/DoxyBlocks" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel31_64/share\urusstudio/plugins/DoxyBlocks" prefix_auto="1" extension_auto="1" />
 				<Option object_output="../../../.objs31_64/plugins/contrib/DoxyBlocks" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -44,14 +44,14 @@
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="wxmsw28u_urus_gcc_urus" />
 					<Add directory="../../../devel31_64" />
 					<Add directory="$(#WX31_64.lib)" />
 					<Add directory="$(#WX31_64.lib)/gcc_dll$(WX_CFG)" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="zip -j9 ..\..\..\devel31_64\share\codeblocks\DoxyBlocks.zip manifest.xml" />
-					<Add after="zip -9 ..\..\..\devel31_64\share\codeblocks\DoxyBlocks.zip images\*.png images\16x16\*.png" />
+					<Add after="zip -j9 ..\..\..\devel31_64\share\urusstudio\DoxyBlocks.zip manifest.xml" />
+					<Add after="zip -9 ..\..\..\devel31_64\share\urusstudio\DoxyBlocks.zip images\*.png images\16x16\*.png" />
 					<Add after="update31_64.bat" />
 					<Mode after="always" />
 				</ExtraCommands>

@@ -36,7 +36,7 @@
 				</Linker>
 			</Target>
 			<Target title="help_plugin">
-				<Option output="../../../devel30/share/CodeBlocks/plugins/help_plugin.dll" prefix_auto="0" extension_auto="0" />
+				<Option output="../../../devel30/share\urusstudio/plugins/help_plugin.dll" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../../.objs30/plugins/contrib/help_plugin" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -66,11 +66,11 @@
 					<Add library="zlib/libz.a" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="zip -j9 ..\..\..\devel30\share\CodeBlocks\help_plugin.zip manifest.xml *.xrc *.png" />
-					<Add after="cmd /c if not exist ..\..\..\devel30\share\CodeBlocks\docs mkdir ..\..\..\devel30\share\CodeBlocks\docs" />
-					<Add after="xcopy /Y index.ini ..\..\..\devel30\share\CodeBlocks\docs" />
-					<Add after="cmd /c if not exist ..\..\..\output30\share\CodeBlocks\docs mkdir ..\..\..\output30\share\CodeBlocks\docs" />
-					<Add after="xcopy /Y index.ini ..\..\..\output30\share\CodeBlocks\docs" />
+					<Add after="zip -j9 ..\..\..\devel30\share\urusstudio\help_plugin.zip manifest.xml *.xrc *.png" />
+					<Add after="cmd /c if not exist ..\..\..\devel30\share\urusstudio\docs mkdir ..\..\..\devel30\share\urusstudio\docs" />
+					<Add after="xcopy /Y index.ini ..\..\..\devel30\share\urusstudio\docs" />
+					<Add after="cmd /c if not exist ..\..\..\output30\share\urusstudio\docs mkdir ..\..\..\output30\share\urusstudio\docs" />
+					<Add after="xcopy /Y index.ini ..\..\..\output30\share\urusstudio\docs" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
@@ -101,7 +101,7 @@
 			<Add option="-Wl,--enable-auto-image-base" />
 			<Add option="-Wl,--add-stdcall-alias" />
 			<Add option="-Wl,--enable-auto-import" />
-			<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+			<Add library="wxmsw28u_urus_gcc_urus" />
 			<Add library="codeblocks" />
 			<Add directory="../../../devel30" />
 			<Add directory="$(#WX30.lib)/gcc_dll$(WX_CFG)" />

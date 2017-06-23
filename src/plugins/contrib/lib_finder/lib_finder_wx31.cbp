@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="../../../devel31/share/CodeBlocks/plugins/lib_finder.dll" prefix_auto="0" extension_auto="0" />
+				<Option output="../../../devel31/share/urusstudio/plugins/lib_finder.dll" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../../.objs31/plugins/contrib/lib_finder" />
 				<Option external_deps="../../../devel31/wxflatnotebook.dll;" />
 				<Option type="3" />
@@ -15,7 +15,11 @@
 				<Option parameters="--debug-log --multiple-instance -na -ns -nd -p debug" />
 				<Option host_application="../../../devel31/codeblocks.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectResourceIncludeDirsRelation="0" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="2" />
+				<Option projectLibDirsRelation="2" />
 			</Target>
 			<Environment>
 				<Variable name="WX_CFG" value="URUS" />
@@ -34,7 +38,6 @@
 			<Add option="-fexceptions" />
 			<Add option="-mthreads" />
 			<Add option="-std=gnu++11" />
-			<Add option="-DcbDEBUG" />
 			<Add option="-DNOPCH" />
 			<Add option="-DHAVE_W32API_H" />
 			<Add option="-D__WXMSW__" />
@@ -42,7 +45,7 @@
 			<Add option="-DwxUSE_UNICODE" />
 			<Add option="-DBUILDING_PLUGIN" />
 			<Add directory="$(#WX31.include)" />
-			<Add directory="$(#WX31.lib)/$(WX_CFG)_dll/msw$(WX_SUFFIX)" />
+			<Add directory="$(#WXSETUP.include)" />
 			<Add directory="../../../include" />
 			<Add directory="../../../include/tinyxml" />
 			<Add directory="../../../sdk/wxscintilla/include" />
@@ -65,17 +68,19 @@
 			<Add option="-Wl,--enable-auto-import" />
 			<Add option="-mthreads" />
 			<Add library="wxflatnotebook" />
-			<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 			<Add library="codeblocks" />
 			<Add library="txml" />
 			<Add library="sqplus" />
 			<Add library="sqstdlib" />
 			<Add library="squirrel" />
-			<Add directory="$(#WX31.lib)/$(WX_CFG)_dll" />
+			<Add library="wxmsw310u_urus_core_gcc_urus" />
+			<Add library="wxbase310u_urus_gcc_urus" />
+			<Add library="wxbase310u_urus_net_gcc_urus" />
+			<Add directory="$(#WX31.lib)" />
 			<Add directory="../../../devel31" />
 		</Linker>
 		<ExtraCommands>
-			<Add after="update31.bat" />
+			<Add after="sh ./update31" />
 			<Mode after="always" />
 		</ExtraCommands>
 		<Unit filename="defsdownloaddlg.cpp" />

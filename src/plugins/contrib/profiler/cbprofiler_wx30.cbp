@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="../../../devel30/share/CodeBlocks/plugins/Profiler.dll" prefix_auto="0" extension_auto="0" />
+				<Option output="../../../devel30/share\urusstudio/plugins/Profiler.dll" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../../.objs30/plugins/contrib/profiler" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -50,12 +50,12 @@
 			<Add option="-Wl,--enable-auto-import" />
 			<Add option="-mthreads" />
 			<Add library="codeblocks" />
-			<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+			<Add library="wxmsw28u_urus_gcc_urus" />
 			<Add directory="../../../devel30" />
 			<Add directory="$(#WX30.lib)/gcc_dll$(WX_CFG)" />
 		</Linker>
 		<ExtraCommands>
-			<Add after="zip -j9 ..\..\..\devel30\share\codeblocks\Profiler.zip resources\manifest.xml resources\*.xrc" />
+			<Add after="zip -j9 ..\..\..\devel30\share\urusstudio\Profiler.zip resources\manifest.xml resources\*.xrc" />
 			<Mode after="always" />
 		</ExtraCommands>
 		<Unit filename="cbprofiler.cpp" />
