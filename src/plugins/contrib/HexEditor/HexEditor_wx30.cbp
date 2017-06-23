@@ -8,7 +8,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="../../../devel30/share/CodeBlocks/plugins/HexEditor" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel30/share\urusstudio/plugins/HexEditor" prefix_auto="1" extension_auto="1" />
 				<Option object_output="../../../.objs30/plugins/contrib/HexEditor" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -37,13 +37,13 @@
 				<Linker>
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-mthreads" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="wxmsw28u_urus_gcc_urus" />
 					<Add library="codeblocks" />
 					<Add directory="$(#WX30.lib)/gcc_dll$(WX_CFG)" />
 					<Add directory="../../../devel30" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="zip -j9 ..\..\..\devel30\share\CodeBlocks\HexEditor.zip manifest.xml" />
+					<Add after="zip -j9 ..\..\..\devel30\share\urusstudio\HexEditor.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>

@@ -12,6 +12,11 @@
 				<Option object_output=".objs31" />
 				<Option type="3" />
 				<Option compiler="gcc" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="2" />
+				<Option projectLibDirsRelation="2" />
 				<Compiler>
 					<Add directory="include/tinyxml" />
 				</Compiler>
@@ -28,7 +33,11 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Option parameters="-v +wx +int +t .. include/autorevision.h" />
-				<Option projectLinkerOptionsRelation="1" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="2" />
+				<Option projectLibDirsRelation="2" />
 				<Compiler>
 					<Add directory="include" />
 				</Compiler>
@@ -44,33 +53,43 @@
 				<Option object_output=".objs31" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option projectLinkerOptionsRelation="1" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="2" />
+				<Option projectLibDirsRelation="2" />
 				<Compiler>
 					<Add option="-Os" />
 				</Compiler>
 			</Target>
 			<Target title="Squirrel">
-				<Option output="sdk/scripting/lib/squirrel" prefix_auto="1" extension_auto="1" />
+				<Option output="devel31/squirrel" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="sdk/scripting/lib" />
 				<Option object_output=".objs31" />
 				<Option type="3" />
 				<Option compiler="gcc" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="2" />
+				<Option projectLibDirsRelation="2" />
 				<Compiler>
 					<Add option="-fno-inline" />
 					<Add directory="include/scripting/include" />
 					<Add directory="include/scripting/squirrel" />
 				</Compiler>
-				<ExtraCommands>
-					<Add after="cp -f sdk/scripting/lib/*.dll devel31/" />
-					<Mode after="always" />
-				</ExtraCommands>
 			</Target>
 			<Target title="Squirrel std lib">
-				<Option output="sdk/scripting/lib/sqstdlib" prefix_auto="1" extension_auto="1" />
+				<Option output="devel31/sqstdlib" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="sdk/scripting/lib" />
 				<Option object_output=".objs31" />
 				<Option type="3" />
 				<Option compiler="gcc" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="2" />
+				<Option projectLibDirsRelation="2" />
 				<Compiler>
 					<Add option="-fno-inline" />
 					<Add directory="include/scripting/include" />
@@ -79,17 +98,18 @@
 				<Linker>
 					<Add library="squirrel" />
 				</Linker>
-				<ExtraCommands>
-					<Add after="cp -f sdk/scripting/lib/*.dll devel31/" />
-					<Mode after="always" />
-				</ExtraCommands>
 			</Target>
 			<Target title="SqPlus">
-				<Option output="sdk/scripting/lib/sqplus" prefix_auto="1" extension_auto="1" />
+				<Option output="devel31/sqplus" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="sdk/scripting/lib" />
 				<Option object_output=".objs31" />
 				<Option type="3" />
 				<Option compiler="gcc" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="2" />
+				<Option projectLibDirsRelation="2" />
 				<Compiler>
 					<Add option="-fno-inline" />
 					<Add directory="include/scripting/include" />
@@ -99,10 +119,6 @@
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
 				</Linker>
-				<ExtraCommands>
-					<Add after="cp -f sdk/scripting/lib/*.dll devel31/" />
-					<Mode after="always" />
-				</ExtraCommands>
 			</Target>
 			<Target title="scintilla">
 				<Option output="devel31/wxscintilla_cb" prefix_auto="1" extension_auto="1" />
@@ -110,6 +126,11 @@
 				<Option object_output=".objs31" />
 				<Option type="3" />
 				<Option compiler="gcc" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="2" />
+				<Option projectLibDirsRelation="2" />
 				<Compiler>
 					<Add option="-D__WX__" />
 					<Add option="-DWINVER=0x0501" />
@@ -119,9 +140,12 @@
 					<Add directory="sdk/wxscintilla/src/scintilla/include" />
 					<Add directory="sdk/wxscintilla/src/scintilla/src" />
 					<Add directory="sdk/wxscintilla/src/scintilla/lexlib" />
+					<Add directory="$(#WXSETUP.include)" />
+					<Add directory="$(#WX31.include)" />
 				</Compiler>
 				<ResourceCompiler>
 					<Add directory="sdk/wxscintilla/include" />
+					<Add directory="$(#WXSETUP.include)" />
 				</ResourceCompiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-image-base" />
@@ -129,6 +153,8 @@
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add library="gdi32" />
+					<Add library="wxbase310u_urus_gcc_urus" />
+					<Add library="wxmsw310u_urus_core_gcc_urus" />
 				</Linker>
 			</Target>
 			<Target title="sdk">
@@ -138,7 +164,9 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --verbose -p debug" />
+				<Option projectCompilerOptionsRelation="2" />
 				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
 				<Compiler>
 					<Add option="-Woverloaded-virtual" />
 					<Add option="-DEXPORT_LIB" />
@@ -155,6 +183,8 @@
 					<Add directory="include/mozilla_chardet/xpcom" />
 					<Add directory="include/mozilla_chardet/xpcom/base" />
 					<Add directory="include/mozilla_chardet/xpcom/glue" />
+					<Add directory="$(#WX31.include)" />
+					<Add directory="$(#WXSETUP.include)" />
 				</Compiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-image-base" />
@@ -169,14 +199,22 @@
 					<Add library="sqstdlib" />
 					<Add library="squirrel" />
 					<Add library="gdi32" />
+					<Add library="wxmsw310u_urus_core_gcc_urus" />
+					<Add library="wxbase310u_urus_gcc_urus" />
+					<Add library="wxbase310u_urus_xml_gcc_urus" />
+					<Add library="wxmsw310u_urus_xrc_gcc_urus" />
+					<Add library="wxmsw310u_urus_aui_gcc_urus" />
+					<Add library="wxmsw310u_urus_html_gcc_urus" />
+					<Add library="wxbase310u_urus_net_gcc_urus" />
+					<Add library="wxmsw310u_urus_adv_gcc_urus" />
 					<Add directory="devel31" />
 					<Add directory="sdk/scripting/lib" />
 				</Linker>
 				<ExtraCommands>
 					<Add before="build_tools\autorevision\autorevision +wx +int +t .. include/autorevision.h" />
-					<Add after="cmd /c if not exist devel31\share\CodeBlocks mkdir devel31\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31\share\CodeBlocks\manager_resources.zip sdk\resources\*.xrc" />
-					<Add after='cmd /c &quot;cd sdk\resources &amp; zip -0 -q ..\..\devel31\share\CodeBlocks\manager_resources.zip images\*.png images\12x12\*.png images\16x16\*.png&quot;' />
+					<Add after="cmd /c if not exist devel31\share\urusstudio mkdir devel31\share\urusstudio" />
+					<Add after="zip -jq9 devel31/share/urusstudio/manager_resources.zip ./sdk/resources/*.xrc" />
+					<Add after='cmd /c &quot;cd sdk\resources &amp; zip -0 -q ../../devel31/share/urusstudio/manager_resources.zip ./images/*.png images/12x12/*.png images/16x16/*.png&quot;' />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
@@ -187,7 +225,11 @@
 				<Option type="0" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
+				<Option projectCompilerOptionsRelation="2" />
 				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="2" />
+				<Option projectLibDirsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -200,7 +242,12 @@
 					<Add directory="include/mozilla_chardet/xpcom/base" />
 					<Add directory="include/mozilla_chardet/xpcom/glue" />
 					<Add directory="exchndl/win32/include" />
+					<Add directory="$(#WX31.include)" />
+					<Add directory="$(#WXSETUP.include)" />
 				</Compiler>
+				<ResourceCompiler>
+					<Add directory="$(#WXSETUP.include)" />
+				</ResourceCompiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
@@ -225,22 +272,31 @@
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
+					<Add library="wxmsw310u_urus_core_gcc_urus" />
+					<Add library="wxbase310u_urus_gcc_urus" />
+					<Add library="wxmsw310u_urus_adv_gcc_urus" />
+					<Add library="wxbase310u_urus_xml_gcc_urus" />
+					<Add library="wxmsw310u_urus_xrc_gcc_urus" />
+					<Add library="wxmsw310u_urus_aui_gcc_urus" />
+					<Add library="wxmsw310u_urus_html_gcc_urus" />
+					<Add library="wxbase310u_urus_net_gcc_urus" />
+					<Add library="wxmsw310u_urus_propgrid_gcc_urus" />
 					<Add directory="devel31" />
 					<Add directory="exchndl/win32/lib" />
 				</Linker>
 				<ExtraCommands>
 					<Add before="cmd /c if exist devel31\exchndl.dll del devel31\exchndl.dll" />
-					<Add after="cmd /c if not exist devel31\share\CodeBlocks mkdir devel31\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31\share\CodeBlocks\resources.zip src\resources\*.xrc" />
-					<Add after="zip -jq9 devel31\share\CodeBlocks\start_here.zip src\resources\start_here\*.html src\resources\start_here\*.png" />
-					<Add after='cmd /c &quot;cd src\resources &amp; zip -0 -q ..\..\devel31\share\CodeBlocks\resources.zip images\*.png images\16x16\*.png&quot;' />
+					<Add after="cmd /c if not exist devel31\share\urusstudio mkdir devel31\share\urusstudio" />
+					<Add after="zip -jq9 devel31/share/urusstudio/resources.zip src/resources/*.xrc" />
+					<Add after="zip -jq9 devel31/share/urusstudio/start_here.zip src/resources/start_here/*.html src/resources/start_here/*.png" />
+					<Add after='cmd /c &quot;cd src\resources &amp; zip -0 -q ../../devel31/share/urusstudio/resources.zip images/*.png images/16x16/*.png&quot;' />
 					<Add after="cmd /c if not exist devel31\exchndl.dll if exist exchndl\win32\bin\*.dll xcopy /Y exchndl\win32\bin\*.dll devel31\" />
 					<Add after="cmd /c if not exist devel31\symsrv.yes if exist exchndl\win32\bin\symsrv.yes xcopy /Y exchndl\win32\bin\symsrv.yes devel31\" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Abbreviations">
-				<Option output="devel31/share/CodeBlocks/plugins/abbreviations" prefix_auto="1" extension_auto="1" />
+				<Option output="devel31/share/urusstudio/plugins/abbreviations" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel31" />
 				<Option object_output=".objs31" />
 				<Option type="3" />
@@ -248,13 +304,19 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./codeblocks.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="2" />
+				<Option projectLibDirsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
 					<Add directory="include/scripting/include" />
 					<Add directory="include/scripting/sqplus" />
 					<Add directory="include/scripting/bindings" />
+					<Add directory="$(#WX31.include)" />
+					<Add directory="$(#WXSETUP.include)" />
 				</Compiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-image-base" />
@@ -263,21 +325,29 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
 					<Add library="wxscintilla_cb" />
+					<Add library="wxmsw310u_urus_core_gcc_urus" />
+					<Add library="wxbase310u_urus_gcc_urus" />
+					<Add library="wxmsw310u_urus_adv_gcc_urus" />
+					<Add library="wxbase310u_urus_xml_gcc_urus" />
+					<Add library="wxmsw310u_urus_xrc_gcc_urus" />
+					<Add library="wxmsw310u_urus_aui_gcc_urus" />
+					<Add library="wxmsw310u_urus_html_gcc_urus" />
+					<Add library="wxbase310u_urus_net_gcc_urus" />
+					<Add library="wxmsw310u_urus_propgrid_gcc_urus" />
 					<Add directory="devel31" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31\share\CodeBlocks mkdir devel31\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31\share\CodeBlocks\abbreviations.zip plugins\abbreviations\resources\manifest.xml plugins\abbreviations\resources\*.xrc" />
+					<Add after="cmd /c if not exist devel31\share\urusstudio mkdir devel31\share\urusstudio" />
+					<Add after="zip -jq9 devel31/share/urusstudio/abbreviations.zip plugins/abbreviations/resources/manifest.xml plugins/abbreviations/resources/*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="AStyle">
-				<Option output="devel31/share/CodeBlocks/plugins/astyle" prefix_auto="1" extension_auto="1" />
+				<Option output="devel31/share/urusstudio/plugins/astyle" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel31" />
 				<Option object_output=".objs31" />
 				<Option type="3" />
@@ -285,12 +355,18 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./codeblocks.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="2" />
+				<Option projectLibDirsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add option="-DASTYLE_LIB" />
 					<Add directory="include" />
 					<Add directory="plugins/astyle/astyle" />
+					<Add directory="$(#WX31.include)" />
+					<Add directory="$(#WXSETUP.include)" />
 				</Compiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-image-base" />
@@ -299,21 +375,24 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
+					<Add library="wxmsw310u_urus_core_gcc_urus" />
+					<Add library="wxbase310u_urus_gcc_urus" />
+					<Add library="wxbase310u_urus_xml_gcc_urus" />
+					<Add library="wxmsw310u_urus_xrc_gcc_urus" />
 					<Add directory="devel31" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31\share\CodeBlocks mkdir devel31\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31\share\CodeBlocks\astyle.zip plugins\astyle\resources\manifest.xml plugins\astyle\resources\*.xrc" />
+					<Add after="cmd /c if not exist devel31\share\urusstudio mkdir devel31\share\urusstudio" />
+					<Add after="zip -jq9 devel31/share/urusstudio/astyle.zip plugins/astyle/resources/manifest.xml plugins/astyle/resources/*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Autosave">
-				<Option output="devel31/share/CodeBlocks/plugins/autosave" prefix_auto="1" extension_auto="1" />
+				<Option output="devel31/share/urusstudio/plugins/autosave" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel31" />
 				<Option object_output=".objs31" />
 				<Option type="3" />
@@ -321,10 +400,16 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./codeblocks.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="2" />
+				<Option projectLibDirsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
+					<Add directory="$(#WX31.include)" />
+					<Add directory="$(#WXSETUP.include)" />
 				</Compiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-image-base" />
@@ -333,16 +418,19 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
+					<Add library="wxmsw310u_urus_core_gcc_urus" />
+					<Add library="wxbase310u_urus_gcc_urus" />
+					<Add library="wxbase310u_urus_xml_gcc_urus" />
+					<Add library="wxmsw310u_urus_xrc_gcc_urus" />
 					<Add directory="devel31" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31\share\CodeBlocks mkdir devel31\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31\share\CodeBlocks\autosave.zip plugins\autosave\manifest.xml plugins\autosave\*.xrc" />
+					<Add after="cmd /c if not exist devel31\share\urusstudio mkdir devel31\share\urusstudio" />
+					<Add after="zip -jq9 devel31/share/urusstudio/autosave.zip plugins/autosave/manifest.xml plugins/autosave/*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
@@ -352,11 +440,22 @@
 				<Option object_output=".objs31" />
 				<Option type="3" />
 				<Option compiler="gcc" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="2" />
+				<Option projectLibDirsRelation="2" />
 				<Compiler>
 					<Add option="-DDEPSLIB_WINDOWS" />
+					<Add directory="$(#WX31.include)" />
+					<Add directory="$(#WXSETUP.include)" />
 				</Compiler>
 				<Linker>
 					<Add option="-mthreads" />
+					<Add library="wxmsw310u_urus_core_gcc_urus" />
+					<Add library="wxbase310u_urus_gcc_urus" />
+					<Add library="wxbase310u_urus_xml_gcc_urus" />
+					<Add library="wxmsw310u_urus_xrc_gcc_urus" />
 					<Add directory="devel31" />
 				</Linker>
 				<ExtraCommands>
@@ -365,7 +464,7 @@
 				</ExtraCommands>
 			</Target>
 			<Target title="Compiler">
-				<Option output="devel31/share/CodeBlocks/plugins/compiler" prefix_auto="1" extension_auto="1" />
+				<Option output="devel31/share/urusstudio/plugins/compiler" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel31" />
 				<Option object_output=".objs31" />
 				<Option type="3" />
@@ -373,14 +472,23 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./codeblocks.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="2" />
+				<Option projectLibDirsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
 					<Add directory="plugins/compilergcc/depslib/src" />
 					<Add directory="include/scripting/include" />
 					<Add directory="include/scripting/sqplus" />
+					<Add directory="$(#WX31.include)" />
+					<Add directory="$(#WXSETUP.include)" />
 				</Compiler>
+				<ResourceCompiler>
+					<Add directory="$(#WXSETUP.include)" />
+				</ResourceCompiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-image-base" />
 					<Add option="-Wl,--add-stdcall-alias" />
@@ -388,26 +496,34 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 					<Add library="depslib" />
 					<Add library="wxscintilla_cb" />
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
+					<Add library="wxmsw310u_urus_core_gcc_urus" />
+					<Add library="wxbase310u_urus_gcc_urus" />
+					<Add library="wxmsw310u_urus_adv_gcc_urus" />
+					<Add library="wxbase310u_urus_xml_gcc_urus" />
+					<Add library="wxmsw310u_urus_xrc_gcc_urus" />
+					<Add library="wxmsw310u_urus_aui_gcc_urus" />
+					<Add library="wxmsw310u_urus_html_gcc_urus" />
+					<Add library="wxbase310u_urus_net_gcc_urus" />
+					<Add library="wxmsw310u_urus_propgrid_gcc_urus" />
 					<Add directory="devel31" />
 					<Add directory="plugins/compilergcc/depslib" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31\share\CodeBlocks mkdir devel31\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31\share\CodeBlocks\compiler.zip plugins\compilergcc\resources\manifest.xml plugins\compilergcc\resources\*.xrc" />
-					<Add after='cmd /c &quot;cd plugins\compilergcc\resources &amp; zip -0 -q ..\..\..\devel31\share\CodeBlocks\compiler.zip images\*.png images\16x16\*.png&quot;' />
-					<Add after="cmd /c if not exist devel31\share\CodeBlocks\compilers mkdir devel31\share\CodeBlocks\compilers" />
-					<Add after="cmd /c xcopy /D /Y plugins\compilergcc\resources\compilers\*.* devel31\share\CodeBlocks\compilers" />
+					<Add after="cmd /c if not exist devel31\share\urusstudio mkdir devel31\share\urusstudio" />
+					<Add after="zip -jq9 devel31/share/urusstudio/compiler.zip plugins/compilergcc/resources/manifest.xml plugins/compilergcc/resources/*.xrc" />
+					<Add after='cmd /c &quot;cd plugins/compilergcc/resources &amp; cmd /c zip -0 -q ../../../devel31/share/urusstudio/compiler.zip images/*.png images/16x16/*.png&quot;' />
+					<Add after="cmd /c if not exist devel31\share\urusstudio\compilers mkdir devel31\share\urusstudio\compilers" />
+					<Add after="cmd /c xcopy /D /Y plugins\compilergcc\resources\compilers\*.* devel31\share\urusstudio\compilers" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Debugger">
-				<Option output="devel31/share/CodeBlocks/plugins/debugger" prefix_auto="1" extension_auto="1" />
+				<Option output="devel31/share/urusstudio/plugins/debugger" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel31" />
 				<Option object_output=".objs31" />
 				<Option type="3" />
@@ -415,12 +531,18 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./codeblocks.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="2" />
+				<Option projectLibDirsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
 					<Add directory="include/scripting/include" />
 					<Add directory="include/scripting/sqplus" />
+					<Add directory="$(#WX31.include)" />
+					<Add directory="$(#WXSETUP.include)" />
 				</Compiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-image-base" />
@@ -429,22 +551,30 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
 					<Add library="txml" />
+					<Add library="wxmsw310u_urus_core_gcc_urus" />
+					<Add library="wxbase310u_urus_gcc_urus" />
+					<Add library="wxmsw310u_urus_adv_gcc_urus" />
+					<Add library="wxbase310u_urus_xml_gcc_urus" />
+					<Add library="wxmsw310u_urus_xrc_gcc_urus" />
+					<Add library="wxmsw310u_urus_aui_gcc_urus" />
+					<Add library="wxmsw310u_urus_html_gcc_urus" />
+					<Add library="wxbase310u_urus_net_gcc_urus" />
+					<Add library="wxmsw310u_urus_propgrid_gcc_urus" />
 					<Add directory="devel31" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31\share\CodeBlocks mkdir devel31\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31\share\CodeBlocks\debugger.zip plugins\debuggergdb\resources\manifest.xml plugins\debuggergdb\resources\*.xrc" />
+					<Add after="cmd /c if not exist devel31\share\urusstudio mkdir devel31\share\urusstudio" />
+					<Add after="zip -jq9 devel31/share/urusstudio/debugger.zip plugins/debuggergdb/resources/manifest.xml plugins/debuggergdb/resources/*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Code-completion">
-				<Option output="devel31/share/CodeBlocks/plugins/codecompletion" prefix_auto="1" extension_auto="1" />
+				<Option output="devel31/share/urusstudio/plugins/codecompletion" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel31" />
 				<Option object_output=".objs31" />
 				<Option type="3" />
@@ -452,7 +582,11 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./codeblocks.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="2" />
+				<Option projectLibDirsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add option="-DCC_NO_COLLAPSE_ITEM" />
@@ -463,6 +597,8 @@
 					<Add directory="include/mozilla_chardet/xpcom" />
 					<Add directory="include/mozilla_chardet/xpcom/base" />
 					<Add directory="include/mozilla_chardet/xpcom/glue" />
+					<Add directory="$(#WX31.include)" />
+					<Add directory="$(#WXSETUP.include)" />
 				</Compiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-image-base" />
@@ -471,22 +607,26 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
 					<Add library="txml" />
+					<Add library="wxmsw310u_urus_core_gcc_urus" />
+					<Add library="wxbase310u_urus_gcc_urus" />
+					<Add library="wxbase310u_urus_xml_gcc_urus" />
+					<Add library="wxmsw310u_urus_xrc_gcc_urus" />
+					<Add library="wxmsw310u_urus_aui_gcc_urus" />
 					<Add directory="devel31" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31\share\CodeBlocks mkdir devel31\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31\share\CodeBlocks\codecompletion.zip plugins\codecompletion\resources\manifest.xml plugins\codecompletion\resources\*.xrc" />
+					<Add after="cmd /c if not exist devel31\share\urusstudio mkdir devel31\share\urusstudio" />
+					<Add after="zip -jq9 devel31/share/urusstudio/codecompletion.zip plugins/codecompletion/resources/manifest.xml plugins/codecompletion/resources/*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Class wizard">
-				<Option output="devel31/share/CodeBlocks/plugins/classwizard" prefix_auto="1" extension_auto="1" />
+				<Option output="devel31/share/urusstudio/plugins/classwizard" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel31" />
 				<Option object_output=".objs31" />
 				<Option type="3" />
@@ -494,10 +634,16 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./codeblocks.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="2" />
+				<Option projectLibDirsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
+					<Add directory="$(#WX31.include)" />
+					<Add directory="$(#WXSETUP.include)" />
 				</Compiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-image-base" />
@@ -506,22 +652,25 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
 					<Add library="txml" />
+					<Add library="wxmsw310u_urus_core_gcc_urus" />
+					<Add library="wxbase310u_urus_gcc_urus" />
+					<Add library="wxbase310u_urus_xml_gcc_urus" />
+					<Add library="wxmsw310u_urus_xrc_gcc_urus" />
 					<Add directory="devel31" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31\share\CodeBlocks mkdir devel31\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31\share\CodeBlocks\classwizard.zip plugins\classwizard\resources\manifest.xml plugins\classwizard\resources\*.xrc" />
+					<Add after="cmd /c if not exist devel31\share\urusstudio mkdir devel31\share\urusstudio" />
+					<Add after="zip -jq9 devel31/share/urusstudio/classwizard.zip plugins/classwizard/resources/manifest.xml plugins/classwizard/resources/*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Default MIME handler">
-				<Option output="devel31/share/CodeBlocks/plugins/defaultmimehandler" prefix_auto="1" extension_auto="1" />
+				<Option output="devel31/share/urusstudio/plugins/defaultmimehandler" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel31" />
 				<Option object_output=".objs31" />
 				<Option type="3" />
@@ -529,10 +678,16 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./codeblocks.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="2" />
+				<Option projectLibDirsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
+					<Add directory="$(#WX31.include)" />
+					<Add directory="$(#WXSETUP.include)" />
 				</Compiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-image-base" />
@@ -541,22 +696,26 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
 					<Add library="txml" />
+					<Add library="wxmsw310u_urus_core_gcc_urus" />
+					<Add library="wxbase310u_urus_gcc_urus" />
+					<Add library="wxbase310u_urus_xml_gcc_urus" />
+					<Add library="wxmsw310u_urus_xrc_gcc_urus" />
+					<Add library="wxmsw310u_urus_html_gcc_urus" />
 					<Add directory="devel31" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31\share\CodeBlocks mkdir devel31\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31\share\CodeBlocks\defaultmimehandler.zip plugins\defaultmimehandler\resources\manifest.xml plugins\defaultmimehandler\resources\*.xrc" />
+					<Add after="cmd /c if not exist devel31\share\urusstudio mkdir devel31\share\urusstudio" />
+					<Add after="zip -jq9 devel31/share/urusstudio/defaultmimehandler.zip plugins/defaultmimehandler/resources/manifest.xml plugins/defaultmimehandler/resources/*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Occurrences Highlighting">
-				<Option output="devel31/share/CodeBlocks/plugins/OccurrencesHighlighting" prefix_auto="1" extension_auto="1" />
+				<Option output="devel31/share/urusstudio/plugins/OccurrencesHighlighting" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel31" />
 				<Option object_output=".objs31" />
 				<Option type="3" />
@@ -564,10 +723,16 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./codeblocks.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="2" />
+				<Option projectLibDirsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
+					<Add directory="$(#WX31.include)" />
+					<Add directory="$(#WXSETUP.include)" />
 				</Compiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-image-base" />
@@ -576,22 +741,25 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
 					<Add library="txml" />
+					<Add library="wxmsw310u_urus_core_gcc_urus" />
+					<Add library="wxbase310u_urus_gcc_urus" />
+					<Add library="wxbase310u_urus_xml_gcc_urus" />
+					<Add library="wxmsw310u_urus_xrc_gcc_urus" />
 					<Add directory="devel31" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31\share\CodeBlocks mkdir devel31\share\CodeBlocks" />
-					<Add after="zip -j9 devel31\share\CodeBlocks\occurrenceshighlighting.zip plugins\occurrenceshighlighting\resources\manifest.xml plugins\occurrenceshighlighting\resources\*.xrc" />
+					<Add after="cmd /c if not exist devel31\share\urusstudio mkdir devel31\share\urusstudio" />
+					<Add after="zip -j9 devel31/share/urusstudio/occurrenceshighlighting.zip plugins/occurrenceshighlighting/resources/manifest.xml plugins/occurrenceshighlighting/resources/*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Open files list">
-				<Option output="devel31/share/CodeBlocks/plugins/openfileslist" prefix_auto="1" extension_auto="1" />
+				<Option output="devel31/share/urusstudio/plugins/openfileslist" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel31" />
 				<Option object_output=".objs31" />
 				<Option type="3" />
@@ -599,10 +767,16 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./codeblocks.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="2" />
+				<Option projectLibDirsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
+					<Add directory="$(#WX31.include)" />
+					<Add directory="$(#WXSETUP.include)" />
 				</Compiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-image-base" />
@@ -611,22 +785,25 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
 					<Add library="txml" />
+					<Add library="wxmsw310u_urus_core_gcc_urus" />
+					<Add library="wxbase310u_urus_gcc_urus" />
+					<Add library="wxbase310u_urus_xml_gcc_urus" />
+					<Add library="wxmsw310u_urus_xrc_gcc_urus" />
 					<Add directory="devel31" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31\share\CodeBlocks mkdir devel31\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31\share\CodeBlocks\openfileslist.zip plugins\openfileslist\manifest.xml" />
+					<Add after="cmd /c if not exist devel31\share\urusstudio mkdir devel31\share\urusstudio" />
+					<Add after="zip -jq9 devel31/share/urusstudio/openfileslist.zip plugins/openfileslist/manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Projects-workspaces importer">
-				<Option output="devel31/share/CodeBlocks/plugins/projectsimporter" prefix_auto="1" extension_auto="1" />
+				<Option output="devel31/share/urusstudio/plugins/projectsimporter" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel31" />
 				<Option object_output=".objs31" />
 				<Option type="3" />
@@ -634,7 +811,11 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./codeblocks.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="2" />
+				<Option projectLibDirsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -644,6 +825,8 @@
 					<Add directory="include/mozilla_chardet/xpcom" />
 					<Add directory="include/mozilla_chardet/xpcom/base" />
 					<Add directory="include/mozilla_chardet/xpcom/glue" />
+					<Add directory="$(#WX31.include)" />
+					<Add directory="$(#WXSETUP.include)" />
 				</Compiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-image-base" />
@@ -652,22 +835,25 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
 					<Add library="txml" />
+					<Add library="wxmsw310u_urus_core_gcc_urus" />
+					<Add library="wxbase310u_urus_gcc_urus" />
+					<Add library="wxbase310u_urus_xml_gcc_urus" />
+					<Add library="wxmsw310u_urus_xrc_gcc_urus" />
 					<Add directory="devel31" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31\share\CodeBlocks mkdir devel31\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31\share\CodeBlocks\projectsimporter.zip plugins\projectsimporter\resources\manifest.xml plugins\projectsimporter\resources\*.xrc" />
+					<Add after="cmd /c if not exist devel31\share\urusstudio mkdir devel31\share\urusstudio" />
+					<Add after="zip -jq9 devel31/share/urusstudio/projectsimporter.zip plugins/projectsimporter/resources/manifest.xml plugins/projectsimporter/resources/*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Scripted wizard">
-				<Option output="devel31/share/CodeBlocks/plugins/scriptedwizard" prefix_auto="1" extension_auto="1" />
+				<Option output="devel31/share/urusstudio/plugins/scriptedwizard" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel31" />
 				<Option object_output=".objs31" />
 				<Option type="3" />
@@ -675,12 +861,18 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./codeblocks.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="2" />
+				<Option projectLibDirsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
 					<Add directory="include/scripting/include" />
 					<Add directory="include/scripting/sqplus" />
+					<Add directory="$(#WX31.include)" />
+					<Add directory="$(#WXSETUP.include)" />
 				</Compiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-image-base" />
@@ -689,22 +881,26 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
 					<Add library="txml" />
+					<Add library="wxmsw310u_urus_core_gcc_urus" />
+					<Add library="wxbase310u_urus_gcc_urus" />
+					<Add library="wxbase310u_urus_xml_gcc_urus" />
+					<Add library="wxmsw310u_urus_xrc_gcc_urus" />
+					<Add library="wxmsw310u_urus_adv_gcc_urus" />
 					<Add directory="devel31" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31\share\CodeBlocks mkdir devel31\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31\share\CodeBlocks\scriptedwizard.zip plugins\scriptedwizard\resources\manifest.xml" />
+					<Add after="cmd /c if not exist devel31\share\urusstudio mkdir devel31\share\urusstudio" />
+					<Add after="zip -jq9 devel31/share/urusstudio/scriptedwizard.zip plugins/scriptedwizard/resources/manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="To-do">
-				<Option output="devel31/share/CodeBlocks/plugins/todo" prefix_auto="1" extension_auto="1" />
+				<Option output="devel31/share/urusstudio/plugins/todo" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel31" />
 				<Option object_output=".objs31" />
 				<Option type="3" />
@@ -712,7 +908,11 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./codeblocks.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="2" />
+				<Option projectLibDirsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -722,6 +922,8 @@
 					<Add directory="include/mozilla_chardet/xpcom" />
 					<Add directory="include/mozilla_chardet/xpcom/base" />
 					<Add directory="include/mozilla_chardet/xpcom/glue" />
+					<Add directory="$(#WX31.include)" />
+					<Add directory="$(#WXSETUP.include)" />
 				</Compiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-image-base" />
@@ -730,22 +932,25 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
 					<Add library="txml" />
+					<Add library="wxmsw310u_urus_core_gcc_urus" />
+					<Add library="wxbase310u_urus_gcc_urus" />
+					<Add library="wxbase310u_urus_xml_gcc_urus" />
+					<Add library="wxmsw310u_urus_xrc_gcc_urus" />
 					<Add directory="devel31" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31\share\CodeBlocks mkdir devel31\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31\share\CodeBlocks\todo.zip plugins\todo\resources\manifest.xml plugins\todo\resources\*.xrc" />
+					<Add after="cmd /c if not exist devel31\share\urusstudio mkdir devel31\share\urusstudio" />
+					<Add after="zip -jq9 devel31/share/urusstudio/todo.zip plugins/todo/resources/manifest.xml plugins/todo/resources/*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="XP look &amp; feel">
-				<Option output="devel31/share/CodeBlocks/plugins/xpmanifest" prefix_auto="1" extension_auto="1" />
+				<Option output="devel31/share/urusstudio/plugins/xpmanifest" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel31" />
 				<Option object_output=".objs31" />
 				<Option type="3" />
@@ -753,10 +958,16 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./codeblocks.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="2" />
+				<Option projectLibDirsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
+					<Add directory="$(#WX31.include)" />
+					<Add directory="$(#WXSETUP.include)" />
 				</Compiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-image-base" />
@@ -765,16 +976,19 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
+					<Add library="wxmsw310u_urus_core_gcc_urus" />
+					<Add library="wxbase310u_urus_gcc_urus" />
+					<Add library="wxbase310u_urus_xml_gcc_urus" />
+					<Add library="wxmsw310u_urus_xrc_gcc_urus" />
 					<Add directory="devel31" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31\share\CodeBlocks mkdir devel31\share\CodeBlocks" />
-					<Add after="zip -jq9 devel31\share\CodeBlocks\xpmanifest.zip plugins\xpmanifest\manifest.xml" />
+					<Add after="cmd /c if not exist devel31\share\urusstudio mkdir devel31\share\urusstudio" />
+					<Add after="zip -jq9 devel31/share/urusstudio/xpmanifest.zip plugins/xpmanifest/manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
@@ -796,31 +1010,27 @@
 			<Add option="-mthreads" />
 			<Add option="-fmessage-length=0" />
 			<Add option="-fexceptions" />
+			<Add option="-fpermissive" />
 			<Add option="-std=gnu++11" />
+			<Add option="-Wno-unused-local-typedefs" />
+			<Add option="-Wno-deprecated-declarations" />
 			<Add option="-DHAVE_W32API_H" />
 			<Add option="-D__WXMSW__" />
 			<Add option="-DWXUSINGDLL" />
-			<Add option="-DcbDEBUG" />
 			<Add option="-DNOPCH" />
 			<Add option="-DwxUSE_UNICODE" />
-			<Add directory="$(#WX31.include)" />
-			<Add directory="$(#WX31.lib)/$(WX_CFG)_dll/msw$(WX_SUFFIX)" />
 			<Add directory="sdk/wxscintilla/include" />
 			<Add directory="include/tinyxml" />
 		</Compiler>
 		<ResourceCompiler>
-			<Add directory="$(#WX31.include)" />
-			<Add directory="$(#WX31.lib)/$(WX_CFG)_dll/msw$(WX_SUFFIX)" />
 			<Add directory="sdk/scripting/lib" />
 		</ResourceCompiler>
 		<Linker>
-			<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 			<Add directory="base/tinyxml" />
-			<Add directory="$(#WX31.lib)/$(WX_CFG)_dll" />
-			<Add directory="sdk/scripting/lib" />
+			<Add directory="devel31" />
 		</Linker>
 		<ExtraCommands>
-			<Add after="cp -f $(#WX31.lib)\$(WX_CFG)_dll/*.dll devel31/" />
+			<Add after="cp -f $(#WX31.lib)/*.dll devel31/" />
 			<Mode after="always" />
 		</ExtraCommands>
 		<Unit filename="base/tinyxml/tinystr.cpp">
@@ -4286,52 +4496,52 @@
 		<Unit filename="tools/ConsoleRunner/main.cpp">
 			<Option target="ConsoleRunner" />
 		</Unit>
-		<Unit filename="wxSmith/BuildTargetPanel.wxs">
+		<Unit filename="wxsmith/BuildTargetPanel.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxSmith/CCDebugInfo.wxs">
+		<Unit filename="wxsmith/CCDebugInfo.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxSmith/CompilerPanel.wxs">
+		<Unit filename="wxsmith/CompilerPanel.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxSmith/EmbeddedHtmlPanel.wxs">
+		<Unit filename="wxsmith/EmbeddedHtmlPanel.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxSmith/FilePathPanel.wxs">
+		<Unit filename="wxsmith/FilePathPanel.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxSmith/GenericSelectPath.wxs">
+		<Unit filename="wxsmith/GenericSelectPath.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxSmith/GenericSingleChoiceList.wxs">
+		<Unit filename="wxsmith/GenericSingleChoiceList.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxSmith/InfoPanel.wxs">
+		<Unit filename="wxsmith/InfoPanel.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxSmith/ProjectPathPanel.wxs">
+		<Unit filename="wxsmith/ProjectPathPanel.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxSmith/ScriptConsole.wxs">
+		<Unit filename="wxsmith/ScriptConsole.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxSmith/VirtualBuildTargetsDlg.wxs">
+		<Unit filename="wxsmith/VirtualBuildTargetsDlg.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxSmith/databreakpointdlg.wxs">
+		<Unit filename="wxsmith/databreakpointdlg.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxSmith/debuggersettingscommonpanel.wxs">
+		<Unit filename="wxsmith/debuggersettingscommonpanel.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxSmith/debuggersettingsdlg.wxs">
+		<Unit filename="wxsmith/debuggersettingsdlg.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxSmith/debuggersettingspanel.wxs">
+		<Unit filename="wxsmith/debuggersettingspanel.wxs">
 			<Option target="src" />
 		</Unit>
-		<Unit filename="wxSmith/goto_file.wxs">
+		<Unit filename="wxsmith/goto_file.wxs">
 			<Option target="src" />
 		</Unit>
 		<Extensions>

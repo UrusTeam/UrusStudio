@@ -6,8 +6,9 @@
 		<Option default_target="Plugin - Win32" />
 		<Option compiler="gcc" />
 		<Build>
-			<Target title="Plugin">
-				<Option output="../../../devel/share/CodeBlocks/plugins/codesnippets.dll" prefix_auto="0" extension_auto="0" />
+			<Target title="Plugin - Win32">
+				<Option output="../../../devel/share\urusstudio/plugins/codesnippets.dll" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="../../../devel" />
 				<Option object_output="../../../.objs/plugins/contrib/codesnippets/plugin/" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -15,9 +16,6 @@
 				<Option host_application="../../../devel/codeblocks.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Compiler>
-					<Add option="-Wextra" />
-					<Add option="-Wall" />
-					<Add option="-g" />
 					<Add option="$(#CB_RELEASE_TYPE)" />
 					<Add option="-DCB_PRECOMP" />
 				</Compiler>
@@ -32,18 +30,15 @@
 			</Environment>
 		</Build>
 		<VirtualTargets>
-			<Add alias="All" targets="Plugin;" />
+			<Add alias="All" targets="Plugin - Win32;" />
 		</VirtualTargets>
 		<Compiler>
 			<Add option="-Wall" />
-			<Add option="-g" />
 			<Add option="-pipe" />
 			<Add option="-mthreads" />
 			<Add option="-fmessage-length=0" />
 			<Add option="-fexceptions" />
 			<Add option="-Winvalid-pch" />
-			<Add option="-std=gnu++11" />
-			<Add option="-Wno-unused-local-typedefs" />
 			<Add option="-DWXUSINGDLL" />
 			<Add option="-DHAVE_W32API_H" />
 			<Add option="-D__WXMSW__" />
@@ -52,6 +47,7 @@
 			<Add option="-DwxUSE_UNICODE" />
 			<Add option="-DBUILDING_PLUGIN" />
 			<Add option="-DNO_LOGGING" />
+			<Add option="-std=gnu++11" />
 			<Add directory="../../../include" />
 			<Add directory="../../../include/tinyxml" />
 			<Add directory="../../../sdk/wxscintilla/include" />
@@ -61,6 +57,7 @@
 			<Add directory="Search" />
 			<Add directory="editor" />
 			<Add directory="." />
+			<Add directory="../../../include/tinyxml" />
 			<Add directory="../../../include/mozilla_chardet" />
 			<Add directory="../../../include/mozilla_chardet/mfbt" />
 			<Add directory="../../../include/mozilla_chardet/nsprpub/pr/include" />
@@ -71,7 +68,7 @@
 		<Linker>
 			<Add option="-Wl,--enable-auto-import" />
 			<Add option="-mthreads" />
-			<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+			<Add library="wxmsw28u_urus_gcc_urus" />
 			<Add library="codeblocks" />
 			<Add directory="../../../devel" />
 			<Add directory="$(#WX.lib)/gcc_dll$(WX_CFG)" />
@@ -80,7 +77,8 @@
 			<Add after="update.bat" />
 			<Mode after="always" />
 		</ExtraCommands>
-		<Unit filename="FileImport.h" />
+		<Unit filename="GenericMessageBox.cpp" />
+		<Unit filename="GenericMessageBox.h" />
 		<Unit filename="Makefile.am" />
 		<Unit filename="codesnippets.cpp" />
 		<Unit filename="codesnippets.h" />

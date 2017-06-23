@@ -6,7 +6,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="../../../devel31/share/codeblocks/plugins/ToolsPlus" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel31/share/urusstudio/plugins/ToolsPlus" prefix_auto="1" extension_auto="1" />
 				<Option object_output="../../../.objs31/plugins/contrib/ToolsPlus" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -18,14 +18,17 @@
 				</Compiler>
 				<Linker>
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 					<Add library="gdi32" />
+					<Add library="wxscintilla_cb" />
+					<Add library="../../../devel31/wxbase310u_urus_gcc_urus.dll" />
+					<Add library="../../../devel31/wxmsw310u_urus_core_gcc_urus.dll" />
+					<Add library="../../../devel31/wxmsw310u_urus_aui_gcc_urus.dll" />
 					<Add directory="../../../devel31" />
-					<Add directory="$(#WX31.lib)/gcc_dll$(WX_CFG)" />
+					<Add directory="$(#WX31.lib)" />
 				</Linker>
 			</Target>
 			<Environment>
-				<Variable name="WX_CFG" value="" />
+				<Variable name="WX_CFG" value="URUS" />
 				<Variable name="WX_SUFFIX" value="u" />
 				<Variable name="WX_VERSION" value="31" />
 			</Environment>
@@ -39,14 +42,13 @@
 			<Add option="-mthreads" />
 			<Add option="-fmessage-length=0" />
 			<Add option="-fexceptions" />
+			<Add option="-std=gnu++11" />
 			<Add option="-DWXUSINGDLL" />
 			<Add option="-DHAVE_W32API_H" />
 			<Add option="-D__WXMSW__" />
-			<Add option="-DcbDEBUG" />
 			<Add option="-DNOPCH" />
 			<Add option="-DwxUSE_UNICODE" />
 			<Add option="-DBUILDING_PLUGIN" />
-			<Add option="-std=gnu++11" />
 			<Add directory="../../../include" />
 			<Add directory="../../../include/tinyxml" />
 			<Add directory="../../../sdk/wxscintilla/include" />
@@ -57,13 +59,13 @@
 			<Add directory="../../../include/mozilla_chardet/xpcom/base" />
 			<Add directory="../../../include/mozilla_chardet/xpcom/glue" />
 			<Add directory="$(#WX31.include)" />
-			<Add directory="$(#WX31.lib)/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
+			<Add directory="$(#WXSETUP.include)" />
 		</Compiler>
 		<Linker>
 			<Add option="-mthreads" />
 		</Linker>
 		<ExtraCommands>
-			<Add after="zip -j9 ..\..\..\devel31\share\codeblocks\ToolsPlus.zip manifest.xml" />
+			<Add after="zip -j9 ../../../devel31/share/urusstudio/ToolsPlus.zip manifest.xml" />
 			<Add after="update31.bat" />
 			<Mode after="always" />
 		</ExtraCommands>

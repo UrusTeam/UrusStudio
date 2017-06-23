@@ -8,12 +8,11 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="bzip2">
-				<Option output="bzip2/libbzip2.a" prefix_auto="0" extension_auto="0" />
-				<Option working_dir="" />
+				<Option output="bzip2/bzip2.dll" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="bzip2" />
 				<Option object_output="../../../.objs31/plugins/contrib/help_plugin/bzip2" />
-				<Option type="2" />
+				<Option type="3" />
 				<Option compiler="gcc" />
-				<Option createDefFile="1" />
 				<Compiler>
 					<Add option="-mthreads" />
 				</Compiler>
@@ -26,12 +25,11 @@
 				</ExtraCommands>
 			</Target>
 			<Target title="zlib">
-				<Option output="zlib/libz.a" prefix_auto="0" extension_auto="0" />
-				<Option working_dir="" />
+				<Option output="zlib/z.dll" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="zlib" />
 				<Option object_output="../../../.objs31/plugins/contrib/help_plugin/zlib" />
-				<Option type="2" />
+				<Option type="3" />
 				<Option compiler="gcc" />
-				<Option createDefFile="1" />
 				<Compiler>
 					<Add option="-mthreads" />
 				</Compiler>
@@ -44,7 +42,7 @@
 				</ExtraCommands>
 			</Target>
 			<Target title="help_plugin">
-				<Option output="../../../devel31/share/CodeBlocks/plugins/help_plugin.dll" prefix_auto="0" extension_auto="0" />
+				<Option output="../../../devel31/share/urusstudio/plugins/help_plugin.dll" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../../.objs31/plugins/contrib/help_plugin" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -63,27 +61,28 @@
 					<Add option="-DHAVE_W32API_H" />
 					<Add option="-D__WXMSW__" />
 					<Add option="-DWXUSINGDLL" />
-					<Add option="-DcbDEBUG" />
 					<Add option="-DwxUSE_UNICODE" />
 					<Add directory="bzip2" />
 					<Add directory="zlib" />
 				</Compiler>
 				<Linker>
 					<Add option="-mthreads" />
-					<Add library="bzip2/libbzip2.a" />
-					<Add library="zlib/libz.a" />
+					<Add library="bzip2" />
+					<Add library="z" />
+					<Add directory="bzip2" />
+					<Add directory="zlib" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="zip -j9 ..\..\..\devel31\share\CodeBlocks\help_plugin.zip manifest.xml *.xrc *.png" />
-					<Add after="cmd /c if not exist ..\..\..\devel31\share\CodeBlocks\docs mkdir ..\..\..\devel31\share\CodeBlocks\docs" />
-					<Add after="xcopy /Y index.ini ..\..\..\devel31\share\CodeBlocks\docs" />
-					<Add after="cmd /c if not exist ..\..\..\output31\share\CodeBlocks\docs mkdir ..\..\..\output31\share\CodeBlocks\docs" />
-					<Add after="xcopy /Y index.ini ..\..\..\output31\share\CodeBlocks\docs" />
+					<Add after="zip -j9 ../../../devel31/share/urusstudio/help_plugin.zip manifest.xml *.xrc *.png" />
+					<Add after="cmd /c if not exist ..\..\..\devel31\share\urusstudio\docs mkdir ..\..\..\devel31\share\urusstudio\docs" />
+					<Add after="xcopy /Y index.ini ..\..\..\devel31\share\urusstudio\docs" />
+					<Add after="cmd /c if not exist ..\..\..\output31\share\urusstudio\docs mkdir ..\..\..\output31\share\urusstudio\docs" />
+					<Add after="xcopy /Y index.ini ..\..\..\output31\share\urusstudio\docs" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Environment>
-				<Variable name="WX_CFG" value="" />
+				<Variable name="WX_CFG" value="URUS" />
 				<Variable name="WX_SUFFIX" value="u" />
 				<Variable name="WX_VERSION" value="31" />
 			</Environment>
@@ -94,7 +93,7 @@
 		<Compiler>
 			<Add option="-std=gnu++11" />
 			<Add directory="$(#WX31.include)" />
-			<Add directory="$(#WX31.lib)/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
+			<Add directory="$(#WXSETUP.include)" />
 			<Add directory="../../../include" />
 			<Add directory="../../../include/tinyxml" />
 			<Add directory="../../../sdk/wxscintilla/include" />
@@ -109,10 +108,17 @@
 			<Add option="-Wl,--enable-auto-image-base" />
 			<Add option="-Wl,--add-stdcall-alias" />
 			<Add option="-Wl,--enable-auto-import" />
-			<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 			<Add library="codeblocks" />
+			<Add library="wxscintilla_cb" />
+			<Add library="sqplus" />
+			<Add library="sqstdlib" />
+			<Add library="squirrel" />
+			<Add library="../../../devel31/wxbase310u_urus_gcc_urus.dll" />
+			<Add library="../../../devel31/wxmsw310u_urus_core_gcc_urus.dll" />
+			<Add library="../../../devel31/wxmsw310u_urus_xrc_gcc_urus.dll" />
+			<Add library="../../../devel31/wxmsw310u_urus_html_gcc_urus.dll" />
 			<Add directory="../../../devel31" />
-			<Add directory="$(#WX31.lib)/gcc_dll$(WX_CFG)" />
+			<Add directory="$(#WX31.lib)" />
 		</Linker>
 		<Unit filename="HelpConfigDialog.cpp">
 			<Option target="help_plugin" />

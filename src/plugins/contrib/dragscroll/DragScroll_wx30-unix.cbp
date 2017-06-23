@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="../../../devel30/share/codeblocks/plugins/dragscroll" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel30/share\urusstudio/plugins/dragscroll" prefix_auto="1" extension_auto="1" />
 				<Option object_output="../../../.objs30/plugins/contrib/dragscroll" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -46,7 +46,7 @@
 			<Add directory="../../../devel30" />
 		</Linker>
 		<ExtraCommands>
-			<Add after="zip -j9 ../../../devel30/share/codeblocks/dragscroll.zip manifest.xml" />
+			<Add after="zip -j9 ../../../devel30/share\urusstudio/dragscroll.zip manifest.xml" />
 			<Mode after="always" />
 		</ExtraCommands>
 		<Unit filename="Makefile.am" />

@@ -39,7 +39,7 @@
 				</Linker>
 			</Target>
 			<Target title="plugin">
-				<Option output="../../../devel31/share/codeblocks/plugins/SpellChecker" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel31/share\urusstudio/plugins/SpellChecker" prefix_auto="1" extension_auto="1" />
 				<Option object_output="../../../.objs31/plugins/contrib/SpellChecker" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -68,7 +68,7 @@
 					<Add directory="../../../devel31" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="zip -j9 ../../../devel31/share/codeblocks/SpellChecker.zip manifest.xml SpellCheckSettingsPanel.xrc" />
+					<Add after="zip -j9 ../../../devel31/share\urusstudio/SpellChecker.zip manifest.xml SpellCheckSettingsPanel.xrc" />
 					<Add after="./update31" />
 					<Mode after="always" />
 				</ExtraCommands>

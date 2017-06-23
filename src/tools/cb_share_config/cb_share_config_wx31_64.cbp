@@ -46,7 +46,7 @@
 		<Linker>
 			<Add option="-mthreads" />
 			<Add library="txml31_64" />
-			<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+			<Add library="wxmsw28u_urus_gcc_urus" />
 			<Add directory="$(#WX31_64.lib)/gcc_dll$(WX_CFG)" />
 			<Add directory="../../base/tinyxml" />
 		</Linker>

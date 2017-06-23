@@ -55,7 +55,7 @@
 			<Add option="-Wl,--no-undefined" />
 			<Add option="-mthreads" />
 			<Add library="codeblocks" />
-			<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+			<Add library="wxmsw28u_urus_gcc_urus" />
 			<Add directory="$(#WX.lib)/gcc_dll$(WX_CFG)" />
 			<Add directory="../../devel" />
 		</Linker>

@@ -174,7 +174,7 @@
 				</Linker>
 			</Target>
 			<Target title="Abbreviations">
-				<Option output="devel30/share/codeblocks/plugins/abbreviations" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/abbreviations" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option type="3" />
@@ -197,7 +197,7 @@
 				</Linker>
 			</Target>
 			<Target title="AStyle">
-				<Option output="devel30/share/codeblocks/plugins/Astyle" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/Astyle" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option type="3" />
@@ -218,7 +218,7 @@
 				</Linker>
 			</Target>
 			<Target title="Autosave">
-				<Option output="devel30/share/codeblocks/plugins/autosave" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/autosave" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option type="3" />
@@ -249,7 +249,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Compiler">
-				<Option output="devel30/share/codeblocks/plugins/compiler" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/compiler" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option external_deps="plugins/compilergcc/depslib/libdepslib.a;" />
@@ -275,7 +275,7 @@
 				</Linker>
 			</Target>
 			<Target title="Debugger">
-				<Option output="devel30/share/codeblocks/plugins/debugger" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/debugger" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option type="3" />
@@ -286,6 +286,8 @@
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
 					<Add directory="include" />
+					<Add directory="include/scripting/include" />
+					<Add directory="include/scripting/sqplus" />
 				</Compiler>
 				<Linker>
 					<Add option="`$(WX_CONFIG) --libs`" />
@@ -295,7 +297,7 @@
 				</Linker>
 			</Target>
 			<Target title="Code-completion">
-				<Option output="devel30/share/codeblocks/plugins/codecompletion" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/codecompletion" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option type="3" />
@@ -322,7 +324,7 @@
 				</Linker>
 			</Target>
 			<Target title="Class wizard">
-				<Option output="devel30/share/codeblocks/plugins/classwizard" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/classwizard" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option type="3" />
@@ -342,7 +344,7 @@
 				</Linker>
 			</Target>
 			<Target title="Default MIME handler">
-				<Option output="devel30/share/codeblocks/plugins/defaultmimehandler" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/defaultmimehandler" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option type="3" />
@@ -362,7 +364,7 @@
 				</Linker>
 			</Target>
 			<Target title="Occurrences Highlighting">
-				<Option output="devel30/share/codeblocks/plugins/occurrenceshighlighting" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/occurrenceshighlighting" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option type="3" />
@@ -382,7 +384,7 @@
 				</Linker>
 			</Target>
 			<Target title="Open files list">
-				<Option output="devel30/share/codeblocks/plugins/openfileslist" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/openfileslist" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option type="3" />
@@ -402,7 +404,7 @@
 				</Linker>
 			</Target>
 			<Target title="Projects-workspaces importer">
-				<Option output="devel30/share/codeblocks/plugins/projectsimporter" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/projectsimporter" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option type="3" />
@@ -428,7 +430,7 @@
 				</Linker>
 			</Target>
 			<Target title="Scripted wizard">
-				<Option output="devel30/share/codeblocks/plugins/scriptedwizard" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/scriptedwizard" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option type="3" />
@@ -450,7 +452,7 @@
 				</Linker>
 			</Target>
 			<Target title="To-do">
-				<Option output="devel30/share/codeblocks/plugins/todo" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/todo" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option type="3" />
@@ -477,7 +479,7 @@
 			</Target>
 			<Target title="XP look &amp; feel">
 				<Option platforms="Windows;" />
-				<Option output="devel30/share/CodeBlocks/plugins/xpmanifest" prefix_auto="1" extension_auto="1" />
+				<Option output="devel30/share\urusstudio/plugins/xpmanifest" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel30" />
 				<Option object_output=".objs30" />
 				<Option type="3" />
@@ -499,7 +501,7 @@
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="wxmsw28u_urus_gcc_urus" />
 					<Add directory="devel30" />
 				</Linker>
 			</Target>
@@ -537,6 +539,9 @@
 		</Linker>
 		<Unit filename="base/tinyxml/tinystr.cpp">
 			<Option target="tinyXML" />
+		</Unit>
+		<Unit filename="sdk/tinywxuni.cpp">
+			<Option target="sdk" />
 		</Unit>
 		<Unit filename="base/tinyxml/tinyxml.cpp">
 			<Option target="tinyXML" />
@@ -1082,11 +1087,11 @@
 		<Unit filename="include/templatemanager.h">
 			<Option target="sdk" />
 		</Unit>
-		<Unit filename="include/tinywxuni.h">
-			<Option target="sdk" />
-		</Unit>
 		<Unit filename="include/tinyxml/tinystr.h">
 			<Option target="tinyXML" />
+		</Unit>
+		<Unit filename="include/tinywxuni.h">
+			<Option target="sdk" />
 		</Unit>
 		<Unit filename="include/tinyxml/tinyxml.h">
 			<Option target="tinyXML" />
@@ -2271,6 +2276,9 @@
 		<Unit filename="plugins/xpmanifest/windowsxplooknfeel.h">
 			<Option target="XP look &amp; feel" />
 		</Unit>
+		<Unit filename="scripts/gdb_types.script">
+			<Option target="Debugger" />
+		</Unit>
 		<Unit filename="scripts/make_dist.script">
 			<Option target="src" />
 		</Unit>
@@ -2665,12 +2673,6 @@
 		<Unit filename="sdk/resources/global_uservars.xrc">
 			<Option target="sdk" />
 		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_A68k.sample">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_A68k.xml">
-			<Option target="scintilla" />
-		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_OgreCompositor.sample">
 			<Option target="scintilla" />
 		</Unit>
@@ -2695,12 +2697,6 @@
 		<Unit filename="sdk/resources/lexers/lexer_angelscript.xml">
 			<Option target="scintilla" />
 		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_autotools.sample">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_autotools.xml">
-			<Option target="scintilla" />
-		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_bash.sample">
 			<Option target="scintilla" />
 		</Unit>
@@ -2711,9 +2707,6 @@
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_batch.xml">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_bibtex.sample">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_bibtex.xml">
@@ -2753,12 +2746,6 @@
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_css.xml">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_cu.sample">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_cu.xml">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_d.sample">
@@ -2815,18 +2802,6 @@
 		<Unit filename="sdk/resources/lexers/lexer_html.xml">
 			<Option target="scintilla" />
 		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_ihex.sample">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_ihex.xml">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_inno.sample">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_inno.xml">
-			<Option target="scintilla" />
-		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_java.sample">
 			<Option target="scintilla" />
 		</Unit>
@@ -2861,12 +2836,6 @@
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_make.xml">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_markdown.sample">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_markdown.xml">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_masm.sample">
@@ -2905,19 +2874,10 @@
 		<Unit filename="sdk/resources/lexers/lexer_perl.xml">
 			<Option target="scintilla" />
 		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_plain.xml">
-			<Option target="scintilla" />
-		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_postscript.sample">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_postscript.xml">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_powershell.sample">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_powershell.xml">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_prg.sample">
@@ -2932,9 +2892,6 @@
 		<Unit filename="sdk/resources/lexers/lexer_properties.xml">
 			<Option target="scintilla" />
 		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_proto.xml">
-			<Option target="scintilla" />
-		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_python.sample">
 			<Option target="scintilla" />
 		</Unit>
@@ -2945,12 +2902,6 @@
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_rc.xml">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_registry.sample">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_registry.xml">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_ruby.sample">
@@ -2977,18 +2928,6 @@
 		<Unit filename="sdk/resources/lexers/lexer_squirrel.xml">
 			<Option target="scintilla" />
 		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_srec.sample">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_srec.xml">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_tehex.sample">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_tehex.xml">
-			<Option target="scintilla" />
-		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_vbscript.sample">
 			<Option target="scintilla" />
 		</Unit>
@@ -3011,12 +2950,6 @@
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/resources/lexers/lexer_xml.xml">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_yaml.sample">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/resources/lexers/lexer_yaml.xml">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/resources/new_from_template.xrc">
@@ -3162,9 +3095,6 @@
 		<Unit filename="sdk/templatemanager.cpp">
 			<Option target="sdk" />
 		</Unit>
-		<Unit filename="sdk/tinywxuni.cpp">
-			<Option target="sdk" />
-		</Unit>
 		<Unit filename="sdk/toolsmanager.cpp">
 			<Option target="sdk" />
 		</Unit>
@@ -3199,9 +3129,6 @@
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/include/SciLexer.h">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/wxscintilla/src/scintilla/include/Sci_Position.h">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/include/Scintilla.h">
@@ -3249,9 +3176,6 @@
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexBasic.cxx">
 			<Option target="scintilla" />
 		</Unit>
-		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexBatch.cxx">
-			<Option target="scintilla" />
-		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexBibTeX.cxx">
 			<Option target="scintilla" />
 		</Unit>
@@ -3297,13 +3221,7 @@
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexDMIS.cxx">
 			<Option target="scintilla" />
 		</Unit>
-		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexDiff.cxx">
-			<Option target="scintilla" />
-		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexECL.cxx">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexEDIFACT.cxx">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexEScript.cxx">
@@ -3313,9 +3231,6 @@
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexErlang.cxx">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexErrorList.cxx">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexFlagship.cxx">
@@ -3342,13 +3257,7 @@
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexHex.cxx">
 			<Option target="scintilla" />
 		</Unit>
-		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexIndent.cxx">
-			<Option target="scintilla" />
-		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexInno.cxx">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexJSON.cxx">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexKVIrc.cxx">
@@ -3381,9 +3290,6 @@
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexMagik.cxx">
 			<Option target="scintilla" />
 		</Unit>
-		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexMake.cxx">
-			<Option target="scintilla" />
-		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexMarkdown.cxx">
 			<Option target="scintilla" />
 		</Unit>
@@ -3405,13 +3311,13 @@
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexNsis.cxx">
 			<Option target="scintilla" />
 		</Unit>
-		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexNull.cxx">
-			<Option target="scintilla" />
-		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexOScript.cxx">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexOpal.cxx">
+			<Option target="scintilla" />
+		</Unit>
+		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexOthers.cxx">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexPB.cxx">
@@ -3442,9 +3348,6 @@
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexProgress.cxx">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexProps.cxx">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexPython.cxx">
@@ -3720,9 +3623,6 @@
 		<Unit filename="sdk/wxscintilla/src/scintilla/src/PerLine.h">
 			<Option target="scintilla" />
 		</Unit>
-		<Unit filename="sdk/wxscintilla/src/scintilla/src/Position.h">
-			<Option target="scintilla" />
-		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/src/PositionCache.cxx">
 			<Option target="scintilla" />
 		</Unit>
@@ -3753,9 +3653,6 @@
 		<Unit filename="sdk/wxscintilla/src/scintilla/src/Selection.h">
 			<Option target="scintilla" />
 		</Unit>
-		<Unit filename="sdk/wxscintilla/src/scintilla/src/SparseVector.h">
-			<Option target="scintilla" />
-		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/src/SplitVector.h">
 			<Option target="scintilla" />
 		</Unit>
@@ -3772,9 +3669,6 @@
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/src/UnicodeFromUTF8.h">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/wxscintilla/src/scintilla/src/UniqueString.h">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/src/ViewStyle.cxx">

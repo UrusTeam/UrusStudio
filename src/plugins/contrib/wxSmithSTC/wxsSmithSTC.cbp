@@ -8,7 +8,7 @@
 		<Build>
 			<Target title="wxSTC">
 				<Option platforms="Windows;" />
-				<Option output="../../../devel/wxSTC" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel/wxSTC" prefix_auto="0" extension_auto="1" />
 				<Option working_dir="../../../devel" />
 				<Option object_output="../../../.objs/plugins/contrib/wxSmithSTC/wxSTC" />
 				<Option type="3" />
@@ -34,7 +34,7 @@
 			</Target>
 			<Target title="wxSTEdit">
 				<Option platforms="Windows;" />
-				<Option output="../../../devel/wxSTEdit" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel/wxSTEdit" prefix_auto="0" extension_auto="1" />
 				<Option working_dir="../../../devel" />
 				<Option object_output="../../../.objs/plugins/contrib/wxSmithSTC/wxSTEdit" />
 				<Option type="3" />
@@ -60,7 +60,7 @@
 			</Target>
 			<Target title="wxSmithSTC">
 				<Option platforms="Windows;" />
-				<Option output="../../../devel/share/codeblocks/plugins/wxSmithSTC" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel/share/urusstudio/plugins/wxSmithSTC" prefix_auto="0" extension_auto="1" />
 				<Option working_dir="../../../devel" />
 				<Option object_output="../../../.objs/plugins/contrib/wxSmithSTC" />
 				<Option type="3" />
@@ -93,7 +93,7 @@
 					<Add directory="../../../devel" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="zip -j9 ..\..\..\devel\share\CodeBlocks\wxSmithSTC.zip manifest.xml" />
+					<Add after="zip -j9 ..\..\..\devel\share\urusstudio\wxSmithSTC.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
@@ -118,16 +118,34 @@
 			<Add option="-DWXUSINGDLL" />
 			<Add option="-DWX_PRECOMP" />
 			<Add option="-DwxUSE_UNICODE" />
-			<Add directory="$(#wx.include)" />
-			<Add directory="$(#wx.lib)/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
+			<Add directory="$(#WX31.include)" />
+			<Add directory="$(#WXSETUP.include)" />
+			<Add directory="stc/include" />
+			<Add directory="stedit/include" />
+			<Add directory="../wxSmithSTC" />
 		</Compiler>
+		<ResourceCompiler>
+			<Add directory="$(#WXSETUP.include)" />
+		</ResourceCompiler>
 		<Linker>
 			<Add option="-Wl,--enable-auto-image-base" />
 			<Add option="-Wl,--export-all-symbols" />
 			<Add option="-Wl,--enable-auto-import" />
 			<Add option="-Wl,--add-stdcall-alias" />
-			<Add library="wxmsw28$(WX_SUFFIX)" />
-			<Add directory="$(#wx.lib)/gcc_dll$(WX_CFG)" />
+			<Add library="../../../devel31/wxmsw310u_urus_adv_gcc_urus.dll" />
+			<Add library="../../../devel31/wxmsw310u_urus_aui_gcc_urus.dll" />
+			<Add library="../../../devel31/wxmsw310u_urus_core_gcc_urus.dll" />
+			<Add library="../../../devel31/wxmsw310u_urus_gl_gcc_urus.dll" />
+			<Add library="../../../devel31/wxmsw310u_urus_html_gcc_urus.dll" />
+			<Add library="../../../devel31/wxmsw310u_urus_media_gcc_urus.dll" />
+			<Add library="../../../devel31/wxmsw310u_urus_propgrid_gcc_urus.dll" />
+			<Add library="../../../devel31/wxmsw310u_urus_qa_gcc_urus.dll" />
+			<Add library="../../../devel31/wxmsw310u_urus_ribbon_gcc_urus.dll" />
+			<Add library="../../../devel31/wxmsw310u_urus_richtext_gcc_urus.dll" />
+			<Add library="../../../devel31/wxmsw310u_urus_stc_gcc_urus.dll" />
+			<Add library="../../../devel31/wxmsw310u_urus_webview_gcc_urus.dll" />
+			<Add library="../../../devel31/wxmsw310u_urus_xrc_gcc_urus.dll" />
+			<Add directory="$(#WX31.lib)" />
 		</Linker>
 		<Unit filename="images/RTF16.xpm">
 			<Option target="wxSmithSTC" />

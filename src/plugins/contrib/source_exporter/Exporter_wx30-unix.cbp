@@ -20,7 +20,7 @@
 				</Compiler>
 			</Target>
 			<Target title="default">
-				<Option output="../../../devel30/share/codeblocks/plugins/exporter" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel30/share\urusstudio/plugins/exporter" prefix_auto="1" extension_auto="1" />
 				<Option object_output="../../../.objs30/plugins/contrib/source_exporter" />
 				<Option external_deps="wxPdfDocument/lib30/libwxPdfDocument.a;" />
 				<Option type="3" />
@@ -34,7 +34,7 @@
 					<Add directory="wxPdfDocument/lib30" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="zip -j9 ../../../devel30/share/codeblocks/exporter.zip manifest.xml" />
+					<Add after="zip -j9 ../../../devel30/share\urusstudio/exporter.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>

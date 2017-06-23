@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="../../../devel/share/codeblocks/plugins/EditorConfig" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel/share\urusstudio/plugins/EditorConfig" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="../../../devel" />
 				<Option object_output="../../../.objs/plugins/contrib/EditorConfig" />
 				<Option type="3" />
@@ -43,7 +43,7 @@
 					<Add directory="$(#wx.lib)/gcc_dll$(WX_CFG)" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="zip -j9 ..\..\..\devel\share\CodeBlocks\EditorConfig.zip manifest.xml" />
+					<Add after="zip -j9 ..\..\..\devel\share\urusstudio\EditorConfig.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
