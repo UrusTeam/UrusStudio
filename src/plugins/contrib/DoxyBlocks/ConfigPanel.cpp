@@ -180,7 +180,7 @@ ConfigPanel::ConfigPanel(wxWindow* parent, DoxyBlocks *pOwner, wxWindowID /*id*/
     RadioBoxBlockComments->SetToolTip(_("Select your preferred block comment style."));
     BoxSizer2->Add(RadioBoxBlockComments, 1, wxALL|wxEXPAND, 5);
     StaticBoxSizer1 = new wxStaticBoxSizer(wxVERTICAL, Panel2, _("Block Comment Sample"));
-    TextCtrlBlockComment = new cbStyledTextCtrl(Panel2, ID_TEXTCTRL_BLOCKCOMMENT, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL_BLOCKCOMMENT"));
+    //TextCtrlBlockComment = new cbStyledTextCtrl(Panel2, ID_TEXTCTRL_BLOCKCOMMENT, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL_BLOCKCOMMENT"));
     TextCtrlBlockComment->SetToolTip(_("Sample code using the selected block comment style."));
     // wxSmith doesn't handle cbStyledTextCtrl initialisation properly. Replace the line above with the commented one below.
     // You will need to do this every time wxSmith rewrites this entry.
@@ -200,11 +200,11 @@ ConfigPanel::ConfigPanel(wxWindow* parent, DoxyBlocks *pOwner, wxWindowID /*id*/
     RadioBoxLineComments->SetToolTip(_("Select your preferred line comment style."));
     BoxSizer10->Add(RadioBoxLineComments, 1, wxALL|wxEXPAND, 5);
     StaticBoxSizer3 = new wxStaticBoxSizer(wxVERTICAL, Panel2, _("Line Comment Sample"));
-    TextCtrlLineComment = new cbStyledTextCtrl(Panel2, ID_TEXTCTRL_LINECOMMENT, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL_LINECOMMENT"));
+    //TextCtrlLineComment = new cbStyledTextCtrl(Panel2, ID_TEXTCTRL_LINECOMMENT, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL_LINECOMMENT"));
     TextCtrlLineComment->SetToolTip(_("Sample code using the selected line comment style."));
     // wxSmith doesn't handle cbStyledTextCtrl initialisation properly. Replace the line above with the commented one below.
     // You will need to do this every time wxSmith rewrites this entry.
-    // TextCtrlLineComment = new cbStyledTextCtrl(Panel2, ID_TEXTCTRL_LINECOMMENT, wxDefaultPosition, wxSize(150,150));
+    TextCtrlLineComment = new cbStyledTextCtrl(Panel2, ID_TEXTCTRL_LINECOMMENT, wxDefaultPosition, wxSize(150,150));
     StaticBoxSizer3->Add(TextCtrlLineComment, 1, wxALL|wxEXPAND, 5);
     BoxSizer10->Add(StaticBoxSizer3, 3, wxALL|wxEXPAND, 5);
     BoxSizer6->Add(BoxSizer10, 1, wxALL|wxEXPAND, 5);
