@@ -32,7 +32,7 @@
 				</Compiler>
 			</Target>
 			<Target title="help_plugin">
-				<Option output="../../../devel/share/codeblocks/plugins/libhelp_plugin" prefix_auto="0" extension_auto="1" />
+				<Option output="../../../devel/share\urusstudio/plugins/libhelp_plugin" prefix_auto="0" extension_auto="1" />
 				<Option object_output="../../../.objs/plugins/contrib/help_plugin" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -82,7 +82,7 @@
 			<Add directory="zlib" />
 		</Linker>
 		<ExtraCommands>
-			<Add after="zip -j9 ../../../devel/share/codeblocks/help_plugin.zip manifest.xml *.xrc *.png" />
+			<Add after="zip -j9 ../../../devel/share\urusstudio/help_plugin.zip manifest.xml *.xrc *.png" />
 		</ExtraCommands>
 		<Unit filename="HelpConfigDialog.cpp">
 			<Option target="help_plugin" />

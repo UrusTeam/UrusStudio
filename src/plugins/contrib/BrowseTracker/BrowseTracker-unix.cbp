@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="../../../devel/share/codeblocks/plugins/libBrowseTracker" prefix_auto="0" extension_auto="1" />
+				<Option output="../../../devel/share\urusstudio/plugins/libBrowseTracker" prefix_auto="0" extension_auto="1" />
 				<Option object_output="../../../.objs/plugins/contrib/BrowseTracker" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -33,9 +33,9 @@
 					<Add directory="../../../devel" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="zip -j9 ../../../devel/share/codeblocks/BrowseTracker.zip manifest.xml" />
-					<Add after="zip -j9 ../../../devel/share/codeblocks/BrowseTracker.zip BrowseTrackerToolbar.xrc" />
-					<Add after="zip -9r  ../../../devel/share/codeblocks/BrowseTracker.zip ./images" />
+					<Add after="zip -j9 ../../../devel/share\urusstudio/BrowseTracker.zip manifest.xml" />
+					<Add after="zip -j9 ../../../devel/share\urusstudio/BrowseTracker.zip BrowseTrackerToolbar.xrc" />
+					<Add after="zip -9r  ../../../devel/share\urusstudio/BrowseTracker.zip ./images" />
 				</ExtraCommands>
 			</Target>
 		</Build>

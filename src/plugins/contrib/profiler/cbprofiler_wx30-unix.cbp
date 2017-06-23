@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="../../../devel30/share/codeblocks/plugins/Profiler" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel30/share\urusstudio/plugins/Profiler" prefix_auto="1" extension_auto="1" />
 				<Option object_output="../../../.objs30/plugins/contrib/profiler" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -42,7 +42,7 @@
 			<Add directory="$(CBDIR)/devel30" />
 		</Linker>
 		<ExtraCommands>
-			<Add after="zip -j9 ../../../devel30/share/codeblocks/Profiler.zip resources/manifest.xml resources/*.xrc" />
+			<Add after="zip -j9 ../../../devel30/share\urusstudio/Profiler.zip resources/manifest.xml resources/*.xrc" />
 			<Mode after="always" />
 		</ExtraCommands>
 		<Unit filename="cbprofiler.cpp" />

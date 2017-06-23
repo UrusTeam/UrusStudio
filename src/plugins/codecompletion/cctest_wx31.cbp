@@ -40,23 +40,23 @@
 			<Add option="-DcbDEBUG" />
 			<Add option="-DwxUSE_UNICODE" />
 			<Add directory="$(#WX31.include)" />
-			<Add directory="$(#WX31.lib)/$(WX_CFG)_dll/msw$(WX_SUFFIX)" />
+			<Add directory="$(#WXSETUP.include)" />
 			<Add directory="../../include" />
 			<Add directory="../../include/tinyxml" />
 			<Add directory="../../sdk/wxscintilla/include" />
 		</Compiler>
 		<ResourceCompiler>
 			<Add directory="$(#WX31.include)" />
-			<Add directory="$(#WX31.lib)/$(WX_CFG)_dll/msw$(WX_SUFFIX)" />
+			<Add directory="$(#WXSETUP.include)" />
 		</ResourceCompiler>
 		<Linker>
 			<Add option="-Wl,--enable-auto-import" />
 			<Add option="-Wl,--no-undefined" />
 			<Add option="-mthreads" />
 			<Add library="codeblocks" />
-			<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+			<Add library="wxmsw28u_urus_gcc_urus" />
 			<Add library="wxscintilla_cb" />
-			<Add directory="$(#WX31.lib)/$(WX_CFG)_dll" />
+			<Add directory="$(#WX31.lib)" />
 			<Add directory="../../devel31" />
 		</Linker>
 		<Unit filename="cctest/cctest_app.cpp" />

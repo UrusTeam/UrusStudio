@@ -24,13 +24,12 @@
 					<Add option="-DHUNSPELL_STATIC" />
 					<Add directory="wxspellchecker/include" />
 					<Add directory="$(#WX31.include)" />
-					<Add directory="$(#WX31.lib)/$(WX_CFG)_dll/msw$(WX_SUFFIX)" />
+					<Add directory="$(#WXSETUP.include)" />
 					<Add directory="hunspell/src/hunspell" />
 					<Add directory="hunspell/" />
 				</Compiler>
 				<Linker>
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-					<Add directory="$(#WX31.lib)/$(WX_CFG)_dll" />
+					<Add directory="$(#WX31.lib)" />
 					<Add directory="hunspell/" />
 					<Add directory="hunspell/src/hunspell" />
 					<Add directory="../../../devel31" />
@@ -54,17 +53,16 @@
 					<Add directory="hunspell/src" />
 					<Add directory="wxspellchecker/include" />
 					<Add directory="$(#WX31.include)" />
-					<Add directory="$(#WX31.lib)/$(WX_CFG)_dll/msw$(WX_SUFFIX)" />
+					<Add directory="$(#WXSETUP.include)" />
 				</Compiler>
 				<Linker>
 					<Add library="hunspell" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 					<Add directory="../../../devel31" />
-					<Add directory="$(#WX31.lib)/$(WX_CFG)_dll" />
+					<Add directory="$(#WX31.lib)" />
 				</Linker>
 			</Target>
 			<Target title="plugin">
-				<Option output="../../../devel31/share/CodeBlocks/plugins/SpellChecker" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel31/share/urusstudio/plugins/SpellChecker" prefix_auto="1" extension_auto="1" />
 				<Option object_output="../../../.objs31/plugins/contrib/SpellChecker" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -79,39 +77,37 @@
 					<Add option="-mthreads" />
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add option="-DNOPCH" />
-					<Add option="-DcbDEBUG" />
 					<Add directory="hunspell/src" />
 					<Add directory="wxspellchecker/include" />
 					<Add directory="../../../include" />
 					<Add directory="../../../include/tinyxml" />
 					<Add directory="../../../sdk/wxscintilla/include" />
 					<Add directory="$(#WX31.include)" />
-					<Add directory="$(#WX31.lib)/$(WX_CFG)_dll/msw$(WX_SUFFIX)" />
+					<Add directory="$(#WXSETUP.include)" />
 				</Compiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-import" />
 					<Add library="wxSpellChecker" />
 					<Add library="hunspell" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="txml" />
 					<Add directory="../../../devel31" />
-					<Add directory="$(#WX31.lib)/$(WX_CFG)_dll" />
+					<Add directory="$(#WX31.lib)" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist ..\..\..\devel31\share\CodeBlocks\SpellChecker mkdir ..\..\..\devel31\share\CodeBlocks\SpellChecker" />
-					<Add after="cmd /c if not exist ..\..\..\devel31\share\CodeBlocks\images\settings mkdir ..\..\..\devel31\share\CodeBlocks\images\settings" />
-					<Add after="zip -j9 ..\..\..\devel31\share\CodeBlocks\SpellChecker.zip manifest.xml SpellCheckSettingsPanel.xrc" />
-					<Add after='xcopy /Y *.png &quot;..\..\..\devel31\share\Codeblocks\images\settings\*&quot;' />
-					<Add after='xcopy /Y *.png &quot;..\..\..\output31\share\Codeblocks\images\settings\*&quot;' />
-					<Add after='xcopy /Y OnlineSpellChecking.xml  &quot;..\..\..\devel31\share\CodeBlocks\SpellChecker\&quot;' />
-					<Add after='xcopy /Y dictionaries\*.aff &quot;..\..\..\devel31\share\CodeBlocks\SpellChecker\&quot;' />
-					<Add after='xcopy /Y dictionaries\*.dic &quot;..\..\..\devel31\share\CodeBlocks\SpellChecker\&quot;' />
-					<Add after='xcopy /Y dictionaries\th_*.dat &quot;..\..\..\devel31\share\CodeBlocks\SpellChecker\&quot;' />
-					<Add after='xcopy /Y dictionaries\th_*.idx &quot;..\..\..\devel31\share\CodeBlocks\SpellChecker\&quot;' />
-					<Add after='xcopy /Y rc\*.png &quot;..\..\..\devel31\share\CodeBlocks\SpellChecker\&quot;' />
-					<Add after='xcopy /Y &quot;..\..\..\devel31\share\CodeBlocks\SpellChecker\*&quot; &quot;..\..\..\output31\share\CodeBlocks\SpellChecker\*&quot;' />
+					<Add after="cmd /c if not exist ..\..\..\devel31\share\urusstudio\SpellChecker mkdir ..\..\..\devel31\share\urusstudio\SpellChecker" />
+					<Add after="cmd /c if not exist ..\..\..\devel31\share\urusstudio\images\settings mkdir ..\..\..\devel31\share\urusstudio\images\settings" />
+					<Add after="zip -j9 ../../../devel31/share/urusstudio/SpellChecker.zip manifest.xml SpellCheckSettingsPanel.xrc" />
+					<Add after='xcopy /Y *.png &quot;..\..\..\devel31\share\urusstudio\images\settings\*&quot;' />
+					<Add after='xcopy /Y *.png &quot;..\..\..\output31\share\urusstudio\images\settings\*&quot;' />
+					<Add after='xcopy /Y OnlineSpellChecking.xml  &quot;..\..\..\devel31\share\urusstudio\SpellChecker\&quot;' />
+					<Add after='xcopy /Y dictionaries\*.aff &quot;..\..\..\devel31\share\urusstudio\SpellChecker\&quot;' />
+					<Add after='xcopy /Y dictionaries\*.dic &quot;..\..\..\devel31\share\urusstudio\SpellChecker\&quot;' />
+					<Add after='xcopy /Y dictionaries\th_*.dat &quot;..\..\..\devel31\share\urusstudio\SpellChecker\&quot;' />
+					<Add after='xcopy /Y dictionaries\th_*.idx &quot;..\..\..\devel31\share\urusstudio\SpellChecker\&quot;' />
+					<Add after='xcopy /Y rc\*.png &quot;..\..\..\devel31\share\urusstudio\SpellChecker\&quot;' />
+					<Add after='xcopy /Y &quot;..\..\..\devel31\share\urusstudio\SpellChecker\*&quot; &quot;..\..\..\output31\share\urusstudio\SpellChecker\*&quot;' />
 					<Mode after="always" />
 				</ExtraCommands>
 				<Environment>
@@ -136,6 +132,12 @@
 			<Add option="-DWXUSINGDLL" />
 			<Add option="-DwxUSE_UNICODE" />
 		</Compiler>
+		<Linker>
+			<Add library="../../../devel31/wxbase310u_urus_gcc_urus.dll" />
+			<Add library="../../../devel31/wxmsw310u_urus_core_gcc_urus.dll" />
+			<Add library="../../../devel31/wxmsw310u_urus_xrc_gcc_urus.dll" />
+			<Add library="../../../devel31/wxmsw310u_urus_adv_gcc_urus.dll" />
+		</Linker>
 		<Unit filename="DictionariesNeededDialog.cpp">
 			<Option target="plugin" />
 		</Unit>

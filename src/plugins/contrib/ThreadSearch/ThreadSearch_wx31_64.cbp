@@ -6,7 +6,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="../../../devel31_64/share/CodeBlocks/plugins/ThreadSearch.dll" prefix_auto="0" extension_auto="0" />
+				<Option output="../../../devel31_64/share\urusstudio/plugins/ThreadSearch.dll" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../../.objs31_64/plugins/contrib/ThreadSearch" />
 				<Option external_deps="../../../devel31_64/wxcustombutton.dll;" />
 				<Option type="3" />
@@ -19,7 +19,7 @@
 				</Compiler>
 				<Linker>
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="wxmsw28u_urus_gcc_urus" />
 					<Add library="wxcustombutton" />
 					<Add directory="../../../devel31_64" />
 					<Add directory="$(#WX31_64.lib)/gcc_dll$(WX_CFG)" />
@@ -68,7 +68,7 @@
 			<Add option="-mthreads" />
 		</Linker>
 		<ExtraCommands>
-			<Add after="zip -j9 ..\..\..\devel31_64\share\codeblocks\ThreadSearch.zip manifest.xml" />
+			<Add after="zip -j9 ..\..\..\devel31_64\share\urusstudio\ThreadSearch.zip manifest.xml" />
 			<Add after="update31_64.bat" />
 			<Mode after="always" />
 		</ExtraCommands>

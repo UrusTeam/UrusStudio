@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="../../../devel30/share/codeblocks/plugins/ReopenEditor" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel30/share\urusstudio/plugins/ReopenEditor" prefix_auto="1" extension_auto="1" />
 				<Option object_output="../../../.objs30/plugins/contrib/ReopenEditor" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -37,12 +37,12 @@
 				<Linker>
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
+					<Add library="wxmsw28u_urus_gcc_urus" />
 					<Add directory="../../../devel30" />
 					<Add directory="$(#WX30.lib)/gcc_dll$(WX_CFG)" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="zip -jq9 ..\..\..\devel30\share\codeblocks\ReopenEditor.zip manifest.xml *.xrc" />
+					<Add after="zip -jq9 ..\..\..\devel30\share\urusstudio\ReopenEditor.zip manifest.xml *.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 				<Environment>

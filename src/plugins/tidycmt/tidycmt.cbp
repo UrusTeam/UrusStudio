@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="..\..\devel\share\codeblocks\plugins\tidycmt" prefix_auto="1" extension_auto="1" />
+				<Option output="..\..\devel\share\urusstudio\plugins\tidycmt" prefix_auto="1" extension_auto="1" />
 				<Option object_output="..\..\.objs\plugins\tidycmt" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -40,7 +40,7 @@
 					<Add directory="$(#WX.lib)\gcc_dll$(WX_CFG)" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="zip -j9 ..\..\devel\share\CodeBlocks\tidycmt.zip manifest.xml" />
+					<Add after="zip -j9 ..\..\devel\share\urusstudio\tidycmt.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
