@@ -219,7 +219,7 @@
 				</ExtraCommands>
 			</Target>
 			<Target title="src">
-				<Option output="devel31/urusstudio" prefix_auto="1" extension_auto="1" />
+				<Option output="devel31/CodeBlocks" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel31" />
 				<Option object_output=".objs31" />
 				<Option type="0" />
@@ -302,7 +302,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Option projectLinkerOptionsRelation="2" />
@@ -353,7 +353,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Option projectLinkerOptionsRelation="2" />
@@ -398,7 +398,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Option projectLinkerOptionsRelation="2" />
@@ -470,7 +470,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Option projectLinkerOptionsRelation="2" />
@@ -529,7 +529,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Option projectLinkerOptionsRelation="2" />
@@ -580,7 +580,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Option projectLinkerOptionsRelation="2" />
@@ -632,7 +632,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Option projectLinkerOptionsRelation="2" />
@@ -676,7 +676,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Option projectLinkerOptionsRelation="2" />
@@ -721,7 +721,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Option projectLinkerOptionsRelation="2" />
@@ -765,7 +765,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Option projectLinkerOptionsRelation="2" />
@@ -809,7 +809,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Option projectLinkerOptionsRelation="2" />
@@ -859,7 +859,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Option projectLinkerOptionsRelation="2" />
@@ -906,7 +906,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Option projectLinkerOptionsRelation="2" />
@@ -956,7 +956,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Option projectLinkerOptionsRelation="2" />

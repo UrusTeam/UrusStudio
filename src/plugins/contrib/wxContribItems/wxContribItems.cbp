@@ -13,9 +13,15 @@
 				<Option object_output="../../../.objs/plugins/contrib/wxContribItems/wxFlatNotebook" />
 				<Option type="3" />
 				<Option compiler="gcc" />
-				<Option createStaticLib="1" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="2" />
+				<Option projectLibDirsRelation="2" />
 				<Compiler>
+					<Add option="-I/d/codeblocks-src2/install/lib/wx/include/msw-unicode-release-2.8-urus -I/d/codeblocks-src2/install/include/wx-2.8-urus -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES -DWXUSINGDLL -D__WXMSW__ -mthreads" />
 					<Add option="-DWXMAKINGDLL_FNB" />
+					<Add option="-DWXUSINGDLL" />
 					<Add directory="wxFlatNotebook/include" />
 				</Compiler>
 			</Target>
@@ -25,8 +31,8 @@
 				<Option object_output="../../../.objs/plugins/contrib/wxContribItems/wxDateTimePicker" />
 				<Option type="3" />
 				<Option compiler="gcc" />
-				<Option createStaticLib="1" />
 				<Compiler>
+					<Add option="-DWXMAKINGDLL" />
 					<Add directory="wxDateTimePicker/include" />
 					<Add directory="wxDateTimePicker/images" />
 				</Compiler>
@@ -40,6 +46,7 @@
 				<Option createStaticLib="1" />
 				<Compiler>
 					<Add option="-DWXMAKINGDLL_CHART" />
+					<Add option="-DWXMAKINGDLL" />
 					<Add directory="wxchart/include" />
 				</Compiler>
 			</Target>
@@ -49,9 +56,9 @@
 				<Option object_output="../../../.objs/plugins/contrib/wxContribItems/wxthings" />
 				<Option type="3" />
 				<Option compiler="gcc" />
-				<Option createStaticLib="1" />
 				<Compiler>
 					<Add option="-DWXMAKINGDLL_THINGS" />
+					<Add option="-DWXMAKINGDLL" />
 					<Add directory="wxthings/include" />
 				</Compiler>
 			</Target>
@@ -61,8 +68,8 @@
 				<Option object_output="../../../.objs/plugins/contrib/wxContribItems/wxImagePanel" />
 				<Option type="3" />
 				<Option compiler="gcc" />
-				<Option createStaticLib="1" />
 				<Compiler>
+					<Add option="-DWXMAKINGDLL" />
 					<Add directory="wxImagePanel/include" />
 				</Compiler>
 				<Linker>
@@ -75,7 +82,9 @@
 				<Option object_output="../../../.objs/plugins/contrib/wxContribItems/wxSpeedButton" />
 				<Option type="3" />
 				<Option compiler="gcc" />
-				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-DWXMAKINGDLL" />
+				</Compiler>
 				<Linker>
 					<Add option="-Wl,--export-all-symbols" />
 				</Linker>
@@ -86,8 +95,8 @@
 				<Option object_output="../../../.objs/plugins/contrib/wxContribItems/KWIC" />
 				<Option type="3" />
 				<Option compiler="gcc" />
-				<Option createStaticLib="1" />
 				<Compiler>
+					<Add option="-DWXMAKINGDLL" />
 					<Add directory="KWIC/include" />
 				</Compiler>
 				<Linker>
@@ -100,8 +109,8 @@
 				<Option object_output="../../../.objs/plugins/contrib/wxContribItems/wxtreelist" />
 				<Option type="3" />
 				<Option compiler="gcc" />
-				<Option createStaticLib="1" />
 				<Compiler>
+					<Add option="-DWXMAKINGDLL" />
 					<Add directory="wxTreeList/include" />
 				</Compiler>
 			</Target>
@@ -111,8 +120,8 @@
 				<Option object_output="../../../.objs/plugins/contrib/wxContribItems/wxled" />
 				<Option type="3" />
 				<Option compiler="gcc" />
-				<Option createStaticLib="1" />
 				<Compiler>
+					<Add option="-DWXMAKINGDLL" />
 					<Add directory="wxled/ledpanel/include" />
 					<Add directory="wxled/lcdWindow/include" />
 					<Add directory="wxled/led/include" />
@@ -128,8 +137,8 @@
 				<Option object_output="../../../.objs/plugins/contrib/wxContribItems/wxmathplot" />
 				<Option type="3" />
 				<Option compiler="gcc" />
-				<Option createStaticLib="1" />
 				<Compiler>
+					<Add option="-DWXMAKINGDLL" />
 					<Add directory="wxmathplot" />
 				</Compiler>
 				<Linker>
@@ -151,19 +160,17 @@
 			<Add option="-fmessage-length=0" />
 			<Add option="-fexceptions" />
 			<Add option="-Winvalid-pch" />
+			<Add option="-Wl,--no-undefined" />
 			<Add option="-DHAVE_W32API_H" />
 			<Add option="-D__WXMSW__" />
-			<Add option="-DWXMAKINGDLL" />
 			<Add option="-DwxUSE_UNICODE" />
-			<Add option="-std=gnu++11" />
 			<Add directory="$(#wx.include)" />
-			<Add directory="$(#wx.lib)/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
+			<Add directory="$(#wxsetup.include)" />
 		</Compiler>
 		<Linker>
-			<Add option="-Wl,--enable-auto-import" />
-			<Add option="-mthreads" />
-			<Add library="wxmsw28$(WX_SUFFIX)" />
-			<Add directory="$(#wx.lib)/gcc_dll$(WX_CFG)" />
+			<Add library="$(#wx.wxlibs)" />
+			<Add directory="$(#wx.lib)" />
+			<Add directory="../../../devel" />
 		</Linker>
 		<Unit filename="KWIC/include/wx/KWIC/AngularMeter.h">
 			<Option target="wxKWIC" />

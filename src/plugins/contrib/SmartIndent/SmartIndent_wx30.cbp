@@ -13,7 +13,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log -p debug" />
-				<Option host_application="../../../devel30/codeblocks.exe" />
+				<Option host_application="../../../devel30/urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Compiler>
@@ -34,7 +34,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-check-associations -ns -nd -p debug" />
-				<Option host_application="../../../devel30/codeblocks.exe" />
+				<Option host_application="../../../devel30/urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Compiler>
@@ -55,7 +55,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log -p debug" />
-				<Option host_application="../../../devel30/codeblocks.exe" />
+				<Option host_application="../../../devel30/urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Compiler>
@@ -76,7 +76,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log -p debug" />
-				<Option host_application="../../../devel30/codeblocks.exe" />
+				<Option host_application="../../../devel30/urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Compiler>
@@ -97,7 +97,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-check-associations -ns -nd -p debug" />
-				<Option host_application="../../../devel30/codeblocks.exe" />
+				<Option host_application="../../../devel30/urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Compiler>
@@ -118,7 +118,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-check-associations -ns -nd -p debug" />
-				<Option host_application="../../../devel30/codeblocks.exe" />
+				<Option host_application="../../../devel30/urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Compiler>
@@ -139,7 +139,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log -p debug" />
-				<Option host_application="../../../devel30/codeblocks.exe" />
+				<Option host_application="../../../devel30/urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Compiler>

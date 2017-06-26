@@ -15,7 +15,11 @@
 					<Add directory="cctest" />
 					<Add directory="parser" />
 					<Add directory="." />
+					<Add directory="$(#wxsetup.include)" />
 				</Compiler>
+				<ResourceCompiler>
+					<Add directory="$(#wxsetup.include)" />
+				</ResourceCompiler>
 			</Target>
 			<Environment>
 				<Variable name="WX_CFG" value="" />
@@ -41,22 +45,23 @@
 			<Add option="-DwxUSE_UNICODE" />
 			<Add option="-DCC_PARSER_TEST" />
 			<Add directory="$(#WX.include)" />
-			<Add directory="$(#WX.lib)/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
+			<Add directory="$(#wxsetup.include)" />
 			<Add directory="../../include" />
 			<Add directory="../../include/tinyxml" />
 			<Add directory="../../sdk/wxscintilla/include" />
 		</Compiler>
 		<ResourceCompiler>
+			<Add directory="$(#wxsetup.include)" />
 			<Add directory="$(#WX.include)" />
-			<Add directory="$(#WX.lib)/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
 		</ResourceCompiler>
 		<Linker>
 			<Add option="-Wl,--enable-auto-import" />
 			<Add option="-Wl,--no-undefined" />
 			<Add option="-mthreads" />
 			<Add library="codeblocks" />
-			<Add library="wxmsw28u_urus_gcc_urus" />
-			<Add directory="$(#WX.lib)/gcc_dll$(WX_CFG)" />
+			<Add library="$(#wx.wxlibs)" />
+			<Add library="wxscintilla_cb" />
+			<Add directory="$(#WX.lib)" />
 			<Add directory="../../devel" />
 		</Linker>
 		<Unit filename="cctest/cctest_app.cpp" />

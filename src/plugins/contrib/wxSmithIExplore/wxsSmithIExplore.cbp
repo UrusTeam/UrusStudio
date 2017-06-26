@@ -21,7 +21,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log -na -ns -nd -p debug" />
-				<Option host_application="codeblocks.exe" />
+				<Option host_application="urusstudio.exe" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
@@ -74,13 +74,13 @@
 			<Add option="-DWX_PRECOMP" />
 			<Add option="-DwxUSE_UNICODE" />
 			<Add directory="$(#wx.include)" />
-			<Add directory="$(#wx.lib)\gcc_dll$(WX_CFG)\msw$(WX_SUFFIX)" />
+			<Add directory="$(#wxsetup.include)" />
 		</Compiler>
 		<Linker>
 			<Add option="-Wl,--enable-auto-image-base" />
 			<Add option="-Wl,--export-all-symbols" />
 			<Add option="-Wl,--enable-auto-import" />
-			<Add library="wxmsw28$(WX_SUFFIX)" />
+			<Add library="$(#wx.wxlibs)" />
 			<Add directory="$(#wx.lib)\gcc_dll$(WX_CFG)" />
 		</Linker>
 		<Unit filename="IEHtmlWin.cpp">

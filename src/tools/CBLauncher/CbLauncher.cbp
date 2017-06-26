@@ -26,14 +26,16 @@
 			<Add option="-Wextra" />
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add option="-std=gnu++11" />
 			<Add option="-D_UNICODE" />
 			<Add option="-DUNICODE" />
 			<Add option="-DWINVER=0x0500" />
-			<Add option="-std=gnu++11" />
 		</Compiler>
 		<Linker>
 			<Add library="gdi32" />
 			<Add library="oleaut32" />
+			<Add library="$(#wx.wxlibs)" />
+			<Add directory="$(#wx.lib)" />
 		</Linker>
 		<Unit filename="doc/CBicon.png" />
 		<Unit filename="doc/README.txt" />
