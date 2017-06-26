@@ -20,29 +20,29 @@ fi
 
 echo Creating output directory tree
 
-mkdir -p devel/share/codeblocks/compilers
-mkdir -p devel/share/codeblocks/lexers
-mkdir -p devel/share/codeblocks/images/settings
-mkdir -p devel/share/codeblocks/images/codecompletion
-mkdir -p devel/share/codeblocks/images/12x12
-mkdir -p devel/share/codeblocks/images/16x16
-mkdir -p devel/share/codeblocks/plugins
-mkdir -p devel/share/codeblocks/templates
-mkdir -p devel/share/codeblocks/templates/wizard
-mkdir -p devel/share/codeblocks/scripts/tests
-mkdir -p output/share/codeblocks/compilers
-mkdir -p output/share/codeblocks/lexers
-mkdir -p output/share/codeblocks/images/settings
-mkdir -p output/share/codeblocks/images/codecompletion
-mkdir -p output/share/codeblocks/images/12x12
-mkdir -p output/share/codeblocks/images/16x16
-mkdir -p output/share/codeblocks/plugins
-mkdir -p output/share/codeblocks/templates
-mkdir -p output/share/codeblocks/templates/wizard
-mkdir -p output/share/codeblocks/scripts/tests
+mkdir -p devel/share/urusstudio/compilers
+mkdir -p devel/share/urusstudio/lexers
+mkdir -p devel/share/urusstudio/images/settings
+mkdir -p devel/share/urusstudio/images/codecompletion
+mkdir -p devel/share/urusstudio/images/12x12
+mkdir -p devel/share/urusstudio/images/16x16
+mkdir -p devel/share/urusstudio/plugins
+mkdir -p devel/share/urusstudio/templates
+mkdir -p devel/share/urusstudio/templates/wizard
+mkdir -p devel/share/urusstudio/scripts/tests
+mkdir -p output/share/urusstudio/compilers
+mkdir -p output/share/urusstudio/lexers
+mkdir -p output/share/urusstudio/images/settings
+mkdir -p output/share/urusstudio/images/codecompletion
+mkdir -p output/share/urusstudio/images/12x12
+mkdir -p output/share/urusstudio/images/16x16
+mkdir -p output/share/urusstudio/plugins
+mkdir -p output/share/urusstudio/templates
+mkdir -p output/share/urusstudio/templates/wizard
+mkdir -p output/share/urusstudio/scripts/tests
 
 ZIPCMD="zip"
-RESDIR="devel/share/codeblocks"
+RESDIR="devel/share/urusstudio"
 echo Compressing core UI resources
 ${ZIPCMD} -jqu9 ${RESDIR}/resources.zip src/resources/*.xrc > /dev/null
 ${ZIPCMD} -jqu9 ${RESDIR}/manager_resources.zip sdk/resources/*.xrc sdk/resources/images/*.png > /dev/null
@@ -86,67 +86,67 @@ cp -f src/resources/images/16x16/*.png ${RESDIR}/images/16x16 > /dev/null
 cp -f plugins/codecompletion/resources/images/*.png ${RESDIR}/images/codecompletion > /dev/null
 cp -f plugins/compilergcc/resources/compilers/*.xml ${RESDIR}/compilers > /dev/null
 
-cp -f ${RESDIR}/*.zip output/share/codeblocks > /dev/null
-cp -f sdk/resources/lexers/lexer_* output/share/codeblocks/lexers > /dev/null
-cp -f src/resources/images/*.png output/share/codeblocks/images > /dev/null
-cp -f src/resources/images/settings/*.png output/share/codeblocks/images/settings > /dev/null
-cp -f src/resources/images/16x16/*.png output/share/codeblocks/images/16x16 > /dev/null
-cp -f plugins/codecompletion/resources/images/*.png output/share/codeblocks/images/codecompletion > /dev/null
-cp -f plugins/compilergcc/resources/compilers/*.xml output/share/codeblocks/compilers > /dev/null
+cp -f ${RESDIR}/*.zip output/share/urusstudio > /dev/null
+cp -f sdk/resources/lexers/lexer_* output/share/urusstudio/lexers > /dev/null
+cp -f src/resources/images/*.png output/share/urusstudio/images > /dev/null
+cp -f src/resources/images/settings/*.png output/share/urusstudio/images/settings > /dev/null
+cp -f src/resources/images/16x16/*.png output/share/urusstudio/images/16x16 > /dev/null
+cp -f plugins/codecompletion/resources/images/*.png output/share/urusstudio/images/codecompletion > /dev/null
+cp -f plugins/compilergcc/resources/compilers/*.xml output/share/urusstudio/compilers > /dev/null
 
 # several contrib plugins
-if [ -d "devel/share/codeblocks/images/codesnippets" ]
+if [ -d "devel/share/urusstudio/images/codesnippets" ]
 then
-  mkdir -p output/share/codeblocks/images/codesnippets
-  cp -f devel/share/codeblocks/images/codesnippets/*.png output/share/codeblocks/images/codesnippets > /dev/null
+  mkdir -p output/share/urusstudio/images/codesnippets
+  cp -f devel/share/urusstudio/images/codesnippets/*.png output/share/urusstudio/images/codesnippets > /dev/null
 fi
-if [ -d "devel/share/codeblocks/images/DoxyBlocks" ]
+if [ -d "devel/share/urusstudio/images/DoxyBlocks" ]
 then
-  mkdir -p output/share/codeblocks/images/DoxyBlocks
-  cp -f devel/share/codeblocks/images/DoxyBlocks/*.png       output/share/codeblocks/images/DoxyBlocks > /dev/null
-  mkdir -p output/share/codeblocks/images/DoxyBlocks/16x16
-  cp -f devel/share/codeblocks/images/DoxyBlocks/16x16/*.png output/share/codeblocks/images/DoxyBlocks/16x16 > /dev/null
+  mkdir -p output/share/urusstudio/images/DoxyBlocks
+  cp -f devel/share/urusstudio/images/DoxyBlocks/*.png       output/share/urusstudio/images/DoxyBlocks > /dev/null
+  mkdir -p output/share/urusstudio/images/DoxyBlocks/16x16
+  cp -f devel/share/urusstudio/images/DoxyBlocks/16x16/*.png output/share/urusstudio/images/DoxyBlocks/16x16 > /dev/null
 fi
-if [ -d "devel/share/codeblocks/images/ThreadSearch" ]
+if [ -d "devel/share/urusstudio/images/ThreadSearch" ]
 then
-  mkdir -p output/share/codeblocks/images/ThreadSearch
-  cp -f devel/share/codeblocks/images/ThreadSearch/*.png output/share/codeblocks/images/ThreadSearch > /dev/null
-  mkdir -p output/share/codeblocks/images/ThreadSearch/16x16
-  cp -f devel/share/codeblocks/images/ThreadSearch/16x16/*.png output/share/codeblocks/images/ThreadSearch/16x16 > /dev/null
-  mkdir -p output/share/codeblocks/images/ThreadSearch/22x22
-  cp -f devel/share/codeblocks/images/ThreadSearch/22x22/*.png output/share/codeblocks/images/ThreadSearch/22x22 > /dev/null
+  mkdir -p output/share/urusstudio/images/ThreadSearch
+  cp -f devel/share/urusstudio/images/ThreadSearch/*.png output/share/urusstudio/images/ThreadSearch > /dev/null
+  mkdir -p output/share/urusstudio/images/ThreadSearch/16x16
+  cp -f devel/share/urusstudio/images/ThreadSearch/16x16/*.png output/share/urusstudio/images/ThreadSearch/16x16 > /dev/null
+  mkdir -p output/share/urusstudio/images/ThreadSearch/22x22
+  cp -f devel/share/urusstudio/images/ThreadSearch/22x22/*.png output/share/urusstudio/images/ThreadSearch/22x22 > /dev/null
 fi
-if [ -d "devel/share/codeblocks/images/wxsmith" ]
+if [ -d "devel/share/urusstudio/images/wxsmith" ]
 then
-  mkdir -p output/share/codeblocks/images/wxsmith
-  cp -f devel/share/codeblocks/images/wxsmith/*.png output/share/codeblocks/images/wxsmith > /dev/null
+  mkdir -p output/share/urusstudio/images/wxsmith
+  cp -f devel/share/urusstudio/images/wxsmith/*.png output/share/urusstudio/images/wxsmith > /dev/null
 fi
-if [ -d "devel/share/codeblocks/lib_finder" ]
+if [ -d "devel/share/urusstudio/lib_finder" ]
 then
-  mkdir -p output/share/codeblocks/lib_finder
-  cp -f devel/share/codeblocks/lib_finder/*.xml output/share/codeblocks/lib_finder > /dev/null
+  mkdir -p output/share/urusstudio/lib_finder
+  cp -f devel/share/urusstudio/lib_finder/*.xml output/share/urusstudio/lib_finder > /dev/null
 fi
 # misc. contrib plugin settings:
-cp -f devel/share/codeblocks/images/16x16/*.png    output/share/codeblocks/images/16x16    > /dev/null
-cp -f devel/share/codeblocks/images/settings/*.png output/share/codeblocks/images/settings > /dev/null
+cp -f devel/share/urusstudio/images/16x16/*.png    output/share/urusstudio/images/16x16    > /dev/null
+cp -f devel/share/urusstudio/images/settings/*.png output/share/urusstudio/images/settings > /dev/null
 
 rsync -au --exclude-from=excludes.txt plugins/scriptedwizard/resources/ ${RESDIR}/templates/wizard > /dev/null
-rsync -au --exclude-from=excludes.txt plugins/scriptedwizard/resources/ output/share/codeblocks/templates/wizard > /dev/null
-rsync -au --exclude-from=excludes.txt templates/common/ output/share/codeblocks/templates > /dev/null
-rsync -au --exclude-from=excludes.txt templates/unix/ output/share/codeblocks/templates > /dev/null
+rsync -au --exclude-from=excludes.txt plugins/scriptedwizard/resources/ output/share/urusstudio/templates/wizard > /dev/null
+rsync -au --exclude-from=excludes.txt templates/common/ output/share/urusstudio/templates > /dev/null
+rsync -au --exclude-from=excludes.txt templates/unix/ output/share/urusstudio/templates > /dev/null
 rsync -au --exclude-from=excludes.txt templates/common/ ${RESDIR}/templates > /dev/null
 rsync -au --exclude-from=excludes.txt templates/unix/ ${RESDIR}/templates > /dev/null
 cp -f scripts/*.script ${RESDIR}/scripts > /dev/null
-cp -f scripts/*.script output/share/codeblocks/scripts > /dev/null
+cp -f scripts/*.script output/share/urusstudio/scripts > /dev/null
 cp -f scripts/tests/*.script ${RESDIR}/scripts/tests > /dev/null
-cp -f scripts/tests/*.script output/share/codeblocks/scripts/tests > /dev/null
+cp -f scripts/tests/*.script output/share/urusstudio/scripts/tests > /dev/null
 cp -f scripts/*.gdb ${RESDIR}/scripts > /dev/null
-cp -f scripts/*.gdb output/share/codeblocks/scripts > /dev/null
-cp -f tips.txt devel/share/codeblocks > /dev/null
-cp -f tips.txt output/share/codeblocks > /dev/null
+cp -f scripts/*.gdb output/share/urusstudio/scripts > /dev/null
+cp -f tips.txt devel/share/urusstudio > /dev/null
+cp -f tips.txt output/share/urusstudio > /dev/null
 cp -f tools/ConsoleRunner/cb_console_runner${EXEEXT} output > /dev/null
 cp -f tools/ConsoleRunner/cb_console_runner${EXEEXT} devel > /dev/null
-cp -f devel/codeblocks${EXEEXT} output > /dev/null
+cp -f devel/urusstudio${EXEEXT} output > /dev/null
 if [ -f "devel/cb_share_config${EXEEXT}" ]
 then
   cp -f devel/cb_share_config${EXEEXT} output > /dev/null
@@ -160,12 +160,12 @@ then
   cp -f devel/codesnippets${EXEEXT} output > /dev/null
 fi
 cp -f devel/*.${LIBEXT} output > /dev/null
-cp -f ${RESDIR}/plugins/*.${LIBEXT} output/share/codeblocks/plugins > /dev/null
+cp -f ${RESDIR}/plugins/*.${LIBEXT} output/share/urusstudio/plugins > /dev/null
 # Now remove the exclude pattern file
 rm excludes.txt
 
 echo Stripping debug info from output tree
-strip output/codeblocks${EXEEXT} > /dev/null
+strip output/urusstudio${EXEEXT} > /dev/null
 if [ -f "output/cb_share_config${EXEEXT}" ]
 then
   strip output/cb_share_config${EXEEXT} > /dev/null
@@ -180,7 +180,7 @@ then
   strip output/codesnippets${EXEEXT} > /dev/null
 fi
 strip output/*.${LIBEXT} > /dev/null
-strip output/share/codeblocks/plugins/*.${LIBEXT} > /dev/null
+strip output/share/urusstudio/plugins/*.${LIBEXT} > /dev/null
 
 if [ "x$MSYSTEM" = "x" ] ; then
   echo Creating launch-scripts
@@ -188,13 +188,13 @@ if [ "x$MSYSTEM" = "x" ] ; then
   echo 'APP_DIR=`dirname "$0"`' >> output/run.sh
   echo 'APP_DIR=`( cd "$APP_DIR" && pwd )`' >> output/run.sh
   echo "export LD_LIBRARY_PATH=\$APP_DIR:\$LD_LIBRARY_PATH" >> output/run.sh
-  echo "\$APP_DIR/codeblocks \$@" >> output/run.sh
+  echo "\$APP_DIR/urusstudio \$@" >> output/run.sh
   chmod +x output/run.sh
   echo "#!/bin/sh" > devel/run.sh
   echo 'APP_DIR=`dirname "$0"`' >> devel/run.sh
   echo 'APP_DIR=`( cd "$APP_DIR" && pwd )`' >> devel/run.sh
   echo "export LD_LIBRARY_PATH=\$APP_DIR:\$LD_LIBRARY_PATH" >> devel/run.sh
-  echo "\$APP_DIR/codeblocks \$@" >> devel/run.sh
+  echo "\$APP_DIR/urusstudio \$@" >> devel/run.sh
   chmod +x devel/run.sh
 fi
 

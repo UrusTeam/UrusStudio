@@ -11,7 +11,7 @@
 				<Option object_output="..\..\.objs\plugins\loghacker" />
 				<Option type="3" />
 				<Option compiler="gcc" />
-				<Option host_application="..\..\devel\codeblocks.exe" />
+				<Option host_application="..\..\devel\urusstudio.exe" />
 				<Compiler>
 					<Add option="$(#CB_RELEASE_TYPE)" />
 					<Add option="-pipe" />
@@ -31,11 +31,11 @@
 					<Add directory="..\..\include\tinyxml" />
 					<Add directory="..\..\sdk\wxscintilla\include" />
 					<Add directory="$(#WX.include)" />
-					<Add directory="$(#WX.lib)\gcc_dll$(WX_CFG)\msw$(WX_SUFFIX)" />
+					<Add directory="$(#wxsetup.include)" />
 				</Compiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-import" />
-					<Add library="wxmsw28$(WX_SUFFIX)" />
+					<Add library="$(#wx.wxlibs)" />
 					<Add library="codeblocks" />
 					<Add directory="..\..\devel" />
 					<Add directory="$(#WX.lib)\gcc_dll$(WX_CFG)" />

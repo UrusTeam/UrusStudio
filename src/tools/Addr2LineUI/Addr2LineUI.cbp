@@ -33,23 +33,22 @@
 			<Add option="-Wall" />
 			<Add option="-pipe" />
 			<Add option="-mthreads" />
+			<Add option="-std=gnu++11" />
 			<Add option="-D__GNUWIN32__" />
 			<Add option="-D__WXMSW__" />
 			<Add option="-DWXUSINGDLL" />
 			<Add option="-DwxUSE_UNICODE" />
 			<Add option="-DWX_PRECOMP" />
-			<Add option="-std=gnu++11" />
 			<Add directory="$(#wx.include)" />
-			<Add directory="$(#wx.lib)/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
+			<Add directory="$(#wxsetup.include)" />
 		</Compiler>
 		<ResourceCompiler>
 			<Add directory="$(#wx.include)" />
-			<Add directory="$(#wx.lib)/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
 		</ResourceCompiler>
 		<Linker>
 			<Add option="-mthreads" />
-			<Add library="wxmsw28u_urus_gcc_urus" />
-			<Add directory="$(#wx.lib)/gcc_dll$(WX_CFG)" />
+			<Add library="$(#wx.wxlibs)" />
+			<Add directory="$(#wx.lib)" />
 		</Linker>
 		<Unit filename="Addr2LineUIApp.cpp" />
 		<Unit filename="Addr2LineUIApp.h" />
