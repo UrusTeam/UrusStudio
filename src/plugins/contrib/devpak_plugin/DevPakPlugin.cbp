@@ -8,10 +8,10 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="libbz2">
-				<Option output="bzip2/libbz2.a" prefix_auto="0" extension_auto="0" />
-				<Option working_dir="" />
+				<Option output="../../../devel/bz2.dll" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="../../../devel" />
 				<Option object_output="../../../.objs/plugins/contrib/devpak_plugin" />
-				<Option type="2" />
+				<Option type="3" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-mthreads" />
@@ -21,7 +21,8 @@
 				</Linker>
 			</Target>
 			<Target title="default">
-				<Option output="../../../devel/share\urusstudio/plugins/devpakupdater.dll" prefix_auto="0" extension_auto="0" />
+				<Option output="../../../devel/share/urusstudio/plugins/devpakupdater.dll" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="../../../devel" />
 				<Option object_output="../../../.objs/plugins/contrib/devpak_plugin" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -52,7 +53,7 @@
 					<Add directory="../../../devel" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="zip ..\..\..\devel\share\urusstudio\devpakupdater.zip manifest.xml *.xrc" />
+					<Add after="zip ../../../devel/share/urusstudio/devpakupdater.zip manifest.xml *.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
@@ -68,7 +69,7 @@
 			<Add option="-std=gnu++11" />
 			<Add directory="bzip2" />
 			<Add directory="$(#WX.include)" />
-			<Add directory="$(#WX.lib)/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
+			<Add directory="$(#wxsetup.include)" />
 		</Compiler>
 		<ResourceCompiler>
 			<Add directory="$(#WX.include)" />
@@ -78,7 +79,8 @@
 			<Add library="codeblocks" />
 			<Add library="$(#wx.wxlibs)" />
 			<Add directory="bzip2" />
-			<Add directory="$(#WX.lib)/gcc_dll$(WX_CFG)" />
+			<Add directory="$(#WX.lib)" />
+			<Add directory="../../../devel" />
 		</Linker>
 		<Unit filename="bzip2/blocksort.c">
 			<Option compilerVar="CC" />
