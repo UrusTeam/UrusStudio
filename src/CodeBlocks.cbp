@@ -3,20 +3,28 @@
 	<FileVersion major="1" minor="6" />
 	<Project>
 		<Option title="Code::Blocks wx2.8.x" />
+		<Option pch_mode="2" />
 		<Option default_target="src" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="tinyXML">
-				<Option output="base/tinyxml/txml" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="" />
-				<Option type="2" />
+				<Option output="devel/txml" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="devel" />
+				<Option type="3" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add directory="include/tinyxml" />
 				</Compiler>
+				<ExtraCommands>
+					<Add before="cmd /c if not exist devel mkdir devel" />
+					<Add after="cp -f devel/txml.dll build_tools/autorevision" />
+					<Add after="cp -f $(#wx.lib)/*.* devel/" />
+					<Mode after="always" />
+				</ExtraCommands>
 			</Target>
 			<Target title="AutoRevision">
 				<Option output="build_tools/autorevision/autorevision" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="devel" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Option projectLinkerOptionsRelation="1" />
@@ -40,9 +48,9 @@
 				</Compiler>
 			</Target>
 			<Target title="Squirrel">
-				<Option output="sdk/scripting/lib/squirrel" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="" />
-				<Option type="2" />
+				<Option output="devel/squirrel" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="devel" />
+				<Option type="3" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-fno-inline" />
@@ -51,34 +59,44 @@
 				</Compiler>
 			</Target>
 			<Target title="Squirrel std lib">
-				<Option output="sdk/scripting/lib/sqstdlib" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="" />
-				<Option external_deps="sdk/scripting/lib/libsquirrel.a;" />
-				<Option type="2" />
+				<Option output="devel/sqstdlib" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="devel" />
+				<Option type="3" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-fno-inline" />
 					<Add directory="include/scripting/include" />
 					<Add directory="include/scripting/sqstdlib" />
 				</Compiler>
+				<Linker>
+					<Add library="squirrel" />
+					<Add library="txml" />
+				</Linker>
 			</Target>
 			<Target title="SqPlus">
-				<Option output="sdk/scripting/lib/sqplus" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="" />
-				<Option external_deps="sdk/scripting/lib/libsquirrel.a;sdk/scripting/lib/libsqstdlib.a;" />
-				<Option type="2" />
+				<Option output="devel/sqplus" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="devel" />
+				<Option type="3" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-fno-inline" />
 					<Add directory="include/scripting/include" />
 					<Add directory="include/scripting/sqplus" />
 				</Compiler>
+				<Linker>
+					<Add library="sqstdlib" />
+					<Add library="squirrel" />
+					<Add library="txml" />
+				</Linker>
 			</Target>
 			<Target title="scintilla">
 				<Option output="devel/wxscintilla_cb" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="" />
-				<Option type="2" />
+				<Option working_dir="devel" />
+				<Option type="3" />
 				<Option compiler="gcc" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
 				<Compiler>
 					<Add option="-D__WX__" />
 					<Add option="-DWINVER=0x0501" />
@@ -88,16 +106,18 @@
 					<Add directory="sdk/wxscintilla/src/scintilla/include" />
 					<Add directory="sdk/wxscintilla/src/scintilla/src" />
 					<Add directory="sdk/wxscintilla/src/scintilla/lexlib" />
+					<Add directory="$(#WX31.include)" />
+					<Add directory="$(#WXSETUP.include)" />
 				</Compiler>
-				<ResourceCompiler>
-					<Add directory="sdk/wxscintilla/include" />
-				</ResourceCompiler>
 				<Linker>
-					<Add option="-Wl,--enable-auto-image-base" />
-					<Add option="-Wl,--add-stdcall-alias" />
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add library="gdi32" />
+					<Add library="sqplus" />
+					<Add library="sqstdlib" />
+					<Add library="squirrel" />
+					<Add library="txml" />
+					<Add library="$(#wx.wxlibs)" />
 				</Linker>
 			</Target>
 			<Target title="wxpropgrid">
@@ -105,7 +125,6 @@
 				<Option working_dir="devel" />
 				<Option type="3" />
 				<Option compiler="gcc" />
-				<Option createStaticLib="1" />
 				<Compiler>
 					<Add option="-DEXPORT_LIB" />
 					<Add option="-DwxPG_SUPPORT_TOOLTIPS" />
@@ -116,26 +135,37 @@
 					<Add directory="sdk/wxpropgrid/include" />
 				</ResourceCompiler>
 				<Linker>
-					<Add option="-Wl,--enable-auto-image-base" />
-					<Add option="-Wl,--add-stdcall-alias" />
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
+					<Add library="sqplus" />
+					<Add library="sqstdlib" />
+					<Add library="squirrel" />
+					<Add library="txml" />
+					<Add library="$(#wx.wxlibs)" />
 				</Linker>
 			</Target>
 			<Target title="sdk">
 				<Option output="devel/codeblocks" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel" />
-				<Option external_deps="base/tinyxml/libtxml.a;sdk/scripting/lib/libsquirrel.a;sdk/scripting/lib/libsqstdlib.a;sdk/scripting/lib/libsqplus.a;devel/libwxscintilla_cb.a;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --verbose -p debug" />
 				<Option createStaticLib="1" />
+				<Option projectCompilerOptionsRelation="2" />
 				<Option projectLinkerOptionsRelation="2" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="2" />
+				<Option projectLibDirsRelation="2" />
 				<Compiler>
+					<Add option="$(#CB_RELEASE_TYPE)" />
 					<Add option="-Woverloaded-virtual" />
+					<Add option="-std=gnu++11" />
 					<Add option="-DEXPORT_LIB" />
 					<Add option="-DEXPORT_EVENTS" />
 					<Add option="-DWXMAKINGDLL_SCI" />
+					<Add option="-D__WX__" />
+					<Add option="-DWINVER=0x0501" />
+					<Add option="-DwxPG_SUPPORT_TOOLTIPS" />
 					<Add directory="include" />
 					<Add directory="include/tinyxml" />
 					<Add directory="include/scripting/bindings" />
@@ -149,12 +179,16 @@
 					<Add directory="include/mozilla_chardet/xpcom/glue" />
 					<Add directory="sdk/wxpropgrid/include" />
 				</Compiler>
+				<ResourceCompiler>
+					<Add directory="$(#WXSETUP.include)" />
+				</ResourceCompiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-image-base" />
-					<Add option="-Wl,--export-all-symbols" />
-					<Add option="-Wl,--add-stdcall-alias" />
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
+					<Add option="-Wl,--export-all-symbols" />
+					<Add option="-Wl,--add-stdcall-alias" />
+					<Add option="-mthreads" />
 					<Add library="shfolder" />
 					<Add library="txml" />
 					<Add library="wxscintilla_cb" />
@@ -163,26 +197,26 @@
 					<Add library="sqstdlib" />
 					<Add library="squirrel" />
 					<Add library="gdi32" />
+					<Add library="$(#WX.wxlibs)" />
 					<Add directory="devel" />
 					<Add directory="sdk/scripting/lib" />
 					<Add directory="sdk/propgrid" />
+					<Add directory="$(#WX.lib)" />
 				</Linker>
 				<ExtraCommands>
 					<Add before="build_tools\autorevision\autorevision +wx +int +t .. include/autorevision.h" />
-					<Add after="cmd /c if not exist devel\share\CodeBlocks mkdir devel\share\CodeBlocks" />
-					<Add after="zip -jq9 devel\share\urusstudio\manager_resources.zip sdk\resources\*.xrc" />
-					<Add after='cmd /c &quot;cd sdk\resources &amp; zip -0 -q ..\..\devel\share\urusstudio\manager_resources.zip images\*.png images\12x12\*.png images\16x16\*.png&quot;' />
+					<Add after="cmd /c if not exist devel\share\urusstudio mkdir devel\share\urusstudio" />
+					<Add after="zip -jq9 devel/share/urusstudio/manager_resources.zip sdk/resources/*.xrc" />
+					<Add after='cmd /c &quot;cd sdk\resources &amp; zip -0 -q ../../devel/share/urusstudio/manager_resources.zip images/*.png images/12x12/*.png images/16x16/*.png&quot;' />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="src">
-				<Option output="devel/codeblocks" prefix_auto="1" extension_auto="1" />
+				<Option output="devel/urusstudio" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel" />
-				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="0" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -195,10 +229,18 @@
 					<Add directory="include/mozilla_chardet/xpcom/base" />
 					<Add directory="include/mozilla_chardet/xpcom/glue" />
 					<Add directory="exchndl/win32/include" />
+					<Add directory="$(#WXSETUP.include)" />
+					<Add directory="$(#WX.include)" />
 				</Compiler>
+				<ResourceCompiler>
+					<Add directory="$(#WXSETUP.include)" />
+					<Add directory="$(#WX.include)" />
+				</ResourceCompiler>
 				<Linker>
+					<Add option="-Wl,--enable-auto-image-base" />
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
+					<Add option="-mthreads" />
 					<Add library="codeblocks" />
 					<Add library="wxpropgrid" />
 					<Add library="exchndl" />
@@ -217,28 +259,34 @@
 					<Add library="rpcrt4" />
 					<Add library="advapi32" />
 					<Add library="wsock32" />
+					<Add library="wxscintilla_cb" />
+					<Add library="squirrel" />
+					<Add library="sqplus" />
+					<Add library="sqstdlib" />
+					<Add library="$(#wx.wxlibs)" />
 					<Add directory="devel" />
 					<Add directory="exchndl/win32/lib" />
+					<Add directory="$(#WX.lib)" />
 				</Linker>
 				<ExtraCommands>
 					<Add before="cmd /c if exist devel\exchndl.dll del devel\exchndl.dll" />
-					<Add after="cmd /c if not exist devel\share\CodeBlocks mkdir devel\share\CodeBlocks" />
-					<Add after="zip -jq9 devel\share\urusstudio\resources.zip src\resources\*.xrc" />
-					<Add after="zip -jq9 devel\share\urusstudio\start_here.zip src\resources\start_here\*.html src\resources\start_here\*.png" />
-					<Add after='cmd /c &quot;cd src\resources &amp; zip -0 -q ..\..\devel\share\urusstudio\resources.zip images\*.png images\16x16\*.png&quot;' />
+					<Add after="cmd /c if not exist devel\share\urusstudio mkdir devel\share\urusstudio" />
+					<Add after="zip -jq9 devel/share/urusstudio/resources.zip src/resources/*.xrc" />
+					<Add after="zip -jq9 devel/share/urusstudio/start_here.zip src/resources/start_here/*.html src/resources/start_here/*.png" />
+					<Add after='cmd /c &quot;cd src\resources &amp; zip -0 -q ../../devel/share/urusstudio/resources.zip images/*.png images/16x16/*.png&quot;' />
 					<Add after="cmd /c if not exist devel\exchndl.dll if exist exchndl\win32\bin\*.dll xcopy /Y exchndl\win32\bin\*.dll devel\" />
 					<Add after="cmd /c if not exist devel\symsrv.yes if exist exchndl\win32\bin\symsrv.yes xcopy /Y exchndl\win32\bin\symsrv.yes devel\" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Abbreviations">
-				<Option output="devel/share\urusstudio/plugins/abbreviations" prefix_auto="1" extension_auto="1" />
+				<Option output="devel/share/urusstudio/plugins/abbreviations" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel" />
 				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -249,29 +297,31 @@
 					<Add directory="include/scripting/bindings" />
 				</Compiler>
 				<Linker>
-					<Add option="-Wl,--enable-auto-image-base" />
-					<Add option="-Wl,--add-stdcall-alias" />
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add library="$(#wx.wxlibs)" />
+					<Add library="sqplus" />
+					<Add library="sqstdlib" />
+					<Add library="squirrel" />
+					<Add library="wxscintilla_cb" />
 					<Add directory="devel" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel\share\CodeBlocks mkdir devel\share\CodeBlocks" />
-					<Add after="zip -jq9 devel\share\urusstudio\abbreviations.zip plugins\abbreviations\resources\manifest.xml plugins\abbreviations\resources\*.xrc" />
+					<Add after="cmd /c if not exist devel\share\urusstudio mkdir devel\share\urusstudio" />
+					<Add after="zip -jq9 devel/share/urusstudio/abbreviations.zip plugins/abbreviations/resources/manifest.xml plugins/abbreviations/resources/*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="AStyle">
-				<Option output="devel/share\urusstudio/plugins/Astyle" prefix_auto="1" extension_auto="1" />
+				<Option output="devel/share/urusstudio/plugins/Astyle" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel" />
 				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -281,29 +331,28 @@
 					<Add directory="plugins/astyle/astyle" />
 				</Compiler>
 				<Linker>
-					<Add option="-Wl,--enable-auto-image-base" />
-					<Add option="-Wl,--add-stdcall-alias" />
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add library="$(#wx.wxlibs)" />
+					<Add library="wxscintilla_cb" />
 					<Add directory="devel" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel\share\CodeBlocks mkdir devel\share\CodeBlocks" />
-					<Add after="zip -jq9 devel\share\urusstudio\Astyle.zip plugins\astyle\resources\manifest.xml plugins\astyle\resources\*.xrc" />
+					<Add after="cmd /c if not exist devel\share\urusstudio mkdir devel\share\urusstudio" />
+					<Add after="zip -jq9 devel/share/urusstudio/Astyle.zip plugins/astyle/resources/manifest.xml plugins/astyle/resources/*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Autosave">
-				<Option output="devel/share\urusstudio/plugins/autosave" prefix_auto="1" extension_auto="1" />
+				<Option output="devel/share/urusstudio/plugins/autosave" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel" />
 				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -311,44 +360,45 @@
 					<Add directory="include" />
 				</Compiler>
 				<Linker>
-					<Add option="-Wl,--enable-auto-image-base" />
-					<Add option="-Wl,--add-stdcall-alias" />
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add library="$(#wx.wxlibs)" />
+					<Add library="wxscintilla_cb" />
 					<Add directory="devel" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel\share\CodeBlocks mkdir devel\share\CodeBlocks" />
-					<Add after="zip -jq9 devel\share\urusstudio\autosave.zip plugins\autosave\manifest.xml plugins\autosave\*.xrc" />
+					<Add after="cmd /c if not exist devel\share\urusstudio mkdir devel\share\urusstudio" />
+					<Add after="zip -jq9 devel/share/urusstudio/autosave.zip plugins/autosave/manifest.xml plugins/autosave/*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Compiler depslib">
-				<Option output="plugins/compilergcc/depslib/depslib" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="" />
-				<Option type="2" />
+				<Option output="devel/depslib" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="devel" />
+				<Option type="3" />
 				<Option compiler="gcc" />
+				<Option createStaticLib="1" />
 				<Compiler>
 					<Add option="-DDEPSLIB_WINDOWS" />
 				</Compiler>
 				<Linker>
-					<Add option="-r" />
 					<Add option="-mthreads" />
+					<Add library="wxscintilla_cb" />
+					<Add library="$(#wx.wxlibs)" />
 				</Linker>
 			</Target>
 			<Target title="Compiler">
-				<Option output="devel/share\urusstudio/plugins/compiler" prefix_auto="1" extension_auto="1" />
+				<Option output="devel/share/urusstudio/plugins/compiler" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel" />
-				<Option external_deps="devel/libcodeblocks.a;plugins/compilergcc/depslib/libdepslib.a;" />
+				<Option external_deps="devel/libcodeblocks.a;devel/libdepslib.a;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
+				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -357,35 +407,37 @@
 					<Add directory="include/scripting/sqplus" />
 				</Compiler>
 				<Linker>
-					<Add option="-Wl,--enable-auto-image-base" />
-					<Add option="-Wl,--add-stdcall-alias" />
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add library="$(#wx.wxlibs)" />
 					<Add library="depslib" />
 					<Add library="wxpropgrid" />
+					<Add library="wxscintilla_cb" />
+					<Add library="sqplus" />
+					<Add library="sqstdlib" />
+					<Add library="squirrel" />
 					<Add directory="devel" />
 					<Add directory="plugins/compilergcc/depslib" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel\share\CodeBlocks mkdir devel\share\CodeBlocks" />
-					<Add after="zip -jq9 devel\share\urusstudio\compiler.zip plugins\compilergcc\resources\manifest.xml plugins\compilergcc\resources\*.xrc" />
-					<Add after='cmd /c &quot;cd plugins\compilergcc\resources &amp; zip -0 -q ..\..\..\devel\share\urusstudio\compiler.zip images\*.png images\16x16\*.png&quot;' />
+					<Add after="cmd /c if not exist devel\share\urusstudio mkdir devel\share\urusstudio" />
+					<Add after="zip -jq9 devel/share/urusstudio/compiler.zip plugins/compilergcc/resources/manifest.xml plugins/compilergcc/resources/*.xrc" />
+					<Add after='cmd /c &quot;cd plugins\compilergcc\resources &amp; zip -0 -q ../../../devel/share/urusstudio/compiler.zip images/*.png images/16x16/*.png&quot;' />
 					<Add after="cmd /c if not exist devel\share\urusstudio\compilers mkdir devel\share\urusstudio\compilers" />
 					<Add after="cmd /c xcopy /D /Y plugins\compilergcc\resources\compilers\*.* devel\share\urusstudio\compilers" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Debugger">
-				<Option output="devel/share\urusstudio/plugins/debugger" prefix_auto="1" extension_auto="1" />
+				<Option output="devel/share/urusstudio/plugins/debugger" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel" />
 				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -395,29 +447,32 @@
 					<Add directory="include/scripting/sqplus" />
 				</Compiler>
 				<Linker>
-					<Add option="-Wl,--enable-auto-image-base" />
-					<Add option="-Wl,--add-stdcall-alias" />
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add library="$(#wx.wxlibs)" />
+					<Add library="wxscintilla_cb" />
+					<Add library="txml" />
+					<Add library="sqplus" />
+					<Add library="sqstdlib" />
+					<Add library="squirrel" />
 					<Add directory="devel" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel\share\CodeBlocks mkdir devel\share\CodeBlocks" />
-					<Add after="zip -jq9 devel\share\urusstudio\debugger.zip plugins\debuggergdb\resources\manifest.xml plugins\debuggergdb\resources\*.xrc" />
+					<Add after="cmd /c if not exist devel\share\urusstudio mkdir devel\share\urusstudio" />
+					<Add after="zip -jq9 devel/share/urusstudio/debugger.zip plugins/debuggergdb/resources/manifest.xml plugins/debuggergdb/resources/*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Code-completion">
-				<Option output="devel/share\urusstudio/plugins/codecompletion" prefix_auto="1" extension_auto="1" />
+				<Option output="devel/share/urusstudio/plugins/codecompletion" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel" />
 				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -431,29 +486,29 @@
 					<Add directory="include/mozilla_chardet/xpcom/glue" />
 				</Compiler>
 				<Linker>
-					<Add option="-Wl,--enable-auto-image-base" />
-					<Add option="-Wl,--add-stdcall-alias" />
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add library="$(#wx.wxlibs)" />
+					<Add library="wxscintilla_cb" />
+					<Add library="txml" />
 					<Add directory="devel" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel\share\CodeBlocks mkdir devel\share\CodeBlocks" />
-					<Add after="zip -jq9 devel\share\urusstudio\codecompletion.zip plugins\codecompletion\resources\manifest.xml plugins\codecompletion\resources\*.xrc" />
+					<Add after="cmd /c if not exist devel\share\urusstudio mkdir devel\share\urusstudio" />
+					<Add after="zip -jq9 devel/share/urusstudio/codecompletion.zip plugins/codecompletion/resources/manifest.xml plugins/codecompletion/resources/*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Class wizard">
-				<Option output="devel/share\urusstudio/plugins/classwizard" prefix_auto="1" extension_auto="1" />
+				<Option output="devel/share/urusstudio/plugins/classwizard" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel" />
 				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -461,29 +516,28 @@
 					<Add directory="include" />
 				</Compiler>
 				<Linker>
-					<Add option="-Wl,--enable-auto-image-base" />
-					<Add option="-Wl,--add-stdcall-alias" />
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add library="$(#wx.wxlibs)" />
+					<Add library="wxscintilla_cb" />
 					<Add directory="devel" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel\share\CodeBlocks mkdir devel\share\CodeBlocks" />
-					<Add after="zip -jq9 devel\share\urusstudio\classwizard.zip plugins\classwizard\resources\manifest.xml plugins\classwizard\resources\*.xrc" />
+					<Add after="cmd /c if not exist devel\share\urusstudio mkdir devel\share\urusstudio" />
+					<Add after="zip -jq9 devel/share/urusstudio/classwizard.zip plugins/classwizard/resources/manifest.xml plugins/classwizard/resources/*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Default MIME handler">
-				<Option output="devel/share\urusstudio/plugins/defaultmimehandler" prefix_auto="1" extension_auto="1" />
+				<Option output="devel/share/urusstudio/plugins/defaultmimehandler" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel" />
 				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -491,29 +545,28 @@
 					<Add directory="include" />
 				</Compiler>
 				<Linker>
-					<Add option="-Wl,--enable-auto-image-base" />
-					<Add option="-Wl,--add-stdcall-alias" />
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add library="$(#wx.wxlibs)" />
+					<Add library="wxscintilla_cb" />
 					<Add directory="devel" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel\share\CodeBlocks mkdir devel\share\CodeBlocks" />
-					<Add after="zip -jq9 devel\share\urusstudio\defaultmimehandler.zip plugins\defaultmimehandler\resources\manifest.xml plugins\defaultmimehandler\resources\*.xrc" />
+					<Add after="cmd /c if not exist devel\share\urusstudio mkdir devel\share\urusstudio" />
+					<Add after="zip -jq9 devel/share/urusstudio/defaultmimehandler.zip plugins/defaultmimehandler/resources/manifest.xml plugins/defaultmimehandler/resources/*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Occurrences Highlighting">
-				<Option output="devel/share\urusstudio/plugins/OccurrencesHighlighting" prefix_auto="1" extension_auto="1" />
+				<Option output="devel/share/urusstudio/plugins/OccurrencesHighlighting" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel" />
 				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -521,29 +574,28 @@
 					<Add directory="include" />
 				</Compiler>
 				<Linker>
-					<Add option="-Wl,--enable-auto-image-base" />
-					<Add option="-Wl,--add-stdcall-alias" />
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add library="$(#wx.wxlibs)" />
+					<Add library="wxscintilla_cb" />
 					<Add directory="devel" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel\share\CodeBlocks mkdir devel\share\CodeBlocks" />
-					<Add after="zip -j9 devel\share\urusstudio\OccurrencesHighlighting.zip plugins\occurrenceshighlighting\resources\manifest.xml plugins\occurrenceshighlighting\resources\*.xrc" />
+					<Add after="cmd /c if not exist devel\share\urusstudio mkdir devel\share\urusstudio" />
+					<Add after="zip -j9 devel/share/urusstudio/OccurrencesHighlighting.zip plugins/occurrenceshighlighting/resources/manifest.xml plugins/occurrenceshighlighting/resources/*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Open files list">
-				<Option output="devel/share\urusstudio/plugins/openfileslist" prefix_auto="1" extension_auto="1" />
+				<Option output="devel/share/urusstudio/plugins/openfileslist" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel" />
 				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -552,29 +604,28 @@
 					<Add directory="include/tinyxml" />
 				</Compiler>
 				<Linker>
-					<Add option="-Wl,--enable-auto-image-base" />
-					<Add option="-Wl,--add-stdcall-alias" />
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add library="$(#wx.wxlibs)" />
+					<Add library="wxscintilla_cb" />
 					<Add directory="devel" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel\share\CodeBlocks mkdir devel\share\CodeBlocks" />
-					<Add after="zip -jq9 devel\share\urusstudio\openfileslist.zip plugins\openfileslist\manifest.xml" />
+					<Add after="cmd /c if not exist devel\share\urusstudio mkdir devel\share\urusstudio" />
+					<Add after="zip -jq9 devel/share/urusstudio/openfileslist.zip plugins/openfileslist/manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Projects-workspaces importer">
-				<Option output="devel/share\urusstudio/plugins/projectsimporter" prefix_auto="1" extension_auto="1" />
+				<Option output="devel/share/urusstudio/plugins/projectsimporter" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel" />
 				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -588,29 +639,29 @@
 					<Add directory="include/mozilla_chardet/xpcom/glue" />
 				</Compiler>
 				<Linker>
-					<Add option="-Wl,--enable-auto-image-base" />
-					<Add option="-Wl,--add-stdcall-alias" />
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add library="$(#wx.wxlibs)" />
+					<Add library="wxscintilla_cb" />
+					<Add library="txml" />
 					<Add directory="devel" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel\share\CodeBlocks mkdir devel\share\CodeBlocks" />
-					<Add after="zip -jq9 devel\share\urusstudio\projectsimporter.zip plugins\projectsimporter\resources\manifest.xml plugins\projectsimporter\resources\*.xrc" />
+					<Add after="cmd /c if not exist devel\share\urusstudio mkdir devel\share\urusstudio" />
+					<Add after="zip -jq9 devel/share/urusstudio/projectsimporter.zip plugins/projectsimporter/resources/manifest.xml plugins/projectsimporter/resources/*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Scripted wizard">
-				<Option output="devel/share\urusstudio/plugins/scriptedwizard" prefix_auto="1" extension_auto="1" />
+				<Option output="devel/share/urusstudio/plugins/scriptedwizard" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel" />
 				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -620,29 +671,31 @@
 					<Add directory="include/scripting/sqplus" />
 				</Compiler>
 				<Linker>
-					<Add option="-Wl,--enable-auto-image-base" />
-					<Add option="-Wl,--add-stdcall-alias" />
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add library="$(#wx.wxlibs)" />
+					<Add library="wxscintilla_cb" />
+					<Add library="sqplus" />
+					<Add library="sqstdlib" />
+					<Add library="squirrel" />
 					<Add directory="devel" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel\share\CodeBlocks mkdir devel\share\CodeBlocks" />
-					<Add after="zip -jq9 devel\share\urusstudio\scriptedwizard.zip plugins\scriptedwizard\resources\manifest.xml" />
+					<Add after="cmd /c if not exist devel\share\urusstudio mkdir devel\share\urusstudio" />
+					<Add after="zip -jq9 devel/share/urusstudio/scriptedwizard.zip plugins/scriptedwizard/resources/manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="To-do">
-				<Option output="devel/share\urusstudio/plugins/todo" prefix_auto="1" extension_auto="1" />
+				<Option output="devel/share/urusstudio/plugins/todo" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel" />
 				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -656,29 +709,28 @@
 					<Add directory="include/mozilla_chardet/xpcom/glue" />
 				</Compiler>
 				<Linker>
-					<Add option="-Wl,--enable-auto-image-base" />
-					<Add option="-Wl,--add-stdcall-alias" />
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add library="$(#wx.wxlibs)" />
+					<Add library="wxscintilla_cb" />
 					<Add directory="devel" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel\share\CodeBlocks mkdir devel\share\CodeBlocks" />
-					<Add after="zip -jq9 devel\share\urusstudio\todo.zip plugins\todo\resources\manifest.xml plugins\todo\resources\*.xrc" />
+					<Add after="cmd /c if not exist devel\share\urusstudio mkdir devel\share\urusstudio" />
+					<Add after="zip -jq9 devel/share/urusstudio/todo.zip plugins/todo/resources/manifest.xml plugins/todo/resources/*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="XP look &amp; feel">
-				<Option output="devel/share\urusstudio/plugins/xpmanifest" prefix_auto="1" extension_auto="1" />
+				<Option output="devel/share/urusstudio/plugins/xpmanifest" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="devel" />
 				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -686,18 +738,17 @@
 					<Add directory="include" />
 				</Compiler>
 				<Linker>
-					<Add option="-Wl,--enable-auto-image-base" />
-					<Add option="-Wl,--add-stdcall-alias" />
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="wxmsw28u_urus_gcc_urus" />
+					<Add library="$(#wx.wxlibs)" />
+					<Add library="wxscintilla_cb" />
 					<Add directory="devel" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel\share\CodeBlocks mkdir devel\share\CodeBlocks" />
-					<Add after="zip -jq9 devel\share\urusstudio\xpmanifest.zip plugins\xpmanifest\manifest.xml" />
+					<Add after="cmd /c if not exist devel\share\urusstudio mkdir devel\share\urusstudio" />
+					<Add after="zip -jq9 devel/share/urusstudio/xpmanifest.zip plugins/xpmanifest/manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
@@ -721,34 +772,32 @@
 			<Add option="-fexceptions" />
 			<Add option="-Winvalid-pch" />
 			<Add option='[[if (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.8.0&quot;)) print(_T(&quot;-Wno-unused-local-typedefs&quot;));]]' />
+			<Add option="-fpermissive" />
 			<Add option="-std=gnu++11" />
 			<Add option="-DHAVE_W32API_H" />
 			<Add option="-D__WXMSW__" />
 			<Add option="-DWXUSINGDLL" />
 			<Add option="-DcbDEBUG" />
-			<Add option="-DCB_PRECOMP" />
-			<Add option="-DWX_PRECOMP" />
 			<Add option="-DwxUSE_UNICODE" />
-			<Add directory="$(#WX.include)" />
-			<Add directory="$(#WX.lib)/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
+			<Add directory="$(#WX31.include)" />
 			<Add directory="sdk/wxscintilla/include" />
 			<Add directory="sdk/wxpropgrid/include" />
 			<Add directory="include/tinyxml" />
+			<Add directory="$(#WXSETUP.include)" />
 		</Compiler>
-		<ResourceCompiler>
-			<Add directory="$(#WX.include)" />
-			<Add directory="$(#WX)/lib/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
-		</ResourceCompiler>
 		<Linker>
-			<Add library="wxmsw28u_urus_gcc_urus" />
+			<Add option="-Wl,--enable-auto-image-base" />
+			<Add option="-Wl,--enable-auto-import" />
+			<Add option="-Wl,--export-all-symbols" />
+			<Add option="-Wl,--add-stdcall-alias" />
+			<Add option="-Wl,--no-undefined" />
+			<Add option="-mthreads" />
 			<Add directory="base/tinyxml" />
-			<Add directory="$(#WX.lib)/gcc_dll$(WX_CFG)" />
+			<Add directory="$(#WX31.lib)" />
+			<Add directory="devel" />
 		</Linker>
 		<Unit filename="base/tinyxml/tinystr.cpp">
 			<Option target="tinyXML" />
-		</Unit>
-		<Unit filename="sdk/tinywxuni.cpp">
-			<Option target="sdk" />
 		</Unit>
 		<Unit filename="base/tinyxml/tinyxml.cpp">
 			<Option target="tinyXML" />
@@ -1267,9 +1316,8 @@
 			<Option target="sdk" />
 		</Unit>
 		<Unit filename="include/sdk.h">
-			<Option compile="1" />
 			<Option weight="1" />
-			<Option target="src" />
+			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="include/sdk_common.h">
 			<Option target="sdk" />
@@ -1278,7 +1326,6 @@
 			<Option target="sdk" />
 		</Unit>
 		<Unit filename="include/sdk_precomp.h">
-			<Option compile="1" />
 			<Option weight="0" />
 			<Option target="sdk" />
 		</Unit>
@@ -1294,11 +1341,11 @@
 		<Unit filename="include/templatemanager.h">
 			<Option target="sdk" />
 		</Unit>
-		<Unit filename="include/tinyxml/tinystr.h">
-			<Option target="tinyXML" />
-		</Unit>
 		<Unit filename="include/tinywxuni.h">
 			<Option target="sdk" />
+		</Unit>
+		<Unit filename="include/tinyxml/tinystr.h">
+			<Option target="tinyXML" />
 		</Unit>
 		<Unit filename="include/tinyxml/tinyxml.h">
 			<Option target="tinyXML" />
@@ -1749,100 +1796,128 @@
 		<Unit filename="plugins/compilergcc/depslib/src/alloc.c">
 			<Option compilerVar="CC" />
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/depslib/src/alloc.h">
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/depslib/src/cache.c">
 			<Option compilerVar="CC" />
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/depslib/src/cache.h">
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/depslib/src/depslib.c">
 			<Option compilerVar="CC" />
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/depslib/src/depslib.h">
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/depslib/src/filent.c">
 			<Option compilerVar="CC" />
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/depslib/src/filesys.h">
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/depslib/src/fileunix.c">
 			<Option compilerVar="CC" />
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/depslib/src/hash.c">
 			<Option compilerVar="CC" />
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/depslib/src/hash.h">
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/depslib/src/headers.c">
 			<Option compilerVar="CC" />
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/depslib/src/headers.h">
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/depslib/src/jam.h">
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/depslib/src/lists.c">
 			<Option compilerVar="CC" />
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/depslib/src/lists.h">
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/depslib/src/newstr.c">
 			<Option compilerVar="CC" />
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/depslib/src/newstr.h">
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/depslib/src/pathsplit.c">
 			<Option compilerVar="CC" />
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/depslib/src/pathsplit.h">
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/depslib/src/pathsys.h">
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/depslib/src/pathunix.c">
 			<Option compilerVar="CC" />
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/depslib/src/regexp.c">
 			<Option compilerVar="CC" />
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/depslib/src/regexp.h">
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/depslib/src/search.c">
 			<Option compilerVar="CC" />
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/depslib/src/search.h">
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/depslib/src/timestamp.c">
 			<Option compilerVar="CC" />
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/depslib/src/timestamp.h">
 			<Option target="Compiler depslib" />
+			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/directcommands.cpp">
 			<Option target="Compiler" />
@@ -3298,6 +3373,9 @@
 			<Option target="sdk" />
 		</Unit>
 		<Unit filename="sdk/templatemanager.cpp">
+			<Option target="sdk" />
+		</Unit>
+		<Unit filename="sdk/tinywxuni.cpp">
 			<Option target="sdk" />
 		</Unit>
 		<Unit filename="sdk/toolsmanager.cpp">

@@ -39,7 +39,7 @@
 			<Add option="-DWXUSINGDLL" />
 			<Add option="-DwxUSE_UNICODE" />
 			<Add directory="$(#wx)\include" />
-			<Add directory="$(#wx.lib)\gcc_dll$(WX_CFG)\msw$(WX_SUFFIX)" />
+			<Add directory="$(#wxsetup.include)" />
 			<Add directory=".." />
 		</Compiler>
 		<ResourceCompiler>
@@ -47,7 +47,7 @@
 		</ResourceCompiler>
 		<Linker>
 			<Add option="-Wl,--enable-auto-import" />
-			<Add library="wxmsw28$(WX_SUFFIX)" />
+			<Add library="$(#wx.wxlibs)" />
 			<Add directory="$(#wx.lib)\gcc_dll$(WX_CFG)" />
 		</Linker>
 		<Unit filename="IETestApp.cpp" />

@@ -8,7 +8,7 @@
 		<Build>
 			<Target title="default">
 				<Option output="../../devel/cb_share_config" prefix_auto="0" extension_auto="1" />
-				<Option working_dir="../../../devel" />
+				<Option working_dir="../../devel" />
 				<Option object_output="../../.objs/tools/cb_share_config" />
 				<Option type="0" />
 				<Option compiler="gcc" />
@@ -27,17 +27,17 @@
 			<Add option="-fmessage-length=0" />
 			<Add option="-fexceptions" />
 			<Add option="-Winvalid-pch" />
+			<Add option="-std=gnu++11" />
 			<Add option="-DUSE_PCH" />
 			<Add option="-D__GNUWIN32__" />
 			<Add option="-D__WXMSW__" />
 			<Add option="-DHAVE_W32API_H" />
 			<Add option="-DwxUSE_UNICODE" />
 			<Add option="-DWXUSINGDLL" />
-			<Add option="-std=gnu++11" />
 			<Add directory="$(#WX.include)" />
-			<Add directory="$(#WX.lib)/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
 			<Add directory="../../include" />
 			<Add directory="../../include/tinyxml" />
+			<Add directory="$(#wxsetup.include)" />
 		</Compiler>
 		<ResourceCompiler>
 			<Add directory="$(#WX.include)" />
@@ -45,9 +45,10 @@
 		<Linker>
 			<Add option="-mthreads" />
 			<Add library="txml" />
-			<Add library="wxmsw28$(WX_SUFFIX)" />
-			<Add directory="$(#WX.lib)/gcc_dll$(WX_CFG)" />
+			<Add library="$(#wx.wxlibs)" />
+			<Add directory="$(#WX.lib)" />
 			<Add directory="../../base/tinyxml" />
+			<Add directory="../../devel" />
 		</Linker>
 		<Unit filename="app.cpp" />
 		<Unit filename="app.h" />

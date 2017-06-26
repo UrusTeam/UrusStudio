@@ -26,7 +26,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --multiple-instance -na -ns -nd -p debug" />
-				<Option host_application="../../../devel/codeblocks.exe" />
+				<Option host_application="../../../devel/urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectResourceIncludeDirsRelation="0" />
 				<Compiler>
@@ -76,7 +76,7 @@
 		<Linker>
 			<Add option="-Wl,--enable-auto-import" />
 			<Add library="codeblocks" />
-			<Add library="wxmsw28$(WX_SUFFIX)" />
+			<Add library="$(#wx.wxlibs)" />
 			<Add directory="bzip2" />
 			<Add directory="$(#WX.lib)/gcc_dll$(WX_CFG)" />
 		</Linker>
