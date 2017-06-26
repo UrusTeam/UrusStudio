@@ -7,12 +7,12 @@
 #
 # $Revision: 5277 $
 # $Id: update 5277 2008-10-19 19:08:32Z jenslody $
-# $HeadURL: https://mortenmacfly@svn.berlios.de/svnroot/repos/codeblocks/trunk/src/plugins/contrib/IncrementalSearch/update $
+# $HeadURL: https://mortenmacfly@svn.berlios.de/svnroot/repos/urusstudio/trunk/src/plugins/contrib/IncrementalSearch/update $
 #
 
-mkdir -p ../../../devel/share/codeblocks/images/settings > /dev/null 2> /dev/null
-mkdir -p ../../../output/share/codeblocks/images/settings > /dev/null 2> /dev/null
-cp ./*.png ../../../devel/share/codeblocks/images/settings/ > /dev/null 2> /dev/null
-cp ./*.png ../../../output/share/codeblocks/images/settings/ > /dev/null 2> /dev/null
+mkdir -p ../../../devel/share/urusstudio/images/settings > /dev/null 2> /dev/null
+mkdir -p ../../../output/share/urusstudio/images/settings > /dev/null 2> /dev/null
+cp ./*.png ../../../devel/share/urusstudio/images/settings/ > /dev/null 2> /dev/null
+cp ./*.png ../../../output/share/urusstudio/images/settings/ > /dev/null 2> /dev/null
 exit 0
 

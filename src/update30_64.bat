@@ -5,8 +5,8 @@ setlocal
 
 echo Creating output30_64 directory tree
 
-set CB_DEVEL_RESDIR=devel30_64\share\CodeBlocks
-set CB_OUTPUT_RESDIR=output30_64\share\CodeBlocks
+set CB_DEVEL_RESDIR=devel30_64\share\urusstudio
+set CB_OUTPUT_RESDIR=output30_64\share\urusstudio
 
 if not exist output30_64 md output30_64\
 if not exist output30_64\share md output30_64\share\
