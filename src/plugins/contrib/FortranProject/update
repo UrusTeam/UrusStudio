@@ -1,0 +1,10 @@
+#! /bin/sh
+#
+
+mkdir -p ../../../devel/share/urusstudio/images/fortranproject> /dev/null 2> /dev/null
+mkdir -p ../../../output/share/urusstudio/images/fortranproject > /dev/null 2> /dev/null
+cp ./images/fortranproject/*.* ../../../devel/share/urusstudio/images/fortranproject/ > /dev/null 2> /dev/null
+cp ./images/fortranproject/*.* ../../../output/share/urusstudio/images/fortranproject/ > /dev/null 2> /dev/null
+exit 0
+
+

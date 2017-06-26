@@ -5,8 +5,8 @@ setlocal
 
 echo Creating output30_64 directory tree
 
-set CB_DEVEL_RESDIR=devel30_64\share\CodeBlocks
-set CB_OUTPUT_RESDIR=output30_64\share\CodeBlocks
+set CB_DEVEL_RESDIR=devel30_64\share\urusstudio
+set CB_OUTPUT_RESDIR=output30_64\share\urusstudio
 
 if not exist output30_64 md output30_64\
 if not exist output30_64\share md output30_64\share\
@@ -87,12 +87,14 @@ xcopy /D /y plugins\compilergcc\resources\compilers\*.xml %CB_OUTPUT_RESDIR%\com
 echo Makefile.am >  excludes30_64.txt
 echo Makefile.in >> excludes30_64.txt
 echo \.svn\      >> excludes30_64.txt
+echo *.gdb       >> excludes30_64.txt
 xcopy /D /y /s plugins\scriptedwizard\resources\* %CB_DEVEL_RESDIR%\templates\wizard /EXCLUDE:excludes30_64.txt >nul
 xcopy /D /y /s plugins\scriptedwizard\resources\* %CB_OUTPUT_RESDIR%\templates\wizard /EXCLUDE:excludes30_64.txt >nul
 xcopy /D /y templates\common\* %CB_OUTPUT_RESDIR%\templates /EXCLUDE:excludes30_64.txt > nul
 xcopy /D /y templates\win32\* %CB_OUTPUT_RESDIR%\templates /EXCLUDE:excludes30_64.txt > nul
 xcopy /D /y templates\common\* %CB_DEVEL_RESDIR%\templates /EXCLUDE:excludes30_64.txt > nul
 xcopy /D /y templates\win32\* %CB_DEVEL_RESDIR%\templates /EXCLUDE:excludes30_64.txt > nul
+xcopy /D /y scripts\*.gdb %CB_OUTPUT_RESDIR% > nul
 xcopy /D /y scripts\* %CB_DEVEL_RESDIR%\scripts /EXCLUDE:excludes30_64.txt > nul
 xcopy /D /y scripts\* %CB_OUTPUT_RESDIR%\scripts /EXCLUDE:excludes30_64.txt > nul
 xcopy /D /y scripts\tests\* %CB_DEVEL_RESDIR%\scripts\tests /EXCLUDE:excludes30_64.txt > nul
