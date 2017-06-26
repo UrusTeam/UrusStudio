@@ -1,12 +1,12 @@
 #!/bin/sh
-
+export PATH=/d/hiro/codeblocks_dev/i686-w64-mingw32/bin:$PATH
 # MSYSTEM is defined when cross-compilig with MinGW/MSYS
 if [ "x$MSYSTEM" != "x" ] ; then
   echo Updating MinGW32/cross version.
   WXURUSBUILD="--build=i686-w64-mingw32"
   WXURUSHOST="--host=i686-w64-mingw32"
   WXURUSTARGET="--target=i686-w64-mingw32"
-  WXURUSCONF="--with-msw --enable-monolithic --with-libiconv"
+  WXURUSCONF="--with-msw --enable-monolithic --enable-shared CFLAGS=-Wno-unused-local-typedefs CXXFLAGS=-Wno-unused-local-typedefs LDFLAGS=-Wl,--no-undefined"
   URUSSTUDIOPLAT="--with-platform=win32"
 else
   uname_str=$(uname)
@@ -40,7 +40,7 @@ make
 make install
 
 #Only for Unix Like, on Windows we don't make it.
-if [ "x$MSYSTEM" == "x" ] ; then
+if [ "x$MSYSTEM" = "x" ] ; then
     export PATH=${URUSSTDTOPDIR}/install/bin:$PATH
     export ACLOCAL_FLAGS="-I `wx-config --prefix`/share/aclocal"
 
