@@ -39,6 +39,8 @@
 			<Add directory="." />
 			<Add directory="..\..\include" />
 			<Add directory="..\..\devel" />
+			<Add directory="..\..\include\scripting\include" />
+			<Add directory="..\..\include\scripting\sqplus" />
 		</Compiler>
 		<ResourceCompiler>
 			<Add directory="$(#WX.include)" />
@@ -47,7 +49,7 @@
 		<Linker>
 			<Add option="-Wl,--enable-auto-import" />
 			<Add option="-mthreads" />
-			<Add library="wxmsw28$(WX_SUFFIX)" />
+			<Add library="$(#wx.wxlibs)" />
 			<Add library="codeblocks" />
 			<Add library="UnitTest++" />
 			<Add directory="$(#unittest_pp.lib)\" />
