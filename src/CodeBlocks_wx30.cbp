@@ -153,7 +153,7 @@
 				</Linker>
 				<ExtraCommands>
 					<Add before="build_tools/autorevision/autorevision +wx +int +t .. include/autorevision.h" />
-					<Add after="cmd /c if not exist devel30\share\CodeBlocks mkdir devel30\share\CodeBlocks" />
+					<Add after="cmd /c if not exist devel30\share\urusstudio mkdir devel30\share\urusstudio" />
 					<Add after="zip -jq9 devel30\share\urusstudio\manager_resources.zip sdk\resources\*.xrc" />
 					<Add after='cmd /c &quot;cd sdk\resources &amp; zip -0 -q ..\..\devel30\share\urusstudio\manager_resources.zip images\*.png images\12x12\*.png images\16x16\*.png&quot;' />
 					<Mode after="always" />
@@ -206,7 +206,7 @@
 				</Linker>
 				<ExtraCommands>
 					<Add before="cmd /c if exist devel30\exchndl.dll del devel30\exchndl.dll" />
-					<Add after="cmd /c if not exist devel30\share\CodeBlocks mkdir devel30\share\CodeBlocks" />
+					<Add after="cmd /c if not exist devel30\share\urusstudio mkdir devel30\share\urusstudio" />
 					<Add after="zip -jq9 devel30\share\urusstudio\resources.zip src\resources\*.xrc" />
 					<Add after="zip -jq9 devel30\share\urusstudio\start_here.zip src\resources\start_here\*.html src\resources\start_here\*.png" />
 					<Add after='cmd /c &quot;cd src\resources &amp; zip -0 -q ..\..\devel30\share\urusstudio\resources.zip images\*.png images\16x16\*.png&quot;' />
@@ -223,7 +223,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -244,7 +244,7 @@
 					<Add directory="devel30" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel30\share\CodeBlocks mkdir devel30\share\CodeBlocks" />
+					<Add after="cmd /c if not exist devel30\share\urusstudio mkdir devel30\share\urusstudio" />
 					<Add after="zip -jq9 devel30\share\urusstudio\abbreviations.zip plugins\abbreviations\resources\manifest.xml plugins\abbreviations\resources\*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
@@ -257,7 +257,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -277,7 +277,7 @@
 					<Add directory="devel30" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel30\share\CodeBlocks mkdir devel30\share\CodeBlocks" />
+					<Add after="cmd /c if not exist devel30\share\urusstudio mkdir devel30\share\urusstudio" />
 					<Add after="zip -jq9 devel30\share\urusstudio\Astyle.zip plugins\astyle\resources\manifest.xml plugins\astyle\resources\*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
@@ -290,7 +290,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -308,7 +308,7 @@
 					<Add directory="devel30" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel30\share\CodeBlocks mkdir devel30\share\CodeBlocks" />
+					<Add after="cmd /c if not exist devel30\share\urusstudio mkdir devel30\share\urusstudio" />
 					<Add after="zip -jq9 devel30\share\urusstudio\autosave.zip plugins\autosave\manifest.xml plugins\autosave\*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
@@ -335,7 +335,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -358,7 +358,7 @@
 					<Add directory="plugins/compilergcc/depslib" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel30\share\CodeBlocks mkdir devel30\share\CodeBlocks" />
+					<Add after="cmd /c if not exist devel30\share\urusstudio mkdir devel30\share\urusstudio" />
 					<Add after="zip -jq9 devel30\share\urusstudio\compiler.zip plugins\compilergcc\resources\manifest.xml plugins\compilergcc\resources\*.xrc" />
 					<Add after='cmd /c &quot;cd plugins\compilergcc\resources &amp; zip -0 -q ..\..\..\devel30\share\urusstudio\compiler.zip images\*.png images\16x16\*.png&quot;' />
 					<Add after="cmd /c if not exist devel30\share\urusstudio\compilers mkdir devel30\share\urusstudio\compilers" />
@@ -374,7 +374,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -394,7 +394,7 @@
 					<Add directory="devel30" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel30\share\CodeBlocks mkdir devel30\share\CodeBlocks" />
+					<Add after="cmd /c if not exist devel30\share\urusstudio mkdir devel30\share\urusstudio" />
 					<Add after="zip -jq9 devel30\share\urusstudio\debugger.zip plugins\debuggergdb\resources\manifest.xml plugins\debuggergdb\resources\*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
@@ -407,7 +407,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -432,7 +432,7 @@
 					<Add directory="devel30" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel30\share\CodeBlocks mkdir devel30\share\CodeBlocks" />
+					<Add after="cmd /c if not exist devel30\share\urusstudio mkdir devel30\share\urusstudio" />
 					<Add after="zip -jq9 devel30\share\urusstudio\codecompletion.zip plugins\codecompletion\resources\manifest.xml plugins\codecompletion\resources\*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
@@ -445,7 +445,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -463,7 +463,7 @@
 					<Add directory="devel30" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel30\share\CodeBlocks mkdir devel30\share\CodeBlocks" />
+					<Add after="cmd /c if not exist devel30\share\urusstudio mkdir devel30\share\urusstudio" />
 					<Add after="zip -jq9 devel30\share\urusstudio\classwizard.zip plugins\classwizard\resources\manifest.xml plugins\classwizard\resources\*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
@@ -476,7 +476,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -494,7 +494,7 @@
 					<Add directory="devel30" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel30\share\CodeBlocks mkdir devel30\share\CodeBlocks" />
+					<Add after="cmd /c if not exist devel30\share\urusstudio mkdir devel30\share\urusstudio" />
 					<Add after="zip -jq9 devel30\share\urusstudio\defaultmimehandler.zip plugins\defaultmimehandler\resources\manifest.xml plugins\defaultmimehandler\resources\*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
@@ -507,7 +507,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -525,7 +525,7 @@
 					<Add directory="devel30" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel30\share\CodeBlocks mkdir devel30\share\CodeBlocks" />
+					<Add after="cmd /c if not exist devel30\share\urusstudio mkdir devel30\share\urusstudio" />
 					<Add after="zip -j9 devel30\share\urusstudio\occurrenceshighlighting.zip plugins\occurrenceshighlighting\resources\manifest.xml plugins\occurrenceshighlighting\resources\*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
@@ -538,7 +538,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -556,7 +556,7 @@
 					<Add directory="devel30" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel30\share\CodeBlocks mkdir devel30\share\CodeBlocks" />
+					<Add after="cmd /c if not exist devel30\share\urusstudio mkdir devel30\share\urusstudio" />
 					<Add after="zip -jq9 devel30\share\urusstudio\openfileslist.zip plugins\openfileslist\manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
@@ -569,7 +569,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -593,7 +593,7 @@
 					<Add directory="devel30" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel30\share\CodeBlocks mkdir devel30\share\CodeBlocks" />
+					<Add after="cmd /c if not exist devel30\share\urusstudio mkdir devel30\share\urusstudio" />
 					<Add after="zip -jq9 devel30\share\urusstudio\projectsimporter.zip plugins\projectsimporter\resources\manifest.xml plugins\projectsimporter\resources\*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
@@ -606,7 +606,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -626,7 +626,7 @@
 					<Add directory="devel30" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel30\share\CodeBlocks mkdir devel30\share\CodeBlocks" />
+					<Add after="cmd /c if not exist devel30\share\urusstudio mkdir devel30\share\urusstudio" />
 					<Add after="zip -jq9 devel30\share\urusstudio\scriptedwizard.zip plugins\scriptedwizard\resources\manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
@@ -639,7 +639,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -663,7 +663,7 @@
 					<Add directory="devel30" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel30\share\CodeBlocks mkdir devel30\share\CodeBlocks" />
+					<Add after="cmd /c if not exist devel30\share\urusstudio mkdir devel30\share\urusstudio" />
 					<Add after="zip -jq9 devel30\share\urusstudio\todo.zip plugins\todo\resources\manifest.xml plugins\todo\resources\*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
@@ -676,7 +676,7 @@
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -694,7 +694,7 @@
 					<Add directory="devel30" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel30\share\CodeBlocks mkdir devel30\share\CodeBlocks" />
+					<Add after="cmd /c if not exist devel30\share\urusstudio mkdir devel30\share\urusstudio" />
 					<Add after="zip -jq9 devel30\share\urusstudio\xpmanifest.zip plugins\xpmanifest\manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>

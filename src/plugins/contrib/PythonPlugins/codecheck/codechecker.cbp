@@ -10,7 +10,7 @@
 				<Option output="CodeChecker" prefix_auto="1" extension_auto="1" />
 				<Option type="3" />
 				<Option compiler="gcc" />
-				<Option host_application="$(#cb)\devel\codeblocks.exe" />
+				<Option host_application="$(#cb)\devel\urusstudio.exe" />
 				<Compiler>
 					<Add option="-g" />
 					<Add option="-pipe" />

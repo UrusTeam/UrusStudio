@@ -11,7 +11,7 @@
 				<Option object_output="../../../.objs31_64/plugins/contrib/rndgen" />
 				<Option type="3" />
 				<Option compiler="gcc" />
-				<Option host_application="../../../devel31_64/codeblocks.exe" />
+				<Option host_application="../../../devel31_64/urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Compiler>
 					<Add option="$(#CB_RELEASE_TYPE)" />
