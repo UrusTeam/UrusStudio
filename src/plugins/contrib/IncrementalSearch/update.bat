@@ -7,12 +7,12 @@ rem Copyright: 2008 Jens Lody
 rem
 rem $Revision: 7443 $
 rem $Id: update.bat 7443 2011-09-01 16:29:16Z mortenmacfly $
-rem $HeadURL: https://mortenmacfly@svn.berlios.de/svnroot/repos/codeblocks/trunk/src/plugins/contrib/IncrementalSearch/update.bat $
+rem $HeadURL: https://mortenmacfly@svn.berlios.de/svnroot/repos/urusstudio/trunk/src/plugins/contrib/IncrementalSearch/update.bat $
 rem
 
-md ..\..\..\devel\share\CodeBlocks\images\settings > nul 2>&1
-md ..\..\..\output\share\CodeBlocks\images\settings > nul 2>&1
-copy .\*.png ..\..\..\devel\share\CodeBlocks\images\settings\ > nul 2>&1
-copy .\*.png ..\..\..\output\share\CodeBlocks\images\settings\ > nul 2>&1
+md ..\..\..\devel\share\urusstudio\images\settings > nul 2>&1
+md ..\..\..\output\share\urusstudio\images\settings > nul 2>&1
+copy .\*.png ..\..\..\devel\share\urusstudio\images\settings\ > nul 2>&1
+copy .\*.png ..\..\..\output\share\urusstudio\images\settings\ > nul 2>&1
 exit 0
 

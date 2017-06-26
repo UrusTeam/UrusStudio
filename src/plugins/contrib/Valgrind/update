@@ -5,9 +5,9 @@
 #
 
 
-mkdir -p ../../../devel/share/codeblocks/images/settings > /dev/null 2> /dev/null
-mkdir -p ../../../output/share/codeblocks/images/settings > /dev/null 2> /dev/null
-cp ./resources/images/*.png ../../../devel/share/codeblocks/images/settings/ > /dev/null 2> /dev/null
-cp ./resources/images/*.png ../../../output/share/codeblocks/images/settings/ > /dev/null 2> /dev/null
+mkdir -p ../../../devel/share/urusstudio/images/settings > /dev/null 2> /dev/null
+mkdir -p ../../../output/share/urusstudio/images/settings > /dev/null 2> /dev/null
+cp ./resources/images/*.png ../../../devel/share/urusstudio/images/settings/ > /dev/null 2> /dev/null
+cp ./resources/images/*.png ../../../output/share/urusstudio/images/settings/ > /dev/null 2> /dev/null
 exit 0
 
