@@ -20,12 +20,8 @@
 				<Option projectResourceIncludeDirsRelation="2" />
 				<Option projectLibDirsRelation="2" />
 				<Compiler>
-					<Add option="-I/d/codeblocks-src2/install/lib/wx/include/msw-unicode-release-2.8-urus -I/d/codeblocks-src2/install/include/wx-2.8-urus -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES -DWXUSINGDLL -D__WXMSW__ -mthreads" />
 					<Add option="-DWXUSINGDLL" />
 				</Compiler>
-				<Linker>
-					<Add library="../../../.objs/sdk/tinywxuni.o" />
-				</Linker>
 			</Target>
 			<Target title="wxSmith">
 				<Option platforms="Windows;" />
