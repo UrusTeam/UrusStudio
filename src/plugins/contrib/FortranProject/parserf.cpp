@@ -2769,7 +2769,7 @@ void ParserF::FindAddress(TokenFlat* tokFl, wxArrayString& address)
                     }
                     else
                     {
-                        int lds = abs(fileChildren->Item(i)->m_LineStart - tokFl->m_LineStart);
+                        int lds = fileChildren->Item(i)->m_LineStart - tokFl->m_LineStart;
                         if ((foundGuess && lineDifStart > lds) || !foundGuess)
                         {
                             guess.Clear();
@@ -2797,7 +2797,7 @@ void ParserF::FindAddress(TokenFlat* tokFl, wxArrayString& address)
                             }
                             else
                             {
-                                int lds = abs(childL1->Item(j)->m_LineStart - tokFl->m_LineStart);
+                                int lds = childL1->Item(j)->m_LineStart - tokFl->m_LineStart;
                                 if ((foundGuess && lineDifStart > lds) || !foundGuess)
                                 {
                                     guess.Clear();
@@ -2829,7 +2829,7 @@ void ParserF::FindAddress(TokenFlat* tokFl, wxArrayString& address)
                                     }
                                     else
                                     {
-                                        int lds = abs(childL2->Item(k)->m_LineStart - tokFl->m_LineStart);
+                                        int lds = childL2->Item(k)->m_LineStart - tokFl->m_LineStart;
                                         if ((foundGuess && lineDifStart > lds) || !foundGuess)
                                         {
                                             guess.Clear();
