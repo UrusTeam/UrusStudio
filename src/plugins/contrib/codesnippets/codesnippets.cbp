@@ -75,7 +75,7 @@
 			<Add directory="$(#WX.lib)" />
 		</Linker>
 		<ExtraCommands>
-			<Add after="update.bat" />
+			<Add after="sh update" />
 			<Mode after="always" />
 		</ExtraCommands>
 		<Unit filename="GenericMessageBox.cpp" />
