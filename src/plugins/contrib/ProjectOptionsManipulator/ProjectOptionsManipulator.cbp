@@ -8,7 +8,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="../../../devel/share\urusstudio/plugins/ProjectOptionsManipulator" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel/share/urusstudio/plugins/ProjectOptionsManipulator" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="../../../devel" />
 				<Option object_output="../../../.objs/plugins/contrib/ProjectOptionsManipulator" />
 				<Option type="3" />
@@ -34,6 +34,7 @@
 			<Add option="-fmessage-length=0" />
 			<Add option="-fexceptions" />
 			<Add option="-Winvalid-pch" />
+			<Add option="-std=gnu++11" />
 			<Add option="-DBUILDING_PLUGIN" />
 			<Add option="-DHAVE_W32API_H" />
 			<Add option="-D__WXMSW__" />
@@ -42,12 +43,11 @@
 			<Add option="-DCB_PRECOMP" />
 			<Add option="-DWX_PRECOMP" />
 			<Add option="-DwxUSE_UNICODE" />
-			<Add option="-std=gnu++11" />
 			<Add directory="../../../include" />
 			<Add directory="../../../include/tinyxml" />
 			<Add directory="../../../sdk/wxscintilla/include" />
 			<Add directory="$(#WX.include)" />
-			<Add directory="$(#WX.lib)/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
+			<Add directory="$(#wxsetup.include)" />
 		</Compiler>
 		<ResourceCompiler>
 			<Add directory="$(#WX.include)" />
@@ -57,12 +57,13 @@
 			<Add option="-Wl,--enable-auto-import" />
 			<Add option="-mthreads" />
 			<Add library="codeblocks" />
-			<Add library="wxmsw28u_urus_gcc_urus" />
+			<Add library="$(#wx.wxlibs)" />
 			<Add directory="../../../devel" />
-			<Add directory="$(#WX.lib)/gcc_dll$(WX_CFG)" />
+			<Add directory="$(#WX.lib)" />
 		</Linker>
 		<ExtraCommands>
-			<Add after="zip -j9 ..\..\..\devel\share\urusstudio\ProjectOptionsManipulator.zip manifest.xml" />
+			<Add after="zip -j9 ../../../devel/share/urusstudio/ProjectOptionsManipulator.zip manifest.xml" />
+			<Mode after="always" />
 		</ExtraCommands>
 		<Unit filename="ProjectOptionsManipulator.cpp" />
 		<Unit filename="ProjectOptionsManipulator.h" />
