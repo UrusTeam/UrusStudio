@@ -8,16 +8,24 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="wxPdfDocument">
-				<Option output="wxPdfDocument/lib/wxPdfDocument" prefix_auto="1" extension_auto="1" />
+				<Option output="wxPdfDocument/lib/libwxPdfDocument" prefix_auto="0" extension_auto="1" />
 				<Option working_dir="" />
 				<Option object_output="../../../.objs/plugins/contrib/source_exporter" />
 				<Option type="2" />
 				<Option compiler="gcc" />
-				<Option projectCompilerOptionsRelation="2" />
-				<Option projectLinkerOptionsRelation="2" />
+				<Option projectCompilerOptionsRelation="1" />
+				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
+					<Add option="-std=gnu++11" />
+					<Add option="-static" />
 					<Add option="-DWXMAKINGLIB_PDFDOC" />
 				</Compiler>
+				<Linker>
+					<Add library="$(#wx.wxlibs)" />
+					<Add directory="$(#WX.lib)" />
+					<Add directory="../../../devel" />
+					<Add directory="wxPdfDocument/lib" />
+				</Linker>
 			</Target>
 			<Target title="makefont">
 				<Option output="wxPdfDocument/makefont/makefont" prefix_auto="0" extension_auto="1" />
@@ -56,9 +64,8 @@
 				</Linker>
 			</Target>
 			<Target title="default">
-				<Option output="../../../devel/share\urusstudio/plugins/Exporter" prefix_auto="0" extension_auto="1" />
+				<Option output="../../../devel/share/urusstudio/plugins/Exporter" prefix_auto="0" extension_auto="1" />
 				<Option object_output="../../../.objs/plugins/contrib/source_exporter" />
-				<Option external_deps="wxPdfDocument/lib/libwxPdfDocument.a;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --multiple-instance -na -ns -nd -p debug" />
@@ -67,17 +74,15 @@
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
-					<Add option="-DCB_PRECOMP" />
-					<Add option="-DcbDEBUG" />
 					<Add directory="../../../include" />
 					<Add directory="../../../include/tinyxml" />
 					<Add directory="../../../sdk/wxscintilla/include" />
 				</Compiler>
 				<Linker>
 					<Add library="codeblocks" />
-					<Add library="wxPdfDocument" />
 					<Add library="$(#wx.wxlibs)" />
 					<Add library="gdi32" />
+					<Add library="wxscintilla_cb" />
 					<Add directory="../../../devel" />
 					<Add directory="wxPdfDocument/lib" />
 				</Linker>
@@ -92,7 +97,7 @@
 			</Environment>
 		</Build>
 		<VirtualTargets>
-			<Add alias="All" targets="wxPdfDocument;default;" />
+			<Add alias="All" targets="wxPdfDocument;" />
 		</VirtualTargets>
 		<Compiler>
 			<Add option="-Wall" />
@@ -101,23 +106,20 @@
 			<Add option="-mthreads" />
 			<Add option="-fexceptions" />
 			<Add option="-std=gnu++11" />
-			<Add option="-DHAVE_W32API_H" />
 			<Add option="-D__WXMSW__" />
-			<Add option="-DWX_PRECOMP" />
 			<Add option="-DWXUSINGDLL" />
 			<Add option="-DwxUSE_UNICODE" />
-			<Add option="-DWXMAKINGDLL_PDFDOC" />
 			<Add option="-DwxPDF_USE_WXMODULE=0" />
 			<Add directory="$(#WX.include)" />
-			<Add directory="$(#WX.lib)/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
+			<Add directory="$(#wxsetup.include)" />
 			<Add directory="wxPdfDocument/include" />
 		</Compiler>
 		<ResourceCompiler>
 			<Add directory="$(#WX.include)" />
 		</ResourceCompiler>
 		<Linker>
-			<Add option="-mthreads" />
-			<Add directory="$(#WX.lib)/gcc_dll$(WX_CFG)" />
+			<Add directory="$(#WX.lib)" />
+			<Add directory="../../../devel" />
 		</Linker>
 		<Unit filename="BaseExporter.cpp">
 			<Option target="default" />
