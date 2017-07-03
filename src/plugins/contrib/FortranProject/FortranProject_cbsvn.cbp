@@ -7,7 +7,7 @@
 		<Build>
 			<Target title="default">
 				<Option platforms="Windows;" />
-				<Option output="../../../devel/share\urusstudio/plugins/FortranProject" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel/share/urusstudio/plugins/FortranProject" prefix_auto="1" extension_auto="1" />
 				<Option object_output="../../../.objs/plugins/contrib/FortranProject" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -27,20 +27,19 @@
 					<Add option="-D__WXMSW__" />
 					<Add option="-DWXUSINGDLL" />
 					<Add option="-DcbDEBUG" />
-					<Add option="-DCB_PRECOMP" />
-					<Add option="-DWX_PRECOMP" />
 					<Add option="-DwxUSE_UNICODE" />
 					<Add directory="../../../include" />
 					<Add directory="../../../include/tinyxml" />
 					<Add directory="../../../sdk/wxscintilla/include" />
 					<Add directory="$(#wx.include)" />
-					<Add directory="$(#wx.lib)/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
+					<Add directory="$(#wxsetup.include)" />
 				</Compiler>
 				<Linker>
 					<Add library="codeblocks" />
 					<Add library="$(#wx.wxlibs)" />
+					<Add library="wxscintilla_cb" />
 					<Add directory="../../../devel" />
-					<Add directory="$(#wx.lib)/gcc_dll$(WX_CFG)" />
+					<Add directory="$(#wx.lib)" />
 				</Linker>
 				<Environment>
 					<Variable name="WX_CFG" value="" />
@@ -52,10 +51,11 @@
 			<Add alias="All" targets="default;" />
 		</VirtualTargets>
 		<ExtraCommands>
-			<Add after="zip -j9 ..\..\..\devel\share\urusstudio\FortranProject.zip manifest.xml resources\workspacebrowserf.xrc resources\settings.xrc resources\fortranprojecttoolbar.xrc" />
-			<Add after="zip -j9 ..\..\..\devel\share\urusstudio\FortranProject.zip resources\changecase.xrc resources\tab2space.xrc" />
-			<Add after="zip -r9 ..\..\..\devel\share\urusstudio\FortranProject.zip images" />
-			<Add after=".\update.bat" />
+			<Add after="zip -j9 ../../../devel/share/urusstudio/FortranProject.zip manifest.xml resources/workspacebrowserf.xrc resources/settings.xrc resources/fortranprojecttoolbar.xrc" />
+			<Add after="zip -j9 ../../../devel/share/urusstudio/FortranProject.zip resources/changecase.xrc resources/tab2space.xrc" />
+			<Add after="zip -r9 ../../../devel/share/urusstudio/FortranProject.zip images" />
+			<Add after="sh update" />
+			<Mode after="always" />
 		</ExtraCommands>
 		<Unit filename="autoinsert.cpp" />
 		<Unit filename="autoinsert.h" />
