@@ -103,7 +103,7 @@ PluginsConfigurationDlg::PluginsConfigurationDlg(wxWindow* parent)
     initialInfo << _T("</font><br /><br /><b><font color=\"red\">");
     initialInfo << _("Have you saved your work first?");
     initialInfo << _T("</font></b><br /><i><font color=\"black\">\n");
-    initialInfo << _("If a plugin is not well-written, it could cause Code::Blocks to crash ");
+    initialInfo << _("If a plugin is not well-written, it could cause Urus Studio to crash ");
     initialInfo << _("when performing any operation on it...");
     initialInfo << _T("<br></font></b><br /><i><font color=\"green\">\n");
     initialInfo << _("Some additional plugins can be found here:");
@@ -113,7 +113,7 @@ PluginsConfigurationDlg::PluginsConfigurationDlg(wxWindow* parent)
     if (PluginManager::GetSafeMode())
     {
         initialInfo << _T("</font></i><br /><br /><b><font color=\"red\">");
-        initialInfo << _("Code::Blocks started up in \"safe-mode\"");
+        initialInfo << _("Urus Studio started up in \"safe-mode\"");
         initialInfo << _T("</font></b><br /><i><font color=\"black\">\n");
         initialInfo << _("All plugins were disabled on startup so that you can troubleshoot ");
         initialInfo << _("problematic plugins. Enable plugins at will now...");

@@ -41,7 +41,7 @@ Cccc::Cccc()
     }
     m_CcccLog = 0;
     m_LogPageIndex = 0; // good init value ???
-    m_CcccApp = _T("cccc");
+    m_CcccApp = _T("cctest");
 } // end of constructor
 
 Cccc::~Cccc()
