@@ -477,7 +477,7 @@ void NewFromTemplateDlg::OnDiscardScript(cb_unused wxCommandEvent& event)
 void NewFromTemplateDlg::OnEditGlobalScript(cb_unused wxCommandEvent& event)
 {
     cbMessageBox(_("Any changes you make to the global wizard registration script will "
-                    "take effect after you restart Code::Blocks."),
+                    "take effect after you restart Urus Studio."),
                     _("Information"), wxICON_INFORMATION, this);
     EditScript(_T("config.script"));
 }

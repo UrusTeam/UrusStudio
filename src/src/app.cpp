@@ -940,7 +940,7 @@ int CodeBlocksApp::BatchJob()
             #ifdef __WXMSW__
                 wxICON(A_MAIN_ICON),
             #else
-                wxIcon(app),
+                wxIcon(appurus),
             #endif // __WXMSW__
                 title);
 

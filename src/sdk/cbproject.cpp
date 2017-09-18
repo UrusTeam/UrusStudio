@@ -303,8 +303,8 @@ void cbProject::Open()
             {
                 InfoWindow::Display(m_Title,
                   _("The loaded project file was generated\n"
-                    "with an older version of Code::Blocks.\n\n"
-                    "Code::Blocks can import older project files,\n"
+                    "with an older version of Urus Studio.\n\n"
+                    "Urus Studio can import older project files,\n"
                     "but will always save in the current format."), 12000, 2000);
             }
             m_LastModified = fname.GetModificationTime();

@@ -612,7 +612,7 @@ MainFrame::MainFrame(wxWindow* parent)
 #ifdef __WXMSW__
     SetIcon(wxICON(A_MAIN_ICON));
 #else
-    SetIcon(wxIcon(app));
+    SetIcon(wxIcon(appurus));
 #endif // __WXMSW__
 
     // even it is possible that the statusbar is not visible at the moment, create the statusbar so the plugins can create their own fields on the it:
@@ -4675,7 +4675,7 @@ void MainFrame::OnSettingsEnvironment(cb_unused wxCommandEvent& event)
         Manager::Get()->ProcessEvent(event2);
     }
     if (needRestart)
-        cbMessageBox(_("Code::Blocks needs to be restarted for the changes to take effect."), _("Information"), wxICON_INFORMATION);
+        cbMessageBox(_("Urus Studio needs to be restarted for the changes to take effect."), _("Information"), wxICON_INFORMATION);
 }
 
 void MainFrame::OnGlobalUserVars(cb_unused wxCommandEvent& event)

@@ -216,11 +216,11 @@ CmdConfigDialog::CmdConfigDialog( wxWindow* parent, ToolsPlus* plugin) : wxDialo
 	wxBoxSizer* output_sizer = new wxBoxSizer( wxHORIZONTAL);
 	m_staticText111 = new wxStaticText( m_prop_panel, wxID_ANY, _("Output to:"), wxDefaultPosition, wxDefaultSize, 0 );
 	output_sizer->Add( m_staticText111, 0, wxALIGN_LEFT|wxALL, 5 );
-	wxString m_modeChoices[] = { _("Tools Output Window"), _("Code::Blocks Console"), _("Standard Shell") };
+	wxString m_modeChoices[] = { _("Tools Output Window"), _("Urus Studio Console"), _("Standard Shell") };
 	int m_modeNChoices = sizeof( m_modeChoices ) / sizeof( wxString );
 	m_mode = new wxChoice( m_prop_panel, ID_MODE, wxDefaultPosition, wxDefaultSize, m_modeNChoices, m_modeChoices, 0 );
 	m_mode->SetToolTip(_("Select how the command is spawned:\n1. Tools Output Window: redirects input and output "
-                       "to the Tools Window\n2. Code::Blocks Console: Runs as an external app in a terminal window, "
+                       "to the Tools Window\n2. Urus Studio Console: Runs as an external app in a terminal window, "
                        "reports elapsed time and pause after execution.\n3. Standard Shell execution: will either "
                        "spawn the command in a standard terminal window (windows) or spawn the command hidden (mac/linux)."));
 	output_sizer->Add( m_mode, 0, wxALL|wxEXPAND, 1 );

@@ -178,9 +178,9 @@ int DefaultMimeHandler::OpenFile(const wxString& filename)
         // not yet supported. ask the user how to open it.
         wxString choices[3] = {_("Select an external program to open it"),
                                _("Open it with the associated application"),
-                               _("Open it inside the Code::Blocks editor")};
+                               _("Open it inside the Urus Studio editor")};
         wxSingleChoiceDialog dlg(Manager::Get()->GetAppWindow(),
-                                _("Code::Blocks does not yet know how to open this kind of file.\n"
+                                _("Urus Studio does not yet know how to open this kind of file.\n"
                                   "Please select what you want to do with it:"),
                                 _("What to do?"),
                                 sizeof(choices) / sizeof(choices[0]),
@@ -207,7 +207,7 @@ int DefaultMimeHandler::OpenFile(const wxString& filename)
                         mt->useEditor = false;
                         mt->useAssoc = false;
                         mt->program = prg;
-                        mt->programIsModal = cbMessageBox(_("Do you want Code::Blocks to be disabled while the external program is running?"), _("Question"), wxICON_QUESTION | wxYES_NO) == wxID_YES;
+                        mt->programIsModal = cbMessageBox(_("Do you want Urus Studio to be disabled while the external program is running?"), _("Question"), wxICON_QUESTION | wxYES_NO) == wxID_YES;
                         m_MimeTypes.Add(mt);
                         return DoOpenFile(mt, filename);
                     }
