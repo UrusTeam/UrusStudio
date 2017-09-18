@@ -57,7 +57,7 @@
 									<content>
 										<item>Launch an external program</item>
 										<item>Launch the associated application</item>
-										<item>Open it in a Code::Blocks editor</item>
+										<item>Open it in a Urus Studio editor</item>
 									</content>
 									<style>wxRA_SPECIFY_COLS</style>
 								</object>

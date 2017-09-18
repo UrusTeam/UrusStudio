@@ -908,7 +908,7 @@ void CompilerGCC::DoRegisterCompilers()
     {
         wxXmlDocument compiler;
         if (!compiler.Load(compilers[i]) || compiler.GetRoot()->GetName() != wxT("CodeBlocks_compiler"))
-            Manager::Get()->GetLogManager()->Log(_("Error: Invalid Code::Blocks compiler definition '") + compilers[i] + wxT("'."));
+            Manager::Get()->GetLogManager()->Log(_("Error: Invalid Urus Studio compiler definition '") + compilers[i] + wxT("'."));
         else
         {
             bool val = true;
@@ -2596,6 +2596,23 @@ void CompilerGCC::PreprocessJob(cbProject* project, const wxString& targetName)
             if (!result.isValid)
             {
                 PrintInvalidCompiler(tgt, result.compiler, _T("Skipping..."));
+/*
+                Compiler *compiler = CompilerFactory::GetCompiler(GetCurrentCompilerID(tgt));
+                wxString compilerName, compilerName2(wxT("unknown"));
+                if (compiler)
+                {
+                    compilerName = wxT("(") + compiler->GetName() + wxT(") ");
+                    compilerName2 = compiler->GetName();
+                }
+                wxString msg;
+                msg.Printf(_T("\"%s - %s\": The compiler's setup %sis invalid, so Urus Studio cannot find/run the compiler.\n")
+                           _T("Probably the toolchain path within the compiler options is not setup correctly?! (Do you have a compiler installed?)\n")
+                           _T("Goto \"Settings->Compiler...->Global compiler settings->%s->Toolchain executables\"")
+                           _T(" and fix the compiler's setup.\n")
+                           _T("Skipping..."),
+                           prj->GetTitle().wx_str(), tlist[x].wx_str(), compilerName.wx_str(), compilerName2.wx_str());
+                Manager::Get()->GetLogManager()->LogWarning(msg, m_PageIndex);
+*/
                 continue;
             }
             else if (!tgt->SupportsCurrentPlatform())

@@ -833,7 +833,7 @@ void Compiler::LoadDefaultOptions(const wxString& name, int recursion)
     }
     if (options.GetRoot()->GetName() != wxT("CodeBlocks_compiler_options"))
     {
-        wxString msg(_("Error: Invalid Code::Blocks compiler options file for compiler '") + name + wxT("'."));
+        wxString msg(_("Error: Invalid Urus Studio compiler options file for compiler '") + name + wxT("'."));
         Manager::Get()->GetLogManager()->Log(msg);
         cbMessageBox(msg, _("Compiler options"), wxICON_ERROR);
         return;

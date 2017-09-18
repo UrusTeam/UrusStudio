@@ -134,7 +134,7 @@
         <label>&amp;Quit</label>
         <bitmap>images\16x16\exit.png</bitmap>
         <accel>Ctrl-Q</accel>
-        <help>Exit Code::Blocks</help>
+        <help>Exit Urus Studio</help>
       </object>
     </object>
     <object class="wxMenu" name="edit_menu">
@@ -722,12 +722,12 @@
       <object class="wxMenuItem" name="wxID_ABOUT">
         <label>&amp;About...</label>
         <bitmap>images\16x16\info.png</bitmap>
-        <help>About Code::Blocks</help>
+        <help>About Urus Studio</help>
       </object>
       <object class="wxMenuItem" name="idHelpTips">
         <label>&amp;Tips</label>
         <bitmap>images\16x16\idea.png</bitmap>
-        <help>Tips on using Code::Blocks</help>
+        <help>Tips on using Urus Studio</help>
       </object>
       <object class="wxMenu" name="idHelpPlugins">
         <label>&amp;Plugins</label>

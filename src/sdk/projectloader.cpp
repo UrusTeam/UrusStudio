@@ -74,15 +74,19 @@ bool ProjectLoader::Open(const wxString& filename, TiXmlElement** ppExtensions)
     TiXmlElement* root;
     TiXmlElement* proj;
 
-    root = doc.FirstChildElement("CodeBlocks_project_file");
+    root = doc.FirstChildElement("UrusStudio_project_file");
     if (!root)
     {
         // old tag
-        root = doc.FirstChildElement("Code::Blocks_project_file");
+        root = doc.FirstChildElement("CodeBlocks_project_file");
         if (!root)
         {
-            pMsg->DebugLog(_T("Not a valid Code::Blocks project file..."));
-            return false;
+            root = doc.FirstChildElement("Code::Blocks_project_file");
+            if (!root)
+            {
+                pMsg->DebugLog(_T("Not a valid Code::Blocks project file..."));
+                return false;
+            }
         }
     }
     proj = root->FirstChildElement("Project");
@@ -1218,7 +1222,7 @@ bool ProjectLoader::Save(const wxString& filename, TiXmlElement* pExtensions)
 
 bool ProjectLoader::ExportTargetAsProject(const wxString& filename, const wxString& onlyTarget, TiXmlElement* pExtensions)
 {
-    const char* ROOT_TAG = "CodeBlocks_project_file";
+    const char* ROOT_TAG = "UrusStudio_project_file";
 
     TiXmlDocument doc;
     doc.SetCondenseWhiteSpace(false);

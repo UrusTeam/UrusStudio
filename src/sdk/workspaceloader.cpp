@@ -69,15 +69,19 @@ bool WorkspaceLoader::Open(const wxString& filename, wxString& Title)
     // (constructors, destructors and static functions excempted from this)
     // This way, we'll use the *manager::Get() functions to check for nulls.
 
-    TiXmlElement* root = doc.FirstChildElement("CodeBlocks_workspace_file");
+    TiXmlElement* root = doc.FirstChildElement("UrusStudio_workspace_file");
     if (!root)
     {
         // old tag
-        root = doc.FirstChildElement("Code::Blocks_workspace_file");
+        root = doc.FirstChildElement("CodeBlocks_workspace_file");
         if (!root)
         {
-            GetpMsg()->DebugLog(_T("Not a valid Code::Blocks workspace file..."));
-            return false;
+            root = doc.FirstChildElement("Code::Blocks_workspace_file");
+            if (!root)
+            {
+                GetpMsg()->DebugLog(_T("Not a valid Code::Blocks workspace file..."));
+                return false;
+            }
         }
     }
     TiXmlElement* wksp = root->FirstChildElement("Workspace");
@@ -162,7 +166,7 @@ bool WorkspaceLoader::Open(const wxString& filename, wxString& Title)
 
 bool WorkspaceLoader::Save(const wxString& title, const wxString& filename)
 {
-    const char* ROOT_TAG = "CodeBlocks_workspace_file";
+    const char* ROOT_TAG = "UrusStudio_workspace_file_workspace_file";
 
     TiXmlDocument doc;
     doc.SetCondenseWhiteSpace(false);

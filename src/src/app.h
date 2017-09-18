@@ -23,7 +23,7 @@
 #endif
 
 #if defined(__WXGTK__) || defined(__WXMOTIF__) || defined(__WXMAC__) || defined(__WXMGL__) || defined(__WXX11__)
-    #include "resources/icons/app.xpm"
+    #include "resources/icons/appurus.xpm"
 #endif
 
 #include <wx/taskbar.h>

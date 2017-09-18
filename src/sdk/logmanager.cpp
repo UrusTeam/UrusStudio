@@ -70,8 +70,8 @@ LogManager::LogManager()
     SetLog(new StdoutLogger, app_log);
     SetLog(new StdoutLogger, debug_log);
     slot[stdout_log].title = _T("stdout");
-    slot[app_log].title = _T("Code::Blocks");
-    slot[debug_log].title = _T("Code::Blocks Debug");
+    slot[app_log].title = _T("Urus Studio");
+    slot[debug_log].title = _T("Urus Studio Debug");
 
     ColourManager *manager = Manager::Get()->GetColourManager();
     manager->RegisterColour(_("Logs"), _("Success text"), wxT("logs_success_text"), *wxBLUE);
@@ -200,7 +200,7 @@ void LogManager::Panic(const wxString& msg, const wxString& component)
     title.Append(component);
 
     if (!component)
-        title.Append(_T("Code::Blocks"));
+        title.Append(_T("Urus Studio"));
 
     wxSafeShowMessage(title, msg);
 }
