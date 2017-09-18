@@ -479,7 +479,7 @@ bool PluginManager::UninstallPlugin(cbPlugin* plugin, bool removeFiles)
                             "plugin.\n"
                             "In this case either uninstall all other plugins "
                             "which are provided by the same file, or remove it yourself "
-                            "(manually) when you shut down Code::Blocks.\n"
+                            "(manually) when you shut down Urus Studio.\n"
                             "The files that could not be deleted are:\n\n") +
                             pluginFilename + _T('\n') +
                             resourceFilename + _T('\n') +
@@ -1069,7 +1069,7 @@ void PluginManager::LoadAllPlugins()
     if (!probPlugin.IsEmpty())
     {
         wxString msg;
-        msg.Printf(_("Plugin \"%s\" failed to load last time Code::Blocks was executed.\n"
+        msg.Printf(_("Plugin \"%s\" failed to load last time Urus Studio was executed.\n"
                     "Do you want to disable this plugin from loading?"), probPlugin.c_str());
         if (cbMessageBox(msg, _("Warning"), wxICON_WARNING | wxYES_NO) == wxID_NO)
             probPlugin = _T("");

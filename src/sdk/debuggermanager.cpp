@@ -469,9 +469,9 @@ wxString cbDetectDebuggerExecutable(const wxString &exeName)
                 exePath = cbInstallFolder + sep + wxT("MINGW") + sep + wxT("bin");
             else
             {
-                exePath = wxT("C:\\MinGW\\bin");
+                exePath = wxT("$(URUSTOOL)\\mingw32\\bin");
                 if (!wxDirExists(exePath))
-                    exePath = wxT("C:\\MinGW32\\bin");
+                    exePath = wxT("$(URUSTOOL)\\mingw32\\bin");
             }
         }
     }

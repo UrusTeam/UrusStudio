@@ -110,7 +110,6 @@
 						<object class="wxBoxSizer">
 							<object class="sizeritem">
 								<object class="wxSplitterWindow" name="splitter">
-									<minsize>250</minsize>
 									<orientation>vertical</orientation>
 									<style>wxSP_3D|wxSP_3DSASH|wxSP_LIVE_UPDATE</style>
 									<object class="wxPanel" name="ID_PANEL1">
