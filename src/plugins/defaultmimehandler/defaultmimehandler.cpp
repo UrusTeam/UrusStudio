@@ -179,9 +179,23 @@ int DefaultMimeHandler::OpenFile(const wxString& filename)
         wxArrayString choices;
         choices.push_back(_("Select an external program to open it"));
         choices.push_back(_("Open it with the associated application"));
-        choices.push_back(_("Open it inside the Code::Blocks editor"));
+        choices.push_back(_("Open it inside the Urus Studio editor"));
+/*
+        wxString choices[3] = {_("Select an external program to open it"),
+                               _("Open it with the associated application"),
+                               _("Open it inside the Urus Studio editor")};
+        wxSingleChoiceDialog dlg(Manager::Get()->GetAppWindow(),
+                                _("Urus Studio does not yet know how to open this kind of file.\n"
+                                  "Please select what you want to do with it:"),
+                                _("What to do?"),
+                                sizeof(choices) / sizeof(choices[0]),
+                                choices);
+        dlg.SetSelection(0);
+        PlaceWindow(&dlg);
+        int answer = dlg.ShowModal();
+*/
 
-        const wxString message = _("Code::Blocks does not yet know how to open this kind of file.\n"
+        const wxString message = _("Urus Studio does not yet know how to open this kind of file.\n"
                                    "Please select what you want to do with it:");
         const int answer = cbGetSingleChoiceIndex(message, _("What to do?"), choices,
                                                   Manager::Get()->GetAppWindow(), wxSize(400, 300),
@@ -204,7 +218,7 @@ int DefaultMimeHandler::OpenFile(const wxString& filename)
                         mt->useEditor = false;
                         mt->useAssoc = false;
                         mt->program = prg;
-                        mt->programIsModal = cbMessageBox(_("Do you want Code::Blocks to be disabled while the external program is running?"), _("Question"), wxICON_QUESTION | wxYES_NO) == wxID_YES;
+                        mt->programIsModal = cbMessageBox(_("Do you want Urus Studio to be disabled while the external program is running?"), _("Question"), wxICON_QUESTION | wxYES_NO) == wxID_YES;
                         m_MimeTypes.Add(mt);
                         return DoOpenFile(mt, filename);
                     }

@@ -2,16 +2,16 @@
 #define BINDTO_H
 
 //(*Headers(Bindto)
+#include <wx/button.h>
+#include <wx/checkbox.h>
+#include <wx/dialog.h>
 #include <wx/listctrl.h>
 #include <wx/notebook.h>
+#include <wx/panel.h>
+#include <wx/radiobut.h>
 #include <wx/sizer.h>
 #include <wx/stattext.h>
 #include <wx/textctrl.h>
-#include <wx/checkbox.h>
-#include <wx/radiobut.h>
-#include <wx/panel.h>
-#include <wx/button.h>
-#include <wx/dialog.h>
 //*)
 
 #include "parserf.h"
@@ -37,40 +37,40 @@ class Bindto: public wxDialog
 		virtual ~Bindto();
 
 		//(*Declarations(Bindto)
-		wxTextCtrl* tc_globalFilename;
-		wxRadioButton* rb_CurrentFile;
-		wxButton* bt_OutputDir;
-		wxPanel* Panel5;
-		wxPanel* pn_pyOpts;
-		wxPanel* Panel4;
-		wxTextCtrl* tc_pyFunName;
-		wxStaticText* st_globalFilename;
-		wxCheckBox* cb_ctorEnd;
 		wxButton* bt_Add;
 		wxButton* bt_Defaults;
-		wxPanel* Panel1;
-		wxListView* lv_Types;
-		wxTextCtrl* tc_bindCName;
-		wxCheckBox* cb_dtorStart;
-		wxStaticText* StaticText7;
-		wxCheckBox* cb_incompleteWrapperProc;
-		wxTextCtrl* tc_ctorEnd;
-		wxCheckBox* cb_pyFirstSelf;
 		wxButton* bt_Edit;
-		wxRadioButton* rb_ActiveProject;
-		wxCheckBox* cb_pyGenClass;
-		wxCheckBox* cb_genCython;
-		wxTextCtrl* tc_ctorStart;
-		wxTextCtrl* tc_dtorStart;
-		wxButton* bt_copy;
-		wxCheckBox* cb_dtorEnd;
-		wxPanel* Panel2;
-		wxCheckBox* cb_globalToOne;
+		wxButton* bt_OutputDir;
 		wxButton* bt_Remove;
-		wxTextCtrl* tc_OutputDir;
+		wxButton* bt_copy;
+		wxCheckBox* cb_ctorEnd;
 		wxCheckBox* cb_ctorStart;
+		wxCheckBox* cb_dtorEnd;
+		wxCheckBox* cb_dtorStart;
+		wxCheckBox* cb_genCython;
+		wxCheckBox* cb_globalToOne;
+		wxCheckBox* cb_incompleteWrapperProc;
+		wxCheckBox* cb_pyFirstSelf;
+		wxCheckBox* cb_pyGenClass;
+		wxListView* lv_Types;
+		wxPanel* Panel1;
+		wxPanel* Panel2;
+		wxPanel* Panel4;
+		wxPanel* Panel5;
+		wxPanel* pn_pyOpts;
+		wxRadioButton* rb_ActiveProject;
+		wxRadioButton* rb_CurrentFile;
 		wxStaticText* StaticText16;
+		wxStaticText* StaticText7;
+		wxStaticText* st_globalFilename;
+		wxTextCtrl* tc_OutputDir;
+		wxTextCtrl* tc_bindCName;
+		wxTextCtrl* tc_ctorEnd;
+		wxTextCtrl* tc_ctorStart;
 		wxTextCtrl* tc_dtorEnd;
+		wxTextCtrl* tc_dtorStart;
+		wxTextCtrl* tc_globalFilename;
+		wxTextCtrl* tc_pyFunName;
 		//*)
 
 	protected:

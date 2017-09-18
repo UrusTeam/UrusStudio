@@ -261,8 +261,14 @@ bool QueryVersionControl(const std::string& workingDir, std::string& vcsExecutab
                 puts("Warning: Could not find 'Date:' tag in GIT output.");
         }
 
+        if (date == "unknown date") {
+            date = __DATE__ + (string)", " + __TIME__;
+            return true;
+        }
         return hasRev && hasDate;
     }
+
+    date = __DATE__ + (string)", " + __TIME__;
     // if we are here, we could not read the info
     return true;
 }

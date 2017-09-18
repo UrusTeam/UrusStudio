@@ -986,7 +986,7 @@ int CodeBlocksApp::BatchJob()
             #ifdef __WXMSW__
                 wxICON(A_MAIN_ICON),
             #else
-                wxIcon(app_xpm),
+                wxIcon(appurus),
             #endif // __WXMSW__
                 title);
 

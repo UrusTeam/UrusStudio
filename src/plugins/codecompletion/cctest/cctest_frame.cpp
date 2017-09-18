@@ -233,7 +233,7 @@ CCTestFrame::CCTestFrame(const wxString& main_file) :
     // TODO: Make this base folders configurable
     wxString wx_base (wxT("E:\\code\\cb\\wx\\wxWidgets-2.8.12\\"));
     wxString gcc_base(wxT("E:\\code\\gcc\\pcxmingw463\\" ));
-    wxString mingwver(wxT("i686-w64-mingw32"));
+    wxString mingwver(wxT("mingw32"));
     wxString gccver(wxT("4.6.3"));
 
     m_IncludeCtrl->SetValue(wx_base  + wxT("include")                                                                 + wxT("\n") +

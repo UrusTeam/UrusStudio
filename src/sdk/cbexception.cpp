@@ -43,7 +43,7 @@ void cbException::ShowErrorMessage(bool safe)
     err.Printf(_("An exception has been raised!\n\n"
                  "The application encountered an error at %s, on line %d.\n"
                  "The error message is:\n\n%s\n\n"
-                 "Code::Blocks Version revision %u (%s, "
+                 "Urus Studio Version revision %u (%s, "
                  "build: %s %s)"),
                File.c_str(), Line, Message.c_str(),
                ConfigManager::GetRevisionNumber(), compilerVersion.c_str(),
