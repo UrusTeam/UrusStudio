@@ -59,6 +59,15 @@ bool CCodeBlocksBuildManager::LoadProjectOrWorkspace(const CString& FileName)
         m_Workspace.LoadWorkspaceProjects(ExtractFilePath(FileName));
         m_WorkspaceLoaded = true;
         result = true;
+    } else if (0==strcmp(root->Value(),"UrusStudio_project_file")) {
+        m_Project.Read(root);
+        m_ProjectLoaded = true;
+        result = true;
+    } else if (0==strcmp(root->Value(),"UrusStudio_workspace_file")) {
+        m_Workspace.Read(root);
+        m_Workspace.LoadWorkspaceProjects(ExtractFilePath(FileName));
+        m_WorkspaceLoaded = true;
+        result = true;
     }
     return result;
 }
