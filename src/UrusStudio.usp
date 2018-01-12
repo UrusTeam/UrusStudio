@@ -2489,6 +2489,8 @@
 		<Unit filename="plugins/scriptedwizard/resources/tricore/wizard.xrc">
 			<Option target="Scripted wizard" />
 		</Unit>
+		<Unit filename="plugins/scriptedwizard/resources/urus/gui/wizard.script" />
+		<Unit filename="plugins/scriptedwizard/resources/urus/gui/wizard.xrc" />
 		<Unit filename="plugins/scriptedwizard/resources/win32gui/wizard.script">
 			<Option target="Scripted wizard" />
 		</Unit>
