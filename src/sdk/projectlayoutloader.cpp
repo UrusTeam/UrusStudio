@@ -58,15 +58,20 @@ bool ProjectLayoutLoader::Open(const wxString& filename)
     wxString fname;
     ProjectFile* pf;
 
-    root = doc.FirstChildElement("CodeBlocks_layout_file");
+    root = doc.FirstChildElement("UrusStudio_layout_file");
     if (!root)
     {
-        // old tag
-        root = doc.FirstChildElement("Code::Blocks_layout_file");
+        // CodeBlocks tag
+        root = doc.FirstChildElement("CodeBlocks_layout_file");
         if (!root)
         {
-            pMsg->DebugLog(_T("Not a valid Code::Blocks layout file..."));
-            return false;
+            // old tag
+            root = doc.FirstChildElement("Code::Blocks_layout_file");
+            if (!root)
+            {
+                pMsg->DebugLog(_T("Not a valid Code::Blocks layout file..."));
+                return false;
+            }
         }
     }
 
@@ -248,7 +253,7 @@ bool ProjectLayoutLoader::Open(const wxString& filename)
 
 bool ProjectLayoutLoader::Save(const wxString& filename)
 {
-    const char* ROOT_TAG = "CodeBlocks_layout_file";
+    const char* ROOT_TAG = "UrusStudio_layout_file";
 
     TiXmlDocument doc;
     doc.SetCondenseWhiteSpace(false);

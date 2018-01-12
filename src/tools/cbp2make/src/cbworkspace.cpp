@@ -190,6 +190,9 @@ bool CCodeBlocksWorkspace::LoadWorkspace(const CString& FileName)
     if (0==strcmp(root->Value(),"CodeBlocks_workspace_file")) {
         Read(root);
         result = true;
+    } else if (0==strcmp(root->Value(),"UrusStudio_workspace_file")) {
+        Read(root);
+        result = true;
     }
 //
     return result;
