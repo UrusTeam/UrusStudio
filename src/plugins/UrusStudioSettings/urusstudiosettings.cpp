@@ -54,14 +54,10 @@ void urusstudiosettings::OnAttach()
     // You should check for it in other functions, because if it
     // is FALSE, it means that the application did *not* "load"
     // (see: does not need) this plugin...
-    ConfigManager *cfgman_gcv = Manager::Get()->GetConfigManager(_T("gcv"));
-    cfgman_gcv->Write(_T("/sets/default/uruspath/base"),"$(URUSSPATH)");
-    cfgman_gcv->Write(_T("/sets/default/uruspath/include"),"$(URUSSPATH)/include");
-    cfgman_gcv->Write(_T("/sets/default/uruspath/lib"),"$(URUSSPATH)/devel");
 
     wxString plattoolurus;
     #if   defined(__WXMSW__)
-        plattoolurus = _T("mingw32");
+        plattoolurus = _T("/mingw32");
     #elif defined(__WXGTK__)
         plattoolurus = _T("gtk");
     #elif defined(__WXMAC__)
@@ -69,16 +65,22 @@ void urusstudiosettings::OnAttach()
     #else
         plattoolurus = _T("");
     #endif
+
+    ConfigManager *cfgman_gcv = Manager::Get()->GetConfigManager(_T("gcv"));
+    cfgman_gcv->Write(_T("/sets/default/uruspath/base"),_T("$(URUSSPATH)"  + plattoolurus));
+    cfgman_gcv->Write(_T("/sets/default/uruspath/include"),_T("$(URUSSPATH)") + plattoolurus + _T("/include"));
+    cfgman_gcv->Write(_T("/sets/default/uruspath/lib"),_T("$(URUSSPATH)") + plattoolurus + _T("/lib"));
+
     wxString vermajor, verminor;
     wxString verwxurus;
     vermajor = _T(wxSTRINGIZE(wxMAJOR_VERSION));
     verminor = _T(wxSTRINGIZE(wxMINOR_VERSION));
     verwxurus = vermajor + _T(".") + verminor;
 
-    cfgman_gcv->Write(_T("/sets/default/urustool/base"),(_T("$(URUSTOOL)/") + plattoolurus));
-    cfgman_gcv->Write(_T("/sets/default/urustool/include"),(_T("$(URUSTOOL)/") + plattoolurus + _T("/include/wx-") + verwxurus) + _T("-urus"));
-    cfgman_gcv->Write(_T("/sets/default/urustool/setup"),(_T("$(URUSTOOL)/") + plattoolurus + _T("/lib/wx/include/msw-unicode-release-") + verwxurus + _T("-urus")));
-    cfgman_gcv->Write(_T("/sets/default/urustool/lib"),(_T("$(URUSTOOL)/") + plattoolurus) + _T("/lib"));
+    cfgman_gcv->Write(_T("/sets/default/urusstool/base"),(_T("$(URUSTOOL)") + plattoolurus));
+    cfgman_gcv->Write(_T("/sets/default/urusstool/include"),(_T("$(URUSTOOL)") + plattoolurus + _T("/include/wx-") + verwxurus) + _T("-urus"));
+    cfgman_gcv->Write(_T("/sets/default/urusstool/setup"),(_T("$(URUSTOOL)") + plattoolurus + _T("/lib/wx/include/msw-unicode-release-") + verwxurus + _T("-urus")));
+    cfgman_gcv->Write(_T("/sets/default/urusstool/lib"),(_T("$(URUSTOOL)") + plattoolurus) + _T("/lib"));
 
     main_settings = new FMainSettings(Manager::Get()->GetAppWindow());
     CodeBlocksDockEvent evt(cbEVT_ADD_DOCK_WINDOW);
