@@ -198,9 +198,9 @@ function OnLeave_WxPath(fwd)
         local dir         = WxPath;//Wizard.GetTextControlValue(_T("txtFolder"));
         local dir_nomacro = ReplaceMacros(dir, true);
         // see if it matches the global var. if it does, use the var instead...
-        if (GetUserVariableManager().Exists(_T("URUSTOOL")))
+        if (GetUserVariableManager().Exists(_T("#URUSSTOOL")))
         {
-            local gvar = ReplaceMacros(_T("$(URUSTOOL)"), true);
+            local gvar = ReplaceMacros(_T("$(#URUSSTOOL)"), true);
             if (gvar.Matches(dir_nomacro))
                 dir = gvar;
         }
