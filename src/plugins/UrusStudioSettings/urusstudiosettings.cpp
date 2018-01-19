@@ -57,9 +57,9 @@ void urusstudiosettings::OnAttach()
 
     wxString plattoolurus;
     #if   defined(__WXMSW__)
-        plattoolurus = _T("/mingw32");
+        plattoolurus = _T("/..");
     #elif defined(__WXGTK__)
-        plattoolurus = _T("gtk");
+        plattoolurus = _T("/..");
     #elif defined(__WXMAC__)
         plattoolurus = _T("mac");
     #else
