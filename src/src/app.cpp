@@ -386,7 +386,7 @@ bool CodeBlocksApp::LoadConfig()
     wxString data(wxT(APP_PREFIX));
 
     if (platform::windows)
-        data.assign(GetAppPath());
+        data.assign(GetAppPath()  + _T("/.."));
     else if (platform::macosx)
     {
         data.assign(GetResourcesDir());                 // CodeBlocks.app/Contents/Resources
@@ -407,7 +407,7 @@ bool CodeBlocksApp::LoadConfig()
     {
 
         wxString env;
-        wxGetEnv(_T("CODEBLOCKS_DATA_DIR"), &env);
+        wxGetEnv(_T("URUSSTUDIO_DATA_DIR"), &env);
         if (!env.IsEmpty())
             data = env;
     }
@@ -485,7 +485,7 @@ bool CodeBlocksApp::InitXRCStuff()
         msg.Printf(_T("Cannot find resources...\n"
                       "%s was configured to be installed in '%s'.\n"
                       "Please use the command-line switch '--prefix' or "
-                      "set the CODEBLOCKS_DATA_DIR environment variable "
+                      "set the URUSSTUDIO_DATA_DIR environment variable "
                       "to point where %s is installed,\n"
                       "or try re-installing the application..."),
                    appglobals::AppName.wx_str(),
