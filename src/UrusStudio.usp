@@ -496,7 +496,7 @@
 					<Add directory="devel" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="mkdir p devel/share/urusstudio" />
+					<Add after="mkdir -p devel/share/urusstudio" />
 					<Add after="zip -jq9 devel/share/urusstudio/codecompletion.zip plugins/codecompletion/resources/manifest.xml plugins/codecompletion/resources/*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
