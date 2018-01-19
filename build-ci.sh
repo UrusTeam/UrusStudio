@@ -27,6 +27,7 @@ else
   fi
 fi
 
+export URUSINSTALLDIR=/system/urus
 export URUSSTDTOPDIR=$(pwd)
 
 cd modules/wxWidgets
@@ -35,13 +36,13 @@ export WXURUSTOPDIR=$(pwd)
 mkdir -p buildwx
 cd buildwx
 
-../configure $WXURUSBUILD $WXURUSHOST $WXURUSTARGET --prefix=${URUSSTDTOPDIR}/install --enable-unicode --with-flavour=urus --enable-vendor=urus $WXURUSCONF
+../configure $WXURUSBUILD $WXURUSHOST $WXURUSTARGET --prefix=${URUSINSTALLDIR} --enable-unicode --with-flavour=urus --enable-vendor=urus $WXURUSCONF
 make
 make install
 
 #Only for Unix Like, on Windows we don't make it.
 if [ "x$MSYSTEM" = "x" ] ; then
-    export PATH=${URUSSTDTOPDIR}/install/bin:$PATH
+    export PATH=${URUSINSTALLDIR}/bin:$PATH
     export ACLOCAL_FLAGS="-I `wx-config --prefix`/share/aclocal"
 
     cd ${URUSSTDTOPDIR}
@@ -49,7 +50,7 @@ if [ "x$MSYSTEM" = "x" ] ; then
     mkdir -p buildustd
     cd buildustd
 
-    ../configure $WXURUSBUILD $WXURUSHOST $WXURUSTARGET --with-contrib-plugins="AutoVersioning, BrowseTracker, Cccc, CppCheck, cbkoders, codesnippets,codestat, copystrings, Cscope, dragscroll, EditorConfig, EditorTweaks, envvars,FileManager, headerfixup, hexeditor, incsearch, keybinder, libfinder, MouseSap, ProjectOptionsManipulator, profiler, regex, ReopenEditor,smartindent,symtab, ThreadSearch, wxcontrib, wxsmith, wxsmithcontrib, wxsmithaui" --prefix=${URUSSTDTOPDIR}/install $URUSSTUDIOPLAT
+    ../configure $WXURUSBUILD $WXURUSHOST $WXURUSTARGET --with-contrib-plugins="AutoVersioning, BrowseTracker, Cccc, CppCheck, cbkoders, codesnippets,codestat, copystrings, Cscope, dragscroll, EditorConfig, EditorTweaks, envvars,FileManager, headerfixup, hexeditor, incsearch, keybinder, libfinder, MouseSap, ProjectOptionsManipulator, profiler, regex, ReopenEditor,smartindent,symtab, ThreadSearch, wxcontrib, wxsmith, wxsmithcontrib, wxsmithaui" --prefix=${URUSINSTALLDIR} $URUSSTUDIOPLAT
     make
     make install
 fi
