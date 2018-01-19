@@ -57,6 +57,8 @@ void urusstudiosettings::OnAttach()
 
     wxString plattoolurus;
     wxString wxplaturus;
+    wxString dummy;
+    dummy = _T("");
     #if   defined(__WXMSW__)
         plattoolurus = _T("/..");
         wxplaturus =  _T("msw");
@@ -86,9 +88,18 @@ void urusstudiosettings::OnAttach()
     cfgman_gcv->Write(_T("/sets/default/urusstool/setup"),(_T("$(URUSTOOL)") + plattoolurus + _T("/lib/wx/include/") + wxplaturus + _T("-unicode-release-") + verwxurus + _T("-urus")));
     cfgman_gcv->Write(_T("/sets/default/urusstool/lib"),(_T("$(URUSTOOL)") + plattoolurus) + _T("/lib"));
 
-    cfgman_gcv->Write(_T("/sets/default/cb/base"), _T("$(WORKSPACEDIR)"));
-    cfgman_gcv->Write(_T("/sets/default/cb/include"), _T("$(WORKSPACEDIR)/include/urusstudio"));
-    cfgman_gcv->Write(_T("/sets/default/cb/lib"), _T("$(WORKSPACEDIR)/lib"));
+    cfgman_gcv->Write(_T("/sets/default/cb/base"),(_T("$(WORKSPACEDIR)") + dummy));
+    cfgman_gcv->Write(_T("/sets/default/cb/include"),(_T("$(WORKSPACEDIR)") + dummy + _T("/include/urusstudio")));
+    cfgman_gcv->Write(_T("/sets/default/cb/lib"),(_T("$(WORKSPACEDIR)") + dummy + _T("/lib")));
+
+    cfgman_gcv->Write(_T("/sets/default/wx/base"),(_T("$(#URUSSTOOL.base)") + dummy));
+    cfgman_gcv->Write(_T("/sets/default/wx/include"),(_T("$(#URUSSTOOL.include)") + dummy));
+    cfgman_gcv->Write(_T("/sets/default/wx/lib"),(_T("$(#URUSSTOOL.lib)") + dummy));
+    cfgman_gcv->Write(_T("/sets/default/wx/wxlibs"),(_T("wx_") + wxplaturus + _T("u_urus-") + verwxurus));
+
+    cfgman_gcv->Write(_T("/sets/default/wxsetup/base"),(_T("$(#URUSSTOOL.base)") + dummy));
+    cfgman_gcv->Write(_T("/sets/default/wxsetup/include"),(_T("$(#URUSSTOOL.setup)") + dummy));
+    cfgman_gcv->Write(_T("/sets/default/wxsetup/lib"),(_T("$(#URUSSTOOL.lib)") + dummy));
 
     main_settings = new FMainSettings(Manager::Get()->GetAppWindow());
     CodeBlocksDockEvent evt(cbEVT_ADD_DOCK_WINDOW);
