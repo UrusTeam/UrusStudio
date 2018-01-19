@@ -56,18 +56,22 @@ void urusstudiosettings::OnAttach()
     // (see: does not need) this plugin...
 
     wxString plattoolurus;
+    wxString wxplaturus;
     #if   defined(__WXMSW__)
         plattoolurus = _T("/..");
+        wxplaturus =  _T("msw");
     #elif defined(__WXGTK__)
         plattoolurus = _T("/..");
+        wxplaturus =  _T("gtk");
     #elif defined(__WXMAC__)
         plattoolurus = _T("mac");
     #else
         plattoolurus = _T("");
+        wxplaturus =  _T("default");
     #endif
 
     ConfigManager *cfgman_gcv = Manager::Get()->GetConfigManager(_T("gcv"));
-    cfgman_gcv->Write(_T("/sets/default/uruspath/base"),_T("$(URUSSPATH)"  + plattoolurus));
+    cfgman_gcv->Write(_T("/sets/default/uruspath/base"),_T("$(URUSSPATH)"  + plattoolurus  + _T("/")));
     cfgman_gcv->Write(_T("/sets/default/uruspath/include"),_T("$(URUSSPATH)") + plattoolurus + _T("/include"));
     cfgman_gcv->Write(_T("/sets/default/uruspath/lib"),_T("$(URUSSPATH)") + plattoolurus + _T("/lib"));
 
@@ -77,10 +81,14 @@ void urusstudiosettings::OnAttach()
     verminor = _T(wxSTRINGIZE(wxMINOR_VERSION));
     verwxurus = vermajor + _T(".") + verminor;
 
-    cfgman_gcv->Write(_T("/sets/default/urusstool/base"),(_T("$(URUSTOOL)") + plattoolurus));
+    cfgman_gcv->Write(_T("/sets/default/urusstool/base"),(_T("$(URUSTOOL)") + plattoolurus + _T("/")));
     cfgman_gcv->Write(_T("/sets/default/urusstool/include"),(_T("$(URUSTOOL)") + plattoolurus + _T("/include/wx-") + verwxurus) + _T("-urus"));
-    cfgman_gcv->Write(_T("/sets/default/urusstool/setup"),(_T("$(URUSTOOL)") + plattoolurus + _T("/lib/wx/include/msw-unicode-release-") + verwxurus + _T("-urus")));
+    cfgman_gcv->Write(_T("/sets/default/urusstool/setup"),(_T("$(URUSTOOL)") + plattoolurus + _T("/lib/wx/include/") + wxplaturus + _T("-unicode-release-") + verwxurus + _T("-urus")));
     cfgman_gcv->Write(_T("/sets/default/urusstool/lib"),(_T("$(URUSTOOL)") + plattoolurus) + _T("/lib"));
+
+    cfgman_gcv->Write(_T("/sets/default/cb/base"), _T("$(WORKSPACEDIR)"));
+    cfgman_gcv->Write(_T("/sets/default/cb/include"), _T("$(WORKSPACEDIR)/include/urusstudio"));
+    cfgman_gcv->Write(_T("/sets/default/cb/lib"), _T("$(WORKSPACEDIR)/lib"));
 
     main_settings = new FMainSettings(Manager::Get()->GetAppWindow());
     CodeBlocksDockEvent evt(cbEVT_ADD_DOCK_WINDOW);
