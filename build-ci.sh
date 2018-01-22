@@ -22,7 +22,9 @@ else
     WXURUSBUILD=""
     WXURUSHOST=""
     WXURUSTARGET=""
-    WXURUSCONF="--with-gtk --enable-monolithic"
+    export CXXFLAGS="-Wno-unused-local-typedefs -Wno-narrowing -Wno-literal-suffix"
+    export CFLAGS="-Wno-unused-local-typedefs -Wno-narrowing"
+    WXURUSCONF="--with-gtk --enable-monolithic --enable-shared"
     URUSSTUDIOPLAT="--with-platform=gtk"
   fi
 fi
