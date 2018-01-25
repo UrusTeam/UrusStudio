@@ -5,6 +5,12 @@ dist_pkgdata_DATA = gui/logo.png \
 					gui/wizard.script \
 					gui/wizard.xrc
 
+guifilesdir = $(pkgdatadir)/gui
+
+dist_guifiles_DATA =  	gui/logo.png \
+		gui/wizard.png \
+		gui/wizard.script \
+		gui/wizard.xrc
 
 commonfilesdir		= $(pkgdatadir)/gui/common
 
