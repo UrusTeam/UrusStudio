@@ -43,18 +43,20 @@ make
 make install
 
 #Only for Unix Like, on Windows we don't make it.
-if [ "x$MSYSTEM" = "x" ] ; then
-    export PATH=${URUSINSTALLDIR}/bin:$PATH
-    export ACLOCAL_FLAGS="-I `wx-config --prefix`/share/aclocal"
+if [ "x$NO_BUILD_ALL" = "x" ] ; then
+    if [ "x$MSYSTEM" = "x" ] ; then
+        export PATH=${URUSINSTALLDIR}/bin:$PATH
+        export ACLOCAL_FLAGS="-I `wx-config --prefix`/share/aclocal"
 
-    cd ${URUSSTDTOPDIR}
-    ./bootstrap
-    mkdir -p buildustd
-    cd buildustd
+        cd ${URUSSTDTOPDIR}
+        ./bootstrap
+        mkdir -p buildustd
+        cd buildustd
 
-    ../configure $WXURUSBUILD $WXURUSHOST $WXURUSTARGET --with-contrib-plugins="AutoVersioning, BrowseTracker, Cccc, CppCheck, cbkoders, codesnippets,codestat, copystrings, Cscope, dragscroll, EditorConfig, EditorTweaks, envvars,FileManager, headerfixup, hexeditor, incsearch, keybinder, libfinder, MouseSap, ProjectOptionsManipulator, profiler, regex, ReopenEditor,smartindent,symtab, ThreadSearch, wxcontrib, wxsmith, wxsmithcontrib, wxsmithaui" --prefix=${URUSINSTALLDIR} $URUSSTUDIOPLAT
-    make
-    make install
+        ../configure $WXURUSBUILD $WXURUSHOST $WXURUSTARGET --with-contrib-plugins="AutoVersioning, BrowseTracker, Cccc, CppCheck, cbkoders, codesnippets,codestat, copystrings, Cscope, dragscroll, EditorConfig, EditorTweaks, envvars,FileManager, headerfixup, hexeditor, incsearch, keybinder, libfinder, MouseSap, ProjectOptionsManipulator, profiler, regex, ReopenEditor,smartindent,symtab, ThreadSearch, wxcontrib, wxsmith, wxsmithcontrib, wxsmithaui" --prefix=${URUSINSTALLDIR} $URUSSTUDIOPLAT
+        make
+        make install
+    fi
 fi
 
 echo BUILD OK!
