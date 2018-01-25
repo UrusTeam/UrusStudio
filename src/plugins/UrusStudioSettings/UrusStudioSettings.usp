@@ -5,7 +5,7 @@
 		<Option title="Urus Studio Settings" />
 		<Option compiler="gcc" />
 		<Build>
-			<Target title="default">
+			<Target title="win">
 				<Option platforms="Windows;" />
 				<Option output="../../devel/share/urusstudio/plugins/urusstudiosettings" prefix_auto="1" extension_auto="1" />
 				<Option object_output="../../.objs/plugins/urusstudiosettings" />
@@ -50,7 +50,7 @@
 			</Target>
 			<Target title="unix">
 				<Option platforms="Unix;Mac;" />
-				<Option output="../../devel/share/urusstudio/plugins/urusstudiosettings" prefix_auto="1" extension_auto="1" />
+				<Option output="../../devel/lib/urusstudio/plugins/urusstudiosettings" prefix_auto="1" extension_auto="1" />
 				<Option object_output="../../.objs/plugins/urusstudiosettings" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -67,6 +67,7 @@
 					<Add option="-D__WXGTK__" />
 					<Add option="-DWXUSINGDLL" />
 					<Add option="-DwxUSE_UNICODE" />
+					<Add option="-DGTK_VERSION=2" />
 					<Add directory="$(#cb)/include" />
 					<Add directory="$(#cb)/sdk/wxscintilla/include" />
 					<Add directory="$(#wx.include)" />
@@ -89,7 +90,7 @@
 			</Target>
 		</Build>
 		<VirtualTargets>
-			<Add alias="All" targets="default;unix;" />
+			<Add alias="All" targets="win;unix;" />
 		</VirtualTargets>
 		<Compiler>
 			<Add option="-std=gnu++11" />
