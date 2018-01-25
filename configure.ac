@@ -484,6 +484,7 @@ AC_CONFIG_FILES([Makefile
 	src/plugins/scriptedwizard/resources/stlport/Makefile
 	src/plugins/scriptedwizard/resources/sys/Makefile
 	src/plugins/scriptedwizard/resources/tricore/Makefile
+    src/plugins/scriptedwizard/resources/urus/Makefile
 	src/plugins/scriptedwizard/resources/win32gui/Makefile
 	src/plugins/scriptedwizard/resources/wxwidgets/Makefile
 	src/plugins/todo/Makefile
