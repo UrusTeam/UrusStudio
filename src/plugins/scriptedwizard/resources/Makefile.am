@@ -39,6 +39,7 @@ SUBDIRS = arduino \
 	sys \
 	tricore \
 	win32gui \
+        urus \
 	wxwidgets
 
 pkgdata_DATA = scriptedwizard.zip
