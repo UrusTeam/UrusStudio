@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<CodeBlocks_project_file>
+<UrusStudio_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
 		<Option title="wxSmith - Contrib Items (Unix)" />
@@ -10,9 +10,9 @@
 		<Build>
 			<Target title="wxSmithContribItems">
 				<Option platforms="Unix;Mac;" />
-				<Option output="../../../devel/share\urusstudio/plugins/libwxSmithContribItems" prefix_auto="0" extension_auto="1" />
+				<Option output="../../../devel/share/urusstudio/plugins/libwxSmithContribItems" prefix_auto="0" extension_auto="1" />
 				<Option object_output="../../../.objs/plugins/contrib/wxSmithContribItems" />
-				<Option external_deps="../../../devel/libwxsmithlib.so;../../../devel/libwxchartctrl.so;../../../devel/libwxcustombutton.so;../../../devel/libwxflatnotebook.so;../../../devel/libwxdatetimepicker.so;../../../devel/libwximagepanel.so;../../../devel/libwxspeedbutton.so;../../../devel/libwxkwic.so;" />
+				<Option external_deps="../../../devel/libwxsmithlib.so;../../../devel/libwxchartctrl.so;../../../devel/libwxcustombutton.so;../../../devel/libwxflatnotebook.so;../../../devel/libwximagepanel.so;../../../devel/libwxspeedbutton.so;../../../devel/libwxkwic.so;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --multiple-instance -ns -ni -v -p debug" />
@@ -57,7 +57,7 @@
 					<Add directory="../../../devel" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="zip -j9 ../../../devel/share\urusstudio/wxSmithContribItems.zip manifest.xml" />
+					<Add after="zip -j9 ../../../devel/share/urusstudio/wxSmithContribItems.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
@@ -71,14 +71,16 @@
 		</VirtualTargets>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add option="-std=c++11" />
+			<Add option="-fPIC" />
 			<Add option="$(#CB_RELEASE_TYPE)" />
 			<Add option="`wx-config --version=2.8 --cflags`" />
 			<Add option="-Winvalid-pch" />
 			<Add option="-fexceptions" />
-			<Add option="-fPIC" />
+			<Add option='[[if (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.8.0&quot;)) print(_T(&quot;-Wno-unused-local-typedefs&quot;));]]' />
+			<Add option="-Wno-literal-suffix" />
 			<Add option="-DcbDEBUG" />
 			<Add option="-DCB_PRECOMP" />
-			<Add option="-std=c++11" />
 		</Compiler>
 		<Linker>
 			<Add option="`wx-config --version=2.8 --libs`" />
@@ -211,4 +213,4 @@
 			<debugger />
 		</Extensions>
 	</Project>
-</CodeBlocks_project_file>
+</UrusStudio_project_file>
