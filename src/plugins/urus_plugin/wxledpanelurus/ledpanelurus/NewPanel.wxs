@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxPanel" name="NewPanel">
+		<size>40,33</size>
+		<bg>#00FF00</bg>
+		<id_arg>0</id_arg>
+	</object>
+</wxsmith>
