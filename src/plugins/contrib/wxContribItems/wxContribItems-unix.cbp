@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<CodeBlocks_project_file>
+<UrusStudio_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
 		<Option title="wxWidgets - Contrib Items (Unix)" />
@@ -117,14 +117,15 @@
 			<Add alias="All" targets="wxFlatNoteBook;wxChartCtrl;wxCustomButton;wxImagePanel;wxSpeedButton;wxKWIC;wxTreeList;wxLED;wxMathPlot;" />
 		</VirtualTargets>
 		<Compiler>
+			<Add option="-std=c++11" />
+			<Add option="-fPIC" />
 			<Add option="$(#CB_RELEASE_TYPE)" />
 			<Add option="`$(WX_CONFIG) --cflags`" />
 			<Add option="-Winvalid-pch" />
 			<Add option="-fexceptions" />
-			<Add option="-fPIC" />
+			<Add option="-Wno-literal-suffix" />
 			<Add option="-DcbDEBUG" />
 			<Add option="-DCB_PRECOMP" />
-			<Add option="-std=c++11" />
 			<Add directory="../../../include" />
 			<Add directory="../../../include/tinyxml" />
 		</Compiler>
@@ -507,4 +508,4 @@
 			<debugger />
 		</Extensions>
 	</Project>
-</CodeBlocks_project_file>
+</UrusStudio_project_file>
