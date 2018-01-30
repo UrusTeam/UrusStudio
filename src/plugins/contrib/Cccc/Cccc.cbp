@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<CodeBlocks_project_file>
+<UrusStudio_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
 		<Option title="Cccc" />
 		<Option pch_mode="0" />
-		<Option compiler="gcc" />
+		<Option compiler="mingw32_gnu_gcc_compiler" />
 		<Build>
 			<Target title="default">
 				<Option output="../../../devel/share/urusstudio/plugins/Cccc.dll" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../../.objs/plugins/contrib/Cccc" />
 				<Option type="3" />
-				<Option compiler="gcc" />
+				<Option compiler="mingw32_gnu_gcc_compiler" />
 				<Option parameters="--debug-log --multiple-instance -na -ns -nd -p debug" />
 				<Option host_application="../../../devel/urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
@@ -31,6 +31,7 @@
 			<Add option="-mthreads" />
 			<Add option="-fexceptions" />
 			<Add option="-std=gnu++11" />
+			<Add option='[[if (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.8.0&quot;)) print(_T(&quot;-Wno-unused-local-typedefs&quot;));]]' />
 			<Add option="-DBUILDING_PLUGIN" />
 			<Add option="-DCB_PRECOMP" />
 			<Add option="-DWX_PRECOMP" />
@@ -67,4 +68,4 @@
 			<debugger />
 		</Extensions>
 	</Project>
-</CodeBlocks_project_file>
+</UrusStudio_project_file>

@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<CodeBlocks_project_file>
+<UrusStudio_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
 		<Option title="wxWidgets - Contrib Items" />
-		<Option platforms="Windows;" />
 		<Option pch_mode="2" />
-		<Option compiler="gcc" />
+		<Option compiler="mingw32_gnu_gcc_compiler" />
 		<Build>
 			<Target title="wxFlatNoteBook">
-				<Option platforms="Windows;" />
-				<Option output="../../../devel/wxflatnotebook" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel/wxflatnotebook.dll" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../../.objs/plugins/contrib/wxContribItems/wxFlatNotebook" />
 				<Option type="3" />
-				<Option compiler="gcc" />
+				<Option compiler="mingw32_gnu_gcc_compiler" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Option projectIncludeDirsRelation="2" />
@@ -26,11 +24,10 @@
 				</Compiler>
 			</Target>
 			<Target title="wxDateTimePicker">
-				<Option platforms="Windows;" />
-				<Option output="../../../devel/wxdatetimepicker" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel/wxdatetimepicker.dll" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../../.objs/plugins/contrib/wxContribItems/wxDateTimePicker" />
 				<Option type="3" />
-				<Option compiler="gcc" />
+				<Option compiler="mingw32_gnu_gcc_compiler" />
 				<Compiler>
 					<Add option="-DWXMAKINGDLL" />
 					<Add directory="wxDateTimePicker/include" />
@@ -38,11 +35,10 @@
 				</Compiler>
 			</Target>
 			<Target title="wxChartCtrl">
-				<Option platforms="Windows;" />
-				<Option output="../../../devel/wxchartctrl" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel/wxchartctrl.dll" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../../.objs/plugins/contrib/wxContribItems/wxChartCtrl" />
 				<Option type="3" />
-				<Option compiler="gcc" />
+				<Option compiler="mingw32_gnu_gcc_compiler" />
 				<Option createStaticLib="1" />
 				<Compiler>
 					<Add option="-DWXMAKINGDLL_CHART" />
@@ -51,11 +47,10 @@
 				</Compiler>
 			</Target>
 			<Target title="wxCustomButton">
-				<Option platforms="Windows;" />
-				<Option output="../../../devel/wxcustombutton" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel/wxcustombutton.dll" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../../.objs/plugins/contrib/wxContribItems/wxthings" />
 				<Option type="3" />
-				<Option compiler="gcc" />
+				<Option compiler="mingw32_gnu_gcc_compiler" />
 				<Compiler>
 					<Add option="-DWXMAKINGDLL_THINGS" />
 					<Add option="-DWXMAKINGDLL" />
@@ -63,11 +58,10 @@
 				</Compiler>
 			</Target>
 			<Target title="wxImagePanel">
-				<Option platforms="Windows;" />
-				<Option output="../../../devel/wximagepanel" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel/wximagepanel.dll" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../../.objs/plugins/contrib/wxContribItems/wxImagePanel" />
 				<Option type="3" />
-				<Option compiler="gcc" />
+				<Option compiler="mingw32_gnu_gcc_compiler" />
 				<Compiler>
 					<Add option="-DWXMAKINGDLL" />
 					<Add directory="wxImagePanel/include" />
@@ -77,11 +71,10 @@
 				</Linker>
 			</Target>
 			<Target title="wxSpeedButton">
-				<Option platforms="Windows;" />
-				<Option output="../../../devel/wxspeedbutton" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel/wxspeedbutton.dll" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../../.objs/plugins/contrib/wxContribItems/wxSpeedButton" />
 				<Option type="3" />
-				<Option compiler="gcc" />
+				<Option compiler="mingw32_gnu_gcc_compiler" />
 				<Compiler>
 					<Add option="-DWXMAKINGDLL" />
 				</Compiler>
@@ -90,11 +83,10 @@
 				</Linker>
 			</Target>
 			<Target title="wxKWIC">
-				<Option platforms="Windows;" />
-				<Option output="../../../devel/wxkwic" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel/wxkwic.dll" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../../.objs/plugins/contrib/wxContribItems/KWIC" />
 				<Option type="3" />
-				<Option compiler="gcc" />
+				<Option compiler="mingw32_gnu_gcc_compiler" />
 				<Compiler>
 					<Add option="-DWXMAKINGDLL" />
 					<Add directory="KWIC/include" />
@@ -104,22 +96,20 @@
 				</Linker>
 			</Target>
 			<Target title="wxTreeList">
-				<Option platforms="Windows;" />
-				<Option output="../../../devel/wxtreelist" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel/wxtreelist.dll" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../../.objs/plugins/contrib/wxContribItems/wxtreelist" />
 				<Option type="3" />
-				<Option compiler="gcc" />
+				<Option compiler="mingw32_gnu_gcc_compiler" />
 				<Compiler>
 					<Add option="-DWXMAKINGDLL" />
 					<Add directory="wxTreeList/include" />
 				</Compiler>
 			</Target>
 			<Target title="wxLED">
-				<Option platforms="Windows;" />
-				<Option output="../../../devel/wxled" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel/wxled.dll" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../../.objs/plugins/contrib/wxContribItems/wxled" />
 				<Option type="3" />
-				<Option compiler="gcc" />
+				<Option compiler="mingw32_gnu_gcc_compiler" />
 				<Compiler>
 					<Add option="-DWXMAKINGDLL" />
 					<Add directory="wxled/ledpanel/include" />
@@ -132,11 +122,10 @@
 				</Linker>
 			</Target>
 			<Target title="wxMathPlot">
-				<Option platforms="Windows;" />
-				<Option output="../../../devel/wxmathplot" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel/wxmathplot.dll" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../../.objs/plugins/contrib/wxContribItems/wxmathplot" />
 				<Option type="3" />
-				<Option compiler="gcc" />
+				<Option compiler="mingw32_gnu_gcc_compiler" />
 				<Compiler>
 					<Add option="-DWXMAKINGDLL" />
 					<Add directory="wxmathplot" />
@@ -161,6 +150,7 @@
 			<Add option="-fexceptions" />
 			<Add option="-Winvalid-pch" />
 			<Add option="-Wl,--no-undefined" />
+			<Add option='[[if (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.8.0&quot;)) print(_T(&quot;-Wno-unused-local-typedefs&quot;));]]' />
 			<Add option="-DHAVE_W32API_H" />
 			<Add option="-D__WXMSW__" />
 			<Add option="-DwxUSE_UNICODE" />
@@ -565,4 +555,4 @@
 			<debugger />
 		</Extensions>
 	</Project>
-</CodeBlocks_project_file>
+</UrusStudio_project_file>
