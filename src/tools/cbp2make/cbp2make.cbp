@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<CodeBlocks_project_file>
+<UrusStudio_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
 		<Option title="cbp2make wx2.8.x" />
@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="../../devel/cbp2make" prefix_auto="1" extension_auto="1" />
+				<Option output="../../devel/cbp2make.exe" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="../../devel" />
 				<Option object_output="../../.objs/tools/cbp2make" />
 				<Option type="1" />
@@ -231,4 +231,4 @@
 			<lib_finder disable_auto="1" />
 		</Extensions>
 	</Project>
-</CodeBlocks_project_file>
+</UrusStudio_project_file>

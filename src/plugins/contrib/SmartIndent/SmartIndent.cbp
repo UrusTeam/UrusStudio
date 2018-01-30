@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<CodeBlocks_project_file>
+<UrusStudio_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
 		<Option title="SmartIndent" />
 		<Option pch_mode="2" />
-		<Option compiler="gcc" />
+		<Option compiler="mingw32_gnu_gcc_compiler" />
 		<Build>
 			<Target title="SmartIndentCpp">
-				<Option output="../../../devel/share/urusstudio/plugins/SmartIndentCpp" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel/share/urusstudio/plugins/SmartIndentCpp.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="../../../devel" />
 				<Option object_output="../../../.objs/plugins/contrib/SmartIndent" />
 				<Option type="3" />
-				<Option compiler="gcc" />
+				<Option compiler="mingw32_gnu_gcc_compiler" />
 				<Option parameters="--debug-log -p debug" />
 				<Option host_application="../../../devel/urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
@@ -22,17 +22,17 @@
 					<Add directory="." />
 				</Compiler>
 				<ExtraCommands>
-					<Add after="cmd.exe /c copy /Y manifest_cpp.xml manifest.xml" />
+					<Add after="cp -f manifest_cpp.xml manifest.xml" />
 					<Add after="zip -j9 ../../../devel/share/urusstudio/SmartIndentCpp.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="SmartIndentHDL">
-				<Option output="../../../devel/share/urusstudio/plugins/SmartIndentHDL" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel/share/urusstudio/plugins/SmartIndentHDL.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="../../../devel" />
 				<Option object_output="../../../.objs/plugins/contrib/SmartIndent" />
 				<Option type="3" />
-				<Option compiler="gcc" />
+				<Option compiler="mingw32_gnu_gcc_compiler" />
 				<Option parameters="--debug-log --no-check-associations -ns -nd -p debug" />
 				<Option host_application="../../../devel/urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
@@ -43,17 +43,17 @@
 					<Add directory="." />
 				</Compiler>
 				<ExtraCommands>
-					<Add after="cmd.exe /c copy /Y manifest_hdl.xml manifest.xml" />
+					<Add after="cp -f manifest_hdl.xml manifest.xml" />
 					<Add after="zip -j9 ../../../devel/share/urusstudio/SmartIndentHDL.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="SmartIndentPascal">
-				<Option output="../../../devel/share/urusstudio/plugins/SmartIndentPascal" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel/share/urusstudio/plugins/SmartIndentPascal.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="../../../devel" />
 				<Option object_output="../../../.objs/plugins/contrib/SmartIndent" />
 				<Option type="3" />
-				<Option compiler="gcc" />
+				<Option compiler="mingw32_gnu_gcc_compiler" />
 				<Option parameters="--debug-log -p debug" />
 				<Option host_application="../../../devel/urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
@@ -64,17 +64,17 @@
 					<Add directory="." />
 				</Compiler>
 				<ExtraCommands>
-					<Add after="cmd.exe /c copy /Y manifest_pascal.xml manifest.xml" />
+					<Add after="cp -f manifest_pascal.xml manifest.xml" />
 					<Add after="zip -j9 ../../../devel/share/urusstudio/SmartIndentPascal.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="SmartIndentPython">
-				<Option output="../../../devel/share/urusstudio/plugins/SmartIndentPython" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel/share/urusstudio/plugins/SmartIndentPython.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="../../../devel" />
 				<Option object_output="../../../.objs/plugins/contrib/SmartIndent" />
 				<Option type="3" />
-				<Option compiler="gcc" />
+				<Option compiler="mingw32_gnu_gcc_compiler" />
 				<Option parameters="--debug-log -p debug" />
 				<Option host_application="../../../devel/urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
@@ -85,17 +85,17 @@
 					<Add directory="." />
 				</Compiler>
 				<ExtraCommands>
-					<Add after="cmd.exe /c copy /Y manifest_python.xml manifest.xml" />
+					<Add after="cp -f manifest_python.xml manifest.xml" />
 					<Add after="zip -j9 ../../../devel/share/urusstudio/SmartIndentPython.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="SmartIndentLua">
-				<Option output="../../../devel/share/urusstudio/plugins/SmartIndentLua" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel/share/urusstudio/plugins/SmartIndentLua.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="../../../devel" />
 				<Option object_output="../../../.objs/plugins/contrib/SmartIndent" />
 				<Option type="3" />
-				<Option compiler="gcc" />
+				<Option compiler="mingw32_gnu_gcc_compiler" />
 				<Option parameters="--debug-log --no-check-associations -ns -nd -p debug" />
 				<Option host_application="../../../devel/urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
@@ -106,17 +106,17 @@
 					<Add directory="." />
 				</Compiler>
 				<ExtraCommands>
-					<Add after="cmd.exe /c copy /Y manifest_lua.xml manifest.xml" />
+					<Add after="cp -f manifest_lua.xml manifest.xml" />
 					<Add after="zip -j9 ../../../devel/share/urusstudio/SmartIndentLua.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="SmartIndentFortran">
-				<Option output="../../../devel/share/urusstudio/plugins/SmartIndentFortran" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel/share/urusstudio/plugins/SmartIndentFortran.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="../../../devel" />
 				<Option object_output="../../../.objs/plugins/contrib/SmartIndent" />
 				<Option type="3" />
-				<Option compiler="gcc" />
+				<Option compiler="mingw32_gnu_gcc_compiler" />
 				<Option parameters="--debug-log --no-check-associations -ns -nd -p debug" />
 				<Option host_application="../../../devel/urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
@@ -127,17 +127,17 @@
 					<Add directory="." />
 				</Compiler>
 				<ExtraCommands>
-					<Add after="cmd.exe /c copy /Y manifest_fortran.xml manifest.xml" />
+					<Add after="cp -f manifest_fortran.xml manifest.xml" />
 					<Add after="zip -j9 ../../../devel/share/urusstudio/SmartIndentFortran.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="SmartIndentXML">
-				<Option output="../../../devel/share/urusstudio/plugins/SmartIndentXML" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel/share/urusstudio/plugins/SmartIndentXML.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="../../../devel" />
 				<Option object_output="../../../.objs/plugins/contrib/SmartIndent" />
 				<Option type="3" />
-				<Option compiler="gcc" />
+				<Option compiler="mingw32_gnu_gcc_compiler" />
 				<Option parameters="--debug-log -p debug" />
 				<Option host_application="../../../devel/urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
@@ -148,7 +148,7 @@
 					<Add directory="." />
 				</Compiler>
 				<ExtraCommands>
-					<Add after="cmd.exe /c copy /Y manifest_xml.xml manifest.xml" />
+					<Add after="cp -f manifest_xml.xml manifest.xml" />
 					<Add after="zip -j9 ../../../devel/share/urusstudio/SmartIndentXML.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
@@ -168,6 +168,7 @@
 			<Add option="-fexceptions" />
 			<Add option="-Winvalid-pch" />
 			<Add option="-std=gnu++11" />
+			<Add option='[[if (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.8.0&quot;)) print(_T(&quot;-Wno-unused-local-typedefs&quot;));]]' />
 			<Add option="-DHAVE_W32API_H" />
 			<Add option="-D__WXMSW__" />
 			<Add option="-DWXUSINGDLL" />
@@ -257,4 +258,4 @@
 			<debugger />
 		</Extensions>
 	</Project>
-</CodeBlocks_project_file>
+</UrusStudio_project_file>

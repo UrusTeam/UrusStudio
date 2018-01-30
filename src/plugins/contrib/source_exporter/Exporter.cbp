@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<CodeBlocks_project_file>
+<UrusStudio_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
 		<Option title="Exporter" />
 		<Option pch_mode="0" />
 		<Option default_target="default" />
-		<Option compiler="gcc" />
+		<Option compiler="mingw32_gnu_gcc_compiler" />
 		<Build>
 			<Target title="wxPdfDocument">
-				<Option output="wxPdfDocument/lib/libwxPdfDocument" prefix_auto="0" extension_auto="1" />
+				<Option output="wxPdfDocument/lib/wxPdfDocument.a" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="" />
 				<Option object_output="../../../.objs/plugins/contrib/source_exporter" />
 				<Option type="2" />
-				<Option compiler="gcc" />
+				<Option compiler="mingw32_gnu_gcc_compiler" />
 				<Option projectCompilerOptionsRelation="1" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -28,11 +28,11 @@
 				</Linker>
 			</Target>
 			<Target title="makefont">
-				<Option output="wxPdfDocument/makefont/makefont" prefix_auto="0" extension_auto="1" />
+				<Option output="wxPdfDocument/makefont/makefont.exe" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="wxPdfDocument/makefont" />
 				<Option object_output="../../../.objs/plugins/contrib/source_exporter" />
 				<Option type="1" />
-				<Option compiler="gcc" />
+				<Option compiler="mingw32_gnu_gcc_compiler" />
 				<Linker>
 					<Add library="wxPdfDocument" />
 					<Add library="$(#wx.wxlibs)" />
@@ -40,11 +40,11 @@
 				</Linker>
 			</Target>
 			<Target title="minimal">
-				<Option output="wxPdfDocument/samples/minimal/minimal" prefix_auto="0" extension_auto="1" />
+				<Option output="wxPdfDocument/samples/minimal/minimal.exe" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="wxPdfDocument/samples/minimal" />
 				<Option object_output="../../../.objs/plugins/contrib/source_exporter" />
 				<Option type="1" />
-				<Option compiler="gcc" />
+				<Option compiler="mingw32_gnu_gcc_compiler" />
 				<Linker>
 					<Add library="wxPdfDocument" />
 					<Add library="$(#wx.wxlibs)" />
@@ -52,11 +52,11 @@
 				</Linker>
 			</Target>
 			<Target title="pdfdc">
-				<Option output="wxPdfDocument/samples/pdfdcl/pdfdc" prefix_auto="0" extension_auto="1" />
+				<Option output="wxPdfDocument/samples/pdfdcl/pdfdc.exe" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="wxPdfDocument/samples/pdfdc" />
 				<Option object_output="../../../.objs/plugins/contrib/source_exporter" />
 				<Option type="1" />
-				<Option compiler="gcc" />
+				<Option compiler="mingw32_gnu_gcc_compiler" />
 				<Linker>
 					<Add library="wxPdfDocument" />
 					<Add library="$(#wx.wxlibs)" />
@@ -64,10 +64,10 @@
 				</Linker>
 			</Target>
 			<Target title="default">
-				<Option output="../../../devel/share/urusstudio/plugins/Exporter" prefix_auto="0" extension_auto="1" />
+				<Option output="../../../devel/share/urusstudio/plugins/Exporter.dll" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../../.objs/plugins/contrib/source_exporter" />
 				<Option type="3" />
-				<Option compiler="gcc" />
+				<Option compiler="mingw32_gnu_gcc_compiler" />
 				<Option parameters="--debug-log --multiple-instance -na -ns -nd -p debug" />
 				<Option host_application="../../../devel/urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
@@ -106,6 +106,7 @@
 			<Add option="-mthreads" />
 			<Add option="-fexceptions" />
 			<Add option="-std=gnu++11" />
+			<Add option='[[if (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.8.0&quot;)) print(_T(&quot;-Wno-unused-local-typedefs&quot;));]]' />
 			<Add option="-D__WXMSW__" />
 			<Add option="-DWXUSINGDLL" />
 			<Add option="-DwxUSE_UNICODE" />
@@ -607,4 +608,4 @@
 			<debugger />
 		</Extensions>
 	</Project>
-</CodeBlocks_project_file>
+</UrusStudio_project_file>
