@@ -105,6 +105,37 @@ void urusstudiosettings::OnAttach()
     cfgman_gcv->Write(_T("/sets/default/wxsetup/include"),(_T("$(#URUSSTOOL.setup)") + dummy));
     cfgman_gcv->Write(_T("/sets/default/wxsetup/lib"),(_T("$(#URUSSTOOL.lib)") + dummy));
 
+    cfgman_gcv->Write(_T("/sets/default/boost/base"),(_T("$(#cb.base)/../modules/boost") + dummy));
+    cfgman_gcv->Write(_T("/sets/default/boost/include"),(_T("$(#cb.base)/../modules/boost") + dummy));
+
+    ConfigManager *config = Manager::Get()->GetConfigManager(wxT("debugger_common"));
+    wxString path = wxT("/sets/gdb_debugger");
+    wxArrayString configs = config->EnumerateSubPaths(path);
+    configs.Sort();
+
+    /* TODO: This is not optimal and not elegant, we need to make it better. */
+    if (configs.empty())
+    {
+        config->Write(path + wxT("/conf1/name"), wxString(wxT("Default")));
+        if (platform::windows) {
+            config->Write(path + wxT("/conf1/values/executable_path"), wxString(wxT("$(#URUSSTOOL.base)/mingw32/i686-w64-mingw32/debug-root/usr/bin/gdb.exe")));
+        } else if (platform::Linux) {
+            config->Write(path + wxT("/conf1/values/executable_path"), wxString(wxT("$(#URUSSTOOL.base)/mingw32/i686-pc-linux-gnu/debug-root/usr/bin/gdb")));
+        }
+
+    }
+
+    config->Write(path + wxT("/conf2/name"), wxString(wxT("mingw")));
+
+    if (platform::windows) {
+        config->Write(path + wxT("/conf2/values/executable_path"), wxString(wxT("$(#URUSSTOOL.base)/mingw32/i686-w64-mingw32/debug-root/usr/bin/gdb.exe")));
+    } else if (platform::Linux) {
+        config->Write(path + wxT("/conf2/values/executable_path"), wxString(wxT("$(#URUSSTOOL.base)/mingw32/i686-pc-linux-gnu/debug-root/usr/bin/gdb")));
+    }
+
+    configs = config->EnumerateSubPaths(path);
+    configs.Sort();
+
     main_settings = new FMainSettings(Manager::Get()->GetAppWindow());
     CodeBlocksDockEvent evt(cbEVT_ADD_DOCK_WINDOW);
     evt.name = _T("Urus");
