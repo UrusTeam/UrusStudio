@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<CodeBlocks_project_file>
+<UrusStudio_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
 		<Option title="wxSmith - Contrib Items" />
-		<Option platforms="Windows;" />
 		<Option pch_mode="2" />
 		<Option default_target="wxSmithContribItems" />
-		<Option compiler="gcc" />
+		<Option compiler="mingw32_gnu_gcc_compiler" />
 		<Build>
 			<Target title="wxSmithContribItems">
-				<Option platforms="Windows;" />
-				<Option output="../../../devel/share/urusstudio/plugins/wxSmithContribItems" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel/share/urusstudio/plugins/wxSmithContribItems.dll" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../../.objs/plugins/contrib/wxSmithContribItems" />
 				<Option external_deps="../../../devel/wxsmithlib.dll;" />
 				<Option type="3" />
-				<Option compiler="gcc" />
+				<Option compiler="mingw32_gnu_gcc_compiler" />
 				<Option parameters="--debug-log --multiple-instance -na -ns -nd -p debug" />
 				<Option host_application="../../../devel/urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
@@ -83,6 +81,7 @@
 			<Add option="-fexceptions" />
 			<Add option="-Winvalid-pch" />
 			<Add option="-std=gnu++11" />
+			<Add option='[[if (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.8.0&quot;)) print(_T(&quot;-Wno-unused-local-typedefs&quot;));]]' />
 			<Add option="-DHAVE_W32API_H" />
 			<Add option="-D__WXMSW__" />
 			<Add option="-DWXUSINGDLL" />
@@ -231,4 +230,4 @@
 			<debugger />
 		</Extensions>
 	</Project>
-</CodeBlocks_project_file>
+</UrusStudio_project_file>

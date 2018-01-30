@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<CodeBlocks_project_file>
+<UrusStudio_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
 		<Option title="Addr2LineUI" />
-		<Option compiler="gcc" />
+		<Option compiler="mingw32_gnu_gcc_compiler" />
 		<Build>
 			<Target title="default">
-				<Option platforms="Windows;" />
-				<Option output="../../devel/Addr2LineUI" prefix_auto="1" extension_auto="1" />
+				<Option output="../../devel/Addr2LineUI.exe" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="../../devel" />
 				<Option object_output="../../.objs/tools/Addr2LineUI" />
 				<Option type="0" />
-				<Option compiler="gcc" />
+				<Option compiler="mingw32_gnu_gcc_compiler" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-O2" />
@@ -34,6 +33,7 @@
 			<Add option="-pipe" />
 			<Add option="-mthreads" />
 			<Add option="-std=gnu++11" />
+			<Add option='[[if (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.8.0&quot;)) print(_T(&quot;-Wno-unused-local-typedefs&quot;));]]' />
 			<Add option="-D__GNUWIN32__" />
 			<Add option="-D__WXMSW__" />
 			<Add option="-DWXUSINGDLL" />
@@ -71,4 +71,4 @@
 			</wxsmith>
 		</Extensions>
 	</Project>
-</CodeBlocks_project_file>
+</UrusStudio_project_file>
