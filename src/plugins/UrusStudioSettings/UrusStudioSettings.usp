@@ -6,11 +6,10 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="win">
-				<Option platforms="Windows;" />
-				<Option output="../../devel/share/urusstudio/plugins/urusstudiosettings" prefix_auto="1" extension_auto="1" />
+				<Option output="../../devel/share/urusstudio/plugins/urusstudiosettings.dll" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../.objs/plugins/urusstudiosettings" />
 				<Option type="3" />
-				<Option compiler="gcc" />
+				<Option compiler="mingw32_gnu_gcc_compiler" />
 				<Option host_application="$(#cb)/devel/urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Compiler>
@@ -44,7 +43,7 @@
 				<ExtraCommands>
 					<Add after="mkdir -p ../../devel/share/urusstudio" />
 					<Add after="zip -j9 ../../devel/share/urusstudio/urusstudiosettings.zip manifest.xml resources/*.xrc" />
-					<Add after="sh -c cd resources &amp;&amp; zip -0 -q ../../../devel/share/urusstudio/urusstudiosettings.zip images/*.png images/16x16/*.png" />
+					<Add after="cd resources &amp;&amp; zip -0 -q ../../../devel/share/urusstudio/urusstudiosettings.zip images/*.png images/16x16/*.png" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
