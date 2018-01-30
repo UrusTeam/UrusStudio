@@ -7,7 +7,7 @@
     #include "cbeditor.h"
     #include "manager.h"
 #endif
-#include "RndGen.h"
+#include "rndgen.h"
 #include "cbstyledtextctrl.h"
 
 #define SCI_SETUNDOCOLLECTION 2012
