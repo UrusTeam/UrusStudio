@@ -43,7 +43,7 @@
 				<ExtraCommands>
 					<Add after="mkdir -p ../../devel/share/urusstudio" />
 					<Add after="zip -j9 ../../devel/share/urusstudio/urusstudiosettings.zip manifest.xml resources/*.xrc" />
-					<Add after="cd resources &amp;&amp; zip -0 -q ../../../devel/share/urusstudio/urusstudiosettings.zip images/*.png images/16x16/*.png" />
+					<Add after="sh -c cd resources &amp;&amp; zip -0 -q ../../../devel/share/urusstudio/urusstudiosettings.zip images/*.png images/16x16/*.png" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
