@@ -311,10 +311,10 @@ cbDebuggerPlugin::SyncEditorResult cbDebuggerPlugin::SyncEditor(const wxString& 
         }
     }
     FileType ft = FileTypeOf(filename);
-    if (ft != ftSource && ft != ftHeader && ft != ftResource && ft != ftTemplateSource)
+    if (ft != FileType::ftSource && ft != FileType::ftHeader && ft != FileType::ftResource && ft != FileType::ftTemplateSource)
     {
         // if the line is >= 0 and ft == ftOther assume, that we are in header without extension
-        if (line < 0 || ft != ftOther)
+        if (line < 0 || ft != FileType::ftOther)
         {
             ShowLog(false);
             Log(_("Unknown file: ") + filename, Logger::error);
@@ -328,15 +328,53 @@ cbDebuggerPlugin::SyncEditorResult cbDebuggerPlugin::SyncEditor(const wxString& 
     ProjectFile* f = project ? project->GetFileByFilename(filename, false, true) : nullptr;
 
     wxString unixfilename = UnixFilename(filename);
+    wxString unixfilename_tmp = unixfilename;
     wxFileName fname(unixfilename);
 
-    if (project && fname.IsRelative())
-        fname.MakeAbsolute(project->GetBasePath());
+    // This is for relative path, on MSYS this is an issue with
+    // the headers files, the path to catch is /system/ so we
+    // find that path on the string passed by GDB, this path is
+    // static on the urus fstab and environments.
+    // Once whe detect this issue with concatenate the left path
+    // with the right path (the relative path) with the prefixed
+    // executable path folder.
+    wxString sepstr = wxFileName::GetPathSeparator();
+    wxString mMasterPath = ConfigManager::GetExecutableFolder();
+
+    const wxString findstr_tmp = sepstr + _T("system") + sepstr;
+    if (mMasterPath.Find(findstr_tmp) >= 0) {
+        mMasterPath = mMasterPath.substr(0, mMasterPath.Find(findstr_tmp));
+    }
+
+    wxString longpath;
+    if (project && fname.IsRelative()) {
+
+        if (platform::windows && (fname.GetVolume().IsEmpty())) {
+            // On MSYS we delete the first char, that correspond
+            // to UNC volumes one on UNIX format.
+            wxString longpath_tmp = fname.GetLongPath().erase(0, 1);
+            fname = wxFileName(longpath_tmp);
+        }
+
+        // if catch the /system/ path then we add the urus dir
+        // to the complete de job.
+        if (unixfilename_tmp.Find(findstr_tmp) >= 0) {
+            const wxString findstrtmp = findstr_tmp + _T("urus");
+            unixfilename_tmp = mMasterPath + findstr_tmp + unixfilename_tmp.erase(0, findstrtmp.length()+1);
+            longpath = unixfilename_tmp;
+        } else {
+            fname.MakeAbsolute(project->GetBasePath());
+            longpath = fname.GetLongPath();
+        }
+
+    } else {
+        longpath = fname.GetLongPath();
+    }
 
     // gdb can't work with spaces in filenames, so we have passed it the shorthand form (C:\MYDOCU~1 etc)
     // revert this change now so the file can be located and opened...
     // we do this by calling GetLongPath()
-    cbEditor* ed = Manager::Get()->GetEditorManager()->Open(fname.GetLongPath());
+    cbEditor* ed = Manager::Get()->GetEditorManager()->Open(longpath);
     if (ed)
     {
         ed->Show(true);
