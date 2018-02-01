@@ -214,7 +214,7 @@
 					<Add before="build_tools/autorevision/autorevision.exe +wx +int +t .. include/autorevision.h" />
 					<Add after="mkdir -p devel/share/urusstudio" />
 					<Add after="zip -jq9 devel/share/urusstudio/manager_resources.zip sdk/resources/*.xrc" />
-					<Add after="cd sdk/resources &amp;&amp; zip -0 -q ../../devel/share/urusstudio/manager_resources.zip images/*.png images/12x12/*.png images/16x16/*.png" />
+					<Add after="sh -c cd sdk/resources &amp;&amp; zip -jq9 ../../devel/share/urusstudio/manager_resources.zip images/*.png images/12x12/*.png images/16x16/*.png" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
@@ -280,7 +280,7 @@
 					<Add after="mkdir -p devel/share/urusstudio" />
 					<Add after="zip -jq9 devel/share/urusstudio/resources.zip src/resources/*.xrc" />
 					<Add after="zip -jq9 devel/share/urusstudio/start_here.zip src/resources/start_here/*.html src/resources/start_here/*.png" />
-					<Add after="cd src/resources &amp;&amp; zip -0 -q ../../devel/share/urusstudio/resources.zip images/*.png images/16x16/*.png" />
+					<Add after="sh -c cd src/resources &amp;&amp; zip -0 -q ../../devel/share/urusstudio/resources.zip images/*.png images/16x16/*.png" />
 					<Add after="cp -f exchndl/win32/bin/*.dll devel/" />
 					<Add after="cp -f exchndl/win32/bin/symsrv.yes devel/" />
 					<Mode after="always" />
@@ -432,7 +432,7 @@
 				<ExtraCommands>
 					<Add after="mkdir -p devel/share/urusstudio" />
 					<Add after="zip -jq9 devel/share/urusstudio/compiler.zip plugins/compilergcc/resources/manifest.xml plugins/compilergcc/resources/*.xrc" />
-					<Add after="cd plugins/compilergcc/resources &amp;&amp; zip -0 -q ../../../devel/share/urusstudio/compiler.zip images/*.png images/16x16/*.png" />
+					<Add after="sh -c cd plugins/compilergcc/resources &amp;&amp; zip -0 -q ../../../devel/share/urusstudio/compiler.zip images/*.png images/16x16/*.png" />
 					<Add after="mkdir -p devel/share/urusstudio/compilers" />
 					<Add after="cp -f plugins/compilergcc/resources/compilers/*.* devel/share/urusstudio/compilers" />
 					<Mode after="always" />
@@ -2505,6 +2505,9 @@
 		</Unit>
 		<Unit filename="plugins/scriptedwizard/resources/urus/gui/wizard.script" />
 		<Unit filename="plugins/scriptedwizard/resources/urus/gui/wizard.xrc" />
+		<Unit filename="plugins/scriptedwizard/resources/urus/urdriver/wizard.script">
+			<Option target="Scripted wizard" />
+		</Unit>
 		<Unit filename="plugins/scriptedwizard/resources/win32gui/wizard.script">
 			<Option target="Scripted wizard" />
 		</Unit>
