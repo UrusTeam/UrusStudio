@@ -306,12 +306,12 @@ FileType FileTypeOf(const wxString& filename)
         ext.IsSameAs(FileFilters::F08_EXT) ||
         ext.IsSameAs(FileFilters::JAVA_EXT)
        )
-        return ftSource;
+        return FileType::ftSource;
 
     else if (ext.IsSameAs(FileFilters::TPP_EXT) ||
              ext.IsSameAs(FileFilters::TCC_EXT)
             )
-        return ftTemplateSource;
+        return FileType::ftTemplateSource;
 
     else if (ext.IsSameAs(FileFilters::H_EXT) ||
              ext.IsSameAs(FileFilters::HH_EXT) ||
@@ -320,73 +320,73 @@ FileType FileTypeOf(const wxString& filename)
              ext.IsSameAs(FileFilters::HPLPL_EXT) ||
              ext.IsSameAs(FileFilters::INL_EXT)
             )
-        return ftHeader;
+        return FileType::ftHeader;
 
     else if (ext.IsSameAs(FileFilters::CODEBLOCKS_EXT))
-        return ftCodeBlocksProject;
+        return FileType::ftCodeBlocksProject;
 
     else if (ext.IsSameAs(FileFilters::WORKSPACE_EXT))
-        return ftCodeBlocksWorkspace;
+        return FileType::ftCodeBlocksWorkspace;
 
     else if (ext.IsSameAs(FileFilters::DEVCPP_EXT))
-        return ftDevCppProject;
+        return FileType::ftDevCppProject;
 
     else if (ext.IsSameAs(FileFilters::MSVC6_EXT))
-        return ftMSVC6Project;
+        return FileType::ftMSVC6Project;
 
     else if (ext.IsSameAs(FileFilters::MSVC7_EXT))
-        return ftMSVC7Project;
+        return FileType::ftMSVC7Project;
 
     else if (ext.IsSameAs(FileFilters::MSVC10_EXT))
-        return ftMSVC10Project;
+        return FileType::ftMSVC10Project;
 
     else if (ext.IsSameAs(FileFilters::MSVC6_WORKSPACE_EXT))
-        return ftMSVC6Workspace;
+        return FileType::ftMSVC6Workspace;
 
     else if (ext.IsSameAs(FileFilters::MSVC7_WORKSPACE_EXT))
-        return ftMSVC7Workspace;
+        return FileType::ftMSVC7Workspace;
 
     else if (ext.IsSameAs(FileFilters::XCODE1_EXT))
-        return ftXcode1Project; // Xcode 1.0+ (Mac OS X 10.3)
+        return FileType::ftXcode1Project; // Xcode 1.0+ (Mac OS X 10.3)
 
     else if (ext.IsSameAs(FileFilters::XCODE2_EXT))
-        return ftXcode2Project; // Xcode 2.1+ (Mac OS X 10.4)
+        return FileType::ftXcode2Project; // Xcode 2.1+ (Mac OS X 10.4)
 
     else if (ext.IsSameAs(FileFilters::OBJECT_EXT))
-        return ftObject;
+        return FileType::ftObject;
 
     else if (ext.IsSameAs(FileFilters::XRCRESOURCE_EXT))
-        return ftXRCResource;
+        return FileType::ftXRCResource;
 
     else if (ext.IsSameAs(FileFilters::RESOURCE_EXT))
-        return ftResource;
+        return FileType::ftResource;
 
     else if (ext.IsSameAs(FileFilters::RESOURCEBIN_EXT))
-        return ftResourceBin;
+        return FileType::ftResourceBin;
 
     else if (ext.IsSameAs(FileFilters::STATICLIB_EXT))
-        return ftStaticLib;
+        return FileType::ftStaticLib;
 
     else if (ext.IsSameAs(FileFilters::DYNAMICLIB_EXT))
-        return ftDynamicLib;
+        return FileType::ftDynamicLib;
 
     else if (ext.IsSameAs(FileFilters::NATIVE_EXT))
-        return ftNative;
+        return FileType::ftNative;
 
     else if (ext.IsSameAs(FileFilters::EXECUTABLE_EXT))
-        return ftExecutable;
+        return FileType::ftExecutable;
 
     else if (ext.IsSameAs(FileFilters::XML_EXT))
-        return ftXMLDocument;
+        return FileType::ftXMLDocument;
 
     else if (ext.IsSameAs(FileFilters::SCRIPT_EXT))
-        return ftScript;
+        return FileType::ftScript;
 
     else if (ext.IsSameAs(FileFilters::URUSSTUDIO_EXT))
-        return ftCodeBlocksProject;
+        return FileType::ftCodeBlocksProject;
 
     else if (ext.IsSameAs(FileFilters::URUSWRKSPACE_EXT))
-        return ftCodeBlocksWorkspace;
+        return FileType::ftCodeBlocksWorkspace;
 
     // DrewBoo: Before giving up, see if the ProjectManager
     // considers this extension a source or header
@@ -420,7 +420,7 @@ FileType FileTypeOf(const wxString& filename)
         //}
     }
 
-    return ftOther;
+    return FileType::ftOther;
 }
 
 wxString cbFindFileInPATH(const wxString &filename)
