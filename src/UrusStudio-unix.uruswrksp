@@ -62,5 +62,7 @@
 		<Project filename="plugins/contrib/wxSmith/wxSmith-unix.cbp" />
 		<Project filename="plugins/urus_plugin/urus_plugin.usp" />
 		<Project filename="plugins/contrib/wxSmithContribItems/wxSmithContribItems-unix.cbp" />
+		<Project filename="tools/cbp2make/cbp2make-unix.cbp" />
+		<Project filename="tools/cb_share_config/cb_share_config-unix.cbp" />
 	</Workspace>
 </UrusStudio_workspace_file>
