@@ -120,7 +120,7 @@ class urusstudiosettings: public cbPlugin
         FMainSettings *main_settings;
 
     private:
-        wxMenu *idmenu1=new wxMenu;
+        wxMenu *idmenu1;
 
         void Execute(wxCommandEvent& event);
         void OnUpdateUI(wxUpdateUIEvent& event);
