@@ -70,7 +70,7 @@ function BeginWizard()
         Wizard.AddPage(_T("WxGuiSelect"));
 
         if (PLATFORM == PLATFORM_MSW)
-            WxPath = _T("$(#URUSSTOOL)");
+            WxPath = _T("$(#URUSSTOOL.base)");
         // we need the compiler selection before wx settings, because we 'll have
         // to validate the settings. To do this we must know the compiler beforehand...
         Wizard.AddCompilerPage(_T(""), _T("*"), true, true);
@@ -88,7 +88,7 @@ function BeginWizard()
 
         Wizard.AddInfoPage(_T("WxIntro"), intro_msg);
         if (PLATFORM == PLATFORM_MSW)
-            WxPath = _T("$(#URUSSTOOL)");
+            WxPath = _T("$(#URUSSTOOL.base)");
         // we need the compiler selection before wx settings, because we 'll have
         // to validate the settings. To do this we must know the compiler beforehand...
         Wizard.AddBuildTargetPage(_T(""), false, true, _T(""), _T("*"), true);
@@ -273,7 +273,8 @@ function OnLeave_WxConf(fwd)
         local lib_suffix;
         local lib_suffix_urus;
         local lib = WxPath + _T("/lib/");
-        if (GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("gcc*")))
+        if (GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("gcc*")) ||
+            GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("mingw*")))
         {
             lib = lib + _T("");
             lib_prefix = _T("lib");
@@ -468,7 +469,8 @@ function OnLeave_WxConfUnix(fwd)
         IsEmpty = Wizard.IsCheckboxChecked(_T("chkWxUnixEmpty")); // Checks option for Empty Project
         WantPCH = Wizard.IsCheckboxChecked(_T("chkWxUnixConfPCH"));
 
-        if (!GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("gcc*")) && WantPCH)
+        if ((!GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("gcc*")) ||
+            !GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("mingw*"))) && WantPCH)
         {
             ShowWarning(_T("Precompiled headers currently only work for GNU GCC.\n" +
                         "They are disabled for all other compilers."));
@@ -599,7 +601,8 @@ function SetupProject(project)
         }
 
         // Now enable PCH
-        if (WantPCH && GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("gcc*")))
+        if (WantPCH && (GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("gcc*")) ||
+            GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("mingw*"))))
         {
             local pchfile = project.GetFileByFilename(PCHFileName, true, true);
             if (!IsNull(pchfile))
@@ -636,7 +639,8 @@ function SetupProject(project)
             project.AddCompilerOption(_T("/D_WINDOWS"));
             project.AddLinkerOption(_T("/INCREMENTAL:NO"));
         }
-        else if (GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("gcc*")))
+        else if (GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("gcc*")) ||
+                 GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("mingw*")))
         {
             project.AddCompilerOption(_T("-pipe"));
             project.AddCompilerOption(_T("-mthreads"));
@@ -727,7 +731,8 @@ function SetupProject(project)
             project.AddLinkLib(LibPrefix + _T("wsock32") + LibSuffix);
             project.AddLinkLib(LibPrefix + _T("odbc32") + LibSuffix);
 
-            if (WxVersion == 3 && GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("gcc*")))
+            if (WxVersion == 3 && (GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("gcc*")) ||
+                GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("mingw*"))))
             {
                 project.AddLinkLib(LibPrefix + _T("shlwapi") + LibSuffix);
                 project.AddLinkLib(LibPrefix + _T("version") + LibSuffix);
@@ -738,10 +743,14 @@ function SetupProject(project)
     }
 
     if (WxVersion < 2 && GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("gcc*")))
-        project.AddCompilerOption(_T("[[if (GetCompilerFactory().GetCompilerVersionString(_T(\"gcc\")) >= _T(\"4.8.0\")) print(_T(\"-Wno-unused-local-typedefs\"));]]"));
+        project.AddCompilerOption(_T("-Wno-unused-local-typedefs"));
+
+    if (WxVersion < 2 && GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("mingw*")))
+        project.AddCompilerOption(_T("-Wno-unused-local-typedefs"));
 
     // enable PCH
-    if (WantPCH && GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("gcc*")))
+    if (WantPCH && (GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("gcc*")) ||
+        GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("mingw*"))))
     {
         local pchfile = project.GetFileByFilename(PCHFileName, true, true);
         if (!IsNull(pchfile))
@@ -857,7 +866,8 @@ function SetupTarget(target, is_debug)
         OptimizationsOn(target, Wizard.GetCompilerID());
 
     target.SetOptionRelation(ortLinkerOptions, orPrependToParentOptions);
-    if (GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("gcc*")))
+    if (GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("gcc*")) ||
+        GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("mingw*")))
         is_debug = ChkWxDebug && is_debug;
 
     if (!is_debug || IsPartialDebug)
@@ -919,7 +929,8 @@ function SetupTarget(target, is_debug)
         {
             target.AddCompilerOption(_T("/D__WXDEBUG__")); // For Debug Build
         }
-        else if (GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("gcc*")) && is_debug && !IsPartialDebug)
+        else if ((GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("gcc*")) ||
+                 GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("mingw*"))) && is_debug && !IsPartialDebug)
         {
             target.AddCompilerOption(_T("-D__WXDEBUG__"));
         }
