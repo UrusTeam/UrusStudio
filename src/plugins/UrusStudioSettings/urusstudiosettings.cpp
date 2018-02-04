@@ -6,6 +6,7 @@
 #include <wx/wx.h>
 #include <wx/xrc/xmlres.h>
 #include <wx/string.h>
+#include <debuggermanager.h>
 
 #include "urusstudiosettings.h"
 
@@ -126,15 +127,11 @@ void urusstudiosettings::OnAttach()
         configs.Sort();
 
         /* TODO: This is not optimal and not elegant, we need to make it better. */
-        if (configs.empty())
-        {
-            config->Write(path + wxT("/conf1/name"), wxString(wxT("Default")));
-            if (platform::windows) {
-                config->Write(path + wxT("/conf1/values/executable_path"), wxString(wxT("$(#URUSSTOOL.base)/mingw32/i686-w64-mingw32/debug-root/usr/bin/gdb.exe")));
-            } else if (platform::Linux) {
-                config->Write(path + wxT("/conf1/values/executable_path"), wxString(wxT("$(#URUSSTOOL.base)/mingw32/i686-pc-linux-gnu/debug-root/usr/bin/gdb")));
-            }
-
+        config->Write(path + wxT("/conf1/name"), wxString(wxT("Default")));
+        if (platform::windows) {
+                config->Write(path + wxT("/conf1/values/executable_path"), wxString(wxT("$(#URUSSTOOL.base)/usr/bin/gdb.exe")));
+        } else if (platform::Linux) {
+            config->Write(path + wxT("/conf1/values/executable_path"), wxString(wxT("$(#URUSSTOOL.base)/usr/bin/gdb")));
         }
 
         config->Write(path + wxT("/conf2/name"), wxString(wxT("mingw")));
@@ -142,11 +139,14 @@ void urusstudiosettings::OnAttach()
         if (platform::windows) {
             config->Write(path + wxT("/conf2/values/executable_path"), wxString(wxT("$(#URUSSTOOL.base)/mingw32/i686-w64-mingw32/debug-root/usr/bin/gdb.exe")));
         } else if (platform::Linux) {
-            config->Write(path + wxT("/conf2/values/executable_path"), wxString(wxT("$(#URUSSTOOL.base)/mingw32/i686-pc-linux-gnu/debug-root/usr/bin/gdb")));
+            config->Write(path + wxT("/conf2/values/executable_path"), wxString(wxT("$(#URUSSTOOL.base)/mingw32/i686-w64-mingw32/debug-root/usr/bin/gdb")));
         }
 
         configs = config->EnumerateSubPaths(path);
         configs.Sort();
+
+        DebuggerManager *dbgManager = Manager::Get()->GetDebuggerManager();
+        dbgManager->RebuildAllConfigs();
     }
 
     CodeBlocksDockEvent evt(cbEVT_ADD_DOCK_WINDOW);
