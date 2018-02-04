@@ -88,7 +88,7 @@ AutoDetectResult CompilerMINGW::AutoDetectInstallationDir()
             // no... search for MinGW installation dir
             wxString windir = wxGetOSDirectory();
             wxFileConfig ini(_T(""), _T(""), windir + _T("/MinGW.ini"), _T(""), wxCONFIG_USE_LOCAL_FILE | wxCONFIG_USE_NO_ESCAPE_CHARACTERS);
-            m_MasterPath = ini.Read(_T("/InstallSettings/InstallPath"), _T("$(URUSTOOL)\\mingw32"));
+            m_MasterPath = ini.Read(_T("/InstallSettings/InstallPath"), _T("$(URUSTOOL)\\..\\usr"));
             if (!wxFileExists(m_MasterPath + sep + _T("bin") + sep + m_Programs.C))
             {
 #ifdef __WXMSW__ // for wxRegKey
@@ -208,7 +208,7 @@ void CompilerMINGW::SetVersionString()
          * Thus the following might even return a wrong command!
          */
         if (platform::windows)
-            master_path = _T("$(URUSTOOL)\\mingw32");
+            master_path = _T("$(URUSTOOL)\\..\\usr");
         else
             master_path = _T("/usr");
     }
