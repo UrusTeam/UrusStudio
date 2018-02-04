@@ -7,10 +7,11 @@
 		<Option compiler="mingw32_gnu_gcc_compiler" />
 		<Build>
 			<Target title="default">
-				<Option output="../../devel/CbLauncher.exe" prefix_auto="0" extension_auto="0" />
+				<Option output="../../devel/start_urusstudio.exe" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../.objs/tools/CbLauncher" />
 				<Option type="1" />
 				<Option compiler="mingw32_gnu_gcc_compiler" />
+				<Option use_console_runner="0" />
 				<Linker>
 					<Add option="-s" />
 					<Add option="-mwindows" />
@@ -81,6 +82,7 @@
 			<Option compilerVar="WINDRES" />
 		</Unit>
 		<Unit filename="icons/README_4_icon.txt" />
+		<Unit filename="icons/appurus.ico" />
 		<Unit filename="icons/hires.ico" />
 		<Unit filename="icons/launcher.ico" />
 		<Unit filename="icons/lores.ico" />
