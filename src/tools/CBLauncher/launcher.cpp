@@ -31,7 +31,7 @@ static const wchar_t *dataDir     = L"AppData";
 static const wchar_t *CBdataDir   = L"AppData\\urusstudio";
 static const wchar_t *fontsDir    = L"share\\urusstudio\\fonts";
 static const wchar_t *toolDir     = L"tool";
-static const wchar_t *cmd         = L"urusstudio.exe";
+static const wchar_t *cmd         = L"usr/bin/bash.exe -lc urusstudio.exe";
 static wchar_t appDir[MAX_PATH];
 
 /** @brief tests if Code::Blocks is already running
