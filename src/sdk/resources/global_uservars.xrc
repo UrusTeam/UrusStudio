@@ -455,11 +455,11 @@
 						<object class="wxButton" name="help">
 							<label>Help</label>
 						</object>
-						<flag>wxALIGN_BOTTOM</flag>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 						<border>5</border>
 					</object>
 					<object class="spacer">
-						<flag>wxEXPAND</flag>
+						<flag>wxALL|wxEXPAND</flag>
 						<border>5</border>
 						<option>1</option>
 					</object>
@@ -467,11 +467,11 @@
 						<object class="wxButton" name="wxID_OK">
 							<label>Close</label>
 						</object>
-						<flag>wxALIGN_BOTTOM</flag>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 						<border>5</border>
 					</object>
 				</object>
-				<flag>wxBOTTOM|wxLEFT|wxRIGHT|wxEXPAND</flag>
+				<flag>wxALL|wxEXPAND</flag>
 				<border>5</border>
 			</object>
 		</object>
