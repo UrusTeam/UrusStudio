@@ -28,7 +28,7 @@
 					<Add option="-Wl,--no-undefined" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="zip -j9 ../../../devel/share\urusstudio/wxSmithAui.zip manifest.xml" />
+					<Add after="zip -j9 ../../../devel/share/urusstudio/wxSmithAui.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
@@ -104,6 +104,7 @@
 			<Add library="codeblocks" />
 			<Add library="wxsmithlib" />
 			<Add library="wxpropgrid" />
+			<Add library="txml" />
 			<Add directory="../../../devel" />
 			<Add directory="$(#wx.lib)" />
 		</Linker>
