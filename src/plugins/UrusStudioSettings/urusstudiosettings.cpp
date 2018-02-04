@@ -5,6 +5,7 @@
 #include <wx/msgdlg.h>
 #include <wx/wx.h>
 #include <wx/xrc/xmlres.h>
+#include <wx/string.h>
 
 #include "urusstudiosettings.h"
 
@@ -38,7 +39,7 @@ urusstudiosettings::urusstudiosettings()
         NotifyMissingFile(_T("urusstudiosettings.zip"));
     }
 
-
+    idmenu1 = new wxMenu;
 }
 
 // destructor
@@ -55,88 +56,99 @@ void urusstudiosettings::OnAttach()
     // is FALSE, it means that the application did *not* "load"
     // (see: does not need) this plugin...
 
-    wxString plattoolurus;
-    wxString wxplaturus;
-    wxString dummy;
-    dummy = _T("");
-    #if   defined(__WXMSW__)
-        plattoolurus = _T("/..");
-        wxplaturus =  _T("msw");
-    #elif defined(__WXGTK__)
-        plattoolurus = _T("/..");
-        #if GTK_VERSION == 2
-            wxplaturus =  _T("gtk2");
+    main_settings = new FMainSettings(Manager::Get()->GetAppWindow());
+
+    bool showAtStartup = Manager::Get()->GetConfigManager(_T("app"))->ReadBool(_T("/show_tips"), true);
+    if (showAtStartup) {
+        Manager::Get()->GetConfigManager(_T("app"))->Write(_T("/show_tips"), true);
+    }
+
+    bool override_settings = Manager::Get()->GetConfigManager(_T("app"))->ReadBool(_T("/ur_overrsettings"), true);
+    main_settings->CheckBox1->SetValue(override_settings);
+
+    if (override_settings) {
+        wxString plattoolurus;
+        wxString wxplaturus;
+        wxString dummy;
+        dummy = _T("");
+        #if   defined(__WXMSW__)
+            plattoolurus = _T("/..");
+            wxplaturus =  _T("msw");
+        #elif defined(__WXGTK__)
+            plattoolurus = _T("/..");
+            #if GTK_VERSION == 2
+                wxplaturus =  _T("gtk2");
+            #else
+                wxplaturus =  _T("gtk");
+            #endif // defined
+        #elif defined(__WXMAC__)
+            plattoolurus = _T("mac");
         #else
-            wxplaturus =  _T("gtk");
-        #endif // defined
-    #elif defined(__WXMAC__)
-        plattoolurus = _T("mac");
-    #else
-        plattoolurus = _T("");
-        wxplaturus =  _T("default");
-    #endif
+            plattoolurus = _T("");
+            wxplaturus =  _T("default");
+        #endif
 
-    ConfigManager *cfgman_gcv = Manager::Get()->GetConfigManager(_T("gcv"));
-    cfgman_gcv->Write(_T("/sets/default/uruspath/base"),_T("$(URUSSPATH)"  + plattoolurus  + _T("/")));
-    cfgman_gcv->Write(_T("/sets/default/uruspath/include"),_T("$(URUSSPATH)") + plattoolurus + _T("/include"));
-    cfgman_gcv->Write(_T("/sets/default/uruspath/lib"),_T("$(URUSSPATH)") + plattoolurus + _T("/lib"));
+        ConfigManager *cfgman_gcv = Manager::Get()->GetConfigManager(_T("gcv"));
+        cfgman_gcv->Write(_T("/sets/default/uruspath/base"),_T("$(URUSSPATH)"  + plattoolurus  + _T("/")));
+        cfgman_gcv->Write(_T("/sets/default/uruspath/include"),_T("$(URUSSPATH)") + plattoolurus + _T("/include"));
+        cfgman_gcv->Write(_T("/sets/default/uruspath/lib"),_T("$(URUSSPATH)") + plattoolurus + _T("/lib"));
 
-    wxString vermajor, verminor;
-    wxString verwxurus;
-    vermajor = _T(wxSTRINGIZE(wxMAJOR_VERSION));
-    verminor = _T(wxSTRINGIZE(wxMINOR_VERSION));
-    verwxurus = vermajor + _T(".") + verminor;
+        wxString vermajor, verminor;
+        wxString verwxurus;
+        vermajor = _T(wxSTRINGIZE(wxMAJOR_VERSION));
+        verminor = _T(wxSTRINGIZE(wxMINOR_VERSION));
+        verwxurus = vermajor + _T(".") + verminor;
 
-    cfgman_gcv->Write(_T("/sets/default/urusstool/base"),(_T("$(URUSTOOL)") + plattoolurus + _T("/")));
-    cfgman_gcv->Write(_T("/sets/default/urusstool/include"),(_T("$(URUSTOOL)") + plattoolurus + _T("/include/wx-") + verwxurus) + _T("-urus"));
-    cfgman_gcv->Write(_T("/sets/default/urusstool/setup"),(_T("$(URUSTOOL)") + plattoolurus + _T("/lib/wx/include/") + wxplaturus + _T("-unicode-release-") + verwxurus + _T("-urus")));
-    cfgman_gcv->Write(_T("/sets/default/urusstool/lib"),(_T("$(URUSTOOL)") + plattoolurus) + _T("/lib"));
+        cfgman_gcv->Write(_T("/sets/default/urusstool/base"),(_T("$(URUSTOOL)") + plattoolurus + _T("/")));
+        cfgman_gcv->Write(_T("/sets/default/urusstool/include"),(_T("$(URUSTOOL)") + plattoolurus + _T("/include/wx-") + verwxurus) + _T("-urus"));
+        cfgman_gcv->Write(_T("/sets/default/urusstool/setup"),(_T("$(URUSTOOL)") + plattoolurus + _T("/lib/wx/include/") + wxplaturus + _T("-unicode-release-") + verwxurus + _T("-urus")));
+        cfgman_gcv->Write(_T("/sets/default/urusstool/lib"),(_T("$(URUSTOOL)") + plattoolurus) + _T("/lib"));
 
-    cfgman_gcv->Write(_T("/sets/default/cb/base"),(_T("$(WORKSPACEDIR)") + dummy));
-    cfgman_gcv->Write(_T("/sets/default/cb/include"),(_T("$(WORKSPACEDIR)") + dummy + _T("/include/urusstudio")));
-    cfgman_gcv->Write(_T("/sets/default/cb/lib"),(_T("$(WORKSPACEDIR)") + dummy + _T("/lib")));
+        cfgman_gcv->Write(_T("/sets/default/cb/base"),(_T("$(WORKSPACEDIR)") + dummy));
+        cfgman_gcv->Write(_T("/sets/default/cb/include"),(_T("$(WORKSPACEDIR)") + dummy + _T("/include/urusstudio")));
+        cfgman_gcv->Write(_T("/sets/default/cb/lib"),(_T("$(WORKSPACEDIR)") + dummy + _T("/lib")));
 
-    cfgman_gcv->Write(_T("/sets/default/wx/base"),(_T("$(#URUSSTOOL.base)") + dummy));
-    cfgman_gcv->Write(_T("/sets/default/wx/include"),(_T("$(#URUSSTOOL.include)") + dummy));
-    cfgman_gcv->Write(_T("/sets/default/wx/lib"),(_T("$(#URUSSTOOL.lib)") + dummy));
-    cfgman_gcv->Write(_T("/sets/default/wx/wxlibs"),(_T("wx_") + wxplaturus + _T("u_urus-") + verwxurus));
+        cfgman_gcv->Write(_T("/sets/default/wx/base"),(_T("$(#URUSSTOOL.base)") + dummy));
+        cfgman_gcv->Write(_T("/sets/default/wx/include"),(_T("$(#URUSSTOOL.include)") + dummy));
+        cfgman_gcv->Write(_T("/sets/default/wx/lib"),(_T("$(#URUSSTOOL.lib)") + dummy));
+        cfgman_gcv->Write(_T("/sets/default/wx/wxlibs"),(_T("wx_") + wxplaturus + _T("u_urus-") + verwxurus));
 
-    cfgman_gcv->Write(_T("/sets/default/wxsetup/base"),(_T("$(#URUSSTOOL.base)") + dummy));
-    cfgman_gcv->Write(_T("/sets/default/wxsetup/include"),(_T("$(#URUSSTOOL.setup)") + dummy));
-    cfgman_gcv->Write(_T("/sets/default/wxsetup/lib"),(_T("$(#URUSSTOOL.lib)") + dummy));
+        cfgman_gcv->Write(_T("/sets/default/wxsetup/base"),(_T("$(#URUSSTOOL.base)") + dummy));
+        cfgman_gcv->Write(_T("/sets/default/wxsetup/include"),(_T("$(#URUSSTOOL.setup)") + dummy));
+        cfgman_gcv->Write(_T("/sets/default/wxsetup/lib"),(_T("$(#URUSSTOOL.lib)") + dummy));
 
-    cfgman_gcv->Write(_T("/sets/default/boost/base"),(_T("$(#cb.base)/../modules/boost") + dummy));
-    cfgman_gcv->Write(_T("/sets/default/boost/include"),(_T("$(#cb.base)/../modules/boost") + dummy));
+        cfgman_gcv->Write(_T("/sets/default/boost/base"),(_T("$(#cb.base)/../modules/boost") + dummy));
+        cfgman_gcv->Write(_T("/sets/default/boost/include"),(_T("$(#cb.base)/../modules/boost") + dummy));
 
-    ConfigManager *config = Manager::Get()->GetConfigManager(wxT("debugger_common"));
-    wxString path = wxT("/sets/gdb_debugger");
-    wxArrayString configs = config->EnumerateSubPaths(path);
-    configs.Sort();
+        ConfigManager *config = Manager::Get()->GetConfigManager(wxT("debugger_common"));
+        wxString path = wxT("/sets/gdb_debugger");
+        wxArrayString configs = config->EnumerateSubPaths(path);
+        configs.Sort();
 
-    /* TODO: This is not optimal and not elegant, we need to make it better. */
-    if (configs.empty())
-    {
-        config->Write(path + wxT("/conf1/name"), wxString(wxT("Default")));
-        if (platform::windows) {
-            config->Write(path + wxT("/conf1/values/executable_path"), wxString(wxT("$(#URUSSTOOL.base)/mingw32/i686-w64-mingw32/debug-root/usr/bin/gdb.exe")));
-        } else if (platform::Linux) {
-            config->Write(path + wxT("/conf1/values/executable_path"), wxString(wxT("$(#URUSSTOOL.base)/mingw32/i686-pc-linux-gnu/debug-root/usr/bin/gdb")));
+        /* TODO: This is not optimal and not elegant, we need to make it better. */
+        if (configs.empty())
+        {
+            config->Write(path + wxT("/conf1/name"), wxString(wxT("Default")));
+            if (platform::windows) {
+                config->Write(path + wxT("/conf1/values/executable_path"), wxString(wxT("$(#URUSSTOOL.base)/mingw32/i686-w64-mingw32/debug-root/usr/bin/gdb.exe")));
+            } else if (platform::Linux) {
+                config->Write(path + wxT("/conf1/values/executable_path"), wxString(wxT("$(#URUSSTOOL.base)/mingw32/i686-pc-linux-gnu/debug-root/usr/bin/gdb")));
+            }
+
         }
 
+        config->Write(path + wxT("/conf2/name"), wxString(wxT("mingw")));
+
+        if (platform::windows) {
+            config->Write(path + wxT("/conf2/values/executable_path"), wxString(wxT("$(#URUSSTOOL.base)/mingw32/i686-w64-mingw32/debug-root/usr/bin/gdb.exe")));
+        } else if (platform::Linux) {
+            config->Write(path + wxT("/conf2/values/executable_path"), wxString(wxT("$(#URUSSTOOL.base)/mingw32/i686-pc-linux-gnu/debug-root/usr/bin/gdb")));
+        }
+
+        configs = config->EnumerateSubPaths(path);
+        configs.Sort();
     }
 
-    config->Write(path + wxT("/conf2/name"), wxString(wxT("mingw")));
-
-    if (platform::windows) {
-        config->Write(path + wxT("/conf2/values/executable_path"), wxString(wxT("$(#URUSSTOOL.base)/mingw32/i686-w64-mingw32/debug-root/usr/bin/gdb.exe")));
-    } else if (platform::Linux) {
-        config->Write(path + wxT("/conf2/values/executable_path"), wxString(wxT("$(#URUSSTOOL.base)/mingw32/i686-pc-linux-gnu/debug-root/usr/bin/gdb")));
-    }
-
-    configs = config->EnumerateSubPaths(path);
-    configs.Sort();
-
-    main_settings = new FMainSettings(Manager::Get()->GetAppWindow());
     CodeBlocksDockEvent evt(cbEVT_ADD_DOCK_WINDOW);
     evt.name = _T("Urus");
     evt.title = _("Urus Settings");
@@ -165,13 +177,13 @@ void urusstudiosettings::BuildMenu(wxMenuBar* menuBar)
     //Append any items you need in the menu...
     //NOTE: Be careful in here... The application's menubar is at your disposal.
     //NotImplemented(_T("urusstudiosettings::BuildMenu()"));
-    int pos = menuBar->FindMenu(_("&Help"));
-    wxMenu *EditMenu = menuBar->GetMenu(pos);
-    menuBar->Remove(pos);
+    int pos = menuBar->GetMenuCount();
+    //wxMenu *EditMenu = menuBar->GetMenu(pos);
+    //menuBar->Remove(pos);
 
     menuBar->Insert(pos, idmenu1, _("&Urus"));
     idmenu1->Append(idMenuUrusSetMain, _("Settings"),_T(""),wxITEM_CHECK);
-    menuBar->Insert(pos, EditMenu, _("&Help"));
+    //menuBar->Insert(pos + 1, EditMenu, _("&Help"));
 }
 
 void urusstudiosettings::BuildModuleMenu(const ModuleType type, wxMenu* menu, const FileTreeData* data)
