@@ -202,7 +202,7 @@ function OnLeave_WxProjDetails(fwd)
     if (SHAL_CORE == 0) {
         SHAL_CORE_DEF = _T("SHAL_CORE_CYGWIN");
         //GetConfigManager().Write(_T("/generic_wizard/processorChoice/skip"), true);
-        Wizard.AddCompilerPage(_T(""), _T("*"), true, true);
+        Wizard.AddCompilerPage(_T(""), _T("cygwin*"), true, true);
     } else if (SHAL_CORE == 1) {
         SHAL_CORE_DEF = _T("SHAL_CORE_ANDROID");
         //GetConfigManager().Write(_T("/generic_wizard/processorChoice/skip"), true);
@@ -615,8 +615,8 @@ function GetFilesDir()
     local result = _T("");
     if (!IsEmpty) // Checks whether user wants Empty Project or not
     {
-        if (PLATFORM == PLATFORM_MSW)
-            result = _T("urus/gui/rc;");
+        //if (PLATFORM == PLATFORM_MSW)
+            //result = _T("urus/gui/rc;");
         if (GuiBuilder == 2)
         {
             if (GuiAppType == 0)
@@ -635,8 +635,6 @@ function SetupProject(project)
     SetupAddlLibs();
     // set project options
     project.AddCompilerOption(_T("-std=gnu++11"));
-    project.AddIncludeDir(_T("../../libraries"));
-    project.AddIncludeDir(_T("../../libraries/AP_Common/missing"));
     project.AddCompilerOption(_T("-DCONFIG_HAL_BOARD=HAL_BOARD_URUS"));
     project.AddCompilerOption(_T("-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE"));
     project.AddCompilerOption(_T("-ffunction-sections"));
@@ -648,6 +646,8 @@ function SetupProject(project)
     project.AddCompilerOption(_T("-Wshadow"));
     project.AddCompilerOption(_T("-Wl,--gc-sections,--relax"));
     if (SHAL_CORE == 0) {
+        project.AddIncludeDir(_T("../../libraries"));
+        project.AddIncludeDir(_T("../../libraries/AP_Common/missing"));
         project.AddCompilerOption(_T("-DCONFIG_SHAL_CORE=SHAL_CORE_CYGWIN"));
         OUTPUT_NAME_DIR = _T("uruscygwin/");
         project.AddCompilerOption(_T("-DHAVE_CMATH_ISFINITE=1"));
@@ -658,9 +658,13 @@ function SetupProject(project)
         project.AddCompilerOption(_T("-DNEED_CMATH_ISNAN_STD_NAMESPACE=1"));
         project.AddCompilerOption(_T("-D_GNU_SOURCE=1"));
     } else if (SHAL_CORE == 1) {
+        project.AddIncludeDir(_T("../../libraries"));
+        project.AddIncludeDir(_T("../../libraries/AP_Common/missing"));
         project.AddCompilerOption(_T("-DCONFIG_SHAL_CORE=SHAL_CORE_ANDROID"));
         OUTPUT_NAME_DIR = _T("urusandroid/");
     } else if (SHAL_CORE >= 2) {
+        project.AddIncludeDir(_T("../../modules/urus_modules/masterlibs/libraries"));
+        project.AddIncludeDir(_T("../../modules/urus_modules/masterlibs/libraries/AP_Common/missing"));
         project.AddCompilerOption(_T("-DCONFIG_SHAL_CORE=SHAL_CORE_APM"));
         OUTPUT_NAME_DIR = _T("urusapm2/");
         project.AddCompilerOption(_T("-DSHAL_CORE_APM2"));
@@ -945,6 +949,7 @@ function SetupTarget(target, is_debug)
     if (!is_debug || IsPartialDebug)
         LibDebugSuffix = _T("");
     /* For Linux / Mac */
+/*
     if (PLATFORM != PLATFORM_MSW)
     {
         if (ChoiceWxUnixLib == 1)
@@ -994,7 +999,7 @@ function SetupTarget(target, is_debug)
             target.AddResourceIncludeDir(libdir + _T("-") + LibWxVer + _T("-urus"));
         }
 
-        /* Modified and added */
+        // Modified and added
         if (GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("msvc*")) && is_debug && !IsPartialDebug)
         {
             target.AddCompilerOption(_T("/D__WXDEBUG__")); // For Debug Build
@@ -1083,12 +1088,12 @@ function SetupTarget(target, is_debug)
         if (GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("msvc8")))
         {
             target.RemoveCompilerOption(_T("/Og")); // Deprecated option in MSVC 8
-            /* Now embed the generated manifest file */
+            Now embed the generated manifest file
             target.AddCommandsAfterBuild(_T("mt.exe /nologo /manifest \"") + exe_output_dir + exe_file_name + _T(".exe.manifest\" /outputresource:\"") + exe_output_dir + exe_file_name + _T(".exe\";1"));
         }
-        /* End Modification*/
+        //End Modification
 
-        /* Now Add the required Libraries */
+        // Now Add the required Libraries
         if (IsMonolithic)
         {
             target.AddLinkLib(LibPrefix + _T("wx_msw") + LibUnicSuffix + LibDebugSuffix + _T("_urus-") + LibWxVer + LibSuffix);
@@ -1129,6 +1134,7 @@ function SetupTarget(target, is_debug)
             if (LibWxExpat) target.AddLinkLib(LibPrefix + _T("wxexpat") + LibDebugSuffix + LibSuffix);
         }
     }
+*/
     return true;
 }
 
