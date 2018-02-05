@@ -25,13 +25,14 @@
 #include <windows.h>
 #include <tlhelp32.h>
 #include <wchar.h>
+#include <stdio.h>
 
 // Define application directories and application call string at file scope
 static const wchar_t *dataDir     = L"AppData";
 static const wchar_t *CBdataDir   = L"AppData\\urusstudio";
 static const wchar_t *fontsDir    = L"share\\urusstudio\\fonts";
 static const wchar_t *toolDir     = L"tool";
-static const wchar_t *cmd         = L"usr/bin/bash.exe -lc urusstudio.exe";
+static const wchar_t *cmd         = L"usr\\bin\\bash.exe -lc urusstudio.exe";
 static wchar_t appDir[MAX_PATH];
 
 /** @brief tests if Code::Blocks is already running
@@ -379,7 +380,7 @@ int removeFonts()
 /** CbLauncher main function <br>
  *  Launches CB portably (local %AppData% directory) then waits until it exits & cleans up.
  */
-int main()
+int main(int argc, char* const argv[])
 {
     wchar_t cmdline[MAX_PATH];
     wchar_t arguments[MAX_PATH];
@@ -392,6 +393,10 @@ int main()
     wprintf(L"*             Copyright (C) 2009 - Biplab Kumar Modak             *\n");
     wprintf(L"*                    Homepage: http://biplab.in                   *\n");
     wprintf(L"* Copyright (C) 2010-2011 - Codeur (codeur at taillecode dot org) *\n");
+    wprintf(L"*                        License: GPL v3                          *\n");
+    wprintf(L"*                                                                 *\n");
+    wprintf(L"*                    Adapted for Urus Studio                      *\n");
+    wprintf(L"*             Copyright (C) 2018 - Hiroshi Takey F.               *\n");
     wprintf(L"*                        License: GPL v3                          *\n");
     wprintf(L"*******************************************************************\n");
 
@@ -433,18 +438,28 @@ int main()
     ZeroMemory(&pi, sizeof(pi));
     si.cb = sizeof(si);
 
+    // Add the commandline arguments if they exist
+    wcscpy(arguments, GetCommandLineW());
+    args = wcschr(arguments, L' ');
+
+    if (argc > 1) {
+        if (strstr(argv[1], "-n") != nullptr) {
+            fprintf(stdout, "overriding args... '%s'\n", argv[1]);
+            cmd = L"bin\\urusstudio.exe";
+            args = (wchar_t*)L"";
+        }
+    }
+
     // Build the commandline
     wcscpy(cmdline, appDir);
     wcscat(cmdline, cmd);
 
-    // Add the commandline arguments if they exist
-    wcscpy(arguments, GetCommandLineW());
-    args = wcschr(arguments, L' ');
     if(args)
     {
         wcscat(cmdline, L" ");
         wcscat(cmdline, args);
     }
+
     if (! CreateProcessW(NULL,
                          cmdline,
                          NULL, NULL,
@@ -458,7 +473,7 @@ int main()
     }
 
     // Wait until CB terminates
-    wprintf(L"\nLaunched %ls. Waiting for process to exit\n", cmdline);
+    wprintf(L"\nLaunched %ls Waiting for process to exit\n", cmdline);
     if(WaitForSingleObject(pi.hProcess, INFINITE) == WAIT_FAILED)
     {
         // (a failed launch may in fact never get here). Remove fonts if installed.
