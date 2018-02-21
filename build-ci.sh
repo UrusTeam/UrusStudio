@@ -6,7 +6,10 @@ if [ "x$MSYSTEM" != "x" ] ; then
   WXURUSBUILD="--build=i686-w64-mingw32"
   WXURUSHOST="--host=i686-w64-mingw32"
   WXURUSTARGET="--target=i686-w64-mingw32"
-  WXURUSCONF="--with-msw --enable-monolithic --enable-shared CFLAGS=-Wno-unused-local-typedefs CXXFLAGS=-Wno-unused-local-typedefs LDFLAGS=-Wl,--allow-multiple-definition"
+  CFLAGS+=-Wno-unused-local-typedefs
+  CXXFLAGS+=-Wno-unused-local-typedefs
+  CXXFLAGS+=-fpermissive
+  WXURUSCONF="--with-msw --enable-monolithic --enable-shared LDFLAGS=-Wl,--allow-multiple-definition"
   URUSSTUDIOPLAT="--with-platform=win32"
 else
   uname_str=$(uname)
@@ -24,8 +27,8 @@ else
     WXURUSTARGET=""
     export CXXFLAGS="-Wno-unused-local-typedefs -Wno-narrowing -Wno-literal-suffix"
     export CFLAGS="-Wno-unused-local-typedefs -Wno-narrowing"
-    WXURUSCONF="--with-gtk --enable-monolithic --enable-shared"
-    URUSSTUDIOPLAT="--with-platform=gtk"
+    WXURUSCONF="--with-gtk=2 --enable-monolithic --enable-shared --with-libpng=builtin --with-regex=builtin --with-libjpeg=builtin --with-libtiff=builtin --with-expat=builtin"
+    URUSSTUDIOPLAT="--with-platform=gtk2"
   fi
 fi
 
@@ -39,7 +42,7 @@ mkdir -p buildwx
 cd buildwx
 
 ../configure $WXURUSBUILD $WXURUSHOST $WXURUSTARGET --prefix=${URUSINSTALLDIR} --enable-unicode --with-flavour=urus --enable-vendor=urus $WXURUSCONF
-make
+make -j2
 make install
 
 #Only for Unix Like, on Windows we don't make it.
@@ -53,7 +56,7 @@ if [ "x$NO_BUILD_ALL" = "x" ] ; then
         mkdir -p buildustd
         cd buildustd
 
-        ../configure $WXURUSBUILD $WXURUSHOST $WXURUSTARGET --with-contrib-plugins="AutoVersioning, BrowseTracker, Cccc, CppCheck, cbkoders, codesnippets,codestat, copystrings, Cscope, dragscroll, EditorConfig, EditorTweaks, envvars,FileManager, headerfixup, hexeditor, incsearch, keybinder, libfinder, MouseSap, ProjectOptionsManipulator, profiler, regex, ReopenEditor,smartindent,symtab, ThreadSearch, wxcontrib, wxsmith, wxsmithcontrib, wxsmithaui" --prefix=${URUSINSTALLDIR} $URUSSTUDIOPLAT
+        ../configure $WXURUSBUILD $WXURUSHOST $WXURUSTARGET --with-contrib-plugins="AutoVersioning, BrowseTracker, Cccc, CppCheck, codesnippets, codestat, copystrings, Cscope, dragscroll, EditorConfig, EditorTweaks, envvars, headerfixup, hexeditor, incsearch, keybinder, libfinder, MouseSap, ProjectOptionsManipulator, profiler, regex, ReopenEditor, smartindent, symtab, ThreadSearch, wxcontrib, wxsmith, wxsmithcontrib, wxsmithaui" --prefix=${URUSINSTALLDIR} $URUSSTUDIOPLAT
         make
         make install
     fi
