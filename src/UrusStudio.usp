@@ -5,13 +5,13 @@
 		<Option title="UrusStudio wx2.8.x" />
 		<Option pch_mode="2" />
 		<Option default_target="src" />
-		<Option compiler="mingw32_gnu_gcc_compiler" />
+		<Option compiler="mingw32-gcc" />
 		<Build>
 			<Target title="tinyXML">
 				<Option output="devel/txml.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="devel" />
 				<Option type="3" />
-				<Option compiler="mingw32_gnu_gcc_compiler" />
+				<Option compiler="mingw32-gcc" />
 				<Compiler>
 					<Add directory="include/tinyxml" />
 				</Compiler>
@@ -30,7 +30,7 @@
 				<Option output="build_tools/autorevision/autorevision.exe" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="devel" />
 				<Option type="1" />
-				<Option compiler="mingw32_gnu_gcc_compiler" />
+				<Option compiler="mingw32-gcc" />
 				<Option use_console_runner="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -48,7 +48,7 @@
 				<Option output="tools/ConsoleRunner/cb_console_runner.exe" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="tools/ConsoleRunner" />
 				<Option type="1" />
-				<Option compiler="mingw32_gnu_gcc_compiler" />
+				<Option compiler="mingw32-gcc" />
 				<Option use_console_runner="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -63,7 +63,7 @@
 				<Option output="devel/squirrel.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="devel" />
 				<Option type="3" />
-				<Option compiler="mingw32_gnu_gcc_compiler" />
+				<Option compiler="mingw32-gcc" />
 				<Compiler>
 					<Add option="-fno-inline" />
 					<Add directory="include/scripting/include" />
@@ -74,7 +74,7 @@
 				<Option output="devel/sqstdlib.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="devel" />
 				<Option type="3" />
-				<Option compiler="mingw32_gnu_gcc_compiler" />
+				<Option compiler="mingw32-gcc" />
 				<Compiler>
 					<Add option="-fno-inline" />
 					<Add directory="include/scripting/include" />
@@ -89,7 +89,7 @@
 				<Option output="devel/sqplus.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="devel" />
 				<Option type="3" />
-				<Option compiler="mingw32_gnu_gcc_compiler" />
+				<Option compiler="mingw32-gcc" />
 				<Compiler>
 					<Add option="-fno-inline" />
 					<Add directory="include/scripting/include" />
@@ -105,7 +105,7 @@
 				<Option output="devel/wxscintilla_cb.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="devel" />
 				<Option type="3" />
-				<Option compiler="mingw32_gnu_gcc_compiler" />
+				<Option compiler="mingw32-gcc" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Option projectIncludeDirsRelation="2" />
@@ -136,7 +136,7 @@
 				<Option output="devel/wxpropgrid.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="devel" />
 				<Option type="3" />
-				<Option compiler="mingw32_gnu_gcc_compiler" />
+				<Option compiler="mingw32-gcc" />
 				<Compiler>
 					<Add option="-DEXPORT_LIB" />
 					<Add option="-DwxPG_SUPPORT_TOOLTIPS" />
@@ -160,7 +160,7 @@
 				<Option output="devel/codeblocks.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="devel" />
 				<Option type="3" />
-				<Option compiler="mingw32_gnu_gcc_compiler" />
+				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --verbose -p debug" />
 				<Option createStaticLib="1" />
 				<Option projectCompilerOptionsRelation="2" />
@@ -226,7 +226,7 @@
 				<Option output="devel/urusstudio.exe" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="devel" />
 				<Option type="0" />
-				<Option compiler="mingw32_gnu_gcc_compiler" />
+				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
@@ -296,7 +296,7 @@
 				<Option working_dir="devel" />
 				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
-				<Option compiler="mingw32_gnu_gcc_compiler" />
+				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
@@ -331,7 +331,7 @@
 				<Option working_dir="devel" />
 				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
-				<Option compiler="mingw32_gnu_gcc_compiler" />
+				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
@@ -362,7 +362,7 @@
 				<Option working_dir="devel" />
 				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
-				<Option compiler="mingw32_gnu_gcc_compiler" />
+				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
@@ -390,7 +390,7 @@
 				<Option output="devel/depslib.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="devel" />
 				<Option type="3" />
-				<Option compiler="mingw32_gnu_gcc_compiler" />
+				<Option compiler="mingw32-gcc" />
 				<Option createStaticLib="1" />
 				<Compiler>
 					<Add option="-DDEPSLIB_WINDOWS" />
@@ -406,7 +406,7 @@
 				<Option working_dir="devel" />
 				<Option external_deps="devel/libcodeblocks.a;devel/libdepslib.a;" />
 				<Option type="3" />
-				<Option compiler="mingw32_gnu_gcc_compiler" />
+				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
@@ -448,7 +448,7 @@
 				<Option working_dir="devel" />
 				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
-				<Option compiler="mingw32_gnu_gcc_compiler" />
+				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
@@ -489,7 +489,7 @@
 				<Option working_dir="devel" />
 				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
-				<Option compiler="mingw32_gnu_gcc_compiler" />
+				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
@@ -525,7 +525,7 @@
 				<Option working_dir="devel" />
 				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
-				<Option compiler="mingw32_gnu_gcc_compiler" />
+				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
@@ -554,7 +554,7 @@
 				<Option working_dir="devel" />
 				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
-				<Option compiler="mingw32_gnu_gcc_compiler" />
+				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
@@ -583,7 +583,7 @@
 				<Option working_dir="devel" />
 				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
-				<Option compiler="mingw32_gnu_gcc_compiler" />
+				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
@@ -612,7 +612,7 @@
 				<Option working_dir="devel" />
 				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
-				<Option compiler="mingw32_gnu_gcc_compiler" />
+				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
@@ -629,6 +629,7 @@
 					<Add library="codeblocks" />
 					<Add library="$(#wx.wxlibs)" />
 					<Add library="wxscintilla_cb" />
+					<Add library="txml" />
 					<Add directory="devel" />
 				</Linker>
 				<ExtraCommands>
@@ -642,7 +643,7 @@
 				<Option working_dir="devel" />
 				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
-				<Option compiler="mingw32_gnu_gcc_compiler" />
+				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
@@ -678,7 +679,7 @@
 				<Option working_dir="devel" />
 				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
-				<Option compiler="mingw32_gnu_gcc_compiler" />
+				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
@@ -712,7 +713,7 @@
 				<Option working_dir="devel" />
 				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
-				<Option compiler="mingw32_gnu_gcc_compiler" />
+				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
@@ -747,7 +748,7 @@
 				<Option working_dir="devel" />
 				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
-				<Option compiler="mingw32_gnu_gcc_compiler" />
+				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
