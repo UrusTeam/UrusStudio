@@ -73,8 +73,9 @@ function RegisterWizards()
     //RegisterWizard(wizProject,     _T("tricore"),      _T("TriCore Project"),       _T("Embedded Systems"));
     //RegisterWizard(wizProject,     _T("ppc"),          _T("PowerPC Project"),       _T("Embedded Systems"));
     //RegisterWizard(wizProject,     _T("mcs51"),        _T("MCS51 Project"),         _T("Embedded Systems"));
-    RegisterWizard(wizProject,     _T("urus/gui"),       _T("Urus GUI Project"),            _T("Embedded Systems"));
-    RegisterWizard(wizProject,     _T("urus/urdriver"),  _T("Urus Driver/Library Project"), _T("Embedded Systems"));
+    RegisterWizard(wizProject,     _T("urus/gui"),       _T("Urus GUI Project"),             _T("Embedded Systems"));
+    RegisterWizard(wizProject,     _T("urus/urdriver"),  _T("Urus Driver/Library\nProject"), _T("Embedded Systems"));
+    RegisterWizard(wizProject,     _T("urus/console"),   _T("Urus Console\nVehicle/App"),    _T("Embedded Systems"));
     //
     // file wizards
     //

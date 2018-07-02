@@ -256,6 +256,17 @@ else
 	AC_MSG_RESULT(no)
 fi
 
+AC_MSG_CHECKING(whether to build the urusstudio settings plugin)
+urussettings_default="yes"
+AC_ARG_ENABLE(urusstudio-settings, [AC_HELP_STRING([--enable-urusstudio-settings], [build the urusstudio settings wizard plugin (default YES)])],,
+                       enable_urussettings=$urussettings_default)
+AM_CONDITIONAL([BUILD_URUSSTUDIOSETTINGS], [test "x$enable_urussettings" = "xyes"])
+if test "x$enable_urussettings" = "xyes"; then
+	AC_MSG_RESULT(yes)
+else
+	AC_MSG_RESULT(no)
+fi
+
 AC_MSG_CHECKING(whether to build the to-do plugin)
 todo_default="yes"
 AC_ARG_ENABLE(todo, [AC_HELP_STRING([--enable-todo], [build the to-do plugin (default YES)])],,

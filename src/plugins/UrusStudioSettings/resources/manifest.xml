@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_plugin_manifest_file>
+    <SdkVersion major="1" minor="30"  release="0" />
+    <Plugin name="urusstudiosettings">
+        <Value title="Urus Studio Settings" />
+        <Value version="0.1" />
+        <Value description="Setup Urus Studio enviroments" />
+        <Value author="Hiroshi Takey" />
+        <Value authorEmail="htakey@gmail.com" />
+        <Value authorWebsite="https://urusteam.github.io/docs/" />
+        <Value thanksTo="Thanks to Ardupilot Dev Team and Code::Blocks Team!" />
+        <Value license="GPL" />
+    </Plugin>
+</CodeBlocks_plugin_manifest_file>

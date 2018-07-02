@@ -496,6 +496,8 @@ AC_CONFIG_FILES([Makefile
 	src/plugins/abbreviations/Makefile
 	src/plugins/abbreviations/resources/Makefile
 	src/plugins/xpmanifest/Makefile
+	src/plugins/UrusStudioSettings/Makefile
+	src/plugins/UrusStudioSettings/resources/Makefile
 	src/plugins/contrib/Makefile
 	src/plugins/contrib/appdata/Makefile
 	src/plugins/contrib/AutoVersioning/Makefile
