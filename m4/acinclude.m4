@@ -94,6 +94,7 @@ AC_ARG_ENABLE(debug, [AC_HELP_STRING([--enable-debug], [turn on debugging (defau
         CFLAGS="-g $CFLAGS"
         CXXFLAGS="-g $CXXFLAGS"
         CPPFLAGS="-DDEBUG -DcbDEBUG $CPPFLAGS"
+        # CPPFLAGS="-DDEBUG $CPPFLAGS"
         AC_MSG_RESULT(yes)
     else
         AS_IF([test "x$enable_flags_setting" = "xyes"],[
@@ -251,6 +252,17 @@ AC_ARG_ENABLE(scripted-wizard, [AC_HELP_STRING([--enable-scripted-wizard], [buil
                        enable_prw=$prw_default)
 AM_CONDITIONAL([BUILD_SCRIPTEDWIZARD], [test "x$enable_prw" = "xyes"])
 if test "x$enable_prw" = "xyes"; then
+	AC_MSG_RESULT(yes)
+else
+	AC_MSG_RESULT(no)
+fi
+
+AC_MSG_CHECKING(whether to build the urusstudio settings plugin)
+urussettings_default="yes"
+AC_ARG_ENABLE(urusstudio-settings, [AC_HELP_STRING([--enable-urusstudio-settings], [build the urusstudio settings wizard plugin (default YES)])],,
+                       enable_urussettings=$urussettings_default)
+AM_CONDITIONAL([BUILD_URUSSTUDIOSETTINGS], [test "x$enable_urussettings" = "xyes"])
+if test "x$enable_urussettings" = "xyes"; then
 	AC_MSG_RESULT(yes)
 else
 	AC_MSG_RESULT(no)
