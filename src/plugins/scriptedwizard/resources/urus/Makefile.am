@@ -51,3 +51,33 @@ dist_wxsmithfiles_DATA	= gui/wxsmith/app.cpp \
 			gui/wxsmith/main.cpp \
 			gui/wxsmith/main.h \
 			gui/wxsmith/resource.wxs
+
+urdriverfilesdir = $(pkgdatadir)/urdriver
+
+dist_urdriverfiles_DATA =  	urdriver/logo.png \
+		urdriver/wizard.png \
+		urdriver/wizard.script \
+		urdriver/wizard.xrc
+
+commonurdriverdir		= $(pkgdatadir)/urdriver/common
+
+dist_commonurdriver_DATA	= urdriver/common/Backend.cpp \
+			urdriver/common/Backend.h \
+			urdriver/common/main.cpp \
+			urdriver/common/main.h \
+			urdriver/common/dummy.cpp \
+			urdriver/common/dummy.h
+
+urusconsolefilesdir = $(pkgdatadir)/console
+
+dist_urusconsolefiles_DATA =  	console/logo.png \
+		console/wizard.png \
+		console/wizard.script \
+		console/wizard.xrc
+
+commonurusconsoledir		= $(pkgdatadir)/console/common
+
+dist_commonurusconsole_DATA	= console/common/main.cpp \
+			console/common/main.h
+
+
