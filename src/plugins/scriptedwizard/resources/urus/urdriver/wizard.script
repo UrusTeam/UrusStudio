@@ -943,11 +943,11 @@ function SetupTarget(target, is_debug)
     else
         OptimizationsOn(target, Wizard.GetCompilerID());
     target.SetOptionRelation(ortLinkerOptions, orPrependToParentOptions);
-    if (GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("gcc*")))
-        is_debug = ChkWxDebug && is_debug;
+    //if (GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("gcc*")))
+    //    is_debug = ChkWxDebug && is_debug;
 
-    if (!is_debug || IsPartialDebug)
-        LibDebugSuffix = _T("");
+    //if (!is_debug || IsPartialDebug)
+    //    LibDebugSuffix = _T("");
     /* For Linux / Mac */
 /*
     if (PLATFORM != PLATFORM_MSW)
