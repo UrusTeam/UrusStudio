@@ -54,6 +54,10 @@ if BUILD_MANIFEST
 MAYBE_MANIFEST=xpmanifest
 endif
 
+if BUILD_URUSSTUDIOSETTINGS
+MAYBE_URUSSTUDIOSETTINGS=UrusStudioSettings
+endif
+
 SUBDIRS=$(MAYBE_ASTYLE) \
 		$(MAYBE_AUTOSAVE) \
 		$(MAYBE_CLASSWIZARD) \
@@ -68,6 +72,7 @@ SUBDIRS=$(MAYBE_ASTYLE) \
 		$(MAYBE_TODO) \
 		$(MAYBE_ABBREVIATIONS) \
 		$(MAYBE_MANIFEST) \
+		$(MAYBE_URUSSTUDIOSETTINGS) \
 		contrib
 # the 'contrib' subdir contains its own filtering
 
@@ -85,6 +90,7 @@ DIST_SUBDIRS = abbreviations \
 		scriptedwizard \
 		todo \
 		xpmanifest \
+		UrusStudioSettings \
 		contrib
 
 EXTRA_DIST = headerguard \
