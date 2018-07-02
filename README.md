@@ -1,4 +1,4 @@
-[![Build Status](https://semaphoreci.com/api/v1/urussystem/urusstudio/branches/master-urus/badge.svg)](https://semaphoreci.com/urussystem/urusstudio) [![Build status](https://ci.appveyor.com/api/projects/status/t371133qtvfthy2s/branch/master-urus?svg=true)](https://ci.appveyor.com/project/hiro2233/urusstudio/branch/master-urus)
+[![Build Status](https://semaphoreci.com/api/v1/urussystem/urusstudio/branches/master-urus/badge.svg)](https://semaphoreci.com/urussystem/urusstudio) [![Build status](https://ci.appveyor.com/api/projects/status/t371133qtvfthy2s/branch/master-urus?svg=true)](https://ci.appveyor.com/project/hiro2233/urusstudio/branch/master-urus) [![HitCount](http://hits.dwyl.io/UrusTeam/UrusStudio.svg)](http://hits.dwyl.io/UrusTeam/UrusStudio)
 
 # Welcome to Urus Studio!
 
