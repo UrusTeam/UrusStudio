@@ -166,7 +166,7 @@ bool WorkspaceLoader::Open(const wxString& filename, wxString& Title)
 
 bool WorkspaceLoader::Save(const wxString& title, const wxString& filename)
 {
-    const char* ROOT_TAG = "UrusStudio_workspace_file_workspace_file";
+    const char* ROOT_TAG = "UrusStudio_workspace_file";
 
     TiXmlDocument doc;
     doc.SetCondenseWhiteSpace(false);
