@@ -1,40 +1,40 @@
 usr/share/icons
 usr/share/pixmaps
 usr/share/mime
-usr/share/appdata/codeblocks.appdata.xml
+usr/share/appdata/urusstudio.appdata.xml
 usr/share/applications
 
-usr/share/man/man1/codeblocks.1
+usr/share/man/man1/urusstudio.1
 usr/share/man/man1/cb_console_runner.1
 usr/share/man/man1/cb_share_config.1
 
-usr/share/codeblocks/compilers/
-usr/share/codeblocks/icons/
-usr/share/codeblocks/images/*.png
-usr/share/codeblocks/images/16x16
-usr/share/codeblocks/images/codecompletion
-usr/share/codeblocks/images/settings
-usr/share/codeblocks/lexers
-usr/share/codeblocks/scripts
-usr/share/codeblocks/templates
+usr/share/urusstudio/compilers/
+usr/share/urusstudio/icons/
+usr/share/urusstudio/images/*.png
+usr/share/urusstudio/images/16x16
+usr/share/urusstudio/images/codecompletion
+usr/share/urusstudio/images/settings
+usr/share/urusstudio/lexers
+usr/share/urusstudio/scripts
+usr/share/urusstudio/templates
 
-usr/share/codeblocks/abbreviations.zip
-usr/share/codeblocks/Astyle.zip
-usr/share/codeblocks/autosave.zip
-usr/share/codeblocks/classwizard.zip
-usr/share/codeblocks/codecompletion.zip
-usr/share/codeblocks/compiler.zip
-usr/share/codeblocks/debugger.zip
-usr/share/codeblocks/defaultmimehandler.zip
-usr/share/codeblocks/manager_resources.zip
-usr/share/codeblocks/occurrenceshighlighting.zip
-usr/share/codeblocks/openfileslist.zip
-usr/share/codeblocks/projectsimporter.zip
-usr/share/codeblocks/resources.zip
-usr/share/codeblocks/scriptedwizard.zip
-usr/share/codeblocks/start_here.zip
-usr/share/codeblocks/todo.zip
+usr/share/urusstudio/abbreviations.zip
+usr/share/urusstudio/Astyle.zip
+usr/share/urusstudio/autosave.zip
+usr/share/urusstudio/classwizard.zip
+usr/share/urusstudio/codecompletion.zip
+usr/share/urusstudio/compiler.zip
+usr/share/urusstudio/debugger.zip
+usr/share/urusstudio/defaultmimehandler.zip
+usr/share/urusstudio/manager_resources.zip
+usr/share/urusstudio/occurrenceshighlighting.zip
+usr/share/urusstudio/openfileslist.zip
+usr/share/urusstudio/projectsimporter.zip
+usr/share/urusstudio/resources.zip
+usr/share/urusstudio/scriptedwizard.zip
+usr/share/urusstudio/start_here.zip
+usr/share/urusstudio/todo.zip
 
-usr/share/codeblocks/tips.txt
+usr/share/urusstudio/tips.txt
 
 ../lintian/codeblocks-common  usr/share/lintian/overrides/
