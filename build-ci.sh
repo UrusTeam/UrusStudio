@@ -27,8 +27,8 @@ else
     WXURUSTARGET=""
     export CXXFLAGS="-Wno-unused-local-typedefs -Wno-narrowing -Wno-literal-suffix"
     export CFLAGS="-Wno-unused-local-typedefs -Wno-narrowing"
-    WXURUSCONF="--with-gtk=2 --enable-monolithic --enable-shared --with-libpng=builtin --with-regex=builtin --with-libjpeg=builtin --with-libtiff=builtin --with-expat=builtin"
-    URUSSTUDIOPLAT="--with-platform=gtk2"
+    WXURUSCONF="--with-gtk=2 --enable-monolithic --enable-shared --enable-std_string --enable-threads --disable-debug_flag --disable-precomp-headers --with-libpng=builtin --with-regex=builtin --with-libjpeg=builtin --with-libtiff=builtin --with-expat=builtin --with-opengl --enable-threads"
+    URUSSTUDIOPLAT="--with-platform=gtk2 --disable-debug --disable-pch --disable-fortran"
   fi
 fi
 
@@ -56,8 +56,8 @@ if [ "x$NO_BUILD_ALL" = "x" ] ; then
         mkdir -p buildustd
         cd buildustd
 
-        ../configure $WXURUSBUILD $WXURUSHOST $WXURUSTARGET --with-contrib-plugins="AutoVersioning, BrowseTracker, Cccc, CppCheck, codesnippets, codestat, copystrings, Cscope, dragscroll, EditorConfig, EditorTweaks, envvars, headerfixup, hexeditor, incsearch, keybinder, libfinder, MouseSap, ProjectOptionsManipulator, profiler, regex, ReopenEditor, smartindent, symtab, ThreadSearch, wxcontrib, wxsmith, wxsmithcontrib, wxsmithaui" --prefix=${URUSINSTALLDIR} $URUSSTUDIOPLAT
-        make
+        ../configure $WXURUSBUILD $WXURUSHOST $WXURUSTARGET --with-contrib-plugins="BrowseTracker,Cccc,CppCheck,codesnippets,headerfixup,hexeditor,incsearch,ProjectOptionsManipulator,regex,ReopenEditor,smartindent,symtab,ThreadSearch,ToolsPlus,wxcontrib,wxsmith,wxsmithcontrib,wxsmithaui" --prefix=${URUSINSTALLDIR} $URUSSTUDIOPLAT
+        make -j2
         make install
     fi
 fi
