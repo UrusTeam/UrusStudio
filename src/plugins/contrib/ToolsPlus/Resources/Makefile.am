@@ -1,5 +1,6 @@
 pkgdatadir = $(datadir)/@PACKAGE@/images/settings
 
-dist_pkgdata_DATA = $(srcdir)/*.png
+dist_pkgdata_DATA = $(srcdir)/*.png \
+             $(srcdir)/*.svg
 
 EXTRA_DIST = dialogs.fbp

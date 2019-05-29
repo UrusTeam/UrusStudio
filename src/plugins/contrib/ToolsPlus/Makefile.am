@@ -36,5 +36,5 @@ pkgdata_DATA = ToolsPlus.zip
 CLEANFILES = $(pkgdata_DATA)
 
 ToolsPlus.zip: manifest.xml
-	PWD=`pwd` cd $(srcdir) && zip -j9 $(PWD)/ToolsPlus.zip manifest.xml > /dev/null
+	PWD=`pwd` cd $(srcdir) && zip $(PWD)/ToolsPlus.zip manifest.xml Resources/*.png Resources/*.svg > /dev/null
 
