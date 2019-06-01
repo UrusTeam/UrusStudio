@@ -21,9 +21,9 @@
 #include <float.h>
 #include <memory>
 
-#if wxUSE_DISPLAY
+//#if wxUSE_DISPLAY
 #include <wx/display.h>
-#endif
+//#endif
 
 #include <wx/encconv.h>
 #include <wx/listctrl.h>
