@@ -25,10 +25,12 @@ else
     WXURUSBUILD=""
     WXURUSHOST=""
     WXURUSTARGET=""
-    export CXXFLAGS="-Wno-unused-local-typedefs -Wno-narrowing -Wno-literal-suffix"
+    export CXXFLAGS="-Wno-unused-local-typedefs -Wno-narrowing -Wno-literal-suffix -fpermissive"
     export CFLAGS="-Wno-unused-local-typedefs -Wno-narrowing"
-    WXURUSCONF="--with-gtk=2 --enable-monolithic --enable-shared --enable-std_string --enable-threads --disable-debug_flag --disable-precomp-headers --with-libpng=builtin --with-regex=builtin --with-libjpeg=builtin --with-libtiff=builtin --with-expat=builtin --with-opengl --enable-threads"
-    URUSSTUDIOPLAT="--with-platform=gtk2 --disable-debug --disable-pch --disable-fortran"
+    export WXURUSCONF="--with-gtk=2 --enable-monolithic --enable-shared --enable-std_string --enable-threads --disable-debug_flag --disable-precomp-headers --with-libpng=builtin --with-regex=builtin --with-libjpeg=builtin --with-libtiff=builtin --with-expat=builtin --with-opengl --enable-threads"
+    export OPENGL_LIBS="-L/usr/lib/$MACHTYPE/libGL.so"
+    export LDFLAGS="-lGL -lGLU -lGLEW"
+    export URUSSTUDIOPLAT="--with-platform=gtk2 --disable-debug --disable-pch --disable-fortran"
   fi
 fi
 
