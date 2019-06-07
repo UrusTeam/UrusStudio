@@ -56,6 +56,8 @@ make install
 
 PUSHD=$(pwd)
 cd $URUSINSTALLDIR
+git config --global user.email ${USER}@${HOSTNAME}
+git config --global user.name ${USER}
 git add .
 git commit -m "added wxWidgets urus."
 #mkdir -p $HOME/temp
