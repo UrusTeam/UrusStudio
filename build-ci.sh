@@ -37,6 +37,13 @@ fi
 export URUSINSTALLDIR=/system/urus
 export URUSSTDTOPDIR=$(pwd)
 
+if [ -e $URUSINSTALLDIR/.git ] ; then
+  echo "git ok"
+else
+  echo "git init"
+  git init $URUSINSTALLDIR
+fi
+
 cd modules/wxWidgets
 
 export WXURUSTOPDIR=$(pwd)
@@ -46,6 +53,14 @@ cd buildwx
 ../configure $WXURUSBUILD $WXURUSHOST $WXURUSTARGET --prefix=${URUSINSTALLDIR} --enable-unicode --with-flavour=urus --enable-vendor=urus $WXURUSCONF
 make -j2
 make install
+
+PUSHD=$(pwd)
+cd $URUSINSTALLDIR
+git add .
+git commit -m "added wxWidgets urus."
+#mkdir -p $HOME/temp
+#tar -cvzf $HOME/temp/host-linux32-wx-3.0.2-urus-gtk2.tar.gz *
+cd $PUSHD
 
 #Only for Unix Like, on Windows we don't make it.
 if [ "x$NO_BUILD_ALL" = "x" ] ; then
@@ -61,6 +76,26 @@ if [ "x$NO_BUILD_ALL" = "x" ] ; then
         ../configure $WXURUSBUILD $WXURUSHOST $WXURUSTARGET --with-contrib-plugins="BrowseTracker,Cccc,CppCheck,codesnippets,headerfixup,hexeditor,incsearch,ProjectOptionsManipulator,regex,ReopenEditor,smartindent,symtab,ThreadSearch,ToolsPlus,wxcontrib,wxsmith,wxsmithcontrib,wxsmithaui" --prefix=${URUSINSTALLDIR} $URUSSTUDIOPLAT
         make -j2
         make install
+
+        PUSHD=$(pwd)
+        cd $URUSINSTALLDIR
+        rm -rf $HOME/.tempurus
+        mkdir -p $HOME/.tempurus
+        WXVERSION=$(wx-config --version)
+        git add .
+        git commit -m "added urusstudio."
+        git checkout -b master-urusstudio
+        rm -rf *
+        git add .
+        git commit -m "removed all."
+        git cherry-pick HEAD~1
+        tar -cvzf $HOME/.tempurus/host-linux32-wx${WXVERSION}-gtk2-urusstudio.tar.gz *
+        git checkout -b master-wx
+        git reset --hard HEAD~3
+        tar -cvzf $HOME/.tempurus/host-linux32-wx-${WXVERSION}-urus-gtk2.tar.gz *
+        git checkout master
+        git reset --hard
+        cd $PUSHD
     fi
 fi
 
