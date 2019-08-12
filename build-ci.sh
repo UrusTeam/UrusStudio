@@ -27,9 +27,9 @@ else
     WXURUSTARGET=""
     export CXXFLAGS="-Wno-unused-local-typedefs -Wno-narrowing -Wno-literal-suffix -fpermissive"
     export CFLAGS="-Wno-unused-local-typedefs -Wno-narrowing"
-    export WXURUSCONF="--with-gtk=2 --enable-monolithic --enable-shared --enable-std_string --enable-threads --disable-debug_flag --disable-precomp-headers --with-libpng=builtin --with-regex=builtin --with-libjpeg=builtin --with-libtiff=builtin --with-expat=builtin --with-opengl --enable-threads"
-    export OPENGL_LIBS="-L/usr/lib/$MACHTYPE/libGL.so"
-    export LDFLAGS="-lGL -lGLU -lGLEW"
+    export WXURUSCONF="--with-gtk=2 --enable-monolithic --enable-shared --enable-std_string --enable-threads --disable-debug_flag --disable-precomp-headers --with-libpng=builtin --with-regex=builtin --with-libjpeg=builtin --with-libtiff=builtin --with-expat=builtin --enable-threads"
+    #export OPENGL_LIBS="-L/usr/lib/$MACHTYPE/libGL.so"
+    #export LDFLAGS="-lGL -lGLU -lGLEW"
     export URUSSTUDIOPLAT="--with-platform=gtk2 --disable-debug --disable-pch --disable-fortran"
   fi
 fi
@@ -37,31 +37,37 @@ fi
 export URUSINSTALLDIR=/system/urus
 export URUSSTDTOPDIR=$(pwd)
 
+cd modules/wxWidgets
+export WXURUSTOPDIR=$(pwd)
+
+cd $URUSINSTALLDIR
+
 if [ -e $URUSINSTALLDIR/.git ] ; then
   echo "git ok"
 else
   echo "git init"
   git init $URUSINSTALLDIR
+  git config --global user.email $(printf "%s@%s" ${USER} $(uname -n))
+  git config --global user.name ${USER}
 fi
 
-cd modules/wxWidgets
+echo $SECONDS > .empty
+git add .
+git commit -m "added backup."
 
-export WXURUSTOPDIR=$(pwd)
+cd $WXURUSTOPDIR
 mkdir -p buildwx
 cd buildwx
 
 ../configure $WXURUSBUILD $WXURUSHOST $WXURUSTARGET --prefix=${URUSINSTALLDIR} --enable-unicode --with-flavour=urus --enable-vendor=urus $WXURUSCONF
 make -j2
-make install
+make -j2 install
 
 PUSHD=$(pwd)
 cd $URUSINSTALLDIR
-git config --global user.email ${USER}@${HOSTNAME}
-git config --global user.name ${USER}
+echo $SECONDS > .empty
 git add .
 git commit -m "added wxWidgets urus."
-#mkdir -p $HOME/temp
-#tar -cvzf $HOME/temp/host-linux32-wx-3.0.2-urus-gtk2.tar.gz *
 cd $PUSHD
 
 #Only for Unix Like, on Windows we don't make it.
@@ -77,24 +83,27 @@ if [ "x$NO_BUILD_ALL" = "x" ] ; then
 
         ../configure $WXURUSBUILD $WXURUSHOST $WXURUSTARGET --with-contrib-plugins="BrowseTracker,Cccc,CppCheck,codesnippets,headerfixup,hexeditor,incsearch,ProjectOptionsManipulator,regex,ReopenEditor,smartindent,symtab,ThreadSearch,ToolsPlus,wxcontrib,wxsmith,wxsmithcontrib,wxsmithaui" --prefix=${URUSINSTALLDIR} $URUSSTUDIOPLAT
         make -j2
-        make install
+        make -j2 install
 
         PUSHD=$(pwd)
         cd $URUSINSTALLDIR
-        rm -rf $HOME/.tempurus
         mkdir -p $HOME/.tempurus
         WXVERSION=$(wx-config --version)
+        echo $SECONDS > .empty
         git add .
         git commit -m "added urusstudio."
-        git checkout -b master-urusstudio
-        rm -rf *
-        git add .
+        git checkout master-urusstudio || git checkout -b master-urusstudio
+        git clean -fdx
+        git reset --hard
+        git rm -rf *
         git commit -m "removed all."
         git cherry-pick HEAD~1
-        tar -cvzf $HOME/.tempurus/host-linux32-wx${WXVERSION}-gtk2-urusstudio.tar.gz *
-        git checkout -b master-wx
+        ARCHOS=$(printf "%s-%s" $(uname -s) $(uname -m))
+        ARCHOS=$(echo $ARCHOS | tr A-Z a-z)
+        tar -cvzf $HOME/.tempurus/host-${ARCHOS}-wx${WXVERSION}-gtk2-urusstudio.tar.gz *
+        git checkout master-wx || git checkout -b master-wx
         git reset --hard HEAD~3
-        tar -cvzf $HOME/.tempurus/host-linux32-wx-${WXVERSION}-urus-gtk2.tar.gz *
+        tar -cvzf $HOME/.tempurus/host-${ARCHOS}-wx-${WXVERSION}-urus-gtk2.tar.gz *
         git checkout master
         git reset --hard
         cd $PUSHD
