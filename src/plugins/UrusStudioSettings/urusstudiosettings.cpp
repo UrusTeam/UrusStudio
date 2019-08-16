@@ -40,7 +40,6 @@ urusstudiosettings::urusstudiosettings()
         NotifyMissingFile(_T("urusstudiosettings.zip"));
     }
 
-    idmenu1 = new wxMenu;
 }
 
 // destructor
@@ -177,13 +176,19 @@ void urusstudiosettings::BuildMenu(wxMenuBar* menuBar)
     //Append any items you need in the menu...
     //NOTE: Be careful in here... The application's menubar is at your disposal.
     //NotImplemented(_T("urusstudiosettings::BuildMenu()"));
-    int pos = menuBar->GetMenuCount();
-    //wxMenu *EditMenu = menuBar->GetMenu(pos);
-    //menuBar->Remove(pos);
 
-    menuBar->Insert(pos, idmenu1, _("&Urus"));
-    idmenu1->Append(idMenuUrusSetMain, _("Settings"),_T(""),wxITEM_CHECK);
-    //menuBar->Insert(pos + 1, EditMenu, _("&Help"));
+	int idx = menuBar->FindMenu(_("&Urus"));
+
+	if (idx == wxNOT_FOUND) {
+        int pos = menuBar->GetMenuCount();
+        wxMenu *EditMenu = menuBar->GetMenu(pos);
+        menuBar->Remove(pos);
+
+        idmenu1 = new wxMenu;
+        menuBar->Insert(pos, idmenu1, _("&Urus"));
+        idmenu1->Append(idMenuUrusSetMain, _("Settings"),_T(""),wxITEM_CHECK);
+        //menuBar->Insert(pos + 1, EditMenu, _("&Help"));
+	}
 }
 
 void urusstudiosettings::BuildModuleMenu(const ModuleType type, wxMenu* menu, const FileTreeData* data)
@@ -232,8 +237,9 @@ void urusstudiosettings::Execute(wxCommandEvent& event)
 
 void urusstudiosettings::OnUpdateUI(wxUpdateUIEvent& event)
 {
-
-    idmenu1->Check(idMenuUrusSetMain,IsWindowReallyShown(main_settings));
+    if (idmenu1) {
+        idmenu1->Check(idMenuUrusSetMain,IsWindowReallyShown(main_settings));
+    }
     // allow other UpdateUI handlers to process this event
     // *very* important! don't forget it...
     event.Skip();
