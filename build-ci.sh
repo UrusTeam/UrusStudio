@@ -46,14 +46,18 @@ if [ -e $URUSINSTALLDIR/.git ] ; then
   echo "git ok"
 else
   echo "git init"
-  git init $URUSINSTALLDIR
-  git config --global user.email $(printf "%s@%s" ${USER} $(uname -n))
-  git config --global user.name ${USER}
+  if [ "x$ENABLEGIT" != "x" ] ; then
+    git init $URUSINSTALLDIR
+    git config --global user.email $(printf "%s@%s" ${USER} $(uname -n))
+    git config --global user.name ${USER}
+  fi
 fi
 
 echo $SECONDS > .empty
-git add .
-git commit -m "added backup."
+if [ "x$ENABLEGIT" != "x" ] ; then
+  git add .
+  git commit -m "added backup."
+fi
 
 cd $WXURUSTOPDIR
 mkdir -p buildwx
@@ -66,8 +70,10 @@ make -j2 install
 PUSHD=$(pwd)
 cd $URUSINSTALLDIR
 echo $SECONDS > .empty
-git add .
-git commit -m "added wxWidgets urus."
+if [ "x$ENABLEGIT" != "x" ] ; then
+  git add .
+  git commit -m "added wxWidgets urus."
+fi
 cd $PUSHD
 
 #Only for Unix Like, on Windows we don't make it.
@@ -90,22 +96,24 @@ if [ "x$NO_BUILD_ALL" = "x" ] ; then
         mkdir -p $HOME/.tempurus
         WXVERSION=$(wx-config --version)
         echo $SECONDS > .empty
-        git add .
-        git commit -m "added urusstudio."
-        git checkout master-urusstudio || git checkout -b master-urusstudio
-        git clean -fdx
-        git reset --hard
-        git rm -rf *
-        git commit -m "removed all."
-        git cherry-pick HEAD~1
-        ARCHOS=$(printf "%s-%s" $(uname -s) $(uname -m))
-        ARCHOS=$(echo $ARCHOS | tr A-Z a-z)
-        tar -cvzf $HOME/.tempurus/host-${ARCHOS}-wx${WXVERSION}-gtk2-urusstudio.tar.gz *
-        git checkout master-wx || git checkout -b master-wx
-        git reset --hard HEAD~3
-        tar -cvzf $HOME/.tempurus/host-${ARCHOS}-wx-${WXVERSION}-urus-gtk2.tar.gz *
-        git checkout master
-        git reset --hard
+        if [ "x$ENABLEGIT" != "x" ] ; then
+          git add .
+          git commit -m "added urusstudio."
+          git checkout master-urusstudio || git checkout -b master-urusstudio
+          git clean -fdx
+          git reset --hard
+          git rm -rf *
+          git commit -m "removed all."
+          git cherry-pick HEAD~1
+          ARCHOS=$(printf "%s-%s" $(uname -s) $(uname -m))
+          ARCHOS=$(echo $ARCHOS | tr A-Z a-z)
+          tar -cvzf $HOME/.tempurus/host-${ARCHOS}-wx${WXVERSION}-gtk2-urusstudio.tar.gz *
+          git checkout master-wx || git checkout -b master-wx
+          git reset --hard HEAD~3
+          tar -cvzf $HOME/.tempurus/host-${ARCHOS}-wx-${WXVERSION}-urus-gtk2.tar.gz *
+          git checkout master
+          git reset --hard
+        fi
         cd $PUSHD
     fi
 fi
