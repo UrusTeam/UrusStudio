@@ -6,7 +6,6 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="win">
-				<Option platforms="Windows;" />
 				<Option output="../../devel/share/urusstudio/plugins/urusstudiosettings.dll" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../.objs/plugins/urusstudiosettings" />
 				<Option type="3" />
