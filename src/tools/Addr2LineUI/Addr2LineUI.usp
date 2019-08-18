@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<UrusStudio_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Addr2LineUI" />
+		<Option compiler="mingw32-gcc" />
+		<Build>
+			<Target title="default">
+				<Option output="../../devel/Addr2LineUI.exe" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="../../devel" />
+				<Option object_output="../../.objs/tools/Addr2LineUI" />
+				<Option type="0" />
+				<Option compiler="mingw32-gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Environment>
+				<Variable name="WX_CFG" value="" />
+				<Variable name="WX_SUFFIX" value="u" />
+				<Variable name="WX_VERSION" value="28" />
+			</Environment>
+		</Build>
+		<VirtualTargets>
+			<Add alias="All" targets="default;" />
+		</VirtualTargets>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-pipe" />
+			<Add option="-mthreads" />
+			<Add option="-std=gnu++11" />
+			<Add option='[[if (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.8.0&quot;)) print(_T(&quot;-Wno-unused-local-typedefs&quot;));]]' />
+			<Add option="-D__GNUWIN32__" />
+			<Add option="-D__WXMSW__" />
+			<Add option="-DWXUSINGDLL" />
+			<Add option="-DwxUSE_UNICODE" />
+			<Add option="-DWX_PRECOMP" />
+			<Add directory="$(#wx.include)" />
+			<Add directory="$(#wxsetup.include)" />
+		</Compiler>
+		<ResourceCompiler>
+			<Add directory="$(#wx.include)" />
+		</ResourceCompiler>
+		<Linker>
+			<Add option="-mthreads" />
+			<Add library="$(#wx.wxlibs)" />
+			<Add directory="$(#wx.lib)" />
+		</Linker>
+		<Unit filename="Addr2LineUIApp.cpp" />
+		<Unit filename="Addr2LineUIApp.h" />
+		<Unit filename="Addr2LineUIMain.cpp" />
+		<Unit filename="Addr2LineUIMain.h" />
+		<Unit filename="resource.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="wxsmith/Addr2LineUIDialog.wxs" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+			<wxsmith version="1">
+				<gui name="wxWidgets" src="Addr2LineUIApp.cpp" main="Addr2LineUIDialog" init_handlers="necessary" language="CPP" />
+				<resources>
+					<wxDialog wxs="wxsmith/Addr2LineUIDialog.wxs" src="Addr2LineUIMain.cpp" hdr="Addr2LineUIMain.h" fwddecl="0" i18n="1" name="Addr2LineUIDialog" language="CPP" />
+				</resources>
+			</wxsmith>
+		</Extensions>
+	</Project>
+</UrusStudio_project_file>
