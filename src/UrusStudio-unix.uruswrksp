@@ -2,9 +2,9 @@
 <UrusStudio_workspace_file>
     <Workspace title="Urus Studio Workspace wx2.8.x Unix">
         <Project filename="UrusStudio-unix.usp" />
-        <Project filename="tools/Addr2LineUI/Addr2LineUI.cbp" />
+        <Project filename="tools/Addr2LineUI/Addr2LineUI-unix.usp" />
         <Project filename="tools/cb_share_config/cb_share_config-unix.cbp" />
-        <Project filename="tools/CBLauncher/CbLauncher.cbp" />
+        <Project filename="tools/CBLauncher/CbLauncher-unix.usp" />
         <Project filename="tools/cbp2make/cbp2make-unix.cbp" />
         <Project filename="plugins/codecompletion/cctest-unix.cbp" />
         <Project filename="plugins/contrib/wxContribItems/wxContribItems-unix.cbp" />
@@ -26,7 +26,7 @@
         <Project filename="plugins/contrib/copystrings/copystrings-unix.cbp" />
         <Project filename="plugins/contrib/CppCheck/CppCheck-unix.cbp" />
         <Project filename="plugins/contrib/Cscope/Cscope-unix.cbp" />
-        <Project filename="plugins/contrib/devpak_plugin/DevPakPlugin.cbp" />
+        <Project filename="plugins/contrib/devpak_plugin/DevPakPlugin-unix.usp" />
         <Project filename="plugins/contrib/DoxyBlocks/DoxyBlocks-unix.cbp" />
         <Project filename="plugins/contrib/dragscroll/DragScroll-unix.cbp" />
         <Project filename="plugins/contrib/EditorConfig/EditorConfig-unix.cbp" />
@@ -44,7 +44,7 @@
         </Project>
         <Project filename="plugins/contrib/MouseSap/MouseSap-unix.cbp" />
         <Project filename="plugins/contrib/NassiShneiderman/NassiShneiderman-unix.cbp" />
-        <Project filename="plugins/contrib/profiler/cbprofiler.cbp" />
+        <Project filename="plugins/contrib/profiler/cbprofiler-unix.usp" />
         <Project filename="plugins/contrib/ProjectOptionsManipulator/ProjectOptionsManipulator-unix.cbp" />
         <Project filename="plugins/contrib/regex_testbed/RegExTestbed-unix.cbp" />
         <Project filename="plugins/contrib/ReopenEditor/ReopenEditor-unix.cbp" />
