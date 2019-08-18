@@ -12,7 +12,9 @@
 				<Option working_dir="devel" />
 				<Option type="3" />
 				<Option compiler="mingw32-gcc" />
+				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
+					<Add option="-fPIC" />
 					<Add directory="include/tinyxml" />
 				</Compiler>
 				<Linker>
@@ -43,6 +45,10 @@
 					<Add library="txml" />
 					<Add directory="base/tinyxml" />
 				</Linker>
+				<ExtraCommands>
+					<Add after="cp -f $(#wx.lib)/*_urus* devel/" />
+					<Mode after="always" />
+				</ExtraCommands>
 			</Target>
 			<Target title="ConsoleRunner">
 				<Option output="tools/ConsoleRunner/cb_console_runner.exe" prefix_auto="0" extension_auto="0" />
@@ -118,8 +124,6 @@
 					<Add directory="sdk/wxscintilla/src/scintilla/include" />
 					<Add directory="sdk/wxscintilla/src/scintilla/src" />
 					<Add directory="sdk/wxscintilla/src/scintilla/lexlib" />
-					<Add directory="$(#WX31.include)" />
-					<Add directory="$(#WXSETUP.include)" />
 				</Compiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-import" />
@@ -129,7 +133,6 @@
 					<Add library="sqstdlib" />
 					<Add library="squirrel" />
 					<Add library="txml" />
-					<Add library="$(#wx.wxlibs)" />
 				</Linker>
 			</Target>
 			<Target title="wxpropgrid">
@@ -153,7 +156,6 @@
 					<Add library="sqstdlib" />
 					<Add library="squirrel" />
 					<Add library="txml" />
-					<Add library="$(#wx.wxlibs)" />
 				</Linker>
 			</Target>
 			<Target title="sdk">
@@ -173,10 +175,7 @@
 					<Add option="-DEXPORT_LIB" />
 					<Add option="-DEXPORT_EVENTS" />
 					<Add option="-DWXMAKINGDLL_SCI" />
-					<Add option="-D__WX__" />
-					<Add option="-DWINVER=0x0501" />
-					<Add option="-DwxPG_SUPPORT_TOOLTIPS" />
-					<Add option="-D__WIN32__" />
+					<Add option="-DCB_PRECOMP" />
 					<Add directory="include" />
 					<Add directory="include/tinyxml" />
 					<Add directory="include/scripting/bindings" />
@@ -190,9 +189,6 @@
 					<Add directory="include/mozilla_chardet/xpcom/glue" />
 					<Add directory="sdk/wxpropgrid/include" />
 				</Compiler>
-				<ResourceCompiler>
-					<Add directory="$(#WXSETUP.include)" />
-				</ResourceCompiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-image-base" />
 					<Add option="-Wl,--enable-auto-import" />
@@ -208,11 +204,9 @@
 					<Add library="sqstdlib" />
 					<Add library="squirrel" />
 					<Add library="gdi32" />
-					<Add library="$(#WX.wxlibs)" />
 					<Add directory="devel" />
 					<Add directory="sdk/scripting/lib" />
 					<Add directory="sdk/propgrid" />
-					<Add directory="$(#WX.lib)" />
 				</Linker>
 				<ExtraCommands>
 					<Add before="build_tools/autorevision/autorevision.exe +wx +int +t .. include/autorevision.h" />
@@ -231,6 +225,7 @@
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add option="-D__WIN32__" />
+					<Add option="-DCB_PRECOMP" />
 					<Add directory="include" />
 					<Add directory="include/scripting/include" />
 					<Add directory="include/scripting/sqplus" />
@@ -241,12 +236,9 @@
 					<Add directory="include/mozilla_chardet/xpcom/base" />
 					<Add directory="include/mozilla_chardet/xpcom/glue" />
 					<Add directory="exchndl/win32/include" />
-					<Add directory="$(#WXSETUP.include)" />
-					<Add directory="$(#WX.include)" />
 				</Compiler>
 				<ResourceCompiler>
-					<Add directory="$(#WXSETUP.include)" />
-					<Add directory="$(#WX.include)" />
+					<Add directory="$(#wx.include)" />
 				</ResourceCompiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-image-base" />
@@ -276,10 +268,8 @@
 					<Add library="squirrel" />
 					<Add library="sqplus" />
 					<Add library="sqstdlib" />
-					<Add library="$(#wx.wxlibs)" />
 					<Add directory="devel" />
 					<Add directory="exchndl/win32/lib" />
-					<Add directory="$(#WX.lib)" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="mkdir -p devel/share/urusstudio" />
@@ -294,13 +284,11 @@
 			<Target title="Abbreviations">
 				<Option output="devel/share/urusstudio/plugins/abbreviations.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="devel" />
-				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -313,7 +301,6 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx.wxlibs)" />
 					<Add library="sqplus" />
 					<Add library="sqstdlib" />
 					<Add library="squirrel" />
@@ -329,13 +316,11 @@
 			<Target title="AStyle">
 				<Option output="devel/share/urusstudio/plugins/Astyle.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="devel" />
-				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add option="-DASTYLE_LIB" />
@@ -347,7 +332,6 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx.wxlibs)" />
 					<Add library="wxscintilla_cb" />
 					<Add directory="devel" />
 				</Linker>
@@ -360,13 +344,11 @@
 			<Target title="Autosave">
 				<Option output="devel/share/urusstudio/plugins/autosave.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="devel" />
-				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -376,7 +358,6 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx.wxlibs)" />
 					<Add library="wxscintilla_cb" />
 					<Add directory="devel" />
 				</Linker>
@@ -398,13 +379,11 @@
 				<Linker>
 					<Add option="-mthreads" />
 					<Add library="wxscintilla_cb" />
-					<Add library="$(#wx.wxlibs)" />
 				</Linker>
 			</Target>
 			<Target title="Compiler">
 				<Option output="devel/share/urusstudio/plugins/compiler.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="devel" />
-				<Option external_deps="devel/libcodeblocks.a;devel/libdepslib.a;" />
 				<Option type="3" />
 				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
@@ -424,7 +403,6 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx.wxlibs)" />
 					<Add library="depslib" />
 					<Add library="wxpropgrid" />
 					<Add library="wxscintilla_cb" />
@@ -446,13 +424,11 @@
 			<Target title="Debugger">
 				<Option output="devel/share/urusstudio/plugins/debugger.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="devel" />
-				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectCompilerOptionsRelation="1" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add option="-DCB_PRECOMP" />
@@ -470,7 +446,6 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx.wxlibs)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="txml" />
 					<Add library="sqplus" />
@@ -487,13 +462,12 @@
 			<Target title="Code-completion">
 				<Option output="devel/share/urusstudio/plugins/codecompletion.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="devel" />
-				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
+				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -509,7 +483,6 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx.wxlibs)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="txml" />
 					<Add directory="devel" />
@@ -523,13 +496,12 @@
 			<Target title="Class wizard">
 				<Option output="devel/share/urusstudio/plugins/classwizard.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="devel" />
-				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
+				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -539,7 +511,6 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx.wxlibs)" />
 					<Add library="wxscintilla_cb" />
 					<Add directory="devel" />
 				</Linker>
@@ -552,13 +523,12 @@
 			<Target title="Default MIME handler">
 				<Option output="devel/share/urusstudio/plugins/defaultmimehandler.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="devel" />
-				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
+				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -568,7 +538,6 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx.wxlibs)" />
 					<Add library="wxscintilla_cb" />
 					<Add directory="devel" />
 				</Linker>
@@ -581,13 +550,12 @@
 			<Target title="Occurrences Highlighting">
 				<Option output="devel/share/urusstudio/plugins/occurrenceshighlighting.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="devel" />
-				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
+				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -597,7 +565,6 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx.wxlibs)" />
 					<Add library="wxscintilla_cb" />
 					<Add directory="devel" />
 				</Linker>
@@ -610,13 +577,12 @@
 			<Target title="Open files list">
 				<Option output="devel/share/urusstudio/plugins/openfileslist.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="devel" />
-				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
+				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -627,8 +593,8 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx.wxlibs)" />
 					<Add library="wxscintilla_cb" />
+					<Add library="txml" />
 					<Add directory="devel" />
 				</Linker>
 				<ExtraCommands>
@@ -640,13 +606,12 @@
 			<Target title="Projects-workspaces importer">
 				<Option output="devel/share/urusstudio/plugins/projectsimporter.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="devel" />
-				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
+				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -662,7 +627,6 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx.wxlibs)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="txml" />
 					<Add directory="devel" />
@@ -676,13 +640,12 @@
 			<Target title="Scripted wizard">
 				<Option output="devel/share/urusstudio/plugins/scriptedwizard.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="devel" />
-				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
+				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -694,7 +657,6 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx.wxlibs)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="sqplus" />
 					<Add library="sqstdlib" />
@@ -710,13 +672,12 @@
 			<Target title="To-do">
 				<Option output="devel/share/urusstudio/plugins/todo.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="devel" />
-				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
+				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -732,7 +693,6 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx.wxlibs)" />
 					<Add library="wxscintilla_cb" />
 					<Add directory="devel" />
 				</Linker>
@@ -745,13 +705,12 @@
 			<Target title="XP look &amp; feel">
 				<Option output="devel/share/urusstudio/plugins/xpmanifest.dll" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="devel" />
-				<Option external_deps="devel/libcodeblocks.a;" />
 				<Option type="3" />
 				<Option compiler="mingw32-gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
+				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -761,7 +720,6 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx.wxlibs)" />
 					<Add library="wxscintilla_cb" />
 					<Add directory="devel" />
 				</Linker>
@@ -786,23 +744,23 @@
 			<Add option="-Wall" />
 			<Add option="$(#CB_RELEASE_TYPE)" />
 			<Add option="-pipe" />
-			<Add option="-mthreads" />
 			<Add option="-fmessage-length=0" />
 			<Add option="-fexceptions" />
 			<Add option="-Winvalid-pch" />
 			<Add option='[[if (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.8.0&quot;)) print(_T(&quot;-Wno-unused-local-typedefs&quot;));]]' />
 			<Add option="-fpermissive" />
 			<Add option="-std=gnu++11" />
+			<Add option="-mthreads" />
 			<Add option="-DHAVE_W32API_H" />
 			<Add option="-D__WXMSW__" />
 			<Add option="-DWXUSINGDLL" />
-			<Add option="-DcbDEBUG" />
 			<Add option="-DwxUSE_UNICODE" />
-			<Add directory="$(#WX.include)" />
+			<Add option="-DcbDEBUG" />
 			<Add directory="sdk/wxscintilla/include" />
 			<Add directory="sdk/wxpropgrid/include" />
 			<Add directory="include/tinyxml" />
-			<Add directory="$(#WXSETUP.include)" />
+			<Add directory="$(#wxsetup.include)" />
+			<Add directory="$(#wx.include)" />
 		</Compiler>
 		<Linker>
 			<Add option="-Wl,--enable-auto-image-base" />
@@ -811,9 +769,10 @@
 			<Add option="-Wl,--add-stdcall-alias" />
 			<Add option="-Wl,--no-undefined" />
 			<Add option="-mthreads" />
+			<Add library="$(#wx.wxlibs)" />
 			<Add directory="base/tinyxml" />
-			<Add directory="$(#WX31.lib)" />
 			<Add directory="devel" />
+			<Add directory="$(#wx.lib)" />
 		</Linker>
 		<Unit filename="base/tinyxml/tinystr.cpp">
 			<Option target="tinyXML" />
@@ -3446,6 +3405,9 @@
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexBasic.cxx">
 			<Option target="scintilla" />
 		</Unit>
+		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexBatch.cxx">
+			<Option target="scintilla" />
+		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexBibTeX.cxx">
 			<Option target="scintilla" />
 		</Unit>
@@ -3491,7 +3453,13 @@
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexDMIS.cxx">
 			<Option target="scintilla" />
 		</Unit>
+		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexDiff.cxx">
+			<Option target="scintilla" />
+		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexECL.cxx">
+			<Option target="scintilla" />
+		</Unit>
+		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexEDIFACT.cxx">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexEScript.cxx">
@@ -3501,6 +3469,9 @@
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexErlang.cxx">
+			<Option target="scintilla" />
+		</Unit>
+		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexErrorList.cxx">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexFlagship.cxx">
@@ -3527,7 +3498,13 @@
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexHex.cxx">
 			<Option target="scintilla" />
 		</Unit>
+		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexIndent.cxx">
+			<Option target="scintilla" />
+		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexInno.cxx">
+			<Option target="scintilla" />
+		</Unit>
+		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexJSON.cxx">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexKVIrc.cxx">
@@ -3560,6 +3537,9 @@
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexMagik.cxx">
 			<Option target="scintilla" />
 		</Unit>
+		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexMake.cxx">
+			<Option target="scintilla" />
+		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexMarkdown.cxx">
 			<Option target="scintilla" />
 		</Unit>
@@ -3581,13 +3561,13 @@
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexNsis.cxx">
 			<Option target="scintilla" />
 		</Unit>
+		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexNull.cxx">
+			<Option target="scintilla" />
+		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexOScript.cxx">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexOpal.cxx">
-			<Option target="scintilla" />
-		</Unit>
-		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexOthers.cxx">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexPB.cxx">
@@ -3618,6 +3598,9 @@
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexProgress.cxx">
+			<Option target="scintilla" />
+		</Unit>
+		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexProps.cxx">
 			<Option target="scintilla" />
 		</Unit>
 		<Unit filename="sdk/wxscintilla/src/scintilla/lexers/LexPython.cxx">

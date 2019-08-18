@@ -19,6 +19,7 @@
 					<Add option="-fmessage-length=0" />
 					<Add option="-fexceptions" />
 					<Add option="-Winvalid-pch" />
+					<Add option="-DHUNSPELL_STATIC" />
 					<Add directory="wxspellchecker/include" />
 					<Add directory="$(#wx.include)" />
 					<Add directory="$(#wxsetup.include)" />
@@ -28,10 +29,12 @@
 					<Add directory="hunspell/src/win_api" />
 				</Compiler>
 				<Linker>
+					<Add option="-Wl,--enable-auto-import" />
 					<Add library="$(#wx.wxlibs)" />
 					<Add library="codeblocks" />
 					<Add library="wxscintilla_cb" />
 					<Add library="txml" />
+					<Add library="gdi32" />
 					<Add directory="$(#wx.lib)" />
 					<Add directory="../../../devel" />
 				</Linker>
@@ -208,6 +211,9 @@
 		<Unit filename="ThesaurusDialog.h">
 			<Option target="plugin" />
 		</Unit>
+		<Unit filename="hunspell/src/hunspell/Makefile.am">
+			<Option target="hunspell" />
+		</Unit>
 		<Unit filename="hunspell/src/hunspell/affentry.cxx">
 			<Option target="hunspell" />
 		</Unit>
@@ -230,12 +236,6 @@
 			<Option target="hunspell" />
 		</Unit>
 		<Unit filename="hunspell/src/hunspell/csutil.hxx">
-			<Option target="hunspell" />
-		</Unit>
-		<Unit filename="hunspell/src/hunspell/dictmgr.cxx">
-			<Option target="hunspell" />
-		</Unit>
-		<Unit filename="hunspell/src/hunspell/dictmgr.hxx">
 			<Option target="hunspell" />
 		</Unit>
 		<Unit filename="hunspell/src/hunspell/filemgr.cxx">
@@ -265,6 +265,9 @@
 		<Unit filename="hunspell/src/hunspell/hunvisapi.h">
 			<Option target="hunspell" />
 		</Unit>
+		<Unit filename="hunspell/src/hunspell/hunvisapi.h.in">
+			<Option target="hunspell" />
+		</Unit>
 		<Unit filename="hunspell/src/hunspell/hunzip.cxx">
 			<Option target="hunspell" />
 		</Unit>
@@ -292,7 +295,7 @@
 		<Unit filename="hunspell/src/hunspell/suggestmgr.hxx">
 			<Option target="hunspell" />
 		</Unit>
-		<Unit filename="hunspell/src/hunspell/utf_info.cxx">
+		<Unit filename="hunspell/src/hunspell/utf_info.hxx">
 			<Option target="hunspell" />
 		</Unit>
 		<Unit filename="hunspell/src/hunspell/w_char.hxx">
