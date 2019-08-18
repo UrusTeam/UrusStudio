@@ -38,7 +38,7 @@
 					<Add directory="$(#boost.include)" />
 				</Compiler>
 				<Linker>
-					<Add option="-Wl,-enable-auto-import" />
+					<Add option="-Wl,--enable-auto-import" />
 					<Add library="codeblocks" />
 					<Add library="$(#wx.wxlibs)" />
 					<Add library="wxscintilla_cb" />
@@ -109,7 +109,6 @@
 		<Unit filename="cbEditorPanel.h" />
 		<Unit filename="commands.cpp" />
 		<Unit filename="commands.h" />
-		<Unit filename="logger.cpp" />
 		<Unit filename="logger.h" />
 		<Unit filename="manifest.xml" />
 		<Unit filename="parseactions.cpp" />

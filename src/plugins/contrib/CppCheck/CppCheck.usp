@@ -22,7 +22,6 @@
 				<Option parameters="--debug-log --multiple-instance -na -ns -nd -p debug" />
 				<Option host_application="../../../devel/urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectCompilerOptionsRelation="0" />
 			</Target>
 			<Environment>
 				<Variable name="WX_CFG" value="" />
@@ -32,6 +31,24 @@
 		<VirtualTargets>
 			<Add alias="All" targets="default;" />
 		</VirtualTargets>
+		<Compiler>
+			<Add directory="$(#wxsetup.include)" />
+			<Add directory="$(#wx.include)" />
+			<Add directory="../../../include" />
+			<Add directory="../../../include/tinyxml" />
+			<Add directory="../../../sdk/wxscintilla/include" />
+		</Compiler>
+		<ResourceCompiler>
+			<Add directory="$(#wx.include)" />
+		</ResourceCompiler>
+		<Linker>
+			<Add library="$(#wx.wxlibs)" />
+			<Add library="codeblocks" />
+			<Add library="wxscintilla_cb" />
+			<Add library="txml" />
+			<Add directory="$(#WX.lib)" />
+			<Add directory="../../../devel" />
+		</Linker>
 		<Unit filename="ConfigPanel.cpp" />
 		<Unit filename="ConfigPanel.h" />
 		<Unit filename="CppCheck.cpp" />
