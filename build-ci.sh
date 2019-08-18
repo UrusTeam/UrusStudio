@@ -25,7 +25,7 @@ else
     WXURUSBUILD=""
     WXURUSHOST=""
     WXURUSTARGET=""
-    export CXXFLAGS="-Wno-unused-local-typedefs -Wno-narrowing -Wno-literal-suffix -fpermissive"
+    export CXXFLAGS="-Wno-unused-local-typedefs -Wno-narrowing -Wno-literal-suffix -fpermissive -DGTK_VERSION=2"
     export CFLAGS="-Wno-unused-local-typedefs -Wno-narrowing"
     export WXURUSCONF="--with-gtk=2 --enable-monolithic --enable-shared --enable-std_string --enable-threads --disable-debug_flag --disable-precomp-headers --with-libpng=builtin --with-regex=builtin --with-libjpeg=builtin --with-libtiff=builtin --with-expat=builtin --enable-threads"
     #export OPENGL_LIBS="-L/usr/lib/$MACHTYPE/libGL.so"
@@ -87,7 +87,7 @@ if [ "x$NO_BUILD_ALL" = "x" ] ; then
         mkdir -p buildustd
         cd buildustd
 
-        ../configure $WXURUSBUILD $WXURUSHOST $WXURUSTARGET --with-contrib-plugins="BrowseTracker,Cccc,CppCheck,codesnippets,headerfixup,hexeditor,incsearch,ProjectOptionsManipulator,regex,ReopenEditor,smartindent,symtab,ThreadSearch,ToolsPlus,wxcontrib,wxsmith,wxsmithcontrib,wxsmithaui" --prefix=${URUSINSTALLDIR} $URUSSTUDIOPLAT
+        ../configure $WXURUSBUILD $WXURUSHOST $WXURUSTARGET --with-contrib-plugins="BrowseTracker,hexeditor,incsearch,regex,ReopenEditor,smartindent,symtab,ThreadSearch,ToolsPlus,wxcontrib,wxsmith,wxsmithcontrib,wxsmithaui" --prefix=${URUSINSTALLDIR} $URUSSTUDIOPLAT
         make -j2
         make -j2 install
 
