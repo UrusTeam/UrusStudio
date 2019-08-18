@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<UrusStudio_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="SmartIndent" />
+		<Option pch_mode="2" />
+		<Option compiler="mingw32-gcc" />
+		<Build>
+			<Target title="SmartIndentCpp">
+				<Option output="../../../devel/share/urusstudio/plugins/SmartIndentCpp.dll" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="../../../devel" />
+				<Option object_output="../../../.objs/plugins/contrib/SmartIndent" />
+				<Option type="3" />
+				<Option compiler="mingw32-gcc" />
+				<Option parameters="--debug-log -p debug" />
+				<Option host_application="../../../devel/urusstudio.exe" />
+				<Option run_host_application_in_terminal="0" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Compiler>
+					<Add option="$(#CB_RELEASE_TYPE)" />
+					<Add option="-DBUILDING_PLUGIN" />
+					<Add directory="." />
+				</Compiler>
+				<ExtraCommands>
+					<Add after="cp -f manifest_cpp.xml manifest.xml" />
+					<Add after="zip -j9 ../../../devel/share/urusstudio/SmartIndentCpp.zip manifest.xml" />
+					<Mode after="always" />
+				</ExtraCommands>
+			</Target>
+			<Target title="SmartIndentHDL">
+				<Option output="../../../devel/share/urusstudio/plugins/SmartIndentHDL.dll" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="../../../devel" />
+				<Option object_output="../../../.objs/plugins/contrib/SmartIndent" />
+				<Option type="3" />
+				<Option compiler="mingw32-gcc" />
+				<Option parameters="--debug-log --no-check-associations -ns -nd -p debug" />
+				<Option host_application="../../../devel/urusstudio.exe" />
+				<Option run_host_application_in_terminal="0" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Compiler>
+					<Add option="$(#CB_RELEASE_TYPE)" />
+					<Add option="-DBUILDING_PLUGIN" />
+					<Add directory="." />
+				</Compiler>
+				<ExtraCommands>
+					<Add after="cp -f manifest_hdl.xml manifest.xml" />
+					<Add after="zip -j9 ../../../devel/share/urusstudio/SmartIndentHDL.zip manifest.xml" />
+					<Mode after="always" />
+				</ExtraCommands>
+			</Target>
+			<Target title="SmartIndentPascal">
+				<Option output="../../../devel/share/urusstudio/plugins/SmartIndentPascal.dll" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="../../../devel" />
+				<Option object_output="../../../.objs/plugins/contrib/SmartIndent" />
+				<Option type="3" />
+				<Option compiler="mingw32-gcc" />
+				<Option parameters="--debug-log -p debug" />
+				<Option host_application="../../../devel/urusstudio.exe" />
+				<Option run_host_application_in_terminal="0" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Compiler>
+					<Add option="$(#CB_RELEASE_TYPE)" />
+					<Add option="-DBUILDING_PLUGIN" />
+					<Add directory="." />
+				</Compiler>
+				<ExtraCommands>
+					<Add after="cp -f manifest_pascal.xml manifest.xml" />
+					<Add after="zip -j9 ../../../devel/share/urusstudio/SmartIndentPascal.zip manifest.xml" />
+					<Mode after="always" />
+				</ExtraCommands>
+			</Target>
+			<Target title="SmartIndentPython">
+				<Option output="../../../devel/share/urusstudio/plugins/SmartIndentPython.dll" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="../../../devel" />
+				<Option object_output="../../../.objs/plugins/contrib/SmartIndent" />
+				<Option type="3" />
+				<Option compiler="mingw32-gcc" />
+				<Option parameters="--debug-log -p debug" />
+				<Option host_application="../../../devel/urusstudio.exe" />
+				<Option run_host_application_in_terminal="0" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Compiler>
+					<Add option="$(#CB_RELEASE_TYPE)" />
+					<Add option="-DBUILDING_PLUGIN" />
+					<Add directory="." />
+				</Compiler>
+				<ExtraCommands>
+					<Add after="cp -f manifest_python.xml manifest.xml" />
+					<Add after="zip -j9 ../../../devel/share/urusstudio/SmartIndentPython.zip manifest.xml" />
+					<Mode after="always" />
+				</ExtraCommands>
+			</Target>
+			<Target title="SmartIndentLua">
+				<Option output="../../../devel/share/urusstudio/plugins/SmartIndentLua.dll" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="../../../devel" />
+				<Option object_output="../../../.objs/plugins/contrib/SmartIndent" />
+				<Option type="3" />
+				<Option compiler="mingw32-gcc" />
+				<Option parameters="--debug-log --no-check-associations -ns -nd -p debug" />
+				<Option host_application="../../../devel/urusstudio.exe" />
+				<Option run_host_application_in_terminal="0" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Compiler>
+					<Add option="$(#CB_RELEASE_TYPE)" />
+					<Add option="-DBUILDING_PLUGIN" />
+					<Add directory="." />
+				</Compiler>
+				<ExtraCommands>
+					<Add after="cp -f manifest_lua.xml manifest.xml" />
+					<Add after="zip -j9 ../../../devel/share/urusstudio/SmartIndentLua.zip manifest.xml" />
+					<Mode after="always" />
+				</ExtraCommands>
+			</Target>
+			<Target title="SmartIndentFortran">
+				<Option output="../../../devel/share/urusstudio/plugins/SmartIndentFortran.dll" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="../../../devel" />
+				<Option object_output="../../../.objs/plugins/contrib/SmartIndent" />
+				<Option type="3" />
+				<Option compiler="mingw32-gcc" />
+				<Option parameters="--debug-log --no-check-associations -ns -nd -p debug" />
+				<Option host_application="../../../devel/urusstudio.exe" />
+				<Option run_host_application_in_terminal="0" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Compiler>
+					<Add option="$(#CB_RELEASE_TYPE)" />
+					<Add option="-DBUILDING_PLUGIN" />
+					<Add directory="." />
+				</Compiler>
+				<ExtraCommands>
+					<Add after="cp -f manifest_fortran.xml manifest.xml" />
+					<Add after="zip -j9 ../../../devel/share/urusstudio/SmartIndentFortran.zip manifest.xml" />
+					<Mode after="always" />
+				</ExtraCommands>
+			</Target>
+			<Target title="SmartIndentXML">
+				<Option output="../../../devel/share/urusstudio/plugins/SmartIndentXML.dll" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="../../../devel" />
+				<Option object_output="../../../.objs/plugins/contrib/SmartIndent" />
+				<Option type="3" />
+				<Option compiler="mingw32-gcc" />
+				<Option parameters="--debug-log -p debug" />
+				<Option host_application="../../../devel/urusstudio.exe" />
+				<Option run_host_application_in_terminal="0" />
+				<Option projectCompilerOptionsRelation="2" />
+				<Compiler>
+					<Add option="$(#CB_RELEASE_TYPE)" />
+					<Add option="-DBUILDING_PLUGIN" />
+					<Add directory="." />
+				</Compiler>
+				<ExtraCommands>
+					<Add after="cp -f manifest_xml.xml manifest.xml" />
+					<Add after="zip -j9 ../../../devel/share/urusstudio/SmartIndentXML.zip manifest.xml" />
+					<Mode after="always" />
+				</ExtraCommands>
+			</Target>
+			<Environment>
+				<Variable name="WX_CFG" value="" />
+				<Variable name="WX_SUFFIX" value="u" />
+			</Environment>
+		</Build>
+		<VirtualTargets>
+			<Add alias="All" targets="SmartIndentCpp;SmartIndentHDL;SmartIndentPascal;SmartIndentPython;SmartIndentLua;SmartIndentFortran;SmartIndentXML;" />
+		</VirtualTargets>
+		<Compiler>
+			<Add option="-pipe" />
+			<Add option="-mthreads" />
+			<Add option="-fmessage-length=0" />
+			<Add option="-fexceptions" />
+			<Add option="-Winvalid-pch" />
+			<Add option="-std=gnu++11" />
+			<Add option='[[if (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.8.0&quot;)) print(_T(&quot;-Wno-unused-local-typedefs&quot;));]]' />
+			<Add option="-DHAVE_W32API_H" />
+			<Add option="-D__WXMSW__" />
+			<Add option="-DWXUSINGDLL" />
+			<Add option="-DcbDEBUG" />
+			<Add option="-DCB_PRECOMP" />
+			<Add option="-DWX_PRECOMP" />
+			<Add option="-DwxUSE_UNICODE" />
+			<Add directory="../../../include" />
+			<Add directory="../../../include/tinyxml" />
+			<Add directory="../../../sdk/wxscintilla/include" />
+			<Add directory="$(#wx.include)" />
+			<Add directory="$(#wxsetup.include)" />
+		</Compiler>
+		<Linker>
+			<Add library="codeblocks" />
+			<Add library="$(#wx.wxlibs)" />
+			<Add library="wxscintilla_cb" />
+			<Add directory="../../../devel" />
+			<Add directory="$(#wx.lib)" />
+		</Linker>
+		<Unit filename="SmartIndentCpp.cpp">
+			<Option target="SmartIndentCpp" />
+		</Unit>
+		<Unit filename="SmartIndentCpp.h">
+			<Option target="SmartIndentCpp" />
+		</Unit>
+		<Unit filename="SmartIndentFortran.cpp">
+			<Option target="SmartIndentFortran" />
+		</Unit>
+		<Unit filename="SmartIndentFortran.h">
+			<Option target="SmartIndentFortran" />
+		</Unit>
+		<Unit filename="SmartIndentHDL.cpp">
+			<Option target="SmartIndentHDL" />
+		</Unit>
+		<Unit filename="SmartIndentHDL.h">
+			<Option target="SmartIndentHDL" />
+		</Unit>
+		<Unit filename="SmartIndentLua.cpp">
+			<Option target="SmartIndentLua" />
+		</Unit>
+		<Unit filename="SmartIndentLua.h">
+			<Option target="SmartIndentLua" />
+		</Unit>
+		<Unit filename="SmartIndentPascal.cpp">
+			<Option target="SmartIndentPascal" />
+		</Unit>
+		<Unit filename="SmartIndentPascal.h">
+			<Option target="SmartIndentPascal" />
+		</Unit>
+		<Unit filename="SmartIndentPython.cpp">
+			<Option target="SmartIndentPython" />
+		</Unit>
+		<Unit filename="SmartIndentPython.h">
+			<Option target="SmartIndentPython" />
+		</Unit>
+		<Unit filename="SmartIndentXML.cpp">
+			<Option target="SmartIndentXML" />
+		</Unit>
+		<Unit filename="SmartIndentXML.h">
+			<Option target="SmartIndentXML" />
+		</Unit>
+		<Unit filename="manifest_cpp.xml">
+			<Option target="SmartIndentCpp" />
+		</Unit>
+		<Unit filename="manifest_fortran.xml">
+			<Option target="SmartIndentFortran" />
+		</Unit>
+		<Unit filename="manifest_hdl.xml">
+			<Option target="SmartIndentHDL" />
+		</Unit>
+		<Unit filename="manifest_lua.xml">
+			<Option target="SmartIndentLua" />
+		</Unit>
+		<Unit filename="manifest_pascal.xml">
+			<Option target="SmartIndentPascal" />
+		</Unit>
+		<Unit filename="manifest_python.xml">
+			<Option target="SmartIndentPython" />
+		</Unit>
+		<Unit filename="manifest_xml.xml">
+			<Option target="SmartIndentXML" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</UrusStudio_project_file>
