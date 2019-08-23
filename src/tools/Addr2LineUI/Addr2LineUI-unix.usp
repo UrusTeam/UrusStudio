@@ -15,7 +15,7 @@
 		</MakeCommands>
 		<Build>
 			<Target title="default">
-				<Option output="../../devel/Addr2LineUI" prefix_auto="1" extension_auto="1" />
+				<Option output="../../devel/Addr2LineUI" prefix_auto="0" extension_auto="1" />
 				<Option working_dir="../../devel" />
 				<Option object_output="../../.objs/tools/Addr2LineUI" />
 				<Option type="0" />
@@ -37,6 +37,22 @@
 		<VirtualTargets>
 			<Add alias="All" targets="default;" />
 		</VirtualTargets>
+		<Compiler>
+			<Add option="-std=c++11" />
+			<Add option="-D_FILE_OFFSET_BITS=64" />
+			<Add option="-D_LARGE_FILES" />
+			<Add option="-D__WXGTK__" />
+			<Add option="-D__WX__" />
+			<Add directory="$(#wx.include)" />
+			<Add directory="$(#wxsetup.include)" />
+		</Compiler>
+		<ResourceCompiler>
+			<Add directory="$(#wx.include)" />
+		</ResourceCompiler>
+		<Linker>
+			<Add library="$(#wx.wxlibs)" />
+			<Add directory="../../devel/" />
+		</Linker>
 		<Unit filename="Addr2LineUIApp.cpp" />
 		<Unit filename="Addr2LineUIApp.h" />
 		<Unit filename="Addr2LineUIMain.cpp" />
