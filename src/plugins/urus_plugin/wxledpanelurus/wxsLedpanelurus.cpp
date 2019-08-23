@@ -3,7 +3,6 @@
 
 namespace
 {
-
     #include "images/wxled16.xpm"
     #include "images/wxled32.xpm"
 
