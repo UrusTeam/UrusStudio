@@ -8,8 +8,8 @@
 		<Build>
 			<Target title="default">
 				<Option output="../../../devel/share/urusstudio/plugins/liblib_finder" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="../../../devel" />
 				<Option object_output="../../../.objs/plugins/contrib/lib_finder" />
-				<Option external_deps="../../../devel/libwxflatnotebook.so;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --multiple-instance -ns -ni -p debug" />
@@ -31,14 +31,15 @@
 			<Add option="-Wswitch-default" />
 			<Add option="-Wextra" />
 			<Add option="-Wall" />
+			<Add option="-std=c++11" />
+			<Add option="-fPIC" />
 			<Add option="$(#CB_RELEASE_TYPE)" />
 			<Add option="`wx-config --version=2.8 --cflags`" />
 			<Add option="-Winvalid-pch" />
 			<Add option="-fexceptions" />
-			<Add option="-fPIC" />
+			<Add option="-Wno-unused-local-typedefs" />
 			<Add option="-DcbDEBUG" />
 			<Add option="-DCB_PRECOMP" />
-			<Add option="-std=c++11" />
 			<Add directory="../../../include" />
 			<Add directory="../../../include/tinyxml" />
 			<Add directory="../../../sdk/wxscintilla/include" />
@@ -55,12 +56,14 @@
 			<Add directory="../../../include/mozilla_chardet/xpcom/glue" />
 		</Compiler>
 		<Linker>
-			<Add option="`wx-config --version=2.8 --libs`" />
 			<Add option="-Wl,--no-undefined" />
-			<Add library="libcodeblocks.a" />
+			<Add library="codeblocks" />
 			<Add library="wxflatnotebook" />
+			<Add library="wxscintilla_cb" />
+			<Add library="$(#wx.wxlibs)" />
 			<Add directory="../../../devel" />
 			<Add directory="../../../base/tinyxml" />
+			<Add directory="../../../devel/share/urusstudio/wxContribItems/" />
 		</Linker>
 		<ExtraCommands>
 			<Add after="./update" />

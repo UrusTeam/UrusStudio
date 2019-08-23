@@ -9,8 +9,8 @@
 			<Target title="Unix">
 				<Option platforms="Unix;Mac;" />
 				<Option output="../../../devel/share/urusstudio/plugins/libwxSmithAui" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="../../../devel" />
 				<Option object_output="../../../.objs/plugins/contrib/wxSmithAui" />
-				<Option external_deps="../../../devel/libwxsmithlib.so;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --multiple-instance -ns -ni -p debug" />
@@ -24,8 +24,8 @@
 					<Add option="-fexceptions" />
 				</Compiler>
 				<Linker>
-					<Add option="`wx-config --version=2.8 --libs`" />
 					<Add option="-Wl,--no-undefined" />
+					<Add library="$(#wx.wxlibs)" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="zip -j9 ../../../devel/share/urusstudio/wxSmithAui.zip manifest.xml" />
@@ -33,7 +33,9 @@
 				</ExtraCommands>
 			</Target>
 			<Target title="Windows">
+				<Option platforms="Windows;" />
 				<Option output="../../../devel/share/urusstudio/plugins/wxSmithAui.dll" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="../../../devel" />
 				<Option object_output="../../../.objs/plugins/contrib/wxSmithAui" />
 				<Option external_deps="../../../devel/wxsmithlib.dll;" />
 				<Option type="3" />
@@ -106,7 +108,6 @@
 			<Add library="wxpropgrid" />
 			<Add library="txml" />
 			<Add directory="../../../devel" />
-			<Add directory="$(#wx.lib)" />
 		</Linker>
 		<Unit filename="manifest.xml" />
 		<Unit filename="wxAuiManager/wxSmithAuiManager.h" />
