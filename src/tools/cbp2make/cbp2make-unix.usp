@@ -8,8 +8,8 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="../../devel/cbp2make" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="../cbp2make" />
+				<Option output="../../devel/cbp2make" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="../devel" />
 				<Option object_output="../../.objs/tools/cbp2make" />
 				<Option type="1" />
 				<Option compiler="gcc" />
