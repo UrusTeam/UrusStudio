@@ -46,7 +46,9 @@ class GenericSingleChoiceList: public wxPanel
 		//*)
 
 		//(*Declarations(GenericSingleChoiceList)
+		wxBoxSizer* BoxSizer1;
 		wxListBox* GenericChoiceList;
+		wxStaticBoxSizer* StaticBoxSizer1;
 		wxStaticText* lblDescr;
 		//*)
 

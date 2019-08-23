@@ -11,8 +11,8 @@
 #ifndef CB_PRECOMP
     #include <wx/arrstr.h>
     //(*InternalHeadersPCH(GenericSingleChoiceList)
-    #include <wx/intl.h>
     #include <wx/string.h>
+    #include <wx/intl.h>
     //*)
 #endif // CB_PRECOMP
 
@@ -32,10 +32,7 @@ END_EVENT_TABLE()
 GenericSingleChoiceList::GenericSingleChoiceList(wxWindow* parent,wxWindowID id)
 {
 	//(*Initialize(GenericSingleChoiceList)
-	wxBoxSizer* BoxSizer1;
-	wxStaticBoxSizer* StaticBoxSizer1;
-
-	Create(parent, id, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("id"));
+	Create(parent, id, wxDefaultPosition, wxSize(283,217), wxTAB_TRAVERSAL, _T("id"));
 	BoxSizer1 = new wxBoxSizer(wxVERTICAL);
 	lblDescr = new wxStaticText(this, ID_STATICTEXT1, _("Description"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT1"));
 	BoxSizer1->Add(lblDescr, 0, wxALL|wxEXPAND, 8);
@@ -44,8 +41,8 @@ GenericSingleChoiceList::GenericSingleChoiceList(wxWindow* parent,wxWindowID id)
 	StaticBoxSizer1->Add(GenericChoiceList, 1, wxALL|wxEXPAND, 4);
 	BoxSizer1->Add(StaticBoxSizer1, 1, wxALL|wxEXPAND|wxFIXED_MINSIZE, 8);
 	SetSizer(BoxSizer1);
-	BoxSizer1->Fit(this);
-	BoxSizer1->SetSizeHints(this);
+	SetSizer(BoxSizer1);
+	Layout();
 	//*)
 
 	GenericChoiceList->SetName(_T("GenericChoiceList"));
