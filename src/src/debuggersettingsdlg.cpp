@@ -3,8 +3,8 @@
 
 #ifndef CB_PRECOMP
 	//(*InternalHeadersPCH(DebuggerSettingsDlg)
-	#include <wx/intl.h>
 	#include <wx/string.h>
+	#include <wx/intl.h>
 	//*)
 
     #include <wx/choicdlg.h>
@@ -43,10 +43,10 @@ DebuggerSettingsDlg::DebuggerSettingsDlg(wxWindow* parent)
 
 	Create(parent, wxID_ANY, _("Debugger settings"), wxDefaultPosition, wxDefaultSize, wxCAPTION|wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER|wxCLOSE_BOX|wxMAXIMIZE_BOX|wxMINIMIZE_BOX, _T("wxID_ANY"));
 	mainSizer = new wxBoxSizer(wxVERTICAL);
-	header = new wxPanel(this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxNO_BORDER|wxTRANSPARENT_WINDOW, _T("wxID_ANY"));
+	header = new wxPanel(this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxBORDER_NONE|wxTRANSPARENT_WINDOW, _T("wxID_ANY"));
 	header->SetBackgroundColour(wxColour(0,64,128));
 	headerSizer = new wxBoxSizer(wxHORIZONTAL);
-	m_activeInfo = new wxStaticText(header, ID_LABEL_ACTIVE_INFO, _("Active debugger config"), wxDefaultPosition, wxDefaultSize, wxNO_BORDER|wxTRANSPARENT_WINDOW, _T("ID_LABEL_ACTIVE_INFO"));
+	m_activeInfo = new wxStaticText(header, ID_LABEL_ACTIVE_INFO, _("Active debugger config"), wxDefaultPosition, wxDefaultSize, wxBORDER_NONE|wxTRANSPARENT_WINDOW, _T("ID_LABEL_ACTIVE_INFO"));
 	m_activeInfo->SetForegroundColour(wxColour(255,255,255));
 	m_activeInfo->SetBackgroundColour(wxColour(0,64,128));
 	wxFont m_activeInfoFont(12,wxFONTFAMILY_DEFAULT,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
