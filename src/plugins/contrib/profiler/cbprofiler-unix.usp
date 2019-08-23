@@ -7,13 +7,18 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="../../../devel/share/urusstudio/plugins/Profiler" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel/share/urusstudio/plugins/libProfiler" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="../../../devel" />
 				<Option object_output="../../../.objs/plugins/contrib/profiler" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --multiple-instance -na -ns -nd -p debug" />
 				<Option host_application="../../../devel/urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
+				<Compiler>
+					<Add option="-std=c++11" />
+					<Add option="-fPIC" />
+				</Compiler>
 			</Target>
 			<Environment>
 				<Variable name="WX_CFG" value="" />
@@ -27,16 +32,14 @@
 			<Add option="-Wall" />
 			<Add option="$(#CB_RELEASE_TYPE)" />
 			<Add option="-Winvalid-pch" />
-			<Add option="-mthreads" />
 			<Add option="-fexceptions" />
 			<Add option="-fpermissive" />
 			<Add option="-std=gnu++11" />
 			<Add option='[[if (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.8.0&quot;)) print(_T(&quot;-Wno-unused-local-typedefs&quot;));]]' />
+			<Add option="`wx-config --version=2.8 --cflags`" />
 			<Add option="-DBUILDING_PLUGIN" />
 			<Add option="-DCB_PRECOMP" />
 			<Add option="-DWX_PRECOMP" />
-			<Add option="-DHAVE_W32API_H" />
-			<Add option="-D__WXMSW__" />
 			<Add option="-DWXUSINGDLL" />
 			<Add option="-DcbDEBUG" />
 			<Add option="-DwxUSE_UNICODE" />
@@ -50,8 +53,6 @@
 			<Add directory="$(#WX.include)" />
 		</ResourceCompiler>
 		<Linker>
-			<Add option="-Wl,--enable-auto-import" />
-			<Add option="-mthreads" />
 			<Add library="codeblocks" />
 			<Add library="$(#wx.wxlibs)" />
 			<Add directory="../../../devel" />

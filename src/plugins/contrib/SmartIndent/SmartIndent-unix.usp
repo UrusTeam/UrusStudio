@@ -16,13 +16,12 @@
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Compiler>
-					<Add option="$(#CB_RELEASE_TYPE)" />
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="." />
 				</Compiler>
 				<ExtraCommands>
 					<Add after="cp manifest_hdl.xml ./manifest.xml" />
-					<Add after="zip -j9 ../../../devel/share\urusstudio/SmartIndentHDL.zip manifest.xml" />
+					<Add after="zip -j9 ../../../devel/share/urusstudio/SmartIndentHDL.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
@@ -36,13 +35,12 @@
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Compiler>
-					<Add option="$(#CB_RELEASE_TYPE)" />
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="." />
 				</Compiler>
 				<ExtraCommands>
 					<Add after="cp manifest_pascal.xml ./manifest.xml" />
-					<Add after="zip -j9 ../../../devel/share\urusstudio/SmartIndentPascal.zip manifest.xml" />
+					<Add after="zip -j9 ../../../devel/share/urusstudio/SmartIndentPascal.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
@@ -56,13 +54,12 @@
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Compiler>
-					<Add option="$(#CB_RELEASE_TYPE)" />
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="." />
 				</Compiler>
 				<ExtraCommands>
 					<Add after="cp manifest_cpp.xml ./manifest.xml" />
-					<Add after="zip -j9 ../../../devel/share\urusstudio/SmartIndentCpp.zip manifest.xml" />
+					<Add after="zip -j9 ../../../devel/share/urusstudio/SmartIndentCpp.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
@@ -76,13 +73,12 @@
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Compiler>
-					<Add option="$(#CB_RELEASE_TYPE)" />
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="." />
 				</Compiler>
 				<ExtraCommands>
 					<Add after="cp manifest_python.xml ./manifest.xml" />
-					<Add after="zip -j9 ../../../devel/share\urusstudio/SmartIndentPython.zip manifest.xml" />
+					<Add after="zip -j9 ../../../devel/share/urusstudio/SmartIndentPython.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
@@ -96,13 +92,12 @@
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Compiler>
-					<Add option="$(#CB_RELEASE_TYPE)" />
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="." />
 				</Compiler>
 				<ExtraCommands>
 					<Add after="cp manifest_lua.xml ./manifest.xml" />
-					<Add after="zip -j9 ../../../devel/share\urusstudio/SmartIndentLua.zip manifest.xml" />
+					<Add after="zip -j9 ../../../devel/share/urusstudio/SmartIndentLua.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
@@ -116,13 +111,12 @@
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Compiler>
-					<Add option="$(#CB_RELEASE_TYPE)" />
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="." />
 				</Compiler>
 				<ExtraCommands>
 					<Add after="cp manifest_fortran.xml ./manifest.xml" />
-					<Add after="zip -j9 ../../../devel/share\urusstudio/SmartIndentFortran.zip manifest.xml" />
+					<Add after="zip -j9 ../../../devel/share/urusstudio/SmartIndentFortran.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
@@ -136,13 +130,12 @@
 				<Option run_host_application_in_terminal="0" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Compiler>
-					<Add option="$(#CB_RELEASE_TYPE)" />
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="." />
 				</Compiler>
 				<ExtraCommands>
 					<Add after="cp manifest_xml.xml ./manifest.xml" />
-					<Add after="zip -j9 ../../../devel/share\urusstudio/SmartIndentXML.zip manifest.xml" />
+					<Add after="zip -j9 ../../../devel/share/urusstudio/SmartIndentXML.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
@@ -151,26 +144,26 @@
 			<Add alias="All" targets="SmartIndentHDL;SmartIndentPascal;SmartIndentCpp;SmartIndentPython;SmartIndentLua;SmartIndentFortran;SmartIndentXML;" />
 		</VirtualTargets>
 		<Compiler>
-			<Add option="-Wextra" />
 			<Add option="-Wall" />
-			<Add option="$(#CB_RELEASE_TYPE)" />
+			<Add option="-std=c++11" />
+			<Add option="-fPIC" />
 			<Add option="`wx-config --version=2.8 --cflags`" />
 			<Add option="-fmessage-length=0" />
 			<Add option="-fexceptions" />
 			<Add option="-Winvalid-pch" />
-			<Add option="-fPIC" />
+			<Add option="-Wno-unused-local-typedefs" />
 			<Add option="-DcbDEBUG" />
 			<Add option="-DCB_PRECOMP" />
 			<Add option="-DWX_PRECOMP" />
-			<Add option="-std=c++11" />
 			<Add directory="../../../include" />
 			<Add directory="../../../include/tinyxml" />
 			<Add directory="../../../sdk/wxscintilla/include" />
 		</Compiler>
 		<Linker>
-			<Add option="`wx-config --version=2.8 --libs`" />
 			<Add option="-Wl,--no-undefined" />
-			<Add library="libcodeblocks.a" />
+			<Add library="codeblocks" />
+			<Add library="wxscintilla_cb" />
+			<Add library="$(#wx.wxlibs)" />
 			<Add directory="../../../devel" />
 		</Linker>
 		<Unit filename="SmartIndentCpp.cpp">

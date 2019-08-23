@@ -3,37 +3,59 @@
 	<FileVersion major="1" minor="6" />
 	<Project>
 		<Option title="ThreadSearch (Unix)" />
-		<Option pch_mode="0" />
+		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="../../../devel/share/urusstudio/plugins/libThreadSearch" prefix_auto="0" extension_auto="1" />
+				<Option platforms="Unix;Mac;" />
+				<Option output="../../../devel/share/urusstudio/plugins/libThreadSearch" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="../../../devel" />
 				<Option object_output="../../../.objs/plugins/contrib/ThreadSearch" />
-				<Option external_deps="../../../devel/libwxcustombutton.so;" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option parameters="--debug-log --multiple-instance -ns -ni -p debug" />
 				<Option host_application="../../../devel/codeblocks" />
 				<Option run_host_application_in_terminal="0" />
+				<Compiler>
+					<Add option="-std=c++11" />
+					<Add option="-fPIC" />
+					<Add option="`wx-config --version=2.8 --cflags`" />
+					<Add option="-Wno-unused-local-typedefs" />
+					<Add option="$(#CB_RELEASE_TYPE)" />
+					<Add option="-fmessage-length=0" />
+					<Add option="-fexceptions" />
+					<Add option="-Winvalid-pch" />
+					<Add option="-fpermissive" />
+					<Add option="-Wno-unused-result" />
+					<Add option="-Wno-strict-aliasing" />
+					<Add option="-Wno-write-strings" />
+					<Add option="-std=gnu++11" />
+				</Compiler>
+				<Linker>
+					<Add option="-Wl,--no-undefined" />
+				</Linker>
 			</Target>
 		</Build>
 		<VirtualTargets>
 			<Add alias="All" targets="default;" />
 		</VirtualTargets>
 		<Compiler>
-			<Add option="-Wextra" />
 			<Add option="-Wall" />
-			<Add option="$(#CB_RELEASE_TYPE)" />
+			<Add option="-std=c++11" />
+			<Add option="-fPIC" />
 			<Add option="`wx-config --version=2.8 --cflags`" />
-			<Add option="-Winvalid-pch" />
+			<Add option="-Wno-unused-local-typedefs" />
+			<Add option="$(#CB_RELEASE_TYPE)" />
 			<Add option="-fmessage-length=0" />
 			<Add option="-fexceptions" />
-			<Add option="-fPIC" />
-			<Add option="-DCB_PRECOMP" />
+			<Add option="-Winvalid-pch" />
+			<Add option="-fpermissive" />
+			<Add option="-Wno-unused-result" />
+			<Add option="-Wno-strict-aliasing" />
+			<Add option="-Wno-write-strings" />
 			<Add option="-DcbDEBUG" />
-			<Add option="-std=c++11" />
+			<Add option="-DCB_PRECOMP" />
 			<Add directory="../../../include" />
-			<Add directory="../../../include/tinyxml" />
 			<Add directory="../../../sdk/wxscintilla/include" />
 			<Add directory="../../../include/mozilla_chardet" />
 			<Add directory="../../../include/mozilla_chardet/mfbt" />
@@ -41,17 +63,21 @@
 			<Add directory="../../../include/mozilla_chardet/xpcom" />
 			<Add directory="../../../include/mozilla_chardet/xpcom/base" />
 			<Add directory="../../../include/mozilla_chardet/xpcom/glue" />
+			<Add directory="../../../include/tinyxml" />
 			<Add directory="../wxContribItems/wxthings/include" />
 		</Compiler>
 		<Linker>
-			<Add option="`wx-config --version=2.8 --libs`" />
 			<Add option="-Wl,--no-undefined" />
-			<Add library="libcodeblocks.a" />
+			<Add library="txml" />
+			<Add library="codeblocks" />
+			<Add library="wxscintilla_cb" />
+			<Add library="$(#wx.wxlibs)" />
 			<Add library="wxcustombutton" />
 			<Add directory="../../../devel" />
+			<Add directory="../../../devel/share/urusstudio/wxContribItems/" />
 		</Linker>
 		<ExtraCommands>
-			<Add after="zip -j9 ../../../devel/share\urusstudio/ThreadSearch.zip manifest.xml" />
+			<Add after="zip -j9 ../../../devel/share/urusstudio/ThreadSearch.zip manifest.xml" />
 			<Add after="./update" />
 			<Mode after="always" />
 		</ExtraCommands>
@@ -85,6 +111,8 @@
 		<Unit filename="ThreadSearchLoggerTree.h" />
 		<Unit filename="ThreadSearchThread.cpp" />
 		<Unit filename="ThreadSearchThread.h" />
+		<Unit filename="ThreadSearchTrace.cpp" />
+		<Unit filename="ThreadSearchTrace.h" />
 		<Unit filename="ThreadSearchView.cpp" />
 		<Unit filename="ThreadSearchView.h" />
 		<Unit filename="ThreadSearchViewManagerBase.cpp" />
@@ -94,9 +122,6 @@
 		<Unit filename="ThreadSearchViewManagerMessagesNotebook.cpp" />
 		<Unit filename="ThreadSearchViewManagerMessagesNotebook.h" />
 		<Unit filename="logging.h" />
-		<Unit filename="manifest.xml" />
-		<Unit filename="update" />
-		<Unit filename="update.bat" />
 		<Extensions>
 			<code_completion />
 			<envvars />

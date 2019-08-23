@@ -8,6 +8,7 @@
 		<Build>
 			<Target title="default">
 				<Option output="../../../devel/share/urusstudio/plugins/libBrowseTracker" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="../../../devel" />
 				<Option object_output="../../../.objs/plugins/contrib/BrowseTracker" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -15,9 +16,9 @@
 				<Option host_application="../../../devel/codeblocks" />
 				<Option run_host_application_in_terminal="0" />
 				<Compiler>
+					<Add option="-fPIC" />
 					<Add option="$(#CB_RELEASE_TYPE)" />
 					<Add option="`wx-config --version=2.8 --cflags`" />
-					<Add option="-fPIC" />
 					<Add option="-DPIC" />
 					<Add option="-DNO_LOGGING" />
 					<Add option="-DCB_PRECOMP" />
@@ -27,15 +28,16 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add option="`wx-config --version=2.8 --libs`" />
 					<Add option="-Wl,--no-undefined" />
 					<Add library="codeblocks" />
+					<Add library="wxscintilla_cb" />
 					<Add directory="../../../devel" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="zip -j9 ../../../devel/share\urusstudio/BrowseTracker.zip manifest.xml" />
-					<Add after="zip -j9 ../../../devel/share\urusstudio/BrowseTracker.zip BrowseTrackerToolbar.xrc" />
-					<Add after="zip -9r  ../../../devel/share\urusstudio/BrowseTracker.zip ./images" />
+					<Add after="zip -jq9 ../../../devel/share/urusstudio/BrowseTracker.zip manifest.xml" />
+					<Add after="zip -jq9 ../../../devel/share/urusstudio/BrowseTracker.zip BrowseTrackerToolbar.xrc" />
+					<Add after="zip -0 -q  ../../../devel/share/urusstudio/BrowseTracker.zip images/*.png images/16x16/*.png" />
+					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 		</Build>
@@ -53,7 +55,11 @@
 			<Add option="-Wextra" />
 			<Add option="-Wall" />
 			<Add option="-std=c++11" />
+			<Add option="-Wno-unused-local-typedefs" />
 		</Compiler>
+		<Linker>
+			<Add library="$(#wx.wxlibs)" />
+		</Linker>
 		<Unit filename="BrowseMarks.cpp" />
 		<Unit filename="BrowseMarks.h" />
 		<Unit filename="BrowseSelector.cpp" />

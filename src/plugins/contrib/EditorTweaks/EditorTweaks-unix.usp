@@ -17,11 +17,12 @@
 				<Compiler>
 					<Add option="-Wextra" />
 					<Add option="-Wall" />
+					<Add option="-fPIC" />
 					<Add option="$(#CB_RELEASE_TYPE)" />
 					<Add option="`wx-config --version=2.8 --cflags`" />
 					<Add option="-Winvalid-pch" />
 					<Add option="-fexceptions" />
-					<Add option="-fPIC" />
+					<Add option="-Wno-unused-local-typedefs" />
 					<Add option="-DCB_PRECOMP" />
 					<Add option="-DcbDEBUG" />
 					<Add directory="../../../include" />
@@ -31,11 +32,13 @@
 				<Linker>
 					<Add option="`wx-config --version=2.8 --libs`" />
 					<Add option="-Wl,--no-undefined" />
-					<Add library="libcodeblocks.a" />
+					<Add library="codeblocks" />
+					<Add library="wxscintilla_cb" />
 					<Add directory="../../../devel" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="zip -j9 ../../../devel/share\urusstudio/EditorTweaks.zip manifest.xml *.xrc" />
+					<Add after="zip -j9 ../../../devel/share/urusstudio/EditorTweaks.zip manifest.xml *.xrc" />
+					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 		</Build>

@@ -10,6 +10,7 @@
 			<Target title="wxSmithLib">
 				<Option platforms="Unix;Mac;" />
 				<Option output="../../../devel/libwxsmithlib" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="../../../devel" />
 				<Option object_output="../../../.objs/plugins/contrib/wxSmith" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -18,13 +19,11 @@
 				<Compiler>
 					<Add option="`wx-config --version=2.8 --cflags`" />
 				</Compiler>
-				<Linker>
-					<Add option="`wx-config --version=2.8 --libs`" />
-				</Linker>
 			</Target>
 			<Target title="wxSmith">
 				<Option platforms="Unix;Mac;" />
 				<Option output="../../../devel/share/urusstudio/plugins/libwxsmith" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="../../../devel" />
 				<Option object_output="../../../.objs/plugins/contrib/wxSmith" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -35,7 +34,6 @@
 					<Add option="`wx-config --version=2.8 --cflags`" />
 				</Compiler>
 				<Linker>
-					<Add option="`wx-config --version=2.8 --libs`" />
 					<Add library="wxsmithlib" />
 					<Add library="wxpropgrid" />
 				</Linker>
@@ -49,7 +47,6 @@
 			<Add option="-std=c++11" />
 			<Add option="-fPIC" />
 			<Add option="$(#CB_RELEASE_TYPE)" />
-			<Add option="`wx-config --version=2.8 --cflags`" />
 			<Add option="-Winvalid-pch" />
 			<Add option="-fexceptions" />
 			<Add option='[[if (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.8.0&quot;)) print(_T(&quot;-Wno-unused-local-typedefs&quot;));]]' />
@@ -72,12 +69,14 @@
 			<Add directory="../../../include/mozilla_chardet/xpcom/glue" />
 		</Compiler>
 		<Linker>
-			<Add option="`wx-config --version=2.8 --libs`" />
 			<Add option="-Wl,--no-undefined" />
 			<Add library="codeblocks" />
 			<Add library="wxpropgrid" />
+			<Add library="wxscintilla_cb" />
+			<Add library="$(#wx.wxlibs)" />
 			<Add directory="../../../devel" />
 			<Add directory="../../../base/tinyxml" />
+			<Add directory="../../../devel/share/urusstudio/wxContribItems/" />
 		</Linker>
 		<ExtraCommands>
 			<Add after="./update" />
