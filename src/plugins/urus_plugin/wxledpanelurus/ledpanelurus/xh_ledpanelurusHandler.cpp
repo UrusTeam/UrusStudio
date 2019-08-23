@@ -1,6 +1,5 @@
 #include "xh_ledpanelurusHandler.h"
-
-#include "ledpanelurus/NewPanel.h"
+#include "NewPanel.h"
 
 // Register with wxWidgets' dynamic class subsystem.
 IMPLEMENT_DYNAMIC_CLASS(wxLedpanelurusHandler, wxXmlResourceHandler)
