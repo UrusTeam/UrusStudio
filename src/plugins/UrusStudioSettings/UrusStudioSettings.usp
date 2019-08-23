@@ -6,7 +6,9 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="win">
+				<Option platforms="Windows;" />
 				<Option output="../../devel/share/urusstudio/plugins/urusstudiosettings.dll" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="../../devel" />
 				<Option object_output="../../.objs/plugins/urusstudiosettings" />
 				<Option type="3" />
 				<Option compiler="mingw32-gcc" />
@@ -49,7 +51,8 @@
 			</Target>
 			<Target title="unix">
 				<Option platforms="Unix;Mac;" />
-				<Option output="../../devel/lib/urusstudio/plugins/urusstudiosettings" prefix_auto="1" extension_auto="1" />
+				<Option output="../../devel/share/urusstudio/plugins/liburusstudiosettings" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="../../devel" />
 				<Option object_output="../../.objs/plugins/urusstudiosettings" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -93,7 +96,11 @@
 		</VirtualTargets>
 		<Compiler>
 			<Add option="-std=gnu++11" />
+			<Add option="-Wno-unused-local-typedefs" />
 		</Compiler>
+		<Linker>
+			<Add option="-Wl,--no-undefined" />
+		</Linker>
 		<Unit filename="FMainSettings.cpp" />
 		<Unit filename="FMainSettings.h" />
 		<Unit filename="manifest.xml" />

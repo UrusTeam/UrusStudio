@@ -14,7 +14,7 @@
 					<style>wxRA_SPECIFY_COLS</style>
 				</object>
 				<flag>wxALL|wxEXPAND</flag>
-				<border>8</border>
+				<border>10</border>
 			</object>
 		</object>
 	</object>
