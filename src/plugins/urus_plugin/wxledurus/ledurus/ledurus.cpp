@@ -11,8 +11,7 @@
 // mon date:    26/01/2018
 /////////////////////////////////////////////////////////////////////////////
 
-#include "ledurus/ledurus.h"
-
+#include "ledurus.h"
 #include <string.h>
 
 BEGIN_EVENT_TABLE (wxLedurus, wxWindow)

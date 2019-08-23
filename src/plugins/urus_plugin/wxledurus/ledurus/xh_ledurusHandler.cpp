@@ -1,6 +1,5 @@
 #include "xh_ledurusHandler.h"
-
-#include "ledurus/ledurus.h"
+#include "ledurus.h"
 
 // Register with wxWidgets' dynamic class subsystem.
 IMPLEMENT_DYNAMIC_CLASS(wxLedurusHandler, wxXmlResourceHandler)
