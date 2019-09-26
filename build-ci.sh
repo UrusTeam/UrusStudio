@@ -23,18 +23,18 @@ else
   else
     echo Updating Linux version.
     WXURUSBUILD=""
-    WXURUSHOST=""
-    WXURUSTARGET=""
+    WXURUSHOST="--host=$CROSS"
+    WXURUSTARGET="--target=$CROSS"
     export CXXFLAGS="-Wno-unused-local-typedefs -Wno-narrowing -Wno-literal-suffix -fpermissive -DGTK_VERSION=2 -O2"
     export CFLAGS="-Wno-unused-local-typedefs -Wno-narrowing -O2"
-    export WXURUSCONF="--with-gtk=2 --enable-monolithic --enable-shared --enable-std_string --enable-threads --disable-debug_flag --disable-precomp-headers --with-libpng=builtin --with-regex=builtin --with-libjpeg=builtin --with-libtiff=builtin --with-expat=builtin"
-    #export OPENGL_LIBS="-L/usr/lib/$MACHTYPE/libGL.so"
-    #export LDFLAGS="-lGL -lGLU -lGLEW"
+    export WXURUSCONF="--with-gtk=2 --enable-monolithic --enable-shared --with-opengl --enable-std_string --enable-threads --disable-debug_flag --disable-precomp-headers --with-libpng=builtin --with-regex=builtin --with-libjpeg=builtin --with-libtiff=builtin --with-expat=builtin"
+    export OPENGL_LIBS="$(pkg-config gl --libs)"
+    export LDFLAGS="$(pkg-config gl glew glu --libs)"
     export URUSSTUDIOPLAT="--with-platform=gtk2 --disable-debug --disable-pch --disable-fortran"
   fi
 fi
 
-export URUSINSTALLDIR=/system/urus
+export URUSINSTALLDIR=/system/urus/$XURUSSDK
 export URUSSTDTOPDIR=$(pwd)
 
 cd modules/wxWidgets
