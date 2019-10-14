@@ -1,9 +1,9 @@
 /*
 	see copyright notice in squirrel.h
 */
-#include "sqpcheader.h"
 #include <math.h>
 #include <stdlib.h>
+#include "sqpcheader.h"
 #include "sqopcodes.h"
 #include "sqfuncproto.h"
 #include "sqvm.h"
