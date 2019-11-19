@@ -177,7 +177,7 @@ bool cbWorkspace::SaveLayout()
     LogManager *log = Manager::Get()->GetLogManager();
     WorkspaceLoader wsl;
     wxFileName fn(m_Filename);
-    fn.SetExt( _T("workspace.layout") );
+    fn.SetExt( _T("uruswrksp.layout") );
     log->DebugLog(F(_T("Saving workspace layout \"%s\""), fn.GetFullPath().wx_str()));
     const bool rc = wsl.SaveLayout( fn.GetFullPath() );
     if (!rc)
@@ -192,7 +192,7 @@ bool cbWorkspace::LoadLayout()
     LogManager *log = Manager::Get()->GetLogManager();
     WorkspaceLoader wsl;
     wxFileName fn(m_Filename);
-    fn.SetExt( _T("workspace.layout") );
+    fn.SetExt( _T("uruswrksp.layout") );
     bool rc = false;
     if ( fn.FileExists() )
     {
