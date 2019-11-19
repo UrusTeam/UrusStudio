@@ -52,7 +52,7 @@
     #include <sys/stat.h> // lstat
 #endif
 
-const wxString DEFAULT_WORKSPACE     = _T("default.workspace");
+const wxString DEFAULT_WORKSPACE     = _T("default.uruswrksp");
 const wxString DEFAULT_ARRAY_SEP     = _T(";");
 
 #ifndef __WXMAC__
