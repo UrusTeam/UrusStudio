@@ -1,0 +1,12 @@
+this patches was extracted from macports sources:
+
+/opt/local/var/macports/sources/rsync.macports.org/macports/release/tarballs/ports/graphics
+
+applying patches:
+
+patch -p0 -i path_to_file/file.patch
+patch -p0 < path_to_file/file.patch
+
+
+guide:
+https://guide.macports.org/chunked/development.patches.html
