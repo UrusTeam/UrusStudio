@@ -18,7 +18,9 @@ else
     WXURUSBUILD=""
     WXURUSHOST=""
     WXURUSTARGET=""
-    WXURUSCONF="--with-mac --enable-monolithic"
+    export CC=clang
+    export CXX=clang++
+    WXURUSCONF="--with-mac --with-macosx-version-min=10.10 --enable-monolithic --enable-shared --with-opengl --enable-std_string --enable-threads --disable-debug_flag --disable-debug --disable-precomp-headers --with-libpng=builtin --with-regex=builtin --with-libjpeg=builtin --with-libtiff=builtin --with-expat=builtin"
     URUSSTUDIOPLAT="--with-platform=macosx"
   else
     echo Updating Linux version.
