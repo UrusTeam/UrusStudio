@@ -1547,7 +1547,7 @@ void ConfigManager::InitPaths()
         if (platform::windows)
             ConfigManager::data_path_global = app_path + _T("\\share\\urusstudio");
         else if (platform::macosx)
-            ConfigManager::data_path_global = res_path + _T("/share/urusstudio");
+            ConfigManager::data_path_global = wxStandardPathsBase::Get().GetDataDir();
         else
             ConfigManager::data_path_global = wxStandardPathsBase::Get().GetDataDir();
     }
@@ -1560,7 +1560,7 @@ void ConfigManager::InitPaths()
         if (platform::windows)
             ConfigManager::plugin_path_global = data_path_global;
         else if (platform::macosx)
-            ConfigManager::plugin_path_global = data_path_global + _T("/plugins");
+            ConfigManager::plugin_path_global = ((const wxStandardPaths&)wxStandardPaths::Get()).GetInstallPrefix() + _T("/lib/urusstudio/plugins");
         else
         {
 #ifdef __WXGTK__
