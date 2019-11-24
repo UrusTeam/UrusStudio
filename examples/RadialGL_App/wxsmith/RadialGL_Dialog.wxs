@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxDialog" name="RadialGL_Dialog">
+		<title>Urus GUI app</title>
+		<size>574,480</size>
+		<style>wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER|wxTAB_TRAVERSAL</style>
+		<handler function="OnPaint" entry="EVT_PAINT" />
+		<handler function="OnResize" entry="EVT_SIZE" />
+		<object class="wxGLCanvas" name="ID_GLCANVAS1" variable="GLCanvas1" member="yes">
+			<mLevel>4294967296</mLevel>
+			<mMinAlpha>68719476736</mMinAlpha>
+			<mDepthSize>16</mDepthSize>
+			<pos>88,64</pos>
+			<size>300,300</size>
+			<style>wxTRANSPARENT_WINDOW</style>
+		</object>
+		<object class="wxButton" name="ID_BUTTON11" variable="Button111" member="yes">
+			<label>Label</label>
+			<pos>32,16</pos>
+			<handler function="OnButton111Click" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxTimer" name="ID_TIMER1" variable="Timer1" member="yes">
+			<interval>-1</interval>
+			<handler function="OnTimer1Trigger" entry="EVT_TIMER" />
+		</object>
+	</object>
+</wxsmith>
