@@ -1,3 +1,5 @@
+#pragma once
+
 #ifdef __WXMAC__
 #include "OpenGL/gl.h"
 #else
