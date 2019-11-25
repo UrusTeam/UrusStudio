@@ -39,10 +39,10 @@ RadialGL_Dialog::RadialGL_Dialog(wxWindow* parent,wxWindowID id)
     Connect(wxEVT_PAINT,(wxObjectEventFunction)&RadialGL_Dialog::OnPaint);
     Connect(wxEVT_SIZE,(wxObjectEventFunction)&RadialGL_Dialog::OnResize);
     //*)
-
     Timer1.Stop();
     glPane = new BasicGLPane((wxFrame*)GLCanvas1, GLCanvasAttributes_1);
-
+    glPane->SetSize(256, 256);
+    GLCanvas1->SetSize(glPane->getWidth(), glPane->getHeight());
 }
 
 RadialGL_Dialog::~RadialGL_Dialog()
@@ -102,4 +102,5 @@ void RadialGL_Dialog::OnResize(wxSizeEvent& event)
 
 void RadialGL_Dialog::OnPaint(wxPaintEvent& event)
 {
+    wxPaintDC wx(this);
 }
