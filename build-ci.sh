@@ -6,11 +6,10 @@ if [ "x$MSYSTEM" != "x" ] ; then
   WXURUSBUILD="--build=i686-w64-mingw32"
   WXURUSHOST="--host=i686-w64-mingw32"
   WXURUSTARGET="--target=i686-w64-mingw32"
-  CFLAGS+=-Wno-unused-local-typedefs
-  CXXFLAGS+=-Wno-unused-local-typedefs
-  CXXFLAGS+=-fpermissive
-  WXURUSCONF="--with-msw --enable-monolithic --enable-shared LDFLAGS=-Wl,--allow-multiple-definition"
-  URUSSTUDIOPLAT="--with-platform=win32"
+  export CFLAGS=-Wno-unused-local-typedefs
+  export CXXFLAGS='-Wno-unused-local-typedefs -fpermissive'
+  WXURUSCONF="--with-msw --enable-monolithic --enable-shared --with-opengl --enable-std_string --enable-threads --disable-debug_flag --disable-debug --with-libpng=builtin --with-regex=builtin --with-libjpeg=builtin --with-libtiff=builtin --with-expat=builtin LDFLAGS=-Wl,--allow-multiple-definition"
+  URUSSTUDIOPLAT="--with-platform=win32 --disable-debug --disable-pch --disable-fortran"
 else
   uname_str=$(uname)
   if [ "$uname_str" = "Darwin" ] ; then
