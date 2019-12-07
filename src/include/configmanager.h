@@ -66,6 +66,7 @@ enum SearchDirs
     sdHome            = 0x0001, ///< User's home directory
     sdBase            = 0x0002, ///< Code::Blocks' installation base
     sdTemp            = 0x0004, ///< System-wide temp folder
+    sdUrusSystem      = 0x0006, ///< Urus System root path
     sdPath            = 0x0008, ///< All dirs in the PATH environment variable
     sdConfig          = 0x0010, ///< Config folder
     sdCurrent         = 0x0020, ///< Current working folder
@@ -119,6 +120,7 @@ class DLLIMPORT ConfigManager
 #endif
     static wxString app_path;
     static wxString temp_folder;
+    static wxString urus_system_path;
     static wxString alternate_user_data_path;
     static bool has_alternate_user_data_path;
 
@@ -175,6 +177,7 @@ public:
     static wxString GetDataFolder(bool global = true){ return GetFolder(global ? sdDataGlobal : sdDataUser); }
     static wxString GetExecutableFolder(){ return GetFolder(sdBase); }
     static wxString GetTempFolder(){ return GetFolder(sdTemp); }
+    static wxString GetUrusSystemPath(){ return GetFolder(sdUrusSystem); }
 
     /*
     *  Network proxy for HTTP/FTP transfers
