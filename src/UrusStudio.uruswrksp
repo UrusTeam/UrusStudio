@@ -1,62 +1,63 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <UrusStudio_workspace_file>
-    <Workspace title="Urus Studio Workspace wx2.8.x">
-        <Project filename="UrusStudio.usp" />
-        <Project filename="tools/Addr2LineUI/Addr2LineUI.usp" />
-        <Project filename="tools/cb_share_config/cb_share_config.usp" />
-        <Project filename="tools/CBLauncher/CbLauncher.usp" />
-        <Project filename="tools/cbp2make/cbp2make.usp" />
-        <Project filename="plugins/codecompletion/cctest.usp" />
-        <Project filename="plugins/contrib/wxContribItems/wxContribItems.usp" />
-        <Project filename="plugins/contrib/wxSmith/wxSmith.usp" />
-        <Project filename="plugins/contrib/wxSmithContribItems/wxSmithContribItems.usp">
-            <Depends filename="plugins/contrib/wxContribItems/wxContribItems.usp" />
-            <Depends filename="plugins/contrib/wxSmith/wxSmith.usp" />
-        </Project>
-        <Project filename="plugins/contrib/wxSmithAui/wxSmithAui.usp">
-            <Depends filename="plugins/contrib/wxSmith/wxSmith.usp" />
-        </Project>
-        <Project filename="plugins/contrib/AutoVersioning/AutoVersioning.usp" />
-        <Project filename="plugins/contrib/BrowseTracker/BrowseTracker.usp" />
-        <Project filename="plugins/contrib/byogames/byogames.usp" />
-        <Project filename="plugins/contrib/cb_koders/cb_koders.usp" />
-        <Project filename="plugins/contrib/Cccc/Cccc.usp" />
-        <Project filename="plugins/contrib/codesnippets/codesnippets.usp" />
-        <Project filename="plugins/contrib/codestat/codestat.usp" />
-        <Project filename="plugins/contrib/copystrings/copystrings.usp" />
-        <Project filename="plugins/contrib/CppCheck/CppCheck.usp" />
-        <Project filename="plugins/contrib/Cscope/Cscope.usp" />
-        <Project filename="plugins/contrib/devpak_plugin/DevPakPlugin.usp" />
-        <Project filename="plugins/contrib/DoxyBlocks/DoxyBlocks.usp" />
-        <Project filename="plugins/contrib/dragscroll/DragScroll.usp" />
-        <Project filename="plugins/contrib/EditorConfig/EditorConfig.usp" />
-        <Project filename="plugins/contrib/EditorTweaks/EditorTweaks.usp" />
-        <Project filename="plugins/contrib/envvars/envvars.usp" />
-        <Project filename="plugins/contrib/FileManager/FileManager.usp" />
-        <Project filename="plugins/contrib/FortranProject/FortranProject_cbsvn.usp" />
-        <Project filename="plugins/contrib/headerfixup/headerfixup.usp" />
-        <Project filename="plugins/contrib/help_plugin/help-plugin.usp" />
-        <Project filename="plugins/contrib/HexEditor/HexEditor.usp" />
-        <Project filename="plugins/contrib/IncrementalSearch/IncrementalSearch.usp" />
-        <Project filename="plugins/contrib/keybinder/keybinder.usp" />
-        <Project filename="plugins/contrib/lib_finder/lib_finder.usp">
-            <Depends filename="plugins/contrib/wxContribItems/wxContribItems.usp" />
-        </Project>
-        <Project filename="plugins/contrib/MouseSap/MouseSap.usp" />
-        <Project filename="plugins/contrib/NassiShneiderman/NassiShneiderman.usp" />
-        <Project filename="plugins/contrib/profiler/cbprofiler.usp" />
-        <Project filename="plugins/contrib/ProjectOptionsManipulator/ProjectOptionsManipulator.usp" />
-        <Project filename="plugins/contrib/regex_testbed/RegExTestbed.usp" />
-        <Project filename="plugins/contrib/ReopenEditor/ReopenEditor.usp" />
-        <Project filename="plugins/contrib/rndgen/rndgen.usp" />
-        <Project filename="plugins/contrib/SmartIndent/SmartIndent.usp" />
-        <Project filename="plugins/contrib/source_exporter/Exporter.usp" />
-        <Project filename="plugins/contrib/SpellChecker/SpellChecker.usp" />
-        <Project filename="plugins/contrib/symtab/symtab.usp" />
-        <Project filename="plugins/contrib/ThreadSearch/ThreadSearch.usp">
-            <Depends filename="plugins/contrib/wxContribItems/wxContribItems.usp" />
-        </Project>
-        <Project filename="plugins/contrib/ToolsPlus/ToolsPlus.usp" />
-        <Project filename="plugins/UrusStudioSettings/UrusStudioSettings.usp" />
-    </Workspace>
+	<Workspace title="Urus Studio Workspace wx2.8.x">
+		<Project filename="UrusStudio.usp" />
+		<Project filename="tools/Addr2LineUI/Addr2LineUI.usp" />
+		<Project filename="tools/cb_share_config/cb_share_config.usp" />
+		<Project filename="tools/CBLauncher/CbLauncher.usp" />
+		<Project filename="tools/cbp2make/cbp2make.usp" />
+		<Project filename="plugins/codecompletion/cctest.usp" />
+		<Project filename="plugins/contrib/wxContribItems/wxContribItems.usp" />
+		<Project filename="plugins/contrib/wxSmith/wxSmith.usp" />
+		<Project filename="plugins/contrib/wxSmithContribItems/wxSmithContribItems.usp">
+			<Depends filename="plugins/contrib/wxContribItems/wxContribItems.usp" />
+			<Depends filename="plugins/contrib/wxSmith/wxSmith.usp" />
+		</Project>
+		<Project filename="plugins/contrib/wxSmithAui/wxSmithAui.usp">
+			<Depends filename="plugins/contrib/wxSmith/wxSmith.usp" />
+		</Project>
+		<Project filename="plugins/contrib/AutoVersioning/AutoVersioning.usp" />
+		<Project filename="plugins/contrib/BrowseTracker/BrowseTracker.usp" />
+		<Project filename="plugins/contrib/byogames/byogames.usp" />
+		<Project filename="plugins/contrib/cb_koders/cb_koders.usp" />
+		<Project filename="plugins/contrib/Cccc/Cccc.usp" />
+		<Project filename="plugins/contrib/codesnippets/codesnippets.usp" />
+		<Project filename="plugins/contrib/codestat/codestat.usp" />
+		<Project filename="plugins/contrib/copystrings/copystrings.usp" />
+		<Project filename="plugins/contrib/CppCheck/CppCheck.usp" />
+		<Project filename="plugins/contrib/Cscope/Cscope.usp" />
+		<Project filename="plugins/contrib/devpak_plugin/DevPakPlugin.usp" />
+		<Project filename="plugins/contrib/DoxyBlocks/DoxyBlocks.usp" />
+		<Project filename="plugins/contrib/dragscroll/DragScroll.usp" />
+		<Project filename="plugins/contrib/EditorConfig/EditorConfig.usp" />
+		<Project filename="plugins/contrib/EditorTweaks/EditorTweaks.usp" />
+		<Project filename="plugins/contrib/envvars/envvars.usp" />
+		<Project filename="plugins/contrib/FileManager/FileManager.usp" />
+		<Project filename="plugins/contrib/FortranProject/FortranProject_cbsvn.usp" />
+		<Project filename="plugins/contrib/headerfixup/headerfixup.usp" />
+		<Project filename="plugins/contrib/help_plugin/help-plugin.usp" />
+		<Project filename="plugins/contrib/HexEditor/HexEditor.usp" />
+		<Project filename="plugins/contrib/IncrementalSearch/IncrementalSearch.usp" />
+		<Project filename="plugins/contrib/keybinder/keybinder.usp" />
+		<Project filename="plugins/contrib/lib_finder/lib_finder.usp">
+			<Depends filename="plugins/contrib/wxContribItems/wxContribItems.usp" />
+		</Project>
+		<Project filename="plugins/contrib/MouseSap/MouseSap.usp" />
+		<Project filename="plugins/contrib/NassiShneiderman/NassiShneiderman.usp" />
+		<Project filename="plugins/contrib/profiler/cbprofiler.usp" />
+		<Project filename="plugins/contrib/ProjectOptionsManipulator/ProjectOptionsManipulator.usp" />
+		<Project filename="plugins/contrib/regex_testbed/RegExTestbed.usp" />
+		<Project filename="plugins/contrib/ReopenEditor/ReopenEditor.usp" />
+		<Project filename="plugins/contrib/rndgen/rndgen.usp" />
+		<Project filename="plugins/contrib/SmartIndent/SmartIndent.usp" />
+		<Project filename="plugins/contrib/source_exporter/Exporter.usp" />
+		<Project filename="plugins/contrib/SpellChecker/SpellChecker.usp" />
+		<Project filename="plugins/contrib/symtab/symtab.usp" />
+		<Project filename="plugins/contrib/ThreadSearch/ThreadSearch.usp">
+			<Depends filename="plugins/contrib/wxContribItems/wxContribItems.usp" />
+		</Project>
+		<Project filename="plugins/contrib/ToolsPlus/ToolsPlus.usp" />
+		<Project filename="plugins/UrusStudioSettings/UrusStudioSettings.usp" />
+		<Project filename="plugins/urus_plugin/urus_plugin.usp" />
+	</Workspace>
 </UrusStudio_workspace_file>
