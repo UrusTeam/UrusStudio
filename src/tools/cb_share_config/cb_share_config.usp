@@ -23,6 +23,7 @@
 		</VirtualTargets>
 		<Compiler>
 			<Add option="-pipe" />
+			<Add option="$(#CB_RELEASE_TYPE)" />
 			<Add option="-mthreads" />
 			<Add option="-fmessage-length=0" />
 			<Add option="-fexceptions" />
