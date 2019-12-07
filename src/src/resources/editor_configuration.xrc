@@ -765,6 +765,7 @@
 																	<object class="sizeritem">
 																		<object class="wxCheckBox" name="chkEncodingUseSystem">
 																			<label>If conversion fails using the settings above, try system locale settings</label>
+																			<checked>1</checked>
 																		</object>
 																		<flag>wxTOP|wxLEFT|wxALIGN_LEFT</flag>
 																		<border>4</border>
