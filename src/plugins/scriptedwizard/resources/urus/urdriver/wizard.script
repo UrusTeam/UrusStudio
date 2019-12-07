@@ -407,12 +407,12 @@ function OnLeave_WxConf(fwd)
         local lib_rel_name = _T("");
         if (IsMonolithic)
         {
-            lib_deb_name = LibPrefix + _T("wx_msw") + LibUnicSuffix + _T("d") + _T("_urus-") + LibWxVer + lib_suffix_urus + _T("");
+            lib_deb_name = LibPrefix + _T("wx_msw") + LibUnicSuffix + _T("_urus-") + LibWxVer + lib_suffix_urus + _T("");
             lib_rel_name = LibPrefix + _T("wx_msw") + LibUnicSuffix + _T("_urus-") + LibWxVer + lib_suffix_urus + _T("");
         }
         else /* Check for wxcore*/
         {
-            lib_deb_name = LibPrefix + _T("wxbase") + LibWxVer + LibUnicSuffix + _T("d") + lib_suffix_urus;
+            lib_deb_name = LibPrefix + _T("wxbase") + LibWxVer + LibUnicSuffix + lib_suffix_urus;
             lib_rel_name = LibPrefix + _T("wxbase") + LibWxVer + LibUnicSuffix + lib_suffix_urus;
         }
         /* Check whether the libraries exist or not */
