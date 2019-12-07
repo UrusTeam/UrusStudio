@@ -39,7 +39,6 @@
 				<Option object_output="../../../.objs/plugins/contrib/wxContribItems/wxChartCtrl" />
 				<Option type="3" />
 				<Option compiler="mingw32-gcc" />
-				<Option createStaticLib="1" />
 				<Compiler>
 					<Add option="-DWXMAKINGDLL_CHART" />
 					<Add option="-DWXMAKINGDLL" />
@@ -150,6 +149,7 @@
 			<Add option="-fexceptions" />
 			<Add option="-Winvalid-pch" />
 			<Add option="-Wl,--no-undefined" />
+			<Add option="-std=gnu++11" />
 			<Add option='[[if (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.8.0&quot;)) print(_T(&quot;-Wno-unused-local-typedefs&quot;));]]' />
 			<Add option="-DHAVE_W32API_H" />
 			<Add option="-D__WXMSW__" />
