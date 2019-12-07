@@ -29,11 +29,11 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
-					<Add option="`wx-config  --version=3.0 --static=no --unicode=yes --debug=no --cflags`" />
+					<Add option="`wx-config  --version=2.8 --static=no --unicode=yes --debug=no --cflags`" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add option="`wx-config  --version=3.0 --static=no --unicode=yes --debug=no --libs --gl-libs`" />
+					<Add option="`wx-config  --version=2.8 --static=no --unicode=yes --debug=no --libs --gl-libs`" />
 					<Add library="GLU" />
 					<Add library="GL" />
 				</Linker>
