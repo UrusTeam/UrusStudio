@@ -45,12 +45,6 @@
     #include <wx/msgdlg.h>
     #include <stdio.h>
     #include <wx/print.h>
-    #include "../../wxSmith.h"
-    #include "../../wxsproject.h"
-    #include "../../wxsresource.h"
-    #include "../wxsitem.h"
-    #include "../wxsitemresdata.h"
-    #include "../wxsparent.h"
 #endif
 
 
