@@ -31,6 +31,28 @@
 */
 
 #include "wxsglcanvas.h"
+#ifndef CB_PRECOMP
+    #include <wx/string.h>
+    #include <wx/utils.h>
+    #include "cbproject.h"
+    #include "configmanager.h"
+    #include "globals.h"
+    #include "logmanager.h"
+    #include "manager.h"
+    #include "projectmanager.h"
+    #include <wx/stream.h>
+    #include <wx/strconv.h>
+    #include <wx/msgdlg.h>
+    #include <stdio.h>
+    #include <wx/print.h>
+    #include "../../wxSmith.h"
+    #include "../../wxsproject.h"
+    #include "../../wxsresource.h"
+    #include "../wxsitem.h"
+    #include "../wxsitemresdata.h"
+    #include "../wxsparent.h"
+#endif
+
 
 //------------------------------------------------------------------------------
 /*
@@ -98,6 +120,22 @@ wxsGLCanvas::wxsGLCanvas(wxsItemResData* Data):
     mMinAccumGreen   = 0;
     mMinAccumBlue    = 0;
     mMinAccumAlpha   = 0;
+
+    bool enable_comp_opt = Manager::Get()->GetConfigManager(_T("app"))->ReadBool(_T("/urus_settings/gl_linker_options"), true);
+    if (enable_comp_opt) {
+        ProjectManager *pm = Manager::Get()->GetProjectManager();
+        cbProject* prj = pm->GetActiveProject();
+        ProjectBuildTarget* buildTarget;
+
+        prj->AddLinkLib(_("$(#wx.wxgl_libs)"));
+
+        int cnt = prj->GetBuildTargetsCount();
+
+        for (int i1 = 0; i1 < cnt; i1++) {
+            buildTarget = prj->GetBuildTarget(i1);
+            buildTarget->AddLinkLib(_("$(#wx.wxgl_libs)"));
+        }
+    }
 }
 
 //------------------------------------------------------------------------------
