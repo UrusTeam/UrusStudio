@@ -43,16 +43,14 @@ export WXURUSTOPDIR=$(pwd)
 
 cd $URUSINSTALLDIR
 
-if [ "x$ENABLEGIT" != "x" ] ; then
-  if [ -e $URUSINSTALLDIR/.git ] ; then
-    echo "git ok"
-  else
-    echo "git init"
-    if [ "x$ENABLEGIT" != "x" ] ; then
-      git init $URUSINSTALLDIR
-      git config --global user.email $(printf "%s@%s" ${USER} $(uname -n))
-      git config --global user.name ${USER}
-    fi
+if [ -e $URUSINSTALLDIR/.git ] ; then
+  echo "git ok"
+else
+  echo "git init"
+  if [ "x$ENABLEGIT" != "x" ] ; then
+    git init $URUSINSTALLDIR
+    git config --global user.email $(printf "%s@%s" ${USER} $(uname -n))
+    git config --global user.name ${USER}
   fi
 fi
 
