@@ -1382,6 +1382,7 @@ bool wxsItemResData::InsertNew(wxsItem* New,wxsParent* Parent,int Position)
     }
 
     m_Corrector.BeforePaste(New);
+
     if ( !Parent || !Parent->AddChild(New,Position) )
     {
         delete New;
@@ -1429,6 +1430,39 @@ void wxsItemResData::DeleteSelected()
     m_RootSelection->SetIsSelected(true);
 }
 
+void wxsItemResData::RemoveItemGLCanvas()
+{
+    ProjectManager *pm = Manager::Get()->GetProjectManager();
+    ProjectBuildTarget* buildTargets;
+    ProjectsArray *prjarrays = pm->GetProjects();
+    cbProject* prj;
+
+    for (uint16_t i1 = 0; i1 < prjarrays->GetCount(); i1++) {
+        prj = prjarrays->Item(i1);
+        wxArrayString prjarraylnks = prj->GetLinkLibs();
+
+        for (uint16_t p1 = 0; p1 < prjarraylnks.GetCount(); p1++) {
+            //wxMessageBox(_("MAIN\n\nPrj:\t") + prj->GetTitle() + _("\nLnk Lib:\t") + prjarraylnks.Item(p1));
+            if (prjarraylnks.Item(p1).Contains(_("wxgl_libs"))) {
+                //wxMessageBox(_("Contains wxgl_libs on MAIN PRJ ") + prj->GetTitle() + _("!"));
+                prj->RemoveLinkLib(prjarraylnks.Item(p1));
+            }
+        }
+
+        for (uint16_t i2 = 0; i2 < prj->GetBuildTargetsCount(); i2++) {
+            buildTargets = prj->GetBuildTarget(i2);
+            wxArrayString strlinks = buildTargets->GetLinkLibs();
+            for (uint16_t i3 = 0; i3 < strlinks.GetCount(); i3++) {
+                //wxMessageBox(_("TARGETS\n\nPrj:\t") + prj->GetTitle() + _("\nTgt:\t") + buildTargets->GetTitle() + _("\nLnk Lib:\t") + strlinks.Item(i3));
+                if (strlinks.Item(i3).Contains(_("wxgl_libs"))) {
+                    //wxMessageBox(_("Contains wxgl_libs on TARGET ") + buildTargets->GetTitle() + _("!"));
+                    buildTargets->RemoveLinkLib(strlinks.Item(i3));
+                }
+            }
+        }
+    }
+}
+
 void wxsItemResData::DeleteSelectedReq(wxsItem* Item)
 {
     wxsParent* AsParent = Item->ConvertToParent();
@@ -1439,6 +1473,12 @@ void wxsItemResData::DeleteSelectedReq(wxsItem* Item)
             wxsItem* Child = AsParent->GetChild(i);
             if ( Child->GetIsSelected() )
             {
+                if ( Child->GetClassName() == _("wxGLCanvas")) {
+                    bool enable_comp_opt = Manager::Get()->GetConfigManager(_T("app"))->ReadBool(_T("/urus_settings/gl_linker_options"), true);
+                    if (enable_comp_opt) {
+                        RemoveItemGLCanvas();
+                    }
+                }
                 AsParent->UnbindChild(i);
                 delete Child;
                 i--;    // Update index due to shifted child list
