@@ -88,7 +88,7 @@ if [ "x$NO_BUILD_ALL" = "x" ] ; then
         mkdir -p buildustd
         cd buildustd
 
-        ../configure $WXURUSBUILD $WXURUSHOST $WXURUSTARGET --with-contrib-plugins="BrowseTracker,hexeditor,incsearch,regex,ReopenEditor,smartindent,symtab,ThreadSearch,ToolsPlus,wxcontrib,wxsmith,wxsmithcontrib,wxsmithaui" --prefix=${URUSINSTALLDIR} $URUSSTUDIOPLAT
+        ../configure $WXURUSBUILD $WXURUSHOST $WXURUSTARGET --with-contrib-plugins="Cscope,EditorConfig,EditorTweaks,envvars,headerfixup,libfinder,BrowseTracker,hexeditor,incsearch,regex,smartindent,symtab,ThreadSearch,ToolsPlus,wxcontrib,wxsmith,wxsmithcontrib,wxsmithaui" --prefix=${URUSINSTALLDIR} $URUSSTUDIOPLAT
         make -j2
         make -j2 install
 
