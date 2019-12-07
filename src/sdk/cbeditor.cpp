@@ -1348,7 +1348,7 @@ void cbEditor::InternalSetEditorStyleBeforeFileOpen(cbStyledTextCtrl* control)
 
     control->SetCaretForeground(colours->GetColour(wxT("editor_caret")));
     control->SetCaretPeriod(mgr->ReadInt(_T("/caret/period"), 500));
-    control->SetCaretLineVisible(mgr->ReadBool(_T("/highlight_caret_line"), false));
+    control->SetCaretLineVisible(mgr->ReadBool(_T("/highlight_caret_line"), true));
     control->SetFoldMarginColour(true, colours->GetColour(wxT("editor_margin_chrome")));
     control->SetFoldMarginHiColour(true, colours->GetColour(wxT("editor_margin_chrome_highlight")));
 
