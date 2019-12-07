@@ -17,6 +17,7 @@
 				<Compiler>
 					<Add option="-fPIC" />
 					<Add option="-g" />
+					<Add option="$(#CB_RELEASE_TYPE)" />
 					<Add option="-pipe" />
 					<Add option="-mthreads" />
 					<Add option="-fmessage-length=0" />
@@ -29,6 +30,10 @@
 					<Add option="-DWXUSINGDLL" />
 					<Add option="-DwxUSE_UNICODE" />
 					<Add directory="$(#cb)/include" />
+					<Add directory="$(#wx)/include/wxsmith/wxwidgets" />
+					<Add directory="$(#wx)/include/wxsmith/properties" />
+					<Add directory="$(#wx)/include/wxsmith" />
+					<Add directory="$(#wx)/include/urusstudio/wxpropgrid/include" />
 					<Add directory="$(#cb)/sdk/wxscintilla/include" />
 					<Add directory="$(#wx.include)" />
 					<Add directory="$(#wx.lib)" />
@@ -39,6 +44,8 @@
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
 					<Add library="$(#wx.wxlibs)" />
+					<Add library="wxsmithlib" />
+					<Add library="wxpropgrid" />
 					<Add directory="$(#cb)/devel" />
 					<Add directory="$(#wx.lib)" />
 				</Linker>
@@ -95,6 +102,7 @@
 			<Add alias="All" targets="win;unix;" />
 		</VirtualTargets>
 		<Compiler>
+			<Add option="$(#CB_RELEASE_TYPE)" />
 			<Add option="-std=gnu++11" />
 			<Add option="-Wno-unused-local-typedefs" />
 		</Compiler>
