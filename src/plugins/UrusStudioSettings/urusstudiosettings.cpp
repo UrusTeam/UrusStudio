@@ -24,11 +24,6 @@
     #include <wx/msgdlg.h>
     #include <stdio.h>
     #include <wx/print.h>
-    #include <wxSmith.h>
-    #include <wxsproject.h>
-    #include <wxsresource.h>
-    #include <wxsitemresdata.h>
-    #include <wxsitem.h>
 #endif
 
 #include "urusstudiosettings.h"
