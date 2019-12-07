@@ -698,6 +698,7 @@
 																		<item>As fallback encoding</item>
 																		<item>As default encoding (bypassing C::B&apos;s auto-detection)</item>
 																	</content>
+																	<default>1</default>
 																	<style>wxRA_SPECIFY_COLS</style>
 																</object>
 																<flag>wxEXPAND</flag>
@@ -716,7 +717,6 @@
 																	<object class="sizeritem">
 																		<object class="wxCheckBox" name="chkEncodingUseSystem">
 																			<label>If conversion fails using the settings above, try system locale settings</label>
-																			<checked>1</checked>
 																		</object>
 																		<flag>wxTOP|wxLEFT|wxALIGN_LEFT</flag>
 																		<border>4</border>
