@@ -559,7 +559,7 @@ void CompilerOptionsDlg::DoFillOthers()
 
     chk = XRCCTRL(*this, "chkBuildProgressBar", wxCheckBox);
     if (chk)
-        chk->SetValue(Manager::Get()->GetConfigManager(_T("compiler"))->ReadBool(_T("/build_progress/bar"), false));
+        chk->SetValue(Manager::Get()->GetConfigManager(_T("compiler"))->ReadBool(_T("/build_progress/bar"), true));
 
     chk = XRCCTRL(*this, "chkBuildProgressPerc", wxCheckBox);
     if (chk)
