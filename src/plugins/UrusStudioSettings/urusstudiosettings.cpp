@@ -177,7 +177,7 @@ void urusstudiosettings::OnAttach()
         cfg->Write(_T("/default_encoding"), _("UTF-8") + dummy);
         cfg->Write(_T("/default_encoding/use_option"), 1);
         cfg->Write(_T("/default_encoding/find_latin2"), false);
-        cfg->Write(_T("/default_encoding/use_system"), false);
+        cfg->Write(_T("/default_encoding/use_system"), true);
         cfg->Write(_T("/eol/eolmode"), wxSCI_EOL_LF);
 
         DebuggerManager *dbgManager = Manager::Get()->GetDebuggerManager();
