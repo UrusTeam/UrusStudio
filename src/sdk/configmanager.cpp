@@ -72,7 +72,7 @@ wxString ConfigManager::plugin_path_global;
 #endif
 wxString ConfigManager::app_path;
 wxString ConfigManager::temp_folder;
-
+wxString ConfigManager::urus_system_path;
 
 namespace CfgMgrConsts
 {
@@ -85,6 +85,23 @@ namespace CfgMgrConsts
 
 namespace
 {
+    wxString DetermineUrusSystemPath()
+    {
+        #ifdef __MINGW32__
+            wxArrayString sout;
+            wxExecute(_("sh -lc 'cygpath -w /system'"), sout, wxEXEC_ASYNC | wxEXEC_MAKE_GROUP_LEADER);
+            wxString s1;
+            s1 = sout.Last();
+            return s1;
+        #else
+        #ifdef __linux__
+            return _("/system/urus");
+        #elif defined(__APPLE__) && defined(__MACH__)
+            return _("/System/urus");
+        #endif
+        #endif
+    }
+
     wxString DetermineExecutablePath()
     {
         #ifdef __WXMSW__
@@ -558,6 +575,9 @@ wxString ConfigManager::GetFolder(SearchDirs dir)
 
         case sdTemp:
             return ConfigManager::temp_folder;
+
+        case sdUrusSystem:
+            return ConfigManager::urus_system_path;
 
         case sdConfig:
             return ConfigManager::config_folder;
@@ -1540,6 +1560,7 @@ void ConfigManager::InitPaths()
     ConfigManager::home_folder = wxStandardPathsBase::Get().GetUserConfigDir();
     ConfigManager::app_path = ::DetermineExecutablePath();
     wxString res_path = ::DetermineResourcesPath();
+    ConfigManager::urus_system_path = ::DetermineUrusSystemPath();
 
     // if non-empty, the app has overriden it (e.g. "--prefix" was passed in the command line)
     if (data_path_global.IsEmpty())

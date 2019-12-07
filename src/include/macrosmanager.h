@@ -41,6 +41,7 @@ protected:
     wxFileName          m_WorkspaceWxFileName;
 
     wxString            m_AppPath;
+    wxString            m_UrusSystemPath;
     wxString            m_DataPath;
     wxString            m_Plugins;
     wxString            m_ActiveEditorFilename;

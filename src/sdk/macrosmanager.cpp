@@ -81,6 +81,7 @@ void MacrosManager::Reset()
     m_ActiveEditorColumn   = -1;
 
     m_AppPath  = UnixFilename(ConfigManager::GetExecutableFolder());
+    m_UrusSystemPath = UnixFilename(ConfigManager::GetUrusSystemPath());
     m_Plugins  = UnixFilename(ConfigManager::GetPluginsFolder());
     m_DataPath = UnixFilename(ConfigManager::GetDataFolder());
     ClearProjectKeys();
@@ -122,8 +123,8 @@ void MacrosManager::ClearProjectKeys()
     m_Macros[_T("APP_PATH")]   = m_AppPath;
     m_Macros[_T("APP-PATH")]   = m_AppPath;
     m_Macros[_T("APPPATH")]    = m_AppPath;
-    m_Macros[_T("URUSSPATH")]  = m_AppPath;
-    m_Macros[_T("URUSTOOL")]   = m_AppPath + _T(URUSTOOLCHAIN);
+    m_Macros[_T("URUSPATH")]   = m_UrusSystemPath;
+    m_Macros[_T("URUSTOOL")]   = m_UrusSystemPath + _T(URUSTOOLCHAIN);
     m_Macros[_T("DATA_PATH")]  = m_DataPath;
     m_Macros[_T("DATA-PATH")]  = m_DataPath;
     m_Macros[_T("DATAPATH")]   = m_DataPath;
