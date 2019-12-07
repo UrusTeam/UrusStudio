@@ -7,6 +7,29 @@
 #include <wx/xrc/xmlres.h>
 #include <wx/string.h>
 #include <debuggermanager.h>
+#include <tinyxml.h>
+#include <wx/wxscintilla.h>
+
+#ifndef CB_PRECOMP
+    #include <wx/string.h>
+    #include <wx/utils.h>
+    #include "cbproject.h"
+    #include "configmanager.h"
+    #include "globals.h"
+    #include "logmanager.h"
+    #include "manager.h"
+    #include "projectmanager.h"
+    #include <wx/stream.h>
+    #include <wx/strconv.h>
+    #include <wx/msgdlg.h>
+    #include <stdio.h>
+    #include <wx/print.h>
+    #include <wxSmith.h>
+    #include <wxsproject.h>
+    #include <wxsresource.h>
+    #include <wxsitemresdata.h>
+    #include <wxsitem.h>
+#endif
 
 #include "urusstudiosettings.h"
 
@@ -63,8 +86,10 @@ void urusstudiosettings::OnAttach()
         Manager::Get()->GetConfigManager(_T("app"))->Write(_T("/show_tips"), true);
     }
 
-    bool override_settings = Manager::Get()->GetConfigManager(_T("app"))->ReadBool(_T("/ur_overrsettings"), true);
+    bool override_settings = Manager::Get()->GetConfigManager(_T("app"))->ReadBool(_T("/urus_settings/ur_overrsettings"), true);
+    bool enable_comp_opt = Manager::Get()->GetConfigManager(_T("app"))->ReadBool(_T("/urus_settings/gl_linker_options"), true);
     main_settings->CheckBox1->SetValue(override_settings);
+    main_settings->GLitemLinker->SetValue(enable_comp_opt);
 
     if (override_settings) {
         wxString plattoolurus;
@@ -89,9 +114,9 @@ void urusstudiosettings::OnAttach()
         #endif
 
         ConfigManager *cfgman_gcv = Manager::Get()->GetConfigManager(_T("gcv"));
-        cfgman_gcv->Write(_T("/sets/default/uruspath/base"),_T("$(URUSSPATH)"  + plattoolurus  + _T("/")));
-        cfgman_gcv->Write(_T("/sets/default/uruspath/include"),_T("$(URUSSPATH)") + plattoolurus + _T("/include"));
-        cfgman_gcv->Write(_T("/sets/default/uruspath/lib"),_T("$(URUSSPATH)") + plattoolurus + _T("/lib"));
+        cfgman_gcv->Write(_T("/sets/default/urusspath/base"),_T("$(URUSPATH)"  + plattoolurus  + _T("/")));
+        cfgman_gcv->Write(_T("/sets/default/urusspath/include"),_T("$(URUSPATH)") + plattoolurus + _T("/include"));
+        cfgman_gcv->Write(_T("/sets/default/urusspath/lib"),_T("$(URUSPATH)") + plattoolurus + _T("/lib"));
 
         wxString vermajor, verminor;
         wxString verwxurus;
@@ -118,6 +143,7 @@ void urusstudiosettings::OnAttach()
         cfgman_gcv->Write(_T("/sets/default/wx/include"),(_T("$(#URUSSTOOL.include)") + dummy));
         cfgman_gcv->Write(_T("/sets/default/wx/lib"),(_T("$(#URUSSTOOL.lib)") + dummy));
         cfgman_gcv->Write(_T("/sets/default/wx/wxlibs"),(_T("wx_") + wxplaturus + _T("u_urus-") + verwxurus));
+        cfgman_gcv->Write(_T("/sets/default/wx/wxgl_libs"),(_T("wx_") + wxplaturus + _T("u_urus_gl-") + verwxurus));
 
         cfgman_gcv->Write(_T("/sets/default/wxsetup/base"),(_T("$(#URUSSTOOL.base)") + dummy));
         cfgman_gcv->Write(_T("/sets/default/wxsetup/include"),(_T("$(#URUSSTOOL.setup)") + dummy));
@@ -126,7 +152,7 @@ void urusstudiosettings::OnAttach()
         cfgman_gcv->Write(_T("/sets/default/boost/base"),(_T("$(#cb.base)/../modules/boost") + dummy));
         cfgman_gcv->Write(_T("/sets/default/boost/include"),(_T("$(#cb.base)/../modules/boost") + dummy));
 
-        cfgman_gcv->Write(_T("/sets/default/cb_release_type/base"),(_T("-shared") + dummy));
+        cfgman_gcv->Write(_T("/sets/default/cb_release_type/base"),(_T("-O2") + dummy));
 
         ConfigManager *config = Manager::Get()->GetConfigManager(wxT("debugger_common"));
         wxString path = wxT("/sets/gdb_debugger");
@@ -152,6 +178,13 @@ void urusstudiosettings::OnAttach()
         configs = config->EnumerateSubPaths(path);
         configs.Sort();
 
+        ConfigManager *cfg = Manager::Get()->GetConfigManager(_T("editor"));
+        cfg->Write(_T("/default_encoding"), _("UTF-8") + dummy);
+        cfg->Write(_T("/default_encoding/use_option"), 1);
+        cfg->Write(_T("/default_encoding/find_latin2"), false);
+        cfg->Write(_T("/default_encoding/use_system"), false);
+        cfg->Write(_T("/eol/eolmode"), wxSCI_EOL_LF);
+
         DebuggerManager *dbgManager = Manager::Get()->GetDebuggerManager();
         dbgManager->RebuildAllConfigs();
     }
@@ -165,7 +198,6 @@ void urusstudiosettings::OnAttach()
     evt.floatingSize.Set(400, 300);
     evt.minimumSize.Set(200, 150);
     Manager::Get()->ProcessEvent(evt);
-
 }
 
 void urusstudiosettings::OnRelease(bool appShutDown)
@@ -241,6 +273,7 @@ void urusstudiosettings::Execute(wxCommandEvent& event)
     {
         TestCommand();
     }
+    event.Skip();
 }
 
 void urusstudiosettings::OnUpdateUI(wxUpdateUIEvent& event)
@@ -256,6 +289,70 @@ void urusstudiosettings::OnUpdateUI(wxUpdateUIEvent& event)
 
 void urusstudiosettings::TestCommand()
 {
+    bool enable_comp_opt = Manager::Get()->GetConfigManager(_T("app"))->ReadBool(_T("/urus_settings/gl_linker_options"), true);
+    if (enable_comp_opt) {
+        ProjectManager *pm = Manager::Get()->GetProjectManager();
+        cbProject* prjActive = pm->GetActiveProject();
+        ProjectBuildTarget* buildTargetActive;
+
+        if (pm->GetProjects()->GetCount() <= 0) {
+            wxMessageBox(_("No active projects!"));
+            return;
+        }
+
+        //prjActive->AddLinkLib(_("$(#wx.wxgl_libs)"));
+
+        uint16_t cnt = prjActive->GetBuildTargetsCount();
+        wxString scnt1;
+        scnt1 << cnt;
+        wxMessageBox(_("ACTIVE MAIN\n\nPrj: ") + prjActive->GetTitle() + _("\nBldTgt cnt:\t") + scnt1);
+
+        for (uint16_t i1 = 0; i1 < cnt; i1++) {
+            buildTargetActive = prjActive->GetBuildTarget(i1);
+            //buildTargetActive->AddLinkLib(_("$(#wx.wxgl_libs)"));
+        }
+
+        wxArrayString arraylnk = prjActive->GetLinkerOptions();
+        cnt = arraylnk.GetCount();
+        wxString scnt;
+        scnt.Printf(_("%d"), cnt);
+        wxMessageBox(_("ACTIVE MAIN\n\nPrj: ") + prjActive->GetTitle() + _("\nLnkOpt cnt:\t") + scnt);
+
+        for (uint16_t i1 = 0; i1 < cnt; i1++) {
+            scnt = arraylnk.Item(i1);
+            wxMessageBox(_("ACTIVE MAIN\n\nPrj:\t") + prjActive->GetTitle() + _("\nLnk Opt:\t") + scnt);
+        }
+
+        ProjectBuildTarget* buildTargets;
+        ProjectsArray *prjarrays = pm->GetProjects();
+        cbProject* prj;
+
+        for (uint16_t i1 = 0; i1 < prjarrays->GetCount(); i1++) {
+            prj = prjarrays->Item(i1);
+            wxArrayString prjarraylnks = prj->GetLinkLibs();
+
+            for (uint16_t p1 = 0; p1 < prjarraylnks.GetCount(); p1++) {
+                wxMessageBox(_("MAIN\n\nPrj:\t") + prj->GetTitle() + _("\nLnk Lib:\t") + prjarraylnks.Item(p1));
+                if (prjarraylnks.Item(p1).Contains(_("wxgl_libs"))) {
+                    wxMessageBox(_("Contains wxgl_libs on MAIN PRJ ") + prj->GetTitle() + _("!"));
+                    //prj->RemoveLinkLib(prjarraylnks.Item(p1));
+                }
+            }
+
+            for (uint16_t i2 = 0; i2 < prj->GetBuildTargetsCount(); i2++) {
+                buildTargets = prj->GetBuildTarget(i2);
+                wxArrayString strlinks = buildTargets->GetLinkLibs();
+                for (uint16_t i3 = 0; i3 < strlinks.GetCount(); i3++) {
+                    wxMessageBox(_("TARGETS\n\nPrj:\t") + prj->GetTitle() + _("\nTgt:\t") + buildTargets->GetTitle() + _("\nLnk Lib:\t") + strlinks.Item(i3));
+                    if (strlinks.Item(i3).Contains(_("wxgl_libs"))) {
+                        wxMessageBox(_("Contains wxgl_libs on TARGET ") + buildTargets->GetTitle() + _("!"));
+                        //buildTargets->RemoveLinkLib(strlinks.Item(i3));
+                    }
+                }
+            }
+        }
+    }
+
     wxMessageBox(_("UrusStudio Test OK!"));
 }
 
