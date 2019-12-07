@@ -456,7 +456,7 @@ int FindReplace::Replace(cbStyledTextCtrl* control, cbFindReplaceData* data)
     if (data->regEx)
     {
         flags |= wxSCI_FIND_REGEXP;
-        if (Manager::Get()->GetConfigManager(_T("editor"))->ReadBool(_T("/use_posix_style_regexes"), false))
+        if (Manager::Get()->GetConfigManager(_T("editor"))->ReadBool(_T("/use_posix_style_regexes"), true))
             flags |= wxSCI_FIND_POSIX;
         #ifdef wxHAS_REGEX_ADVANCED
         advRegex = Manager::Get()->GetConfigManager(_T("editor"))->ReadBool(_T("/use_advanced_regexes"), false);
@@ -797,7 +797,7 @@ int FindReplace::ReplaceInFiles(cbFindReplaceData* data)
     if (data->regEx)
     {
         flags |= wxSCI_FIND_REGEXP;
-        if (Manager::Get()->GetConfigManager(_T("editor"))->ReadBool(_T("/use_posix_style_regexes"), false))
+        if (Manager::Get()->GetConfigManager(_T("editor"))->ReadBool(_T("/use_posix_style_regexes"), true))
             flags |= wxSCI_FIND_POSIX;
         #ifdef wxHAS_REGEX_ADVANCED
         advRegex = Manager::Get()->GetConfigManager(_T("editor"))->ReadBool(_T("/use_advanced_regexes"), false);
@@ -1138,7 +1138,7 @@ int FindReplace::Find(cbStyledTextCtrl* control, cbFindReplaceData* data)
     if (data->regEx)
     {
         flags |= wxSCI_FIND_REGEXP;
-        if (Manager::Get()->GetConfigManager(_T("editor"))->ReadBool(_T("/use_posix_style_regexes"), false))
+        if (Manager::Get()->GetConfigManager(_T("editor"))->ReadBool(_T("/use_posix_style_regexes"), true))
             flags |= wxSCI_FIND_POSIX;
         #ifdef wxHAS_REGEX_ADVANCED
         advRegex = Manager::Get()->GetConfigManager(_T("editor"))->ReadBool(_T("/use_advanced_regexes"), false);
