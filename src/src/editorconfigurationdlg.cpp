@@ -231,7 +231,7 @@ EditorConfigurationDlg::EditorConfigurationDlg(wxWindow* parent)
 
     XRCCTRL(*this, "rbEncodingUseOption",   wxRadioBox)->SetSelection(cfg->ReadInt(_T("/default_encoding/use_option"), 1));
     XRCCTRL(*this, "chkEncodingFindLatin2", wxCheckBox)->SetValue(cfg->ReadBool(_T("/default_encoding/find_latin2"),   false));
-    XRCCTRL(*this, "chkEncodingUseSystem",  wxCheckBox)->SetValue(cfg->ReadBool(_T("/default_encoding/use_system"),    false));
+    XRCCTRL(*this, "chkEncodingUseSystem",  wxCheckBox)->SetValue(cfg->ReadBool(_T("/default_encoding/use_system"),    true));
 
     // default code
     XRCCTRL(*this, "cmbDefCodeFileType", wxChoice)->SetSelection(m_DefCodeFileType);
