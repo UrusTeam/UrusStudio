@@ -7,6 +7,9 @@
 // globals
 WizType <- wizProject;
 WxPath <- _T("");
+WxPathInclude <- _T("");
+WxPathSetup <- _T("");
+WxLibUrus <- _T("");
 WantPCH <- false;
 IsDLL <- true;
 IsMonolithic <- true;
@@ -69,8 +72,13 @@ function BeginWizard()
         Wizard.AddPage(_T("WxProjDetails"));
         Wizard.AddPage(_T("WxGuiSelect"));
 
-        if (PLATFORM == PLATFORM_MSW)
+        if (PLATFORM == PLATFORM_MSW) {
             WxPath = _T("$(#URUSSTOOL.base)");
+            WxPathInclude = _T("$(#URUSSTOOL.include)");
+            WxPathSetup = _T("$(#URUSSTOOL.setup)");
+            WxLibUrus = _T("$(#wx.wxlibs)");
+        }
+
         // we need the compiler selection before wx settings, because we 'll have
         // to validate the settings. To do this we must know the compiler beforehand...
         if (PLATFORM == PLATFORM_MSW)
@@ -90,8 +98,12 @@ function BeginWizard()
                             "When you 're ready to proceed, please click \"Next\"...");
 
         Wizard.AddInfoPage(_T("WxIntro"), intro_msg);
-        if (PLATFORM == PLATFORM_MSW)
+        if (PLATFORM == PLATFORM_MSW) {
             WxPath = _T("$(#URUSSTOOL.base)");
+            WxPathInclude = _T("$(#URUSSTOOL.include)");
+            WxPathSetup = _T("$(#URUSSTOOL.setup)");
+            WxLibUrus = _T("$(#wx.wxlibs)");
+        }
         // we need the compiler selection before wx settings, because we 'll have
         // to validate the settings. To do this we must know the compiler beforehand...
         Wizard.AddBuildTargetPage(_T(""), false, true, _T(""), _T("*"), true);
@@ -346,12 +358,12 @@ function OnLeave_WxConf(fwd)
         local lib_rel_name = _T("");
         if (IsMonolithic)
         {
-            lib_deb_name = LibPrefix + _T("wx_msw") + LibUnicSuffix + _T("d") + _T("_urus-") + LibWxVer + lib_suffix_urus + _T("");
+            lib_deb_name = LibPrefix + _T("wx_msw") + LibUnicSuffix + _T("_urus-") + LibWxVer + lib_suffix_urus + _T("");
             lib_rel_name = LibPrefix + _T("wx_msw") + LibUnicSuffix + _T("_urus-") + LibWxVer + lib_suffix_urus + _T("");
         }
         else /* Check for wxcore*/
         {
-            lib_deb_name = LibPrefix + _T("wxbase") + LibWxVer + LibUnicSuffix + _T("d") + lib_suffix_urus;
+            lib_deb_name = LibPrefix + _T("wxbase") + LibWxVer + LibUnicSuffix + lib_suffix_urus;
             lib_rel_name = LibPrefix + _T("wxbase") + LibWxVer + LibUnicSuffix + lib_suffix_urus;
         }
         /* Check whether the libraries exist or not */
@@ -623,7 +635,10 @@ function SetupProject(project)
     else
     {
         LibPrefix = _T("");
+        project.AddIncludeDir(WxPathInclude);
+        project.AddIncludeDir(WxPathSetup);
         project.AddIncludeDir(WxPath + _T("/include/wx-") + LibWxVer + _T("-urus"));
+        project.AddResourceIncludeDir(WxPathInclude);
         project.AddResourceIncludeDir(WxPath + _T("/include/wx-") + LibWxVer + _T("-urus"));
         libdir = LibPath;// + _T("/msw");
         if (IsUnicode)
@@ -1026,6 +1041,7 @@ function SetupTarget(target, is_debug)
         if (IsMonolithic)
         {
             target.AddLinkLib(LibPrefix + _T("wx_msw") + LibUnicSuffix + LibDebugSuffix + _T("_urus-") + LibWxVer + LibSuffix);
+            target.AddLinkLib(WxLibUrus);
             if (!IsDLL)
             {
                 target.AddLinkLib(LibPrefix + _T("wxpng") + LibDebugSuffix + LibSuffix);
