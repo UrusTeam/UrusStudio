@@ -124,6 +124,9 @@ public:
         if (!progress)
         {
             progress = new wxGauge(panel, -1, 0, wxDefaultPosition, wxSize(-1, 12));
+            wxColourDatabase coldb;
+            const wxColour col(coldb.Find(_("PALE GREEN")));
+            progress->SetForegroundColour(col);
             sizer->Add(progress, 0, wxEXPAND);
             sizer->Layout();
         }
@@ -393,7 +396,7 @@ void CompilerGCC::OnAttach()
     }
 
     m_LogBuildProgressPercentage = Manager::Get()->GetConfigManager(_T("compiler"))->ReadBool(_T("/build_progress/percentage"), false);
-    bool hasBuildProg = Manager::Get()->GetConfigManager(_T("compiler"))->ReadBool(_T("/build_progress/bar"), false);
+    bool hasBuildProg = Manager::Get()->GetConfigManager(_T("compiler"))->ReadBool(_T("/build_progress/bar"), true);
     if (hasBuildProg)
         m_pLog->AddBuildProgressBar();
 
@@ -468,7 +471,7 @@ int CompilerGCC::Configure(cbProject* project, ProjectBuildTarget* target)
         SaveOptions();
         Manager::Get()->GetMacrosManager()->Reset();
 
-        bool hasBuildProg = Manager::Get()->GetConfigManager(_T("compiler"))->ReadBool(_T("/build_progress/bar"), false);
+        bool hasBuildProg = Manager::Get()->GetConfigManager(_T("compiler"))->ReadBool(_T("/build_progress/bar"), true);
         if (hasBuildProg)
             m_pLog->AddBuildProgressBar();
         else
