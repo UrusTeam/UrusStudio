@@ -287,6 +287,8 @@ class wxsItemResData
          */
         void NotifyChange(wxsItem* Changed);
 
+        void RemoveItemGLCanvas();
+
     private:
 
         WX_DECLARE_STRING_HASH_MAP(TiXmlElement*,IdToXmlMapT);
