@@ -118,10 +118,10 @@ if [ "x$NO_BUILD_ALL" = "x" ] ; then
         cd $PUSHD
         ../configure $WXURUSBUILD $WXURUSHOST $WXURUSTARGET --with-contrib-plugins="BrowseTracker,Cscope,EditorConfig,EditorTweaks,envvars,hexeditor,incsearch,ProjectOptionsManipulator,regex,ReopenEditor,smartindent,ThreadSearch,wxcontrib,wxsmith,wxsmithcontrib,wxsmithaui" --prefix=${URUSINSTALLDIR} $URUSSTUDIOPLAT
 
-		if [ "x$NO_URUSSTUDIO_MAKE_CMD" = "x"  ] ; then
-        	make -j2
-        	make install
-		fi
+        if [ "x$NO_URUSSTUDIO_MAKE_CMD" = "x" ] ; then
+            make -j2
+            make install
+        fi
     fi
 fi
 
