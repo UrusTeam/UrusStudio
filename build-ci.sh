@@ -122,6 +122,7 @@ if [ "x$NO_BUILD_ALL" = "x" ] ; then
             make -j2
             make install
         fi
+        cd ${URUSSTDTOPDIR}
     fi
 fi
 
