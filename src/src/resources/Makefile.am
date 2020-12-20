@@ -45,6 +45,7 @@ images_forZIP = \
 	images/16x16/searchreplacef.png \
 	images/16x16/searchreplace.png \
 	images/16x16/undo.png \
+	images/16x16/urusproject.png \
 	images/20x20/bookmark_add.png \
 	images/20x20/dbginfo.png \
 	images/20x20/dbgnexti.png \
@@ -356,6 +357,7 @@ treeImages_forZIP = \
 	images/tree/16x16/rc-file-uptodate.png \
 	images/tree/16x16/vfolder_open.png \
 	images/tree/16x16/workspace.png \
+	images/tree/16x16/urusproject.png \
 	images/tree/16x16/workspace-readonly.png \
 	images/tree/20x20/file-missing.png \
 	images/tree/20x20/file-modified.png \
