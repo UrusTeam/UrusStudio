@@ -246,8 +246,7 @@ bool urusstudiosettings::BuildToolBar(wxToolBar* toolBar)
     if (!IsAttached() || !toolBar)
         return false;
 
-    wxString my_16x16 = Manager::isToolBar16x16(toolBar) ? _T("_16x16") : _T("");
-    Manager::Get()->AddonToolBar(toolBar,_T("urussettings_toolbar")+my_16x16);
+    Manager::Get()->AddonToolBar(toolBar,_T("urussettings_toolbar"));
     toolBar->Realize();
     toolBar->SetInitialSize();
 
