@@ -95,9 +95,9 @@ namespace
             return s1;
         #else
         #ifdef __linux__
-            return _("/system/urus");
+            return _("/system/urus/bin");
         #elif defined(__APPLE__) && defined(__MACH__)
-            return _("/System/urus");
+            return _("/System/urus/bin");
         #endif
         #endif
     }
