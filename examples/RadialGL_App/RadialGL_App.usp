@@ -68,11 +68,12 @@
 				<Option compiler="arm-urus-linux-gcc" />
 				<Compiler>
 					<Add option="-O2" />
-					<Add option="`wx-config  --version=3.0 --static=no --unicode=yes --debug=no --cflags`" />
+					<Add option="`wx-config  --version=3.1 --static=no --unicode=yes --debug=no --cflags`" />
+					<Add option="-std=gnu++11" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add option="`wx-config  --version=3.0 --static=no --unicode=yes --debug=no --libs --gl-libs`" />
+					<Add option="`wx-config  --version=3.1 --static=no --unicode=yes --debug=no --libs --gl-libs`" />
 					<Add library="GLU" />
 					<Add library="GL" />
 				</Linker>
@@ -100,15 +101,12 @@
 		<Unit filename="glpane.h" />
 		<Unit filename="wxsmith/RadialGL_Dialog.wxs" />
 		<Extensions>
-			<code_completion />
 			<wxsmith version="1">
 				<gui name="wxWidgets" src="RadialGL_App.cpp" main="RadialGL_Dialog" init_handlers="necessary" language="CPP" />
 				<resources>
 					<wxDialog wxs="wxsmith/RadialGL_Dialog.wxs" src="RadialGL_Dialog.cpp" hdr="RadialGL_Dialog.h" fwddecl="0" i18n="1" name="RadialGL_Dialog" language="CPP" />
 				</resources>
 			</wxsmith>
-			<debugger />
-			<envvars />
 		</Extensions>
 	</Project>
 </UrusStudio_project_file>

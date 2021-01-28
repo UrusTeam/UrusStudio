@@ -30,7 +30,11 @@ RadialGL_Dialog::RadialGL_Dialog(wxWindow* parent,wxWindowID id)
     	WX_GL_DEPTH_SIZE,      16,
     	WX_GL_STENCIL_SIZE,    0,
     	0, 0 };
-    GLCanvas1 = new wxGLCanvas(this, ID_GLCANVAS1, wxPoint(88,64), wxSize(300,300), wxTRANSPARENT_WINDOW, _T("ID_GLCANVAS1"), GLCanvasAttributes_1);
+    #if wxCHECK_VERSION(3,0,0)
+    	GLCanvas1 = new wxGLCanvas(this, ID_GLCANVAS1, GLCanvasAttributes_1, wxPoint(88,64), wxSize(300,300), wxTRANSPARENT_WINDOW, _T("ID_GLCANVAS1"));
+    #else
+    	GLCanvas1 = new wxGLCanvas(this, ID_GLCANVAS1, wxPoint(88,64), wxSize(300,300), wxTRANSPARENT_WINDOW, _T("ID_GLCANVAS1"), GLCanvasAttributes_1);
+    #endif // wxCHECK_VERSION
     Button111 = new wxButton(this, ID_BUTTON11, _("Label"), wxPoint(32,16), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON11"));
     Timer1.SetOwner(this, ID_TIMER1);
 

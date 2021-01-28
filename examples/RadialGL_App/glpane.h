@@ -7,6 +7,19 @@
 
 #define LAYER_COUNT 5
 
+class TestGLContext : public wxGLContext
+{
+public:
+    TestGLContext(wxGLCanvas *canvas);
+
+    // render the cube showing it at given angles
+    void DrawRotatedCube(float xangle, float yangle);
+
+private:
+    // textures for the cube faces
+    GLuint m_textures[6];
+};
+
 class BasicGLPane : public wxGLCanvas
 {
 
@@ -38,6 +51,8 @@ public:
 
 private:
 
+    wxFrame* parent_frontend;
+    TestGLContext *glContext;
     Image* image = NULL;
     glDrawable* sprite[LAYER_COUNT];
 

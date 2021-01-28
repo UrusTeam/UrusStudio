@@ -4,6 +4,7 @@
 #include "wx/image.h"
 #include "wx/wx.h"
 
+#include "wx/glcanvas.h"
 
 GLuint* loadImage(wxString path, int* imageWidth, int* imageHeight, int* textureWidth, int* textureHeight)
 {

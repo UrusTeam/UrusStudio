@@ -23,15 +23,46 @@ void BasicGLPane::mouseLeftWindow(wxMouseEvent& event) {}
 void BasicGLPane::keyPressed(wxKeyEvent& event) {}
 void BasicGLPane::keyReleased(wxKeyEvent& event) {}
 
-BasicGLPane::BasicGLPane(wxFrame* parent, int* args) :
-    wxGLCanvas(parent, wxID_ANY,  wxDefaultPosition, wxDefaultSize, 0, wxT("GLCanvas"),  args)
+static void CheckGLError()
 {
+    GLenum errLast = GL_NO_ERROR;
 
+    for ( ;; )
+    {
+        GLenum err = glGetError();
+        if ( err == GL_NO_ERROR )
+            return;
+
+        // normally the error is reset by the call to glGetError() but if
+        // glGetError() itself returns an error, we risk looping forever here
+        // so check that we get a different error than the last time
+        if ( err == errLast )
+        {
+            wxLogError("OpenGL error state couldn't be reset.");
+            return;
+        }
+
+        errLast = err;
+
+        wxLogError("OpenGL error %d", err);
+    }
+}
+
+TestGLContext::TestGLContext(wxGLCanvas *canvas)
+             : wxGLContext(canvas)
+{
+    SetCurrent(*canvas);
+    CheckGLError();
+}
+
+BasicGLPane::BasicGLPane(wxFrame* parent, int* args) :
+    wxGLCanvas(parent, wxID_ANY, args,  wxDefaultPosition, wxDefaultSize, 0, wxT("GLCanvas"))
+{
 }
 
 void BasicGLPane::resized(wxSizeEvent& evt)
 {
-    wxGLCanvas::OnSize(evt);
+    //wxGLCanvas::OnSize(evt);
     Refresh();
 }
 
@@ -105,7 +136,9 @@ void BasicGLPane::render( wxPaintEvent& evt )
 {
     if(!IsShown()) return;
 
-    wxGLCanvas::SetCurrent();
+    if (!glContext) {
+        glContext = new TestGLContext(this);
+    }
 
     if(image == NULL) {
         image = new Image(wxT("alt_face_1.png"));
@@ -121,6 +154,7 @@ void BasicGLPane::render( wxPaintEvent& evt )
     }
 
     wxPaintDC dc(this); // only to be used in paint events. use wxClientDC to paint outside the paint event
+    glContext->SetCurrent(*this);
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -155,8 +189,13 @@ void BasicGLPane::rotate(float angle)
         cnt1 = 1.7;
     }
 
-    wxGLCanvas::SetCurrent();
+    if (!glContext) {
+        glContext = new TestGLContext(this);
+    }
+
     wxClientDC dc(this);
+    glContext->SetCurrent(*this);
+
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     prepare2DViewport(0, 0, image->textureWidth, image->textureHeight);
     sprite[0]->rotate(angle);
