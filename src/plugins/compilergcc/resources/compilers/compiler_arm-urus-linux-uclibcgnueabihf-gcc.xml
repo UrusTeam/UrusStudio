@@ -1,0 +1,34 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE CodeBlocks_compiler>
+<CodeBlocks_compiler name="ARM GNU GCC (uclibc) Compiler for URUS"
+                     id="arm-urus-linux-uclibcgnueabihf-gcc"
+                     weight="60">
+    <Path type="master">
+        <Search envVar="PATH"
+                for="C"/>
+        <if platform="windows">
+            <Search path="$(#URUSSTOOL.base)*"/>
+            <Fallback path="$(#URUSSTOOL.base)"/>
+        </if>
+        <else>
+            <Search path="$(#URUSSTOOL.base)*"/>
+            <Fallback path="/usr"/>
+        </else>
+    </Path>
+    <if platform="windows">
+        <Path type="include">
+            <Add><master/>/include</Add>
+        </Path>
+        <Path type="lib">
+            <Add><master/>/lib</Add>
+        </Path>
+    </if>
+    <else>
+        <Path type="include">
+            <Add><master/>/include</Add>
+        </Path>
+        <Path type="lib">
+            <Add><master/>/lib</Add>
+        </Path>
+    </else>
+</CodeBlocks_compiler>
