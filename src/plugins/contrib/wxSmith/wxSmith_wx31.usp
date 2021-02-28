@@ -96,7 +96,7 @@
 			<Add directory="../../../devel31" />
 		</Linker>
 		<ExtraCommands>
-			<Add after="sh -c update31" />
+			<Add after="sh -c ./update31" />
 			<Mode after="always" />
 		</ExtraCommands>
 		<Unit filename="plugin/wxsmithpluginregistrants.cpp">

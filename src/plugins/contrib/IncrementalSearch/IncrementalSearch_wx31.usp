@@ -43,7 +43,7 @@
 				<ExtraCommands>
 					<Add after="zip -jq9 ../../../devel31/share/urusstudio/IncrementalSearch.zip manifest.xml *.xrc" />
 					<Add after="zip -Rq9 ../../../devel31/share/urusstudio/IncrementalSearch.zip images/*.png images/16x16/*.png" />
-					<Add after="sh -c update31" />
+					<Add after="sh -c ./update31" />
 					<Mode after="always" />
 				</ExtraCommands>
 				<Environment>
