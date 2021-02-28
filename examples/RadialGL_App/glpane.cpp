@@ -38,13 +38,13 @@ static void CheckGLError()
         // so check that we get a different error than the last time
         if ( err == errLast )
         {
-            wxLogError("OpenGL error state couldn't be reset.");
+            wxLogError(_("OpenGL error state couldn't be reset."));
             return;
         }
 
         errLast = err;
 
-        wxLogError("OpenGL error %d", err);
+        wxLogError(_("OpenGL error %d"), err);
     }
 }
 
