@@ -3,7 +3,6 @@
 	<FileVersion major="1" minor="6" />
 	<Project>
 		<Option title="wxSmith - Contrib Items wx3.1.x" />
-		<Option platforms="Windows;" />
 		<Option pch_mode="2" />
 		<Option default_target="wxSmithContribItems" />
 		<Option compiler="mingw32-gcc" />
@@ -82,6 +81,7 @@
 			<Add option="-mthreads" />
 			<Add option="-fmessage-length=0" />
 			<Add option="-fexceptions" />
+			<Add option="`wx-config --toolkit=msw --cflags`" />
 			<Add option="-DHAVE_W32API_H" />
 			<Add option="-D__WXMSW__" />
 			<Add option="-DWXUSINGDLL" />
@@ -94,6 +94,7 @@
 			<Add option="-s" />
 			<Add option="-Wl,--enable-auto-import" />
 			<Add option="-mthreads" />
+			<Add option="`wx-config --toolkit=msw --libs`" />
 			<Add directory="$(#WX31.lib)" />
 		</Linker>
 		<Unit filename="manifest.xml" />
