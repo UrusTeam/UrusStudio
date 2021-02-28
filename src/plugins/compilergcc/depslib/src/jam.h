@@ -16,6 +16,12 @@
 #include <stdio.h>
 #include <time.h>
 
+#if defined(__WIN32__)
+#define DEPSLIB_WINDOWS 1
+#else
+#define DEPSLIB_UNIX 1
+#endif
+
 #if !defined(DEPSLIB_WINDOWS) && !defined(DEPSLIB_UNIX)
 #error "must define one of DEPSLIB_WINDOWS or DEPSLIB_UNIX"
 #endif

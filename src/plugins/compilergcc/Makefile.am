@@ -7,7 +7,7 @@ AM_CPPFLAGS = $(WX_CXXFLAGS) \
 		-I$(top_srcdir)/src/include/scripting/sqplus \
 		-I$(top_srcdir)/src/plugins/compilergcc/depslib/src
 
-AM_CXXFLAGS = -DDEPSLIB_UNIX
+AM_CXXFLAGS =
 
 pluginlibdir = $(pkglibdir)/plugins
 

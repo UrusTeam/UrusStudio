@@ -7,6 +7,7 @@
  * $HeadURL$
  */
 
+#if   defined(__WXMSW__)
 #include <sdk.h>
 #ifndef CB_PRECOMP
     #include <wx/radiobox.h>
@@ -403,3 +404,4 @@ void AskAssocDialog::OnCharHook(wxKeyEvent& event)
 
     event.Skip();
 }
+#endif

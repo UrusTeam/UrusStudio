@@ -396,8 +396,6 @@ AC_CONFIG_FILES([Makefile
 	src/Makefile
 	src/base/Makefile
 	src/base/tinyxml/Makefile
-	src/build_tools/Makefile
-	src/build_tools/autorevision/Makefile
 	src/include/autorevision.h
 	src/include/Makefile
 	src/include/scripting/Makefile

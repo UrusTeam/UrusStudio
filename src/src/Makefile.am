@@ -66,7 +66,8 @@ urusstudio_SOURCES = app.cpp \
 			switcherdlg.cpp \
 			threadsdlg.cpp \
 			virtualbuildtargetsdlg.cpp \
-			watchesdlg.cpp
+			watchesdlg.cpp \
+			associations.cpp
 
 noinst_HEADERS = app.h \
 			appglobals.h \

@@ -50,6 +50,7 @@
  * 12/30/02 (seiwald) - skip solaris' empty archive member names (/, //xxx)
  */
 
+#if !defined(__WIN32__)
 # include "jam.h"
 # include "filesys.h"
 # include "pathsys.h"
@@ -415,4 +416,4 @@ file_archscan(
 # endif /* AIAMAG - RS6000 AIX */
 
 # endif /* USE_FILEUNIX */
-
+#endif
