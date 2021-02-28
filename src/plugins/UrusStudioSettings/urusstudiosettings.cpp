@@ -94,13 +94,15 @@ void urusstudiosettings::OnAttach()
         #if   defined(__WXMSW__)
             plattoolurus = _T("/..");
             wxplaturus =  _T("msw");
+        #elif defined(__WXGTK3__)
+            plattoolurus = _T("/..");
+            wxplaturus =  _T("gtk3");
+        #elif defined(__WXGTK20__)
+            plattoolurus = _T("/..");
+            wxplaturus =  _T("gtk2");
         #elif defined(__WXGTK__)
             plattoolurus = _T("/..");
-            #if GTK_VERSION == 2
-                wxplaturus =  _T("gtk2");
-            #else
-                wxplaturus =  _T("gtk");
-            #endif // defined
+            wxplaturus =  _T("gtk");
         #elif defined(__WXMAC__)
             plattoolurus = _T("mac");
         #else
