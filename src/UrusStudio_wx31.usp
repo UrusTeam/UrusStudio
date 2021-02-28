@@ -60,7 +60,7 @@
 				</Linker>
 			</Target>
 			<Target title="ConsoleRunner">
-				<Option output="tools/ConsoleRunner/cb_console_runner.exe" prefix_auto="0" extension_auto="0" />
+				<Option output="devel31/cb_console_runner.exe" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="tools/ConsoleRunner" />
 				<Option object_output=".objs31" />
 				<Option type="1" />
