@@ -798,7 +798,6 @@
 			<Add alias="Third-party libs" targets="tinyXML;AutoRevision;ConsoleRunner;Squirrel;Squirrel std lib;scintilla;Compiler depslib;SqPlus;" />
 		</VirtualTargets>
 		<Compiler>
-			<Add option="-O2" />
 			<Add option="-Wall" />
 			<Add option="-std=gnu++11" />
 			<Add option="$(#CB_RELEASE_TYPE)" />

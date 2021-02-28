@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="../../../devel31/share/urusstudio/plugins/FileManager" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../devel31/share/urusstudio/plugins/FileManager.dll" prefix_auto="0" extension_auto="0" />
 				<Option object_output="../../../.objs31/plugins/contrib/FileManager" />
 				<Option type="3" />
 				<Option compiler="gcc" />

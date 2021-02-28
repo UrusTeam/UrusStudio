@@ -106,6 +106,7 @@
 			<Add option="-Wno-unused-local-typedefs" />
 		</Compiler>
 		<Linker>
+			<Add option="-s" />
 			<Add option="-Wl,--no-undefined" />
 		</Linker>
 		<Unit filename="FMainSettings.cpp" />
