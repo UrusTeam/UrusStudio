@@ -52,15 +52,15 @@
 		</VirtualTargets>
 		<Compiler>
 			<Add option="-std=gnu++11" />
+			<Add option="`wx-config --toolkit=msw --cflags`" />
 		</Compiler>
 		<Linker>
 			<Add option="-s" />
 			<Add option="-Wl,--enable-auto-import" />
 			<Add option="-mthreads" />
+			<Add option="`wx-config --toolkit=msw --libs`" />
 			<Add library="codeblocks" />
 			<Add library="wxscintilla_cb" />
-			<Add library="../../../devel31/wxbase310u_urus_gcc_urus.dll" />
-			<Add library="../../../devel31/wxmsw310u_urus_core_gcc_urus.dll" />
 		</Linker>
 		<Unit filename="bindings.cpp" />
 		<Unit filename="bindings.h" />

@@ -45,6 +45,7 @@
 					<Add directory="../wxContribItems/wxmathplot" />
 				</Compiler>
 				<Linker>
+					<Add option="`wx-config --toolkit=msw --libs`" />
 					<Add library="codeblocks" />
 					<Add library="wxkwic" />
 					<Add library="wxflatnotebook" />
@@ -57,9 +58,6 @@
 					<Add library="wxmathplot" />
 					<Add library="txml" />
 					<Add library="wxsmithlib" />
-					<Add library="wxbase310u_urus_gcc_urus" />
-					<Add library="wxmsw310u_urus_core_gcc_urus" />
-					<Add library="wxmsw310u_urus_propgrid_gcc_urus" />
 					<Add directory="../../../devel31" />
 				</Linker>
 				<ExtraCommands>

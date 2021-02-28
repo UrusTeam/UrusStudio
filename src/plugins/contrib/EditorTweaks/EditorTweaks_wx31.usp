@@ -36,8 +36,6 @@
 				<Linker>
 					<Add library="codeblocks" />
 					<Add library="wxscintilla_cb" />
-					<Add library="../../../devel31/wxbase310u_urus_gcc_urus.dll" />
-					<Add library="../../../devel31/wxmsw310u_urus_core_gcc_urus.dll" />
 					<Add directory="../../../devel31" />
 					<Add directory="$(#WX31.lib)" />
 				</Linker>
@@ -57,10 +55,11 @@
 		</VirtualTargets>
 		<Compiler>
 			<Add option="-std=gnu++11" />
+			<Add option="`wx-config --toolkit=msw --cflags`" />
 		</Compiler>
 		<Linker>
 			<Add option="-s" />
-			<Add library="../../../devel31/wxmsw310u_urus_xrc_gcc_urus.dll" />
+			<Add option="`wx-config --toolkit=msw --libs`" />
 		</Linker>
 		<Unit filename="EditorTweaks.cpp" />
 		<Unit filename="EditorTweaks.h" />

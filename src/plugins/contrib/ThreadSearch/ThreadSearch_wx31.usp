@@ -21,9 +21,6 @@
 					<Add library="codeblocks" />
 					<Add library="wxcustombutton" />
 					<Add library="wxscintilla_cb" />
-					<Add library="../../../devel31/wxbase310u_urus_gcc_urus.dll" />
-					<Add library="../../../devel31/wxmsw310u_urus_core_gcc_urus.dll" />
-					<Add library="../../../devel31/wxmsw310u_urus_xrc_gcc_urus.dll" />
 					<Add directory="../../../devel31" />
 					<Add directory="$(#WX31.lib)" />
 				</Linker>
@@ -45,6 +42,7 @@
 			<Add option="-fmessage-length=0" />
 			<Add option="-fexceptions" />
 			<Add option="-fpermissive" />
+			<Add option="`wx-config --toolkit=msw --cflags`" />
 			<Add option="-DWXUSINGDLL" />
 			<Add option="-DHAVE_W32API_H" />
 			<Add option="-D__WXMSW__" />
@@ -68,6 +66,7 @@
 		<Linker>
 			<Add option="-s" />
 			<Add option="-mthreads" />
+			<Add option="`wx-config --toolkit=msw --libs`" />
 		</Linker>
 		<ExtraCommands>
 			<Add after="zip -j9 ../../../devel31/share/urusstudio/ThreadSearch.zip manifest.xml" />
@@ -100,6 +99,7 @@
 		<Unit filename="ThreadSearchLoggerBase.h" />
 		<Unit filename="ThreadSearchLoggerList.cpp" />
 		<Unit filename="ThreadSearchLoggerList.h" />
+		<Unit filename="ThreadSearchLoggerSTC.cpp" />
 		<Unit filename="ThreadSearchLoggerTree.cpp" />
 		<Unit filename="ThreadSearchLoggerTree.h" />
 		<Unit filename="ThreadSearchThread.cpp" />

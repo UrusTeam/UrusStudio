@@ -46,6 +46,7 @@
 			<Add option="$(#CB_RELEASE_TYPE)" />
 			<Add option="-mthreads" />
 			<Add option="-fexceptions" />
+			<Add option="`wx-config --toolkit=msw --cflags`" />
 			<Add option="-DBUILDING_PLUGIN" />
 			<Add option="-DHAVE_W32API_H" />
 			<Add option="-D__WXMSW__" />
@@ -66,14 +67,12 @@
 		<Linker>
 			<Add option="-s" />
 			<Add option="-mthreads" />
+			<Add option="`wx-config --toolkit=msw --libs`" />
 			<Add library="codeblocks" />
 			<Add library="txml" />
 			<Add library="sqplus" />
 			<Add library="sqstdlib" />
 			<Add library="squirrel" />
-			<Add library="../../../devel31/wxbase310u_urus_gcc_urus.dll" />
-			<Add library="../../../devel31/wxmsw310u_urus_core_gcc_urus.dll" />
-			<Add library="../../../devel31/wxmsw310u_urus_xrc_gcc_urus.dll" />
 			<Add directory="../../../devel31" />
 			<Add directory="$(#WX31.lib)" />
 		</Linker>

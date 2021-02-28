@@ -3,7 +3,6 @@
 	<FileVersion major="1" minor="6" />
 	<Project>
 		<Option title="HexEditor wx3.1.x" />
-		<Option platforms="Windows;" />
 		<Option pch_mode="2" />
 		<Option compiler="mingw32-gcc" />
 		<Build>
@@ -21,6 +20,7 @@
 					<Add option="-mthreads" />
 					<Add option="-fmessage-length=0" />
 					<Add option="-fexceptions" />
+					<Add option="`wx-config --toolkit=msw --cflags`" />
 					<Add option="-DHAVE_W32API_H" />
 					<Add option="-D__WXMSW__" />
 					<Add option="-DWXUSINGDLL" />
@@ -36,9 +36,8 @@
 				<Linker>
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-mthreads" />
+					<Add option="`wx-config --toolkit=msw --libs`" />
 					<Add library="codeblocks" />
-					<Add library="../../../devel31/wxbase310u_urus_gcc_urus.dll" />
-					<Add library="../../../devel31/wxmsw310u_urus_core_gcc_urus.dll" />
 					<Add directory="$(#WX31.lib)" />
 					<Add directory="../../../devel31" />
 				</Linker>

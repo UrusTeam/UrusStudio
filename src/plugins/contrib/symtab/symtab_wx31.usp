@@ -35,6 +35,7 @@
 			<Add option="-mthreads" />
 			<Add option="-fexceptions" />
 			<Add option="-fpermissive" />
+			<Add option="`wx-config --toolkit=msw --cflags`" />
 			<Add option="-DBUILDING_PLUGIN" />
 			<Add option="-DNOPCH" />
 			<Add option="-DHAVE_W32API_H" />
@@ -54,10 +55,8 @@
 			<Add option="-s" />
 			<Add option="-Wl,--enable-auto-import" />
 			<Add option="-mthreads" />
+			<Add option="`wx-config --toolkit=msw --libs`" />
 			<Add library="codeblocks" />
-			<Add library="../../../devel31/wxbase310u_urus_gcc_urus.dll" />
-			<Add library="../../../devel31/wxmsw310u_urus_core_gcc_urus.dll" />
-			<Add library="../../../devel31/wxmsw310u_urus_xrc_gcc_urus.dll" />
 			<Add directory="../../../devel31" />
 			<Add directory="$(#WX31.lib)" />
 		</Linker>

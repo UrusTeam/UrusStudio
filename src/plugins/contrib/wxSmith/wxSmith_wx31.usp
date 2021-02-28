@@ -54,6 +54,7 @@
 			<Add option="-mthreads" />
 			<Add option="-fmessage-length=0" />
 			<Add option="-fexceptions" />
+			<Add option="`wx-config --toolkit=msw --cflags`" />
 			<Add option="-DHAVE_W32API_H" />
 			<Add option="-D__WXMSW__" />
 			<Add option="-DWXUSINGDLL" />
@@ -84,26 +85,18 @@
 			<Add option="-Wl,--add-stdcall-alias" />
 			<Add option="-Wl,--enable-auto-import" />
 			<Add option="-mthreads" />
+			<Add option="`wx-config --toolkit=msw --libs`" />
 			<Add library="codeblocks" />
 			<Add library="wxscintilla_cb" />
 			<Add library="sqplus" />
 			<Add library="sqstdlib" />
 			<Add library="squirrel" />
 			<Add library="txml" />
-			<Add library="wxbase310u_urus_gcc_urus" />
-			<Add library="wxbase310u_urus_xml_gcc_urus" />
-			<Add library="wxmsw310u_urus_core_gcc_urus" />
-			<Add library="wxmsw310u_urus_xrc_gcc_urus" />
-			<Add library="wxmsw310u_urus_adv_gcc_urus" />
-			<Add library="wxmsw310u_urus_aui_gcc_urus" />
-			<Add library="wxmsw310u_urus_propgrid_gcc_urus" />
-			<Add library="wxmsw310u_urus_html_gcc_urus" />
-			<Add library="wxmsw310u_urus_richtext_gcc_urus" />
 			<Add directory="$(#WX31.lib)" />
 			<Add directory="../../../devel31" />
 		</Linker>
 		<ExtraCommands>
-			<Add after="sh update31" />
+			<Add after="sh -c update31" />
 			<Mode after="always" />
 		</ExtraCommands>
 		<Unit filename="plugin/wxsmithpluginregistrants.cpp">
@@ -206,6 +199,9 @@
 			<Option target="wxSmithLib" />
 		</Unit>
 		<Unit filename="properties/wxsstringproperty.h">
+			<Option target="wxSmithLib" />
+		</Unit>
+		<Unit filename="properties/wxstwolongproperty.cpp">
 			<Option target="wxSmithLib" />
 		</Unit>
 		<Unit filename="wxsadvqpp.cpp">

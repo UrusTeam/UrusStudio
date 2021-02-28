@@ -37,16 +37,13 @@
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
 					<Add library="wxscintilla_cb" />
-					<Add library="../../../devel31/wxbase310u_urus_gcc_urus.dll" />
-					<Add library="../../../devel31/wxmsw310u_urus_core_gcc_urus.dll" />
-					<Add library="../../../devel31/wxmsw310u_urus_xrc_gcc_urus.dll" />
 					<Add directory="../../../devel31" />
 					<Add directory="$(#WX31.lib)" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="zip -jq9 ../../../devel31/share/urusstudio/IncrementalSearch.zip manifest.xml *.xrc" />
 					<Add after="zip -Rq9 ../../../devel31/share/urusstudio/IncrementalSearch.zip images/*.png images/16x16/*.png" />
-					<Add after="sh update31" />
+					<Add after="sh -c update31" />
 					<Mode after="always" />
 				</ExtraCommands>
 				<Environment>
@@ -61,9 +58,11 @@
 		</VirtualTargets>
 		<Compiler>
 			<Add option="-std=gnu++11" />
+			<Add option="`wx-config --toolkit=msw --cflags`" />
 		</Compiler>
 		<Linker>
 			<Add option="-s" />
+			<Add option="`wx-config --toolkit=msw --libs`" />
 		</Linker>
 		<Unit filename="IncrementalSearch.cpp" />
 		<Unit filename="IncrementalSearch.h" />

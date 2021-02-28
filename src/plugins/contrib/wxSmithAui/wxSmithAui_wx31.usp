@@ -44,12 +44,13 @@
 				<Option projectResourceIncludeDirsRelation="2" />
 				<Option projectLibDirsRelation="2" />
 				<Compiler>
+					<Add option="-std=gnu++11" />
 					<Add option="$(#CB_RELEASE_TYPE)" />
 					<Add option="-pipe" />
 					<Add option="-mthreads" />
 					<Add option="-fmessage-length=0" />
 					<Add option="-fexceptions" />
-					<Add option="-std=gnu++11" />
+					<Add option="`wx-config --toolkit=msw --cflags`" />
 					<Add option="-DHAVE_W32API_H" />
 					<Add option="-D__WXMSW__" />
 					<Add directory="$(#WX31.include)" />
@@ -61,10 +62,7 @@
 					<Add option="-Wl,--add-stdcall-alias" />
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-mthreads" />
-					<Add library="wxbase310u_urus_gcc_urus" />
-					<Add library="wxmsw310u_urus_core_gcc_urus" />
-					<Add library="wxmsw310u_urus_aui_gcc_urus" />
-					<Add library="wxmsw310u_urus_propgrid_gcc_urus" />
+					<Add option="`wx-config --toolkit=msw --libs`" />
 					<Add directory="$(#WX31.lib)" />
 				</Linker>
 				<ExtraCommands>

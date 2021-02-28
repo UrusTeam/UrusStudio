@@ -38,6 +38,7 @@
 			<Add option="-fmessage-length=0" />
 			<Add option="-fexceptions" />
 			<Add option="-mthreads" />
+			<Add option="`wx-config --toolkit=msw --cflags`" />
 			<Add option="-DNOPCH" />
 			<Add option="-DHAVE_W32API_H" />
 			<Add option="-D__WXMSW__" />
@@ -62,20 +63,18 @@
 			<Add option="-s" />
 			<Add option="-Wl,--enable-auto-import" />
 			<Add option="-mthreads" />
+			<Add option="`wx-config --toolkit=msw --libs`" />
 			<Add library="wxflatnotebook" />
 			<Add library="codeblocks" />
 			<Add library="txml" />
 			<Add library="sqplus" />
 			<Add library="sqstdlib" />
 			<Add library="squirrel" />
-			<Add library="wxmsw310u_urus_core_gcc_urus" />
-			<Add library="wxbase310u_urus_gcc_urus" />
-			<Add library="wxbase310u_urus_net_gcc_urus" />
 			<Add directory="$(#WX31.lib)" />
 			<Add directory="../../../devel31" />
 		</Linker>
 		<ExtraCommands>
-			<Add after="sh ./update31" />
+			<Add after="sh -c ./update31" />
 			<Mode after="always" />
 		</ExtraCommands>
 		<Unit filename="defsdownloaddlg.cpp" />

@@ -22,7 +22,7 @@
 					<Add directory="." />
 				</Compiler>
 				<ExtraCommands>
-					<Add after="cmd.exe /c copy /Y manifest_cpp.xml manifest.xml" />
+					<Add after="cp -f manifest_cpp.xml manifest.xml" />
 					<Add after="zip -j9 ../../../devel31/share/urusstudio/SmartIndentCpp.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
@@ -43,7 +43,7 @@
 					<Add directory="." />
 				</Compiler>
 				<ExtraCommands>
-					<Add after="cmd.exe /c copy /Y manifest_hdl.xml manifest.xml" />
+					<Add after="cp -f manifest_hdl.xml manifest.xml" />
 					<Add after="zip -j9 ../../../devel31/share/urusstudio/SmartIndentHDL.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
@@ -64,7 +64,7 @@
 					<Add directory="." />
 				</Compiler>
 				<ExtraCommands>
-					<Add after="cmd.exe /c copy /Y manifest_pascal.xml manifest.xml" />
+					<Add after="cp -f manifest_pascal.xml manifest.xml" />
 					<Add after="zip -j9 ../../../devel31/share/urusstudio/SmartIndentPascal.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
@@ -85,7 +85,7 @@
 					<Add directory="." />
 				</Compiler>
 				<ExtraCommands>
-					<Add after="cmd.exe /c copy /Y manifest_python.xml manifest.xml" />
+					<Add after="cp -f manifest_python.xml manifest.xml" />
 					<Add after="zip -j9 ../../../devel31/share/urusstudio/SmartIndentPython.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
@@ -106,7 +106,7 @@
 					<Add directory="." />
 				</Compiler>
 				<ExtraCommands>
-					<Add after="cmd.exe /c copy /Y manifest_lua.xml manifest.xml" />
+					<Add after="cp -f manifest_lua.xml manifest.xml" />
 					<Add after="zip -j9 ../../../devel31/share/urusstudio/SmartIndentLua.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
@@ -127,7 +127,7 @@
 					<Add directory="." />
 				</Compiler>
 				<ExtraCommands>
-					<Add after="cmd.exe /c copy /Y manifest_fortran.xml manifest.xml" />
+					<Add after="cp -f manifest_fortran.xml manifest.xml" />
 					<Add after="zip -j9 ../../../devel31/share/urusstudio/SmartIndentFortran.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
@@ -148,7 +148,7 @@
 					<Add directory="." />
 				</Compiler>
 				<ExtraCommands>
-					<Add after="cmd.exe /c copy /Y manifest_xml.xml manifest.xml" />
+					<Add after="cp -f manifest_xml.xml manifest.xml" />
 					<Add after="zip -j9 ../../../devel31/share/urusstudio/SmartIndentXML.zip manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
@@ -168,6 +168,7 @@
 			<Add option="-mthreads" />
 			<Add option="-fmessage-length=0" />
 			<Add option="-fexceptions" />
+			<Add option="`wx-config --toolkit=msw --cflags`" />
 			<Add option="-DHAVE_W32API_H" />
 			<Add option="-D__WXMSW__" />
 			<Add option="-DWXUSINGDLL" />
@@ -181,10 +182,9 @@
 		</Compiler>
 		<Linker>
 			<Add option="-s" />
+			<Add option="`wx-config --toolkit=msw --libs`" />
 			<Add library="codeblocks" />
 			<Add library="wxscintilla_cb" />
-			<Add library="../../../devel31/wxbase310u_urus_gcc_urus.dll" />
-			<Add library="../../../devel31/wxmsw310u_urus_core_gcc_urus.dll" />
 			<Add directory="../../../devel31" />
 			<Add directory="$(#WX31.lib)" />
 		</Linker>

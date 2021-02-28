@@ -20,9 +20,6 @@
 					<Add library="codeblocks" />
 					<Add library="gdi32" />
 					<Add library="wxscintilla_cb" />
-					<Add library="../../../devel31/wxbase310u_urus_gcc_urus.dll" />
-					<Add library="../../../devel31/wxmsw310u_urus_core_gcc_urus.dll" />
-					<Add library="../../../devel31/wxmsw310u_urus_aui_gcc_urus.dll" />
 					<Add directory="../../../devel31" />
 					<Add directory="$(#WX31.lib)" />
 				</Linker>
@@ -43,6 +40,7 @@
 			<Add option="-mthreads" />
 			<Add option="-fmessage-length=0" />
 			<Add option="-fexceptions" />
+			<Add option="`wx-config --toolkit=msw --cflags`" />
 			<Add option="-DWXUSINGDLL" />
 			<Add option="-DHAVE_W32API_H" />
 			<Add option="-D__WXMSW__" />
@@ -58,10 +56,11 @@
 		<Linker>
 			<Add option="-s" />
 			<Add option="-mthreads" />
+			<Add option="`wx-config --toolkit=msw --libs`" />
 		</Linker>
 		<ExtraCommands>
 			<Add after="zip -j9 ../../../devel31/share/urusstudio/ToolsPlus.zip manifest.xml" />
-			<Add after="update31.bat" />
+			<Add after="sh -c ./update31" />
 			<Mode after="always" />
 		</ExtraCommands>
 		<Unit filename="CmdConfigDialog.cpp" />
