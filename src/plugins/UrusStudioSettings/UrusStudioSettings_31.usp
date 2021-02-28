@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<UrusStudio_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Urus Studio Settings" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="win">
+				<Option platforms="Windows;" />
+				<Option output="../../devel/share/urusstudio/plugins/urusstudiosettings.dll" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="../../devel" />
+				<Option object_output="../../.objs/plugins/urusstudiosettings" />
+				<Option type="3" />
+				<Option compiler="mingw32-gcc" />
+				<Option host_application="$(#cb)/devel/urusstudio.exe" />
+				<Option run_host_application_in_terminal="0" />
+				<Compiler>
+					<Add option="-fPIC" />
+					<Add option="-g" />
+					<Add option="$(#CB_RELEASE_TYPE)" />
+					<Add option="-pipe" />
+					<Add option="-mthreads" />
+					<Add option="-fmessage-length=0" />
+					<Add option="-fexceptions" />
+					<Add option="-Winvalid-pch" />
+					<Add option="-fpermissive" />
+					<Add option="-DBUILDING_PLUGIN" />
+					<Add option="-DHAVE_W32API_H" />
+					<Add option="-D__WXMSW__" />
+					<Add option="-DWXUSINGDLL" />
+					<Add option="-DwxUSE_UNICODE" />
+					<Add directory="$(#cb)/include" />
+					<Add directory="$(#wx)/include/wxsmith/wxwidgets" />
+					<Add directory="$(#wx)/include/wxsmith/properties" />
+					<Add directory="$(#wx)/include/wxsmith" />
+					<Add directory="$(#wx)/include/urusstudio/wxpropgrid/include" />
+					<Add directory="$(#cb)/sdk/wxscintilla/include" />
+					<Add directory="$(#wx.include)" />
+					<Add directory="$(#wx.lib)" />
+					<Add directory="$(#wxsetup.include)" />
+					<Add directory="../../include/tinyxml" />
+				</Compiler>
+				<Linker>
+					<Add option="-mthreads" />
+					<Add library="codeblocks" />
+					<Add library="$(#wx.wxlibs)" />
+					<Add library="wxsmithlib" />
+					<Add library="wxpropgrid" />
+					<Add directory="$(#cb)/devel" />
+					<Add directory="$(#wx.lib)" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="mkdir -p ../../devel/share/urusstudio" />
+					<Add after="zip -j9 ../../devel/share/urusstudio/urusstudiosettings.zip manifest.xml resources/*.xrc" />
+					<Add after='sh -c &quot;cd resources &amp;&amp; zip -0 -q ../../../devel/share/urusstudio/urusstudiosettings.zip images/*.png images/16x16/*.png&quot;' />
+					<Mode after="always" />
+				</ExtraCommands>
+			</Target>
+			<Target title="unix">
+				<Option platforms="Unix;Mac;" />
+				<Option output="../../devel/share/urusstudio/plugins/liburusstudiosettings" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="../../devel" />
+				<Option object_output="../../.objs/plugins/urusstudiosettings" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option host_application="$(#cb)/devel/urusstudio.exe" />
+				<Option run_host_application_in_terminal="0" />
+				<Compiler>
+					<Add option="-fPIC" />
+					<Add option="-pipe" />
+					<Add option="-fmessage-length=0" />
+					<Add option="-fexceptions" />
+					<Add option="-Winvalid-pch" />
+					<Add option="-fpermissive" />
+					<Add option="-D__WXGTK__" />
+					<Add option="-DFILE_OFFSET_BITS=64" />
+					<Add option="-DwxDEBUG_LEVEL=0" />
+					<Add option="-DWXUSINGDLL" />
+					<Add option="-DGTK_VERSION=2" />
+					<Add directory="$(#cb)/include" />
+					<Add directory="$(#cb)/sdk/wxscintilla/include" />
+					<Add directory="$(#wx.include)" />
+					<Add directory="$(#wx.lib)" />
+					<Add directory="$(#wxsetup.include)" />
+					<Add directory="../../include/tinyxml" />
+				</Compiler>
+				<Linker>
+					<Add library="codeblocks" />
+					<Add library="$(#wx.wxlibs)" />
+					<Add directory="$(#cb)/devel" />
+					<Add directory="$(#wx.lib)" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="mkdir -p ../../devel/share/urusstudio" />
+					<Add after="zip -j9 ../../devel/share/urusstudio/urusstudiosettings.zip manifest.xml resources/*.xrc" />
+					<Add after='sh -c &quot;cd resources &amp;&amp; zip -0 -q ../../../devel/share/urusstudio/urusstudiosettings.zip images/*.png images/16x16/*.png&quot;' />
+					<Mode after="always" />
+				</ExtraCommands>
+			</Target>
+		</Build>
+		<VirtualTargets>
+			<Add alias="All" targets="win;unix;" />
+		</VirtualTargets>
+		<Compiler>
+			<Add option="$(#CB_RELEASE_TYPE)" />
+			<Add option="-std=gnu++11" />
+			<Add option="-Wno-unused-local-typedefs" />
+		</Compiler>
+		<Linker>
+			<Add option="-Wl,--no-undefined" />
+		</Linker>
+		<Unit filename="FMainSettings.cpp" />
+		<Unit filename="FMainSettings.h" />
+		<Unit filename="manifest.xml" />
+		<Unit filename="resources/images/16x16/compile.png" />
+		<Unit filename="resources/images/compile.png" />
+		<Unit filename="resources/urussettings_toolbar.xrc" />
+		<Unit filename="resources/urussettings_toolbar_16x16.xrc" />
+		<Unit filename="urusstudiosettings.cpp" />
+		<Unit filename="urusstudiosettings.h" />
+		<Unit filename="wxsmith/FMainSettings.wxs" />
+		<Extensions>
+			<wxsmith version="1">
+				<gui name="wxWidgets" src="" main="" init_handlers="necessary" language="CPP" />
+				<resources>
+					<wxPanel wxs="wxsmith/FMainSettings.wxs" src="FMainSettings.cpp" hdr="FMainSettings.h" fwddecl="0" i18n="1" name="FMainSettings" language="CPP" />
+				</resources>
+			</wxsmith>
+		</Extensions>
+	</Project>
+</UrusStudio_project_file>
