@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # MSYSTEM is defined when cross-compilig with MinGW/MSYS
-if [ "x$MSYSTEM" != "x" ] ; then
+if [ "x$MSYSTEM" != "x1" ] ; then
   echo Updating MinGW32/cross version.
   EXEEXT=".exe"
   LIBEXT="dll"
@@ -30,6 +30,7 @@ mkdir -p devel31/share/urusstudio/plugins
 mkdir -p devel31/share/urusstudio/templates
 mkdir -p devel31/share/urusstudio/templates/wizard
 mkdir -p devel31/share/urusstudio/scripts/tests
+mkdir -p devel31/share/urusstudio/icons
 mkdir -p output31/share/urusstudio/compilers
 mkdir -p output31/share/urusstudio/lexers
 mkdir -p output31/share/urusstudio/images/settings
@@ -40,6 +41,7 @@ mkdir -p output31/share/urusstudio/plugins
 mkdir -p output31/share/urusstudio/templates
 mkdir -p output31/share/urusstudio/templates/wizard
 mkdir -p output31/share/urusstudio/scripts/tests
+mkdir -p output31/share/urusstudio/icons
 
 ZIPCMD="zip"
 RESDIR="devel31/share/urusstudio"
@@ -51,7 +53,7 @@ echo Compressing plugins UI resources
 ${ZIPCMD} -jqu9 ${RESDIR}/Astyle.zip plugins/astyle/resources/manifest.xml plugins/astyle/resources/*.xrc > /dev/null
 ${ZIPCMD} -jqu9 ${RESDIR}/autosave.zip plugins/autosave/manifest.xml plugins/autosave/*.xrc > /dev/null
 ${ZIPCMD} -jqu9 ${RESDIR}/classwizard.zip plugins/classwizard/resources/manifest.xml plugins/classwizard/resources/*.xrc > /dev/null
-${ZIPCMD} -jqu9 ${RESDIR}/codecompletion.zip plugins/codecompletion/resources/manifest.xml plugins/codecompletion/resources/*.xrc > /dev/null
+${ZIPCMD} -jqu9 ${RESDIR}/codecompletion.zip plugins/codecompletion/resources/manifest.xml plugins/codecompletion/resources/*.xrc 2>/dev/null
 ${ZIPCMD} -jqu9 ${RESDIR}/compiler.zip plugins/compilergcc/resources/manifest.xml plugins/compilergcc/resources/*.xrc > /dev/null
 ${ZIPCMD} -jqu9 ${RESDIR}/debugger.zip plugins/debuggergdb/resources/manifest.xml plugins/debuggergdb/resources/*.xrc > /dev/null
 ${ZIPCMD} -jqu9 ${RESDIR}/defaultmimehandler.zip plugins/defaultmimehandler/resources/manifest.xml plugins/defaultmimehandler/resources/*.xrc > /dev/null
@@ -63,7 +65,7 @@ ${ZIPCMD} -jqu9 ${RESDIR}/todo.zip plugins/todo/resources/manifest.xml plugins/t
 ${ZIPCMD} -jqu9 ${RESDIR}/abbreviations.zip plugins/abbreviations/resources/manifest.xml plugins/abbreviations/resources/*.xrc > /dev/null
 echo Packing core UI bitmaps
 cd src/resources
-${ZIPCMD} -0 -qu ../../${RESDIR}/resources.zip images/*.png images/16x16/*.png images/12x12/*.png > /dev/null
+${ZIPCMD} -0 -qu ../../${RESDIR}/resources.zip images/*.png images/16x16/*.png images/12x12/*.png images/infopane/16x16/*.png images/tree/16x16/*.png > /dev/null
 cd ../../sdk/resources
 ${ZIPCMD} -0 -qu ../../${RESDIR}/manager_resources.zip images/*.png images/16x16/*.png images/12x12/*.png > /dev/null
 echo Packing plugins UI bitmaps
@@ -81,9 +83,12 @@ echo Makefile.am >> excludes.txt
 echo Makefile.in >> excludes.txt
 cp -f sdk/resources/lexers/lexer_* ${RESDIR}/lexers > /dev/null
 cp -f src/resources/images/*.png ${RESDIR}/images > /dev/null
+cp -f src/resources/icons/*.xpm ${RESDIR}/icons > /dev/null
+cp -f src/resources/icons/*.ico ${RESDIR}/icons > /dev/null
+cp -f src/resources/icons/*.r ${RESDIR}/icons > /dev/null
 cp -f src/resources/images/settings/*.png ${RESDIR}/images/settings > /dev/null
 cp -f src/resources/images/16x16/*.png ${RESDIR}/images/16x16 > /dev/null
-cp -f plugins/codecompletion/resources/images/*.png ${RESDIR}/images/codecompletion > /dev/null
+cp -f plugins/codecompletion/resources/images/*.png ${RESDIR}/images/codecompletion 2>/dev/null
 cp -f plugins/compilergcc/resources/compilers/*.xml ${RESDIR}/compilers > /dev/null
 
 cp -f ${RESDIR}/*.zip output31/share/urusstudio > /dev/null
@@ -91,7 +96,7 @@ cp -f sdk/resources/lexers/lexer_* output31/share/urusstudio/lexers > /dev/null
 cp -f src/resources/images/*.png output31/share/urusstudio/images > /dev/null
 cp -f src/resources/images/settings/*.png output31/share/urusstudio/images/settings > /dev/null
 cp -f src/resources/images/16x16/*.png output31/share/urusstudio/images/16x16 > /dev/null
-cp -f plugins/codecompletion/resources/images/*.png output31/share/urusstudio/images/codecompletion > /dev/null
+cp -f plugins/codecompletion/resources/images/*.png output31/share/urusstudio/images/codecompletion 2>/dev/null
 cp -f plugins/compilergcc/resources/compilers/*.xml output31/share/urusstudio/compilers > /dev/null
 
 # several contrib plugins
@@ -110,11 +115,11 @@ fi
 if [ -d "devel31/share/urusstudio/images/ThreadSearch" ]
 then
   mkdir -p output31/share/urusstudio/images/ThreadSearch
-  cp -f devel31/share/urusstudio/images/ThreadSearch/*.png output31/share/urusstudio/images/ThreadSearch > /dev/null
+  cp -f devel31/share/urusstudio/images/ThreadSearch/*.png output31/share/urusstudio/images/ThreadSearch 2> /dev/null
   mkdir -p output31/share/urusstudio/images/ThreadSearch/16x16
-  cp -f devel31/share/urusstudio/images/ThreadSearch/16x16/*.png output31/share/urusstudio/images/ThreadSearch/16x16 > /dev/null
+  cp -f devel31/share/urusstudio/images/ThreadSearch/16x16/*.png output31/share/urusstudio/images/ThreadSearch/16x16 2> /dev/null
   mkdir -p output31/share/urusstudio/images/ThreadSearch/22x22
-  cp -f devel31/share/urusstudio/images/ThreadSearch/22x22/*.png output31/share/urusstudio/images/ThreadSearch/22x22 > /dev/null
+  cp -f devel31/share/urusstudio/images/ThreadSearch/22x22/*.png output31/share/urusstudio/images/ThreadSearch/22x22 2> /dev/null
 fi
 if [ -d "devel31/share/urusstudio/images/wxsmith" ]
 then
@@ -129,6 +134,7 @@ fi
 # misc. contrib plugin settings:
 cp -f devel31/share/urusstudio/images/16x16/*.png    output31/share/urusstudio/images/16x16    > /dev/null
 cp -f devel31/share/urusstudio/images/settings/*.png output31/share/urusstudio/images/settings > /dev/null
+cp -rf devel31/share/urusstudio/icons   output31/share/urusstudio/  2> /dev/null
 
 rsync -au --exclude-from=excludes.txt plugins/scriptedwizard/resources/ ${RESDIR}/templates/wizard > /dev/null
 rsync -au --exclude-from=excludes.txt plugins/scriptedwizard/resources/ output31/share/urusstudio/templates/wizard > /dev/null
@@ -137,11 +143,11 @@ rsync -au --exclude-from=excludes.txt templates/unix/ output31/share/urusstudio/
 rsync -au --exclude-from=excludes.txt templates/common/ ${RESDIR}/templates > /dev/null
 rsync -au --exclude-from=excludes.txt templates/unix/ ${RESDIR}/templates > /dev/null
 cp -f scripts/*.script ${RESDIR}/scripts > /dev/null
-cp -f scripts/*.script output31/share/urusstudio/scripts > /dev/null
-cp -f scripts/tests/*.script ${RESDIR}/scripts/tests > /dev/null
-cp -f scripts/tests/*.script output31/share/urusstudio/scripts/tests > /dev/null
-cp -f scripts/*.gdb ${RESDIR}/scripts > /dev/null
-cp -f scripts/*.gdb output31/share/urusstudio/scripts > /dev/null
+cp -f scripts/*.script output31/share/urusstudio/scripts 2>/dev/null
+cp -f scripts/tests/*.script ${RESDIR}/scripts/tests 2>/dev/null
+cp -f scripts/tests/*.script output31/share/urusstudio/scripts/tests 2>/dev/null
+cp -f scripts/*.gdb ${RESDIR}/scripts 2>/dev/null
+cp -f scripts/*.gdb output31/share/urusstudio/scripts 2>/dev/null
 cp -f tips.txt devel31/share/urusstudio > /dev/null
 cp -f tips.txt output31/share/urusstudio > /dev/null
 cp -f tools/ConsoleRunner/cb_console_runner${EXEEXT} output31 > /dev/null
@@ -161,6 +167,9 @@ then
 fi
 cp -f devel31/*.${LIBEXT} output31 > /dev/null
 cp -f ${RESDIR}/plugins/*.${LIBEXT} output31/share/urusstudio/plugins > /dev/null
+
+cp -f devel31/start_urusstudio${EXEEXT} output31 > /dev/null
+
 # Now remove the exclude pattern file
 rm excludes.txt
 
