@@ -244,6 +244,7 @@
 					<Add after="cd src/resources &amp;&amp; zip -0 -q ../../devel31/share/urusstudio/resources.zip images/*.png images/16x16/*.png" />
 					<Add after="cp -f exchndl/win32/bin/*.dll devel31/ &amp;&gt;/dev/null" />
 					<Add after="cp -f exchndl/win32/bin/symsrv.yes devel31/ &amp;&gt;/dev/null" />
+					<Add after="sh -c ./update31" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
