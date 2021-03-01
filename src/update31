@@ -172,6 +172,10 @@ cp -f devel31/start_urusstudio${EXEEXT} output31 > /dev/null
 
 # Now remove the exclude pattern file
 rm excludes.txt
+rm -f devel31/dbgcore.dll
+rm -f devel31/dbghelp.dll
+rm -f output31/dbgcore.dll
+rm -f output31/dbghelp.dll
 
 echo Stripping debug info from output tree
 strip output31/urusstudio${EXEEXT} > /dev/null
