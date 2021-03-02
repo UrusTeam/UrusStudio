@@ -39,7 +39,7 @@ LibWxNet <- false; // Net Lib
 LibWxOpengl <- false; // OpenGL Lib
 LibWxQa <- false; // QA Lib
 LibWxRichText <- false; // Richtext Lib
-WxVersion <- 1; // 0 - wx 2.6, 1 - wx 2.8, 2 - wx 3.0, 3 -wx 3.1
+WxVersion <- 3; // 0 - wx 2.6, 1 - wx 2.8, 2 - wx 3.0, 3 -wx 3.1
 DebugTarget <- 1; // Target Type; 0 - Console, 1 - GUI
 ReleaseTarget <- 1; // Target Type; 0 - Console, 1 - GUI
 FileName <- _T(""); // Filename for wizard
