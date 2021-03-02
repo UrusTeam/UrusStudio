@@ -60,7 +60,7 @@
 				</Linker>
 			</Target>
 			<Target title="ConsoleRunner">
-				<Option output="devel31/cb_console_runner.exe" prefix_auto="0" extension_auto="0" />
+				<Option output="tools/ConsoleRunner/cb_console_runner.exe" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="tools/ConsoleRunner" />
 				<Option object_output=".objs31" />
 				<Option type="1" />
@@ -784,6 +784,7 @@
 				<ExtraCommands>
 					<Add after="mkdir -p devel31/share/urusstudio" />
 					<Add after="zip -jq9 devel31/share/urusstudio/xpmanifest.zip plugins/xpmanifest/manifest.xml" />
+					<Add after="sh -c ./update31" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
@@ -794,7 +795,7 @@
 			</Environment>
 		</Build>
 		<VirtualTargets>
-			<Add alias="All" targets="tinyXML;AutoRevision;ConsoleRunner;Squirrel;Squirrel std lib;SqPlus;scintilla;sdk;src;Abbreviations;AStyle;Autosave;Compiler depslib;Compiler;Debugger;Code-completion;Class wizard;Default MIME handler;Occurrences Highlighting;Open files list;Projects-workspaces importer;To-do;XP look &amp; feel;Scripted wizard;" />
+			<Add alias="All" targets="tinyXML_autorevision;tinyXML;AutoRevision;ConsoleRunner;Squirrel;Squirrel std lib;SqPlus;scintilla;sdk;src;Abbreviations;AStyle;Autosave;Compiler depslib;Compiler;Debugger;Code-completion;Class wizard;Default MIME handler;Occurrences Highlighting;Open files list;Projects-workspaces importer;Scripted wizard;To-do;XP look &amp; feel;" />
 			<Add alias="Core app &amp; plugins" targets="sdk;src;Abbreviations;AStyle;Autosave;Compiler depslib;Compiler;Debugger;Code-completion;Class wizard;Default MIME handler;Occurrences Highlighting;Open files list;Projects-workspaces importer;To-do;XP look &amp; feel;Scripted wizard;" />
 			<Add alias="Third-party libs" targets="tinyXML;AutoRevision;ConsoleRunner;Squirrel;Squirrel std lib;scintilla;Compiler depslib;SqPlus;" />
 		</VirtualTargets>
@@ -833,8 +834,6 @@
 		<ExtraCommands>
 			<Add after="mkdir -p devel31/ &amp;&gt;/dev/null" />
 			<Add after="cp -f sdk/scripting/lib/*.dll devel31/ &amp;&gt;/dev/null" />
-			<Add after="cp -f $(#WX31.lib)/*.dll devel31/ &amp;&gt;/dev/null" />
-			<Add after="cp -f $(#WX31.lib)/*.a devel31/ &amp;&gt;/dev/null" />
 			<Add after="cp -f plugins/compilergcc/depslib/*.dll devel31/ &amp;&gt;/dev/null" />
 			<Mode after="always" />
 		</ExtraCommands>
@@ -2507,6 +2506,15 @@
 			<Option target="Scripted wizard" />
 		</Unit>
 		<Unit filename="plugins/scriptedwizard/resources/tricore/wizard.xrc">
+			<Option target="Scripted wizard" />
+		</Unit>
+		<Unit filename="plugins/scriptedwizard/resources/urus/console/wizard.script">
+			<Option target="Scripted wizard" />
+		</Unit>
+		<Unit filename="plugins/scriptedwizard/resources/urus/gui/wizard.script">
+			<Option target="Scripted wizard" />
+		</Unit>
+		<Unit filename="plugins/scriptedwizard/resources/urus/urdriver/wizard.script">
 			<Option target="Scripted wizard" />
 		</Unit>
 		<Unit filename="plugins/scriptedwizard/resources/win32gui/wizard.script">
