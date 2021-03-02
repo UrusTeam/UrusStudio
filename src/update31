@@ -31,6 +31,10 @@ mkdir -p devel31/share/urusstudio/templates
 mkdir -p devel31/share/urusstudio/templates/wizard
 mkdir -p devel31/share/urusstudio/scripts/tests
 mkdir -p devel31/share/urusstudio/icons
+mkdir -p devel31/lib
+mkdir -p devel31/bin
+mkdir -p devel31/include
+
 mkdir -p output31/share/urusstudio/compilers
 mkdir -p output31/share/urusstudio/lexers
 mkdir -p output31/share/urusstudio/images/settings
@@ -42,6 +46,9 @@ mkdir -p output31/share/urusstudio/templates
 mkdir -p output31/share/urusstudio/templates/wizard
 mkdir -p output31/share/urusstudio/scripts/tests
 mkdir -p output31/share/urusstudio/icons
+mkdir -p output31/lib
+mkdir -p output31/bin
+mkdir -p output31/include
 
 ZIPCMD="zip"
 RESDIR="devel31/share/urusstudio"
@@ -166,9 +173,14 @@ then
   cp -f devel31/codesnippets${EXEEXT} output31 > /dev/null
 fi
 cp -f devel31/*.${LIBEXT} output31 > /dev/null
-cp -f ${RESDIR}/plugins/*.${LIBEXT} output31/share/urusstudio/plugins > /dev/null
+cp -f ${RESDIR}/plugins/*.${LIBEXT} output31/share/urusstudio/plugins 2> /dev/null
 
-cp -f devel31/start_urusstudio${EXEEXT} output31 > /dev/null
+cp -f devel31/start_urusstudio${EXEEXT} output31 2> /dev/null
+
+cp -f /system/urus/include/urusstudio output31/include 2> /dev/null
+cp -f /system/urus/include/wxsmith output31/include 2> /dev/null
+cp -f /system/urus/include/urusstudio devel31/include 2> /dev/null
+cp -f /system/urus/include/wxsmith devel31/include 2> /dev/null
 
 # Now remove the exclude pattern file
 rm excludes.txt
@@ -210,6 +222,12 @@ if [ "x$MSYSTEM" = "x" ] & [ ! "$uname_str" = "Darwin" ]; then
   echo "\$APP_DIR/urusstudio \$@" >> devel31/run.sh
   chmod +x devel31/run.sh
 fi
+
+find output31/ -maxdepth 1 -type f -exec mv {} output31/bin \;
+cp -rf /system/urus/include/urusstudio output31/include/ 2>/dev/null
+cp -rf /system/urus/include/wxsmith output31/include/ 2>/dev/null
+mv output31/bin/start_urusstudio${EXEEXT} output31/ 2>/dev/null
+mv output31/bin/*.${LIBEXT} output31/lib/ 2>/dev/null
 
 ZIPCMD=
 RESDIR=
