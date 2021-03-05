@@ -29,6 +29,9 @@
 					<Add option="-D__WXMSW__" />
 					<Add option="-DWXUSINGDLL" />
 					<Add option="-DwxUSE_UNICODE" />
+					<Add directory="../../include" />
+					<Add directory="../../sdk/wxscintilla/include" />
+					<Add directory="../../include/tinyxml" />
 					<Add directory="$(#cb)/include" />
 					<Add directory="$(#wx)/include/wxsmith/wxwidgets" />
 					<Add directory="$(#wx)/include/wxsmith/properties" />
@@ -38,7 +41,6 @@
 					<Add directory="$(#wx.include)" />
 					<Add directory="$(#wx.lib)" />
 					<Add directory="$(#wxsetup.include)" />
-					<Add directory="../../include/tinyxml" />
 				</Compiler>
 				<Linker>
 					<Add option="-mthreads" />
