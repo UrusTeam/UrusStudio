@@ -257,7 +257,6 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -272,7 +271,6 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx31.wxlibs)" />
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
@@ -294,7 +292,6 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add option="-DASTYLE_LIB" />
@@ -308,7 +305,6 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx31.wxlibs)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
@@ -330,7 +326,6 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -342,7 +337,6 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx31.wxlibs)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
@@ -382,7 +376,6 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -397,7 +390,6 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx31.wxlibs)" />
 					<Add library="depslib" />
 					<Add library="wxscintilla_cb" />
 					<Add library="squirrel" />
@@ -424,7 +416,6 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -438,7 +429,6 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx31.wxlibs)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
@@ -461,7 +451,6 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add option="-DCC_NO_COLLAPSE_ITEM" />
@@ -480,7 +469,6 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx31.wxlibs)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
@@ -503,7 +491,6 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -515,7 +502,6 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx31.wxlibs)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
@@ -538,7 +524,6 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -550,7 +535,6 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx31.wxlibs)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
@@ -573,7 +557,6 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -585,7 +568,6 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx31.wxlibs)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
@@ -608,7 +590,6 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -620,7 +601,6 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx31.wxlibs)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
@@ -643,7 +623,6 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -661,7 +640,6 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx31.wxlibs)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
@@ -684,7 +662,6 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -698,7 +675,6 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx31.wxlibs)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
@@ -721,7 +697,6 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -739,7 +714,6 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx31.wxlibs)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
@@ -762,7 +736,6 @@
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option host_application="./urusstudio.exe" />
 				<Option run_host_application_in_terminal="0" />
-				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
@@ -774,7 +747,6 @@
 					<Add option="-Wl,--no-undefined" />
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
-					<Add library="$(#wx31.wxlibs)" />
 					<Add library="wxscintilla_cb" />
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
