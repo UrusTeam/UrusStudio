@@ -174,6 +174,18 @@ build_usp()
     done
 }
 
+copy_urusstudio_includes()
+{
+    cd $URUSSTDTOPDIR/src
+    mkdir -p devel31/include/urusstudio/wxscintilla
+    cp -rf include/* devel31/include/urusstudio/
+    cp -rf sdk/wxscintilla/include devel31/include/urusstudio/wxscintilla
+    cd plugins/contrib
+    find wxContribItems -name '*.h' -exec cp --parents \{\} ../../devel31/include/urusstudio/ \;
+    find wxSmith -name '*.h' -exec cp --parents \{\} ../../devel31/include/ \;
+    cd $URUSSTDTOPDIR/src
+}
+
 #Only for Unix Like, on Windows we don't make it.
 if [ "x$NO_BUILD_ALL" = "x" ] ; then
     if [ "x$MSYSTEM" = "x" ] ; then
@@ -206,7 +218,6 @@ if [ "x$NO_BUILD_ALL" = "x" ] ; then
             make -j6
             make install
         fi
-        cd $URUSSTDTOPDIR
     else
         cd $URUSSTDTOPDIR
         pint_dots 40
@@ -228,8 +239,9 @@ if [ "x$NO_BUILD_ALL" = "x" ] ; then
         tar -cJf $URUSBASEDIR/toolchain/host-$($HOSTTARGET)-${WXVERSIONFULL}-urusstudio.tar.xz *
         cd $URUSBASEDIR/toolchain/
         md5sum host-$($HOSTTARGET)-${WXVERSIONFULL}-urusstudio.tar.xz > host-$($HOSTTARGET)-${WXVERSIONFULL}-urusstudio.tar.xz.md5
-        cd $URUSSTDTOPDIR
     fi
+    copy_urusstudio_includes
+    cd $URUSSTDTOPDIR
     pint_dots 40
     printf "Display logs...\n"
     touch $URUSSTDTOPDIR/buildci.log
