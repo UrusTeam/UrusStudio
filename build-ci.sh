@@ -48,6 +48,16 @@ export URUSBASEDIR=/system/urus
 export URUSINSTALLDIR=$URUSBASEDIR/$XURUSSDK
 export URUSSTDTOPDIR=$(pwd)
 
+if [ "x$ENABLEGIT" != "x" ] ; then
+    if [ "x$USERCIURUS" != "x" ] ; then
+        git config --global user.email $(printf "%s" $(git --no-pager log -1 -s --format="%ae"))
+        git config --global user.name "$(git --no-pager log -1 -s --format='%an')"
+    else
+        git config --global user.email $(printf "%s@%s" ${USER} $(uname -n))
+        git config --global user.name ${USER}
+    fi
+fi
+
 cd modules/wxWidgets
 export WXURUSTOPDIR=$(pwd)
 
@@ -59,8 +69,6 @@ else
   if [ "x$ENABLEGIT" != "x" ] ; then
     echo "git init"
     git init $URUSINSTALLDIR
-    git config --global user.email $(printf "%s@%s" ${USER} $(uname -n))
-    git config --global user.name ${USER}
   fi
 fi
 
