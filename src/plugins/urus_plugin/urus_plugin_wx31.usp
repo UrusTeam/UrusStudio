@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<UrusStudio_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="urus_plug" />
+		<Option pch_mode="2" />
+		<Option compiler="mingw32-gcc" />
+		<Build>
+			<Target title="wxledurus_mingw32">
+				<Option output="../../devel31/lib/urusstudio/wxContribItems/wxledurus.dll" prefix_auto="0" extension_auto="0" />
+				<Option type="3" />
+				<Option compiler="mingw32-gcc" />
+				<Option host_application="urusstudio" />
+				<Option run_host_application_in_terminal="0" />
+				<Compiler>
+					<Add option="-std=c++11" />
+					<Add option="-fPIC" />
+					<Add option="$(#CB_RELEASE_TYPE)" />
+					<Add option="-DBUILDING_PLUGIN" />
+					<Add option="-DHAVE_W32API_H" />
+					<Add option="-D__WXMSW__" />
+					<Add option="-DWXUSINGDLL" />
+					<Add option="-DwxUSE_UNICODE" />
+					<Add directory="$(#wx.include)" />
+					<Add directory="$(#wxsetup.include)" />
+					<Add directory="$(#cb)/sdk/wxscintilla/include" />
+					<Add directory="$(#cb)/include" />
+					<Add directory="$(#wx)/include/wxsmith" />
+					<Add directory="$(#wx)/include/wxsmith/wxwidgets" />
+					<Add directory="$(#wx)/include/urusstudio/tinyxml" />
+					<Add directory="$(#wx)/include/urusstudio/wxpropgrid/include" />
+					<Add directory="$(#wx)/include/urusstudio/wxContribItems/wxchart/include" />
+					<Add directory="wxledurus" />
+				</Compiler>
+				<Linker>
+					<Add directory="../../devel31" />
+				</Linker>
+			</Target>
+			<Target title="wxledpanelurus_mingw32">
+				<Option output="../../devel31/lib/urusstudio/wxContribItems/wxledpanelurus.dll" prefix_auto="0" extension_auto="0" />
+				<Option type="3" />
+				<Option compiler="mingw32-gcc" />
+				<Option host_application="urusstudio" />
+				<Option run_host_application_in_terminal="0" />
+				<Compiler>
+					<Add option="-std=c++11" />
+					<Add option="-fPIC" />
+					<Add option="$(#CB_RELEASE_TYPE)" />
+					<Add option="-DBUILDING_PLUGIN" />
+					<Add option="-DHAVE_W32API_H" />
+					<Add option="-D__WXMSW__" />
+					<Add option="-DWXUSINGDLL" />
+					<Add option="-DwxUSE_UNICODE" />
+					<Add directory="$(#wx.include)" />
+					<Add directory="$(#wxsetup.include)" />
+					<Add directory="$(#cb)/sdk/wxscintilla/include" />
+					<Add directory="$(#cb)/include" />
+					<Add directory="$(#wx)/include/wxsmith" />
+					<Add directory="$(#wx)/include/wxsmith/wxwidgets" />
+					<Add directory="$(#wx)/include/urusstudio/tinyxml" />
+					<Add directory="$(#wx)/include/urusstudio/wxpropgrid/include" />
+					<Add directory="$(#wx)/include/urusstudio/wxContribItems/wxchart/include" />
+					<Add directory="wxledpanelurus" />
+				</Compiler>
+				<Linker>
+					<Add directory="../../devel31" />
+				</Linker>
+			</Target>
+			<Target title="urus_plug_mingw32">
+				<Option output="../../devel31/share/urusstudio/plugins/urus_plug.dll" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="../../devel31" />
+				<Option object_output="../../.objs/plugins/urus_plug" />
+				<Option type="3" />
+				<Option compiler="mingw32-gcc" />
+				<Option host_application="urusstudio" />
+				<Option run_host_application_in_terminal="0" />
+				<Compiler>
+					<Add option="-std=c++11" />
+					<Add option="-fPIC" />
+					<Add option="$(#CB_RELEASE_TYPE)" />
+					<Add option="-pipe" />
+					<Add option="-fmessage-length=0" />
+					<Add option="-fexceptions" />
+					<Add option="-Winvalid-pch" />
+					<Add option="-fpermissive" />
+					<Add option="-DBUILDING_PLUGIN" />
+					<Add option="-DHAVE_W32API_H" />
+					<Add option="-D__WXMSW__" />
+					<Add option="-DWXUSINGDLL" />
+					<Add option="-DwxUSE_UNICODE" />
+					<Add directory="$(#wx.include)" />
+					<Add directory="$(#wxsetup.include)" />
+					<Add directory="$(#cb)/sdk/wxscintilla/include" />
+					<Add directory="$(#cb)/include" />
+					<Add directory="$(#wx)/include/wxsmith" />
+					<Add directory="$(#wx)/include/wxsmith/wxwidgets" />
+					<Add directory="$(#wx)/include/urusstudio/tinyxml" />
+					<Add directory="$(#wx)/include/urusstudio/wxpropgrid/include" />
+					<Add directory="$(#wx)/include/urusstudio/wxContribItems/wxchart/include" />
+					<Add directory="../../include/tinyxml" />
+				</Compiler>
+				<Linker>
+					<Add library="codeblocks" />
+					<Add library="wxledurus" />
+					<Add library="wxledpanelurus" />
+					<Add library="wxsmithlib" />
+					<Add directory="../../devel31" />
+					<Add directory="../urus_plugin" />
+					<Add directory="../../devel31/lib/urusstudio/wxContribItems" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="zip -jq9 ../../devel31/share/urusstudio/urus_plug.zip manifest.xml" />
+					<Add after="cp ../../devel31/share/urusstudio/urus_plug.zip ." />
+					<Add after="zip -jq9 urus_plug.cbplugin wxledpanelurus.dll wxledurus.dll urus_plug.dll urus_plug.zip" />
+					<Mode after="always" />
+				</ExtraCommands>
+			</Target>
+		</Build>
+		<VirtualTargets>
+			<Add alias="All" targets="wxledurus_mingw32;wxledpanelurus_mingw32;urus_plug_mingw32;" />
+		</VirtualTargets>
+		<Compiler>
+			<Add option="-std=gnu++11" />
+			<Add option="$(#CB_RELEASE_TYPE)" />
+			<Add option="-Wno-literal-suffix" />
+			<Add option="-Wno-unused-local-typedefs" />
+			<Add option="`wx-config --toolkit=msw --cflags`" />
+			<Add directory="$(#wx.include)" />
+			<Add directory="$(#wxsetup.include)" />
+			<Add directory="../contrib/wxSmith/wxwidgets" />
+		</Compiler>
+		<Linker>
+			<Add option="-s" />
+			<Add option="-Wl,--no-undefined" />
+			<Add option="`wx-config --toolkit=msw --libs`" />
+		</Linker>
+		<Unit filename="manifest.xml">
+			<Option target="urus_plug_mingw32" />
+		</Unit>
+		<Unit filename="urus_plug.cpp">
+			<Option target="urus_plug_mingw32" />
+		</Unit>
+		<Unit filename="urus_plug.h">
+			<Option target="urus_plug_mingw32" />
+		</Unit>
+		<Unit filename="wxledpanelurus/images/wxled16.xpm">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="wxledpanelurus/images/wxled32.xpm">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="wxledpanelurus/ledpanelurus/NewPanel.cpp">
+			<Option target="wxledpanelurus_mingw32" />
+		</Unit>
+		<Unit filename="wxledpanelurus/ledpanelurus/NewPanel.h">
+			<Option target="wxledpanelurus_mingw32" />
+		</Unit>
+		<Unit filename="wxledpanelurus/ledpanelurus/NewPanel.wxs">
+			<Option target="wxledpanelurus_mingw32" />
+		</Unit>
+		<Unit filename="wxledpanelurus/ledpanelurus/xh_ledpanelurusHandler.cpp">
+			<Option target="wxledpanelurus_mingw32" />
+		</Unit>
+		<Unit filename="wxledpanelurus/ledpanelurus/xh_ledpanelurusHandler.h">
+			<Option target="wxledpanelurus_mingw32" />
+		</Unit>
+		<Unit filename="wxledpanelurus/wxsLedpanelurus.cpp">
+			<Option target="urus_plug_mingw32" />
+		</Unit>
+		<Unit filename="wxledpanelurus/wxsLedpanelurus.h">
+			<Option target="urus_plug_mingw32" />
+		</Unit>
+		<Unit filename="wxledurus/ledurus/ledurus.cpp">
+			<Option target="wxledurus_mingw32" />
+		</Unit>
+		<Unit filename="wxledurus/ledurus/ledurus.h">
+			<Option target="wxledurus_mingw32" />
+		</Unit>
+		<Unit filename="wxledurus/ledurus/xh_ledurusHandler.cpp">
+			<Option target="wxledurus_mingw32" />
+		</Unit>
+		<Unit filename="wxledurus/ledurus/xh_ledurusHandler.h">
+			<Option target="wxledurus_mingw32" />
+		</Unit>
+		<Unit filename="wxledurus/wxsLedurus.cpp">
+			<Option target="urus_plug_mingw32" />
+		</Unit>
+		<Unit filename="wxledurus/wxsLedurus.h">
+			<Option target="urus_plug_mingw32" />
+		</Unit>
+		<Extensions>
+			<lib_finder disable_auto="1" />
+			<wxsmith version="1">
+				<resources>
+					<wxPanel wxs="wxledpanelurus/ledpanelurus/NewPanel.wxs" src="wxledpanelurus/ledpanelurus/NewPanel.cpp" hdr="wxledpanelurus/ledpanelurus/NewPanel.h" fwddecl="0" i18n="1" name="NewPanel" language="CPP" />
+				</resources>
+			</wxsmith>
+		</Extensions>
+	</Project>
+</UrusStudio_project_file>
