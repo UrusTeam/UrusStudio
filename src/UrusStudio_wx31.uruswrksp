@@ -60,5 +60,8 @@
 		</Project>
 		<Project filename="plugins/contrib/ToolsPlus/ToolsPlus_wx31.usp" />
 		<Project filename="plugins/UrusStudioSettings/UrusStudioSettings_wx31.usp" />
+		<Project filename="plugins/urus_plugin/urus_plugin_wx31.usp">
+			<Depends filename="plugins/contrib/wxSmith/wxSmith_wx31.usp" />
+		</Project>
 	</Workspace>
 </UrusStudio_workspace_file>
