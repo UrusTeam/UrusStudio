@@ -157,9 +157,9 @@ cp -f scripts/*.gdb ${RESDIR}/scripts 2>/dev/null
 cp -f scripts/*.gdb output31/share/urusstudio/scripts 2>/dev/null
 cp -f tips.txt devel31/share/urusstudio > /dev/null
 cp -f tips.txt output31/share/urusstudio > /dev/null
-cp -f tools/ConsoleRunner/cb_console_runner${EXEEXT} output31 > /dev/null
-cp -f tools/ConsoleRunner/cb_console_runner${EXEEXT} devel31 > /dev/null
-cp -f devel31/urusstudio${EXEEXT} output31 > /dev/null
+cp -f tools/ConsoleRunner/cb_console_runner${EXEEXT} output31 2> /dev/null
+cp -f tools/ConsoleRunner/cb_console_runner${EXEEXT} devel31 2> /dev/null
+cp -f devel31/urusstudio${EXEEXT} output31 2> /dev/null
 if [ -f "devel31/cb_share_config${EXEEXT}" ]
 then
   cp -f devel31/cb_share_config${EXEEXT} output31 > /dev/null
@@ -226,8 +226,8 @@ fi
 find output31/ -maxdepth 1 -type f -exec mv {} output31/bin \;
 cp -rf /system/urus/include/urusstudio output31/include/ 2>/dev/null
 cp -rf /system/urus/include/wxsmith output31/include/ 2>/dev/null
-mv output31/bin/start_urusstudio${EXEEXT} output31/ 2>/dev/null
-mv output31/bin/*.${LIBEXT} output31/lib/ 2>/dev/null
+mv -f output31/bin/start_urusstudio${EXEEXT} output31/ 2>/dev/null
+mv -f output31/bin/*.${LIBEXT} output31/lib/ 2>/dev/null
 
 ZIPCMD=
 RESDIR=
