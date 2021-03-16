@@ -228,6 +228,7 @@ cp -rf /system/urus/include/urusstudio output31/include/ 2>/dev/null
 cp -rf /system/urus/include/wxsmith output31/include/ 2>/dev/null
 mv -f output31/bin/start_urusstudio${EXEEXT} output31/ 2>/dev/null
 mv -f output31/bin/*.${LIBEXT} output31/lib/ 2>/dev/null
+rm -f output31/lib/wxmsw* 2>/dev/null
 
 ZIPCMD=
 RESDIR=
