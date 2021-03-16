@@ -57,6 +57,7 @@
 					<Add library="wxmathplot" />
 					<Add library="txml" />
 					<Add library="wxsmithlib" />
+					<Add library="$(#wx31.WXLIBS)" />
 					<Add directory="../../../devel31" />
 				</Linker>
 				<ExtraCommands>

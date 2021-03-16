@@ -20,7 +20,6 @@
 					<Add option="-mthreads" />
 					<Add option="-fmessage-length=0" />
 					<Add option="-fexceptions" />
-					<Add option="`wx-config --toolkit=msw --cflags`" />
 					<Add option="-DHAVE_W32API_H" />
 					<Add option="-D__WXMSW__" />
 					<Add option="-DWXUSINGDLL" />
@@ -38,6 +37,7 @@
 					<Add option="-mthreads" />
 					<Add option="`wx-config --toolkit=msw --libs`" />
 					<Add library="codeblocks" />
+					<Add library="$(#wx31.WXLIBS)" />
 					<Add directory="$(#WX31.lib)" />
 					<Add directory="../../../devel31" />
 				</Linker>
@@ -57,6 +57,7 @@
 		</VirtualTargets>
 		<Compiler>
 			<Add option="-std=gnu++11" />
+			<Add option="`wx-config --toolkit=msw --cflags`" />
 		</Compiler>
 		<Linker>
 			<Add option="-s" />

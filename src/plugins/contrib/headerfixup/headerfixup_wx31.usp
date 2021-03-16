@@ -61,6 +61,7 @@
 			<Add option="`wx-config --toolkit=msw --libs`" />
 			<Add library="codeblocks" />
 			<Add library="wxscintilla_cb" />
+			<Add library="$(#wx31.WXLIBS)" />
 		</Linker>
 		<Unit filename="bindings.cpp" />
 		<Unit filename="bindings.h" />

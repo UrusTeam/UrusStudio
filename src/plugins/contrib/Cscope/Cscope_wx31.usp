@@ -54,6 +54,7 @@
 			<Add library="codeblocks" />
 			<Add library="wxscintilla_cb" />
 			<Add library="txml" />
+			<Add library="$(#wx31.WXLIBS)" />
 			<Add directory="$(#WX31.lib)" />
 			<Add directory="../../../devel31" />
 		</Linker>

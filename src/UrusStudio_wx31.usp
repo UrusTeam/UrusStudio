@@ -135,6 +135,8 @@
 					<Add option="-Wl,--enable-auto-import" />
 					<Add option="-Wl,--no-undefined" />
 					<Add library="gdi32" />
+					<Add library="$(#wx31.WXLIBS)" />
+					<Add directory="devel31" />
 				</Linker>
 			</Target>
 			<Target title="sdk">
@@ -178,6 +180,7 @@
 					<Add library="sqstdlib" />
 					<Add library="squirrel" />
 					<Add library="gdi32" />
+					<Add library="$(#wx31.WXLIBS)" />
 					<Add directory="devel31" />
 					<Add directory="sdk/scripting/lib" />
 				</Linker>
@@ -234,6 +237,7 @@
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
+					<Add library="$(#wx31.WXLIBS)" />
 					<Add directory="devel31" />
 					<Add directory="exchndl/win32/lib" />
 				</Linker>
@@ -275,6 +279,7 @@
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
 					<Add library="wxscintilla_cb" />
+					<Add library="$(#wx31.WXLIBS)" />
 					<Add directory="devel31" />
 				</Linker>
 				<ExtraCommands>
@@ -309,6 +314,7 @@
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
+					<Add library="$(#wx31.WXLIBS)" />
 					<Add directory="devel31" />
 				</Linker>
 				<ExtraCommands>
@@ -341,6 +347,7 @@
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
+					<Add library="$(#wx31.WXLIBS)" />
 					<Add directory="devel31" />
 				</Linker>
 				<ExtraCommands>
@@ -364,6 +371,7 @@
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
+					<Add library="$(#wx31.WXLIBS)" />
 					<Add directory="devel31" />
 				</Linker>
 			</Target>
@@ -395,6 +403,7 @@
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
+					<Add library="$(#wx31.WXLIBS)" />
 					<Add directory="devel31" />
 					<Add directory="plugins/compilergcc/depslib" />
 				</Linker>
@@ -434,6 +443,7 @@
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
 					<Add library="txml" />
+					<Add library="$(#wx31.WXLIBS)" />
 					<Add directory="devel31" />
 				</Linker>
 				<ExtraCommands>
@@ -474,6 +484,7 @@
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
 					<Add library="txml" />
+					<Add library="$(#wx31.WXLIBS)" />
 					<Add directory="devel31" />
 				</Linker>
 				<ExtraCommands>
@@ -507,6 +518,7 @@
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
 					<Add library="txml" />
+					<Add library="$(#wx31.WXLIBS)" />
 					<Add directory="devel31" />
 				</Linker>
 				<ExtraCommands>
@@ -540,6 +552,7 @@
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
 					<Add library="txml" />
+					<Add library="$(#wx31.WXLIBS)" />
 					<Add directory="devel31" />
 				</Linker>
 				<ExtraCommands>
@@ -573,6 +586,7 @@
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
 					<Add library="txml" />
+					<Add library="$(#wx31.WXLIBS)" />
 					<Add directory="devel31" />
 				</Linker>
 				<ExtraCommands>
@@ -606,6 +620,7 @@
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
 					<Add library="txml" />
+					<Add library="$(#wx31.WXLIBS)" />
 					<Add directory="devel31" />
 				</Linker>
 				<ExtraCommands>
@@ -645,6 +660,7 @@
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
 					<Add library="txml" />
+					<Add library="$(#wx31.WXLIBS)" />
 					<Add directory="devel31" />
 				</Linker>
 				<ExtraCommands>
@@ -680,6 +696,7 @@
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
 					<Add library="txml" />
+					<Add library="$(#wx31.WXLIBS)" />
 					<Add directory="devel31" />
 				</Linker>
 				<ExtraCommands>
@@ -719,6 +736,7 @@
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
 					<Add library="txml" />
+					<Add library="$(#wx31.WXLIBS)" />
 					<Add directory="devel31" />
 				</Linker>
 				<ExtraCommands>
@@ -751,6 +769,7 @@
 					<Add library="squirrel" />
 					<Add library="sqstdlib" />
 					<Add library="sqplus" />
+					<Add library="$(#wx31.WXLIBS)" />
 					<Add directory="devel31" />
 				</Linker>
 				<ExtraCommands>
@@ -786,24 +805,23 @@
 			<Add option="-DWXUSINGDLL" />
 			<Add option="-DNOPCH" />
 			<Add option="-DwxUSE_UNICODE" />
-			<Add directory="$(#WX31.include)" />
-			<Add directory="$(#WXSETUP.include)" />
 			<Add directory="sdk/wxscintilla/include" />
 			<Add directory="include/tinyxml" />
+			<Add directory="$(#wx31.INCLUDE)" />
 		</Compiler>
 		<ResourceCompiler>
-			<Add directory="$(#WX31.include)" />
-			<Add directory="$(#WXSETUP.include)" />
 			<Add directory="sdk/scripting/lib" />
+			<Add directory="$(#wx31.INCLUDE)" />
 		</ResourceCompiler>
 		<Linker>
 			<Add option="-s" />
-			<Add option="`wx-config --toolkit=msw --libs`" />
-			<Add directory="$(#wx31.LIB)" />
 			<Add directory="base/tinyxml" />
 			<Add directory="sdk/scripting/lib" />
 		</Linker>
 		<ExtraCommands>
+			<Add before="mkdir -p devel31/ &amp;&gt;/dev/null" />
+			<Add before="cp -f /system/urus/${XURUSSDK}/lib/* devel31/ &amp;&gt;/dev/null" />
+			<Add before="cp -rf /system/urus/${XURUSSDK}/include /system/urus &amp;&gt;/dev/null" />
 			<Add after="mkdir -p devel31/ &amp;&gt;/dev/null" />
 			<Add after="cp -f sdk/scripting/lib/*.dll devel31/ &amp;&gt;/dev/null" />
 			<Add after="cp -f plugins/compilergcc/depslib/*.dll devel31/ &amp;&gt;/dev/null" />

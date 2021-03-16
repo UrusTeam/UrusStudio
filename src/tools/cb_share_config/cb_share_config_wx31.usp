@@ -49,8 +49,10 @@
 			<Add option="-mthreads" />
 			<Add option="`wx-config --toolkit=msw --libs`" />
 			<Add library="txml" />
+			<Add library="$(#wx31.WXLIBS)" />
 			<Add directory="$(#WX31.lib)" />
 			<Add directory="../../base/tinyxml" />
+			<Add directory="../../devel31" />
 		</Linker>
 		<Unit filename="app.cpp" />
 		<Unit filename="app.h" />

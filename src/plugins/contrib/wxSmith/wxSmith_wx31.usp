@@ -92,8 +92,9 @@
 			<Add library="sqstdlib" />
 			<Add library="squirrel" />
 			<Add library="txml" />
-			<Add directory="$(#WX31.lib)" />
+			<Add library="$(#wx31.WXLIBS)" />
 			<Add directory="../../../devel31" />
+			<Add directory="$(#WX31.lib)" />
 		</Linker>
 		<ExtraCommands>
 			<Add after="sh -c ./update31" />

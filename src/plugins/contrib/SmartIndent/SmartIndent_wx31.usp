@@ -185,6 +185,7 @@
 			<Add option="`wx-config --toolkit=msw --libs`" />
 			<Add library="codeblocks" />
 			<Add library="wxscintilla_cb" />
+			<Add library="$(#wx31.WXLIBS)" />
 			<Add directory="../../../devel31" />
 			<Add directory="$(#WX31.lib)" />
 		</Linker>

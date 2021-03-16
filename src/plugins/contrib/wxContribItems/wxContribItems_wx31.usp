@@ -191,8 +191,9 @@
 			<Add option="-Wl,--enable-auto-import" />
 			<Add option="-mthreads" />
 			<Add option="`wx-config --toolkit=msw --libs`" />
+			<Add library="$(#wx31.WXLIBS)" />
+			<Add directory="../../../devel31" />
 			<Add directory="$(#WX31.lib)" />
-			<Add directory="devel31" />
 		</Linker>
 		<Unit filename="KWIC/include/wx/KWIC/AngularMeter.h">
 			<Option target="wxKWIC" />
