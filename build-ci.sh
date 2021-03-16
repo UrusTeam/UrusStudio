@@ -4,6 +4,14 @@ if [ "x$CROSS" != "x" ] ; then
     export CROSSTAIL="$CROSS-"
 fi
 
+if [ "x$CFLAGS" = "x" ] ; then
+    export CFLAGS="-O2"
+fi
+
+if [ "x$CXXFLAGS" = "x" ] ; then
+    export CXXFLAGS="-O2"
+fi
+
 # MSYSTEM is defined when cross-compilig with MinGW/MSYS
 if [ "x$MSYSTEM" != "x" ] ; then
   echo Updating MinGW32/cross version.
@@ -13,8 +21,8 @@ if [ "x$MSYSTEM" != "x" ] ; then
   export HOSTTARGET="${CROSSTAIL}gcc -dumpmachine"
   export LIBS=" -lwindowscodecs"
   export LDFLAGS="-Wl,--gc-sections -Wl,--allow-multiple-definition"
-  export CFLAGS="-Wno-unused-local-typedefs -ffunction-sections -fdata-sections"
-  export CXXFLAGS='-Wno-unused-local-typedefs -fpermissive -ffunction-sections -fdata-sections'
+  export CFLAGS="-Wno-unused-local-typedefs -ffunction-sections -fdata-sections $CFLAGS"
+  export CXXFLAGS="-Wno-unused-local-typedefs -fpermissive -ffunction-sections -fdata-sections $CXXFLAGS"
   WXURUSCONF="--with-msw --enable-monolithic --enable-shared --with-opengl --enable-graphics_ctx --enable-cmdline --enable-threads --disable-debug_flag --disable-precomp-headers --disable-debug --with-libpng=builtin --with-regex=builtin --with-libjpeg=builtin --with-libtiff=builtin --with-expat=builtin LDFLAGS=-Wl,--allow-multiple-definition"
   URUSSTUDIOPLAT="--with-platform=win32 --disable-debug --disable-pch --disable-fortran"
 else
@@ -35,8 +43,8 @@ else
     WXURUSHOST="--host=$CROSS"
     WXURUSTARGET="--target=$CROSS"
     export HOSTTARGET="${CROSSTAIL}gcc -dumpmachine"
-    export CXXFLAGS="-Wno-unused-local-typedefs -Wno-narrowing -Wno-literal-suffix -fpermissive -DGTK_VERSION=2 -O2 $CXXFLAGS"
-    export CFLAGS="-Wno-unused-local-typedefs -Wno-narrowing -O2 $CFLAGS"
+    export CXXFLAGS="-Wno-unused-local-typedefs -Wno-narrowing -Wno-literal-suffix -fpermissive -DGTK_VERSION=2 $CXXFLAGS"
+    export CFLAGS="-Wno-unused-local-typedefs -Wno-narrowing $CFLAGS"
     export WXURUSCONF="--with-gtk=2 --enable-cmdline --enable-graphics_ctx --enable-monolithic --enable-shared --with-opengl --enable-threads --disable-debug_flag --disable-precomp-headers --disable-debug --with-libpng=builtin --with-regex=builtin --with-libjpeg=builtin --with-libtiff=builtin --with-expat=builtin"
     export OPENGL_LIBS="$(pkg-config gl --libs)"
     export LDFLAGS="$(pkg-config gl glew glu --libs) $LDFLAGS"
@@ -47,6 +55,8 @@ fi
 export URUSBASEDIR=/system/urus
 export URUSINSTALLDIR=$URUSBASEDIR/$XURUSSDK
 export URUSSTDTOPDIR=$(pwd)
+
+mkdir -p $URUSINSTALLDIR
 
 if [ "x$ENABLEGIT" != "x" ] ; then
     if [ "x$USERCIURUS" != "x" ] ; then
@@ -86,22 +96,32 @@ cd buildwx
 make -j6
 make install
 
+export PATH=${URUSINSTALLDIR}/bin:$PATH
+
+WXRELEASE=$(wx-config --release)
+WXVERSION=$(wx-config --version)
+WXTOOLKIT=$(wx-config --query-toolkit)
+ARCHOS=$(printf "%s-%s" $(uname -s) $(uname -m))
+ARCHOS=$(echo $ARCHOS | tr A-Z a-z)
+WXVERSIONFULL=$(printf "wx-%s-%s" $WXVERSION $WXTOOLKIT)
+
 PUSHD=$(pwd)
 cd $URUSINSTALLDIR
 echo $SECONDS > .empty
+
+if [ "x$MSYSTEM" != "x" ] ; then
+    mkdir -p $URUSINSTALLDIR/include/wx-${WXRELEASE}-urus/wx/msw/private
+    cp -f $WXURUSTOPDIR/include/wx/msw/private/graphicsd2d.h $URUSINSTALLDIR/include/wx-${WXRELEASE}-urus/wx/msw/private/
+    cp -f $WXURUSTOPDIR/include/wx/msw/private/comptr.h $URUSINSTALLDIR/include/wx-${WXRELEASE}-urus/wx/msw/private/
+fi
+
 if [ "x$ENABLEGIT" != "x" ] ; then
   git add .
   git commit -m "added wxWidgets urus."
 fi
 cd $PUSHD
 
-export PATH=${URUSINSTALLDIR}/bin:$PATH
-
-WXVERSION=$(wx-config --version)
-WXTOOLKIT=$(wx-config --query-toolkit)
-WXVERSIONFULL=""
-
-do_git()
+do_git_rm()
 {
     git add .
     git commit -m "added urusstudio."
@@ -111,9 +131,10 @@ do_git()
     git rm -rf *
     git commit -m "removed all."
     git cherry-pick HEAD~1
-    ARCHOS=$(printf "%s-%s" $(uname -s) $(uname -m))
-    ARCHOS=$(echo $ARCHOS | tr A-Z a-z)
-    WXVERSIONFULL=$(printf "wx-%s-%s" $WXVERSION $WXTOOLKIT)
+}
+
+do_tar_urusstudio()
+{
     PUSHDGIT=$(pwd)
     if [ "x$MSYSTEM" = "x" ] ; then
         tar -cJf $URUSBASEDIR/toolchain/host-$($HOSTTARGET)-${WXVERSIONFULL}-urusstudio.tar.xz *
@@ -121,8 +142,14 @@ do_git()
         md5sum host-$($HOSTTARGET)-${WXVERSIONFULL}-urusstudio.tar.xz > host-$($HOSTTARGET)-${WXVERSIONFULL}-urusstudio.tar.xz.md5
     fi
     cd $PUSHDGIT
+}
+
+do_git_tar_wx()
+{
     git checkout -q master-wx || git checkout -q -b master-wx
-    git reset --hard HEAD~3 2>/dev/null
+    if [ $1 -gt 0 ] ; then
+        git reset --hard HEAD~$1 2>/dev/null
+    fi
     tar -cJf $URUSBASEDIR/toolchain/host-$($HOSTTARGET)-${WXVERSIONFULL}-urus.tar.xz *
     git checkout master
     git reset --hard
@@ -177,8 +204,8 @@ build_usp()
     do
         cnt=$((cnt+1))
         printf "%02d: %s\n" $cnt $(basename $(printf $usp | cut -d\; -f 1))
-        sleep 2
-        urusstudio --user-data-dir=appdata/msw/urusstudio/ --build $(printf $usp | cut -d\; -f 1) --target=$(printf $usp | cut -d\; -f 2) 1>>$URUSSTDTOPDIR/buildci.log
+        sleep 1
+        urusstudio --user-data-dir=appdata/msw/urusstudio/ --build $(printf $usp | cut -d\; -f 1) --target=$(printf $usp | cut -d\; -f 2) 1>>${URUSSTDTOPDIR}/buildci.log
     done
 }
 
@@ -186,11 +213,13 @@ copy_urusstudio_includes()
 {
     cd $URUSSTDTOPDIR/src
     mkdir -p devel31/include/urusstudio/wxscintilla
+    mkdir -p devel31/include/wxsmith
     cp -rf include/* devel31/include/urusstudio/
     cp -rf sdk/wxscintilla/include devel31/include/urusstudio/wxscintilla
     cd plugins/contrib
     find wxContribItems -name '*.h' -exec cp --parents \{\} ../../devel31/include/urusstudio/ \;
-    find wxSmith -name '*.h' -exec cp --parents \{\} ../../devel31/include/ \;
+    cd wxSmith
+    find * -name '*.h' -exec cp --parents \{\} ../../../devel31/include/wxsmith \;
     cd $URUSSTDTOPDIR/src
 }
 
@@ -199,7 +228,7 @@ if [ "x$NO_BUILD_ALL" = "x" ] ; then
     if [ "x$MSYSTEM" = "x" ] ; then
         export ACLOCAL_FLAGS="-I `wx-config --prefix`/share/aclocal"
 
-        cd ${URUSSTDTOPDIR}
+        cd $URUSSTDTOPDIR
         pint_dots 40
         ./bootstrap
         mkdir -p buildustd
@@ -207,25 +236,34 @@ if [ "x$NO_BUILD_ALL" = "x" ] ; then
 
         pint_dots 40
         ../configure $WXURUSBUILD $WXURUSHOST $WXURUSTARGET --with-contrib-plugins="Cscope,EditorConfig,EditorTweaks,envvars,headerfixup,libfinder,BrowseTracker,hexeditor,incsearch,smartindent,symtab,ThreadSearch,ToolsPlus,wxcontrib,wxsmith,wxsmithcontrib,wxsmithaui" --prefix=${URUSINSTALLDIR} $URUSSTUDIOPLAT
-        make -j2
+        make -j6
         make install
 
         PUSHD=$(pwd)
+
+        cd $URUSSTDTOPDIR/src/tools/cbp2make
+        make -j6 -f cbp2make.cbp.mak.unix
+        cp -f bin/Release/cbp2make $URUSINSTALLDIR/bin
+
         cd $URUSINSTALLDIR
         mkdir -p $URUSBASEDIR/toolchain
         echo $SECONDS > .empty
         pint_dots 40
         if [ "x$ENABLEGIT" != "x" ] ; then
-            do_git >> $URUSSTDTOPDIR/buildci.log
+            do_git_rm >> $URUSSTDTOPDIR/buildci.log
+            printf "Compressing Urus Studio dist...\n"
+            do_tar_urusstudio >> $URUSSTDTOPDIR/buildci.log
+            printf "Compressing wxUrus dist...\n"
+            do_git_tar_wx 3 >> $URUSSTDTOPDIR/buildci.log
         fi
         pint_dots 40
         cd $PUSHD
-        ../configure $WXURUSBUILD $WXURUSHOST $WXURUSTARGET --with-contrib-plugins="Cscope,EditorConfig,EditorTweaks,envvars,headerfixup,libfinder,BrowseTracker,hexeditor,incsearch,smartindent,symtab,ThreadSearch,ToolsPlus,wxcontrib,wxsmith,wxsmithcontrib,wxsmithaui" --prefix=${URUSINSTALLDIR} $URUSSTUDIOPLAT
+        #../configure $WXURUSBUILD $WXURUSHOST $WXURUSTARGET --with-contrib-plugins="Cscope,EditorConfig,EditorTweaks,envvars,headerfixup,libfinder,BrowseTracker,hexeditor,incsearch,smartindent,symtab,ThreadSearch,ToolsPlus,wxcontrib,wxsmith,wxsmithcontrib,wxsmithaui" --prefix=${URUSINSTALLDIR} $URUSSTUDIOPLAT
 
-        if [ "x$NO_URUSSTUDIO_MAKE_CMD" = "x" ] ; then
-            make -j6
-            make install
-        fi
+        #if [ "x$NO_URUSSTUDIO_MAKE_CMD" = "x" ] ; then
+            #make -j6
+            #make install
+        #fi
     else
         cd $URUSSTDTOPDIR
         pint_dots 40
@@ -236,7 +274,9 @@ if [ "x$NO_BUILD_ALL" = "x" ] ; then
         echo $SECONDS > .empty
         pint_dots 40
         if [ "x$ENABLEGIT" != "x" ] ; then
-            do_git >> $URUSSTDTOPDIR/buildci.log
+            #do_git_rm >> $URUSSTDTOPDIR/buildci.log
+            printf "Compressing wxUrus dist...\n"
+            do_git_tar_wx 0 >> $URUSSTDTOPDIR/buildci.log
         fi
         pint_dots 40
         cd $URUSSTDTOPDIR/src/
@@ -247,8 +287,8 @@ if [ "x$NO_BUILD_ALL" = "x" ] ; then
         tar -cJf $URUSBASEDIR/toolchain/host-$($HOSTTARGET)-${WXVERSIONFULL}-urusstudio.tar.xz *
         cd $URUSBASEDIR/toolchain/
         md5sum host-$($HOSTTARGET)-${WXVERSIONFULL}-urusstudio.tar.xz > host-$($HOSTTARGET)-${WXVERSIONFULL}-urusstudio.tar.xz.md5
+        copy_urusstudio_includes
     fi
-    copy_urusstudio_includes
     cd $URUSSTDTOPDIR
     pint_dots 40
     printf "Display logs...\n"
