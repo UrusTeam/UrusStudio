@@ -2,7 +2,7 @@
 <UrusStudio_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="cbp2make wx2.8.x (Unix)" />
+		<Option title="cbp2make wx3.1.x (Unix)" />
 		<Option pch_mode="2" />
 		<Option default_target="default" />
 		<Option compiler="gcc" />
@@ -233,9 +233,6 @@
 			<Option target="default" />
 		</Unit>
 		<Extensions>
-			<envvars />
-			<code_completion />
-			<debugger />
 			<lib_finder disable_auto="1" />
 		</Extensions>
 	</Project>
