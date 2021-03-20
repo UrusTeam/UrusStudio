@@ -279,7 +279,6 @@
 					<Add after="cp -rf scripts devel/share/urusstudio/" />
 					<Add after="mkdir -p devel/share/urusstudio/templates" />
 					<Add after="cp -rf templates/common/* devel/share/urusstudio/templates" />
-					<Add after="./update" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
@@ -690,6 +689,7 @@
 				<ExtraCommands>
 					<Add after="mkdir -p devel/share/urusstudio" />
 					<Add after="zip -jq9 devel/share/urusstudio/todo.zip plugins/todo/resources/manifest.xml plugins/todo/resources/*.xrc" />
+					<Add after="./update" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
