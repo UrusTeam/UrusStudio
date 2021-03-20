@@ -279,6 +279,7 @@
 					<Add after="cp -rf scripts devel/share/urusstudio/" />
 					<Add after="mkdir -p devel/share/urusstudio/templates" />
 					<Add after="cp -rf templates/common/* devel/share/urusstudio/templates" />
+					<Add after="./update" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
