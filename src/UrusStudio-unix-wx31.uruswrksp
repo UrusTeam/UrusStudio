@@ -3,8 +3,8 @@
 	<Workspace title="Urus Studio Workspace wx3.1.x Unix">
 		<Project filename="UrusStudio-unix-wx31.usp" />
 		<Project filename="tools/Addr2LineUI/Addr2LineUI-unix.usp" />
-		<Project filename="tools/cb_share_config/cb_share_config-unix.usp" />
-		<Project filename="tools/cbp2make/cbp2make-unix.usp" />
+		<Project filename="tools/cb_share_config/cb_share_config-unix-wx31.usp" />
+		<Project filename="tools/cbp2make/cbp2make-unix-wx31.usp" />
 		<Project filename="plugins/codecompletion/cctest-unix.usp" />
 		<Project filename="plugins/contrib/wxContribItems/wxContribItems-unix-wx31.usp" />
 		<Project filename="plugins/contrib/wxSmith/wxSmith-unix-wx31.usp" />
