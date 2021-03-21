@@ -490,6 +490,7 @@
 				<ExtraCommands>
 					<Add after="mkdir -p devel31/share/urusstudio" />
 					<Add after="zip -jq9 devel31/share/urusstudio/codecompletion.zip plugins/codecompletion/resources/manifest.xml plugins/codecompletion/resources/*.xrc" />
+					<Add after="cd plugins/codecompletion/resources &amp;&amp; zip -0 -q ../../../devel31/share/urusstudio/codecompletion.zip images/*.png images/16x16/*.png" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
