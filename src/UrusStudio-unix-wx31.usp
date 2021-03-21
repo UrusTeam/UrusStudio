@@ -486,6 +486,7 @@
 					<Add after="mkdir -p devel/share/urusstudio/images/codecompletion" />
 					<Add after="zip -jq9 devel/share/urusstudio/codecompletion.zip plugins/codecompletion/resources/manifest.xml plugins/codecompletion/resources/*.xrc" />
 					<Add after="cp -rf plugins/codecompletion/resources/images/* devel/share/urusstudio/images/codecompletion/" />
+					<Add after="cd plugins/codecompletion/resources &amp;&amp; zip -0 -q ../../../devel/share/urusstudio/codecompletion.zip images/*.png images/16x16/*.png" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
