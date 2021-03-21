@@ -58,6 +58,7 @@ TestGLContext::TestGLContext(wxGLCanvas *canvas)
 BasicGLPane::BasicGLPane(wxFrame* parent, int* args) :
     wxGLCanvas(parent, wxID_ANY, args,  wxDefaultPosition, wxDefaultSize, 0, wxT("GLCanvas"))
 {
+    glContext = new TestGLContext(this);
 }
 
 void BasicGLPane::resized(wxSizeEvent& evt)
@@ -136,9 +137,8 @@ void BasicGLPane::render( wxPaintEvent& evt )
 {
     if(!IsShown()) return;
 
-    if (!glContext) {
-        glContext = new TestGLContext(this);
-    }
+    wxPaintDC dc(this); // only to be used in paint events. use wxClientDC to paint outside the paint event
+    glContext->SetCurrent(*this);
 
     if(image == NULL) {
         image = new Image(wxT("alt_face_1.png"));
@@ -152,9 +152,6 @@ void BasicGLPane::render( wxPaintEvent& evt )
         image = new Image(wxT("alt_hand_2.png"));
         sprite[4] = new glDrawable(image);
     }
-
-    wxPaintDC dc(this); // only to be used in paint events. use wxClientDC to paint outside the paint event
-    glContext->SetCurrent(*this);
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -189,12 +186,7 @@ void BasicGLPane::rotate(float angle)
         cnt1 = 1.7;
     }
 
-    if (!glContext) {
-        glContext = new TestGLContext(this);
-    }
-
     wxClientDC dc(this);
-    glContext->SetCurrent(*this);
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     prepare2DViewport(0, 0, image->textureWidth, image->textureHeight);
