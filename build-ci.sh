@@ -242,6 +242,16 @@ build_usp()
     done
 }
 
+rename_dlls()
+{
+    libsdlls=$(find * -name '*.dll.a')
+
+    for libdll in $libsdlls
+    do
+        echo $libdll | sed -r -e 's:(.dll)::;' | xargs -I {} mv -f $libdll {}
+    done
+}
+
 copy_urusstudio_includes()
 {
     cd $URUSSTDTOPDIR/src
@@ -298,6 +308,8 @@ if [ "x$NO_BUILD_ALL" = "x" ] ; then
             #make install
         #fi
     else
+        cd $URUSINSTALLDIR/lib
+        rename_dlls
         cd $URUSSTDTOPDIR
         pint_dots 40
         build_usp
