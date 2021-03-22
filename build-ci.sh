@@ -115,6 +115,16 @@ ARCHOS=$(echo $ARCHOS | tr A-Z a-z)
 WXVERSIONFULL=$(printf "wx-%s-%s" $WXVERSION $WXTOOLKIT)
 WXCONFIGFULL=$(printf "%s-%s-%s-urus" $WXTOOLKIT $WXCHARTYPE $WXRELEASE)
 
+rename_dlls()
+{
+    libsdlls=$(find * -name '*.dll.a')
+
+    for libdll in $libsdlls
+    do
+        echo $libdll | sed -r -e 's:(.dll)::;' | xargs -I {} mv -f $libdll {}
+    done
+}
+
 PUSHD=$(pwd)
 cd $URUSINSTALLDIR
 date > .empty
@@ -124,6 +134,9 @@ if [ "x$MSYSTEM" != "x" ] ; then
     cp -f $WXURUSTOPDIR/include/wx/msw/private/graphicsd2d.h $URUSINSTALLDIR/include/wx-${WXRELEASE}-urus/wx/msw/private/
     cp -f $WXURUSTOPDIR/include/wx/msw/private/comptr.h $URUSINSTALLDIR/include/wx-${WXRELEASE}-urus/wx/msw/private/
 fi
+
+cd $URUSINSTALLDIR/lib
+rename_dlls
 
 if [ "x$ENABLEGIT" != "x" ] ; then
     git add .
@@ -242,16 +255,6 @@ build_usp()
     done
 }
 
-rename_dlls()
-{
-    libsdlls=$(find * -name '*.dll.a')
-
-    for libdll in $libsdlls
-    do
-        echo $libdll | sed -r -e 's:(.dll)::;' | xargs -I {} mv -f $libdll {}
-    done
-}
-
 copy_urusstudio_includes()
 {
     cd $URUSSTDTOPDIR/src
@@ -308,8 +311,6 @@ if [ "x$NO_BUILD_ALL" = "x" ] ; then
             #make install
         #fi
     else
-        cd $URUSINSTALLDIR/lib
-        rename_dlls
         cd $URUSSTDTOPDIR
         pint_dots 40
         build_usp
