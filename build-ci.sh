@@ -126,6 +126,10 @@ rename_dlls()
 }
 
 PUSHD=$(pwd)
+
+cd $URUSINSTALLDIR/lib
+rename_dlls
+
 cd $URUSINSTALLDIR
 date > .empty
 
@@ -135,13 +139,12 @@ if [ "x$MSYSTEM" != "x" ] ; then
     cp -f $WXURUSTOPDIR/include/wx/msw/private/comptr.h $URUSINSTALLDIR/include/wx-${WXRELEASE}-urus/wx/msw/private/
 fi
 
-cd $URUSINSTALLDIR/lib
-rename_dlls
-
 if [ "x$ENABLEGIT" != "x" ] ; then
     git add .
     git commit -m "added wxWidgets urus."
     git checkout -q master-wx 2>/dev/null || git checkout -q -b master-wx
+    git reset -q HEAD~1
+    git clean -q -fdx
     git cherry-pick master~0 --strategy-option theirs
     git checkout -q master
 fi
