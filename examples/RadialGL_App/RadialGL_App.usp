@@ -48,11 +48,13 @@
 					<Add option="-D__WXMSW__" />
 					<Add option="-DWXUSINGDLL" />
 					<Add option="-D_FILE_OFFSET_BITS=64" />
-					<Add option="-D_LARGE_FILES" />
-					<Add option="-DUNICODE" />
-					<Add directory="$(#URUSSTOOL.base)/include/wx-2.8-urus" />
-					<Add directory="$(#URUSSTOOL.base)/lib/wx/include/msw-unicode-release-2.8-urus" />
+					<Add option="-DwxDEBUG_LEVEL=0" />
+					<Add directory="$(#URUSSTOOL.include)" />
+					<Add directory="$(#URUSSTOOL.setup)" />
 				</Compiler>
+				<ResourceCompiler>
+					<Add directory="$(#URUSSTOOL.include)" />
+				</ResourceCompiler>
 				<Linker>
 					<Add option="-s" />
 					<Add library="glu32" />
@@ -99,6 +101,12 @@
 		<Unit filename="gl_image_loader.h" />
 		<Unit filename="glpane.cpp" />
 		<Unit filename="glpane.h" />
+		<Unit filename="resource.rc">
+			<Option target="Mingw32_Release" />
+		</Unit>
+		<Unit filename="uspurus.ico">
+			<Option target="Mingw32_Release" />
+		</Unit>
 		<Unit filename="wxsmith/RadialGL_Dialog.wxs" />
 		<Extensions>
 			<wxsmith version="1">
