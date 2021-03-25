@@ -317,7 +317,10 @@ function OnLeave_WxConf(fwd)
 
         if (IsDLL)
         {
-            lib_suffix_urus = _T(".dll.a");
+            if (WxVersion == 3)
+                lib_suffix_urus = _T(".a");
+            else
+                lib_suffix_urus = _T(".dll.a");
             lib = lib + _T("");
         }
         else
@@ -650,6 +653,7 @@ function SetupProject(project)
             project.AddCompilerOption(_T("/DWIN32"));
             project.AddCompilerOption(_T("/D__WIN32__"));
             project.AddCompilerOption(_T("/D__WXMSW__"));
+            project.AddCompilerOption(_T("/DwxDEBUG_LEVEL=0"));
             if (IsDLL)
                 project.AddCompilerOption(_T("/DWXUSINGDLL"));
             if (IsUnicode)
@@ -665,6 +669,7 @@ function SetupProject(project)
             project.AddLinkerOption(_T("-mthreads"));
             project.AddCompilerOption(_T("-D__GNUWIN32__"));
             project.AddCompilerOption(_T("-D__WXMSW__"));
+            project.AddCompilerOption(_T("-DwxDEBUG_LEVEL=0"));
             if (IsDLL)
                 project.AddCompilerOption(_T("-DWXUSINGDLL"));
             if (IsUnicode)
@@ -673,6 +678,7 @@ function SetupProject(project)
         else if (GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("bcc*")))
         {
             project.AddCompilerOption(_T("-D__WXMSW__"));
+            project.AddCompilerOption(_T("-DwxDEBUG_LEVEL=0"));
             if (IsDLL)
                 project.AddCompilerOption(_T("-DWXUSINGDLL"));
             if (IsUnicode)
@@ -692,6 +698,7 @@ function SetupProject(project)
         else if (GetCompilerFactory().CompilerInheritsFrom(Wizard.GetCompilerID(), _T("ow")))
         {
             project.AddCompilerOption(_T("-d__WXMSW__"));
+            project.AddCompilerOption(_T("-DwxDEBUG_LEVEL=0"));
             if (IsDLL)
                 project.AddCompilerOption(_T("-dWXUSINGDLL"));
             if (IsUnicode)
@@ -928,7 +935,11 @@ function SetupTarget(target, is_debug)
     {
         local libdir = LibPath + _T("/wx/include/msw");
         if (IsUnicode)
-            libdir = libdir + _T("-unicode-release");
+            if (WxVersion == 3)
+                libdir = libdir + _T("-unicode");
+            else
+                libdir = libdir + _T("-unicode-release");
+                
         if (is_debug && !IsPartialDebug)
         {
             target.AddIncludeDir(libdir + _T("-") + LibWxVer + _T("-urus"));
